@@ -1,3 +1,3 @@
 function addhost
- emacs /sudo::/etc/hosts &
+ emacsclient --create-frame --alternate-editor emacs /sudo::/etc/hosts &
 end        
