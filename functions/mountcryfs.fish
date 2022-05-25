@@ -1,5 +1,5 @@
 function mountcryfs
-  if test ! -d ~/documents/roku-chiji/repository
+  if test ! -d ~/documents/roku-chiji/tsusu
       echo "Mounting Roku-Chiji Cryfs"
       cryfs ~/.cryfs/roku-chiji ~/documents/roku-chiji
   else
