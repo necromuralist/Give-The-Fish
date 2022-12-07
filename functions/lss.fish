@@ -1,3 +1,3 @@
 function lss
-    ls --color | less -R
+    ls --color $argv | less -R
 end

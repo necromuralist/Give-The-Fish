@@ -1,3 +1,3 @@
 function rsyncer
-  rsync -Pravz $argv
+  rsync --partial --progress --recursive --archive --verbose --compress $argv
 end

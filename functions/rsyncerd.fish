@@ -1,3 +1,3 @@
 function rsyncerd
-  rsync -Pravz --delete $argv
+  rsync --partial --progress --recursive --archive --verbose --compress --delete $argv
 end
