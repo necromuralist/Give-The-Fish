@@ -1,4 +1,4 @@
-function mount-drives
+function mount-drives --argument-names "device"
     mountcryfs
-    mountdata
+    mountdata $device
 end
