@@ -1,0 +1,5 @@
+#+TITLE: Fish Functions
+
+
+This is a repository of fish functions that I'm building and sharing amongst my machines. I've started documenting it [[https://necromuralist.github.io/Fish-Functions/][on gihtub-pages]].
+
