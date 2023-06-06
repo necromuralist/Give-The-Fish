@@ -2,36 +2,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org09507c8">The randomdhex Function</a></li>
-<li><a href="#org6c992a4">The Function Header</a></li>
-<li><a href="#org40b614c">Argument Check</a>
+<li><a href="#org9a7919e">The randomdhex Function</a></li>
+<li><a href="#orgd4a14a7">The Function Header</a></li>
+<li><a href="#orge2c0391">Argument Check</a>
 <ul>
-<li><a href="#org25eeb13">Check For An Argument</a></li>
-<li><a href="#orgb287acb">Check If The Argument Is An Integer</a></li>
-<li><a href="#org9642f03">Set the Argument Value</a></li>
-<li><a href="#orgeaded92">Error Message</a></li>
-<li><a href="#orgf46435a">Use The Default</a></li>
+<li><a href="#orgd55a0c2">Check For An Argument</a></li>
+<li><a href="#org336ee8e">Check If The Argument Is An Integer</a></li>
+<li><a href="#org5e2c3ce">Set the Argument Value</a></li>
+<li><a href="#orgcffbf8f">Error Message</a></li>
+<li><a href="#org35d8875">Use The Default</a></li>
 </ul>
 </li>
-<li><a href="#orga0c17a8">Output the Random Hexadecimal</a></li>
-<li><a href="#org3b0cdcd">Sources</a></li>
+<li><a href="#org05f0557">Output the Random Hexadecimal</a></li>
+<li><a href="#orgd2082d5">Sources</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org09507c8" class="outline-2">
-<h2 id="org09507c8">The randomdhex Function</h2>
-<div class="outline-text-2" id="text-org09507c8">
+<div id="outline-container-org9a7919e" class="outline-2">
+<h2 id="org9a7919e">The randomdhex Function</h2>
+<div class="outline-text-2" id="text-org9a7919e">
 <p>
 This an alias function to output a random hexadecimal number. There are many ways to do this but I took this from <a href="https://stackoverflow.com/a/53668354">a StackOverFlow answer</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6c992a4" class="outline-2">
-<h2 id="org6c992a4">The Function Header</h2>
-<div class="outline-text-2" id="text-org6c992a4">
+<div id="outline-container-orgd4a14a7" class="outline-2">
+<h2 id="orgd4a14a7">The Function Header</h2>
+<div class="outline-text-2" id="text-orgd4a14a7">
 <p>
 I'm going to create a function named <code>randomhex</code> that takes one optional argument named <code>digits</code>.
 </p>
@@ -41,17 +41,17 @@ I'm going to create a function named <code>randomhex</code> that takes one optio
 </div>
 </div>
 
-<div id="outline-container-org40b614c" class="outline-2">
-<h2 id="org40b614c">Argument Check</h2>
-<div class="outline-text-2" id="text-org40b614c">
+<div id="outline-container-orge2c0391" class="outline-2">
+<h2 id="orge2c0391">Argument Check</h2>
+<div class="outline-text-2" id="text-orge2c0391">
 <p>
 The first thing to do is to check if the user passed in an argument and handle it if they did or use a default if they didn't.
 </p>
 </div>
 
-<div id="outline-container-org25eeb13" class="outline-3">
-<h3 id="org25eeb13">Check For An Argument</h3>
-<div class="outline-text-3" id="text-org25eeb13">
+<div id="outline-container-orgd55a0c2" class="outline-3">
+<h3 id="orgd55a0c2">Check For An Argument</h3>
+<div class="outline-text-3" id="text-orgd55a0c2">
 <p>
 The first check uses the <a href="https://fishshell.com/docs/current/cmds/test.html">test</a> command to see if the user passed in an argument. the <code>-n</code> flag tells it to check if there's a string with one or more characters in it in our <code>digits</code> variable.
 </p>
@@ -61,9 +61,9 @@ The first check uses the <a href="https://fishshell.com/docs/current/cmds/test.h
 </div>
 </div>
 
-<div id="outline-container-orgb287acb" class="outline-3">
-<h3 id="orgb287acb">Check If The Argument Is An Integer</h3>
-<div class="outline-text-3" id="text-orgb287acb">
+<div id="outline-container-org336ee8e" class="outline-3">
+<h3 id="org336ee8e">Check If The Argument Is An Integer</h3>
+<div class="outline-text-3" id="text-org336ee8e">
 <p>
 If the user <i>did</i> pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the <a href="https://fishshell.com/docs/current/cmds/string-match.html">string match</a> command and a regular expression to make sure it's only made up of one or more digits.
 </p>
@@ -73,11 +73,11 @@ If the user <i>did</i> pass in an argument but it can't be coerced to be an inte
 </div>
 </div>
 
-<div id="outline-container-org9642f03" class="outline-3">
-<h3 id="org9642f03">Set the Argument Value</h3>
-<div class="outline-text-3" id="text-org9642f03">
+<div id="outline-container-org5e2c3ce" class="outline-3">
+<h3 id="org5e2c3ce">Set the Argument Value</h3>
+<div class="outline-text-3" id="text-org5e2c3ce">
 <p>
-If the argument was an integer then we'll set the <code>BYTES</code> variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (<code>$digits/2</code>) to the <code>math</code> command. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the <code>ceil</code> argument to round up to the nearest integer.
+If the argument was an integer then we'll set the <code>BYTES</code> variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (<code>$digits/2</code>) to the <code>math</code> command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the <code>ceil</code> argument to round up to the nearest integer.
 </p>
 
 <div class="highlight"><pre><span></span><span class="nb">set</span><span class="w"> </span>BYTES<span class="w"> </span><span class="k">$(</span>math<span class="w"> </span>ceil<span class="w"> </span><span class="nv">$digits</span>/2<span class="k">)</span>
@@ -85,17 +85,18 @@ If the argument was an integer then we'll set the <code>BYTES</code> variable to
 </div>
 </div>
 
-<div id="outline-container-orgeaded92" class="outline-3">
-<h3 id="orgeaded92">Error Message</h3>
-<div class="outline-text-3" id="text-orgeaded92">
+<div id="outline-container-orgcffbf8f" class="outline-3">
+<h3 id="orgcffbf8f">Error Message</h3>
+<div class="outline-text-3" id="text-orgcffbf8f">
 <p>
 If the user passed in an argument but it doesn't look like an integer then we'll output a help message. I got the idea of using <code>printf</code> this way from <a href="https://stackoverflow.com/a/48249785">this StackOverflow answer</a>.
 </p>
 
 <ul class="org-ul">
-<li>One backslash continues the string</li>
-<li>Two backslashes with a space in-between them will insert an extra line and continue the string</li>
-<li>The space between the backslashes is important, fish will throw an error if you put <code>\\</code> instead of <code>\ \</code></li>
+<li>Each line after the first gets passend into the first string, substituted where <code>%s</code> is</li>
+<li>One backslash continues the input</li>
+<li>Two backslashes with a space in-between them will insert an extra line and continue the input</li>
+<li>The space between the backslashes is important - fish will throw an error if you put <code>\\</code> instead of <code>\ \</code></li>
 </ul>
 
 <div class="highlight"><pre><span></span><span class="k">else</span><span class="w"> </span><span class="c1"># the argument isn&#39;t an integer</span>
@@ -111,9 +112,9 @@ end<span class="w"> </span><span class="c1"># if is-integer check</span>
 </pre></div>
 </div>
 </div>
-<div id="outline-container-orgf46435a" class="outline-3">
-<h3 id="orgf46435a">Use The Default</h3>
-<div class="outline-text-3" id="text-orgf46435a">
+<div id="outline-container-org35d8875" class="outline-3">
+<h3 id="org35d8875">Use The Default</h3>
+<div class="outline-text-3" id="text-org35d8875">
 <p>
 If the user didn't pass in an argument then use a default of 8 hexadecimal digits.
 </p>
@@ -126,9 +127,9 @@ end
 </div>
 </div>
 
-<div id="outline-container-orga0c17a8" class="outline-2">
-<h2 id="orga0c17a8">Output the Random Hexadecimal</h2>
-<div class="outline-text-2" id="text-orga0c17a8">
+<div id="outline-container-org05f0557" class="outline-2">
+<h2 id="org05f0557">Output the Random Hexadecimal</h2>
+<div class="outline-text-2" id="text-org05f0557">
 <p>
 Now we output the random hexadecimal number that <a href="https://www.openssl.org/"><code>openssl</code></a> generates.
 </p>
@@ -138,9 +139,9 @@ Now we output the random hexadecimal number that <a href="https://www.openssl.or
 </div>
 </div>
 
-<div id="outline-container-org3b0cdcd" class="outline-2">
-<h2 id="org3b0cdcd">Sources</h2>
-<div class="outline-text-2" id="text-org3b0cdcd">
+<div id="outline-container-orgd2082d5" class="outline-2">
+<h2 id="orgd2082d5">Sources</h2>
+<div class="outline-text-2" id="text-orgd2082d5">
 <ul class="org-ul">
 <li>OpenSSL rand [Internet]. [cited 2023 Jun 5]. Available from: <a href="https://www.openssl.org/docs/man1.1.1/man1/rand.html">https://www.openssl.org/docs/man1.1.1/man1/rand.html</a></li>
 <li>How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: <a href="https://stackoverflow.com/q/34328759">https://stackoverflow.com/q/34328759</a></li>

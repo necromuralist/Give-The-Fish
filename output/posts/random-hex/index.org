@@ -91,11 +91,11 @@ If the user didn't pass in an argument then use a default of 8 hexadecimal digit
 #+begin_src sh :noweb-ref randomhex-default
 else # Set our bytes so we have 8 digits (double the bytes)
   set BYTES 4
-end
+end # setting the number of bytes
 #+end_src
 
 * Output the Random Hexadecimal
-Now we output the random hexadecimal number that [[https://www.openssl.org/][~openssl~]] generates.
+Finally we output the random hexadecimal number that [[https://www.openssl.org/][~openssl~]] generates.
 
 #+begin_src sh :noweb-ref randomhex-output
 echo $(openssl rand -hex $BYTES)

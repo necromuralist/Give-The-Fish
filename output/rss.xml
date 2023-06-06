@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fish Functions</title><link>https://necromuralist.github.io/Fish-Functions/</link><description>The functions of a fish.</description><atom:link href="https://necromuralist.github.io/Fish-Functions/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; &lt;p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"&gt;&lt;a property="dct:title" rel="cc:attributionURL" href="https://necromuralist.github.io/Ape-Iron/"&gt;Ape Iron&lt;/a&gt; by &lt;a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/necromuralist"&gt;The Cloistered Monkey&lt;/a&gt; is licensed under &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Tue, 06 Jun 2023 01:52:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Random Hex</title><link>https://necromuralist.github.io/Fish-Functions/posts/random-hex/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fish Functions</title><link>https://necromuralist.github.io/Fish-Functions/</link><description>The functions of a fish.</description><atom:link href="https://necromuralist.github.io/Fish-Functions/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; &lt;p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"&gt;&lt;a property="dct:title" rel="cc:attributionURL" href="https://necromuralist.github.io/Ape-Iron/"&gt;Ape Iron&lt;/a&gt; by &lt;a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/necromuralist"&gt;The Cloistered Monkey&lt;/a&gt; is licensed under &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Tue, 06 Jun 2023 02:27:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Random Hex</title><link>https://necromuralist.github.io/Fish-Functions/posts/random-hex/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org9a7919e"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd4a14a7"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orge2c0391"&gt;Argument Check&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgba24faf"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org1cc0743"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org99da7fc"&gt;Argument Check&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd55a0c2"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org336ee8e"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org5e2c3ce"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgcffbf8f"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org35d8875"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orge574406"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgc051334"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org07a0c91"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgb0a50f3"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgbcd6e54"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org05f0557"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd2082d5"&gt;Sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org9fb34aa"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgce2e01d"&gt;Sources&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org9a7919e" class="outline-2"&gt;
-&lt;h2 id="org9a7919e"&gt;The randomdhex Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9a7919e"&gt;
+&lt;div id="outline-container-orgba24faf" class="outline-2"&gt;
+&lt;h2 id="orgba24faf"&gt;The randomdhex Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgba24faf"&gt;
 &lt;p&gt;
 This an alias function to output a random hexadecimal number. There are many ways to do this but I took this from &lt;a href="https://stackoverflow.com/a/53668354"&gt;a StackOverFlow answer&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd4a14a7" class="outline-2"&gt;
-&lt;h2 id="orgd4a14a7"&gt;The Function Header&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd4a14a7"&gt;
+&lt;div id="outline-container-org1cc0743" class="outline-2"&gt;
+&lt;h2 id="org1cc0743"&gt;The Function Header&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1cc0743"&gt;
 &lt;p&gt;
 I'm going to create a function named &lt;code&gt;randomhex&lt;/code&gt; that takes one optional argument named &lt;code&gt;digits&lt;/code&gt;.
 &lt;/p&gt;
@@ -42,17 +42,17 @@ I'm going to create a function named &lt;code&gt;randomhex&lt;/code&gt; that tak
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge2c0391" class="outline-2"&gt;
-&lt;h2 id="orge2c0391"&gt;Argument Check&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge2c0391"&gt;
+&lt;div id="outline-container-org99da7fc" class="outline-2"&gt;
+&lt;h2 id="org99da7fc"&gt;Argument Check&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org99da7fc"&gt;
 &lt;p&gt;
 The first thing to do is to check if the user passed in an argument and handle it if they did or use a default if they didn't.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd55a0c2" class="outline-3"&gt;
-&lt;h3 id="orgd55a0c2"&gt;Check For An Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd55a0c2"&gt;
+&lt;div id="outline-container-orge574406" class="outline-3"&gt;
+&lt;h3 id="orge574406"&gt;Check For An Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge574406"&gt;
 &lt;p&gt;
 The first check uses the &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;test&lt;/a&gt; command to see if the user passed in an argument. the &lt;code&gt;-n&lt;/code&gt; flag tells it to check if there's a string with one or more characters in it in our &lt;code&gt;digits&lt;/code&gt; variable.
 &lt;/p&gt;
@@ -62,9 +62,9 @@ The first check uses the &lt;a href="https://fishshell.com/docs/current/cmds/tes
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org336ee8e" class="outline-3"&gt;
-&lt;h3 id="org336ee8e"&gt;Check If The Argument Is An Integer&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org336ee8e"&gt;
+&lt;div id="outline-container-orgc051334" class="outline-3"&gt;
+&lt;h3 id="orgc051334"&gt;Check If The Argument Is An Integer&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc051334"&gt;
 &lt;p&gt;
 If the user &lt;i&gt;did&lt;/i&gt; pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;string match&lt;/a&gt; command and a regular expression to make sure it's only made up of one or more digits.
 &lt;/p&gt;
@@ -74,9 +74,9 @@ If the user &lt;i&gt;did&lt;/i&gt; pass in an argument but it can't be coerced t
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5e2c3ce" class="outline-3"&gt;
-&lt;h3 id="org5e2c3ce"&gt;Set the Argument Value&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5e2c3ce"&gt;
+&lt;div id="outline-container-org07a0c91" class="outline-3"&gt;
+&lt;h3 id="org07a0c91"&gt;Set the Argument Value&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org07a0c91"&gt;
 &lt;p&gt;
 If the argument was an integer then we'll set the &lt;code&gt;BYTES&lt;/code&gt; variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (&lt;code&gt;$digits/2&lt;/code&gt;) to the &lt;code&gt;math&lt;/code&gt; command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the &lt;code&gt;ceil&lt;/code&gt; argument to round up to the nearest integer.
 &lt;/p&gt;
@@ -86,9 +86,9 @@ If the argument was an integer then we'll set the &lt;code&gt;BYTES&lt;/code&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcffbf8f" class="outline-3"&gt;
-&lt;h3 id="orgcffbf8f"&gt;Error Message&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcffbf8f"&gt;
+&lt;div id="outline-container-orgb0a50f3" class="outline-3"&gt;
+&lt;h3 id="orgb0a50f3"&gt;Error Message&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb0a50f3"&gt;
 &lt;p&gt;
 If the user passed in an argument but it doesn't look like an integer then we'll output a help message. I got the idea of using &lt;code&gt;printf&lt;/code&gt; this way from &lt;a href="https://stackoverflow.com/a/48249785"&gt;this StackOverflow answer&lt;/a&gt;.
 &lt;/p&gt;
@@ -113,26 +113,26 @@ end&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# if is-integer ch
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org35d8875" class="outline-3"&gt;
-&lt;h3 id="org35d8875"&gt;Use The Default&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org35d8875"&gt;
+&lt;div id="outline-container-orgbcd6e54" class="outline-3"&gt;
+&lt;h3 id="orgbcd6e54"&gt;Use The Default&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbcd6e54"&gt;
 &lt;p&gt;
 If the user didn't pass in an argument then use a default of 8 hexadecimal digits.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Set our bytes so we have 8 digits (double the bytes)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;BYTES&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;
-end
+end&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# setting the number of bytes&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org05f0557" class="outline-2"&gt;
-&lt;h2 id="org05f0557"&gt;Output the Random Hexadecimal&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org05f0557"&gt;
+&lt;div id="outline-container-org9fb34aa" class="outline-2"&gt;
+&lt;h2 id="org9fb34aa"&gt;Output the Random Hexadecimal&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9fb34aa"&gt;
 &lt;p&gt;
-Now we output the random hexadecimal number that &lt;a href="https://www.openssl.org/"&gt;&lt;code&gt;openssl&lt;/code&gt;&lt;/a&gt; generates.
+Finally we output the random hexadecimal number that &lt;a href="https://www.openssl.org/"&gt;&lt;code&gt;openssl&lt;/code&gt;&lt;/a&gt; generates.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;openssl&lt;span class="w"&gt; &lt;/span&gt;rand&lt;span class="w"&gt; &lt;/span&gt;-hex&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$BYTES&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
@@ -140,9 +140,9 @@ Now we output the random hexadecimal number that &lt;a href="https://www.openssl
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd2082d5" class="outline-2"&gt;
-&lt;h2 id="orgd2082d5"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd2082d5"&gt;
+&lt;div id="outline-container-orgce2e01d" class="outline-2"&gt;
+&lt;h2 id="orgce2e01d"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgce2e01d"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;OpenSSL rand [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://www.openssl.org/docs/man1.1.1/man1/rand.html"&gt;https://www.openssl.org/docs/man1.1.1/man1/rand.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: &lt;a href="https://stackoverflow.com/q/34328759"&gt;https://stackoverflow.com/q/34328759&lt;/a&gt;&lt;/li&gt;
