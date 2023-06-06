@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8">
+<meta content="A function to create random hexadecimal numbers." name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Random Hex | Fish Functions</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<meta content="Nikola (getnikola.com)" name="generator">
+<link href="../../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
+<link href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="../../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
+<link href="../../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
+<link href="../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../../site.webmanifest" rel="manifest">
+<meta content="Cloistered Monkey" name="author">
+<meta content="Fish Functions" property="og:site_name">
+<meta content="Random Hex" property="og:title">
+<meta content="https://necromuralist.github.io/Fish-Functions/posts/random-hex/" property="og:url">
+<meta content="A function to create random hexadecimal numbers." property="og:description">
+<meta content="article" property="og:type">
+<meta content="2023-06-05T17:30:53-07:00" property="article:published_time">
+<meta content="randomness" property="article:tag">
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-light bg-light">
+<div class="container"><!-- This keeps the margins nice -->
+ <a class="navbar-brand" href="../../"><span id="blog-title">Fish Functions</span></a> <button aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="bs-navbar">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="../../archive.html">Archive</a></li>
+<li class="nav-item"><a class="nav-link" href="../../categories/">Tags</a></li>
+<li class="nav-item"><a class="nav-link" href="../../rss.xml">RSS feed</a></li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Pages</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="https://necromuralist.github.io/">Cloistered Monkey</a></div>
+</li>
+</ul>
+<!-- DuckDuckGo custom search -->
+<form action="https://duckduckgo.com/" class="navbar-form pull-left" id="search" method="get" name="search"><input name="sites" type="hidden" value="https://necromuralist.github.io/Fish-Functions/"><input name="k8" type="hidden" value="#444444"><input name="k9" type="hidden" value="#D51920"><input name="kt" type="hidden" value="h"><input class="span2" maxlength="255" name="q" placeholder="Search…" type="text"><input style="visibility: hidden;display:none" type="submit" value="DuckDuckGo Search"></form>
+<!-- End of custom search -->
+<ul class="navbar-nav navbar-right">
+<li class="nav-item"><a class="nav-link" href="index.org" id="sourcelink">Source</a></li>
+</ul>
+</div>
+<!-- /.navbar-collapse --></div>
+<!-- /.container --></nav>
+<!-- End of Menubar -->
+<div class="container" id="content" role="main">
+<div class="body-content"><!--Body content-->
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href=".">Random Hex</a></h1>
+<div class="metadata">
+<p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2023-06-05T17:30:53-07:00" itemprop="datePublished" title="2023-06-05 17:30">2023-06-05 17:30</time></a></p>
+<p class="sourceline"><a class="sourcelink" href="index.org">Source</a></p>
+</div>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9a7919e">The randomdhex Function</a></li>
+<li><a href="#orgd4a14a7">The Function Header</a></li>
+<li><a href="#orge2c0391">Argument Check</a>
+<ul>
+<li><a href="#orgd55a0c2">Check For An Argument</a></li>
+<li><a href="#org336ee8e">Check If The Argument Is An Integer</a></li>
+<li><a href="#org5e2c3ce">Set the Argument Value</a></li>
+<li><a href="#orgcffbf8f">Error Message</a></li>
+<li><a href="#org35d8875">Use The Default</a></li>
+</ul>
+</li>
+<li><a href="#org05f0557">Output the Random Hexadecimal</a></li>
+<li><a href="#orgd2082d5">Sources</a></li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org9a7919e">
+<h2 id="org9a7919e">The randomdhex Function</h2>
+<div class="outline-text-2" id="text-org9a7919e">
+<p>This an alias function to output a random hexadecimal number. There are many ways to do this but I took this from <a href="https://stackoverflow.com/a/53668354">a StackOverFlow answer</a>.</p>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgd4a14a7">
+<h2 id="orgd4a14a7">The Function Header</h2>
+<div class="outline-text-2" id="text-orgd4a14a7">
+<p>I'm going to create a function named <code>randomhex</code> that takes one optional argument named <code>digits</code>.</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span><span class="w"> </span>randomhex<span class="w"> </span>-d<span class="w"> </span><span class="s2">"random hex string"</span><span class="w"> </span>--argument-names<span class="w"> </span>digits
+</pre></div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orge2c0391">
+<h2 id="orge2c0391">Argument Check</h2>
+<div class="outline-text-2" id="text-orge2c0391">
+<p>The first thing to do is to check if the user passed in an argument and handle it if they did or use a default if they didn't.</p>
+</div>
+<div class="outline-3" id="outline-container-orgd55a0c2">
+<h3 id="orgd55a0c2">Check For An Argument</h3>
+<div class="outline-text-3" id="text-orgd55a0c2">
+<p>The first check uses the <a href="https://fishshell.com/docs/current/cmds/test.html">test</a> command to see if the user passed in an argument. the <code>-n</code> flag tells it to check if there's a string with one or more characters in it in our <code>digits</code> variable.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$digits</span><span class="s2">"</span><span class="w"> </span><span class="c1"># then an argument was passed in</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org336ee8e">
+<h3 id="org336ee8e">Check If The Argument Is An Integer</h3>
+<div class="outline-text-3" id="text-org336ee8e">
+<p>If the user <i>did</i> pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the <a href="https://fishshell.com/docs/current/cmds/string-match.html">string match</a> command and a regular expression to make sure it's only made up of one or more digits.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="o">(</span>string<span class="w"> </span>match<span class="w"> </span>--regex<span class="w"> </span><span class="s2">"^[0-9]+\$"</span><span class="w"> </span><span class="nv">$digits</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org5e2c3ce">
+<h3 id="org5e2c3ce">Set the Argument Value</h3>
+<div class="outline-text-3" id="text-org5e2c3ce">
+<p>If the argument was an integer then we'll set the <code>BYTES</code> variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (<code>$digits/2</code>) to the <code>math</code> command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the <code>ceil</code> argument to round up to the nearest integer.</p>
+<div class="highlight">
+<pre><span></span><span class="nb">set</span><span class="w"> </span>BYTES<span class="w"> </span><span class="k">$(</span>math<span class="w"> </span>ceil<span class="w"> </span><span class="nv">$digits</span>/2<span class="k">)</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgcffbf8f">
+<h3 id="orgcffbf8f">Error Message</h3>
+<div class="outline-text-3" id="text-orgcffbf8f">
+<p>If the user passed in an argument but it doesn't look like an integer then we'll output a help message. I got the idea of using <code>printf</code> this way from <a href="https://stackoverflow.com/a/48249785">this StackOverflow answer</a>.</p>
+<ul class="org-ul">
+<li>Each line after the first gets passend into the first string, substituted where <code>%s</code> is</li>
+<li>One backslash continues the input</li>
+<li>Two backslashes with a space in-between them will insert an extra line and continue the input</li>
+<li>The space between the backslashes is important - fish will throw an error if you put <code>\\</code> instead of <code>\ \</code></li>
+</ul>
+<div class="highlight">
+<pre><span></span><span class="k">else</span><span class="w"> </span><span class="c1"># the argument isn't an integer</span>
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span><span class="s2">"\t%s\n"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="s2">"Output a random hexadecimal number"</span><span class="w"> </span><span class="se">\ \</span>
+<span class="w">   </span><span class="s2">"Usage:"</span><span class="w"> </span><span class="se">\ \</span>
+<span class="w">   </span><span class="s2">"randomhex &lt;digits&gt;"</span><span class="w"> </span><span class="se">\ \</span>
+<span class="w">   </span><span class="s2">"Optional argument:"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="s2">" - Number of digits (will round up to even number)"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="s2">"   Argument must be an integer (default=8)."</span>
+<span class="w">   </span><span class="k">return</span>
+end<span class="w"> </span><span class="c1"># if is-integer check</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org35d8875">
+<h3 id="org35d8875">Use The Default</h3>
+<div class="outline-text-3" id="text-org35d8875">
+<p>If the user didn't pass in an argument then use a default of 8 hexadecimal digits.</p>
+<div class="highlight">
+<pre><span></span><span class="k">else</span><span class="w"> </span><span class="c1"># Set our bytes so we have 8 digits (double the bytes)</span>
+<span class="w">  </span><span class="nb">set</span><span class="w"> </span>BYTES<span class="w"> </span><span class="m">4</span>
+end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org05f0557">
+<h2 id="org05f0557">Output the Random Hexadecimal</h2>
+<div class="outline-text-2" id="text-org05f0557">
+<p>Now we output the random hexadecimal number that <a href="https://www.openssl.org/"><code>openssl</code></a> generates.</p>
+<div class="highlight">
+<pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="nv">$BYTES</span><span class="k">)</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgd2082d5">
+<h2 id="orgd2082d5">Sources</h2>
+<div class="outline-text-2" id="text-orgd2082d5">
+<ul class="org-ul">
+<li>OpenSSL rand [Internet]. [cited 2023 Jun 5]. Available from: <a href="https://www.openssl.org/docs/man1.1.1/man1/rand.html">https://www.openssl.org/docs/man1.1.1/man1/rand.html</a></li>
+<li>How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: <a href="https://stackoverflow.com/q/34328759">https://stackoverflow.com/q/34328759</a></li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="postpromonav">
+<nav>
+<ul class="tags" itemprop="keywords">
+<li><a class="tag p-category" href="../../categories/randomness/" rel="tag">randomness</a></li>
+</ul>
+</nav>
+</aside>
+</article>
+<!--End of body content-->
+<footer id="footer">Contents © 2023 Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a href="https://necromuralist.github.io/Ape-Iron/" property="dct:title" rel="cc:attributionURL">Ape Iron</a> by <a href="https://github.com/necromuralist" property="cc:attributionName" rel="cc:attributionURL dct:creator">The Cloistered Monkey</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" rel="license noopener noreferrer" style="display:inline-block;" target="_blank">CC BY 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"></a></p>
+</footer>
+</div>
+</div>
+<script src="../../assets/js/all-nocdn.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+</script>
+</body>
+</html>

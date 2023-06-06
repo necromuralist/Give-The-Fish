@@ -1,28 +1,20 @@
-# generate a random hexidecimal string
-# See:
-# https://www.openssl.org/docs/man1.1.1/man1/openssl-rand.html
-# https://stackoverflow.com/a/53668354
-
+# generate a random hexadecimal string
 function randomhex -d "random hex string" --argument-names digits
-
-    if test -n "$digits" # then an argument was passed in
-        if test (string match --regex "^[0-9]+\$" $digits)
-            set BYTES $(math ceil $digits/2)
-        else # the argument isn't an integer
-            echo "Output a random hexidecimal number"
-            echo
-            echo "Usage:"
-            echo
-            echo "randomhex <digits>"
-            echo
-            echo "Optional argument:"
-            echo " - Number of digits (will round up to even number)"
-            echo "   Argument must be an integer (default=8)."
-            return
-         end # if is-integer check
-     else
-         # argument is 1/2 the number of digits output 
-         set BYTES 4
+  if test -n "$digits" # then an argument was passed in
+    if test (string match --regex "^[0-9]+\$" $digits)
+      set BYTES $(math ceil $digits/2)
+      else # the argument isn't an integer
+        printf "\t%s\n" \
+         "Output a random hexadecimal number" \ \
+         "Usage:" \ \
+         "randomhex <digits>" \ \
+         "Optional argument:" \
+         " - Number of digits (will round up to even number)" \
+         "   Argument must be an integer (default=8)."
+         return
+      end # if is-integer check
+    else # Set our bytes so we have 8 digits (double the bytes)
+      set BYTES 4
     end
     echo $(openssl rand -hex $BYTES)
 end
