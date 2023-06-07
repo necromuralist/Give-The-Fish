@@ -1,2 +1,4 @@
 .stfolder
-
+cache/
+output/
+.doit.db

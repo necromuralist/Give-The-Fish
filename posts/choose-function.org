@@ -1,0 +1,140 @@
+#+BEGIN_COMMENT
+.. title: Choose Function
+.. slug: choose-function
+.. date: 2023-06-07 11:30:31 UTC-07:00
+.. tags: function,random,choice,fish
+.. category: Randomness
+.. link: 
+.. description: Choose an item from a text file.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+* Choose
+
+An alias function that will pick a random line (or lines) out of a text file.
+
+#+begin_src sh :tangle ../functions/choose.fish :exports none
+# Choose random lines from a file #
+<<choose-declaration>>
+
+  # a bold-red line for error messages
+  <<choose-error>>
+
+  # assume something bad (0) until the checks change it
+  <<choose-okay>>
+
+  # check the "lines" argument
+  <<choose-lines>>
+
+  # check the filename argument and pull the line if okay
+  <<choose-filename>>
+  <<choose-error-message>>
+
+  # if one of the arguments was bad emit a help message
+  <<choose-help-message>>
+end # end choose
+#+end_src
+
+* The Function Declaration
+
+Our alias function (~choose~) takes one required argument that we'll assign to the variable ~filename~ and one optional argument ~lines~ to indicate the number of lines to pull.
+
+#+begin_src sh :noweb-ref choose-declaration
+function choose -d "Random line from a file." --argument-names filename lines
+#+end_src
+
+* The Error String
+
+I'm setting a string-format variable that I'll use to color error messages in bold red.
+
+#+begin_src sh :noweb-ref choose-error
+set ERROR "\x1b[31;1m\t%s\n\n\x1b[0m"
+#+end_src
+
+See [[https://stackoverflow.com/a/33206814][this stack overflow answer]] for more explanation of the codes. Basically the ~31;1m~ part turns on red (31) and bold (1) and ~0m~ resets it back to unbolded black text.
+
+* The Okay Variable
+This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
+
+#+begin_src sh :noweb-ref choose-okay
+set OKAY 0
+#+end_src
+
+I'm setting it to False so that it has to pass the checks in order to be unset.
+
+* Check the Number of Lines
+Unlike ~random~, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the ~shuf~ command later on.
+
+ - ~test -n "$lines"~ will return True if ~lines~ is non-empty so I negated it with ~!~ to return True if it's empty.
+
+#+begin_src sh :noweb-ref choose-lines
+if ! test -n "$lines"
+  set lines 1
+  set OKAY 1
+else if ! test (string match --regex "^[0-9]+\$" $lines)
+  set OKAY 0
+  printf $ERROR "Not a valid number of lines: '$lines'"
+else
+  set OKAY 1
+end
+#+end_src
+
+* If It's a Text File, Use It
+We'll be grabbing a line using the [[https://man7.org/linux/man-pages/man1/shuf.1.html][shuf]] command. ~shuf~ will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.
+
+To do the check I'm using the [[https://www.man7.org/linux/man-pages/man1/file.1.html][~file~]] command which will have the word "text" in the output if we give it a text file. Then I feed the output from ~file~ to the ~string match~ command. This command defaults to only return true if the whole string matches so I added a glob to both ends of the "text" string to match any string that contains it. So, in order to pass the test ~filename~ has to have the name of a text file or we won't match the output of the ~file~ command.
+
+First, though, we check if the ~lines~ argument was okay and if it was and ~filename~ passes its test then we can feed it to ~shuf~.
+
+#+begin_src sh :noweb-ref choose-filename
+if test $OKAY -ne 0; and test (string match "*text*" (file "$filename"))
+   shuf -n $lines $filename
+#+end_src
+
+- ~test $OKAY -ne 0~ will return True if OKAY != 0. It will return an error if OKAY holds something other than a number.
+- the ~; and~ syntax is a short-circuit syntax that won't run the second test if the first one fails.
+
+* Handle the Errors
+
+If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
+
+#+begin_src sh :noweb-ref choose-error-message
+else
+  if ! test -n "$filename"
+    printf $ERROR  "**Missing Filename**"
+  else if test $OKAY -ne 0
+    printf $ERROR "Invalid File: '$filename'"
+  end
+  set OKAY 0
+end # check filename
+#+end_src
+
+* Emit a Help Message
+
+If it had a valid number of lines and a valid filename then ~OKAY~ will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
+
+#+begin_src sh :noweb-ref choose-help-message
+if test $OKAY -eq 0     
+  printf "\t%s\n" \
+         "Output a random line or lines from a text file." \ \
+         "Usage:" \ \
+         "    choose <filename> [<number of lines>]"
+end # help message
+#+end_src
+
+* One Last Thing
+
+If the user passes in a flag as a filename this will get passed to the ~file~ command and in some cases this will cause it to emit a help message which will get passed to the ~shuf~ command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax, so hopefully it'll work okay.
+
+* Sources
+
+- string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: https://fishshell.com/docs/current/cmds/string-match.html
+
+- test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: https://fishshell.com/docs/current/cmds/test.html
+
+- shuf(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: https://man7.org/linux/man-pages/man1/shuf.1.html
+
+- file(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: https://www.man7.org/linux/man-pages/man1/file.1.html
