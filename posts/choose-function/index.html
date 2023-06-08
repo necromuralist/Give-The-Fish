@@ -67,24 +67,24 @@
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
-<div class="outline-2" id="outline-container-orgb76de31">
-<h2 id="orgb76de31">Choose</h2>
-<div class="outline-text-2" id="text-orgb76de31">
+<div class="outline-2" id="outline-container-orgc410d19">
+<h2 id="orgc410d19">Choose</h2>
+<div class="outline-text-2" id="text-orgc410d19">
 <p>An alias function that will pick a random line (or lines) out of a text file.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgc58561c">
-<h2 id="orgc58561c">The Function Declaration</h2>
-<div class="outline-text-2" id="text-orgc58561c">
+<div class="outline-2" id="outline-container-org0ef8ecf">
+<h2 id="org0ef8ecf">The Function Declaration</h2>
+<div class="outline-text-2" id="text-org0ef8ecf">
 <p>Our alias function (<code>choose</code>) takes one required argument that we'll assign to the variable <code>filename</code> and one optional argument <code>lines</code> to indicate the number of lines to pull.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span><span class="w"> </span>choose<span class="w"> </span>-d<span class="w"> </span><span class="s2">"Random line from a file."</span><span class="w"> </span>--argument-names<span class="w"> </span>filename<span class="w"> </span>lines
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5012bf1">
-<h2 id="org5012bf1">The Error String</h2>
-<div class="outline-text-2" id="text-org5012bf1">
+<div class="outline-2" id="outline-container-org69dc43f">
+<h2 id="org69dc43f">The Error String</h2>
+<div class="outline-text-2" id="text-org69dc43f">
 <p>I'm setting a string-format variable that I'll use to color error messages in bold red.</p>
 <div class="highlight">
 <pre><span></span><span class="nb">set</span><span class="w"> </span>ERROR<span class="w"> </span><span class="s2">"\x1b[31;1m\t%s\n\n\x1b[0m"</span>
@@ -92,9 +92,9 @@
 <p>See <a href="https://stackoverflow.com/a/33206814">this stack overflow answer</a> for more explanation of the codes. Basically the <code>31;1m</code> part turns on red (31) and bold (1) and <code>0m</code> resets it back to unbolded black text.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org47cc30c">
-<h2 id="org47cc30c">The Okay Variable</h2>
-<div class="outline-text-2" id="text-org47cc30c">
+<div class="outline-2" id="outline-container-org7b5c50c">
+<h2 id="org7b5c50c">The Okay Variable</h2>
+<div class="outline-text-2" id="text-org7b5c50c">
 <p>This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.</p>
 <div class="highlight">
 <pre><span></span><span class="nb">set</span><span class="w"> </span>OKAY<span class="w"> </span><span class="m">0</span>
@@ -102,9 +102,9 @@
 <p>I'm setting it to False so that it has to pass the checks in order to be unset.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgc5b442d">
-<h2 id="orgc5b442d">Check the Number of Lines</h2>
-<div class="outline-text-2" id="text-orgc5b442d">
+<div class="outline-2" id="outline-container-orgba5ecd1">
+<h2 id="orgba5ecd1">Check the Number of Lines</h2>
+<div class="outline-text-2" id="text-orgba5ecd1">
 <p>Unlike <code>random</code>, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the <code>shuf</code> command later on.</p>
 <ul class="org-ul">
 <li><code>test -n "$lines"</code> will return True if <code>lines</code> is non-empty so I negated it with <code>!</code> to return True if it's empty.</li>
@@ -122,9 +122,9 @@ end
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org13775fe">
-<h2 id="org13775fe">If It's a Text File, Use It</h2>
-<div class="outline-text-2" id="text-org13775fe">
+<div class="outline-2" id="outline-container-org9dd97b6">
+<h2 id="org9dd97b6">If It's a Text File, Use It</h2>
+<div class="outline-text-2" id="text-org9dd97b6">
 <p>We'll be grabbing a line using the <a href="https://man7.org/linux/man-pages/man1/shuf.1.html">shuf</a> command. <code>shuf</code> will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.</p>
 <p>To do the check I'm using the <a href="https://www.man7.org/linux/man-pages/man1/file.1.html"><code>file</code></a> command which will have the word "text" in the output if we give it a text file. Then I feed the output from <code>file</code> to the <code>string match</code> command. This command defaults to only return true if the whole string matches so I added a glob to both ends of the "text" string to match any string that contains it. So, in order to pass the test <code>filename</code> has to have the name of a text file or we won't match the output of the <code>file</code> command.</p>
 <p>First, though, we check if the <code>lines</code> argument was okay and if it was and <code>filename</code> passes its test then we can feed it to <code>shuf</code>.</p>
@@ -138,9 +138,9 @@ end
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org291fe71">
-<h2 id="org291fe71">Handle the Errors</h2>
-<div class="outline-text-2" id="text-org291fe71">
+<div class="outline-2" id="outline-container-org898e495">
+<h2 id="org898e495">Handle the Errors</h2>
+<div class="outline-text-2" id="text-org898e495">
 <p>If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number</p>
 <div class="highlight">
 <pre><span></span><span class="k">else</span>
@@ -154,9 +154,9 @@ end<span class="w"> </span><span class="c1"># check filename</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orge150313">
-<h2 id="orge150313">Emit a Help Message</h2>
-<div class="outline-text-2" id="text-orge150313">
+<div class="outline-2" id="outline-container-orgfdc7430">
+<h2 id="orgfdc7430">Emit a Help Message</h2>
+<div class="outline-text-2" id="text-orgfdc7430">
 <p>If it had a valid number of lines and a valid filename then <code>OKAY</code> will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="nv">$OKAY</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w">     </span>
@@ -168,15 +168,15 @@ end<span class="w"> </span><span class="c1"># help message</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org37fba79">
-<h2 id="org37fba79">One Last Thing</h2>
-<div class="outline-text-2" id="text-org37fba79">
-<p>If the user passes in a flag as a filename this will get passed to the <code>file</code> command and in some cases this will cause it to emit a help message which will get passed to the <code>shuf</code> command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax, so hopefully it'll work okay.</p>
+<div class="outline-2" id="outline-container-org38a4db9">
+<h2 id="org38a4db9">One Last Thing</h2>
+<div class="outline-text-2" id="text-org38a4db9">
+<p>If the user passes in a flag as a filename this will get passed to the <code>file</code> command and in some cases this will cause it to emit a help message which will get passed to the <code>shuf</code> command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for <code>shuf</code>, so hopefully it'll work okay.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgda71356">
-<h2 id="orgda71356">Sources</h2>
-<div class="outline-text-2" id="text-orgda71356">
+<div class="outline-2" id="outline-container-org1be13d4">
+<h2 id="org1be13d4">Sources</h2>
+<div class="outline-text-2" id="text-org1be13d4">
 <ul class="org-ul">
 <li>string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: <a href="https://fishshell.com/docs/current/cmds/string-match.html">https://fishshell.com/docs/current/cmds/string-match.html</a></li>
 <li>test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: <a href="https://fishshell.com/docs/current/cmds/test.html">https://fishshell.com/docs/current/cmds/test.html</a></li>

@@ -127,7 +127,7 @@ end # help message
 
 * One Last Thing
 
-If the user passes in a flag as a filename this will get passed to the ~file~ command and in some cases this will cause it to emit a help message which will get passed to the ~shuf~ command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax, so hopefully it'll work okay.
+If the user passes in a flag as a filename this will get passed to the ~file~ command and in some cases this will cause it to emit a help message which will get passed to the ~shuf~ command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for ~shuf~, so hopefully it'll work okay.
 
 * Sources
 

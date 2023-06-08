@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fish Functions (Posts about fish)</title><link>https://necromuralist.github.io/Fish-Functions/</link><description></description><atom:link href="https://necromuralist.github.io/Fish-Functions/categories/fish.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; &lt;p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"&gt;&lt;a property="dct:title" rel="cc:attributionURL" href="https://necromuralist.github.io/Ape-Iron/"&gt;Ape Iron&lt;/a&gt; by &lt;a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/necromuralist"&gt;The Cloistered Monkey&lt;/a&gt; is licensed under &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Wed, 07 Jun 2023 22:40:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orgb76de31" class="outline-2"&gt;
-&lt;h2 id="orgb76de31"&gt;Choose&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb76de31"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fish Functions (Posts about fish)</title><link>https://necromuralist.github.io/Fish-Functions/</link><description></description><atom:link href="https://necromuralist.github.io/Fish-Functions/categories/fish.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; &lt;p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"&gt;&lt;a property="dct:title" rel="cc:attributionURL" href="https://necromuralist.github.io/Ape-Iron/"&gt;Ape Iron&lt;/a&gt; by &lt;a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/necromuralist"&gt;The Cloistered Monkey&lt;/a&gt; is licensed under &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Thu, 08 Jun 2023 00:36:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orgc410d19" class="outline-2"&gt;
+&lt;h2 id="orgc410d19"&gt;Choose&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc410d19"&gt;
 &lt;p&gt;
 An alias function that will pick a random line (or lines) out of a text file.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc58561c" class="outline-2"&gt;
-&lt;h2 id="orgc58561c"&gt;The Function Declaration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc58561c"&gt;
+&lt;div id="outline-container-org0ef8ecf" class="outline-2"&gt;
+&lt;h2 id="org0ef8ecf"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0ef8ecf"&gt;
 &lt;p&gt;
 Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument that we'll assign to the variable &lt;code&gt;filename&lt;/code&gt; and one optional argument &lt;code&gt;lines&lt;/code&gt; to indicate the number of lines to pull.
 &lt;/p&gt;
@@ -20,9 +20,9 @@ Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5012bf1" class="outline-2"&gt;
-&lt;h2 id="org5012bf1"&gt;The Error String&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5012bf1"&gt;
+&lt;div id="outline-container-org69dc43f" class="outline-2"&gt;
+&lt;h2 id="org69dc43f"&gt;The Error String&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org69dc43f"&gt;
 &lt;p&gt;
 I'm setting a string-format variable that I'll use to color error messages in bold red.
 &lt;/p&gt;
@@ -36,9 +36,9 @@ See &lt;a href="https://stackoverflow.com/a/33206814"&gt;this stack overflow ans
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org47cc30c" class="outline-2"&gt;
-&lt;h2 id="org47cc30c"&gt;The Okay Variable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org47cc30c"&gt;
+&lt;div id="outline-container-org7b5c50c" class="outline-2"&gt;
+&lt;h2 id="org7b5c50c"&gt;The Okay Variable&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7b5c50c"&gt;
 &lt;p&gt;
 This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
 &lt;/p&gt;
@@ -52,9 +52,9 @@ I'm setting it to False so that it has to pass the checks in order to be unset.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc5b442d" class="outline-2"&gt;
-&lt;h2 id="orgc5b442d"&gt;Check the Number of Lines&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc5b442d"&gt;
+&lt;div id="outline-container-orgba5ecd1" class="outline-2"&gt;
+&lt;h2 id="orgba5ecd1"&gt;Check the Number of Lines&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgba5ecd1"&gt;
 &lt;p&gt;
 Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the &lt;code&gt;shuf&lt;/code&gt; command later on.
 &lt;/p&gt;
@@ -76,9 +76,9 @@ end
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org13775fe" class="outline-2"&gt;
-&lt;h2 id="org13775fe"&gt;If It's a Text File, Use It&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org13775fe"&gt;
+&lt;div id="outline-container-org9dd97b6" class="outline-2"&gt;
+&lt;h2 id="org9dd97b6"&gt;If It's a Text File, Use It&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9dd97b6"&gt;
 &lt;p&gt;
 We'll be grabbing a line using the &lt;a href="https://man7.org/linux/man-pages/man1/shuf.1.html"&gt;shuf&lt;/a&gt; command. &lt;code&gt;shuf&lt;/code&gt; will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.
 &lt;/p&gt;
@@ -102,9 +102,9 @@ First, though, we check if the &lt;code&gt;lines&lt;/code&gt; argument was okay 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org291fe71" class="outline-2"&gt;
-&lt;h2 id="org291fe71"&gt;Handle the Errors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org291fe71"&gt;
+&lt;div id="outline-container-org898e495" class="outline-2"&gt;
+&lt;h2 id="org898e495"&gt;Handle the Errors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org898e495"&gt;
 &lt;p&gt;
 If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
 &lt;/p&gt;
@@ -121,9 +121,9 @@ end&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# check filename&l
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge150313" class="outline-2"&gt;
-&lt;h2 id="orge150313"&gt;Emit a Help Message&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge150313"&gt;
+&lt;div id="outline-container-orgfdc7430" class="outline-2"&gt;
+&lt;h2 id="orgfdc7430"&gt;Emit a Help Message&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfdc7430"&gt;
 &lt;p&gt;
 If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;/code&gt; will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
 &lt;/p&gt;
@@ -138,18 +138,18 @@ end&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# help message&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org37fba79" class="outline-2"&gt;
-&lt;h2 id="org37fba79"&gt;One Last Thing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org37fba79"&gt;
+&lt;div id="outline-container-org38a4db9" class="outline-2"&gt;
+&lt;h2 id="org38a4db9"&gt;One Last Thing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org38a4db9"&gt;
 &lt;p&gt;
-If the user passes in a flag as a filename this will get passed to the &lt;code&gt;file&lt;/code&gt; command and in some cases this will cause it to emit a help message which will get passed to the &lt;code&gt;shuf&lt;/code&gt; command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax, so hopefully it'll work okay.
+If the user passes in a flag as a filename this will get passed to the &lt;code&gt;file&lt;/code&gt; command and in some cases this will cause it to emit a help message which will get passed to the &lt;code&gt;shuf&lt;/code&gt; command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for &lt;code&gt;shuf&lt;/code&gt;, so hopefully it'll work okay.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgda71356" class="outline-2"&gt;
-&lt;h2 id="orgda71356"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgda71356"&gt;
+&lt;div id="outline-container-org1be13d4" class="outline-2"&gt;
+&lt;h2 id="org1be13d4"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1be13d4"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 
