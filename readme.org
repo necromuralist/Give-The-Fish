@@ -1,5 +1,10 @@
-#+TITLE: Fish Functions
+#+TITLE: Give the Fish
 
 
-This is a repository of fish functions that I'm building and sharing amongst my machines. I've started documenting it [[https://necromuralist.github.io/Fish-Functions/][on gihtub-pages]].
+This is a repository of fish functions that I'm building and sharing amongst my machines. I've started documenting it [[https://necromuralist.github.io/Give-The-Fish/][on gihtub-pages]].
 
+From Google Translate (English to Latin and back again):
+
+  Fish Functions -> Pisces Munera -> Fish Gifts -> Pisces Dona -> Give the Fish -> Dat Pisces <--> Gives Fish
+
+It seems to settle on "Gives Fish" but I like /Give the Fish/ better.
