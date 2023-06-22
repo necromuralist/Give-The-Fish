@@ -5,7 +5,7 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Thu, 22 Jun 2023 23:12:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Thu, 22 Jun 2023 23:17:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
 This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;.
 &lt;/p&gt;
 
@@ -185,13 +185,13 @@ end
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org8f5212d" class="outline-2"&gt;
-&lt;h2 id="org8f5212d"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8f5212d"&gt;
+&lt;div id="outline-container-org4b377b6" class="outline-2"&gt;
+&lt;h2 id="org4b377b6"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4b377b6"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org401aef7" class="outline-3"&gt;
-&lt;h3 id="org401aef7"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org401aef7"&gt;
+&lt;div id="outline-container-orgbadb8f9" class="outline-3"&gt;
+&lt;h3 id="orgbadb8f9"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbadb8f9"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -202,14 +202,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbc3dc87" class="outline-3"&gt;
-&lt;h3 id="orgbc3dc87"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgbc3dc87"&gt;
+&lt;div id="outline-container-org7698fa5" class="outline-3"&gt;
+&lt;h3 id="org7698fa5"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7698fa5"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard" id="org4c8b01a"&gt;
+&lt;div class="notecard" id="org2bb44fe"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;
@@ -217,18 +217,18 @@ There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will i
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orgc410d19" class="outline-2"&gt;
-&lt;h2 id="orgc410d19"&gt;Choose&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc410d19"&gt;
+&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org68f61de" class="outline-2"&gt;
+&lt;h2 id="org68f61de"&gt;Choose&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org68f61de"&gt;
 &lt;p&gt;
 An alias function that will pick a random line (or lines) out of a text file.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0ef8ecf" class="outline-2"&gt;
-&lt;h2 id="org0ef8ecf"&gt;The Function Declaration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0ef8ecf"&gt;
+&lt;div id="outline-container-org270b7c6" class="outline-2"&gt;
+&lt;h2 id="org270b7c6"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org270b7c6"&gt;
 &lt;p&gt;
 Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument that we'll assign to the variable &lt;code&gt;filename&lt;/code&gt; and one optional argument &lt;code&gt;lines&lt;/code&gt; to indicate the number of lines to pull.
 &lt;/p&gt;
@@ -238,9 +238,9 @@ Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org69dc43f" class="outline-2"&gt;
-&lt;h2 id="org69dc43f"&gt;The Error String&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org69dc43f"&gt;
+&lt;div id="outline-container-orgb7ceb1c" class="outline-2"&gt;
+&lt;h2 id="orgb7ceb1c"&gt;The Error String&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb7ceb1c"&gt;
 &lt;p&gt;
 I'm setting a string-format variable that I'll use to color error messages in bold red.
 &lt;/p&gt;
@@ -254,9 +254,9 @@ See &lt;a href="https://stackoverflow.com/a/33206814"&gt;this stack overflow ans
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7b5c50c" class="outline-2"&gt;
-&lt;h2 id="org7b5c50c"&gt;The Okay Variable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7b5c50c"&gt;
+&lt;div id="outline-container-orgd5418d4" class="outline-2"&gt;
+&lt;h2 id="orgd5418d4"&gt;The Okay Variable&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd5418d4"&gt;
 &lt;p&gt;
 This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
 &lt;/p&gt;
@@ -270,9 +270,9 @@ I'm setting it to False so that it has to pass the checks in order to be unset.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgba5ecd1" class="outline-2"&gt;
-&lt;h2 id="orgba5ecd1"&gt;Check the Number of Lines&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgba5ecd1"&gt;
+&lt;div id="outline-container-org67ed966" class="outline-2"&gt;
+&lt;h2 id="org67ed966"&gt;Check the Number of Lines&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org67ed966"&gt;
 &lt;p&gt;
 Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the &lt;code&gt;shuf&lt;/code&gt; command later on.
 &lt;/p&gt;
@@ -294,9 +294,9 @@ end
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9dd97b6" class="outline-2"&gt;
-&lt;h2 id="org9dd97b6"&gt;If It's a Text File, Use It&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9dd97b6"&gt;
+&lt;div id="outline-container-org4ad59b4" class="outline-2"&gt;
+&lt;h2 id="org4ad59b4"&gt;If It's a Text File, Use It&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4ad59b4"&gt;
 &lt;p&gt;
 We'll be grabbing a line using the &lt;a href="https://man7.org/linux/man-pages/man1/shuf.1.html"&gt;shuf&lt;/a&gt; command. &lt;code&gt;shuf&lt;/code&gt; will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.
 &lt;/p&gt;
@@ -320,9 +320,9 @@ First, though, we check if the &lt;code&gt;lines&lt;/code&gt; argument was okay 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org898e495" class="outline-2"&gt;
-&lt;h2 id="org898e495"&gt;Handle the Errors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org898e495"&gt;
+&lt;div id="outline-container-org0ca74f6" class="outline-2"&gt;
+&lt;h2 id="org0ca74f6"&gt;Handle the Errors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0ca74f6"&gt;
 &lt;p&gt;
 If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
 &lt;/p&gt;
@@ -339,9 +339,9 @@ end&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# check filename&l
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfdc7430" class="outline-2"&gt;
-&lt;h2 id="orgfdc7430"&gt;Emit a Help Message&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfdc7430"&gt;
+&lt;div id="outline-container-org49bace3" class="outline-2"&gt;
+&lt;h2 id="org49bace3"&gt;Emit a Help Message&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org49bace3"&gt;
 &lt;p&gt;
 If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;/code&gt; will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
 &lt;/p&gt;
@@ -356,18 +356,18 @@ end&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# help message&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org38a4db9" class="outline-2"&gt;
-&lt;h2 id="org38a4db9"&gt;One Last Thing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org38a4db9"&gt;
+&lt;div id="outline-container-org8b588cc" class="outline-2"&gt;
+&lt;h2 id="org8b588cc"&gt;One Last Thing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8b588cc"&gt;
 &lt;p&gt;
 If the user passes in a flag as a filename this will get passed to the &lt;code&gt;file&lt;/code&gt; command and in some cases this will cause it to emit a help message which will get passed to the &lt;code&gt;shuf&lt;/code&gt; command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for &lt;code&gt;shuf&lt;/code&gt;, so hopefully it'll work okay.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1be13d4" class="outline-2"&gt;
-&lt;h2 id="org1be13d4"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1be13d4"&gt;
+&lt;div id="outline-container-org08c372d" class="outline-2"&gt;
+&lt;h2 id="org08c372d"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org08c372d"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 
@@ -378,7 +378,7 @@ If the user passes in a flag as a filename this will get passed to the &lt;code&
 &lt;li&gt;file(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://www.man7.org/linux/man-pages/man1/file.1.html"&gt;https://www.man7.org/linux/man-pages/man1/file.1.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>choice</category><category>fish</category><category>function</category><category>random</category><guid>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Fish-Functions/posts/random-hex/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Fish-Functions/posts/random-hex/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;

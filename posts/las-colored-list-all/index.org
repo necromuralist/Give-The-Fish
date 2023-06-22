@@ -3,7 +3,7 @@
 .. slug: las-colored-list-all
 .. date: 2023-06-22 12:10:57 UTC-07:00
 .. tags: functions,alias,color
-.. category: Function
+.. category: Functions
 .. link: 
 .. description: A colored and paged list all in directory function.
 .. type: text

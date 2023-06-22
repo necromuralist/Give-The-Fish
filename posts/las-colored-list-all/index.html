@@ -38,6 +38,7 @@
  <a class="navbar-brand" href="../../"><span id="blog-title">Give the Fish</span></a> <button aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
 <div class="collapse navbar-collapse" id="bs-navbar">
 <ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="../">Posts</a></li>
 <li class="nav-item"><a class="nav-link" href="../../archive.html">Archive</a></li>
 <li class="nav-item"><a class="nav-link" href="../../categories/">Tags</a></li>
 <li class="nav-item"><a class="nav-link" href="../../rss.xml">RSS feed</a></li>
@@ -78,12 +79,12 @@
 end
 </pre></div>
 <p>The point of this function is to show all the files in the directory (including hidden files) and pipe them to <code>less</code> so they won't go scrolling off the screen while keeping the color highlighting.</p>
-<div class="outline-2" id="outline-container-org8f5212d">
-<h2 id="org8f5212d">The Parts</h2>
-<div class="outline-text-2" id="text-org8f5212d"></div>
-<div class="outline-3" id="outline-container-org401aef7">
-<h3 id="org401aef7">The <code>ls</code> Arguments</h3>
-<div class="outline-text-3" id="text-org401aef7">
+<div class="outline-2" id="outline-container-org4b377b6">
+<h2 id="org4b377b6">The Parts</h2>
+<div class="outline-text-2" id="text-org4b377b6"></div>
+<div class="outline-3" id="outline-container-orgbadb8f9">
+<h3 id="orgbadb8f9">The <code>ls</code> Arguments</h3>
+<div class="outline-text-3" id="text-orgbadb8f9">
 <ul class="org-ul">
 <li><code>--almost-all</code>: don't list the <code>.</code> and <code>..</code> files</li>
 <li><code>--color</code>: Color the output when (defaults to "always" but you can set to "auto" or "never")</li>
@@ -93,13 +94,13 @@ end
 </ul>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgbc3dc87">
-<h3 id="orgbc3dc87">The <code>less</code> Argument</h3>
-<div class="outline-text-3" id="text-orgbc3dc87">
+<div class="outline-3" id="outline-container-org7698fa5">
+<h3 id="org7698fa5">The <code>less</code> Argument</h3>
+<div class="outline-text-3" id="text-org7698fa5">
 <ul class="org-ul">
 <li><code>--RAW-CONTROL-CHARS</code>: Keep colors and hyperlink sequences.</li>
 </ul>
-<div class="notecard" id="org4c8b01a">
+<div class="notecard" id="org2bb44fe">
 <p>There is also a <code>--raw-control-chars</code> option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the <code>LESS</code> environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.</p>
 </div>
 </div>
