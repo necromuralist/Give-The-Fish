@@ -1,0 +1,126 @@
+#+BEGIN_COMMENT
+.. title: config.fish The Fish Configuration
+.. slug: configfish-the-fish-configuration
+.. date: 2023-06-22 13:14:19 UTC-07:00
+.. tags: configuration
+.. category: 
+.. link: 
+.. description: The fish configuration file.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+#+begin_src sh :tangle ../dingehaufen/config.fish :exports none
+<<environment>>
+
+<<path>>
+
+<<ssh-agent>>
+
+<<vpn>>
+
+<<abbreviations-nikola>>
+
+<<abbreviations-git>>
+#+end_src
+
+This is the fish configuration file. It goes into ~~/.config/fish/config.fish~.
+
+* Environment Variables
+
+#+begin_src sh :noweb-ref environment
+set -x ALTERNATE_EDITOR ""
+set -x EDITOR "emacsclient -c"
+set -x VISUAL "emacsclient -c -a emacs"
+
+# wake monstery server
+set -x ATHENA "04:92:26:c3:a6:c7"
+
+# monstery LAN
+set -x APOLLO "192.168.86.172"
+
+# for extra docker build features (like smarter pip caching)
+set -x DOCKER_BUILDKIT 1
+
+# for clearing the startup restore session
+# so firefox doesn't try and open previous pages on startup
+set -x MOZILLA_PROFILE "$HOME/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"
+
+# R Downloads
+set -x R_LIBS ~/.local/lib/R/library/
+#+end_src
+
+* Add Local Bin To the PATH
+
+#+begin_src sh :noweb-ref path
+# add to the path
+
+# https://fishshell.com/docs/current/cmds/fish_add_path.html
+fish_add_path $HOME/bin
+#+end_src
+
+
+* SSH Agent
+
+#+begin_src sh :noweb-ref
+# load the ssh-agent
+if status --is-interactive
+ keychain --eval --quiet -Q id_rsa | source
+end
+#+end_src
+
+* VPN
+
+#+begin_src sh :noweb-ref vpn
+# check the vpn
+if status --is-interactive
+  protonvpn-cli status
+end
+#+end_src
+
+* NPM
+
+#+begin_src sh :noweb-ref npm
+# setup npm locally
+# from https://stackoverflow.com/a/13021677
+# expect you to also setup ~/.npmrc
+set --export NPM_PACKAGES $HOME/.npm-packages
+set --export NODE_PATH $HOME/.npm-packages/lib/node_modules
+fish_add_path $HOME/.npm-packages/bin
+#+end_src
+
+* Abbreviations
+Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter ~nb ~ when you hit the space-bar fish will replace ~nb~ with ~nikola bulid~. This makes them more transparent than functions, although they're also less powerful.
+
+** Nikola
+#+begin_src sh :noweb-ref abbreviations-nikola
+# nikola
+abbr --add -- nb "nikola build"
+abbr --add -- nbs 'nikola build;nikola serve'
+#+end_src
+
+** Git
+
+#+begin_src sh :noweb-ref abbreviations-git
+# git wit it
+abbr --add -- add "git add"
+abbr --add -- amend "git commit --amend"
+abbr --add -- commit "git commit"
+abbr --add -- push "git push"
+abbr --add -- gcm "git commit --message"
+abbr --add -- g "git"
+abbr --add -- state 'git state'
+abbr --add -- branches "git branches"
+
+# sync and status are built-in linux utilities so we need different names
+# switch is a function control statement
+abbr --add -- gstat 'git status'
+abbr --add -- gsync 'git status'
+abbr --add -- gswitch "git switch"
+#+end_src
+
+* Links
+
+- abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
