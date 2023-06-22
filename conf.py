@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Cloistered Monkey"  # (translatable)
-BLOG_TITLE = "Fish Functions"  # (translatable)
+BLOG_TITLE = "Give the Fish"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://necromuralist.github.io/Fish-Functions/"
@@ -143,7 +143,7 @@ NAVIGATION_LINKS = {
           (
               ("https://necromuralist.github.io/", "Cloistered Monkey"),
           ),
-            "Pages"
+            "Other Pages"
         ),
     ),
 }
@@ -228,13 +228,14 @@ POSTS = (
     ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.org", "posts", "post.tmpl"),    
 )
+
 PAGES = (
-    ("pages/*.rst", "pages", "page.tmpl"),
-    ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
-    ("pages/*.html", "pages", "page.tmpl"),
-    ("pages/*.ipynb", "pages", "page.tmpl"),
-    ("pages/*.org", "pages", "page.tmpl"),    
+#    ("pages/*.rst", "pages", "page.tmpl"),
+#    ("pages/*.md", "pages", "page.tmpl"),
+#    ("pages/*.txt", "pages", "page.tmpl"),
+#    ("pages/*.html", "pages", "page.tmpl"),
+#    ("pages/*.ipynb", "pages", "page.tmpl"),
+    ("pages/*.org", "", "page.tmpl"),    
 )
 
 
@@ -543,7 +544,7 @@ HIDDEN_AUTHORS = ['Guest']
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
 # (translatable)
-# INDEX_PATH = ""
+INDEX_PATH = "posts"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
@@ -929,7 +930,16 @@ FEED_LINKS_APPEND_QUERY = False
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
-LICENSE = '<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://necromuralist.github.io/Ape-Iron/">Ape Iron</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/necromuralist">The Cloistered Monkey</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>'
+LICENSE = '''
+<div id="license"xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under
+<a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0
+<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
+<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a>
+</div>
+'''
+#LICENSE = '<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://necromuralist.github.io/Ape-Iron/">Ape Iron</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/necromuralist">The Cloistered Monkey</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>'
+
+#LICENSE = '<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://necromuralist.github.io/Ape-Iron/">Ape Iron</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/necromuralist">The Cloistered Monkey</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer";">CC BY 4.0<img style="height:22px;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>'
 # I recommend using the Creative Commons' wizard:
 # https://creativecommons.org/choose/
 # LICENSE = """
@@ -940,7 +950,7 @@ LICENSE = '<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.o
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = 'Scribbled by the <a href="mailto:{email}">{author}</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> {license}'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
