@@ -1,0 +1,43 @@
+#+BEGIN_COMMENT
+.. title: las: Colored List All
+.. slug: las-colored-list-all
+.. date: 2023-06-22 12:10:57 UTC-07:00
+.. tags: functions,alias,color
+.. category: 
+.. link: 
+.. description: A colored and paged list all in directory function.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+#+begin_src sh :tangle ../functions/las.fish
+function las
+    ls --almost-all \
+       --color \
+       --dereference-command-line \
+       --human-readable \
+       -l $argv | \
+        less --RAW-CONTROL-CHARS
+end
+#+end_src
+
+The point of this function is to show all the files in the directory (including hidden files) and pipe them to ~less~ so they won't go scrolling off the screen while keeping the color highlighting.
+
+* The Parts
+** The ~ls~ Arguments
+
+ - ~--almost-all~: don't list the ~.~ and ~..~ files
+ - ~--color~: Color the output when (defaults to "always" but you can set to "auto" or "never")
+ - ~--dereference-command-line~: follow symbolic links listed on the command line
+ - ~--human-readable~: Put file sizes into units that make sense (when using ~-l~)
+ - ~-l~: Long listing format.
+ 
+** The ~less~ Argument
+
+ - ~--RAW-CONTROL-CHARS~: Keep colors and hyperlink sequences.
+
+#+begin_notecard
+There is also a ~--raw-control-chars~ option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the ~LESS~ environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
+#+end_notecard
