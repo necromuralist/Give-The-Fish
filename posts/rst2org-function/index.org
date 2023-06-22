@@ -1,0 +1,37 @@
+#+BEGIN_COMMENT
+.. title: rst2org Function
+.. slug: rst2org-function
+.. date: 2023-06-22 12:51:54 UTC-07:00
+.. tags: functions,pandoc,org-mode
+.. category: Functions
+.. link: 
+.. description: A function to convert restructured text files to org-mode files.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+#+begin_src sh :tangle ../functions rst2org.fish
+function rst2org -d "Convert text file to org" --argument-names sourcefile
+    set target $(path change-extension org $sourcefile)
+    pandoc --standalone $sourcefile --output $target --wrap=none
+end
+#+end_src
+
+This function will convert a text file to an org file using pandoc. I called it ~rst2org~ because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.
+
+* What It's Doing
+
+The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.
+
+ - ~--standalone~: by default pandoc strips out the header and footer, this option tells it to keep it (useful for nikola and most other thing I would imagine)
+ - ~--output~: The output file name which pandoc also uses to guess the format we want to use.
+ - ~--wrap=none~: by default pandoc will insert line-breaks to keep the lines within their default width, adding this argument keeps long lines as single lines.
+
+* Links
+-  mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: https://stackoverflow.com/a/62990248
+
+The first option documented in the options section of the pandoc documentation is ~--from~ which then lists all the languages that pandoc can take as an input.
+
+- pandoc general options [Internet]. Available from https://pandoc.org/MANUAL.html#general-options

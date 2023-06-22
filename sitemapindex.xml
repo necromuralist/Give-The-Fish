@@ -6,35 +6,67 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/alias.xml</loc>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/cat_function.xml</loc>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/cat_functions.xml</loc>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/cat_randomness.xml</loc>
-  <lastmod>2023-06-07T22:24:00Z</lastmod>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/choice.xml</loc>
-  <lastmod>2023-06-07T22:24:00Z</lastmod>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/color.xml</loc>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/configuration.xml</loc>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/fish.xml</loc>
-  <lastmod>2023-06-07T22:24:00Z</lastmod>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/function.xml</loc>
-  <lastmod>2023-06-07T22:24:00Z</lastmod>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/functions.xml</loc>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/org-mode.xml</loc>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/pandoc.xml</loc>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/random.xml</loc>
-  <lastmod>2023-06-07T22:24:00Z</lastmod>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/randomness.xml</loc>
-  <lastmod>2023-06-06T02:27:00Z</lastmod>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Fish-Functions/rss.xml</loc>
-  <lastmod>2023-06-07T22:24:00Z</lastmod>
+  <lastmod>2023-06-22T20:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Fish-Functions/sitemap.xml</loc>
-  <lastmod>2023-06-07T22:24:00Z</lastmod>
+  <lastmod>2023-06-22T22:39:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -1,0 +1,31 @@
+#+BEGIN_COMMENT
+.. title: Give the Fish
+.. slug: index
+.. date: 2023-06-22 13:44:23 UTC-07:00
+.. tags: index
+.. category: index
+.. link: 
+.. description: The Home Page for "Give the Fish".
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+[[./pages/hydrolicus-head.jpg]]
+
+#+begin_attribution
+[[https://www.flickr.com/photos/friel/2692204/][Hydrolicus Head]] by [[https://www.flickr.com/people/friel/][John Friel]] licensed under [[https://creativecommons.org/licenses/by-nc-sa/2.0/][CC BY-NC-SA 2.0]].
+#+end_attribution
+
+* Functions
+** Roll the Dice
+- {{% doc %}}choose-function{{% /doc %}}
+- {{% doc %}}random-hex{{% /doc %}}
+** Convert a File
+- {{% doc %}}rst2org-function{{% /doc %}}
+** Look For Files
+- {{% doc %}}las-colored-list-all{{% /doc %}}
+* Dingehaufen
+** The Fish Configuration
+- {{% doc %}}configfish-the-fish-configuration{{% /doc %}}

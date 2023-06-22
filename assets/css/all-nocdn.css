@@ -1117,14 +1117,6 @@ img {
 }
 
  /* P5.js */
- /* The div that holds the sketch (set in the shortcode) */
- /*
- .p5js {
-     display: block;
-     margin-left: auto;
-     margin-right: auto;   
- }
-*/
  
  /* the canvas with the sketch (p5.js sets this class) */
  .p5Canvas {
@@ -1132,4 +1124,21 @@ img {
      margin-left: auto;
      margin-right: auto;
  }
+
+#license img {
+    display: inline-block;
+    height:20px !important;
+    margin-left: 3px;
+    margin-bottom:5px;
+          }
+
+footer {
+    text-align: center;
+}
+
+/* for the imaga attribution */
+
+.attribution {
+    text-align: center;
+}
 
