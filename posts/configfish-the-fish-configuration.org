@@ -61,7 +61,6 @@ set -x R_LIBS ~/.local/lib/R/library/
 fish_add_path $HOME/bin
 #+end_src
 
-
 * SSH Agent
 
 #+begin_src sh :noweb-ref
@@ -99,6 +98,7 @@ Abbreviations are sort of like aliases except fish will expand them once you hit
 # nikola
 abbr --add -- nb "nikola build"
 abbr --add -- nbs 'nikola build;nikola serve'
+abbr --add -- ngd "nikola github_deploy"
 #+end_src
 
 ** Git
@@ -106,6 +106,7 @@ abbr --add -- nbs 'nikola build;nikola serve'
 #+begin_src sh :noweb-ref abbreviations-git
 # git wit it
 abbr --add -- add "git add"
+abbr --add -- gaa "git addall"
 abbr --add -- amend "git commit --amend"
 abbr --add -- commit "git commit"
 abbr --add -- push "git push"

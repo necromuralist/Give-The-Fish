@@ -33,9 +33,11 @@ end
 # nikola
 abbr --add -- nb "nikola build"
 abbr --add -- nbs 'nikola build;nikola serve'
+abbr --add -- ngd "nikola github_deploy"
 
 # git wit it
 abbr --add -- add "git add"
+abbr --add -- gaa "git addall"
 abbr --add -- amend "git commit --amend"
 abbr --add -- commit "git commit"
 abbr --add -- push "git push"
