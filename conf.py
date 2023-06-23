@@ -144,7 +144,7 @@ NAVIGATION_LINKS = {
           (
               ("https://necromuralist.github.io/", "Cloistered Monkey"),
           ),
-            "Other Pages"
+            "Other Sites"
         ),
     ),
 }

@@ -31,6 +31,7 @@ if status --is-interactive
 end
 
 # nikola
+abbr --add -- n "nikola"
 abbr --add -- nb "nikola build"
 abbr --add -- nbs 'nikola build;nikola serve'
 abbr --add -- ngd "nikola github_deploy"
