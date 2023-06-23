@@ -1,0 +1,23 @@
+#+BEGIN_COMMENT
+.. title: Functions
+.. slug: functions-index
+.. date: 2023-06-23 13:13:24 UTC-07:00
+.. tags: index
+.. category: Functions
+.. link: 
+.. description: The index page for fish functions.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+* Roll the Dice
+- {{% doc %}}choose-function{{% /doc %}}
+- {{% doc %}}random-hex{{% /doc %}}
+* Convert a File
+- {{% doc %}}rst2org-function{{% /doc %}}
+* Look For Files
+- {{% doc %}}las-colored-list-all{{% /doc %}}
+

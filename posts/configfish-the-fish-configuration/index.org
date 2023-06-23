@@ -96,6 +96,7 @@ Abbreviations are sort of like aliases except fish will expand them once you hit
 ** Nikola
 #+begin_src sh :noweb-ref abbreviations-nikola
 # nikola
+abbr --add -- n "nikola"
 abbr --add -- nb "nikola build"
 abbr --add -- nbs 'nikola build;nikola serve'
 abbr --add -- ngd "nikola github_deploy"

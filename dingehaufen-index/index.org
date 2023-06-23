@@ -1,0 +1,17 @@
+#+BEGIN_COMMENT
+.. title: Dingehaufen
+.. slug: dingehaufen-index
+.. date: 2023-06-23 13:17:16 UTC-07:00
+.. tags: index
+.. category: Dingehaufen
+.. link: 
+.. description: The index page for dingehaufen.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+* The Fish Configuration
+- {{% doc %}}configfish-the-fish-configuration{{% /doc %}}

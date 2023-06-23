@@ -39,7 +39,7 @@
 <li class="nav-item"><a class="nav-link" href="../../archive.html">Archive</a></li>
 <li class="nav-item"><a class="nav-link" href="../../categories/">Tags</a></li>
 <li class="nav-item"><a class="nav-link" href="../../rss.xml">RSS feed</a></li>
-<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Other Pages</a>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Other Sites</a>
 <div class="dropdown-menu"><a class="dropdown-item" href="https://necromuralist.github.io/">Cloistered Monkey</a></div>
 </li>
 </ul>
@@ -66,9 +66,9 @@
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
 <p>This is the fish configuration file. It goes into <code>~/.config/fish/config.fish</code>.</p>
-<div class="outline-2" id="outline-container-org3fe5977">
-<h2 id="org3fe5977">Environment Variables</h2>
-<div class="outline-text-2" id="text-org3fe5977">
+<div class="outline-2" id="outline-container-org157902e">
+<h2 id="org157902e">Environment Variables</h2>
+<div class="outline-text-2" id="text-org157902e">
 <div class="highlight">
 <pre><span></span><span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>ALTERNATE_EDITOR<span class="w"> </span><span class="s2">""</span>
 <span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>EDITOR<span class="w"> </span><span class="s2">"emacsclient -c"</span>
@@ -92,9 +92,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga57c814">
-<h2 id="orga57c814">Add Local Bin To the PATH</h2>
-<div class="outline-text-2" id="text-orga57c814">
+<div class="outline-2" id="outline-container-orgecc86d6">
+<h2 id="orgecc86d6">Add Local Bin To the PATH</h2>
+<div class="outline-text-2" id="text-orgecc86d6">
 <div class="highlight">
 <pre><span></span><span class="c1"># add to the path</span>
 
@@ -103,9 +103,9 @@ fish_add_path<span class="w"> </span><span class="nv">$HOME</span>/bin
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga62ea87">
-<h2 id="orga62ea87">SSH Agent</h2>
-<div class="outline-text-2" id="text-orga62ea87">
+<div class="outline-2" id="outline-container-orge2fd332">
+<h2 id="orge2fd332">SSH Agent</h2>
+<div class="outline-text-2" id="text-orge2fd332">
 <div class="highlight">
 <pre><span></span><span class="c1"># load the ssh-agent</span>
 <span class="k">if</span><span class="w"> </span>status<span class="w"> </span>--is-interactive
@@ -114,9 +114,9 @@ end
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgac5a084">
-<h2 id="orgac5a084">VPN</h2>
-<div class="outline-text-2" id="text-orgac5a084">
+<div class="outline-2" id="outline-container-orgeb5528b">
+<h2 id="orgeb5528b">VPN</h2>
+<div class="outline-text-2" id="text-orgeb5528b">
 <div class="highlight">
 <pre><span></span><span class="c1"># check the vpn</span>
 <span class="k">if</span><span class="w"> </span>status<span class="w"> </span>--is-interactive
@@ -125,9 +125,9 @@ end
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org2c5199b">
-<h2 id="org2c5199b">NPM</h2>
-<div class="outline-text-2" id="text-org2c5199b">
+<div class="outline-2" id="outline-container-org5dd8880">
+<h2 id="org5dd8880">NPM</h2>
+<div class="outline-text-2" id="text-org5dd8880">
 <div class="highlight">
 <pre><span></span><span class="c1"># setup npm locally</span>
 <span class="c1"># from https://stackoverflow.com/a/13021677</span>
@@ -138,25 +138,26 @@ fish_add_path<span class="w"> </span><span class="nv">$HOME</span>/.npm-packages
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgf08c645">
-<h2 id="orgf08c645">Abbreviations</h2>
-<div class="outline-text-2" id="text-orgf08c645">
+<div class="outline-2" id="outline-container-org8de1dea">
+<h2 id="org8de1dea">Abbreviations</h2>
+<div class="outline-text-2" id="text-org8de1dea">
 <p>Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter <code>nb ~ when you hit the space-bar fish will replace ~nb</code> with <code>nikola bulid</code>. This makes them more transparent than functions, although they're also less powerful.</p>
 </div>
-<div class="outline-3" id="outline-container-org29ce0ff">
-<h3 id="org29ce0ff">Nikola</h3>
-<div class="outline-text-3" id="text-org29ce0ff">
+<div class="outline-3" id="outline-container-org908227c">
+<h3 id="org908227c">Nikola</h3>
+<div class="outline-text-3" id="text-org908227c">
 <div class="highlight">
 <pre><span></span><span class="c1"># nikola</span>
+abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>n<span class="w"> </span><span class="s2">"nikola"</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>nb<span class="w"> </span><span class="s2">"nikola build"</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>nbs<span class="w"> </span><span class="s1">'nikola build;nikola serve'</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>ngd<span class="w"> </span><span class="s2">"nikola github_deploy"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orge49136f">
-<h3 id="orge49136f">Git</h3>
-<div class="outline-text-3" id="text-orge49136f">
+<div class="outline-3" id="outline-container-orgd43c8b8">
+<h3 id="orgd43c8b8">Git</h3>
+<div class="outline-text-3" id="text-orgd43c8b8">
 <div class="highlight">
 <pre><span></span><span class="c1"># git wit it</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>add<span class="w"> </span><span class="s2">"git add"</span>
@@ -178,9 +179,9 @@ abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </sp
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgc5b14c3">
-<h2 id="orgc5b14c3">Links</h2>
-<div class="outline-text-2" id="text-orgc5b14c3">
+<div class="outline-2" id="outline-container-org87ab647">
+<h2 id="org87ab647">Links</h2>
+<div class="outline-text-2" id="text-org87ab647">
 <ul class="org-ul">
 <li>abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: <a href="https://fishshell.com/docs/current/cmds/abbr.html">https://fishshell.com/docs/current/cmds/abbr.html</a></li>
 </ul>
