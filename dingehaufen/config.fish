@@ -37,17 +37,17 @@ abbr --add -- ngd "nikola github_deploy"
 
 # git wit it
 abbr --add -- add "git add"
-abbr --add -- gaa "git addall"
+abbr --add -- gaa "git add -A"
 abbr --add -- amend "git commit --amend"
 abbr --add -- commit "git commit"
 abbr --add -- push "git push"
 abbr --add -- gcm "git commit --message"
 abbr --add -- g "git"
-abbr --add -- state 'git state'
-abbr --add -- branches "git branches"
+abbr --add -- state "git status -sb"
+abbr --add -- branches "legit branches"
 
 # sync and status are built-in linux utilities so we need different names
 # switch is a function control statement
-abbr --add -- gstat 'git status'
-abbr --add -- gsync 'git status'
-abbr --add -- gswitch "git switch"
+abbr --add -- gstat "git status"
+abbr --add -- gsync "legit sync"
+abbr --add -- gswitch "legit switch"
