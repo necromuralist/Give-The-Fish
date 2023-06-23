@@ -66,9 +66,9 @@
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
 <p>This is the fish configuration file. It goes into <code>~/.config/fish/config.fish</code>.</p>
-<div class="outline-2" id="outline-container-org1e47fcc">
-<h2 id="org1e47fcc">Environment Variables</h2>
-<div class="outline-text-2" id="text-org1e47fcc">
+<div class="outline-2" id="outline-container-org3fe5977">
+<h2 id="org3fe5977">Environment Variables</h2>
+<div class="outline-text-2" id="text-org3fe5977">
 <div class="highlight">
 <pre><span></span><span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>ALTERNATE_EDITOR<span class="w"> </span><span class="s2">""</span>
 <span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>EDITOR<span class="w"> </span><span class="s2">"emacsclient -c"</span>
@@ -92,9 +92,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org9370a3f">
-<h2 id="org9370a3f">Add Local Bin To the PATH</h2>
-<div class="outline-text-2" id="text-org9370a3f">
+<div class="outline-2" id="outline-container-orga57c814">
+<h2 id="orga57c814">Add Local Bin To the PATH</h2>
+<div class="outline-text-2" id="text-orga57c814">
 <div class="highlight">
 <pre><span></span><span class="c1"># add to the path</span>
 
@@ -103,9 +103,9 @@ fish_add_path<span class="w"> </span><span class="nv">$HOME</span>/bin
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgf6a9314">
-<h2 id="orgf6a9314">SSH Agent</h2>
-<div class="outline-text-2" id="text-orgf6a9314">
+<div class="outline-2" id="outline-container-orga62ea87">
+<h2 id="orga62ea87">SSH Agent</h2>
+<div class="outline-text-2" id="text-orga62ea87">
 <div class="highlight">
 <pre><span></span><span class="c1"># load the ssh-agent</span>
 <span class="k">if</span><span class="w"> </span>status<span class="w"> </span>--is-interactive
@@ -114,9 +114,9 @@ end
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org8a361af">
-<h2 id="org8a361af">VPN</h2>
-<div class="outline-text-2" id="text-org8a361af">
+<div class="outline-2" id="outline-container-orgac5a084">
+<h2 id="orgac5a084">VPN</h2>
+<div class="outline-text-2" id="text-orgac5a084">
 <div class="highlight">
 <pre><span></span><span class="c1"># check the vpn</span>
 <span class="k">if</span><span class="w"> </span>status<span class="w"> </span>--is-interactive
@@ -125,9 +125,9 @@ end
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org97cb772">
-<h2 id="org97cb772">NPM</h2>
-<div class="outline-text-2" id="text-org97cb772">
+<div class="outline-2" id="outline-container-org2c5199b">
+<h2 id="org2c5199b">NPM</h2>
+<div class="outline-text-2" id="text-org2c5199b">
 <div class="highlight">
 <pre><span></span><span class="c1"># setup npm locally</span>
 <span class="c1"># from https://stackoverflow.com/a/13021677</span>
@@ -138,14 +138,14 @@ fish_add_path<span class="w"> </span><span class="nv">$HOME</span>/.npm-packages
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orge3969fa">
-<h2 id="orge3969fa">Abbreviations</h2>
-<div class="outline-text-2" id="text-orge3969fa">
+<div class="outline-2" id="outline-container-orgf08c645">
+<h2 id="orgf08c645">Abbreviations</h2>
+<div class="outline-text-2" id="text-orgf08c645">
 <p>Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter <code>nb ~ when you hit the space-bar fish will replace ~nb</code> with <code>nikola bulid</code>. This makes them more transparent than functions, although they're also less powerful.</p>
 </div>
-<div class="outline-3" id="outline-container-org4381b57">
-<h3 id="org4381b57">Nikola</h3>
-<div class="outline-text-3" id="text-org4381b57">
+<div class="outline-3" id="outline-container-org29ce0ff">
+<h3 id="org29ce0ff">Nikola</h3>
+<div class="outline-text-3" id="text-org29ce0ff">
 <div class="highlight">
 <pre><span></span><span class="c1"># nikola</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>nb<span class="w"> </span><span class="s2">"nikola build"</span>
@@ -154,33 +154,33 @@ abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </sp
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org54f4be9">
-<h3 id="org54f4be9">Git</h3>
-<div class="outline-text-3" id="text-org54f4be9">
+<div class="outline-3" id="outline-container-orge49136f">
+<h3 id="orge49136f">Git</h3>
+<div class="outline-text-3" id="text-orge49136f">
 <div class="highlight">
 <pre><span></span><span class="c1"># git wit it</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>add<span class="w"> </span><span class="s2">"git add"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gaa<span class="w"> </span><span class="s2">"git addall"</span>
+abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gaa<span class="w"> </span><span class="s2">"git add -A"</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>amend<span class="w"> </span><span class="s2">"git commit --amend"</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>commit<span class="w"> </span><span class="s2">"git commit"</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>push<span class="w"> </span><span class="s2">"git push"</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gcm<span class="w"> </span><span class="s2">"git commit --message"</span>
 abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>g<span class="w"> </span><span class="s2">"git"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>state<span class="w"> </span><span class="s1">'git state'</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>branches<span class="w"> </span><span class="s2">"git branches"</span>
+abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>state<span class="w"> </span><span class="s2">"git status -sb"</span>
+abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>branches<span class="w"> </span><span class="s2">"legit branches"</span>
 
 <span class="c1"># sync and status are built-in linux utilities so we need different names</span>
 <span class="c1"># switch is a function control statement</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gstat<span class="w"> </span><span class="s1">'git status'</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gsync<span class="w"> </span><span class="s1">'git status'</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gswitch<span class="w"> </span><span class="s2">"git switch"</span>
+abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gstat<span class="w"> </span><span class="s2">"git status"</span>
+abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gsync<span class="w"> </span><span class="s2">"legit sync"</span>
+abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gswitch<span class="w"> </span><span class="s2">"legit switch"</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb90bf89">
-<h2 id="orgb90bf89">Links</h2>
-<div class="outline-text-2" id="text-orgb90bf89">
+<div class="outline-2" id="outline-container-orgc5b14c3">
+<h2 id="orgc5b14c3">Links</h2>
+<div class="outline-text-2" id="text-orgc5b14c3">
 <ul class="org-ul">
 <li>abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: <a href="https://fishshell.com/docs/current/cmds/abbr.html">https://fishshell.com/docs/current/cmds/abbr.html</a></li>
 </ul>
