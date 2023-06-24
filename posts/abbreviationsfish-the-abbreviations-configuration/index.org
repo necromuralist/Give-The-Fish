@@ -157,10 +157,10 @@ abbr --add -- logdiff "git log -p"
 #+end_src
 
 * Pass
-For [[https://www.passwordstore.org/][pass]] the password-manager.
+For [[https://www.passwordstore.org/][pass]] the password-manager. I was doing the pull and push commands but decided to use the git ~sync~ alias which is actuall calling ~legit sync~, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.
 
 #+begin_src sh :noweb-ref syncpass
-abbr --add -- syncpass "pass git pull; pass git push"
+abbr --add -- syncpass "pass git sync"
 #+end_src
 
 * Grep
