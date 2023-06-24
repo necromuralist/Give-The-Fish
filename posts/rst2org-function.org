@@ -12,7 +12,7 @@
 
 #+END_COMMENT
 
-#+begin_src sh :tangle ../functions rst2org.fish
+#+begin_src fish :tangle ../functions rst2org.fish
 function rst2org -d "Convert text file to org" --argument-names sourcefile
     set target $(path change-extension org $sourcefile)
     pandoc --standalone $sourcefile --output $target --wrap=none

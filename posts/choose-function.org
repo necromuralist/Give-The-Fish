@@ -16,7 +16,7 @@
 
 An alias function that will pick a random line (or lines) out of a text file.
 
-#+begin_src sh :tangle ../functions/choose.fish :exports none
+#+begin_src fish :tangle ../functions/choose.fish :exports none
 # Choose random lines from a file #
 <<choose-declaration>>
 
@@ -42,7 +42,7 @@ end # end choose
 
 Our alias function (~choose~) takes one required argument that we'll assign to the variable ~filename~ and one optional argument ~lines~ to indicate the number of lines to pull.
 
-#+begin_src sh :noweb-ref choose-declaration
+#+begin_src fish :noweb-ref choose-declaration
 function choose -d "Random line from a file." --argument-names filename lines
 #+end_src
 
@@ -50,7 +50,7 @@ function choose -d "Random line from a file." --argument-names filename lines
 
 I'm setting a string-format variable that I'll use to color error messages in bold red.
 
-#+begin_src sh :noweb-ref choose-error
+#+begin_src fish :noweb-ref choose-error
 set ERROR "\x1b[31;1m\t%s\n\n\x1b[0m"
 #+end_src
 
@@ -59,7 +59,7 @@ See [[https://stackoverflow.com/a/33206814][this stack overflow answer]] for mor
 * The Okay Variable
 This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
 
-#+begin_src sh :noweb-ref choose-okay
+#+begin_src fish :noweb-ref choose-okay
 set OKAY 0
 #+end_src
 
@@ -70,7 +70,7 @@ Unlike ~random~, shuf will let you pick multiple lines so I added a second (opti
 
  - ~test -n "$lines"~ will return True if ~lines~ is non-empty so I negated it with ~!~ to return True if it's empty.
 
-#+begin_src sh :noweb-ref choose-lines
+#+begin_src fish :noweb-ref choose-lines
 if ! test -n "$lines"
   set lines 1
   set OKAY 1
@@ -89,7 +89,7 @@ To do the check I'm using the [[https://www.man7.org/linux/man-pages/man1/file.1
 
 First, though, we check if the ~lines~ argument was okay and if it was and ~filename~ passes its test then we can feed it to ~shuf~.
 
-#+begin_src sh :noweb-ref choose-filename
+#+begin_src fish :noweb-ref choose-filename
 if test $OKAY -ne 0; and test (string match "*text*" (file "$filename"))
    shuf -n $lines $filename
 #+end_src
@@ -101,7 +101,7 @@ if test $OKAY -ne 0; and test (string match "*text*" (file "$filename"))
 
 If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
 
-#+begin_src sh :noweb-ref choose-error-message
+#+begin_src fish :noweb-ref choose-error-message
 else
   if ! test -n "$filename"
     printf $ERROR  "**Missing Filename**"
@@ -116,7 +116,7 @@ end # check filename
 
 If it had a valid number of lines and a valid filename then ~OKAY~ will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
 
-#+begin_src sh :noweb-ref choose-help-message
+#+begin_src fish :noweb-ref choose-help-message
 if test $OKAY -eq 0     
   printf "\t%s\n" \
          "Output a random line or lines from a text file." \ \

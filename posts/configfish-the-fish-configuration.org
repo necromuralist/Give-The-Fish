@@ -19,8 +19,6 @@
 
 <<path>>
 
-<<ssh-agent>>
-
 <<vpn>>
 #+end_src
 
@@ -28,7 +26,7 @@ This is the fish configuration file. It goes into ~~/.config/fish/config.fish~.
 
 * Environment Variables
 
-#+begin_src sh :noweb-ref environment
+#+begin_src fish :noweb-ref environment
 set -x ALTERNATE_EDITOR ""
 set -x EDITOR "emacsclient -c"
 set -x VISUAL "emacsclient -c -a emacs"
@@ -52,25 +50,16 @@ set -x R_LIBS ~/.local/lib/R/library/
 
 * Add Local Bin To the PATH
 
-#+begin_src sh :noweb-ref path
+#+begin_src fish :noweb-ref path
 # add to the path
 
 # https://fishshell.com/docs/current/cmds/fish_add_path.html
 fish_add_path $HOME/bin
 #+end_src
 
-* SSH Agent
-
-#+begin_src sh :noweb-ref
-# load the ssh-agent
-if status --is-interactive
- keychain --eval --quiet -Q id_rsa | source
-end
-#+end_src
-
 * VPN
 
-#+begin_src sh :noweb-ref vpn
+#+begin_src fish :noweb-ref vpn
 # check the vpn
 if status --is-interactive
   protonvpn-cli status
@@ -79,7 +68,7 @@ end
 
 * NPM
 
-#+begin_src sh :noweb-ref npm
+#+begin_src fish :noweb-ref npm
 # setup npm locally
 # from https://stackoverflow.com/a/13021677
 # expect you to also setup ~/.npmrc

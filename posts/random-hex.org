@@ -34,7 +34,7 @@ end
 * The Function Header
 I'm going to create a function named ~randomhex~ that takes one optional argument named ~digits~.
 
-#+begin_src sh :noweb-ref randomhex-header
+#+begin_src fish :noweb-ref randomhex-header
 function randomhex -d "random hex string" --argument-names digits
 #+end_src
 
@@ -44,7 +44,7 @@ The first thing to do is to check if the user passed in an argument and handle i
 ** Check For An Argument
 The first check uses the [[https://fishshell.com/docs/current/cmds/test.html][test]] command to see if the user passed in an argument. the ~-n~ flag tells it to check if there's a string with one or more characters in it in our ~digits~ variable.
 
-#+begin_src sh :noweb-ref randomhex-argument-check
+#+begin_src fish :noweb-ref randomhex-argument-check
 if test -n "$digits" # then an argument was passed in
 #+end_src
 
@@ -52,7 +52,7 @@ if test -n "$digits" # then an argument was passed in
 
 If the user /did/ pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the [[https://fishshell.com/docs/current/cmds/string-match.html][string match]] command and a regular expression to make sure it's only made up of one or more digits.
 
-#+begin_src sh :noweb-ref randomhex-integer-check
+#+begin_src fish :noweb-ref randomhex-integer-check
 if test (string match --regex "^[0-9]+\$" $digits)
 #+end_src
 
@@ -60,7 +60,7 @@ if test (string match --regex "^[0-9]+\$" $digits)
 
 If the argument was an integer then we'll set the ~BYTES~ variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (~$digits/2~) to the ~math~ command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the ~ceil~ argument to round up to the nearest integer.
 
-#+begin_src sh :noweb-ref randomhex-argument-set
+#+begin_src fish :noweb-ref randomhex-argument-set
 set BYTES $(math ceil $digits/2)
 #+end_src
 
@@ -72,7 +72,7 @@ If the user passed in an argument but it doesn't look like an integer then we'll
  - Two backslashes with a space in-between them will insert an extra line and continue the input
  - The space between the backslashes is important - fish will throw an error if you put ~\\~ instead of ~\ \~
 
-#+begin_src sh :noweb-ref randomhex-help-message
+#+begin_src fish :noweb-ref randomhex-help-message
 else # the argument isn't an integer
   printf "\t%s\n" \
    "Output a random hexadecimal number" \ \
@@ -88,7 +88,7 @@ end # if is-integer check
 
 If the user didn't pass in an argument then use a default of 8 hexadecimal digits.
 
-#+begin_src sh :noweb-ref randomhex-default
+#+begin_src fish :noweb-ref randomhex-default
 else # Set our bytes so we have 8 digits (double the bytes)
   set BYTES 4
 end # setting the number of bytes
@@ -97,7 +97,7 @@ end # setting the number of bytes
 * Output the Random Hexadecimal
 Finally we output the random hexadecimal number that [[https://www.openssl.org/][~openssl~]] generates.
 
-#+begin_src sh :noweb-ref randomhex-output
+#+begin_src fish :noweb-ref randomhex-output
 echo $(openssl rand -hex $BYTES)
 #+end_src
 

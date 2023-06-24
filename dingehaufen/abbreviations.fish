@@ -23,11 +23,15 @@ abbr --add -- push "git push"
 abbr --add -- gsync "legit sync"
 abbr --add -- publish "legit publish"
 
+abbr --add -- state "git status -sb"
+abbr --add -- gstat "git status"
+
 abbr --add -- branches "legit branches"
 abbr --add -- gswitch "legit switch"
-abbr --add -- branchls "git ls-tree --name-only -r"
-abbr --add -- branchlog "git log --oneline --abbrev-commit --all --graph --decorate --color"
-abbr --add -- branchlogall "git log --branches --graph"
+abbr --add -- brls "git ls-tree --name-only -r"
+abbr --add -- brlog "git log --oneline --abbrev-commit" \
+    " --all --graph --decorate --color"
+abbr --add -- brlogall "git log --branches --graph"
 abbr --add -- renamebranch "git branch -m"
 
 abbr --add -- codechanges "git log -p"
