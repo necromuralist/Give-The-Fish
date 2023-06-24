@@ -69,15 +69,15 @@
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
 <div class="highlight">
-<pre><span></span><span class="k">function</span><span class="w"> </span>rst2org<span class="w"> </span>-d<span class="w"> </span><span class="s2">"Convert text file to org"</span><span class="w"> </span>--argument-names<span class="w"> </span>sourcefile
-<span class="w">    </span><span class="nb">set</span><span class="w"> </span>target<span class="w"> </span><span class="k">$(</span>path<span class="w"> </span>change-extension<span class="w"> </span>org<span class="w"> </span><span class="nv">$sourcefile</span><span class="k">)</span>
-<span class="w">    </span>pandoc<span class="w"> </span>--standalone<span class="w"> </span><span class="nv">$sourcefile</span><span class="w"> </span>--output<span class="w"> </span><span class="nv">$target</span><span class="w"> </span>--wrap<span class="o">=</span>none
-end
+<pre><span></span><span class="k">function</span> rst2org -d <span class="s2">"Convert text file to org"</span> --argument-names sourcefile
+    <span class="k">set</span> target <span class="nv">$(</span>path change-extension org <span class="nv">$sourcefile</span><span class="o">)</span>
+    pandoc --standalone <span class="nv">$sourcefile</span> --output <span class="nv">$target</span> --wrap<span class="o">=</span>none
+<span class="k">end</span>
 </pre></div>
 <p>This function will convert a text file to an org file using pandoc. I called it <code>rst2org</code> because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.</p>
-<div class="outline-2" id="outline-container-org0883de5">
-<h2 id="org0883de5">What It's Doing</h2>
-<div class="outline-text-2" id="text-org0883de5">
+<div class="outline-2" id="outline-container-org63a1d4e">
+<h2 id="org63a1d4e">What It's Doing</h2>
+<div class="outline-text-2" id="text-org63a1d4e">
 <p>The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.</p>
 <ul class="org-ul">
 <li><code>--standalone</code>: by default pandoc strips out the header and footer, this option tells it to keep it (useful for nikola and most other thing I would imagine)</li>
@@ -86,9 +86,9 @@ end
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org8940933">
-<h2 id="org8940933">Links</h2>
-<div class="outline-text-2" id="text-org8940933">
+<div class="outline-2" id="outline-container-org7c2302d">
+<h2 id="org7c2302d">Links</h2>
+<div class="outline-text-2" id="text-org7c2302d">
 <ul class="org-ul">
 <li>mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: <a href="https://stackoverflow.com/a/62990248">https://stackoverflow.com/a/62990248</a></li>
 </ul>

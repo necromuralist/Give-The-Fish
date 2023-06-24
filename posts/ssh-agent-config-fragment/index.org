@@ -1,0 +1,44 @@
+#+BEGIN_COMMENT
+.. title: SSH Agent Config Fragment
+.. slug: ssh-agent-config-fragment
+.. date: 2023-06-24 12:47:47 UTC-07:00
+.. tags: ssh,configuration
+.. category: configuration
+.. link: 
+.. description: The SSH-Agent starter configuration.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+* SSH Agent
+
+This is the fragment to make sure the ssh-agent is running.
+
+#+begin_notecard
+Put this in =~/.config/fish/conf.d/=.
+#+end_notecard
+
+#+begin_src fish :tangle ../dingehaufen/ssh-agent.fish
+if status --is-interactive
+  keychain --eval --quiet --quick id_rsa | source
+end
+#+end_src
+
+The documentation for the [[https://fishshell.com/docs/current/cmds/status.html][~status~]] comand says that ~is-interactive~ is actually a sub-command (not an option, although I'm calling it like it is one) and that it:
+
+#+begin_quote
+Returns 0 if fish is interactive - that is, connected to a keyboard.
+#+end_quote
+
+Which is an oddly unintuitive description. I think it means that it won't pass the conditional if I try to run the fragment as a function... I can't remember why I used it, exactly ,but I think it's something you need if you want it to be loaded when you login.
+
+Although the name [[https://linux.die.net/man/1/keychain][keychain]] makes it sound like it's a general password manager, according to the man-page it's meant specifically to manage the ssh-agent. It will check if you already have an ssh-agent running and only start one if you don't. This way you don't end up starting one for every ~screen~ you open up.
+
+The ~--eval~ option sends the SSH-Agent message to stdout, ~--quiet~ suppresses other messages, ~--quick~ tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to [[https://fishshell.com/docs/current/cmds/source.html][~source~]] to load the environment.
+
+* Links
+
+- keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: https://linux.die.net/man/1/keychain
+- source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: https://fishshell.com/docs/current/cmds/source.html
+- status - query fish runtime information — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: https://fishshell.com/docs/current/cmds/status.html

@@ -20,6 +20,7 @@
 <link href="../../site.webmanifest" rel="manifest">
 <meta content="Cloistered Monkey" name="author">
 <link href="../configfish-the-fish-configuration/" rel="prev" title="config.fish The Fish Configuration" type="text/html">
+<link href="../ssh-agent-config-fragment/" rel="next" title="SSH Agent Config Fragment" type="text/html">
 <meta content="Give the Fish" property="og:site_name">
 <meta content="abbreviations.fish The Abbreviations Configuration" property="og:title">
 <meta content="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/" property="og:url">
@@ -70,178 +71,182 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgda47a5f">Nikola</a>
+<li><a href="#org2ed5bf9">Nikola</a>
 <ul>
-<li><a href="#org285bcce">New Posts and Pages</a></li>
-<li><a href="#org269cf57">Build, Serve, and Develop</a></li>
-<li><a href="#org2628b6c">Deploy to Github</a></li>
+<li><a href="#org0ffe3c0">New Posts and Pages</a></li>
+<li><a href="#org61564dd">Build, Serve, and Develop</a></li>
+<li><a href="#org920ffa4">Deploy to Github</a></li>
 </ul>
 </li>
-<li><a href="#org0a0e9c3">Git</a>
+<li><a href="#orga104779">Git</a>
 <ul>
-<li><a href="#org3b9496b">Add, Commit, Push Stuff</a></li>
-<li><a href="#orgebce522">The State of Things</a></li>
-<li><a href="#orgde074d8">Branch Work</a></li>
-<li><a href="#org54222d2">My, How Things Have Changed</a></li>
+<li><a href="#org5e73bcb">Add, Commit, Push Stuff</a></li>
+<li><a href="#org7da958d">The State of Things</a></li>
+<li><a href="#org0da7a32">Branch Work</a></li>
+<li><a href="#org78e3765">My, How Things Have Changed</a></li>
 </ul>
 </li>
-<li><a href="#org085b179">Pass</a></li>
-<li><a href="#orga4e28cc">Grep</a></li>
-<li><a href="#orgfdcbcb7">Links</a></li>
+<li><a href="#orgcf76e03">Pass</a></li>
+<li><a href="#org4111b70">Grep</a></li>
+<li><a href="#orgf39804e">Links</a></li>
 </ul>
 </div>
 </div>
-<div class="notecard" id="org1f719df">
+<div class="notecard" id="org93ba68d">
 <p>The abbreviations the file goes into <code>~/.config/fish/conf.d/</code>.</p>
 </div>
 <p>Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter <code>nb</code> ~ when you hit the space-bar fish will replace <code>nb</code> with <code>nikola bulid</code>. This makes them more transparent than functions, although they're also less powerful.</p>
 <p>According to <a href="https://github.com/fish-shell/fish-shell/issues/3099">this github issue</a> the files you put into <code>conf.d/</code> get read before <code>config.fish</code> so whatever you put in there is usable in <code>config.fish</code> (and using <code>config.fish</code>) at all is optional.</p>
-<div class="outline-2" id="outline-container-orgda47a5f">
-<h2 id="orgda47a5f">Nikola</h2>
-<div class="outline-text-2" id="text-orgda47a5f">
+<div class="outline-2" id="outline-container-org2ed5bf9">
+<h2 id="org2ed5bf9">Nikola</h2>
+<div class="outline-text-2" id="text-org2ed5bf9">
 <p>Abbreviations to hopefully make working with <a href="https://getnikola.com/">Nikola</a> a little quicker.</p>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>n<span class="w"> </span><span class="s2">"nikola"</span>
+<pre><span></span>abbr --add -- n <span class="s2">"nikola"</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org285bcce">
-<h3 id="org285bcce">New Posts and Pages</h3>
-<div class="outline-text-3" id="text-org285bcce">
+<div class="outline-3" id="outline-container-org0ffe3c0">
+<h3 id="org0ffe3c0">New Posts and Pages</h3>
+<div class="outline-text-3" id="text-org0ffe3c0">
 <p>I only use org-mode so these are the commands to make new posts and pages.</p>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>npost<span class="w"> </span>nikola<span class="w"> </span>new_post<span class="w"> </span>--format<span class="w"> </span>orgmode<span class="w"> </span>--title
+<pre><span></span>abbr --add -- npost nikola new_post --format orgmode --title
 </pre></div>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>npage<span class="w"> </span>nikola<span class="w"> </span>new_page<span class="w"> </span>--format<span class="w"> </span>orgmode<span class="w"> </span>--title
+<pre><span></span>abbr --add -- npage nikola new_page --format orgmode --title
 </pre></div>
 <p>They actually look like the same files are produced, just one gets put into your pages folder and one gets put into your posts folder. Which is nice, I guess, in that we can move things back and forth between the blog and the web-pages as we need to.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org269cf57">
-<h3 id="org269cf57">Build, Serve, and Develop</h3>
-<div class="outline-text-3" id="text-org269cf57">
+<div class="outline-3" id="outline-container-org61564dd">
+<h3 id="org61564dd">Build, Serve, and Develop</h3>
+<div class="outline-text-3" id="text-org61564dd">
 <p>These are the ones I use the most when making posts and pages.</p>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>nb<span class="w"> </span><span class="s2">"nikola build"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>nbs<span class="w"> </span><span class="s1">'nikola build; nikola serve'</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>nauto<span class="w"> </span><span class="s2">"nikola auto"</span>
+<pre><span></span>abbr --add -- nb <span class="s2">"nikola build"</span>
+abbr --add -- nbs <span class="s1">'nikola build; nikola serve'</span>
+abbr --add -- nauto <span class="s2">"nikola auto"</span>
 </pre></div>
 <p><code>auto</code> will build and reload the page for you anytime it sees any changes. This can be convenient sometimes, but sometimes it detects changes to often (maybe when something is making a temporary backup) and it can end up reloading while you're reading the page so I don't use it as much as I used to.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org2628b6c">
-<h3 id="org2628b6c">Deploy to Github</h3>
-<div class="outline-text-3" id="text-org2628b6c">
+<div class="outline-3" id="outline-container-org920ffa4">
+<h3 id="org920ffa4">Deploy to Github</h3>
+<div class="outline-text-3" id="text-org920ffa4">
 <p>And once it's ready…</p>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>ngd<span class="w"> </span><span class="s2">"nikola github_deploy"</span>
+<pre><span></span>abbr --add -- ngd <span class="s2">"nikola github_deploy"</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org0a0e9c3">
-<h2 id="org0a0e9c3">Git</h2>
-<div class="outline-text-2" id="text-org0a0e9c3">
+<div class="outline-2" id="outline-container-orga104779">
+<h2 id="orga104779">Git</h2>
+<div class="outline-text-2" id="text-orga104779">
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>g<span class="w"> </span><span class="s2">"git"</span>
+<pre><span></span>abbr --add -- g <span class="s2">"git"</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org3b9496b">
-<h3 id="org3b9496b">Add, Commit, Push Stuff</h3>
-<div class="outline-text-3" id="text-org3b9496b"></div>
-<div class="outline-4" id="outline-container-orgbde0907">
-<h4 id="orgbde0907">Adding Files</h4>
-<div class="outline-text-4" id="text-orgbde0907">
+<div class="outline-3" id="outline-container-org5e73bcb">
+<h3 id="org5e73bcb">Add, Commit, Push Stuff</h3>
+<div class="outline-text-3" id="text-org5e73bcb"></div>
+<div class="outline-4" id="outline-container-org1df876d">
+<h4 id="org1df876d">Adding Files</h4>
+<div class="outline-text-4" id="text-org1df876d">
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>add<span class="w"> </span><span class="s2">"git add"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gaa<span class="w"> </span><span class="s2">"git add -A"</span>
+<pre><span></span>abbr --add -- add <span class="s2">"git add"</span>
+abbr --add -- gaa <span class="s2">"git add -A"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org981bafa">
-<h4 id="org981bafa">Are you ready for a commitment?</h4>
-<div class="outline-text-4" id="text-org981bafa">
+<div class="outline-4" id="outline-container-org8797b55">
+<h4 id="org8797b55">Are you ready for a commitment?</h4>
+<div class="outline-text-4" id="text-org8797b55">
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>commit<span class="w"> </span><span class="s2">"git commit"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gcm<span class="w"> </span><span class="s2">"git commit --message"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>amend<span class="w"> </span><span class="s2">"git commit --amend"</span>
+<pre><span></span>abbr --add -- commit <span class="s2">"git commit"</span>
+abbr --add -- gcm <span class="s2">"git commit --message"</span>
+abbr --add -- amend <span class="s2">"git commit --amend"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orge033c61">
-<h4 id="orge033c61">Speak To The Gods On High</h4>
-<div class="outline-text-4" id="text-orge033c61">
+<div class="outline-4" id="outline-container-orgcf91e4b">
+<h4 id="orgcf91e4b">Speak To The Gods On High</h4>
+<div class="outline-text-4" id="text-orgcf91e4b">
 <p><a href="https://man7.org/linux/man-pages/man2/sync.2.html"><code>sync</code></a> is a builtin command (it writes caches to disk) so I went with <code>gsync</code> for the abbreviation.</p>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>push<span class="w"> </span><span class="s2">"git push"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gsync<span class="w"> </span><span class="s2">"legit sync"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>publish<span class="w"> </span><span class="s2">"legit publish"</span>
+<pre><span></span>abbr --add -- push <span class="s2">"git push"</span>
+abbr --add -- gsync <span class="s2">"legit sync"</span>
+abbr --add -- publish <span class="s2">"legit publish"</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgebce522">
-<h3 id="orgebce522">The State of Things</h3>
-<div class="outline-text-3" id="text-orgebce522">
+<div class="outline-3" id="outline-container-org7da958d">
+<h3 id="org7da958d">The State of Things</h3>
+<div class="outline-text-3" id="text-org7da958d">
 <p><a href="https://fishshell.com/docs/current/cmds/status.html"><code>status</code></a> gives you information about the fish-shell. This is the only thing I ever see, though.</p>
 <div class="highlight">
-<pre><span></span>status
+<pre><span></span><span class="nb">status</span>
 </pre></div>
 <pre class="example">
 This is not a login shell
 Job control: Only on interactive jobs
 </pre>
 <p>But, anyway, I went with <code>gstat</code> to not block it in case it's really needed at some point.</p>
+<div class="notecard" id="orgdc61d4c">
+<p><b>Note:</b> Look at the <a href="../ssh-agent-config-fragment/">SSH Agent Config Fragment</a> post to see <code>status</code> in use. It's probably meant for programming, not as a command-line command.</p>
+</div>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>state<span class="w"> </span><span class="s2">"git status -sb"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gstat<span class="w"> </span><span class="s2">"git status"</span>
+<pre><span></span>abbr --add -- state <span class="s2">"git status -sb"</span>
+abbr --add -- gstat <span class="s2">"git status"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgde074d8">
-<h3 id="orgde074d8">Branch Work</h3>
-<div class="outline-text-3" id="text-orgde074d8">
+<div class="outline-3" id="outline-container-org0da7a32">
+<h3 id="org0da7a32">Branch Work</h3>
+<div class="outline-text-3" id="text-org0da7a32">
 <p><a href="https://fishshell.com/docs/current/cmds/switch.html"><code>switch</code></a> is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).</p>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>branches<span class="w"> </span><span class="s2">"legit branches"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>gswitch<span class="w"> </span><span class="s2">"legit switch"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>branchls<span class="w"> </span><span class="s2">"git ls-tree --name-only -r"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>branchlog<span class="w"> </span><span class="s2">"git log --oneline --abbrev-commit --all --graph --decorate --color"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>branchlogall<span class="w"> </span><span class="s2">"git log --branches --graph"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>renamebranch<span class="w"> </span><span class="s2">"git branch -m"</span>
+<pre><span></span>abbr --add -- branches <span class="s2">"legit branches"</span>
+abbr --add -- gswitch <span class="s2">"legit switch"</span>
+abbr --add -- brls <span class="s2">"git ls-tree --name-only -r"</span>
+abbr --add -- brlog <span class="s2">"git log --oneline --abbrev-commit"</span> <span class="se">\</span>
+    <span class="s2">" --all --graph --decorate --color"</span>
+abbr --add -- brlogall <span class="s2">"git log --branches --graph"</span>
+abbr --add -- renamebranch <span class="s2">"git branch -m"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org54222d2">
-<h3 id="org54222d2">My, How Things Have Changed</h3>
-<div class="outline-text-3" id="text-org54222d2">
+<div class="outline-3" id="outline-container-org78e3765">
+<h3 id="org78e3765">My, How Things Have Changed</h3>
+<div class="outline-text-3" id="text-org78e3765">
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>codechanges<span class="w"> </span><span class="s2">"git log -p"</span>
-abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>logdiff<span class="w"> </span><span class="s2">"git log -p"</span>
+<pre><span></span>abbr --add -- codechanges <span class="s2">"git log -p"</span>
+abbr --add -- logdiff <span class="s2">"git log -p"</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org085b179">
-<h2 id="org085b179">Pass</h2>
-<div class="outline-text-2" id="text-org085b179">
+<div class="outline-2" id="outline-container-orgcf76e03">
+<h2 id="orgcf76e03">Pass</h2>
+<div class="outline-text-2" id="text-orgcf76e03">
 <p>For <a href="https://www.passwordstore.org/">pass</a> the password-manager. I was doing the pull and push commands but decided to use the git <code>sync</code> alias which is actuall calling <code>legit sync</code>, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.</p>
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>syncpass<span class="w"> </span><span class="s2">"pass git sync"</span>
+<pre><span></span>abbr --add -- syncpass <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga4e28cc">
-<h2 id="orga4e28cc">Grep</h2>
-<div class="outline-text-2" id="text-orga4e28cc">
+<div class="outline-2" id="outline-container-org4111b70">
+<h2 id="org4111b70">Grep</h2>
+<div class="outline-text-2" id="text-org4111b70">
 <div class="highlight">
-<pre><span></span>abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </span>grepr<span class="w"> </span><span class="s2">"grep --color=always"</span>
+<pre><span></span>abbr --add -- grepr <span class="s2">"grep --color=always"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgfdcbcb7">
-<h2 id="orgfdcbcb7">Links</h2>
-<div class="outline-text-2" id="text-orgfdcbcb7">
+<div class="outline-2" id="outline-container-orgf39804e">
+<h2 id="orgf39804e">Links</h2>
+<div class="outline-text-2" id="text-orgf39804e">
 <ul class="org-ul">
 <li>abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: <a href="https://fishshell.com/docs/current/cmds/abbr.html">https://fishshell.com/docs/current/cmds/abbr.html</a></li>
 <li>faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: <a href="https://stackoverflow.com/a/48749763">https://stackoverflow.com/a/48749763</a></li>
@@ -258,6 +263,7 @@ abbr<span class="w"> </span>--add<span class="w"> </span>--<span class="w"> </sp
 </ul>
 <ul class="pager hidden-print">
 <li class="previous"><a href="../configfish-the-fish-configuration/" rel="prev" title="config.fish The Fish Configuration">Previous post</a></li>
+<li class="next"><a href="../ssh-agent-config-fragment/" rel="next" title="SSH Agent Config Fragment">Next post</a></li>
 </ul>
 </nav>
 </aside>

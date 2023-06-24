@@ -5,19 +5,19 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 23 Jun 2023 20:25:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>rst2org Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/rst2org-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;rst2org&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Convert text file to org"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--argument-names&lt;span class="w"&gt; &lt;/span&gt;sourcefile
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;target&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;path&lt;span class="w"&gt; &lt;/span&gt;change-extension&lt;span class="w"&gt; &lt;/span&gt;org&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$sourcefile&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;pandoc&lt;span class="w"&gt; &lt;/span&gt;--standalone&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$sourcefile&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--output&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$target&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--wrap&lt;span class="o"&gt;=&lt;/span&gt;none
-end
+</copyright><lastBuildDate>Sat, 24 Jun 2023 21:36:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>rst2org Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/rst2org-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; rst2org -d &lt;span class="s2"&gt;"Convert text file to org"&lt;/span&gt; --argument-names sourcefile
+    &lt;span class="k"&gt;set&lt;/span&gt; target &lt;span class="nv"&gt;$(&lt;/span&gt;path change-extension org &lt;span class="nv"&gt;$sourcefile&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    pandoc --standalone &lt;span class="nv"&gt;$sourcefile&lt;/span&gt; --output &lt;span class="nv"&gt;$target&lt;/span&gt; --wrap&lt;span class="o"&gt;=&lt;/span&gt;none
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
 This function will convert a text file to an org file using pandoc. I called it &lt;code&gt;rst2org&lt;/code&gt; because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org0883de5" class="outline-2"&gt;
-&lt;h2 id="org0883de5"&gt;What It's Doing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0883de5"&gt;
+&lt;div id="outline-container-org63a1d4e" class="outline-2"&gt;
+&lt;h2 id="org63a1d4e"&gt;What It's Doing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org63a1d4e"&gt;
 &lt;p&gt;
 The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.
 &lt;/p&gt;
@@ -30,9 +30,9 @@ The first thing the function does is change the file extension from whatever it 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8940933" class="outline-2"&gt;
-&lt;h2 id="org8940933"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8940933"&gt;
+&lt;div id="outline-container-org7c2302d" class="outline-2"&gt;
+&lt;h2 id="org7c2302d"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7c2302d"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: &lt;a href="https://stackoverflow.com/a/62990248"&gt;https://stackoverflow.com/a/62990248&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -45,27 +45,27 @@ The first option documented in the options section of the pandoc documentation i
 &lt;li&gt;pandoc general options [Internet]. Available from &lt;a href="https://pandoc.org/MANUAL.html#general-options"&gt;https://pandoc.org/MANUAL.html#general-options&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>functions</category><category>org-mode</category><category>pandoc</category><guid>https://necromuralist.github.io/Fish-Functions/posts/rst2org-function/</guid><pubDate>Thu, 22 Jun 2023 19:51:54 GMT</pubDate></item><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;las
-&lt;span class="w"&gt;    &lt;/span&gt;ls&lt;span class="w"&gt; &lt;/span&gt;--almost-all&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;--color&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;--dereference-command-line&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;--human-readable&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;-l&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$argv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;	&lt;/span&gt;less&lt;span class="w"&gt; &lt;/span&gt;--RAW-CONTROL-CHARS
-end
+&lt;/div&gt;</description><category>functions</category><category>org-mode</category><category>pandoc</category><guid>https://necromuralist.github.io/Fish-Functions/posts/rst2org-function/</guid><pubDate>Thu, 22 Jun 2023 19:51:54 GMT</pubDate></item><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
+    ls --almost-all &lt;span class="se"&gt;\&lt;/span&gt;
+       --color &lt;span class="se"&gt;\&lt;/span&gt;
+       --dereference-command-line &lt;span class="se"&gt;\&lt;/span&gt;
+       --human-readable &lt;span class="se"&gt;\&lt;/span&gt;
+       -l &lt;span class="nv"&gt;$argv&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+	less --RAW-CONTROL-CHARS
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org36e99c4" class="outline-2"&gt;
-&lt;h2 id="org36e99c4"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org36e99c4"&gt;
+&lt;div id="outline-container-org9c4a0c2" class="outline-2"&gt;
+&lt;h2 id="org9c4a0c2"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9c4a0c2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org32a1ec4" class="outline-3"&gt;
-&lt;h3 id="org32a1ec4"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org32a1ec4"&gt;
+&lt;div id="outline-container-org8d54083" class="outline-3"&gt;
+&lt;h3 id="org8d54083"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8d54083"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -76,14 +76,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3db107e" class="outline-3"&gt;
-&lt;h3 id="org3db107e"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3db107e"&gt;
+&lt;div id="outline-container-org8fc8f22" class="outline-3"&gt;
+&lt;h3 id="org8fc8f22"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8fc8f22"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard" id="org7e918a3"&gt;
+&lt;div class="notecard" id="orgd632c97"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;
@@ -91,35 +91,35 @@ There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will i
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org3421ab1" class="outline-2"&gt;
-&lt;h2 id="org3421ab1"&gt;Choose&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3421ab1"&gt;
+&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orge717b5b" class="outline-2"&gt;
+&lt;h2 id="orge717b5b"&gt;Choose&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge717b5b"&gt;
 &lt;p&gt;
 An alias function that will pick a random line (or lines) out of a text file.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org97b8488" class="outline-2"&gt;
-&lt;h2 id="org97b8488"&gt;The Function Declaration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org97b8488"&gt;
+&lt;div id="outline-container-orgc1e3b36" class="outline-2"&gt;
+&lt;h2 id="orgc1e3b36"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc1e3b36"&gt;
 &lt;p&gt;
 Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument that we'll assign to the variable &lt;code&gt;filename&lt;/code&gt; and one optional argument &lt;code&gt;lines&lt;/code&gt; to indicate the number of lines to pull.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;choose&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Random line from a file."&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--argument-names&lt;span class="w"&gt; &lt;/span&gt;filename&lt;span class="w"&gt; &lt;/span&gt;lines
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; choose -d &lt;span class="s2"&gt;"Random line from a file."&lt;/span&gt; --argument-names filename lines
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9406136" class="outline-2"&gt;
-&lt;h2 id="org9406136"&gt;The Error String&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9406136"&gt;
+&lt;div id="outline-container-orgf770431" class="outline-2"&gt;
+&lt;h2 id="orgf770431"&gt;The Error String&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf770431"&gt;
 &lt;p&gt;
 I'm setting a string-format variable that I'll use to color error messages in bold red.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ERROR&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"\x1b[31;1m\t%s\n\n\x1b[0m"&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; ERROR &lt;span class="s2"&gt;"\x1b[31;1m\t%s\n\n\x1b[0m"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -128,14 +128,14 @@ See &lt;a href="https://stackoverflow.com/a/33206814"&gt;this stack overflow ans
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org960ad52" class="outline-2"&gt;
-&lt;h2 id="org960ad52"&gt;The Okay Variable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org960ad52"&gt;
+&lt;div id="outline-container-org2eb95bc" class="outline-2"&gt;
+&lt;h2 id="org2eb95bc"&gt;The Okay Variable&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2eb95bc"&gt;
 &lt;p&gt;
 This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;OKAY&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; OKAY 0
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -144,9 +144,9 @@ I'm setting it to False so that it has to pass the checks in order to be unset.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org93c546a" class="outline-2"&gt;
-&lt;h2 id="org93c546a"&gt;Check the Number of Lines&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org93c546a"&gt;
+&lt;div id="outline-container-orgc293ab6" class="outline-2"&gt;
+&lt;h2 id="orgc293ab6"&gt;Check the Number of Lines&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc293ab6"&gt;
 &lt;p&gt;
 Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the &lt;code&gt;shuf&lt;/code&gt; command later on.
 &lt;/p&gt;
@@ -155,22 +155,22 @@ Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so
 &lt;li&gt;&lt;code&gt;test -n "$lines"&lt;/code&gt; will return True if &lt;code&gt;lines&lt;/code&gt; is non-empty so I negated it with &lt;code&gt;!&lt;/code&gt; to return True if it's empty.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;lines&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;OKAY&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
-&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;string&lt;span class="w"&gt; &lt;/span&gt;match&lt;span class="w"&gt; &lt;/span&gt;--regex&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"^[0-9]+\$"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;OKAY&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$ERROR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Not a valid number of lines: '&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="s2"&gt;'"&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; ! &lt;span class="k"&gt;test&lt;/span&gt; -n &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+  &lt;span class="k"&gt;set&lt;/span&gt; lines 1
+  &lt;span class="k"&gt;set&lt;/span&gt; OKAY 1
+&lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; ! &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;string match --regex &lt;span class="s2"&gt;"^[0-9]+\$"&lt;/span&gt; &lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;set&lt;/span&gt; OKAY 0
+  &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="nv"&gt;$ERROR&lt;/span&gt; &lt;span class="s2"&gt;"Not a valid number of lines: '&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="s2"&gt;'"&lt;/span&gt;
 &lt;span class="k"&gt;else&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;OKAY&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
-end
+  &lt;span class="k"&gt;set&lt;/span&gt; OKAY 1
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org045f935" class="outline-2"&gt;
-&lt;h2 id="org045f935"&gt;If It's a Text File, Use It&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org045f935"&gt;
+&lt;div id="outline-container-org074fcfe" class="outline-2"&gt;
+&lt;h2 id="org074fcfe"&gt;If It's a Text File, Use It&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org074fcfe"&gt;
 &lt;p&gt;
 We'll be grabbing a line using the &lt;a href="https://man7.org/linux/man-pages/man1/shuf.1.html"&gt;shuf&lt;/a&gt; command. &lt;code&gt;shuf&lt;/code&gt; will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.
 &lt;/p&gt;
@@ -183,8 +183,8 @@ To do the check I'm using the &lt;a href="https://www.man7.org/linux/man-pages/m
 First, though, we check if the &lt;code&gt;lines&lt;/code&gt; argument was okay and if it was and &lt;code&gt;filename&lt;/code&gt; passes its test then we can feed it to &lt;code&gt;shuf&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$OKAY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-ne&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;string&lt;span class="w"&gt; &lt;/span&gt;match&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"*text*"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;file&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;   &lt;/span&gt;shuf&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$OKAY&lt;/span&gt; -ne 0&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;string match &lt;span class="s2"&gt;"*text*"&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;file &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+   shuf -n &lt;span class="nv"&gt;$lines&lt;/span&gt; &lt;span class="nv"&gt;$filename&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul class="org-ul"&gt;
@@ -194,54 +194,54 @@ First, though, we check if the &lt;code&gt;lines&lt;/code&gt; argument was okay 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge343d80" class="outline-2"&gt;
-&lt;h2 id="orge343d80"&gt;Handle the Errors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge343d80"&gt;
+&lt;div id="outline-container-org574e87f" class="outline-2"&gt;
+&lt;h2 id="org574e87f"&gt;Handle the Errors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org574e87f"&gt;
 &lt;p&gt;
 If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$ERROR&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s2"&gt;"**Missing Filename**"&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$OKAY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-ne&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$ERROR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Invalid File: '&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;'"&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;end
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;OKAY&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
-end&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# check filename&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; ! &lt;span class="k"&gt;test&lt;/span&gt; -n &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="nv"&gt;$ERROR&lt;/span&gt;  &lt;span class="s2"&gt;"**Missing Filename**"&lt;/span&gt;
+  &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$OKAY&lt;/span&gt; -ne 0
+    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="nv"&gt;$ERROR&lt;/span&gt; &lt;span class="s2"&gt;"Invalid File: '&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;'"&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="k"&gt;set&lt;/span&gt; OKAY 0
+&lt;span class="k"&gt;end&lt;/span&gt; &lt;span class="c"&gt;# check filename&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org60901fb" class="outline-2"&gt;
-&lt;h2 id="org60901fb"&gt;Emit a Help Message&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org60901fb"&gt;
+&lt;div id="outline-container-org4b3376a" class="outline-2"&gt;
+&lt;h2 id="org4b3376a"&gt;Emit a Help Message&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4b3376a"&gt;
 &lt;p&gt;
 If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;/code&gt; will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$OKAY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-eq&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"\t%s\n"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;	 &lt;/span&gt;&lt;span class="s2"&gt;"Output a random line or lines from a text file."&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\ \&lt;/span&gt;
-&lt;span class="w"&gt;	 &lt;/span&gt;&lt;span class="s2"&gt;"Usage:"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\ \&lt;/span&gt;
-&lt;span class="w"&gt;	 &lt;/span&gt;&lt;span class="s2"&gt;"    choose &amp;lt;filename&amp;gt; [&amp;lt;number of lines&amp;gt;]"&lt;/span&gt;
-end&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# help message&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$OKAY&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt;     
+  &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;"\t%s\n"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+	 &lt;span class="s2"&gt;"Output a random line or lines from a text file."&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
+	 &lt;span class="s2"&gt;"Usage:"&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
+	 &lt;span class="s2"&gt;"    choose &amp;lt;filename&amp;gt; [&amp;lt;number of lines&amp;gt;]"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt; &lt;span class="c"&gt;# help message&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org85c422b" class="outline-2"&gt;
-&lt;h2 id="org85c422b"&gt;One Last Thing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org85c422b"&gt;
+&lt;div id="outline-container-org4a7a03c" class="outline-2"&gt;
+&lt;h2 id="org4a7a03c"&gt;One Last Thing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4a7a03c"&gt;
 &lt;p&gt;
 If the user passes in a flag as a filename this will get passed to the &lt;code&gt;file&lt;/code&gt; command and in some cases this will cause it to emit a help message which will get passed to the &lt;code&gt;shuf&lt;/code&gt; command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for &lt;code&gt;shuf&lt;/code&gt;, so hopefully it'll work okay.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgaa84d2b" class="outline-2"&gt;
-&lt;h2 id="orgaa84d2b"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgaa84d2b"&gt;
+&lt;div id="outline-container-org2f48e53" class="outline-2"&gt;
+&lt;h2 id="org2f48e53"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2f48e53"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 

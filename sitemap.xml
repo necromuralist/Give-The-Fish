@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://necromuralist.github.io/Fish-Functions/archive.html</loc>
-  <lastmod>2023-06-23T23:17:00Z</lastmod>
+  <lastmod>2023-06-24T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/</loc>
-  <lastmod>2023-06-23T23:17:00Z</lastmod>
+  <lastmod>2023-06-24T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/abbreviations/</loc>
@@ -32,6 +32,10 @@
  <url>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/cat_abbreviations/</loc>
   <lastmod>2023-06-23T23:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/cat_configuration/</loc>
+  <lastmod>2023-06-24T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Fish-Functions/categories/cat_functions/</loc>
@@ -74,6 +78,10 @@
   <lastmod>2023-06-23T20:25:00Z</lastmod>
  </url>
  <url>
+  <loc>https://necromuralist.github.io/Fish-Functions/categories/ssh/</loc>
+  <lastmod>2023-06-24T20:10:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://necromuralist.github.io/Fish-Functions/dingehaufen-index/</loc>
   <lastmod>2023-06-23T20:25:00Z</lastmod>
  </url>
@@ -83,7 +91,7 @@
  </url>
  <url>
   <loc>https://necromuralist.github.io/Fish-Functions/posts/</loc>
-  <lastmod>2023-06-23T23:17:00Z</lastmod>
+  <lastmod>2023-06-24T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/</loc>
@@ -108,5 +116,9 @@
  <url>
   <loc>https://necromuralist.github.io/Fish-Functions/posts/rst2org-function/</loc>
   <lastmod>2023-06-23T20:25:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</loc>
+  <lastmod>2023-06-24T20:10:00Z</lastmod>
  </url>
 </urlset>

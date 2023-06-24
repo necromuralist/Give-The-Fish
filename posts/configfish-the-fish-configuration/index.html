@@ -70,84 +70,72 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga7ba1de">Environment Variables</a></li>
-<li><a href="#org659d16c">Add Local Bin To the PATH</a></li>
-<li><a href="#org71cd38d">SSH Agent</a></li>
-<li><a href="#orga780d38">VPN</a></li>
-<li><a href="#org834b63f">NPM</a></li>
+<li><a href="#org781d2d6">Environment Variables</a></li>
+<li><a href="#orgacd17b6">Add Local Bin To the PATH</a></li>
+<li><a href="#org4064b3a">VPN</a></li>
+<li><a href="#orge7740e7">NPM</a></li>
 </ul>
 </div>
 </div>
 <p>This is the fish configuration file. It goes into <code>~/.config/fish/config.fish</code>.</p>
-<div class="outline-2" id="outline-container-orga7ba1de">
-<h2 id="orga7ba1de">Environment Variables</h2>
-<div class="outline-text-2" id="text-orga7ba1de">
+<div class="outline-2" id="outline-container-org781d2d6">
+<h2 id="org781d2d6">Environment Variables</h2>
+<div class="outline-text-2" id="text-org781d2d6">
 <div class="highlight">
-<pre><span></span><span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>ALTERNATE_EDITOR<span class="w"> </span><span class="s2">""</span>
-<span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>EDITOR<span class="w"> </span><span class="s2">"emacsclient -c"</span>
-<span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>VISUAL<span class="w"> </span><span class="s2">"emacsclient -c -a emacs"</span>
+<pre><span></span><span class="k">set</span> -x ALTERNATE_EDITOR <span class="s2">""</span>
+<span class="k">set</span> -x EDITOR <span class="s2">"emacsclient -c"</span>
+<span class="k">set</span> -x VISUAL <span class="s2">"emacsclient -c -a emacs"</span>
 
-<span class="c1"># wake monstery server</span>
-<span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>ATHENA<span class="w"> </span><span class="s2">"04:92:26:c3:a6:c7"</span>
+<span class="c"># wake monstery server</span>
+<span class="k">set</span> -x ATHENA <span class="s2">"04:92:26:c3:a6:c7"</span>
 
-<span class="c1"># monstery LAN</span>
-<span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>APOLLO<span class="w"> </span><span class="s2">"192.168.86.172"</span>
+<span class="c"># monstery LAN</span>
+<span class="k">set</span> -x APOLLO <span class="s2">"192.168.86.172"</span>
 
-<span class="c1"># for extra docker build features (like smarter pip caching)</span>
-<span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>DOCKER_BUILDKIT<span class="w"> </span><span class="m">1</span>
+<span class="c"># for extra docker build features (like smarter pip caching)</span>
+<span class="k">set</span> -x DOCKER_BUILDKIT 1
 
-<span class="c1"># for clearing the startup restore session</span>
-<span class="c1"># so firefox doesn't try and open previous pages on startup</span>
-<span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>MOZILLA_PROFILE<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"</span>
+<span class="c"># for clearing the startup restore session</span>
+<span class="c"># so firefox doesn't try and open previous pages on startup</span>
+<span class="k">set</span> -x MOZILLA_PROFILE <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"</span>
 
-<span class="c1"># R Downloads</span>
-<span class="nb">set</span><span class="w"> </span>-x<span class="w"> </span>R_LIBS<span class="w"> </span>~/.local/lib/R/library/
+<span class="c"># R Downloads</span>
+<span class="k">set</span> -x R_LIBS ~/.local/lib/R/library/
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org659d16c">
-<h2 id="org659d16c">Add Local Bin To the PATH</h2>
-<div class="outline-text-2" id="text-org659d16c">
+<div class="outline-2" id="outline-container-orgacd17b6">
+<h2 id="orgacd17b6">Add Local Bin To the PATH</h2>
+<div class="outline-text-2" id="text-orgacd17b6">
 <div class="highlight">
-<pre><span></span><span class="c1"># add to the path</span>
+<pre><span></span><span class="c"># add to the path</span>
 
-<span class="c1"># https://fishshell.com/docs/current/cmds/fish_add_path.html</span>
-fish_add_path<span class="w"> </span><span class="nv">$HOME</span>/bin
+<span class="c"># https://fishshell.com/docs/current/cmds/fish_add_path.html</span>
+fish_add_path <span class="nv">$HOME</span>/bin
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org71cd38d">
-<h2 id="org71cd38d">SSH Agent</h2>
-<div class="outline-text-2" id="text-org71cd38d">
+<div class="outline-2" id="outline-container-org4064b3a">
+<h2 id="org4064b3a">VPN</h2>
+<div class="outline-text-2" id="text-org4064b3a">
 <div class="highlight">
-<pre><span></span><span class="c1"># load the ssh-agent</span>
-<span class="k">if</span><span class="w"> </span>status<span class="w"> </span>--is-interactive
-<span class="w"> </span>keychain<span class="w"> </span>--eval<span class="w"> </span>--quiet<span class="w"> </span>-Q<span class="w"> </span>id_rsa<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nb">source</span>
-end
+<pre><span></span><span class="c"># check the vpn</span>
+<span class="k">if</span> <span class="nb">status</span> --is-interactive
+  protonvpn-cli <span class="nb">status</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga780d38">
-<h2 id="orga780d38">VPN</h2>
-<div class="outline-text-2" id="text-orga780d38">
+<div class="outline-2" id="outline-container-orge7740e7">
+<h2 id="orge7740e7">NPM</h2>
+<div class="outline-text-2" id="text-orge7740e7">
 <div class="highlight">
-<pre><span></span><span class="c1"># check the vpn</span>
-<span class="k">if</span><span class="w"> </span>status<span class="w"> </span>--is-interactive
-<span class="w">  </span>protonvpn-cli<span class="w"> </span>status
-end
-</pre></div>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org834b63f">
-<h2 id="org834b63f">NPM</h2>
-<div class="outline-text-2" id="text-org834b63f">
-<div class="highlight">
-<pre><span></span><span class="c1"># setup npm locally</span>
-<span class="c1"># from https://stackoverflow.com/a/13021677</span>
-<span class="c1"># expect you to also setup ~/.npmrc</span>
-<span class="nb">set</span><span class="w"> </span>--export<span class="w"> </span>NPM_PACKAGES<span class="w"> </span><span class="nv">$HOME</span>/.npm-packages
-<span class="nb">set</span><span class="w"> </span>--export<span class="w"> </span>NODE_PATH<span class="w"> </span><span class="nv">$HOME</span>/.npm-packages/lib/node_modules
-fish_add_path<span class="w"> </span><span class="nv">$HOME</span>/.npm-packages/bin
+<pre><span></span><span class="c"># setup npm locally</span>
+<span class="c"># from https://stackoverflow.com/a/13021677</span>
+<span class="c"># expect you to also setup ~/.npmrc</span>
+<span class="k">set</span> --export NPM_PACKAGES <span class="nv">$HOME</span>/.npm-packages
+<span class="k">set</span> --export NODE_PATH <span class="nv">$HOME</span>/.npm-packages/lib/node_modules
+fish_add_path <span class="nv">$HOME</span>/.npm-packages/bin
 </pre></div>
 </div>
 </div>

@@ -5,15 +5,66 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 23 Jun 2023 23:17:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Sat, 24 Jun 2023 21:11:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orga862048" class="outline-2"&gt;
+&lt;h2 id="orga862048"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga862048"&gt;
+&lt;p&gt;
+This is the fragment to make sure the ssh-agent is running.
+&lt;/p&gt;
+
+&lt;div class="notecard" id="orgbe996b0"&gt;
+&lt;p&gt;
+Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;status&lt;/span&gt; --is-interactive
+  keychain --eval --quiet --quick id_rsa &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;source&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The documentation for the &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;&lt;code&gt;status&lt;/code&gt;&lt;/a&gt; comand says that &lt;code&gt;is-interactive&lt;/code&gt; is actually a sub-command (not an option, although I'm calling it like it is one) and that it:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Returns 0 if fish is interactive - that is, connected to a keyboard.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Which is an oddly unintuitive description. I think it means that it won't pass the conditional if I try to run the fragment as a function… I can't remember why I used it, exactly ,but I think it's something you need if you want it to be loaded when you login.
+&lt;/p&gt;
+
+&lt;p&gt;
+Although the name &lt;a href="https://linux.die.net/man/1/keychain"&gt;keychain&lt;/a&gt; makes it sound like it's a general password manager, according to the man-page it's meant specifically to manage the ssh-agent. It will check if you already have an ssh-agent running and only start one if you don't. This way you don't end up starting one for every &lt;code&gt;screen&lt;/code&gt; you open up.
+&lt;/p&gt;
+
+&lt;p&gt;
+The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout, &lt;code&gt;--quiet&lt;/code&gt; suppresses other messages, &lt;code&gt;--quick&lt;/code&gt; tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;&lt;code&gt;source&lt;/code&gt;&lt;/a&gt; to load the environment.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgca9983a" class="outline-2"&gt;
+&lt;h2 id="orgca9983a"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgca9983a"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;status - query fish runtime information — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;https://fishshell.com/docs/current/cmds/status.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>configuration</category><category>ssh</category><guid>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</guid><pubDate>Sat, 24 Jun 2023 19:47:47 GMT</pubDate></item><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orga7ba1de"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org659d16c"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org71cd38d"&gt;SSH Agent&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orga780d38"&gt;VPN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org834b63f"&gt;NPM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org781d2d6"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orgacd17b6"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org4064b3a"&gt;VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orge7740e7"&gt;NPM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -22,74 +73,63 @@
 This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div id="outline-container-orga7ba1de" class="outline-2"&gt;
-&lt;h2 id="orga7ba1de"&gt;Environment Variables&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga7ba1de"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;ALTERNATE_EDITOR&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;EDITOR&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"emacsclient -c"&lt;/span&gt;
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;VISUAL&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"emacsclient -c -a emacs"&lt;/span&gt;
+&lt;div id="outline-container-org781d2d6" class="outline-2"&gt;
+&lt;h2 id="org781d2d6"&gt;Environment Variables&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org781d2d6"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; -x ALTERNATE_EDITOR &lt;span class="s2"&gt;""&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; -x EDITOR &lt;span class="s2"&gt;"emacsclient -c"&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; -x VISUAL &lt;span class="s2"&gt;"emacsclient -c -a emacs"&lt;/span&gt;
 
-&lt;span class="c1"&gt;# wake monstery server&lt;/span&gt;
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;ATHENA&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"04:92:26:c3:a6:c7"&lt;/span&gt;
+&lt;span class="c"&gt;# wake monstery server&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; -x ATHENA &lt;span class="s2"&gt;"04:92:26:c3:a6:c7"&lt;/span&gt;
 
-&lt;span class="c1"&gt;# monstery LAN&lt;/span&gt;
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;APOLLO&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"192.168.86.172"&lt;/span&gt;
+&lt;span class="c"&gt;# monstery LAN&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; -x APOLLO &lt;span class="s2"&gt;"192.168.86.172"&lt;/span&gt;
 
-&lt;span class="c1"&gt;# for extra docker build features (like smarter pip caching)&lt;/span&gt;
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;DOCKER_BUILDKIT&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="c"&gt;# for extra docker build features (like smarter pip caching)&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; -x DOCKER_BUILDKIT 1
 
-&lt;span class="c1"&gt;# for clearing the startup restore session&lt;/span&gt;
-&lt;span class="c1"&gt;# so firefox doesn't try and open previous pages on startup&lt;/span&gt;
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;MOZILLA_PROFILE&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"&lt;/span&gt;
+&lt;span class="c"&gt;# for clearing the startup restore session&lt;/span&gt;
+&lt;span class="c"&gt;# so firefox doesn't try and open previous pages on startup&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; -x MOZILLA_PROFILE &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"&lt;/span&gt;
 
-&lt;span class="c1"&gt;# R Downloads&lt;/span&gt;
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;R_LIBS&lt;span class="w"&gt; &lt;/span&gt;~/.local/lib/R/library/
+&lt;span class="c"&gt;# R Downloads&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; -x R_LIBS ~/.local/lib/R/library/
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org659d16c" class="outline-2"&gt;
-&lt;h2 id="org659d16c"&gt;Add Local Bin To the PATH&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org659d16c"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# add to the path&lt;/span&gt;
+&lt;div id="outline-container-orgacd17b6" class="outline-2"&gt;
+&lt;h2 id="orgacd17b6"&gt;Add Local Bin To the PATH&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgacd17b6"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# add to the path&lt;/span&gt;
 
-&lt;span class="c1"&gt;# https://fishshell.com/docs/current/cmds/fish_add_path.html&lt;/span&gt;
-fish_add_path&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
+&lt;span class="c"&gt;# https://fishshell.com/docs/current/cmds/fish_add_path.html&lt;/span&gt;
+fish_add_path &lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org71cd38d" class="outline-2"&gt;
-&lt;h2 id="org71cd38d"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org71cd38d"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# load the ssh-agent&lt;/span&gt;
-&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;--is-interactive
-&lt;span class="w"&gt; &lt;/span&gt;keychain&lt;span class="w"&gt; &lt;/span&gt;--eval&lt;span class="w"&gt; &lt;/span&gt;--quiet&lt;span class="w"&gt; &lt;/span&gt;-Q&lt;span class="w"&gt; &lt;/span&gt;id_rsa&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt;
-end
+&lt;div id="outline-container-org4064b3a" class="outline-2"&gt;
+&lt;h2 id="org4064b3a"&gt;VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4064b3a"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# check the vpn&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;status&lt;/span&gt; --is-interactive
+  protonvpn-cli &lt;span class="nb"&gt;status&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga780d38" class="outline-2"&gt;
-&lt;h2 id="orga780d38"&gt;VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga780d38"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# check the vpn&lt;/span&gt;
-&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;--is-interactive
-&lt;span class="w"&gt;  &lt;/span&gt;protonvpn-cli&lt;span class="w"&gt; &lt;/span&gt;status
-end
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org834b63f" class="outline-2"&gt;
-&lt;h2 id="org834b63f"&gt;NPM&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org834b63f"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# setup npm locally&lt;/span&gt;
-&lt;span class="c1"&gt;# from https://stackoverflow.com/a/13021677&lt;/span&gt;
-&lt;span class="c1"&gt;# expect you to also setup ~/.npmrc&lt;/span&gt;
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--export&lt;span class="w"&gt; &lt;/span&gt;NPM_PACKAGES&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages
-&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--export&lt;span class="w"&gt; &lt;/span&gt;NODE_PATH&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages/lib/node_modules
-fish_add_path&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages/bin
+&lt;div id="outline-container-orge7740e7" class="outline-2"&gt;
+&lt;h2 id="orge7740e7"&gt;NPM&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge7740e7"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# setup npm locally&lt;/span&gt;
+&lt;span class="c"&gt;# from https://stackoverflow.com/a/13021677&lt;/span&gt;
+&lt;span class="c"&gt;# expect you to also setup ~/.npmrc&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --export NPM_PACKAGES &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages
+&lt;span class="k"&gt;set&lt;/span&gt; --export NODE_PATH &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages/lib/node_modules
+fish_add_path &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages/bin
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>configuration</category><guid>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</guid><pubDate>Thu, 22 Jun 2023 20:14:19 GMT</pubDate></item></channel></rss>

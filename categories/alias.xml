@@ -5,27 +5,27 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 23 Jun 2023 20:25:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;las
-&lt;span class="w"&gt;    &lt;/span&gt;ls&lt;span class="w"&gt; &lt;/span&gt;--almost-all&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;--color&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;--dereference-command-line&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;--human-readable&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;-l&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$argv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
-&lt;span class="w"&gt;	&lt;/span&gt;less&lt;span class="w"&gt; &lt;/span&gt;--RAW-CONTROL-CHARS
-end
+</copyright><lastBuildDate>Sat, 24 Jun 2023 21:35:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
+    ls --almost-all &lt;span class="se"&gt;\&lt;/span&gt;
+       --color &lt;span class="se"&gt;\&lt;/span&gt;
+       --dereference-command-line &lt;span class="se"&gt;\&lt;/span&gt;
+       --human-readable &lt;span class="se"&gt;\&lt;/span&gt;
+       -l &lt;span class="nv"&gt;$argv&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+	less --RAW-CONTROL-CHARS
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org36e99c4" class="outline-2"&gt;
-&lt;h2 id="org36e99c4"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org36e99c4"&gt;
+&lt;div id="outline-container-org9c4a0c2" class="outline-2"&gt;
+&lt;h2 id="org9c4a0c2"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9c4a0c2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org32a1ec4" class="outline-3"&gt;
-&lt;h3 id="org32a1ec4"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org32a1ec4"&gt;
+&lt;div id="outline-container-org8d54083" class="outline-3"&gt;
+&lt;h3 id="org8d54083"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8d54083"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -36,14 +36,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3db107e" class="outline-3"&gt;
-&lt;h3 id="org3db107e"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3db107e"&gt;
+&lt;div id="outline-container-org8fc8f22" class="outline-3"&gt;
+&lt;h3 id="org8fc8f22"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8fc8f22"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard" id="org7e918a3"&gt;
+&lt;div class="notecard" id="orgd632c97"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;

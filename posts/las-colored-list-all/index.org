@@ -12,7 +12,7 @@
 
 #+END_COMMENT
 
-#+begin_src sh :tangle ../functions/las.fish
+#+begin_src fish :tangle ../functions/las.fish
 function las
     ls --almost-all \
        --color \

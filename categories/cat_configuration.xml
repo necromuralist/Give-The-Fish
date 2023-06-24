@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about configuration)</title><link>https://necromuralist.github.io/Fish-Functions/</link><description></description><atom:link href="https://necromuralist.github.io/Fish-Functions/categories/cat_configuration.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+&lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
+&lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
+&lt;/div&gt;
+</copyright><lastBuildDate>Sat, 24 Jun 2023 21:08:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orga862048" class="outline-2"&gt;
+&lt;h2 id="orga862048"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga862048"&gt;
+&lt;p&gt;
+This is the fragment to make sure the ssh-agent is running.
+&lt;/p&gt;
+
+&lt;div class="notecard" id="orgbe996b0"&gt;
+&lt;p&gt;
+Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;status&lt;/span&gt; --is-interactive
+  keychain --eval --quiet --quick id_rsa &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;source&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The documentation for the &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;&lt;code&gt;status&lt;/code&gt;&lt;/a&gt; comand says that &lt;code&gt;is-interactive&lt;/code&gt; is actually a sub-command (not an option, although I'm calling it like it is one) and that it:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Returns 0 if fish is interactive - that is, connected to a keyboard.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Which is an oddly unintuitive description. I think it means that it won't pass the conditional if I try to run the fragment as a function… I can't remember why I used it, exactly ,but I think it's something you need if you want it to be loaded when you login.
+&lt;/p&gt;
+
+&lt;p&gt;
+Although the name &lt;a href="https://linux.die.net/man/1/keychain"&gt;keychain&lt;/a&gt; makes it sound like it's a general password manager, according to the man-page it's meant specifically to manage the ssh-agent. It will check if you already have an ssh-agent running and only start one if you don't. This way you don't end up starting one for every &lt;code&gt;screen&lt;/code&gt; you open up.
+&lt;/p&gt;
+
+&lt;p&gt;
+The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout, &lt;code&gt;--quiet&lt;/code&gt; suppresses other messages, &lt;code&gt;--quick&lt;/code&gt; tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;&lt;code&gt;source&lt;/code&gt;&lt;/a&gt; to load the environment.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgca9983a" class="outline-2"&gt;
+&lt;h2 id="orgca9983a"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgca9983a"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;status - query fish runtime information — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;https://fishshell.com/docs/current/cmds/status.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>configuration</category><category>ssh</category><guid>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</guid><pubDate>Sat, 24 Jun 2023 19:47:47 GMT</pubDate></item></channel></rss>
