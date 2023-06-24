@@ -21,6 +21,12 @@
 #+end_attribution
 
 
-* {{% doc %}}functions-index{{% /doc %}}
-* {{% doc %}}dingehaufen-index{{% /doc %}}
+* Pisces Dona
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: homecenter
+:END:
+
+** {{% doc %}}functions-index{{% /doc %}}
+
+** {{% doc %}}dingehaufen-index{{% /doc %}}
 
