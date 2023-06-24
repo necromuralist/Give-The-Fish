@@ -34,7 +34,7 @@ abbr --add -- codechanges "git log -p"
 abbr --add -- logdiff "git log -p"
 
 # pass
-abbr --add -- syncpass "pass git pull; pass git push"
+abbr --add -- syncpass "pass git sync"
 
 # grep
 abbr --add -- grepr "grep --color=always"
