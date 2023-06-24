@@ -66,16 +66,16 @@
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
-<div class="outline-2" id="outline-container-orga862048">
-<h2 id="orga862048">SSH Agent</h2>
-<div class="outline-text-2" id="text-orga862048">
-<p>This is the fragment to make sure the ssh-agent is running.</p>
-<div class="notecard" id="orgbe996b0">
+<div class="outline-2" id="outline-container-org84757c1">
+<h2 id="org84757c1">SSH Agent</h2>
+<div class="outline-text-2" id="text-org84757c1">
+<p>This is the fragment to make sure the ssh-agent is running when you open the terminal.</p>
+<div class="notecard" id="orgf858ad1">
 <p>Put this in <code>~/.config/fish/conf.d/</code>.</p>
 </div>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="nb">status</span> --is-interactive
-  keychain --eval --quiet --quick id_rsa <span class="o">|</span> <span class="nb">source</span>
+    keychain --eval --quiet --quick id_rsa <span class="o">|</span> <span class="nb">source</span>
 <span class="k">end</span>
 </pre></div>
 <p>The documentation for the <a href="https://fishshell.com/docs/current/cmds/status.html"><code>status</code></a> comand says that <code>is-interactive</code> is actually a sub-command (not an option, although I'm calling it like it is one) and that it:</p>
@@ -87,9 +87,9 @@
 <p>The <code>--eval</code> option sends the SSH-Agent message to stdout, <code>--quiet</code> suppresses other messages, <code>--quick</code> tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to <a href="https://fishshell.com/docs/current/cmds/source.html"><code>source</code></a> to load the environment.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgca9983a">
-<h2 id="orgca9983a">Links</h2>
-<div class="outline-text-2" id="text-orgca9983a">
+<div class="outline-2" id="outline-container-org7f0954a">
+<h2 id="org7f0954a">Links</h2>
+<div class="outline-text-2" id="text-org7f0954a">
 <ul class="org-ul">
 <li>keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: <a href="https://linux.die.net/man/1/keychain">https://linux.die.net/man/1/keychain</a></li>
 <li>source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: <a href="https://fishshell.com/docs/current/cmds/source.html">https://fishshell.com/docs/current/cmds/source.html</a></li>

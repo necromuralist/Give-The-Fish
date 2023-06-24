@@ -13,7 +13,7 @@
 #+END_COMMENT
 * SSH Agent
 
-This is the fragment to make sure the ssh-agent is running.
+This is the fragment to make sure the ssh-agent is running when you open the terminal.
 
 #+begin_notecard
 Put this in =~/.config/fish/conf.d/=.
@@ -21,7 +21,7 @@ Put this in =~/.config/fish/conf.d/=.
 
 #+begin_src fish :tangle ../dingehaufen/ssh-agent.fish
 if status --is-interactive
-  keychain --eval --quiet --quick id_rsa | source
+    keychain --eval --quiet --quick id_rsa | source
 end
 #+end_src
 
