@@ -1,0 +1,173 @@
+#+BEGIN_COMMENT
+.. title: abbreviations.fish The Abbreviations Configuration
+.. slug: abbreviationsfish-the-abbreviations-configuration
+.. date: 2023-06-23 13:51:15 UTC-07:00
+.. tags: abbreviations,config
+.. category: Abbreviations
+.. link: 
+.. description: The fish abbreviations file.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+#+begin_src noweb :tangle ../dingehaufen/abbreviations.fish :exports none
+# nikola
+<<nikola>>
+
+<<nikola-newpost>>
+<<nikola-newpage>>
+
+<<nikola-build>>
+<<nikola-deploy>>
+
+# git wit it
+<<git>>
+
+<<git-add>>
+
+<<git-commit>>
+
+<<git-remote>>
+
+<<git-branches>>
+
+<<git-differences>>
+
+# pass
+<<syncpass>>
+
+# grep
+<<grep>>
+#+end_src
+
+#+begin_notecard
+The abbreviations the file goes into =~/.config/fish/conf.d/=.
+#+end_notecard
+
+Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter ~nb~ ~ when you hit the space-bar fish will replace ~nb~ with ~nikola bulid~. This makes them more transparent than functions, although they're also less powerful.
+
+According to [[https://github.com/fish-shell/fish-shell/issues/3099][this github issue]] the files you put into ~conf.d/~ get read before ~config.fish~ so whatever you put in there is usable in ~config.fish~ (and using ~config.fish~) at all is optional.
+
+* Nikola
+Abbreviations to hopefully make working with [[https://getnikola.com/][Nikola]] a little quicker.
+
+#+begin_src sh :noweb-ref nikola
+abbr --add -- n "nikola"
+#+end_src
+
+** New Posts and Pages
+
+I only use org-mode so these are the commands to make new posts and pages.
+
+#+begin_src sh :noweb-ref nikola-newpost
+abbr --add -- npost nikola new_post --format orgmode --title
+#+end_src
+
+#+begin_src sh :noweb-ref nikola-newpage
+abbr --add -- npage nikola new_page --format orgmode --title
+#+end_src
+
+They actually look like the same files are produced, just one gets put into your pages folder and one gets put into your posts folder. Which is nice, I guess, in that we can move things back and forth between the blog and the web-pages as we need to.
+
+** Build, Serve, and Develop
+These are the ones I use the most when making posts and pages.
+
+#+begin_src sh :noweb-ref nikola-build
+abbr --add -- nb "nikola build"
+abbr --add -- nbs 'nikola build; nikola serve'
+abbr --add -- nauto "nikola auto"
+#+end_src
+
+~auto~  will build and reload the page for you anytime it sees any changes. This can be convenient sometimes, but sometimes it detects changes to often (maybe when something is making a temporary backup) and it can end up reloading while you're reading the page so I don't use it as much as I used to.
+
+** Deploy to Github
+And once it's ready...
+
+#+begin_src sh :noweb-ref nikola-deploy
+abbr --add -- ngd "nikola github_deploy"
+#+end_src
+
+* Git
+
+#+begin_src sh :noweb-ref git
+abbr --add -- g "git"
+#+end_src
+
+** Add, Commit, Push Stuff
+*** Adding Files
+#+begin_src sh :noweb-ref git-add
+abbr --add -- add "git add"
+abbr --add -- gaa "git add -A"
+#+end_src
+
+*** Are you ready for a commitment?
+#+begin_src sh :noweb-ref git-commit
+abbr --add -- commit "git commit"
+abbr --add -- gcm "git commit --message"
+abbr --add -- amend "git commit --amend"
+#+end_src
+
+*** Speak To The Gods On High
+[[https://man7.org/linux/man-pages/man2/sync.2.html][~sync~]] is a builtin command (it writes caches to disk) so I went with ~gsync~ for the abbreviation.
+
+#+begin_src sh :noweb-ref git-remote
+abbr --add -- push "git push"
+abbr --add -- gsync "legit sync"
+abbr --add -- publish "legit publish"
+#+end_src
+
+** The State of Things
+[[https://fishshell.com/docs/current/cmds/status.html][~status~]] gives you information about the fish-shell. This is the only thing I ever see, though.
+
+#+begin_src fish :results output :exports both
+status
+#+end_src
+
+#+RESULTS:
+: This is not a login shell
+: Job control: Only on interactive jobs
+
+But, anyway, I went with ~gstat~ to not block it in case it's really needed at some point.
+
+#+begin_src sh :noweb-ref git-status
+abbr --add -- state "git status -sb"
+abbr --add -- gstat "git status"
+#+end_src
+
+** Branch Work
+[[https://fishshell.com/docs/current/cmds/switch.html][~switch~]] is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).
+
+#+begin_src sh :noweb-ref git-branches
+abbr --add -- branches "legit branches"
+abbr --add -- gswitch "legit switch"
+abbr --add -- branchls "git ls-tree --name-only -r"
+abbr --add -- branchlog "git log --oneline --abbrev-commit --all --graph --decorate --color"
+abbr --add -- branchlogall "git log --branches --graph"
+abbr --add -- renamebranch "git branch -m"
+#+end_src
+
+** My, How Things Have Changed
+#+begin_src sh :noweb-ref git-differences
+abbr --add -- codechanges "git log -p"
+abbr --add -- logdiff "git log -p"
+#+end_src
+
+* Pass
+For [[https://www.passwordstore.org/][pass]] the password-manager.
+
+#+begin_src sh :noweb-ref syncpass
+abbr --add -- syncpass "pass git pull; pass git push"
+#+end_src
+
+* Grep
+#+begin_src sh :noweb-ref grep
+abbr --add -- grepr "grep --color=always"
+#+end_src
+* Links
+- abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
+- faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: https://stackoverflow.com/a/48749763
+- Document conf.d / config.fish sourcing order · Issue #3099 · fish-shell/fish-shell [Internet]. GitHub. [cited 2023 Jun 23]. Available from: https://github.com/fish-shell/fish-shell/issues/3099

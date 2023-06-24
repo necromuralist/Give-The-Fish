@@ -29,26 +29,3 @@ fish_add_path $HOME/bin
 if status --is-interactive
   protonvpn-cli status
 end
-
-# nikola
-abbr --add -- n "nikola"
-abbr --add -- nb "nikola build"
-abbr --add -- nbs 'nikola build;nikola serve'
-abbr --add -- ngd "nikola github_deploy"
-
-# git wit it
-abbr --add -- add "git add"
-abbr --add -- gaa "git add -A"
-abbr --add -- amend "git commit --amend"
-abbr --add -- commit "git commit"
-abbr --add -- push "git push"
-abbr --add -- gcm "git commit --message"
-abbr --add -- g "git"
-abbr --add -- state "git status -sb"
-abbr --add -- branches "legit branches"
-
-# sync and status are built-in linux utilities so we need different names
-# switch is a function control statement
-abbr --add -- gstat "git status"
-abbr --add -- gsync "legit sync"
-abbr --add -- gswitch "legit switch"
