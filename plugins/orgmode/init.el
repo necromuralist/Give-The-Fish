@@ -64,6 +64,7 @@
     ("css" . "css")
     ("d" . "d")
     ("emacs-lisp" . "scheme")
+    ("fish". "fish")
     ("F90" . "fortran")
     ("gnuplot" . "gnuplot")
     ("groovy" . "groovy")
