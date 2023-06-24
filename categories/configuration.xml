@@ -5,13 +5,26 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 23 Jun 2023 20:25:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Fri, 23 Jun 2023 23:17:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orga7ba1de"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org659d16c"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org71cd38d"&gt;SSH Agent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orga780d38"&gt;VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org834b63f"&gt;NPM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
 This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org157902e" class="outline-2"&gt;
-&lt;h2 id="org157902e"&gt;Environment Variables&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org157902e"&gt;
+&lt;div id="outline-container-orga7ba1de" class="outline-2"&gt;
+&lt;h2 id="orga7ba1de"&gt;Environment Variables&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga7ba1de"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;ALTERNATE_EDITOR&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;
 &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;EDITOR&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"emacsclient -c"&lt;/span&gt;
 &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;VISUAL&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"emacsclient -c -a emacs"&lt;/span&gt;
@@ -35,9 +48,9 @@ This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/con
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgecc86d6" class="outline-2"&gt;
-&lt;h2 id="orgecc86d6"&gt;Add Local Bin To the PATH&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgecc86d6"&gt;
+&lt;div id="outline-container-org659d16c" class="outline-2"&gt;
+&lt;h2 id="org659d16c"&gt;Add Local Bin To the PATH&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org659d16c"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# add to the path&lt;/span&gt;
 
 &lt;span class="c1"&gt;# https://fishshell.com/docs/current/cmds/fish_add_path.html&lt;/span&gt;
@@ -46,9 +59,9 @@ fish_add_path&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge2fd332" class="outline-2"&gt;
-&lt;h2 id="orge2fd332"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge2fd332"&gt;
+&lt;div id="outline-container-org71cd38d" class="outline-2"&gt;
+&lt;h2 id="org71cd38d"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org71cd38d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# load the ssh-agent&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;--is-interactive
 &lt;span class="w"&gt; &lt;/span&gt;keychain&lt;span class="w"&gt; &lt;/span&gt;--eval&lt;span class="w"&gt; &lt;/span&gt;--quiet&lt;span class="w"&gt; &lt;/span&gt;-Q&lt;span class="w"&gt; &lt;/span&gt;id_rsa&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt;
@@ -57,9 +70,9 @@ end
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgeb5528b" class="outline-2"&gt;
-&lt;h2 id="orgeb5528b"&gt;VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgeb5528b"&gt;
+&lt;div id="outline-container-orga780d38" class="outline-2"&gt;
+&lt;h2 id="orga780d38"&gt;VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga780d38"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# check the vpn&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;--is-interactive
 &lt;span class="w"&gt;  &lt;/span&gt;protonvpn-cli&lt;span class="w"&gt; &lt;/span&gt;status
@@ -68,9 +81,9 @@ end
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5dd8880" class="outline-2"&gt;
-&lt;h2 id="org5dd8880"&gt;NPM&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5dd8880"&gt;
+&lt;div id="outline-container-org834b63f" class="outline-2"&gt;
+&lt;h2 id="org834b63f"&gt;NPM&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org834b63f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# setup npm locally&lt;/span&gt;
 &lt;span class="c1"&gt;# from https://stackoverflow.com/a/13021677&lt;/span&gt;
 &lt;span class="c1"&gt;# expect you to also setup ~/.npmrc&lt;/span&gt;
@@ -78,58 +91,5 @@ end
 &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--export&lt;span class="w"&gt; &lt;/span&gt;NODE_PATH&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages/lib/node_modules
 fish_add_path&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages/bin
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org8de1dea" class="outline-2"&gt;
-&lt;h2 id="org8de1dea"&gt;Abbreviations&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8de1dea"&gt;
-&lt;p&gt;
-Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter &lt;code&gt;nb ~ when you hit the space-bar fish will replace ~nb&lt;/code&gt; with &lt;code&gt;nikola bulid&lt;/code&gt;. This makes them more transparent than functions, although they're also less powerful.
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org908227c" class="outline-3"&gt;
-&lt;h3 id="org908227c"&gt;Nikola&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org908227c"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# nikola&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"nikola"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;nb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"nikola build"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;nbs&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'nikola build;nikola serve'&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;ngd&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"nikola github_deploy"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgd43c8b8" class="outline-3"&gt;
-&lt;h3 id="orgd43c8b8"&gt;Git&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd43c8b8"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# git wit it&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git add"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;gaa&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git add -A"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;amend&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git commit"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;push&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git push"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;gcm&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git commit --message"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;g&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;state&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git status -sb"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;branches&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"legit branches"&lt;/span&gt;
-
-&lt;span class="c1"&gt;# sync and status are built-in linux utilities so we need different names&lt;/span&gt;
-&lt;span class="c1"&gt;# switch is a function control statement&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;gstat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"git status"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;gsync&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"legit sync"&lt;/span&gt;
-abbr&lt;span class="w"&gt; &lt;/span&gt;--add&lt;span class="w"&gt; &lt;/span&gt;--&lt;span class="w"&gt; &lt;/span&gt;gswitch&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"legit switch"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org87ab647" class="outline-2"&gt;
-&lt;h2 id="org87ab647"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org87ab647"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/abbr.html"&gt;https://fishshell.com/docs/current/cmds/abbr.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>configuration</category><guid>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</guid><pubDate>Thu, 22 Jun 2023 20:14:19 GMT</pubDate></item></channel></rss>
