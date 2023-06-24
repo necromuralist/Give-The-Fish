@@ -5,14 +5,14 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Sat, 24 Jun 2023 22:15:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org84757c1" class="outline-2"&gt;
-&lt;h2 id="org84757c1"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org84757c1"&gt;
+</copyright><lastBuildDate>Sat, 24 Jun 2023 23:07:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org4703738" class="outline-2"&gt;
+&lt;h2 id="org4703738"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4703738"&gt;
 &lt;p&gt;
 This is the fragment to make sure the ssh-agent is running when you open the terminal.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="orgf858ad1"&gt;
+&lt;div class="notecard" id="org07f71cc"&gt;
 &lt;p&gt;
 Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -48,9 +48,9 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7f0954a" class="outline-2"&gt;
-&lt;h2 id="org7f0954a"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7f0954a"&gt;
+&lt;div id="outline-container-orgf55165f" class="outline-2"&gt;
+&lt;h2 id="orgf55165f"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf55165f"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;
@@ -61,29 +61,29 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org907011d"&gt;Nikola&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org988d374"&gt;Nikola&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgfdcd350"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org858039d"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgbdfc143"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org5db4f0e"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orge761c75"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org6468fed"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org00ae117"&gt;Git&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org4f49f0c"&gt;Git&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org2a47368"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org7029b49"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org3427b07"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org04193d2"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org0afd356"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org334cadf"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org465fc61"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org2b9e41a"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org0e8c910"&gt;Pass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org51fa372"&gt;Grep&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgd789ee7"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org913abf7"&gt;Pass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org4867e23"&gt;Grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org1d56af4"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="notecard" id="org0183e79"&gt;
+&lt;div class="notecard" id="orgfa4e748"&gt;
 &lt;p&gt;
 The abbreviations the file goes into &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -98,9 +98,9 @@ Abbreviations are sort of like aliases except fish will expand them once you hit
 According to &lt;a href="https://github.com/fish-shell/fish-shell/issues/3099"&gt;this github issue&lt;/a&gt; the files you put into &lt;code&gt;conf.d/&lt;/code&gt; get read before &lt;code&gt;config.fish&lt;/code&gt; so whatever you put in there is usable in &lt;code&gt;config.fish&lt;/code&gt; (and using &lt;code&gt;config.fish&lt;/code&gt;) at all is optional.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org907011d" class="outline-2"&gt;
-&lt;h2 id="org907011d"&gt;Nikola&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org907011d"&gt;
+&lt;div id="outline-container-org988d374" class="outline-2"&gt;
+&lt;h2 id="org988d374"&gt;Nikola&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org988d374"&gt;
 &lt;p&gt;
 Abbreviations to hopefully make working with &lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; a little quicker.
 &lt;/p&gt;
@@ -109,9 +109,9 @@ Abbreviations to hopefully make working with &lt;a href="https://getnikola.com/"
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfdcd350" class="outline-3"&gt;
-&lt;h3 id="orgfdcd350"&gt;New Posts and Pages&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgfdcd350"&gt;
+&lt;div id="outline-container-org5db4f0e" class="outline-3"&gt;
+&lt;h3 id="org5db4f0e"&gt;New Posts and Pages&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5db4f0e"&gt;
 &lt;p&gt;
 I only use org-mode so these are the commands to make new posts and pages.
 &lt;/p&gt;
@@ -128,9 +128,9 @@ They actually look like the same files are produced, just one gets put into your
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org858039d" class="outline-3"&gt;
-&lt;h3 id="org858039d"&gt;Build, Serve, and Develop&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org858039d"&gt;
+&lt;div id="outline-container-orge761c75" class="outline-3"&gt;
+&lt;h3 id="orge761c75"&gt;Build, Serve, and Develop&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge761c75"&gt;
 &lt;p&gt;
 These are the ones I use the most when making posts and pages.
 &lt;/p&gt;
@@ -146,9 +146,9 @@ abbr --add -- nauto &lt;span class="s2"&gt;"nikola auto"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbdfc143" class="outline-3"&gt;
-&lt;h3 id="orgbdfc143"&gt;Deploy to Github&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgbdfc143"&gt;
+&lt;div id="outline-container-org6468fed" class="outline-3"&gt;
+&lt;h3 id="org6468fed"&gt;Deploy to Github&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6468fed"&gt;
 &lt;p&gt;
 And once it's ready…
 &lt;/p&gt;
@@ -159,29 +159,29 @@ And once it's ready…
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org00ae117" class="outline-2"&gt;
-&lt;h2 id="org00ae117"&gt;Git&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org00ae117"&gt;
+&lt;div id="outline-container-org4f49f0c" class="outline-2"&gt;
+&lt;h2 id="org4f49f0c"&gt;Git&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4f49f0c"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- g &lt;span class="s2"&gt;"git"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2a47368" class="outline-3"&gt;
-&lt;h3 id="org2a47368"&gt;Add, Commit, Push Stuff&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2a47368"&gt;
+&lt;div id="outline-container-org0afd356" class="outline-3"&gt;
+&lt;h3 id="org0afd356"&gt;Add, Commit, Push Stuff&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0afd356"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org27a2555" class="outline-4"&gt;
-&lt;h4 id="org27a2555"&gt;Adding Files&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org27a2555"&gt;
+&lt;div id="outline-container-orgcd303fc" class="outline-4"&gt;
+&lt;h4 id="orgcd303fc"&gt;Adding Files&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgcd303fc"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- add &lt;span class="s2"&gt;"git add"&lt;/span&gt;
 abbr --add -- gaa &lt;span class="s2"&gt;"git add -A"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0311c4e" class="outline-4"&gt;
-&lt;h4 id="org0311c4e"&gt;Are you ready for a commitment?&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org0311c4e"&gt;
+&lt;div id="outline-container-org07f10ac" class="outline-4"&gt;
+&lt;h4 id="org07f10ac"&gt;Are you ready for a commitment?&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org07f10ac"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- commit &lt;span class="s2"&gt;"git commit"&lt;/span&gt;
 abbr --add -- gcm &lt;span class="s2"&gt;"git commit --message"&lt;/span&gt;
 abbr --add -- amend &lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
@@ -189,9 +189,9 @@ abbr --add -- amend &lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8df68cb" class="outline-4"&gt;
-&lt;h4 id="org8df68cb"&gt;Speak To The Gods On High&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org8df68cb"&gt;
+&lt;div id="outline-container-orgb21b02c" class="outline-4"&gt;
+&lt;h4 id="orgb21b02c"&gt;Speak To The Gods On High&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgb21b02c"&gt;
 &lt;p&gt;
 &lt;a href="https://man7.org/linux/man-pages/man2/sync.2.html"&gt;&lt;code&gt;sync&lt;/code&gt;&lt;/a&gt; is a builtin command (it writes caches to disk) so I went with &lt;code&gt;gsync&lt;/code&gt; for the abbreviation.
 &lt;/p&gt;
@@ -204,9 +204,9 @@ abbr --add -- publish &lt;span class="s2"&gt;"legit publish"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7029b49" class="outline-3"&gt;
-&lt;h3 id="org7029b49"&gt;The State of Things&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7029b49"&gt;
+&lt;div id="outline-container-org334cadf" class="outline-3"&gt;
+&lt;h3 id="org334cadf"&gt;The State of Things&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org334cadf"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;&lt;code&gt;status&lt;/code&gt;&lt;/a&gt; gives you information about the fish-shell. This is the only thing I ever see, though.
 &lt;/p&gt;
@@ -224,7 +224,7 @@ Job control: Only on interactive jobs
 But, anyway, I went with &lt;code&gt;gstat&lt;/code&gt; to not block it in case it's really needed at some point.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org4acb445"&gt;
+&lt;div class="notecard" id="org1844a99"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; Look at the &lt;a href="https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/"&gt;SSH Agent Config Fragment&lt;/a&gt; post to see &lt;code&gt;status&lt;/code&gt; in use. It's probably meant for programming, not as a command-line command.
 &lt;/p&gt;
@@ -237,9 +237,9 @@ abbr --add -- gstat &lt;span class="s2"&gt;"git status"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3427b07" class="outline-3"&gt;
-&lt;h3 id="org3427b07"&gt;Branch Work&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3427b07"&gt;
+&lt;div id="outline-container-org465fc61" class="outline-3"&gt;
+&lt;h3 id="org465fc61"&gt;Branch Work&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org465fc61"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/switch.html"&gt;&lt;code&gt;switch&lt;/code&gt;&lt;/a&gt; is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).
 &lt;/p&gt;
@@ -255,9 +255,9 @@ abbr --add -- renamebranch &lt;span class="s2"&gt;"git branch -m"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org04193d2" class="outline-3"&gt;
-&lt;h3 id="org04193d2"&gt;My, How Things Have Changed&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org04193d2"&gt;
+&lt;div id="outline-container-org2b9e41a" class="outline-3"&gt;
+&lt;h3 id="org2b9e41a"&gt;My, How Things Have Changed&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2b9e41a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- codechanges &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 abbr --add -- logdiff &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -265,9 +265,9 @@ abbr --add -- logdiff &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0e8c910" class="outline-2"&gt;
-&lt;h2 id="org0e8c910"&gt;Pass&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0e8c910"&gt;
+&lt;div id="outline-container-org913abf7" class="outline-2"&gt;
+&lt;h2 id="org913abf7"&gt;Pass&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org913abf7"&gt;
 &lt;p&gt;
 For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-manager. I was doing the pull and push commands but decided to use the git &lt;code&gt;sync&lt;/code&gt; alias which is actuall calling &lt;code&gt;legit sync&lt;/code&gt;, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.
 &lt;/p&gt;
@@ -277,16 +277,16 @@ For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-m
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org51fa372" class="outline-2"&gt;
-&lt;h2 id="org51fa372"&gt;Grep&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org51fa372"&gt;
+&lt;div id="outline-container-org4867e23" class="outline-2"&gt;
+&lt;h2 id="org4867e23"&gt;Grep&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4867e23"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- grepr &lt;span class="s2"&gt;"grep --color=always"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd789ee7" class="outline-2"&gt;
-&lt;h2 id="orgd789ee7"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd789ee7"&gt;
+&lt;div id="outline-container-org1d56af4" class="outline-2"&gt;
+&lt;h2 id="org1d56af4"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1d56af4"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/abbr.html"&gt;https://fishshell.com/docs/current/cmds/abbr.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: &lt;a href="https://stackoverflow.com/a/48749763"&gt;https://stackoverflow.com/a/48749763&lt;/a&gt;&lt;/li&gt;
@@ -297,10 +297,10 @@ For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-m
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orgf2e877b"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orgbf3c5f5"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org86ade37"&gt;VPN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org6cbcdd4"&gt;NPM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org662897b"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org473a1ce"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org5c1203d"&gt;VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orga1b160a"&gt;NPM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -309,9 +309,9 @@ For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-m
 This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgf2e877b" class="outline-2"&gt;
-&lt;h2 id="orgf2e877b"&gt;Environment Variables&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf2e877b"&gt;
+&lt;div id="outline-container-org662897b" class="outline-2"&gt;
+&lt;h2 id="org662897b"&gt;Environment Variables&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org662897b"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; -x ALTERNATE_EDITOR &lt;span class="s2"&gt;""&lt;/span&gt;
 &lt;span class="k"&gt;set&lt;/span&gt; -x EDITOR &lt;span class="s2"&gt;"emacsclient -c"&lt;/span&gt;
 &lt;span class="k"&gt;set&lt;/span&gt; -x VISUAL &lt;span class="s2"&gt;"emacsclient -c -a emacs"&lt;/span&gt;
@@ -335,9 +335,9 @@ This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/con
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbf3c5f5" class="outline-2"&gt;
-&lt;h2 id="orgbf3c5f5"&gt;Add Local Bin To the PATH&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbf3c5f5"&gt;
+&lt;div id="outline-container-org473a1ce" class="outline-2"&gt;
+&lt;h2 id="org473a1ce"&gt;Add Local Bin To the PATH&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org473a1ce"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# add to the path&lt;/span&gt;
 
 &lt;span class="c"&gt;# https://fishshell.com/docs/current/cmds/fish_add_path.html&lt;/span&gt;
@@ -346,9 +346,9 @@ fish_add_path &lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org86ade37" class="outline-2"&gt;
-&lt;h2 id="org86ade37"&gt;VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org86ade37"&gt;
+&lt;div id="outline-container-org5c1203d" class="outline-2"&gt;
+&lt;h2 id="org5c1203d"&gt;VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5c1203d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# check the vpn&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;status&lt;/span&gt; --is-interactive
   protonvpn-cli &lt;span class="nb"&gt;status&lt;/span&gt;
@@ -357,9 +357,9 @@ fish_add_path &lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6cbcdd4" class="outline-2"&gt;
-&lt;h2 id="org6cbcdd4"&gt;NPM&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6cbcdd4"&gt;
+&lt;div id="outline-container-orga1b160a" class="outline-2"&gt;
+&lt;h2 id="orga1b160a"&gt;NPM&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga1b160a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# setup npm locally&lt;/span&gt;
 &lt;span class="c"&gt;# from https://stackoverflow.com/a/13021677&lt;/span&gt;
 &lt;span class="c"&gt;# expect you to also setup ~/.npmrc&lt;/span&gt;
@@ -378,9 +378,9 @@ fish_add_path &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages/bin
 This function will convert a text file to an org file using pandoc. I called it &lt;code&gt;rst2org&lt;/code&gt; because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgfaf3791" class="outline-2"&gt;
-&lt;h2 id="orgfaf3791"&gt;What It's Doing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfaf3791"&gt;
+&lt;div id="outline-container-org9f87faa" class="outline-2"&gt;
+&lt;h2 id="org9f87faa"&gt;What It's Doing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9f87faa"&gt;
 &lt;p&gt;
 The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.
 &lt;/p&gt;
@@ -393,9 +393,9 @@ The first thing the function does is change the file extension from whatever it 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf254bbc" class="outline-2"&gt;
-&lt;h2 id="orgf254bbc"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf254bbc"&gt;
+&lt;div id="outline-container-orgd821e2a" class="outline-2"&gt;
+&lt;h2 id="orgd821e2a"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd821e2a"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: &lt;a href="https://stackoverflow.com/a/62990248"&gt;https://stackoverflow.com/a/62990248&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -422,13 +422,13 @@ The first option documented in the options section of the pandoc documentation i
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org74902b9" class="outline-2"&gt;
-&lt;h2 id="org74902b9"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org74902b9"&gt;
+&lt;div id="outline-container-org3342b3a" class="outline-2"&gt;
+&lt;h2 id="org3342b3a"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3342b3a"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcaf65ea" class="outline-3"&gt;
-&lt;h3 id="orgcaf65ea"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcaf65ea"&gt;
+&lt;div id="outline-container-org65074ed" class="outline-3"&gt;
+&lt;h3 id="org65074ed"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org65074ed"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -439,14 +439,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcd04505" class="outline-3"&gt;
-&lt;h3 id="orgcd04505"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcd04505"&gt;
+&lt;div id="outline-container-org41c8aec" class="outline-3"&gt;
+&lt;h3 id="org41c8aec"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org41c8aec"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard" id="org45dbf7a"&gt;
+&lt;div class="notecard" id="orgbedc25b"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;
@@ -454,18 +454,18 @@ There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will i
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org9e83973" class="outline-2"&gt;
-&lt;h2 id="org9e83973"&gt;Choose&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9e83973"&gt;
+&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org6797785" class="outline-2"&gt;
+&lt;h2 id="org6797785"&gt;Choose&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6797785"&gt;
 &lt;p&gt;
 An alias function that will pick a random line (or lines) out of a text file.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb16d2a6" class="outline-2"&gt;
-&lt;h2 id="orgb16d2a6"&gt;The Function Declaration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb16d2a6"&gt;
+&lt;div id="outline-container-org02c5277" class="outline-2"&gt;
+&lt;h2 id="org02c5277"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org02c5277"&gt;
 &lt;p&gt;
 Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument that we'll assign to the variable &lt;code&gt;filename&lt;/code&gt; and one optional argument &lt;code&gt;lines&lt;/code&gt; to indicate the number of lines to pull.
 &lt;/p&gt;
@@ -475,9 +475,9 @@ Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org220ec59" class="outline-2"&gt;
-&lt;h2 id="org220ec59"&gt;The Error String&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org220ec59"&gt;
+&lt;div id="outline-container-org9b6227d" class="outline-2"&gt;
+&lt;h2 id="org9b6227d"&gt;The Error String&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9b6227d"&gt;
 &lt;p&gt;
 I'm setting a string-format variable that I'll use to color error messages in bold red.
 &lt;/p&gt;
@@ -491,9 +491,9 @@ See &lt;a href="https://stackoverflow.com/a/33206814"&gt;this stack overflow ans
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org970affb" class="outline-2"&gt;
-&lt;h2 id="org970affb"&gt;The Okay Variable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org970affb"&gt;
+&lt;div id="outline-container-org8ff6fb2" class="outline-2"&gt;
+&lt;h2 id="org8ff6fb2"&gt;The Okay Variable&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8ff6fb2"&gt;
 &lt;p&gt;
 This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
 &lt;/p&gt;
@@ -507,9 +507,9 @@ I'm setting it to False so that it has to pass the checks in order to be unset.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgca39fae" class="outline-2"&gt;
-&lt;h2 id="orgca39fae"&gt;Check the Number of Lines&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgca39fae"&gt;
+&lt;div id="outline-container-org2194fc5" class="outline-2"&gt;
+&lt;h2 id="org2194fc5"&gt;Check the Number of Lines&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2194fc5"&gt;
 &lt;p&gt;
 Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the &lt;code&gt;shuf&lt;/code&gt; command later on.
 &lt;/p&gt;
@@ -531,9 +531,9 @@ Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org859e064" class="outline-2"&gt;
-&lt;h2 id="org859e064"&gt;If It's a Text File, Use It&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org859e064"&gt;
+&lt;div id="outline-container-org477e54e" class="outline-2"&gt;
+&lt;h2 id="org477e54e"&gt;If It's a Text File, Use It&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org477e54e"&gt;
 &lt;p&gt;
 We'll be grabbing a line using the &lt;a href="https://man7.org/linux/man-pages/man1/shuf.1.html"&gt;shuf&lt;/a&gt; command. &lt;code&gt;shuf&lt;/code&gt; will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.
 &lt;/p&gt;
@@ -557,9 +557,9 @@ First, though, we check if the &lt;code&gt;lines&lt;/code&gt; argument was okay 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb7e74c5" class="outline-2"&gt;
-&lt;h2 id="orgb7e74c5"&gt;Handle the Errors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb7e74c5"&gt;
+&lt;div id="outline-container-org286bf08" class="outline-2"&gt;
+&lt;h2 id="org286bf08"&gt;Handle the Errors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org286bf08"&gt;
 &lt;p&gt;
 If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
 &lt;/p&gt;
@@ -576,9 +576,9 @@ If the number of lines wasn't okay or the filename wasn't valid then we'll emit 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org782df8f" class="outline-2"&gt;
-&lt;h2 id="org782df8f"&gt;Emit a Help Message&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org782df8f"&gt;
+&lt;div id="outline-container-org88bee4d" class="outline-2"&gt;
+&lt;h2 id="org88bee4d"&gt;Emit a Help Message&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org88bee4d"&gt;
 &lt;p&gt;
 If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;/code&gt; will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
 &lt;/p&gt;
@@ -593,18 +593,18 @@ If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2fd5ce9" class="outline-2"&gt;
-&lt;h2 id="org2fd5ce9"&gt;One Last Thing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2fd5ce9"&gt;
+&lt;div id="outline-container-orgdbf51d0" class="outline-2"&gt;
+&lt;h2 id="orgdbf51d0"&gt;One Last Thing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgdbf51d0"&gt;
 &lt;p&gt;
 If the user passes in a flag as a filename this will get passed to the &lt;code&gt;file&lt;/code&gt; command and in some cases this will cause it to emit a help message which will get passed to the &lt;code&gt;shuf&lt;/code&gt; command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for &lt;code&gt;shuf&lt;/code&gt;, so hopefully it'll work okay.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0e7c01a" class="outline-2"&gt;
-&lt;h2 id="org0e7c01a"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0e7c01a"&gt;
+&lt;div id="outline-container-orgfbccf31" class="outline-2"&gt;
+&lt;h2 id="orgfbccf31"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfbccf31"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 
@@ -619,36 +619,36 @@ If the user passes in a flag as a filename this will get passed to the &lt;code&
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orga41b05e"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org2bb8798"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgb14febb"&gt;Argument Check&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgcc7bb09"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgc080041"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org8775950"&gt;Argument Check&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org33272b1"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org03a4361"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orge6894b1"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orge0da5f8"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org99c30dd"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orga054016"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd1ac295"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgb52c593"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd63a968"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgc1dcdcd"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org89339b7"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org36e0cbd"&gt;Sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org076ca13"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd3a4ffd"&gt;Sources&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-orga41b05e" class="outline-2"&gt;
-&lt;h2 id="orga41b05e"&gt;The randomdhex Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga41b05e"&gt;
+&lt;div id="outline-container-orgcc7bb09" class="outline-2"&gt;
+&lt;h2 id="orgcc7bb09"&gt;The randomdhex Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcc7bb09"&gt;
 &lt;p&gt;
 This an alias function to output a random hexadecimal number. There are many ways to do this but I took this from &lt;a href="https://stackoverflow.com/a/53668354"&gt;a StackOverFlow answer&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2bb8798" class="outline-2"&gt;
-&lt;h2 id="org2bb8798"&gt;The Function Header&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2bb8798"&gt;
+&lt;div id="outline-container-orgc080041" class="outline-2"&gt;
+&lt;h2 id="orgc080041"&gt;The Function Header&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc080041"&gt;
 &lt;p&gt;
 I'm going to create a function named &lt;code&gt;randomhex&lt;/code&gt; that takes one optional argument named &lt;code&gt;digits&lt;/code&gt;.
 &lt;/p&gt;
@@ -658,17 +658,17 @@ I'm going to create a function named &lt;code&gt;randomhex&lt;/code&gt; that tak
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb14febb" class="outline-2"&gt;
-&lt;h2 id="orgb14febb"&gt;Argument Check&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb14febb"&gt;
+&lt;div id="outline-container-org8775950" class="outline-2"&gt;
+&lt;h2 id="org8775950"&gt;Argument Check&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8775950"&gt;
 &lt;p&gt;
 The first thing to do is to check if the user passed in an argument and handle it if they did or use a default if they didn't.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org33272b1" class="outline-3"&gt;
-&lt;h3 id="org33272b1"&gt;Check For An Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org33272b1"&gt;
+&lt;div id="outline-container-orga054016" class="outline-3"&gt;
+&lt;h3 id="orga054016"&gt;Check For An Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga054016"&gt;
 &lt;p&gt;
 The first check uses the &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;test&lt;/a&gt; command to see if the user passed in an argument. the &lt;code&gt;-n&lt;/code&gt; flag tells it to check if there's a string with one or more characters in it in our &lt;code&gt;digits&lt;/code&gt; variable.
 &lt;/p&gt;
@@ -678,9 +678,9 @@ The first check uses the &lt;a href="https://fishshell.com/docs/current/cmds/tes
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org03a4361" class="outline-3"&gt;
-&lt;h3 id="org03a4361"&gt;Check If The Argument Is An Integer&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org03a4361"&gt;
+&lt;div id="outline-container-orgd1ac295" class="outline-3"&gt;
+&lt;h3 id="orgd1ac295"&gt;Check If The Argument Is An Integer&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd1ac295"&gt;
 &lt;p&gt;
 If the user &lt;i&gt;did&lt;/i&gt; pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;string match&lt;/a&gt; command and a regular expression to make sure it's only made up of one or more digits.
 &lt;/p&gt;
@@ -690,9 +690,9 @@ If the user &lt;i&gt;did&lt;/i&gt; pass in an argument but it can't be coerced t
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge6894b1" class="outline-3"&gt;
-&lt;h3 id="orge6894b1"&gt;Set the Argument Value&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge6894b1"&gt;
+&lt;div id="outline-container-orgb52c593" class="outline-3"&gt;
+&lt;h3 id="orgb52c593"&gt;Set the Argument Value&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb52c593"&gt;
 &lt;p&gt;
 If the argument was an integer then we'll set the &lt;code&gt;BYTES&lt;/code&gt; variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (&lt;code&gt;$digits/2&lt;/code&gt;) to the &lt;code&gt;math&lt;/code&gt; command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the &lt;code&gt;ceil&lt;/code&gt; argument to round up to the nearest integer.
 &lt;/p&gt;
@@ -702,9 +702,9 @@ If the argument was an integer then we'll set the &lt;code&gt;BYTES&lt;/code&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge0da5f8" class="outline-3"&gt;
-&lt;h3 id="orge0da5f8"&gt;Error Message&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge0da5f8"&gt;
+&lt;div id="outline-container-orgd63a968" class="outline-3"&gt;
+&lt;h3 id="orgd63a968"&gt;Error Message&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd63a968"&gt;
 &lt;p&gt;
 If the user passed in an argument but it doesn't look like an integer then we'll output a help message. I got the idea of using &lt;code&gt;printf&lt;/code&gt; this way from &lt;a href="https://stackoverflow.com/a/48249785"&gt;this StackOverflow answer&lt;/a&gt;.
 &lt;/p&gt;
@@ -729,9 +729,9 @@ If the user passed in an argument but it doesn't look like an integer then we'll
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org99c30dd" class="outline-3"&gt;
-&lt;h3 id="org99c30dd"&gt;Use The Default&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org99c30dd"&gt;
+&lt;div id="outline-container-orgc1dcdcd" class="outline-3"&gt;
+&lt;h3 id="orgc1dcdcd"&gt;Use The Default&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc1dcdcd"&gt;
 &lt;p&gt;
 If the user didn't pass in an argument then use a default of 8 hexadecimal digits.
 &lt;/p&gt;
@@ -744,9 +744,9 @@ If the user didn't pass in an argument then use a default of 8 hexadecimal digit
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org89339b7" class="outline-2"&gt;
-&lt;h2 id="org89339b7"&gt;Output the Random Hexadecimal&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org89339b7"&gt;
+&lt;div id="outline-container-org076ca13" class="outline-2"&gt;
+&lt;h2 id="org076ca13"&gt;Output the Random Hexadecimal&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org076ca13"&gt;
 &lt;p&gt;
 Finally we output the random hexadecimal number that &lt;a href="https://www.openssl.org/"&gt;&lt;code&gt;openssl&lt;/code&gt;&lt;/a&gt; generates.
 &lt;/p&gt;
@@ -756,9 +756,9 @@ Finally we output the random hexadecimal number that &lt;a href="https://www.ope
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org36e0cbd" class="outline-2"&gt;
-&lt;h2 id="org36e0cbd"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org36e0cbd"&gt;
+&lt;div id="outline-container-orgd3a4ffd" class="outline-2"&gt;
+&lt;h2 id="orgd3a4ffd"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd3a4ffd"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;OpenSSL rand [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://www.openssl.org/docs/man1.1.1/man1/rand.html"&gt;https://www.openssl.org/docs/man1.1.1/man1/rand.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: &lt;a href="https://stackoverflow.com/q/34328759"&gt;https://stackoverflow.com/q/34328759&lt;/a&gt;&lt;/li&gt;

@@ -5,7 +5,7 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Sat, 24 Jun 2023 22:15:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
+</copyright><lastBuildDate>Sat, 24 Jun 2023 23:07:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
     ls --almost-all &lt;span class="se"&gt;\&lt;/span&gt;
        --color &lt;span class="se"&gt;\&lt;/span&gt;
        --dereference-command-line &lt;span class="se"&gt;\&lt;/span&gt;
@@ -19,13 +19,13 @@
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org74902b9" class="outline-2"&gt;
-&lt;h2 id="org74902b9"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org74902b9"&gt;
+&lt;div id="outline-container-org3342b3a" class="outline-2"&gt;
+&lt;h2 id="org3342b3a"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3342b3a"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcaf65ea" class="outline-3"&gt;
-&lt;h3 id="orgcaf65ea"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcaf65ea"&gt;
+&lt;div id="outline-container-org65074ed" class="outline-3"&gt;
+&lt;h3 id="org65074ed"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org65074ed"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -36,14 +36,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcd04505" class="outline-3"&gt;
-&lt;h3 id="orgcd04505"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcd04505"&gt;
+&lt;div id="outline-container-org41c8aec" class="outline-3"&gt;
+&lt;h3 id="org41c8aec"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org41c8aec"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard" id="org45dbf7a"&gt;
+&lt;div class="notecard" id="orgbedc25b"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;
