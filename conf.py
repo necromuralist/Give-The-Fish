@@ -20,7 +20,7 @@ BLOG_AUTHOR = "Cloistered Monkey"  # (translatable)
 BLOG_TITLE = "Give the Fish"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://necromuralist.github.io/Fish-Functions/"
+SITE_URL = "https://necromuralist.github.io/Give-The-Fish/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://necromuralist.github.io/"
@@ -142,9 +142,14 @@ NAVIGATION_LINKS = {
         ("/rss.xml", "RSS feed"),
         (
           (
-              ("https://necromuralist.github.io/", "Cloistered Monkey"),
+              ("https://necromuralist.github.io/", "The Cloistered Monkey"),
+              ("https://necromuralist.github.io/Ape-Iron/", "Ape Iron"),
+              ("https://necromuralist.github.io/Bowling-For-Data/", "Bowling For Data"),
+              ("https://necromuralist.github.io/Beach-Pig-Thigh/", "Beach Pig Runp & Thigh"),
+              ("https://necromuralist.github.io/Neurotic-Networking/", "Neurotic Networking"),
+              ("https://necromuralist.github.io/Visions-Voices-Data/", "Visions, Voices, Data")
           ),
-            "Other Sites"
+            "Monkey Sites"
         ),
     ),
 }
@@ -1014,7 +1019,7 @@ COMMENT_SYSTEM_ID = ""
 # http://mysite/foo/bar/index.html => http://mysite/foo/bar/
 # (Uses the INDEX_FILE setting, so if that is, say, default.html,
 # it will instead /foo/default.html => /foo)
-STRIP_INDEXES = True
+STRIP_INDEXES = False
 
 # List of files relative to the server root (!) that will be asked to be excluded
 # from indexing and other robotic spidering. * is supported. Will only be effective
