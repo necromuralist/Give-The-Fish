@@ -5,14 +5,14 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 28 Jun 2023 20:25:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org4703738" class="outline-2"&gt;
-&lt;h2 id="org4703738"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4703738"&gt;
+</copyright><lastBuildDate>Wed, 28 Jun 2023 20:59:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org2d98d7d" class="outline-2"&gt;
+&lt;h2 id="org2d98d7d"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2d98d7d"&gt;
 &lt;p&gt;
 This is the fragment to make sure the ssh-agent is running when you open the terminal.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org07f71cc"&gt;
+&lt;div class="notecard" id="orgd715203"&gt;
 &lt;p&gt;
 Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -48,9 +48,9 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf55165f" class="outline-2"&gt;
-&lt;h2 id="orgf55165f"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf55165f"&gt;
+&lt;div id="outline-container-org9a2190f" class="outline-2"&gt;
+&lt;h2 id="org9a2190f"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9a2190f"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;

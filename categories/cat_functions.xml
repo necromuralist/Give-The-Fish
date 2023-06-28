@@ -5,7 +5,27 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 28 Jun 2023 20:25:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>rst2org Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; rst2org -d &lt;span class="s2"&gt;"Convert text file to org"&lt;/span&gt; --argument-names sourcefile
+</copyright><lastBuildDate>Wed, 28 Jun 2023 20:59:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Apt Search</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+This function pipes the output of apt search to less, preserving the colors. &lt;code&gt;apt&lt;/code&gt; doesn't have an option to preserve color when the output is piped so the function uses &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;unbuffer&lt;/a&gt; which disables the stripping of the color. &lt;code&gt;unbuffer&lt;/code&gt; is part of the &lt;a href="https://www.man7.org/linux/man-pages/man1/expect.1.html"&gt;expect&lt;/a&gt; package. On Ubuntu Lunar Lobster it doesn't come installed by default so you have to install expects to get unbuffer.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install expects
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; aptsearch -d &lt;span class="s2"&gt;"Paging apt search"&lt;/span&gt; --argument-names keyword
+    unbuffer apt search &lt;span class="nv"&gt;$keyword&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; less -R
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div id="outline-container-org48af689" class="outline-2"&gt;
+&lt;h2 id="org48af689"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org48af689"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;expect(1) - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/expect"&gt;https://linux.die.net/man/1/expect&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;unbuffer(1): unbuffer output - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;https://linux.die.net/man/1/unbuffer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>apt</category><category>function</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</guid><pubDate>Wed, 28 Jun 2023 20:26:53 GMT</pubDate></item><item><title>rst2org Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; rst2org -d &lt;span class="s2"&gt;"Convert text file to org"&lt;/span&gt; --argument-names sourcefile
     &lt;span class="k"&gt;set&lt;/span&gt; target &lt;span class="nv"&gt;$(&lt;/span&gt;path change-extension org &lt;span class="nv"&gt;$sourcefile&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
     pandoc --standalone &lt;span class="nv"&gt;$sourcefile&lt;/span&gt; --output &lt;span class="nv"&gt;$target&lt;/span&gt; --wrap&lt;span class="o"&gt;=&lt;/span&gt;none
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -15,9 +35,9 @@
 This function will convert a text file to an org file using pandoc. I called it &lt;code&gt;rst2org&lt;/code&gt; because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org9f87faa" class="outline-2"&gt;
-&lt;h2 id="org9f87faa"&gt;What It's Doing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9f87faa"&gt;
+&lt;div id="outline-container-org4161825" class="outline-2"&gt;
+&lt;h2 id="org4161825"&gt;What It's Doing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4161825"&gt;
 &lt;p&gt;
 The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.
 &lt;/p&gt;
@@ -30,9 +50,9 @@ The first thing the function does is change the file extension from whatever it 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd821e2a" class="outline-2"&gt;
-&lt;h2 id="orgd821e2a"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd821e2a"&gt;
+&lt;div id="outline-container-org0d91875" class="outline-2"&gt;
+&lt;h2 id="org0d91875"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0d91875"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: &lt;a href="https://stackoverflow.com/a/62990248"&gt;https://stackoverflow.com/a/62990248&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -59,13 +79,13 @@ The first option documented in the options section of the pandoc documentation i
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org3342b3a" class="outline-2"&gt;
-&lt;h2 id="org3342b3a"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3342b3a"&gt;
+&lt;div id="outline-container-org404b2a4" class="outline-2"&gt;
+&lt;h2 id="org404b2a4"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org404b2a4"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org65074ed" class="outline-3"&gt;
-&lt;h3 id="org65074ed"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org65074ed"&gt;
+&lt;div id="outline-container-orgc294f6f" class="outline-3"&gt;
+&lt;h3 id="orgc294f6f"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc294f6f"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -76,14 +96,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org41c8aec" class="outline-3"&gt;
-&lt;h3 id="org41c8aec"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org41c8aec"&gt;
+&lt;div id="outline-container-org3013296" class="outline-3"&gt;
+&lt;h3 id="org3013296"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3013296"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard" id="orgbedc25b"&gt;
+&lt;div class="notecard" id="org9dc3ddb"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;

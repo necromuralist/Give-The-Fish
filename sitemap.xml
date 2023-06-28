@@ -7,118 +7,130 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/2023/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/archive.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/abbreviations/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/alias/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://necromuralist.github.io/Give-The-Fish/categories/apt/index.html</loc>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_abbreviations/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_configuration/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_functions/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_randomness/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/choice/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/color/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/config/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/configuration/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://necromuralist.github.io/Give-The-Fish/categories/function/index.html</loc>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/functions/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/org-mode/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/pandoc/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/randomness/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/ssh/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/dingehaufen-index/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/functions-index/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</loc>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</loc>
-  <lastmod>2023-06-28T20:25:00Z</lastmod>
+  <lastmod>2023-06-28T20:59:00Z</lastmod>
  </url>
 </urlset>

@@ -1,0 +1,30 @@
+#+BEGIN_COMMENT
+.. title: Function: Apt Search
+.. slug: function-apt-search
+.. date: 2023-06-28 13:26:53 UTC-07:00
+.. tags: function,apt
+.. category: Functions
+.. link: 
+.. description: A function to add color and paging to apt search.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+This function pipes the output of apt search to less, preserving the colors. ~apt~ doesn't have an option to preserve color when the output is piped so the function uses [[https://linux.die.net/man/1/unbuffer][unbuffer]] which disables the stripping of the color. ~unbuffer~ is part of the [[https://www.man7.org/linux/man-pages/man1/expect.1.html][expect]] package. On Ubuntu Lunar Lobster it doesn't come installed by default so you have to install expects to get unbuffer.
+
+#+begin_src fish
+sudo apt install expects
+#+end_src
+
+#+begin_src fish :tangle ../functions/aptsearch.fish
+function aptsearch -d "Paging apt search" --argument-names keyword
+    unbuffer apt search $keyword | less -R
+end
+#+end_src
+
+* Links
+- expect(1) - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: https://linux.die.net/man/1/expect
+- unbuffer(1): unbuffer output - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: https://linux.die.net/man/1/unbuffer
+

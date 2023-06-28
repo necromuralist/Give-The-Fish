@@ -2,16 +2,16 @@
 <html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
 <head>
 <meta charset="utf-8">
-<meta content="A colored and paged list all in directory function." name="description">
+<meta content="A function to add color and paging to apt search." name="description">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>las: Colored List All | Give the Fish</title>
+<title>Function: Apt Search | Give the Fish</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <meta content="Nikola (getnikola.com)" name="generator">
 <link href="../../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
 <link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="../../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
 <link href="../../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
@@ -19,17 +19,15 @@
 <link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
 <link href="../../site.webmanifest" rel="manifest">
 <meta content="Cloistered Monkey" name="author">
-<link href="../choose-function/index.html" rel="prev" title="Choose Function" type="text/html">
-<link href="../rst2org-function/index.html" rel="next" title="rst2org Function" type="text/html">
+<link href="../ssh-agent-config-fragment/index.html" rel="prev" title="SSH Agent Config Fragment" type="text/html">
 <meta content="Give the Fish" property="og:site_name">
-<meta content="las: Colored List All" property="og:title">
-<meta content="https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html" property="og:url">
-<meta content="A colored and paged list all in directory function." property="og:description">
+<meta content="Function: Apt Search" property="og:title">
+<meta content="https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html" property="og:url">
+<meta content="A function to add color and paging to apt search." property="og:description">
 <meta content="article" property="og:type">
-<meta content="2023-06-22T12:10:57-07:00" property="article:published_time">
-<meta content="alias" property="article:tag">
-<meta content="color" property="article:tag">
-<meta content="functions" property="article:tag">
+<meta content="2023-06-28T13:26:53-07:00" property="article:published_time">
+<meta content="apt" property="article:tag">
+<meta content="function" property="article:tag">
 </head>
 <body>
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
@@ -60,63 +58,41 @@
 <div class="body-content"><!--Body content-->
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
-<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">las: Colored List All</a></h1>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Function: Apt Search</a></h1>
 <div class="metadata">
 <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
-<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2023-06-22T12:10:57-07:00" itemprop="datePublished" title="2023-06-22 12:10">2023-06-22 12:10</time></a></p>
+<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2023-06-28T13:26:53-07:00" itemprop="datePublished" title="2023-06-28 13:26">2023-06-28 13:26</time></a></p>
 <p class="sourceline"><a class="sourcelink" href="index.org">Source</a></p>
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
+<p>This function pipes the output of apt search to less, preserving the colors. <code>apt</code> doesn't have an option to preserve color when the output is piped so the function uses <a href="https://linux.die.net/man/1/unbuffer">unbuffer</a> which disables the stripping of the color. <code>unbuffer</code> is part of the <a href="https://www.man7.org/linux/man-pages/man1/expect.1.html">expect</a> package. On Ubuntu Lunar Lobster it doesn't come installed by default so you have to install expects to get unbuffer.</p>
 <div class="highlight">
-<pre><span></span><span class="k">function</span> las
-    ls --almost-all <span class="se">\</span>
-       --color <span class="se">\</span>
-       --dereference-command-line <span class="se">\</span>
-       --human-readable <span class="se">\</span>
-       -l <span class="nv">$argv</span> <span class="o">|</span> <span class="se">\</span>
-        less --RAW-CONTROL-CHARS
+<pre><span></span>sudo apt install expects
+</pre></div>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> aptsearch -d <span class="s2">"Paging apt search"</span> --argument-names keyword
+    unbuffer apt search <span class="nv">$keyword</span> <span class="o">|</span> less -R
 <span class="k">end</span>
 </pre></div>
-<p>The point of this function is to show all the files in the directory (including hidden files) and pipe them to <code>less</code> so they won't go scrolling off the screen while keeping the color highlighting.</p>
-<div class="outline-2" id="outline-container-org404b2a4">
-<h2 id="org404b2a4">The Parts</h2>
-<div class="outline-text-2" id="text-org404b2a4"></div>
-<div class="outline-3" id="outline-container-orgc294f6f">
-<h3 id="orgc294f6f">The <code>ls</code> Arguments</h3>
-<div class="outline-text-3" id="text-orgc294f6f">
+<div class="outline-2" id="outline-container-org48af689">
+<h2 id="org48af689">Links</h2>
+<div class="outline-text-2" id="text-org48af689">
 <ul class="org-ul">
-<li><code>--almost-all</code>: don't list the <code>.</code> and <code>..</code> files</li>
-<li><code>--color</code>: Color the output when (defaults to "always" but you can set to "auto" or "never")</li>
-<li><code>--dereference-command-line</code>: follow symbolic links listed on the command line</li>
-<li><code>--human-readable</code>: Put file sizes into units that make sense (when using <code>-l</code>)</li>
-<li><code>-l</code>: Long listing format.</li>
+<li>expect(1) - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: <a href="https://linux.die.net/man/1/expect">https://linux.die.net/man/1/expect</a></li>
+<li>unbuffer(1): unbuffer output - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: <a href="https://linux.die.net/man/1/unbuffer">https://linux.die.net/man/1/unbuffer</a></li>
 </ul>
-</div>
-</div>
-<div class="outline-3" id="outline-container-org3013296">
-<h3 id="org3013296">The <code>less</code> Argument</h3>
-<div class="outline-text-3" id="text-org3013296">
-<ul class="org-ul">
-<li><code>--RAW-CONTROL-CHARS</code>: Keep colors and hyperlink sequences.</li>
-</ul>
-<div class="notecard" id="org9dc3ddb">
-<p>There is also a <code>--raw-control-chars</code> option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the <code>LESS</code> environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
 <aside class="postpromonav">
 <nav>
 <ul class="tags" itemprop="keywords">
-<li><a class="tag p-category" href="../../categories/alias/index.html" rel="tag">alias</a></li>
-<li><a class="tag p-category" href="../../categories/color/index.html" rel="tag">color</a></li>
-<li><a class="tag p-category" href="../../categories/functions/index.html" rel="tag">functions</a></li>
+<li><a class="tag p-category" href="../../categories/apt/index.html" rel="tag">apt</a></li>
+<li><a class="tag p-category" href="../../categories/function/index.html" rel="tag">function</a></li>
 </ul>
 <ul class="pager hidden-print">
-<li class="previous"><a href="../choose-function/index.html" rel="prev" title="Choose Function">Previous post</a></li>
-<li class="next"><a href="../rst2org-function/index.html" rel="next" title="rst2org Function">Next post</a></li>
+<li class="previous"><a href="../ssh-agent-config-fragment/index.html" rel="prev" title="SSH Agent Config Fragment">Previous post</a></li>
 </ul>
 </nav>
 </aside>

@@ -14,10 +14,19 @@
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
 * Roll the Dice
+Randomness.
+
 - {{% doc %}}choose-function{{% /doc %}}
 - {{% doc %}}random-hex{{% /doc %}}
+
 * Convert a File
+
 - {{% doc %}}rst2org-function{{% /doc %}}
+
 * Look For Files
+
 - {{% doc %}}las-colored-list-all{{% /doc %}}
 
+* Working With Debian Packages
+
+ - {{% doc %}}function-apt-search{{% /doc %}}
