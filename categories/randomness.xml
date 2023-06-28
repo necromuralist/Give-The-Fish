@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about randomness)</title><link>https://necromuralist.github.io/Fish-Functions/</link><description></description><atom:link href="https://necromuralist.github.io/Fish-Functions/categories/randomness.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about randomness)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/randomness.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Sat, 24 Jun 2023 23:07:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org6797785" class="outline-2"&gt;
+</copyright><lastBuildDate>Wed, 28 Jun 2023 20:25:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Choose Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org6797785" class="outline-2"&gt;
 &lt;h2 id="org6797785"&gt;Choose&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org6797785"&gt;
 &lt;p&gt;
@@ -166,23 +166,23 @@ If the user passes in a flag as a filename this will get passed to the &lt;code&
 &lt;li&gt;file(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://www.man7.org/linux/man-pages/man1/file.1.html"&gt;https://www.man7.org/linux/man-pages/man1/file.1.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Fish-Functions/posts/random-hex/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgcc7bb09"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgc080041"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org8775950"&gt;Argument Check&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgcc7bb09"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgc080041"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org8775950"&gt;Argument Check&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orga054016"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd1ac295"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgb52c593"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd63a968"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgc1dcdcd"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orga054016"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgd1ac295"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgb52c593"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgd63a968"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgc1dcdcd"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org076ca13"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd3a4ffd"&gt;Sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org076ca13"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgd3a4ffd"&gt;Sources&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -315,4 +315,4 @@ Finally we output the random hexadecimal number that &lt;a href="https://www.ope
 &lt;li&gt;How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: &lt;a href="https://stackoverflow.com/q/34328759"&gt;https://stackoverflow.com/q/34328759&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>randomness</category><guid>https://necromuralist.github.io/Fish-Functions/posts/random-hex/</guid><pubDate>Tue, 06 Jun 2023 00:30:53 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</guid><pubDate>Tue, 06 Jun 2023 00:30:53 GMT</pubDate></item></channel></rss>

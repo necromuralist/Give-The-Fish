@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish</title><link>https://necromuralist.github.io/Fish-Functions/</link><description>The functions of a fish.</description><atom:link href="https://necromuralist.github.io/Fish-Functions/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description>The functions of a fish.</description><atom:link href="https://necromuralist.github.io/Give-The-Fish/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 27 Jun 2023 19:42:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org4703738" class="outline-2"&gt;
+</copyright><lastBuildDate>Wed, 28 Jun 2023 20:25:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org4703738" class="outline-2"&gt;
 &lt;h2 id="org4703738"&gt;SSH Agent&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org4703738"&gt;
 &lt;p&gt;
@@ -57,28 +57,28 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;li&gt;status - query fish runtime information — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;https://fishshell.com/docs/current/cmds/status.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><category>ssh</category><guid>https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/</guid><pubDate>Sat, 24 Jun 2023 19:47:47 GMT</pubDate></item><item><title>abbreviations.fish The Abbreviations Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>configuration</category><category>ssh</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</guid><pubDate>Sat, 24 Jun 2023 19:47:47 GMT</pubDate></item><item><title>abbreviations.fish The Abbreviations Configuration</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org9b0bb3a"&gt;Nikola&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9b0bb3a"&gt;Nikola&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgf81664c"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgcefba9a"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org3646415"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgf81664c"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgcefba9a"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org3646415"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org270b864"&gt;Git&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org270b864"&gt;Git&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgcc24adb"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orge321728"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orge042819"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgea7b543"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgcc24adb"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orge321728"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orge042819"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgea7b543"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org2e87863"&gt;Pass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org9d9b078"&gt;Grep&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgdcb4c24"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org2e87863"&gt;Pass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9d9b078"&gt;Grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgdcb4c24"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -226,7 +226,7 @@ But, anyway, I went with &lt;code&gt;gstat&lt;/code&gt; to not block it in case 
 
 &lt;div class="notecard" id="orgcb16df2"&gt;
 &lt;p&gt;
-&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; Look at the &lt;a href="https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/"&gt;SSH Agent Config Fragment&lt;/a&gt; post to see &lt;code&gt;status&lt;/code&gt; in use. It's probably meant for programming, not as a command-line command.
+&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; Look at the &lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/"&gt;SSH Agent Config Fragment&lt;/a&gt; post to see &lt;code&gt;status&lt;/code&gt; in use. It's probably meant for programming, not as a command-line command.
 &lt;/p&gt;
 
 &lt;/div&gt;
@@ -295,14 +295,14 @@ For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-m
 &lt;li&gt;Document conf.d / config.fish sourcing order · Issue #3099 · fish-shell/fish-shell [Internet]. GitHub. [cited 2023 Jun 23]. Available from: &lt;a href="https://github.com/fish-shell/fish-shell/issues/3099"&gt;https://github.com/fish-shell/fish-shell/issues/3099&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>abbreviations</category><category>config</category><guid>https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/</guid><pubDate>Fri, 23 Jun 2023 20:51:15 GMT</pubDate></item><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>abbreviations</category><category>config</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</guid><pubDate>Fri, 23 Jun 2023 20:51:15 GMT</pubDate></item><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org662897b"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org473a1ce"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#org5c1203d"&gt;VPN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/#orga1b160a"&gt;NPM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org662897b"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org473a1ce"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org5c1203d"&gt;VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#orga1b160a"&gt;NPM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -370,7 +370,7 @@ fish_add_path &lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
 fish_add_path &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.npm-packages/bin
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><guid>https://necromuralist.github.io/Fish-Functions/posts/configfish-the-fish-configuration/</guid><pubDate>Thu, 22 Jun 2023 20:14:19 GMT</pubDate></item><item><title>rst2org Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/rst2org-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; rst2org -d &lt;span class="s2"&gt;"Convert text file to org"&lt;/span&gt; --argument-names sourcefile
+&lt;/div&gt;</description><category>configuration</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html</guid><pubDate>Thu, 22 Jun 2023 20:14:19 GMT</pubDate></item><item><title>rst2org Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; rst2org -d &lt;span class="s2"&gt;"Convert text file to org"&lt;/span&gt; --argument-names sourcefile
     &lt;span class="k"&gt;set&lt;/span&gt; target &lt;span class="nv"&gt;$(&lt;/span&gt;path change-extension org &lt;span class="nv"&gt;$sourcefile&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
     pandoc --standalone &lt;span class="nv"&gt;$sourcefile&lt;/span&gt; --output &lt;span class="nv"&gt;$target&lt;/span&gt; --wrap&lt;span class="o"&gt;=&lt;/span&gt;none
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -410,7 +410,7 @@ The first option documented in the options section of the pandoc documentation i
 &lt;li&gt;pandoc general options [Internet]. Available from &lt;a href="https://pandoc.org/MANUAL.html#general-options"&gt;https://pandoc.org/MANUAL.html#general-options&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>functions</category><category>org-mode</category><category>pandoc</category><guid>https://necromuralist.github.io/Fish-Functions/posts/rst2org-function/</guid><pubDate>Thu, 22 Jun 2023 19:51:54 GMT</pubDate></item><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
+&lt;/div&gt;</description><category>functions</category><category>org-mode</category><category>pandoc</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</guid><pubDate>Thu, 22 Jun 2023 19:51:54 GMT</pubDate></item><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
     ls --almost-all &lt;span class="se"&gt;\&lt;/span&gt;
        --color &lt;span class="se"&gt;\&lt;/span&gt;
        --dereference-command-line &lt;span class="se"&gt;\&lt;/span&gt;
@@ -456,7 +456,7 @@ There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will i
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Fish-Functions/posts/las-colored-list-all/</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org6797785" class="outline-2"&gt;
+&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org6797785" class="outline-2"&gt;
 &lt;h2 id="org6797785"&gt;Choose&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org6797785"&gt;
 &lt;p&gt;
@@ -617,23 +617,23 @@ If the user passes in a flag as a filename this will get passed to the &lt;code&
 &lt;li&gt;file(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://www.man7.org/linux/man-pages/man1/file.1.html"&gt;https://www.man7.org/linux/man-pages/man1/file.1.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Fish-Functions/posts/choose-function/</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Fish-Functions/posts/random-hex/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgcc7bb09"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgc080041"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org8775950"&gt;Argument Check&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgcc7bb09"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgc080041"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org8775950"&gt;Argument Check&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orga054016"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd1ac295"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgb52c593"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd63a968"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgc1dcdcd"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orga054016"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgd1ac295"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgb52c593"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgd63a968"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgc1dcdcd"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#org076ca13"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/random-hex/#orgd3a4ffd"&gt;Sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org076ca13"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgd3a4ffd"&gt;Sources&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -766,4 +766,4 @@ Finally we output the random hexadecimal number that &lt;a href="https://www.ope
 &lt;li&gt;How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: &lt;a href="https://stackoverflow.com/q/34328759"&gt;https://stackoverflow.com/q/34328759&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>randomness</category><guid>https://necromuralist.github.io/Fish-Functions/posts/random-hex/</guid><pubDate>Tue, 06 Jun 2023 00:30:53 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</guid><pubDate>Tue, 06 Jun 2023 00:30:53 GMT</pubDate></item></channel></rss>

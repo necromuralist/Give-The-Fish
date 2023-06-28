@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about Abbreviations)</title><link>https://necromuralist.github.io/Fish-Functions/</link><description></description><atom:link href="https://necromuralist.github.io/Fish-Functions/categories/cat_abbreviations.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about Abbreviations)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/cat_abbreviations.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 27 Jun 2023 19:42:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>abbreviations.fish The Abbreviations Configuration</title><link>https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Wed, 28 Jun 2023 20:25:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>abbreviations.fish The Abbreviations Configuration</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org9b0bb3a"&gt;Nikola&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9b0bb3a"&gt;Nikola&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgf81664c"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgcefba9a"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org3646415"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgf81664c"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgcefba9a"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org3646415"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org270b864"&gt;Git&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org270b864"&gt;Git&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgcc24adb"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orge321728"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orge042819"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgea7b543"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgcc24adb"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orge321728"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orge042819"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgea7b543"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org2e87863"&gt;Pass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#org9d9b078"&gt;Grep&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/#orgdcb4c24"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org2e87863"&gt;Pass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9d9b078"&gt;Grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgdcb4c24"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -174,7 +174,7 @@ But, anyway, I went with &lt;code&gt;gstat&lt;/code&gt; to not block it in case 
 
 &lt;div class="notecard" id="orgcb16df2"&gt;
 &lt;p&gt;
-&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; Look at the &lt;a href="https://necromuralist.github.io/Fish-Functions/posts/ssh-agent-config-fragment/"&gt;SSH Agent Config Fragment&lt;/a&gt; post to see &lt;code&gt;status&lt;/code&gt; in use. It's probably meant for programming, not as a command-line command.
+&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; Look at the &lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/"&gt;SSH Agent Config Fragment&lt;/a&gt; post to see &lt;code&gt;status&lt;/code&gt; in use. It's probably meant for programming, not as a command-line command.
 &lt;/p&gt;
 
 &lt;/div&gt;
@@ -243,4 +243,4 @@ For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-m
 &lt;li&gt;Document conf.d / config.fish sourcing order · Issue #3099 · fish-shell/fish-shell [Internet]. GitHub. [cited 2023 Jun 23]. Available from: &lt;a href="https://github.com/fish-shell/fish-shell/issues/3099"&gt;https://github.com/fish-shell/fish-shell/issues/3099&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>abbreviations</category><category>config</category><guid>https://necromuralist.github.io/Fish-Functions/posts/abbreviationsfish-the-abbreviations-configuration/</guid><pubDate>Fri, 23 Jun 2023 20:51:15 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>abbreviations</category><category>config</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</guid><pubDate>Fri, 23 Jun 2023 20:51:15 GMT</pubDate></item></channel></rss>

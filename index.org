@@ -21,6 +21,8 @@
 #+end_attribution
 
 
+A place for [[https://fishshell.com/][fish-shell]] things.
+
 * Pisces Dona
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: homecenter
