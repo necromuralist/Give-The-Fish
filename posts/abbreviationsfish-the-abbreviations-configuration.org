@@ -66,11 +66,11 @@ abbr --add -- n "nikola"
 I only use org-mode so these are the commands to make new posts and pages.
 
 #+begin_src fish :noweb-ref nikola-newpost
-abbr --add -- npost nikola new_post --format orgmode --title
+abbr --add -- post nikola new_post --format orgmode --title
 #+end_src
 
 #+begin_src fish :noweb-ref nikola-newpage
-abbr --add -- npage nikola new_page --format orgmode --title
+abbr --add -- page nikola new_page --format orgmode --title
 #+end_src
 
 They actually look like the same files are produced, just one gets put into your pages folder and one gets put into your posts folder. Which is nice, I guess, in that we can move things back and forth between the blog and the web-pages as we need to.
@@ -156,6 +156,7 @@ abbr --add -- brlog "git log --oneline --abbrev-commit" \
 abbr --add -- brlogall "git log --branches --graph"
 abbr --add -- renamebranch "git branch -m"
 abbr --add -- merge "git merge"
+abbr --add -- cob "git checkout -b"
 #+end_src
 
 ** My, How Things Have Changed
@@ -169,7 +170,7 @@ abbr --add -- gdiff "git diff"
 For [[https://www.passwordstore.org/][pass]] the password-manager. I was doing the pull and push commands but decided to use the git ~sync~ alias which is actuall calling ~legit sync~, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.
 
 #+begin_src fish :noweb-ref syncpass
-abbr --add -- syncpass "pass git sync"
+abbr --add -- psync "pass git sync"
 #+end_src
 
 * Grep

@@ -1,8 +1,8 @@
 # nikola
 abbr --add -- n "nikola"
 
-abbr --add -- npost nikola new_post --format orgmode --title
-abbr --add -- npage nikola new_page --format orgmode --title
+abbr --add -- post nikola new_post --format orgmode --title
+abbr --add -- page nikola new_page --format orgmode --title
 
 abbr --add -- nb "nikola build"
 abbr --add -- nbs 'nikola build; nikola serve'
@@ -34,13 +34,14 @@ abbr --add -- brlog "git log --oneline --abbrev-commit" \
 abbr --add -- brlogall "git log --branches --graph"
 abbr --add -- renamebranch "git branch -m"
 abbr --add -- merge "git merge"
+abbr --add -- cob "git checkout -b"
 
 abbr --add -- codechanges "git log -p"
 abbr --add -- logdiff "git log -p"
 abbr --add -- gdiff "git diff"
 
 # pass
-abbr --add -- syncpass "pass git sync"
+abbr --add -- psync "pass git sync"
 
 # grep
 abbr --add -- grepr "grep --color=always"
