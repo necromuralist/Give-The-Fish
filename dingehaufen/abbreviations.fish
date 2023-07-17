@@ -7,7 +7,7 @@ abbr --add -- page nikola new_page --format orgmode --title
 abbr --add -- nb "nikola build"
 abbr --add -- nbs 'nikola build; nikola serve'
 abbr --add -- nauto "nikola auto"
-abbr --add -- ngd "nikola github_deploy"
+abbr --add -- deploy "nikola github_deploy"
 
 # git wit it
 abbr --add -- g "git"
@@ -22,6 +22,7 @@ abbr --add -- amend "git commit --amend"
 abbr --add -- push "git push"
 abbr --add -- gsync "legit sync"
 abbr --add -- publish "legit publish"
+abbr --add -- fetch "git fetch --prune"
 
 abbr --add -- state "git status -sb"
 abbr --add -- gstat "git status"
@@ -35,13 +36,17 @@ abbr --add -- brlogall "git log --branches --graph"
 abbr --add -- renamebranch "git branch -m"
 abbr --add -- merge "git merge"
 abbr --add -- cob "git checkout -b"
+abbr --add -- destroy "git branch -d"
+abbr --add -- destroythegods "git push origin -d"
 
 abbr --add -- codechanges "git log -p"
 abbr --add -- logdiff "git log -p"
 abbr --add -- gdiff "git diff"
+abbr --add -- gdiffn "git diff --name-status"
 
 # pass
-abbr --add -- psync "pass git sync"
+abbr --add -- p "pass"
+abbr --add -- pgs "pass git sync"
 
 # grep
 abbr --add -- grepr "grep --color=always"

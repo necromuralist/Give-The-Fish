@@ -90,7 +90,7 @@ abbr --add -- nauto "nikola auto"
 And once it's ready...
 
 #+begin_src fish :noweb-ref nikola-deploy
-abbr --add -- ngd "nikola github_deploy"
+abbr --add -- deploy "nikola github_deploy"
 #+end_src
 
 * Git
@@ -120,6 +120,7 @@ abbr --add -- amend "git commit --amend"
 abbr --add -- push "git push"
 abbr --add -- gsync "legit sync"
 abbr --add -- publish "legit publish"
+abbr --add -- fetch "git fetch --prune"
 #+end_src
 
 ** The State of Things
@@ -157,6 +158,8 @@ abbr --add -- brlogall "git log --branches --graph"
 abbr --add -- renamebranch "git branch -m"
 abbr --add -- merge "git merge"
 abbr --add -- cob "git checkout -b"
+abbr --add -- destroy "git branch -d"
+abbr --add -- destroythegods "git push origin -d"
 #+end_src
 
 ** My, How Things Have Changed
@@ -164,13 +167,15 @@ abbr --add -- cob "git checkout -b"
 abbr --add -- codechanges "git log -p"
 abbr --add -- logdiff "git log -p"
 abbr --add -- gdiff "git diff"
+abbr --add -- gdiffn "git diff --name-status"
 #+end_src
 
 * Pass
 For [[https://www.passwordstore.org/][pass]] the password-manager. I was doing the pull and push commands but decided to use the git ~sync~ alias which is actuall calling ~legit sync~, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.
 
 #+begin_src fish :noweb-ref syncpass
-abbr --add -- psync "pass git sync"
+abbr --add -- p "pass"
+abbr --add -- pgs "pass git sync"
 #+end_src
 
 * Grep
