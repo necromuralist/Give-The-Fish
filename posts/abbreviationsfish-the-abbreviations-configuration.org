@@ -44,6 +44,11 @@
 
 # grep
 <<grep>>
+
+# vpn
+<<vpn-disconnect-connect>>
+
+<<vpn-fastest>>
 #+end_src
 
 #+begin_notecard
@@ -118,7 +123,7 @@ abbr --add -- amend "git commit --amend"
 
 #+begin_src fish :noweb-ref git-remote
 abbr --add -- push "git push"
-abbr --add -- gsync "legit sync"
+abbr --add -- gsy "legit sync"
 abbr --add -- publish "legit publish"
 abbr --add -- fetch "git fetch --prune"
 #+end_src
@@ -181,6 +186,15 @@ abbr --add -- pgs "pass git sync"
 * Grep
 #+begin_src fish :noweb-ref grep
 abbr --add -- grepr "grep --color=always"
+#+end_src
+* Proton VPN
+#+begin_src fish :noweb-ref vpn-disconnect-connect
+abbr --add -- vdc "protonvpn-cli disconnect; protonvpn-cli connect"
+#+end_src
+
+#+begin_src fish :noweb-ref vpn-fastest
+abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --fastest; protonvpn-cli status"
+
 #+end_src
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html

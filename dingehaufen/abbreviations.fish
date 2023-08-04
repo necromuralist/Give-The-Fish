@@ -20,7 +20,7 @@ abbr --add -- gcm "git commit --message"
 abbr --add -- amend "git commit --amend"
 
 abbr --add -- push "git push"
-abbr --add -- gsync "legit sync"
+abbr --add -- gsy "legit sync"
 abbr --add -- publish "legit publish"
 abbr --add -- fetch "git fetch --prune"
 
@@ -50,3 +50,8 @@ abbr --add -- pgs "pass git sync"
 
 # grep
 abbr --add -- grepr "grep --color=always"
+
+# vpn
+abbr --add -- vdc "protonvpn-cli disconnect; protonvpn-cli connect"
+
+abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --fastest; protonvpn-cli status"
