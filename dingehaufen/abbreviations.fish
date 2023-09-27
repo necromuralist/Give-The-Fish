@@ -28,7 +28,7 @@ abbr --add -- state "git status -sb"
 abbr --add -- gstat "git status"
 
 abbr --add -- branches "legit branches"
-abbr --add -- gswitch "legit switch"
+abbr --add -- branch "legit switch"
 abbr --add -- brls "git ls-tree --name-only -r"
 abbr --add -- brlog "git log --oneline --abbrev-commit" \
     " --all --graph --decorate --color"
