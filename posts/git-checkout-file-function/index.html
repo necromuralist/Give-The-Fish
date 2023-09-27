@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8">
+<meta content="A function to checkout a folder or file from another branch" name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Git Checkout File Function | Give the Fish</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<meta content="Nikola (getnikola.com)" name="generator">
+<link href="../../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="../../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
+<link href="../../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
+<link href="../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../../site.webmanifest" rel="manifest">
+<meta content="Cloistered Monkey" name="author">
+<link href="../function-apt-search/index.html" rel="prev" title="Function: Apt Search" type="text/html">
+<meta content="Give the Fish" property="og:site_name">
+<meta content="Git Checkout File Function" property="og:title">
+<meta content="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html" property="og:url">
+<meta content="A function to checkout a folder or file from another branch" property="og:description">
+<meta content="article" property="og:type">
+<meta content="2023-09-27T12:38:49-07:00" property="article:published_time">
+<meta content="functions" property="article:tag">
+<meta content="git" property="article:tag">
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-light bg-light">
+<div class="container"><!-- This keeps the margins nice -->
+ <a class="navbar-brand" href="../../"><span id="blog-title">Give the Fish</span></a> <button aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="bs-navbar">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="../">Posts</a></li>
+<li class="nav-item"><a class="nav-link" href="../../archive.html">Archive</a></li>
+<li class="nav-item"><a class="nav-link" href="../../categories/">Tags</a></li>
+<li class="nav-item"><a class="nav-link" href="../../rss.xml">RSS feed</a></li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Monkey Sites</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="https://necromuralist.github.io/">The Cloistered Monkey</a> <a class="dropdown-item" href="https://necromuralist.github.io/Ape-Iron/">Ape Iron</a> <a class="dropdown-item" href="https://necromuralist.github.io/Bowling-For-Data/">Bowling For Data</a> <a class="dropdown-item" href="https://necromuralist.github.io/Beach-Pig-Thigh/">Beach Pig Runp & Thigh</a> <a class="dropdown-item" href="https://necromuralist.github.io/Neurotic-Networking/">Neurotic Networking</a> <a class="dropdown-item" href="https://necromuralist.github.io/Visions-Voices-Data/">Visions, Voices, Data</a></div>
+</li>
+</ul>
+<!-- DuckDuckGo custom search -->
+<form action="https://duckduckgo.com/" class="navbar-form pull-left" id="search" method="get" name="search"><input name="sites" type="hidden" value="https://necromuralist.github.io/Give-The-Fish/"><input name="k8" type="hidden" value="#444444"><input name="k9" type="hidden" value="#D51920"><input name="kt" type="hidden" value="h"><input class="span2" maxlength="255" name="q" placeholder="Search…" type="text"><input style="visibility: hidden;display:none" type="submit" value="DuckDuckGo Search"></form>
+<!-- End of custom search -->
+<ul class="navbar-nav navbar-right">
+<li class="nav-item"><a class="nav-link" href="index.org" id="sourcelink">Source</a></li>
+</ul>
+</div>
+<!-- /.navbar-collapse --></div>
+<!-- /.container --></nav>
+<!-- End of Menubar -->
+<div class="container" id="content" role="main">
+<div class="body-content"><!--Body content-->
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Git Checkout File Function</a></h1>
+<div class="metadata">
+<p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2023-09-27T12:38:49-07:00" itemprop="datePublished" title="2023-09-27 12:38">2023-09-27 12:38</time></a></p>
+<p class="sourceline"><a class="sourcelink" href="index.org">Source</a></p>
+</div>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="index.html#org1a8abe9">Declaring the Function</a></li>
+<li><a href="index.html#org5f33abe">Checkout the File</a></li>
+<li><a href="index.html#org265b8eb">Check If It Succeeded</a></li>
+<li><a href="index.html#orgcc45d42">References</a></li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org1a8abe9">
+<h2 id="org1a8abe9">Declaring the Function</h2>
+<div class="outline-text-2" id="text-org1a8abe9">
+<p>This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> gitmefile -d <span class="s2">"Checkout folder or file from another branch"</span> <span class="se">\</span>
+    --argument-names BRANCH PATH_TO_FILE
+</pre></div>
+<p>I originally called <code>PATH_TO_FILE</code> but that of course clobbered the <code>PATH</code> variable and all of a sudden it couldn't find git.</p>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org5f33abe">
+<h2 id="org5f33abe">Checkout the File</h2>
+<div class="outline-text-2" id="text-org5f33abe">
+<p>This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.</p>
+<div class="highlight">
+<pre><span></span>git checkout <span class="nv">$BRANCH</span> -- <span class="nv">$PATH_TO_FILE</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org265b8eb">
+<h2 id="org265b8eb">Check If It Succeeded</h2>
+<div class="outline-text-2" id="text-org265b8eb">
+<p>The git error message when you pass it an unknown branch is <code>fatal: invalid reference: &lt;branch&gt;</code> which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="nv">$status</span> -ne 0
+    <span class="k">echo</span> <span class="s2">"There was a git error using your arguments: branch='</span><span class="nv">$BRANCH</span><span class="s2">' path='</span><span class="nv">$PATH_TO_FILE</span><span class="s2">'."</span>
+
+    string match --regex --quiet <span class="s2">"(?&lt;matched&gt;</span><span class="nv">$BRANCH</span><span class="s2">)"</span> <span class="o">(</span>git branch<span class="o">)</span>
+    <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$matched</span>
+        <span class="k">echo</span> <span class="s2">"No branch matches '</span><span class="nv">$BRANCH</span><span class="s2">'."</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+<p>The option given to <code>string match</code> tell fish to use regular expressions instead of the default glob-type expressions and to not echo any matches it finds to the screen. The arguments to <code>test</code> don't have long-versions so I'll put them in a table to make it clearer.</p>
+<table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
+<colgroup>
+<col class="org-left">
+<col class="org-left"></colgroup>
+<thead>
+<tr>
+<th class="org-left" scope="col">Option</th>
+<th class="org-left" scope="col">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>-ne</code></td>
+<td class="org-left">Not equal to</td>
+</tr>
+<tr>
+<td class="org-left"><code>-z</code></td>
+<td class="org-left">It is a <i>zero</i> (empty) string</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgcc45d42">
+<h2 id="orgcc45d42">References</h2>
+<div class="outline-text-2" id="text-orgcc45d42">
+<ul class="org-ul">
+<li>string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: <a href="https://fishshell.com/docs/current/cmds/string-match.html">https://fishshell.com/docs/current/cmds/string-match.html</a></li>
+<li>test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: <a href="https://fishshell.com/docs/current/cmds/test.html">https://fishshell.com/docs/current/cmds/test.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="postpromonav">
+<nav>
+<ul class="tags" itemprop="keywords">
+<li><a class="tag p-category" href="../../categories/functions/index.html" rel="tag">functions</a></li>
+<li><a class="tag p-category" href="../../categories/git/index.html" rel="tag">git</a></li>
+</ul>
+<ul class="pager hidden-print">
+<li class="previous"><a href="../function-apt-search/index.html" rel="prev" title="Function: Apt Search">Previous post</a></li>
+</ul>
+</nav>
+</aside>
+</article>
+<!--End of body content-->
+<footer id="footer">Scribbled by the <a href="mailto:cloisteredmonkey.jmark@slmail.me">Cloistered Monkey</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+<div id="license" xmlns:cc="http://creativecommons.org/ns#">This work is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" rel="license noopener noreferrer" style="display:inline-block;" target="_blank">CC BY 4.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></div>
+</footer>
+</div>
+</div>
+<script src="../../assets/js/all-nocdn.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+</script>
+</body>
+</html>

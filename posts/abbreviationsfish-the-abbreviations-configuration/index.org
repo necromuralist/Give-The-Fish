@@ -44,6 +44,11 @@
 
 # grep
 <<grep>>
+
+# vpn
+<<vpn-disconnect-connect>>
+
+<<vpn-fastest>>
 #+end_src
 
 #+begin_notecard
@@ -66,11 +71,11 @@ abbr --add -- n "nikola"
 I only use org-mode so these are the commands to make new posts and pages.
 
 #+begin_src fish :noweb-ref nikola-newpost
-abbr --add -- npost nikola new_post --format orgmode --title
+abbr --add -- post nikola new_post --format orgmode --title
 #+end_src
 
 #+begin_src fish :noweb-ref nikola-newpage
-abbr --add -- npage nikola new_page --format orgmode --title
+abbr --add -- page nikola new_page --format orgmode --title
 #+end_src
 
 They actually look like the same files are produced, just one gets put into your pages folder and one gets put into your posts folder. Which is nice, I guess, in that we can move things back and forth between the blog and the web-pages as we need to.
@@ -90,7 +95,7 @@ abbr --add -- nauto "nikola auto"
 And once it's ready...
 
 #+begin_src fish :noweb-ref nikola-deploy
-abbr --add -- ngd "nikola github_deploy"
+abbr --add -- deploy "nikola github_deploy"
 #+end_src
 
 * Git
@@ -118,8 +123,9 @@ abbr --add -- amend "git commit --amend"
 
 #+begin_src fish :noweb-ref git-remote
 abbr --add -- push "git push"
-abbr --add -- gsync "legit sync"
+abbr --add -- gsy "legit sync"
 abbr --add -- publish "legit publish"
+abbr --add -- fetch "git fetch --prune"
 #+end_src
 
 ** The State of Things
@@ -149,13 +155,16 @@ abbr --add -- gstat "git status"
 
 #+begin_src fish :noweb-ref git-branches
 abbr --add -- branches "legit branches"
-abbr --add -- gswitch "legit switch"
+abbr --add -- branch "legit switch"
 abbr --add -- brls "git ls-tree --name-only -r"
 abbr --add -- brlog "git log --oneline --abbrev-commit" \
     " --all --graph --decorate --color"
 abbr --add -- brlogall "git log --branches --graph"
 abbr --add -- renamebranch "git branch -m"
 abbr --add -- merge "git merge"
+abbr --add -- cob "git checkout -b"
+abbr --add -- destroy "git branch -d"
+abbr --add -- destroythegods "git push origin -d"
 #+end_src
 
 ** My, How Things Have Changed
@@ -163,18 +172,29 @@ abbr --add -- merge "git merge"
 abbr --add -- codechanges "git log -p"
 abbr --add -- logdiff "git log -p"
 abbr --add -- gdiff "git diff"
+abbr --add -- gdiffn "git diff --name-status"
 #+end_src
 
 * Pass
 For [[https://www.passwordstore.org/][pass]] the password-manager. I was doing the pull and push commands but decided to use the git ~sync~ alias which is actuall calling ~legit sync~, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.
 
 #+begin_src fish :noweb-ref syncpass
-abbr --add -- syncpass "pass git sync"
+abbr --add -- p "pass"
+abbr --add -- pgs "pass git sync"
 #+end_src
 
 * Grep
 #+begin_src fish :noweb-ref grep
 abbr --add -- grepr "grep --color=always"
+#+end_src
+* Proton VPN
+#+begin_src fish :noweb-ref vpn-disconnect-connect
+abbr --add -- vdc "protonvpn-cli disconnect; protonvpn-cli connect"
+#+end_src
+
+#+begin_src fish :noweb-ref vpn-fastest
+abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --fastest; protonvpn-cli status"
+
 #+end_src
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html

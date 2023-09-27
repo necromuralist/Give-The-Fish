@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about git)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/git.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+&lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
+&lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
+&lt;/div&gt;
+</copyright><lastBuildDate>Wed, 27 Sep 2023 20:53:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org1a8abe9"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org5f33abe"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org265b8eb"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgcc45d42"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org1a8abe9" class="outline-2"&gt;
+&lt;h2 id="org1a8abe9"&gt;Declaring the Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a8abe9"&gt;
+&lt;p&gt;
+This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; gitmefile -d &lt;span class="s2"&gt;"Checkout folder or file from another branch"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    --argument-names BRANCH PATH_TO_FILE
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+I originally called &lt;code&gt;PATH_TO_FILE&lt;/code&gt; but that of course clobbered the &lt;code&gt;PATH&lt;/code&gt; variable and all of a sudden it couldn't find git.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5f33abe" class="outline-2"&gt;
+&lt;h2 id="org5f33abe"&gt;Checkout the File&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5f33abe"&gt;
+&lt;p&gt;
+This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git checkout &lt;span class="nv"&gt;$BRANCH&lt;/span&gt; -- &lt;span class="nv"&gt;$PATH_TO_FILE&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org265b8eb" class="outline-2"&gt;
+&lt;h2 id="org265b8eb"&gt;Check If It Succeeded&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org265b8eb"&gt;
+&lt;p&gt;
+The git error message when you pass it an unknown branch is &lt;code&gt;fatal: invalid reference: &amp;lt;branch&amp;gt;&lt;/code&gt; which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$status&lt;/span&gt; -ne 0
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"There was a git error using your arguments: branch='&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;' path='&lt;/span&gt;&lt;span class="nv"&gt;$PATH_TO_FILE&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt;
+
+    string match --regex --quiet &lt;span class="s2"&gt;"(?&amp;lt;matched&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;)"&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;git branch&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$matched&lt;/span&gt;
+	&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"No branch matches '&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The option given to &lt;code&gt;string match&lt;/code&gt; tell fish to use regular expressions instead of the default glob-type expressions and to not echo any matches it finds to the screen. The arguments to &lt;code&gt;test&lt;/code&gt; don't have long-versions so I'll put them in a table to make it clearer.
+&lt;/p&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-left"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="org-left"&gt;Option&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;&lt;code&gt;-ne&lt;/code&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;Not equal to&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;&lt;code&gt;-z&lt;/code&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;It is a &lt;i&gt;zero&lt;/i&gt; (empty) string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgcc45d42" class="outline-2"&gt;
+&lt;h2 id="orgcc45d42"&gt;References&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcc45d42"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;https://fishshell.com/docs/current/cmds/test.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>functions</category><category>git</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</guid><pubDate>Wed, 27 Sep 2023 19:38:49 GMT</pubDate></item></channel></rss>

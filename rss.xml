@@ -5,7 +5,106 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 28 Jun 2023 20:59:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Apt Search</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Wed, 27 Sep 2023 20:53:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org1a8abe9"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org5f33abe"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org265b8eb"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgcc45d42"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org1a8abe9" class="outline-2"&gt;
+&lt;h2 id="org1a8abe9"&gt;Declaring the Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a8abe9"&gt;
+&lt;p&gt;
+This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; gitmefile -d &lt;span class="s2"&gt;"Checkout folder or file from another branch"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    --argument-names BRANCH PATH_TO_FILE
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+I originally called &lt;code&gt;PATH_TO_FILE&lt;/code&gt; but that of course clobbered the &lt;code&gt;PATH&lt;/code&gt; variable and all of a sudden it couldn't find git.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5f33abe" class="outline-2"&gt;
+&lt;h2 id="org5f33abe"&gt;Checkout the File&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5f33abe"&gt;
+&lt;p&gt;
+This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git checkout &lt;span class="nv"&gt;$BRANCH&lt;/span&gt; -- &lt;span class="nv"&gt;$PATH_TO_FILE&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org265b8eb" class="outline-2"&gt;
+&lt;h2 id="org265b8eb"&gt;Check If It Succeeded&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org265b8eb"&gt;
+&lt;p&gt;
+The git error message when you pass it an unknown branch is &lt;code&gt;fatal: invalid reference: &amp;lt;branch&amp;gt;&lt;/code&gt; which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$status&lt;/span&gt; -ne 0
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"There was a git error using your arguments: branch='&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;' path='&lt;/span&gt;&lt;span class="nv"&gt;$PATH_TO_FILE&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt;
+
+    string match --regex --quiet &lt;span class="s2"&gt;"(?&amp;lt;matched&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;)"&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;git branch&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$matched&lt;/span&gt;
+	&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"No branch matches '&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The option given to &lt;code&gt;string match&lt;/code&gt; tell fish to use regular expressions instead of the default glob-type expressions and to not echo any matches it finds to the screen. The arguments to &lt;code&gt;test&lt;/code&gt; don't have long-versions so I'll put them in a table to make it clearer.
+&lt;/p&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-left"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="org-left"&gt;Option&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;&lt;code&gt;-ne&lt;/code&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;Not equal to&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;&lt;code&gt;-z&lt;/code&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;It is a &lt;i&gt;zero&lt;/i&gt; (empty) string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgcc45d42" class="outline-2"&gt;
+&lt;h2 id="orgcc45d42"&gt;References&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcc45d42"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;https://fishshell.com/docs/current/cmds/test.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>functions</category><category>git</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</guid><pubDate>Wed, 27 Sep 2023 19:38:49 GMT</pubDate></item><item><title>Function: Apt Search</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
 This function pipes the output of apt search to less, preserving the colors. &lt;code&gt;apt&lt;/code&gt; doesn't have an option to preserve color when the output is piped so the function uses &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;unbuffer&lt;/a&gt; which disables the stripping of the color. &lt;code&gt;unbuffer&lt;/code&gt; is part of the &lt;a href="https://www.man7.org/linux/man-pages/man1/expect.1.html"&gt;expect&lt;/a&gt; package. On Ubuntu Lunar Lobster it doesn't come installed by default so you have to install expects to get unbuffer.
 &lt;/p&gt;
 
@@ -81,29 +180,30 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgf56ed7c"&gt;Nikola&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgd3150d9"&gt;Nikola&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org8df70f9"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org77d642d"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgbd12761"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9505769"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orga8e9289"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org00696e1"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgd05e1bd"&gt;Git&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org548bce5"&gt;Git&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org4bc2df8"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org831370c"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org80246ea"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgf69ae12"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org53685e4"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orga22f538"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org8634c08"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgbfa02f5"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org6ff37f9"&gt;Pass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org924c638"&gt;Grep&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org3ed1832"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org17dda1c"&gt;Pass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orga92cd64"&gt;Grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org8c605f0"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgab1b5b9"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="notecard" id="orgc6c4549"&gt;
+&lt;div class="notecard" id="org06b9d7a"&gt;
 &lt;p&gt;
 The abbreviations the file goes into &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -118,9 +218,9 @@ Abbreviations are sort of like aliases except fish will expand them once you hit
 According to &lt;a href="https://github.com/fish-shell/fish-shell/issues/3099"&gt;this github issue&lt;/a&gt; the files you put into &lt;code&gt;conf.d/&lt;/code&gt; get read before &lt;code&gt;config.fish&lt;/code&gt; so whatever you put in there is usable in &lt;code&gt;config.fish&lt;/code&gt; (and using &lt;code&gt;config.fish&lt;/code&gt;) at all is optional.
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgf56ed7c" class="outline-2"&gt;
-&lt;h2 id="orgf56ed7c"&gt;Nikola&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf56ed7c"&gt;
+&lt;div id="outline-container-orgd3150d9" class="outline-2"&gt;
+&lt;h2 id="orgd3150d9"&gt;Nikola&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd3150d9"&gt;
 &lt;p&gt;
 Abbreviations to hopefully make working with &lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; a little quicker.
 &lt;/p&gt;
@@ -129,17 +229,17 @@ Abbreviations to hopefully make working with &lt;a href="https://getnikola.com/"
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8df70f9" class="outline-3"&gt;
-&lt;h3 id="org8df70f9"&gt;New Posts and Pages&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org8df70f9"&gt;
+&lt;div id="outline-container-org9505769" class="outline-3"&gt;
+&lt;h3 id="org9505769"&gt;New Posts and Pages&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9505769"&gt;
 &lt;p&gt;
 I only use org-mode so these are the commands to make new posts and pages.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- npost nikola new_post --format orgmode --title
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- post nikola new_post --format orgmode --title
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- npage nikola new_page --format orgmode --title
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- page nikola new_page --format orgmode --title
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -148,9 +248,9 @@ They actually look like the same files are produced, just one gets put into your
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org77d642d" class="outline-3"&gt;
-&lt;h3 id="org77d642d"&gt;Build, Serve, and Develop&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org77d642d"&gt;
+&lt;div id="outline-container-orga8e9289" class="outline-3"&gt;
+&lt;h3 id="orga8e9289"&gt;Build, Serve, and Develop&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga8e9289"&gt;
 &lt;p&gt;
 These are the ones I use the most when making posts and pages.
 &lt;/p&gt;
@@ -166,42 +266,42 @@ abbr --add -- nauto &lt;span class="s2"&gt;"nikola auto"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbd12761" class="outline-3"&gt;
-&lt;h3 id="orgbd12761"&gt;Deploy to Github&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgbd12761"&gt;
+&lt;div id="outline-container-org00696e1" class="outline-3"&gt;
+&lt;h3 id="org00696e1"&gt;Deploy to Github&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org00696e1"&gt;
 &lt;p&gt;
 And once it's ready…
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- ngd &lt;span class="s2"&gt;"nikola github_deploy"&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- deploy &lt;span class="s2"&gt;"nikola github_deploy"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd05e1bd" class="outline-2"&gt;
-&lt;h2 id="orgd05e1bd"&gt;Git&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd05e1bd"&gt;
+&lt;div id="outline-container-org548bce5" class="outline-2"&gt;
+&lt;h2 id="org548bce5"&gt;Git&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org548bce5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- g &lt;span class="s2"&gt;"git"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4bc2df8" class="outline-3"&gt;
-&lt;h3 id="org4bc2df8"&gt;Add, Commit, Push Stuff&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org4bc2df8"&gt;
+&lt;div id="outline-container-org53685e4" class="outline-3"&gt;
+&lt;h3 id="org53685e4"&gt;Add, Commit, Push Stuff&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org53685e4"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org078a3ff" class="outline-4"&gt;
-&lt;h4 id="org078a3ff"&gt;Adding Files&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org078a3ff"&gt;
+&lt;div id="outline-container-org10c2b39" class="outline-4"&gt;
+&lt;h4 id="org10c2b39"&gt;Adding Files&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org10c2b39"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- add &lt;span class="s2"&gt;"git add"&lt;/span&gt;
 abbr --add -- gaa &lt;span class="s2"&gt;"git add -A"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga0aabf9" class="outline-4"&gt;
-&lt;h4 id="orga0aabf9"&gt;Are you ready for a commitment?&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orga0aabf9"&gt;
+&lt;div id="outline-container-orge18b979" class="outline-4"&gt;
+&lt;h4 id="orge18b979"&gt;Are you ready for a commitment?&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge18b979"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- commit &lt;span class="s2"&gt;"git commit"&lt;/span&gt;
 abbr --add -- gcm &lt;span class="s2"&gt;"git commit --message"&lt;/span&gt;
 abbr --add -- amend &lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
@@ -209,24 +309,25 @@ abbr --add -- amend &lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2ce7996" class="outline-4"&gt;
-&lt;h4 id="org2ce7996"&gt;Speak To The Gods On High&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org2ce7996"&gt;
+&lt;div id="outline-container-org1542e7a" class="outline-4"&gt;
+&lt;h4 id="org1542e7a"&gt;Speak To The Gods On High&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org1542e7a"&gt;
 &lt;p&gt;
 &lt;a href="https://man7.org/linux/man-pages/man2/sync.2.html"&gt;&lt;code&gt;sync&lt;/code&gt;&lt;/a&gt; is a builtin command (it writes caches to disk) so I went with &lt;code&gt;gsync&lt;/code&gt; for the abbreviation.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- push &lt;span class="s2"&gt;"git push"&lt;/span&gt;
-abbr --add -- gsync &lt;span class="s2"&gt;"legit sync"&lt;/span&gt;
+abbr --add -- gsy &lt;span class="s2"&gt;"legit sync"&lt;/span&gt;
 abbr --add -- publish &lt;span class="s2"&gt;"legit publish"&lt;/span&gt;
+abbr --add -- fetch &lt;span class="s2"&gt;"git fetch --prune"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org831370c" class="outline-3"&gt;
-&lt;h3 id="org831370c"&gt;The State of Things&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org831370c"&gt;
+&lt;div id="outline-container-orga22f538" class="outline-3"&gt;
+&lt;h3 id="orga22f538"&gt;The State of Things&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga22f538"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;&lt;code&gt;status&lt;/code&gt;&lt;/a&gt; gives you information about the fish-shell. This is the only thing I ever see, though.
 &lt;/p&gt;
@@ -244,7 +345,7 @@ Job control: Only on interactive jobs
 But, anyway, I went with &lt;code&gt;gstat&lt;/code&gt; to not block it in case it's really needed at some point.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org3063b7f"&gt;
+&lt;div class="notecard" id="org0fb4909"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; Look at the &lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html"&gt;SSH Agent Config Fragment&lt;/a&gt; post to see &lt;code&gt;status&lt;/code&gt; in use. It's probably meant for programming, not as a command-line command.
 &lt;/p&gt;
@@ -257,58 +358,73 @@ abbr --add -- gstat &lt;span class="s2"&gt;"git status"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org80246ea" class="outline-3"&gt;
-&lt;h3 id="org80246ea"&gt;Branch Work&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org80246ea"&gt;
+&lt;div id="outline-container-org8634c08" class="outline-3"&gt;
+&lt;h3 id="org8634c08"&gt;Branch Work&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8634c08"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/switch.html"&gt;&lt;code&gt;switch&lt;/code&gt;&lt;/a&gt; is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- branches &lt;span class="s2"&gt;"legit branches"&lt;/span&gt;
-abbr --add -- gswitch &lt;span class="s2"&gt;"legit switch"&lt;/span&gt;
+abbr --add -- branch &lt;span class="s2"&gt;"legit switch"&lt;/span&gt;
 abbr --add -- brls &lt;span class="s2"&gt;"git ls-tree --name-only -r"&lt;/span&gt;
 abbr --add -- brlog &lt;span class="s2"&gt;"git log --oneline --abbrev-commit"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="s2"&gt;" --all --graph --decorate --color"&lt;/span&gt;
 abbr --add -- brlogall &lt;span class="s2"&gt;"git log --branches --graph"&lt;/span&gt;
 abbr --add -- renamebranch &lt;span class="s2"&gt;"git branch -m"&lt;/span&gt;
 abbr --add -- merge &lt;span class="s2"&gt;"git merge"&lt;/span&gt;
+abbr --add -- cob &lt;span class="s2"&gt;"git checkout -b"&lt;/span&gt;
+abbr --add -- destroy &lt;span class="s2"&gt;"git branch -d"&lt;/span&gt;
+abbr --add -- destroythegods &lt;span class="s2"&gt;"git push origin -d"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf69ae12" class="outline-3"&gt;
-&lt;h3 id="orgf69ae12"&gt;My, How Things Have Changed&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgf69ae12"&gt;
+&lt;div id="outline-container-orgbfa02f5" class="outline-3"&gt;
+&lt;h3 id="orgbfa02f5"&gt;My, How Things Have Changed&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbfa02f5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- codechanges &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 abbr --add -- logdiff &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 abbr --add -- gdiff &lt;span class="s2"&gt;"git diff"&lt;/span&gt;
+abbr --add -- gdiffn &lt;span class="s2"&gt;"git diff --name-status"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6ff37f9" class="outline-2"&gt;
-&lt;h2 id="org6ff37f9"&gt;Pass&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6ff37f9"&gt;
+&lt;div id="outline-container-org17dda1c" class="outline-2"&gt;
+&lt;h2 id="org17dda1c"&gt;Pass&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org17dda1c"&gt;
 &lt;p&gt;
 For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-manager. I was doing the pull and push commands but decided to use the git &lt;code&gt;sync&lt;/code&gt; alias which is actuall calling &lt;code&gt;legit sync&lt;/code&gt;, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- syncpass &lt;span class="s2"&gt;"pass git sync"&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- p &lt;span class="s2"&gt;"pass"&lt;/span&gt;
+abbr --add -- pgs &lt;span class="s2"&gt;"pass git sync"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org924c638" class="outline-2"&gt;
-&lt;h2 id="org924c638"&gt;Grep&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org924c638"&gt;
+&lt;div id="outline-container-orga92cd64" class="outline-2"&gt;
+&lt;h2 id="orga92cd64"&gt;Grep&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga92cd64"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- grepr &lt;span class="s2"&gt;"grep --color=always"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org3ed1832" class="outline-2"&gt;
-&lt;h2 id="org3ed1832"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3ed1832"&gt;
+&lt;div id="outline-container-org8c605f0" class="outline-2"&gt;
+&lt;h2 id="org8c605f0"&gt;Proton VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8c605f0"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- vdc &lt;span class="s2"&gt;"protonvpn-cli disconnect; protonvpn-cli connect"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- fastestvpn &lt;span class="s2"&gt;"protonvpn-cli disconnect;protonvpn-cli connect --fastest; protonvpn-cli status"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgab1b5b9" class="outline-2"&gt;
+&lt;h2 id="orgab1b5b9"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgab1b5b9"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/abbr.html"&gt;https://fishshell.com/docs/current/cmds/abbr.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: &lt;a href="https://stackoverflow.com/a/48749763"&gt;https://stackoverflow.com/a/48749763&lt;/a&gt;&lt;/li&gt;
