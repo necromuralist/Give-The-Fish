@@ -1,0 +1,70 @@
+#+BEGIN_COMMENT
+.. title: Git Checkout File Function
+.. slug: git-checkout-file-function
+.. date: 2023-09-27 12:38:49 UTC-07:00
+.. tags: functions,git
+.. category: Git
+.. link: 
+.. description: A function to checkout a folder or file from another branch
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+#+begin_src noweb :tangle ../functions/gitmefile.fish :exports none
+<<function-declaration>>
+
+  <<git-checkout>>
+
+  <<error-check>>
+
+  end
+#+end_src
+
+* Declaring the Function
+
+This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.
+
+#+begin_src fish :noweb-ref function-declaration
+function gitmefile -d "Checkout folder or file from another branch" \
+    --argument-names BRANCH PATH_TO_FILE
+#+end_src
+
+I originally called ~PATH_TO_FILE~ but that of course clobbered the ~PATH~ variable and all of a sudden it couldn't find git.
+
+* Checkout the File
+
+This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.
+
+#+begin_src fish :noweb-ref git-checkout
+git checkout $BRANCH -- $PATH_TO_FILE
+#+end_src
+
+* Check If It Succeeded
+The git error message when you pass it an unknown branch is ~fatal: invalid reference: <branch>~ which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.
+
+#+begin_src fish :noweb-ref error-check
+if test $status -ne 0
+    echo "There was a git error using your arguments: branch='$BRANCH' path='$PATH_TO_FILE'."
+
+    string match --regex --quiet "(?<matched>$BRANCH)" (git branch)
+    if test -z $matched
+        echo "No branch matches '$BRANCH'."
+    end
+end
+#+end_src
+
+The option given to ~string match~ tell fish to use regular expressions instead of the default glob-type expressions and to not echo any matches it finds to the screen. The arguments to ~test~ don't have long-versions so I'll put them in a table to make it clearer.
+
+| Option | Meaning                       |
+|--------+-------------------------------|
+| ~-ne~  | Not equal to                  |
+| ~-z~   | It is a /zero/ (empty) string |
+
+* References
+
+- string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: https://fishshell.com/docs/current/cmds/string-match.html
+- test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: https://fishshell.com/docs/current/cmds/test.html

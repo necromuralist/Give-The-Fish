@@ -39,6 +39,8 @@
 
 <<git-differences>>
 
+<<git-checkout>>
+
 # pass
 <<syncpass>>
 
@@ -167,6 +169,12 @@ abbr --add -- destroy "git branch -d"
 abbr --add -- destroythegods "git push origin -d"
 #+end_src
 
+** Checkout Files
+
+#+begin_src fish :noweb-ref git-checkout
+abbr --add -- usetheirs "git checkout --theirs"
+abbr --add -- useours "git checkout --ours"
+#+end_src
 ** My, How Things Have Changed
 #+begin_src fish :noweb-ref git-differences
 abbr --add -- codechanges "git log -p"

@@ -44,6 +44,9 @@ abbr --add -- logdiff "git log -p"
 abbr --add -- gdiff "git diff"
 abbr --add -- gdiffn "git diff --name-status"
 
+abbr --add -- usetheirs "git checkout --theirs"
+abbr --add -- useours "git checkout --ours"
+
 # pass
 abbr --add -- p "pass"
 abbr --add -- pgs "pass git sync"
