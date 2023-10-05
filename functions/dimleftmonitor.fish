@@ -1,14 +1,13 @@
-function dimrightmonitor -d "Set DVI-D-O brightess" \
+function dimleftmonitor -d "Set HDMI-0 brightness" \
     --argument-names BRIGHTNESS OUTPUT
 
   # -z : test for zero (empty) string
 
   if test -z $OUTPUT
-      set OUTPUT "DVI-D-0"
+      set OUTPUT "HDMI-0"
   end
 
   if test -z $BRIGHTNESS
-      echo "Setting BRIGHTNESS"
       set BRIGHTNESS 0
   end
   
