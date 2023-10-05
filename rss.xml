@@ -5,7 +5,49 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Sat, 30 Sep 2023 19:43:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Thu, 05 Oct 2023 00:38:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dim Monitor</title><link>https://necromuralist.github.io/Give-The-Fish/posts/dim-monitor/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; dim_monitor -d &lt;span class="s2"&gt;"Set monitor brightness"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    --argument-names OUTPUT BRIGHTNESS
+
+  &lt;span class="c"&gt;# -z : test for empty string&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt;
+    &lt;span class="k"&gt;set&lt;/span&gt; BRIGHTNESS 0
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+      &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"You must pass in the 'output' e.g. 'DVI-D-0'"&lt;/span&gt;
+      &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Usage: dim_monitor OUTPUT BRIGHTNESS"&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+       xrandr --output &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt; --brightness &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt; --auto
+   &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/dim-monitor/index.html</guid><pubDate>Thu, 05 Oct 2023 00:14:37 GMT</pubDate></item><item><title>Dim Left Monitor</title><link>https://necromuralist.github.io/Give-The-Fish/posts/dim-left-monitor/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; dimleftmonitor -d &lt;span class="s2"&gt;"Set HDMI-0 brightness"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    --argument-names BRIGHTNESS OUTPUT
+
+  &lt;span class="c"&gt;# -z : test for zero (empty) string&lt;/span&gt;
+
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+      &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="s2"&gt;"HDMI-0"&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt;
+      &lt;span class="k"&gt;set&lt;/span&gt; BRIGHTNESS 0
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="c"&gt;# xrandr --output $OUTPUT --brightness $BRIGHTNESS --auto&lt;/span&gt;
+  dim_monitor &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt; &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; undimleftmonitor -d &lt;span class="s2"&gt;"Undim the Left Monitor"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    --argument-names OUTPUT
+
+      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+	  &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="s2"&gt;"HDMI-0"&lt;/span&gt;
+      &lt;span class="k"&gt;end&lt;/span&gt;
+
+      dimleftmonitor &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><guid>https://necromuralist.github.io/Give-The-Fish/posts/dim-left-monitor/index.html</guid><pubDate>Thu, 05 Oct 2023 00:14:20 GMT</pubDate></item><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
@@ -762,153 +804,4 @@ If the user passes in a flag as a filename this will get passed to the &lt;code&
 &lt;li&gt;file(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://www.man7.org/linux/man-pages/man1/file.1.html"&gt;https://www.man7.org/linux/man-pages/man1/file.1.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
-&lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgb8734c1"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org58eac78"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org2899419"&gt;Argument Check&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org425ca26"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org50f73d7"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org6523630"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgb351455"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org29a6169"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org7073aeb"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org3b8f2b3"&gt;Sources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div id="outline-container-orgb8734c1" class="outline-2"&gt;
-&lt;h2 id="orgb8734c1"&gt;The randomdhex Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb8734c1"&gt;
-&lt;p&gt;
-This an alias function to output a random hexadecimal number. There are many ways to do this but I took this from &lt;a href="https://stackoverflow.com/a/53668354"&gt;a StackOverFlow answer&lt;/a&gt;.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org58eac78" class="outline-2"&gt;
-&lt;h2 id="org58eac78"&gt;The Function Header&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org58eac78"&gt;
-&lt;p&gt;
-I'm going to create a function named &lt;code&gt;randomhex&lt;/code&gt; that takes one optional argument named &lt;code&gt;digits&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; randomhex -d &lt;span class="s2"&gt;"random hex string"&lt;/span&gt; --argument-names digits
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org2899419" class="outline-2"&gt;
-&lt;h2 id="org2899419"&gt;Argument Check&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2899419"&gt;
-&lt;p&gt;
-The first thing to do is to check if the user passed in an argument and handle it if they did or use a default if they didn't.
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org425ca26" class="outline-3"&gt;
-&lt;h3 id="org425ca26"&gt;Check For An Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org425ca26"&gt;
-&lt;p&gt;
-The first check uses the &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;test&lt;/a&gt; command to see if the user passed in an argument. the &lt;code&gt;-n&lt;/code&gt; flag tells it to check if there's a string with one or more characters in it in our &lt;code&gt;digits&lt;/code&gt; variable.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -n &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$digits&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="c"&gt;# then an argument was passed in&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org50f73d7" class="outline-3"&gt;
-&lt;h3 id="org50f73d7"&gt;Check If The Argument Is An Integer&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org50f73d7"&gt;
-&lt;p&gt;
-If the user &lt;i&gt;did&lt;/i&gt; pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;string match&lt;/a&gt; command and a regular expression to make sure it's only made up of one or more digits.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;string match --regex &lt;span class="s2"&gt;"^[0-9]+\$"&lt;/span&gt; &lt;span class="nv"&gt;$digits&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org6523630" class="outline-3"&gt;
-&lt;h3 id="org6523630"&gt;Set the Argument Value&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6523630"&gt;
-&lt;p&gt;
-If the argument was an integer then we'll set the &lt;code&gt;BYTES&lt;/code&gt; variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (&lt;code&gt;$digits/2&lt;/code&gt;) to the &lt;code&gt;math&lt;/code&gt; command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the &lt;code&gt;ceil&lt;/code&gt; argument to round up to the nearest integer.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; BYTES &lt;span class="nv"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;math &lt;/span&gt;ceil &lt;span class="nv"&gt;$digits&lt;/span&gt;/2&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgb351455" class="outline-3"&gt;
-&lt;h3 id="orgb351455"&gt;Error Message&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb351455"&gt;
-&lt;p&gt;
-If the user passed in an argument but it doesn't look like an integer then we'll output a help message. I got the idea of using &lt;code&gt;printf&lt;/code&gt; this way from &lt;a href="https://stackoverflow.com/a/48249785"&gt;this StackOverflow answer&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;Each line after the first gets passend into the first string, substituted where &lt;code&gt;%s&lt;/code&gt; is&lt;/li&gt;
-&lt;li&gt;One backslash continues the input&lt;/li&gt;
-&lt;li&gt;Two backslashes with a space in-between them will insert an extra line and continue the input&lt;/li&gt;
-&lt;li&gt;The space between the backslashes is important - fish will throw an error if you put &lt;code&gt;\\&lt;/code&gt; instead of &lt;code&gt;\ \&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="c"&gt;# the argument isn't an integer&lt;/span&gt;
-  &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;"\t%s\n"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-   &lt;span class="s2"&gt;"Output a random hexadecimal number"&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
-   &lt;span class="s2"&gt;"Usage:"&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
-   &lt;span class="s2"&gt;"randomhex &amp;lt;digits&amp;gt;"&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
-   &lt;span class="s2"&gt;"Optional argument:"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-   &lt;span class="s2"&gt;" - Number of digits (will round up to even number)"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-   &lt;span class="s2"&gt;"   Argument must be an integer (default=8)."&lt;/span&gt;
-   &lt;span class="k"&gt;return&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt; &lt;span class="c"&gt;# if is-integer check&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org29a6169" class="outline-3"&gt;
-&lt;h3 id="org29a6169"&gt;Use The Default&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org29a6169"&gt;
-&lt;p&gt;
-If the user didn't pass in an argument then use a default of 8 hexadecimal digits.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="c"&gt;# Set our bytes so we have 8 digits (double the bytes)&lt;/span&gt;
-  &lt;span class="k"&gt;set&lt;/span&gt; BYTES 4
-&lt;span class="k"&gt;end&lt;/span&gt; &lt;span class="c"&gt;# setting the number of bytes&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org7073aeb" class="outline-2"&gt;
-&lt;h2 id="org7073aeb"&gt;Output the Random Hexadecimal&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7073aeb"&gt;
-&lt;p&gt;
-Finally we output the random hexadecimal number that &lt;a href="https://www.openssl.org/"&gt;&lt;code&gt;openssl&lt;/code&gt;&lt;/a&gt; generates.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$(&lt;/span&gt;openssl rand -hex &lt;span class="nv"&gt;$BYTES&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org3b8f2b3" class="outline-2"&gt;
-&lt;h2 id="org3b8f2b3"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3b8f2b3"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;OpenSSL rand [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://www.openssl.org/docs/man1.1.1/man1/rand.html"&gt;https://www.openssl.org/docs/man1.1.1/man1/rand.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: &lt;a href="https://stackoverflow.com/q/34328759"&gt;https://stackoverflow.com/q/34328759&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</guid><pubDate>Tue, 06 Jun 2023 00:30:53 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item></channel></rss>

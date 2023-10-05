@@ -5,7 +5,22 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 27 Sep 2023 20:53:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Thu, 05 Oct 2023 00:38:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dim Monitor</title><link>https://necromuralist.github.io/Give-The-Fish/posts/dim-monitor/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; dim_monitor -d &lt;span class="s2"&gt;"Set monitor brightness"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    --argument-names OUTPUT BRIGHTNESS
+
+  &lt;span class="c"&gt;# -z : test for empty string&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt;
+    &lt;span class="k"&gt;set&lt;/span&gt; BRIGHTNESS 0
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+      &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"You must pass in the 'output' e.g. 'DVI-D-0'"&lt;/span&gt;
+      &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Usage: dim_monitor OUTPUT BRIGHTNESS"&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+       xrandr --output &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt; --brightness &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt; --auto
+   &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/dim-monitor/index.html</guid><pubDate>Thu, 05 Oct 2023 00:14:37 GMT</pubDate></item><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;

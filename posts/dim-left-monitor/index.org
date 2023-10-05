@@ -1,0 +1,44 @@
+#+BEGIN_COMMENT
+.. title: Dim Left Monitor
+.. slug: dim-left-monitor
+.. date: 2023-10-04 17:14:20 UTC-07:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+#+begin_src fish :tangle ../functions/dimleftmonitor.fish
+function dimleftmonitor -d "Set HDMI-0 brightness" \
+    --argument-names BRIGHTNESS OUTPUT
+
+  # -z : test for zero (empty) string
+
+  if test -z $OUTPUT
+      set OUTPUT "HDMI-0"
+  end
+
+  if test -z $BRIGHTNESS
+      set BRIGHTNESS 0
+  end
+  
+  # xrandr --output $OUTPUT --brightness $BRIGHTNESS --auto
+  dim_monitor $OUTPUT $BRIGHTNESS
+end
+#+end_src
+
+#+begin_src fish :tangle ../functions/undimleftmonitor.fish
+function undimleftmonitor -d "Undim the Left Monitor" \
+    --argument-names OUTPUT
+
+      if test -z $OUTPUT
+          set OUTPUT "HDMI-0"
+      end
+
+      dimleftmonitor 1 $OUTPUT
+end
+#+end_src

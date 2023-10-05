@@ -11,7 +11,8 @@
 <meta content="#5670d4" name="theme-color">
 <meta content="Nikola (getnikola.com)" name="generator">
 <link href="../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="https://necromuralist.github.io/Give-The-Fish/posts/index.html" rel="canonical"><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/index.html" rel="canonical">
+<link href="index-1.html" rel="next" type="text/html"><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- favicons -->
 <link href="../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
 <link href="../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
@@ -45,6 +46,74 @@
 <div class="container" id="content" role="main">
 <div class="body-content"><!--Body content-->
 <div class="postindex">
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title"><a class="u-url" href="dim-monitor/index.html">Dim Monitor</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="dim-monitor/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-10-04T17:14:37-07:00" itemprop="datePublished" title="2023-10-04 17:14">2023-10-04 17:14</time></a></p>
+</div>
+</header>
+<div class="p-summary entry-summary">
+<div class="highlight">
+<pre><span></span><span class="k">function</span> dim_monitor -d <span class="s2">"Set monitor brightness"</span> <span class="se">\</span>
+    --argument-names OUTPUT BRIGHTNESS
+
+  <span class="c"># -z : test for empty string</span>
+  <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$BRIGHTNESS</span>
+    <span class="k">set</span> BRIGHTNESS 0
+  <span class="k">end</span>
+
+  <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$OUTPUT</span>
+      <span class="k">echo</span> <span class="s2">"You must pass in the 'output' e.g. 'DVI-D-0'"</span>
+      <span class="k">echo</span> <span class="s2">"Usage: dim_monitor OUTPUT BRIGHTNESS"</span>
+   <span class="k">else</span>
+       xrandr --output <span class="nv">$OUTPUT</span> --brightness <span class="nv">$BRIGHTNESS</span> --auto
+   <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</article>
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title"><a class="u-url" href="dim-left-monitor/index.html">Dim Left Monitor</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="dim-left-monitor/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-10-04T17:14:20-07:00" itemprop="datePublished" title="2023-10-04 17:14">2023-10-04 17:14</time></a></p>
+</div>
+</header>
+<div class="p-summary entry-summary">
+<div class="highlight">
+<pre><span></span><span class="k">function</span> dimleftmonitor -d <span class="s2">"Set HDMI-0 brightness"</span> <span class="se">\</span>
+    --argument-names BRIGHTNESS OUTPUT
+
+  <span class="c"># -z : test for zero (empty) string</span>
+
+  <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$OUTPUT</span>
+      <span class="k">set</span> OUTPUT <span class="s2">"HDMI-0"</span>
+  <span class="k">end</span>
+
+  <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$BRIGHTNESS</span>
+      <span class="k">set</span> BRIGHTNESS 0
+  <span class="k">end</span>
+
+  <span class="c"># xrandr --output $OUTPUT --brightness $BRIGHTNESS --auto</span>
+  dim_monitor <span class="nv">$OUTPUT</span> <span class="nv">$BRIGHTNESS</span>
+<span class="k">end</span>
+</pre></div>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> undimleftmonitor -d <span class="s2">"Undim the Left Monitor"</span> <span class="se">\</span>
+    --argument-names OUTPUT
+
+      <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$OUTPUT</span>
+          <span class="k">set</span> OUTPUT <span class="s2">"HDMI-0"</span>
+      <span class="k">end</span>
+
+      dimleftmonitor <span class="m">1</span> <span class="nv">$OUTPUT</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</article>
 <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
 <h1 class="p-name entry-title"><a class="u-url" href="git-checkout-file-function/index.html">Git Checkout File Function</a></h1>
@@ -736,139 +805,10 @@ fish_add_path <span class="nv">$HOME</span>/.npm-packages/bin
 </div>
 </div>
 </article>
-<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
-<header>
-<h1 class="p-name entry-title"><a class="u-url" href="random-hex/index.html">Random Hex</a></h1>
-<div class="metadata">
-<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
-<p class="dateline"><a href="random-hex/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-06-05T17:30:53-07:00" itemprop="datePublished" title="2023-06-05 17:30">2023-06-05 17:30</time></a></p>
 </div>
-</header>
-<div class="p-summary entry-summary">
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="random-hex/index.html#orgb8734c1">The randomdhex Function</a></li>
-<li><a href="random-hex/index.html#org58eac78">The Function Header</a></li>
-<li><a href="random-hex/index.html#org2899419">Argument Check</a>
-<ul>
-<li><a href="random-hex/index.html#org425ca26">Check For An Argument</a></li>
-<li><a href="random-hex/index.html#org50f73d7">Check If The Argument Is An Integer</a></li>
-<li><a href="random-hex/index.html#org6523630">Set the Argument Value</a></li>
-<li><a href="random-hex/index.html#orgb351455">Error Message</a></li>
-<li><a href="random-hex/index.html#org29a6169">Use The Default</a></li>
+<ul class="pager postindexpager clearfix">
+<li class="next"><a href="index-1.html" rel="next">Older posts</a></li>
 </ul>
-</li>
-<li><a href="random-hex/index.html#org7073aeb">Output the Random Hexadecimal</a></li>
-<li><a href="random-hex/index.html#org3b8f2b3">Sources</a></li>
-</ul>
-</div>
-</div>
-<div class="outline-2" id="outline-container-orgb8734c1">
-<h2 id="orgb8734c1">The randomdhex Function</h2>
-<div class="outline-text-2" id="text-orgb8734c1">
-<p>This an alias function to output a random hexadecimal number. There are many ways to do this but I took this from <a href="https://stackoverflow.com/a/53668354">a StackOverFlow answer</a>.</p>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org58eac78">
-<h2 id="org58eac78">The Function Header</h2>
-<div class="outline-text-2" id="text-org58eac78">
-<p>I'm going to create a function named <code>randomhex</code> that takes one optional argument named <code>digits</code>.</p>
-<div class="highlight">
-<pre><span></span><span class="k">function</span> randomhex -d <span class="s2">"random hex string"</span> --argument-names digits
-</pre></div>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org2899419">
-<h2 id="org2899419">Argument Check</h2>
-<div class="outline-text-2" id="text-org2899419">
-<p>The first thing to do is to check if the user passed in an argument and handle it if they did or use a default if they didn't.</p>
-</div>
-<div class="outline-3" id="outline-container-org425ca26">
-<h3 id="org425ca26">Check For An Argument</h3>
-<div class="outline-text-3" id="text-org425ca26">
-<p>The first check uses the <a href="https://fishshell.com/docs/current/cmds/test.html">test</a> command to see if the user passed in an argument. the <code>-n</code> flag tells it to check if there's a string with one or more characters in it in our <code>digits</code> variable.</p>
-<div class="highlight">
-<pre><span></span><span class="k">if</span> <span class="k">test</span> -n <span class="s2">"</span><span class="nv">$digits</span><span class="s2">"</span> <span class="c"># then an argument was passed in</span>
-</pre></div>
-</div>
-</div>
-<div class="outline-3" id="outline-container-org50f73d7">
-<h3 id="org50f73d7">Check If The Argument Is An Integer</h3>
-<div class="outline-text-3" id="text-org50f73d7">
-<p>If the user <i>did</i> pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the <a href="https://fishshell.com/docs/current/cmds/string-match.html">string match</a> command and a regular expression to make sure it's only made up of one or more digits.</p>
-<div class="highlight">
-<pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="o">(</span>string match --regex <span class="s2">"^[0-9]+\$"</span> <span class="nv">$digits</span><span class="o">)</span>
-</pre></div>
-</div>
-</div>
-<div class="outline-3" id="outline-container-org6523630">
-<h3 id="org6523630">Set the Argument Value</h3>
-<div class="outline-text-3" id="text-org6523630">
-<p>If the argument was an integer then we'll set the <code>BYTES</code> variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (<code>$digits/2</code>) to the <code>math</code> command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the <code>ceil</code> argument to round up to the nearest integer.</p>
-<div class="highlight">
-<pre><span></span><span class="k">set</span> BYTES <span class="nv">$(</span><span class="nb">math </span>ceil <span class="nv">$digits</span>/2<span class="o">)</span>
-</pre></div>
-</div>
-</div>
-<div class="outline-3" id="outline-container-orgb351455">
-<h3 id="orgb351455">Error Message</h3>
-<div class="outline-text-3" id="text-orgb351455">
-<p>If the user passed in an argument but it doesn't look like an integer then we'll output a help message. I got the idea of using <code>printf</code> this way from <a href="https://stackoverflow.com/a/48249785">this StackOverflow answer</a>.</p>
-<ul class="org-ul">
-<li>Each line after the first gets passend into the first string, substituted where <code>%s</code> is</li>
-<li>One backslash continues the input</li>
-<li>Two backslashes with a space in-between them will insert an extra line and continue the input</li>
-<li>The space between the backslashes is important - fish will throw an error if you put <code>\\</code> instead of <code>\ \</code></li>
-</ul>
-<div class="highlight">
-<pre><span></span><span class="k">else</span> <span class="c"># the argument isn't an integer</span>
-  <span class="nb">printf</span> <span class="s2">"\t%s\n"</span> <span class="se">\</span>
-   <span class="s2">"Output a random hexadecimal number"</span> <span class="se">\ \</span>
-   <span class="s2">"Usage:"</span> <span class="se">\ \</span>
-   <span class="s2">"randomhex &lt;digits&gt;"</span> <span class="se">\ \</span>
-   <span class="s2">"Optional argument:"</span> <span class="se">\</span>
-   <span class="s2">" - Number of digits (will round up to even number)"</span> <span class="se">\</span>
-   <span class="s2">"   Argument must be an integer (default=8)."</span>
-   <span class="k">return</span>
-<span class="k">end</span> <span class="c"># if is-integer check</span>
-</pre></div>
-</div>
-</div>
-<div class="outline-3" id="outline-container-org29a6169">
-<h3 id="org29a6169">Use The Default</h3>
-<div class="outline-text-3" id="text-org29a6169">
-<p>If the user didn't pass in an argument then use a default of 8 hexadecimal digits.</p>
-<div class="highlight">
-<pre><span></span><span class="k">else</span> <span class="c"># Set our bytes so we have 8 digits (double the bytes)</span>
-  <span class="k">set</span> BYTES 4
-<span class="k">end</span> <span class="c"># setting the number of bytes</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org7073aeb">
-<h2 id="org7073aeb">Output the Random Hexadecimal</h2>
-<div class="outline-text-2" id="text-org7073aeb">
-<p>Finally we output the random hexadecimal number that <a href="https://www.openssl.org/"><code>openssl</code></a> generates.</p>
-<div class="highlight">
-<pre><span></span><span class="k">echo</span> <span class="nv">$(</span>openssl rand -hex <span class="nv">$BYTES</span><span class="o">)</span>
-</pre></div>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org3b8f2b3">
-<h2 id="org3b8f2b3">Sources</h2>
-<div class="outline-text-2" id="text-org3b8f2b3">
-<ul class="org-ul">
-<li>OpenSSL rand [Internet]. [cited 2023 Jun 5]. Available from: <a href="https://www.openssl.org/docs/man1.1.1/man1/rand.html">https://www.openssl.org/docs/man1.1.1/man1/rand.html</a></li>
-<li>How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: <a href="https://stackoverflow.com/q/34328759">https://stackoverflow.com/q/34328759</a></li>
-</ul>
-</div>
-</div>
-</div>
-</article>
-</div>
 <!--End of body content-->
 <footer id="footer">Scribbled by the <a href="mailto:cloisteredmonkey.jmark@slmail.me">Cloistered Monkey</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
 <div id="license" xmlns:cc="http://creativecommons.org/ns#">This work is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" rel="license noopener noreferrer" style="display:inline-block;" target="_blank">CC BY 4.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></div>

@@ -1,0 +1,31 @@
+#+BEGIN_COMMENT
+.. title: Dim Monitor
+.. slug: dim-monitor
+.. date: 2023-10-04 17:14:37 UTC-07:00
+.. tags: functions
+.. category: Functions
+.. link: 
+.. description: 
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+#+begin_src fish :tangle ../functions/dim_monitor.fish
+function dim_monitor -d "Set monitor brightness" \
+    --argument-names OUTPUT BRIGHTNESS
+
+  # -z : test for empty string
+  if test -z $BRIGHTNESS
+    set BRIGHTNESS 0
+  end
+
+  if test -z $OUTPUT
+      echo "You must pass in the 'output' e.g. 'DVI-D-0'"
+      echo "Usage: dim_monitor OUTPUT BRIGHTNESS"
+   else
+       xrandr --output $OUTPUT --brightness $BRIGHTNESS --auto
+   end
+end
+#+end_src
