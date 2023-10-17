@@ -34,7 +34,7 @@ python-dateutil==2.8.2
 requests==2.31.0
 six==1.16.0
 Unidecode==1.3.6
-urllib3==2.0.2
+urllib3==2.0.7
 virtualenv==20.23.0
 virtualfish==2.5.5
 Yapsy==1.12.2
