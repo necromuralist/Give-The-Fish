@@ -1,0 +1,83 @@
+#+BEGIN_COMMENT
+.. title: Convert a Document To PDF With Pandoc
+.. slug: convert-a-document-to-pdf-with-pandoc
+.. date: 2023-11-28 13:45:17 UTC-08:00
+.. tags: pandoc,functions,pdf,latex
+.. category: Functions
+.. link: 
+.. description: Adding a header to convert documents to PDFs.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+* What's This About?
+
+This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.
+
+Pandoc will convert an ePub or other formatted file to PDF (using /pdflatex/) without much configuration
+
+#+begin_src fish
+pandoc inputfile.epub -o output.pdf
+#+end_src
+
+but it defaults to using [[https://en.wikipedia.org/wiki/Computer_Modern][Computer Modern]], making it look like those old Springer books in the library, so I thought I'd create this function to document how to change the font in case I forget later on.
+
+* Headers
+
+You can set the font as a command line argument to pandoc (e.g. ~-V fontfamily:libertine~ ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.
+
+The function is going to assume that the pagella snippet is in a folder in =~/.config/fish/extras/= which I created using a symlink to the ~extras~ folder in this repository, but it'll also take a path to the header if it's given.
+
+** Libertinus
+
+This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.
+
+#+begin_src latex :tangle ../extras/libertine.tex
+\usepackage{libertinus}
+\usepackage[T1]{fontenc}
+\usepackage{sectsty}
+\sectionfont{\clearpage}
+#+end_src
+
+** Pagella
+
+The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.
+
+#+begin_src latex :tangle ../extras/pagella.tex
+\usepackage{tgpagella}
+\usepackage[T1]{fontenc}
+\usepackage{sectsty}
+\sectionfont{\clearpage}
+#+end_src
+
+#+begin_notecard
+**Note:** I originally accidentally put /pagella/ and not /tgpagella/ which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's /sectsty/ not /secsty/.
+#+end_notecard
+* The Function
+Nothing fancy here, it just adds the extra header file. I originally added the ~--table-of-contents~ flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.
+
+#+begin_src fish :tangle ../functions/doc2pdf.fish
+function doc2pdf -d "Convert document to pdf with pandoc" --argument-names SOURCE HEADER
+    set TARGET $(path change-extension pdf $SOURCE)
+
+    if test -z $HEADER
+        set HEADER ~/.config/fish/extras/pagella.tex
+    end
+
+    pandoc --standalone $SOURCE --output $TARGET --include-in-header $HEADER
+end
+#+end_src
+
+* Links
+
+- [[https://learnbyexample.github.io/customizing-pandoc/][learnbyexample]] : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output
+- [[https://tug.org/FontCatalogue/texgyrepagella/][Latex Font Catalogue]] : Tex Gyre Pagella page
+- [[https://tug.org/FontCatalogue/linuxlibertine/][Latex Font Catalogue]] : Linux Libertine Page
+- [[https://tug.org/FontCatalogue/libertinusserif/][Latex Font Catalogue]] : Libertinus Serif Page
+- [[https://github.com/alerque/libertinus][GitHub]]: The Libertinus repository page
+- [[https://en.wikipedia.org/wiki/Linux_Libertine][Wikipedia]] : Libertine and Libertinus information
+- {{% doc %}}rst2org-function{{% /doc %}}: Another function using pandoc.

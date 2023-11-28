@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/2023/index.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T23:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/archive.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/abbreviations/index.html</loc>
@@ -35,7 +35,7 @@
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_functions/index.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T23:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_git/index.html</loc>
@@ -67,7 +67,7 @@
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/functions/index.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T23:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/git/index.html</loc>
@@ -75,7 +75,11 @@
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/index.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T21:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://necromuralist.github.io/Give-The-Fish/categories/latex/index.html</loc>
+  <lastmod>2023-11-28T23:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/org-mode/index.html</loc>
@@ -83,7 +87,11 @@
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/pandoc/index.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T23:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://necromuralist.github.io/Give-The-Fish/categories/pdf/index.html</loc>
+  <lastmod>2023-11-28T23:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/randomness/index.html</loc>
@@ -118,12 +126,16 @@
   <lastmod>2023-10-11T20:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html</loc>
+  <lastmod>2023-11-28T23:48:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/dim-left-monitor/index.html</loc>
   <lastmod>2023-10-11T20:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/dim-monitor/index.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</loc>
@@ -135,11 +147,11 @@
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/index-1.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/index.html</loc>
-  <lastmod>2023-10-11T20:33:00Z</lastmod>
+  <lastmod>2023-11-28T23:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</loc>

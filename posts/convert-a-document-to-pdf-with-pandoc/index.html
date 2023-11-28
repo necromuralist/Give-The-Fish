@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8">
+<meta content="Adding a header to convert documents to PDFs." name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Convert a Document To PDF With Pandoc | Give the Fish</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<meta content="Nikola (getnikola.com)" name="generator">
+<link href="../../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="../../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
+<link href="../../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
+<link href="../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../../site.webmanifest" rel="manifest">
+<meta content="Cloistered Monkey" name="author">
+<link href="../dim-monitor/index.html" rel="prev" title="Dim Monitor" type="text/html">
+<meta content="Give the Fish" property="og:site_name">
+<meta content="Convert a Document To PDF With Pandoc" property="og:title">
+<meta content="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html" property="og:url">
+<meta content="Adding a header to convert documents to PDFs." property="og:description">
+<meta content="article" property="og:type">
+<meta content="2023-11-28T13:45:17-08:00" property="article:published_time">
+<meta content="functions" property="article:tag">
+<meta content="latex" property="article:tag">
+<meta content="pandoc" property="article:tag">
+<meta content="pdf" property="article:tag">
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-light bg-light">
+<div class="container"><!-- This keeps the margins nice -->
+ <a class="navbar-brand" href="../../"><span id="blog-title">Give the Fish</span></a> <button aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="bs-navbar">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="../">Posts</a></li>
+<li class="nav-item"><a class="nav-link" href="../../archive.html">Archive</a></li>
+<li class="nav-item"><a class="nav-link" href="../../categories/">Tags</a></li>
+<li class="nav-item"><a class="nav-link" href="../../rss.xml">RSS feed</a></li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Monkey Sites</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="https://necromuralist.github.io/">The Cloistered Monkey</a> <a class="dropdown-item" href="https://necromuralist.github.io/Ape-Iron/">Ape Iron</a> <a class="dropdown-item" href="https://necromuralist.github.io/Beach-Pig-Thigh/">Beach Pig Runp & Thigh</a> <a class="dropdown-item" href="https://necromuralist.github.io/Bowling-For-Data/">Bowling For Data</a> <a class="dropdown-item" href="https://necromuralist.github.io/Neurotic-Networking/">Neurotic Networking</a> <a class="dropdown-item" href="https://necromuralist.github.io/Terribilis-Ludum/">Terribilis Ludum</a> <a class="dropdown-item" href="https://necromuralist.github.io/Visions-Voices-Data/">Visions, Voices, Data</a></div>
+</li>
+</ul>
+<!-- DuckDuckGo custom search -->
+<form action="https://duckduckgo.com/" class="navbar-form pull-left" id="search" method="get" name="search"><input name="sites" type="hidden" value="https://necromuralist.github.io/Give-The-Fish/"><input name="k8" type="hidden" value="#444444"><input name="k9" type="hidden" value="#D51920"><input name="kt" type="hidden" value="h"><input class="span2" maxlength="255" name="q" placeholder="Search…" type="text"><input style="visibility: hidden;display:none" type="submit" value="DuckDuckGo Search"></form>
+<!-- End of custom search -->
+<ul class="navbar-nav navbar-right">
+<li class="nav-item"><a class="nav-link" href="index.org" id="sourcelink">Source</a></li>
+</ul>
+</div>
+<!-- /.navbar-collapse --></div>
+<!-- /.container --></nav>
+<!-- End of Menubar -->
+<div class="container" id="content" role="main">
+<div class="body-content"><!--Body content-->
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Convert a Document To PDF With Pandoc</a></h1>
+<div class="metadata">
+<p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2023-11-28T13:45:17-08:00" itemprop="datePublished" title="2023-11-28 13:45">2023-11-28 13:45</time></a></p>
+<p class="sourceline"><a class="sourcelink" href="index.org">Source</a></p>
+</div>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="index.html#org417621a">What's This About?</a></li>
+<li><a href="index.html#org566f97a">Headers</a>
+<ul>
+<li><a href="index.html#orgd256c45">Libertinus</a></li>
+<li><a href="index.html#org7eaf241">Pagella</a></li>
+</ul>
+</li>
+<li><a href="index.html#org1077a56">The Function</a></li>
+<li><a href="index.html#orgfcf3c5c">Links</a></li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org417621a">
+<h2 id="org417621a">What's This About?</h2>
+<div class="outline-text-2" id="text-org417621a">
+<p>This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.</p>
+<p>Pandoc will convert an ePub or other formatted file to PDF (using <i>pdflatex</i>) without much configuration</p>
+<div class="highlight">
+<pre><span></span>pandoc inputfile.epub -o output.pdf
+</pre></div>
+<p>but it defaults to using <a href="https://en.wikipedia.org/wiki/Computer_Modern">Computer Modern</a>, making it look like those old Springer books in the library, so I thought I'd create this function to document how to change the font in case I forget later on.</p>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org566f97a">
+<h2 id="org566f97a">Headers</h2>
+<div class="outline-text-2" id="text-org566f97a">
+<p>You can set the font as a command line argument to pandoc (e.g. <code>-V fontfamily:libertine</code> ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.</p>
+<p>The function is going to assume that the pagella snippet is in a folder in <code>~/.config/fish/extras/</code> which I created using a symlink to the <code>extras</code> folder in this repository, but it'll also take a path to the header if it's given.</p>
+</div>
+<div class="outline-3" id="outline-container-orgd256c45">
+<h3 id="orgd256c45">Libertinus</h3>
+<div class="outline-text-3" id="text-orgd256c45">
+<p>This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.</p>
+<div class="highlight">
+<pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>libertinus<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>sectsty<span class="nb">}</span>
+<span class="k">\sectionfont</span><span class="nb">{</span><span class="k">\clearpage</span><span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org7eaf241">
+<h3 id="org7eaf241">Pagella</h3>
+<div class="outline-text-3" id="text-org7eaf241">
+<p>The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.</p>
+<div class="highlight">
+<pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>tgpagella<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>sectsty<span class="nb">}</span>
+<span class="k">\sectionfont</span><span class="nb">{</span><span class="k">\clearpage</span><span class="nb">}</span>
+</pre></div>
+<div class="notecard" id="org1a28b0c">
+<p><b>Note:</b> I originally accidentally put <i>pagella</i> and not <i>tgpagella</i> which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's <i>sectsty</i> not <i>secsty</i>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org1077a56">
+<h2 id="org1077a56">The Function</h2>
+<div class="outline-text-2" id="text-org1077a56">
+<p>Nothing fancy here, it just adds the extra header file. I originally added the <code>--table-of-contents</code> flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> doc2pdf -d <span class="s2">"Convert document to pdf with pandoc"</span> --argument-names SOURCE HEADER
+    <span class="k">set</span> TARGET <span class="nv">$(</span>path change-extension pdf <span class="nv">$SOURCE</span><span class="o">)</span>
+
+    <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$HEADER</span>
+        <span class="k">set</span> HEADER ~/.config/fish/extras/pagella.tex
+    <span class="k">end</span>
+
+    pandoc --standalone <span class="nv">$SOURCE</span> --output <span class="nv">$TARGET</span> --include-in-header <span class="nv">$HEADER</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgfcf3c5c">
+<h2 id="orgfcf3c5c">Links</h2>
+<div class="outline-text-2" id="text-orgfcf3c5c">
+<ul class="org-ul">
+<li><a href="https://learnbyexample.github.io/customizing-pandoc/">learnbyexample</a> : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output</li>
+<li><a href="https://tug.org/FontCatalogue/texgyrepagella/">Latex Font Catalogue</a> : Tex Gyre Pagella page</li>
+<li><a href="https://tug.org/FontCatalogue/linuxlibertine/">Latex Font Catalogue</a> : Linux Libertine Page</li>
+<li><a href="https://tug.org/FontCatalogue/libertinusserif/">Latex Font Catalogue</a> : Libertinus Serif Page</li>
+<li><a href="https://github.com/alerque/libertinus">GitHub</a>: The Libertinus repository page</li>
+<li><a href="https://en.wikipedia.org/wiki/Linux_Libertine">Wikipedia</a> : Libertine and Libertinus information</li>
+<li><a href="../rst2org-function/index.html">rst2org Function</a>: Another function using pandoc.</li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="postpromonav">
+<nav>
+<ul class="tags" itemprop="keywords">
+<li><a class="tag p-category" href="../../categories/functions/index.html" rel="tag">functions</a></li>
+<li><a class="tag p-category" href="../../categories/latex/index.html" rel="tag">latex</a></li>
+<li><a class="tag p-category" href="../../categories/pandoc/index.html" rel="tag">pandoc</a></li>
+<li><a class="tag p-category" href="../../categories/pdf/index.html" rel="tag">pdf</a></li>
+</ul>
+<ul class="pager hidden-print">
+<li class="previous"><a href="../dim-monitor/index.html" rel="prev" title="Dim Monitor">Previous post</a></li>
+</ul>
+</nav>
+</aside>
+</article>
+<!--End of body content-->
+<footer id="footer">Scribbled by the <a href="mailto:cloisteredmonkey.jmark@slmail.me">Cloistered Monkey</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+<div id="license" xmlns:cc="http://creativecommons.org/ns#">This work is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" rel="license noopener noreferrer" style="display:inline-block;" target="_blank">CC BY 4.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></div>
+</footer>
+</div>
+</div>
+<script src="../../assets/js/all-nocdn.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+</script>
+</body>
+</html>
