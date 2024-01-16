@@ -23,9 +23,7 @@ set -x R_LIBS ~/.local/lib/R/library/
 # https://fishshell.com/docs/current/cmds/fish_add_path.html
 fish_add_path $HOME/bin
 
-
-
-# check the vpn
-if status --is-interactive
-  protonvpn-cli status
-end
+# check the vpn (requires the installation of the proton-vpn command-line command)
+# if status --is-interactive
+#   protonvpn-cli status
+# end
