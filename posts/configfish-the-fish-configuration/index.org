@@ -59,11 +59,13 @@ fish_add_path $HOME/bin
 
 * VPN
 
+Proton seems to have made it so installing the GUI removes the command-line interface. I haven't really used the GUI much but the command-line interface looks like it's been deprecated and it's easier to configure the GUI so for now I'll comment this out.
+
 #+begin_src fish :noweb-ref vpn
-# check the vpn
-if status --is-interactive
-  protonvpn-cli status
-end
+# check the vpn (requires the installation of the proton-vpn command-line command)
+# if status --is-interactive
+#   protonvpn-cli status
+# end
 #+end_src
 
 * NPM

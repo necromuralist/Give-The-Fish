@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about configuration)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/configuration.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about configuration)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/configuration.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 28 Jun 2023 20:59:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org2d98d7d" class="outline-2"&gt;
+</copyright><lastBuildDate>Tue, 16 Jan 2024 23:31:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org2d98d7d" class="outline-2"&gt;
 &lt;h2 id="org2d98d7d"&gt;SSH Agent&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org2d98d7d"&gt;
 &lt;p&gt;
@@ -61,10 +61,10 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org0f98383"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org60663a0"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org80accb5"&gt;VPN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org7d05d8f"&gt;NPM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#orgffabc81"&gt;Environment Variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#orgf1e6eab"&gt;Add Local Bin To the PATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org0791a84"&gt;VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org3705fca"&gt;NPM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -73,9 +73,9 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org0f98383" class="outline-2"&gt;
-&lt;h2 id="org0f98383"&gt;Environment Variables&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0f98383"&gt;
+&lt;div id="outline-container-orgffabc81" class="outline-2"&gt;
+&lt;h2 id="orgffabc81"&gt;Environment Variables&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgffabc81"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; -x ALTERNATE_EDITOR &lt;span class="s2"&gt;""&lt;/span&gt;
 &lt;span class="k"&gt;set&lt;/span&gt; -x EDITOR &lt;span class="s2"&gt;"emacsclient -c"&lt;/span&gt;
 &lt;span class="k"&gt;set&lt;/span&gt; -x VISUAL &lt;span class="s2"&gt;"emacsclient -c -a emacs"&lt;/span&gt;
@@ -99,9 +99,9 @@ This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/con
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org60663a0" class="outline-2"&gt;
-&lt;h2 id="org60663a0"&gt;Add Local Bin To the PATH&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org60663a0"&gt;
+&lt;div id="outline-container-orgf1e6eab" class="outline-2"&gt;
+&lt;h2 id="orgf1e6eab"&gt;Add Local Bin To the PATH&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf1e6eab"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# add to the path&lt;/span&gt;
 
 &lt;span class="c"&gt;# https://fishshell.com/docs/current/cmds/fish_add_path.html&lt;/span&gt;
@@ -110,20 +110,24 @@ fish_add_path &lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org80accb5" class="outline-2"&gt;
-&lt;h2 id="org80accb5"&gt;VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org80accb5"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# check the vpn&lt;/span&gt;
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;status&lt;/span&gt; --is-interactive
-  protonvpn-cli &lt;span class="nb"&gt;status&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;div id="outline-container-org0791a84" class="outline-2"&gt;
+&lt;h2 id="org0791a84"&gt;VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0791a84"&gt;
+&lt;p&gt;
+Proton seems to have made it so installing the GUI removes the command-line interface. I haven't really used the GUI much but the command-line interface looks like it's been deprecated and it's easier to configure the GUI so for now I'll comment this out.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# check the vpn (requires the installation of the proton-vpn command-line command)&lt;/span&gt;
+&lt;span class="c"&gt;# if status --is-interactive&lt;/span&gt;
+&lt;span class="c"&gt;#   protonvpn-cli status&lt;/span&gt;
+&lt;span class="c"&gt;# end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7d05d8f" class="outline-2"&gt;
-&lt;h2 id="org7d05d8f"&gt;NPM&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7d05d8f"&gt;
+&lt;div id="outline-container-org3705fca" class="outline-2"&gt;
+&lt;h2 id="org3705fca"&gt;NPM&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3705fca"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# setup npm locally&lt;/span&gt;
 &lt;span class="c"&gt;# from https://stackoverflow.com/a/13021677&lt;/span&gt;
 &lt;span class="c"&gt;# expect you to also setup ~/.npmrc&lt;/span&gt;

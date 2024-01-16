@@ -70,17 +70,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#org0f98383">Environment Variables</a></li>
-<li><a href="index.html#org60663a0">Add Local Bin To the PATH</a></li>
-<li><a href="index.html#org80accb5">VPN</a></li>
-<li><a href="index.html#org7d05d8f">NPM</a></li>
+<li><a href="index.html#orgffabc81">Environment Variables</a></li>
+<li><a href="index.html#orgf1e6eab">Add Local Bin To the PATH</a></li>
+<li><a href="index.html#org0791a84">VPN</a></li>
+<li><a href="index.html#org3705fca">NPM</a></li>
 </ul>
 </div>
 </div>
 <p>This is the fish configuration file. It goes into <code>~/.config/fish/config.fish</code>.</p>
-<div class="outline-2" id="outline-container-org0f98383">
-<h2 id="org0f98383">Environment Variables</h2>
-<div class="outline-text-2" id="text-org0f98383">
+<div class="outline-2" id="outline-container-orgffabc81">
+<h2 id="orgffabc81">Environment Variables</h2>
+<div class="outline-text-2" id="text-orgffabc81">
 <div class="highlight">
 <pre><span></span><span class="k">set</span> -x ALTERNATE_EDITOR <span class="s2">""</span>
 <span class="k">set</span> -x EDITOR <span class="s2">"emacsclient -c"</span>
@@ -104,9 +104,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org60663a0">
-<h2 id="org60663a0">Add Local Bin To the PATH</h2>
-<div class="outline-text-2" id="text-org60663a0">
+<div class="outline-2" id="outline-container-orgf1e6eab">
+<h2 id="orgf1e6eab">Add Local Bin To the PATH</h2>
+<div class="outline-text-2" id="text-orgf1e6eab">
 <div class="highlight">
 <pre><span></span><span class="c"># add to the path</span>
 
@@ -115,20 +115,21 @@ fish_add_path <span class="nv">$HOME</span>/bin
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org80accb5">
-<h2 id="org80accb5">VPN</h2>
-<div class="outline-text-2" id="text-org80accb5">
+<div class="outline-2" id="outline-container-org0791a84">
+<h2 id="org0791a84">VPN</h2>
+<div class="outline-text-2" id="text-org0791a84">
+<p>Proton seems to have made it so installing the GUI removes the command-line interface. I haven't really used the GUI much but the command-line interface looks like it's been deprecated and it's easier to configure the GUI so for now I'll comment this out.</p>
 <div class="highlight">
-<pre><span></span><span class="c"># check the vpn</span>
-<span class="k">if</span> <span class="nb">status</span> --is-interactive
-  protonvpn-cli <span class="nb">status</span>
-<span class="k">end</span>
+<pre><span></span><span class="c"># check the vpn (requires the installation of the proton-vpn command-line command)</span>
+<span class="c"># if status --is-interactive</span>
+<span class="c">#   protonvpn-cli status</span>
+<span class="c"># end</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org7d05d8f">
-<h2 id="org7d05d8f">NPM</h2>
-<div class="outline-text-2" id="text-org7d05d8f">
+<div class="outline-2" id="outline-container-org3705fca">
+<h2 id="org3705fca">NPM</h2>
+<div class="outline-text-2" id="text-org3705fca">
 <div class="highlight">
 <pre><span></span><span class="c"># setup npm locally</span>
 <span class="c"># from https://stackoverflow.com/a/13021677</span>
