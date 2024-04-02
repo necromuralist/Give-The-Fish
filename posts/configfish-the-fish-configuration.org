@@ -18,8 +18,6 @@
 <<emacs-environment>>
 
 <<environment>>
-
-<<computer-specific-setup>>
         
 <<path>>
 
