@@ -1,0 +1,45 @@
+#+BEGIN_COMMENT
+.. title: Hades fish Config Sub-Section
+.. slug: hades-fish-config-sub-section
+.. date: 2024-04-02 12:59:45 UTC-07:00
+.. tags: fish, configuration
+.. category: Configuration
+.. link: 
+.. description: Hades'-specific section of config.fish.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+#+begin_src sh :tangle ../dingehaufen/hades.fish :exports none
+<<firefox>>
+
+<<monstery-hosts>>
+#+end_src
+
+This creates a file in ~give-the-fish/dingehaufen/~ named ~hades.fish~. To use it, link or copy the file into the folder =~/.config/fish/conf.d/=
+
+* Firefox
+
+This is where firefox stores user-specific information. I put it here so that I could make it easier to cleare the startup restore session so that when firefox starts up it doesn't try and open the page that was open when it was shutdown.
+
+The file-name is generated so it should change with every installation.
+
+#+begin_src fish :noweb-ref firefox
+set --export MOZILLA_PROFILE "$HOME/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"
+#+end_src
+
+* Monstery Hosts
+
+These are set so that other fish functions can use them.
+
+#+begin_src fish :noweb-ref monstery-hosts
+# wake monstery server
+set --export ATHENA "04:92:26:c3:a6:c7"
+
+# monstery LAN
+set --export APOLLO "192.168.86.172"
+#+end_src
