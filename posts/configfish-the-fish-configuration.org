@@ -15,7 +15,11 @@
 #+TOC: headlines 2
 
 #+begin_src sh :tangle ../dingehaufen/config.fish :exports none
+<<emacs-environment>>
+
 <<environment>>
+
+<<monstery-hosts>>
 
 <<path>>
 
@@ -26,26 +30,43 @@ This is the fish configuration file. It goes into ~~/.config/fish/config.fish~.
 
 * Environment Variables
 
+The ~--export~ flag exports the shell variable to child processes, making it an "environment variable".
+
+** Emacs
+
+Sets us up to use the emacs client as the default editor.
+
+- ~--create-frame~ tells emacs to create a new frame instead of continuing in the current one (if it's already open).
+- ~--alternate-editor~: what to fall back to if the emacs-client server isn't running.
+  
+#+begin_src fish :noweb-ref emacs-environment
+set --export ALTERNATE_EDITOR ""
+set --export EDITOR "emacsclient --create-frame"
+set --export VISUAL "emacsclient --create-frame --alternate-editor emacs"
+#+end_src
+
+** The Rest
+
 #+begin_src fish :noweb-ref environment
-set -x ALTERNATE_EDITOR ""
-set -x EDITOR "emacsclient -c"
-set -x VISUAL "emacsclient -c -a emacs"
-
-# wake monstery server
-set -x ATHENA "04:92:26:c3:a6:c7"
-
-# monstery LAN
-set -x APOLLO "192.168.86.172"
-
 # for extra docker build features (like smarter pip caching)
-set -x DOCKER_BUILDKIT 1
+set --export DOCKER_BUILDKIT 1
 
 # for clearing the startup restore session
 # so firefox doesn't try and open previous pages on startup
-set -x MOZILLA_PROFILE "$HOME/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"
+set --export MOZILLA_PROFILE "$HOME/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"
 
 # R Downloads
-set -x R_LIBS ~/.local/lib/R/library/
+set --export R_LIBS ~/.local/lib/R/library/
+#+end_src
+
+** Monstery Hosts
+
+#+begin_src fish :noweb-ref monstery-hosts
+# wake monstery server
+set --export ATHENA "04:92:26:c3:a6:c7"
+
+# monstery LAN
+set --export APOLLO "192.168.86.172"
 #+end_src
 
 * Add Local Bin To the PATH
@@ -57,25 +78,13 @@ set -x R_LIBS ~/.local/lib/R/library/
 fish_add_path $HOME/bin
 #+end_src
 
-* VPN
+* Proton VPN
 
-Proton seems to have made it so installing the GUI removes the command-line interface. I haven't really used the GUI much but the command-line interface looks like it's been deprecated and it's easier to configure the GUI so for now I'll comment this out.
+The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).
 
 #+begin_src fish :noweb-ref vpn
 # check the vpn (requires the installation of the proton-vpn command-line command)
-# if status --is-interactive
-#   protonvpn-cli status
-# end
+if status --is-interactive
+  protonvpn-cli status
+end
 #+end_src
-
-* NPM
-
-#+begin_src fish :noweb-ref npm
-# setup npm locally
-# from https://stackoverflow.com/a/13021677
-# expect you to also setup ~/.npmrc
-set --export NPM_PACKAGES $HOME/.npm-packages
-set --export NODE_PATH $HOME/.npm-packages/lib/node_modules
-fish_add_path $HOME/.npm-packages/bin
-#+end_src
-
