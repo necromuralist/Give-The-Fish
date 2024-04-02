@@ -7,13 +7,8 @@ set --export DOCKER_BUILDKIT 1
 
 # R Downloads
 set --export R_LIBS ~/.local/lib/R/library/
-
-
         
-# add to the path
-
-# https://fishshell.com/docs/current/cmds/fish_add_path.html
-fish_add_path $HOME/bin
+# path additions moved to extra_paths.fish
 
 # check the vpn (requires the installation of the proton-vpn command-line command)
 if status --is-interactive

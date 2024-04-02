@@ -19,7 +19,7 @@
 
 <<environment>>
         
-<<path>>
+# path additions moved to extra_paths.fish
 
 <<vpn>>
 #+end_src
@@ -51,15 +51,6 @@ set --export DOCKER_BUILDKIT 1
 
 # R Downloads
 set --export R_LIBS ~/.local/lib/R/library/
-#+end_src
-
-* Add Local Bin To the PATH
-
-#+begin_src fish :noweb-ref path
-# add to the path
-
-# https://fishshell.com/docs/current/cmds/fish_add_path.html
-fish_add_path $HOME/bin
 #+end_src
 
 * Proton VPN
