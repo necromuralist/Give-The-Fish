@@ -246,14 +246,17 @@
 
       (select-electric-pair-mode 1)
 
-      ;; tramp mode
-      (setq tramp-default-method "ssh")
-
       ;; magit
       (setq global-magit-file-mode 1)
 
       ;; setup the keybinding to launch magit
       (global-set-key (kbd "C-x g") 'magit-status)
+
+      ;; tramp mode
+      (setq tramp-default-method "ssh")
+      ;; disable tramp-backups
+      (add-to-list 'backup-directory-alist
+                   (cons tramp-file-name-regexp nil))
 
 ;; god-mode
 (require 'god-mode)

@@ -20,7 +20,7 @@ The tangle creates a file ~give-the-fish/dingehaufen/init.el~ that you should co
 
 #+begin_notecard
 At some post I should look into breaking up the configuration (see https://emacs.stackexchange.com/a/18441 for an example).
-#+end_notecand
+#+end_notecard
 
 * Tangle Source
 #+BEGIN_SRC emacs-lisp :tangle ../dingehaufen/init.el
@@ -93,14 +93,14 @@ At some post I should look into breaking up the configuration (see https://emacs
 
       (select-electric-pair-mode 1)
 
-      ;; tramp mode
-      (setq tramp-default-method "ssh")
-
       ;; magit
       (setq global-magit-file-mode 1)
 
       ;; setup the keybinding to launch magit
       (global-set-key (kbd "C-x g") 'magit-status)
+
+      <<tramp-mode>>
+      <<tramp-backups>>
 
 <<god-mode>>
 
@@ -205,6 +205,21 @@ A lock got corrupted once in the cryfs directory, making the editing file unread
 #+begin_src emacs-lisp :noweb-ref toggle-input-method
 ;; (setq default-input-method "TeX")
 (setq default-input-method "TeX")
+#+end_src
+* Tramp Mode
+** Use SSH
+#+begin_src emacs-lisp :noweb-ref tramp-mode
+;; tramp mode
+(setq tramp-default-method "ssh")
+#+end_src
+** No Backups
+
+The configuration is currently saving backups to a local directory, so when I use tramp I get warnings about it. It doesn't tell you why but according to the [[https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html][emacs wiki]] this is a potential security leak (although probably not in the way I'm using it). Anyway, I've never used the backups so I'll just disable them for tramp.
+
+#+begin_src emacs-lisp :noweb-ref tramp-backups
+;; disable tramp-backups
+(add-to-list 'backup-directory-alist
+             (cons tramp-file-name-regexp nil))
 #+end_src
 * God Mode
 #+begin_src emacs-lisp :noweb-ref god-mode
