@@ -1,6 +1,6 @@
 function upgrade
-    sudo apt-fast update --yes
+    sudo apt update --yes
     sudo apt list --upgradeable -a
-    sudo apt-fast full-upgrade --yes
-    sudo apt-get autoremove --yes
+    sudo apt full-upgrade --yes
+    sudo apt autoremove --yes
 end

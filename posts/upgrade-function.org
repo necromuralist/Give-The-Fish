@@ -1,0 +1,27 @@
+#+BEGIN_COMMENT
+.. title: Upgrade Function Without apt-fast
+.. slug: upgrade-function-without-apt-fast
+.. date: 2024-04-02 16:52:55 UTC-07:00
+.. tags: debian,raspberry pi,functions
+.. category: RaspberryPi
+.. link: 
+.. description: The Upgrade Function without apt-fast.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+The old Rapsberry Pis I'm using only support Debian up to 11, but the PPA for apt-fast uses zstd when installing debian packages, which debian only added in Debian 12 (see [[https://unix.stackexchange.com/questions/669004/zst-compression-not-supported-by-apt-dpkg][this Stack Exchange question]]). So, this is a variation of the ~upgrade~ function that uses ~apt~ instead of ~apt-fast~
+
+#+begin_src fish :tangle ../functions/upgrade.fish
+function upgrade
+    sudo apt update --yes
+    sudo apt list --upgradeable -a
+    sudo apt full-upgrade --yes
+    sudo apt autoremove --yes
+end
+#+end_src
+
+* Links
+- [[https://en.wikipedia.org/wiki/Zstd?useskin=vector][Wikipedia ZSTD]] article.
