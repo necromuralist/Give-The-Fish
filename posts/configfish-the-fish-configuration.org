@@ -21,7 +21,7 @@
         
 # path additions moved to extra_paths.fish
 
-<<vpn>>
+# no protonvpn on the servers
 #+end_src
 
 This is the fish configuration file. It goes into ~~/.config/fish/config.fish~.
@@ -53,13 +53,3 @@ set --export DOCKER_BUILDKIT 1
 set --export R_LIBS ~/.local/lib/R/library/
 #+end_src
 
-* Proton VPN
-
-The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).
-
-#+begin_src fish :noweb-ref vpn
-# check the vpn (requires the installation of the proton-vpn command-line command)
-if status --is-interactive
-  protonvpn-cli status
-end
-#+end_src
