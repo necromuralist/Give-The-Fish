@@ -3,7 +3,7 @@
 .. slug: ssh-agent-config-fragment
 .. date: 2023-06-24 12:47:47 UTC-07:00
 .. tags: ssh,configuration
-.. category: configuration
+.. category: Configuration
 .. link: 
 .. description: The SSH-Agent starter configuration.
 .. type: text
