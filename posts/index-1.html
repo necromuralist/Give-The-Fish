@@ -48,6 +48,96 @@
 <div class="postindex">
 <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
+<h1 class="p-name entry-title"><a class="u-url" href="rst2org-function/index.html">rst2org Function</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="rst2org-function/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-06-22T12:51:54-07:00" itemprop="datePublished" title="2023-06-22 12:51">2023-06-22 12:51</time></a></p>
+</div>
+</header>
+<div class="p-summary entry-summary">
+<div class="highlight">
+<pre><span></span><span class="k">function</span> rst2org -d <span class="s2">"Convert text file to org"</span> --argument-names sourcefile
+    <span class="k">set</span> target <span class="nv">$(</span>path change-extension org <span class="nv">$sourcefile</span><span class="o">)</span>
+    pandoc --standalone <span class="nv">$sourcefile</span> --output <span class="nv">$target</span> --wrap<span class="o">=</span>none
+<span class="k">end</span>
+</pre></div>
+<p>This function will convert a text file to an org file using pandoc. I called it <code>rst2org</code> because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.</p>
+<div class="outline-2" id="outline-container-org4161825">
+<h2 id="org4161825">What It's Doing</h2>
+<div class="outline-text-2" id="text-org4161825">
+<p>The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.</p>
+<ul class="org-ul">
+<li><code>--standalone</code>: by default pandoc strips out the header and footer, this option tells it to keep it (useful for nikola and most other thing I would imagine)</li>
+<li><code>--output</code>: The output file name which pandoc also uses to guess the format we want to use.</li>
+<li><code>--wrap=none</code>: by default pandoc will insert line-breaks to keep the lines within their default width, adding this argument keeps long lines as single lines.</li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org0d91875">
+<h2 id="org0d91875">Links</h2>
+<div class="outline-text-2" id="text-org0d91875">
+<ul class="org-ul">
+<li>mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: <a href="https://stackoverflow.com/a/62990248">https://stackoverflow.com/a/62990248</a></li>
+</ul>
+<p>The first option documented in the options section of the pandoc documentation is <code>--from</code> which then lists all the languages that pandoc can take as an input.</p>
+<ul class="org-ul">
+<li>pandoc general options [Internet]. Available from <a href="https://pandoc.org/MANUAL.html#general-options">https://pandoc.org/MANUAL.html#general-options</a></li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title"><a class="u-url" href="las-colored-list-all/index.html">las: Colored List All</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="las-colored-list-all/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-06-22T12:10:57-07:00" itemprop="datePublished" title="2023-06-22 12:10">2023-06-22 12:10</time></a></p>
+</div>
+</header>
+<div class="p-summary entry-summary">
+<div class="highlight">
+<pre><span></span><span class="k">function</span> las
+    ls --almost-all <span class="se">\</span>
+       --color <span class="se">\</span>
+       --dereference-command-line <span class="se">\</span>
+       --human-readable <span class="se">\</span>
+       -l <span class="nv">$argv</span> <span class="o">|</span> <span class="se">\</span>
+        less --RAW-CONTROL-CHARS
+<span class="k">end</span>
+</pre></div>
+<p>The point of this function is to show all the files in the directory (including hidden files) and pipe them to <code>less</code> so they won't go scrolling off the screen while keeping the color highlighting.</p>
+<div class="outline-2" id="outline-container-org404b2a4">
+<h2 id="org404b2a4">The Parts</h2>
+<div class="outline-text-2" id="text-org404b2a4"></div>
+<div class="outline-3" id="outline-container-orgc294f6f">
+<h3 id="orgc294f6f">The <code>ls</code> Arguments</h3>
+<div class="outline-text-3" id="text-orgc294f6f">
+<ul class="org-ul">
+<li><code>--almost-all</code>: don't list the <code>.</code> and <code>..</code> files</li>
+<li><code>--color</code>: Color the output when (defaults to "always" but you can set to "auto" or "never")</li>
+<li><code>--dereference-command-line</code>: follow symbolic links listed on the command line</li>
+<li><code>--human-readable</code>: Put file sizes into units that make sense (when using <code>-l</code>)</li>
+<li><code>-l</code>: Long listing format.</li>
+</ul>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org3013296">
+<h3 id="org3013296">The <code>less</code> Argument</h3>
+<div class="outline-text-3" id="text-org3013296">
+<ul class="org-ul">
+<li><code>--RAW-CONTROL-CHARS</code>: Keep colors and hyperlink sequences.</li>
+</ul>
+<div class="notecard" id="org9dc3ddb">
+<p>There is also a <code>--raw-control-chars</code> option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the <code>LESS</code> environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
 <h1 class="p-name entry-title"><a class="u-url" href="choose-function/index.html">Choose Function</a></h1>
 <div class="metadata">
 <p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>

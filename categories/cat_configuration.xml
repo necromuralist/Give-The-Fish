@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about configuration)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/cat_configuration.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about Configuration)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/cat_configuration.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 28 Jun 2023 20:59:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org2d98d7d" class="outline-2"&gt;
-&lt;h2 id="org2d98d7d"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2d98d7d"&gt;
+</copyright><lastBuildDate>Wed, 10 Apr 2024 00:33:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html#orga4a0fee"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+This is a configuration to add to the fish &lt;code&gt;PATH&lt;/code&gt;. The current version of fish uses a special command called &lt;code&gt;fish_add_path&lt;/code&gt; when you want to add locations to the user path. If you just naively append to the PATH in the config file then fish will keep adding to the PATH every time you log in so the &lt;code&gt;fish_add_path&lt;/code&gt; prevents adding paths that are already stored in the environment variable. Unfortunately the raspberry PI I'm using has Debian 11 which has fish version 3.1.2 which predates the &lt;code&gt;fish_add_path&lt;/code&gt; command so I'll have to add to the path the old fashioned way.
+&lt;/p&gt;
+
+&lt;p&gt;
+The additions will be in &lt;code&gt;dingehaufen/extra_paths.fish&lt;/code&gt; which has to be then linked or copied into &lt;code&gt;/.config/fish/conf.d/&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$fish_user_paths&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--universal&lt;span class="w"&gt; &lt;/span&gt;--append&lt;span class="w"&gt; &lt;/span&gt;fish_user_paths&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
+contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.local/bin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$fish_user_paths&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--universal&lt;span class="w"&gt; &lt;/span&gt;--append&lt;span class="w"&gt; &lt;/span&gt;fish_user_paths&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.local/bin
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div id="outline-container-orga4a0fee" class="outline-2"&gt;
+&lt;h2 id="orga4a0fee"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga4a0fee"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/a/61882414"&gt;Stack Overflow&lt;/a&gt;: Answer where I got the fish syntax.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>configuration</category><category>fish</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</guid><pubDate>Tue, 02 Apr 2024 22:36:42 GMT</pubDate></item><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org1d31a3c" class="outline-2"&gt;
+&lt;h2 id="org1d31a3c"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1d31a3c"&gt;
 &lt;p&gt;
 This is the fragment to make sure the ssh-agent is running when you open the terminal.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="orgd715203"&gt;
+&lt;div class="notecard" id="org7328555"&gt;
 &lt;p&gt;
 Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -48,9 +76,9 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9a2190f" class="outline-2"&gt;
-&lt;h2 id="org9a2190f"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9a2190f"&gt;
+&lt;div id="outline-container-orgeeb1859" class="outline-2"&gt;
+&lt;h2 id="orgeeb1859"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgeeb1859"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;

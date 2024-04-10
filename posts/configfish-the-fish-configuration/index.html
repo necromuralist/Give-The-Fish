@@ -70,73 +70,59 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#orgffabc81">Environment Variables</a></li>
-<li><a href="index.html#orgf1e6eab">Add Local Bin To the PATH</a></li>
-<li><a href="index.html#org0791a84">VPN</a></li>
-<li><a href="index.html#org3705fca">NPM</a></li>
+<li><a href="index.html#org45afe06">Environment Variables</a>
+<ul>
+<li><a href="index.html#org52f7eec">Emacs</a></li>
+<li><a href="index.html#orgf4b38e3">The Rest</a></li>
+</ul>
+</li>
+<li><a href="index.html#org0a9844c">Proton VPN</a></li>
 </ul>
 </div>
 </div>
 <p>This is the fish configuration file. It goes into <code>~/.config/fish/config.fish</code>.</p>
-<div class="outline-2" id="outline-container-orgffabc81">
-<h2 id="orgffabc81">Environment Variables</h2>
-<div class="outline-text-2" id="text-orgffabc81">
+<div class="outline-2" id="outline-container-org45afe06">
+<h2 id="org45afe06">Environment Variables</h2>
+<div class="outline-text-2" id="text-org45afe06">
+<p>The <code>--export</code> flag exports the shell variable to child processes, making it an "environment variable".</p>
+</div>
+<div class="outline-3" id="outline-container-org52f7eec">
+<h3 id="org52f7eec">Emacs</h3>
+<div class="outline-text-3" id="text-org52f7eec">
+<p>Sets us up to use the emacs client as the default editor.</p>
+<ul class="org-ul">
+<li><code>--create-frame</code> tells emacs to create a new frame instead of continuing in the current one (if it's already open).</li>
+<li><code>--alternate-editor</code>: what to fall back to if the emacs-client server isn't running.</li>
+</ul>
 <div class="highlight">
-<pre><span></span><span class="k">set</span> -x ALTERNATE_EDITOR <span class="s2">""</span>
-<span class="k">set</span> -x EDITOR <span class="s2">"emacsclient -c"</span>
-<span class="k">set</span> -x VISUAL <span class="s2">"emacsclient -c -a emacs"</span>
-
-<span class="c"># wake monstery server</span>
-<span class="k">set</span> -x ATHENA <span class="s2">"04:92:26:c3:a6:c7"</span>
-
-<span class="c"># monstery LAN</span>
-<span class="k">set</span> -x APOLLO <span class="s2">"192.168.86.172"</span>
-
-<span class="c"># for extra docker build features (like smarter pip caching)</span>
-<span class="k">set</span> -x DOCKER_BUILDKIT 1
-
-<span class="c"># for clearing the startup restore session</span>
-<span class="c"># so firefox doesn't try and open previous pages on startup</span>
-<span class="k">set</span> -x MOZILLA_PROFILE <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/snap/firefox/common/.mozilla/firefox/mg8ry5cl.default"</span>
+<pre><span></span><span class="k">set</span> --export ALTERNATE_EDITOR <span class="s2">""</span>
+<span class="k">set</span> --export EDITOR <span class="s2">"emacsclient --create-frame"</span>
+<span class="k">set</span> --export VISUAL <span class="s2">"emacsclient --create-frame --alternate-editor emacs"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgf4b38e3">
+<h3 id="orgf4b38e3">The Rest</h3>
+<div class="outline-text-3" id="text-orgf4b38e3">
+<div class="highlight">
+<pre><span></span><span class="c"># for extra docker build features (like smarter pip caching)</span>
+<span class="k">set</span> --export DOCKER_BUILDKIT 1
 
 <span class="c"># R Downloads</span>
-<span class="k">set</span> -x R_LIBS ~/.local/lib/R/library/
+<span class="k">set</span> --export R_LIBS ~/.local/lib/R/library/
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgf1e6eab">
-<h2 id="orgf1e6eab">Add Local Bin To the PATH</h2>
-<div class="outline-text-2" id="text-orgf1e6eab">
-<div class="highlight">
-<pre><span></span><span class="c"># add to the path</span>
-
-<span class="c"># https://fishshell.com/docs/current/cmds/fish_add_path.html</span>
-fish_add_path <span class="nv">$HOME</span>/bin
-</pre></div>
 </div>
-</div>
-<div class="outline-2" id="outline-container-org0791a84">
-<h2 id="org0791a84">VPN</h2>
-<div class="outline-text-2" id="text-org0791a84">
-<p>Proton seems to have made it so installing the GUI removes the command-line interface. I haven't really used the GUI much but the command-line interface looks like it's been deprecated and it's easier to configure the GUI so for now I'll comment this out.</p>
+<div class="outline-2" id="outline-container-org0a9844c">
+<h2 id="org0a9844c">Proton VPN</h2>
+<div class="outline-text-2" id="text-org0a9844c">
+<p>The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).</p>
 <div class="highlight">
 <pre><span></span><span class="c"># check the vpn (requires the installation of the proton-vpn command-line command)</span>
-<span class="c"># if status --is-interactive</span>
-<span class="c">#   protonvpn-cli status</span>
-<span class="c"># end</span>
-</pre></div>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org3705fca">
-<h2 id="org3705fca">NPM</h2>
-<div class="outline-text-2" id="text-org3705fca">
-<div class="highlight">
-<pre><span></span><span class="c"># setup npm locally</span>
-<span class="c"># from https://stackoverflow.com/a/13021677</span>
-<span class="c"># expect you to also setup ~/.npmrc</span>
-<span class="k">set</span> --export NPM_PACKAGES <span class="nv">$HOME</span>/.npm-packages
-<span class="k">set</span> --export NODE_PATH <span class="nv">$HOME</span>/.npm-packages/lib/node_modules
-fish_add_path <span class="nv">$HOME</span>/.npm-packages/bin
+<span class="k">if</span> <span class="nb">status</span> --is-interactive
+  protonvpn-cli <span class="nb">status</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 </div>
