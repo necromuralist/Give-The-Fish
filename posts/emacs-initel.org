@@ -100,6 +100,7 @@ At some post I should look into breaking up the configuration (see https://emacs
       (global-set-key (kbd "C-x g") 'magit-status)
 
       <<tramp-mode>>
+
       <<tramp-backups>>
 
 <<god-mode>>
@@ -121,6 +122,8 @@ At some post I should look into breaking up the configuration (see https://emacs
 ;; <<bats>>
 
 <<backups>>
+
+<<no-sudo-backups>>
 
 ;; <<markdown-mode>>
 
@@ -214,6 +217,10 @@ A lock got corrupted once in the cryfs directory, making the editing file unread
 #+end_src
 ** No Backups
 
+This is from the [[https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html][emacs manual]].
+
+*** Turn Off For Tramp Only
+
 The configuration is currently saving backups to a local directory, so when I use tramp I get warnings about it. It doesn't tell you why but according to the [[https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html][emacs wiki]] this is a potential security leak (although probably not in the way I'm using it). Anyway, I've never used the backups so I'll just disable them for tramp.
 
 #+begin_src emacs-lisp :noweb-ref tramp-backups
@@ -221,6 +228,25 @@ The configuration is currently saving backups to a local directory, so when I us
 (add-to-list 'backup-directory-alist
              (cons tramp-file-name-regexp nil))
 #+end_src
+
+#+begin_notecard
+**Note:** This turns out to solve the wrong problem so I added another rule in the next section.
+#+end_notecard
+
+*** Turn Off For Sudo
+
+Turning off the backups for tramp only fixed one case, but it turned out that the thing that made me look into this was using ~sudo~ on my local machine to opne the ~/etc/hosts~ file so I was actually solving the wrong (or only part of the) problem. This next bit is supposed to turn off all backups where you use ~sudo~. So it probably doesn't belong under tramp any more. Maybe I'll move it later
+
+#+begin_src emacs-lisp :noweb-ref no-sudo-backups
+(setq backup-enable-predicate
+      (lambda (name)
+        (and (normal-backup-enable-predicate name)
+             (not
+              (let ((method (file-remote-p name 'method)))
+                (when (stringp method)
+                  (member method '("su" "sudo"))))))))
+#+end_src
+
 * God Mode
 #+begin_src emacs-lisp :noweb-ref god-mode
 ;; god-mode

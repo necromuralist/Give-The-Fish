@@ -254,6 +254,7 @@
 
       ;; tramp mode
       (setq tramp-default-method "ssh")
+
       ;; disable tramp-backups
       (add-to-list 'backup-directory-alist
                    (cons tramp-file-name-regexp nil))
@@ -359,6 +360,14 @@
       '(("." . "/tmp/")))
 (setq auto-save-file-name-transforms
       `((".*" , "/tmp/" t)))
+
+(setq backup-enable-predicate
+      (lambda (name)
+        (and (normal-backup-enable-predicate name)
+             (not
+              (let ((method (file-remote-p name 'method)))
+                (when (stringp method)
+                  (member method '("su" "sudo"))))))))
 
 ;; (use-package markdown-mode
 ;;  :ensure t
