@@ -5,7 +5,7 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 10 Apr 2024 00:38:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Wed, 10 Apr 2024 01:04:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
@@ -37,42 +37,42 @@ contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/spa
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org2cad9db"&gt;Tangle Source&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org94f67ec"&gt;Package Management&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orga50efd7"&gt;Pyvenv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org390af86"&gt;Emacs Settings&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orga864b24"&gt;Tangle Source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5ee3eb3"&gt;Package Management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org6761e80"&gt;Pyvenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org1652da1"&gt;Emacs Settings&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org26bd3c8"&gt;File Locks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org903f389"&gt;Toggle Input Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5d67fb9"&gt;File Locks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org9943cde"&gt;Toggle Input Mode&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgfc1fa55"&gt;Tramp Mode&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org85f27c6"&gt;Tramp Mode&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org6ad60d7"&gt;Use SSH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgde72a1b"&gt;No Backups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb76c288"&gt;Use SSH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org9a7bd84"&gt;No Backups&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org89f374a"&gt;God Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org4dc2ab7"&gt;Python and elpy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org6950457"&gt;Emacs Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb30bf95"&gt;Fish&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgff438c2"&gt;Org-mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org9ff7884"&gt;org-export python mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org537cdb5"&gt;web-mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org8cb0f28"&gt;auto-complete&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb35367a"&gt;general text&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge8e5e45"&gt;javascript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org9ee5c9d"&gt;org-babel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgc25c432"&gt;Feature Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgbfc8fab"&gt;yaml&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org9e57d75"&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgd871b05"&gt;Bats&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org24d177e"&gt;Backups&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org0b904c5"&gt;Markdown Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge832eec"&gt;Dockerfile Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org920b33a"&gt;Flycheck&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org225f1bd"&gt;Keychain&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org11570c5"&gt;Hideshow-Org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5797e24"&gt;God Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge62a42d"&gt;Python and elpy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgc0671b8"&gt;Emacs Jupyter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org7104985"&gt;Fish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org1c86017"&gt;Org-mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org0540dc8"&gt;org-export python mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgfddeac4"&gt;web-mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org4b1bc28"&gt;auto-complete&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgc641d95"&gt;general text&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgd3c712f"&gt;javascript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgadf662d"&gt;org-babel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org56cac75"&gt;Feature Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org51ad33f"&gt;yaml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org80228cc"&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org4547e18"&gt;Bats&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org8ce13e9"&gt;Backups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org23b2f68"&gt;Markdown Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org2dd9068"&gt;Dockerfile Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org13a8923"&gt;Flycheck&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org2f310b2"&gt;Keychain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb880344"&gt;Hideshow-Org&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -85,16 +85,16 @@ This is an emacs configuration file. I had this in another repository and have b
 The tangle creates a file &lt;code&gt;give-the-fish/dingehaufen/init.el&lt;/code&gt; that you should copy or link into the right place &lt;code&gt;~/.emacs.d&lt;/code&gt; right now.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="orgf8b3a0b"&gt;
+&lt;div class="notecard" id="orga1db474"&gt;
 &lt;p&gt;
 At some post I should look into breaking up the configuration (see &lt;a href="https://emacs.stackexchange.com/a/18441"&gt;https://emacs.stackexchange.com/a/18441&lt;/a&gt; for an example).
 &lt;/p&gt;
 
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2cad9db" class="outline-2"&gt;
-&lt;h2 id="org2cad9db"&gt;Tangle Source&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2cad9db"&gt;
+&lt;div id="outline-container-orga864b24" class="outline-2"&gt;
+&lt;h2 id="orga864b24"&gt;Tangle Source&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga864b24"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;&amp;lt;package-management&amp;gt;&amp;gt;&lt;/span&gt;
 
 &lt;span class="nv"&gt;&amp;lt;&amp;lt;activate-pyvenv&amp;gt;&amp;gt;&lt;/span&gt;
@@ -171,6 +171,7 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"C-x g"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'magit-status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;&amp;lt;tramp-mode&amp;gt;&amp;gt;&lt;/span&gt;
+
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;&amp;lt;tramp-backups&amp;gt;&amp;gt;&lt;/span&gt;
 
 &lt;span class="nv"&gt;&amp;lt;&amp;lt;god-mode&amp;gt;&amp;gt;&lt;/span&gt;
@@ -193,6 +194,8 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 
 &lt;span class="nv"&gt;&amp;lt;&amp;lt;backups&amp;gt;&amp;gt;&lt;/span&gt;
 
+&lt;span class="nv"&gt;&amp;lt;&amp;lt;no-sudo-backups&amp;gt;&amp;gt;&lt;/span&gt;
+
 &lt;span class="c1"&gt;;; &amp;lt;&amp;lt;markdown-mode&amp;gt;&amp;gt;&lt;/span&gt;
 
 &lt;span class="nv"&gt;&amp;lt;&amp;lt;dockerfile-mode&amp;gt;&amp;gt;&lt;/span&gt;
@@ -207,9 +210,9 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org94f67ec" class="outline-2"&gt;
-&lt;h2 id="org94f67ec"&gt;Package Management&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org94f67ec"&gt;
+&lt;div id="outline-container-org5ee3eb3" class="outline-2"&gt;
+&lt;h2 id="org5ee3eb3"&gt;Package Management&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5ee3eb3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; emacs package management&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -225,9 +228,9 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga50efd7" class="outline-2"&gt;
-&lt;h2 id="orga50efd7"&gt;Pyvenv&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga50efd7"&gt;
+&lt;div id="outline-container-org6761e80" class="outline-2"&gt;
+&lt;h2 id="org6761e80"&gt;Pyvenv&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6761e80"&gt;
 &lt;p&gt;
 To prevent errors when emacs starts up and tries to load jupyter (for emacs-jupyter) we need &lt;code&gt;jupyter&lt;/code&gt; to be on the path. Now that debian and ubuntu don't want you to install python packages globally we need another way. I had installed it with &lt;a href="https://github.com/pypa/pipx"&gt;pipx&lt;/a&gt;, which does work, but pipx doesn't doesn't install standalone libraries and sometimes breaks when trying to install dependencies so I think for this case it's better to avoid it and instead use a virtual-environment. Since it has to be activated before anything else that uses python packages, activating the environment should be put fairly early on in the &lt;code&gt;init.el&lt;/code&gt; file.
 &lt;/p&gt;
@@ -241,9 +244,9 @@ This assumes that there's a virtual-environment named &lt;code&gt;emacs-environm
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org390af86" class="outline-2"&gt;
-&lt;h2 id="org390af86"&gt;Emacs Settings&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org390af86"&gt;
+&lt;div id="outline-container-org1652da1" class="outline-2"&gt;
+&lt;h2 id="org1652da1"&gt;Emacs Settings&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1652da1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; show column-numbers&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;column-number-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -278,9 +281,9 @@ This assumes that there's a virtual-environment named &lt;code&gt;emacs-environm
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ring-bell-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'ignore&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org26bd3c8" class="outline-3"&gt;
-&lt;h3 id="org26bd3c8"&gt;File Locks&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org26bd3c8"&gt;
+&lt;div id="outline-container-org5d67fb9" class="outline-3"&gt;
+&lt;h3 id="org5d67fb9"&gt;File Locks&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5d67fb9"&gt;
 &lt;p&gt;
 A lock got corrupted once in the cryfs directory, making the editing file unreadable. You can fix it by copying everything but the corrupted file out, destroying and re-creating the cryfs mount and copying the files back in, but hopefully this will fix it. It does mean that two people could edit the same file and cause problems, but oh, well.
 &lt;/p&gt;
@@ -289,9 +292,9 @@ A lock got corrupted once in the cryfs directory, making the editing file unread
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org903f389" class="outline-3"&gt;
-&lt;h3 id="org903f389"&gt;Toggle Input Mode&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org903f389"&gt;
+&lt;div id="outline-container-org9943cde" class="outline-3"&gt;
+&lt;h3 id="org9943cde"&gt;Toggle Input Mode&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9943cde"&gt;
 &lt;p&gt;
 This allows you to switch to latex input and then back using &lt;code&gt;C-\&lt;/code&gt;. This is useful to embed special characters. Although you could probably just do the same thing with math mode if you want to wait until exporting.
 &lt;/p&gt;
@@ -301,21 +304,29 @@ This allows you to switch to latex input and then back using &lt;code&gt;C-\&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgfc1fa55" class="outline-2"&gt;
-&lt;h2 id="orgfc1fa55"&gt;Tramp Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfc1fa55"&gt;
+&lt;div id="outline-container-org85f27c6" class="outline-2"&gt;
+&lt;h2 id="org85f27c6"&gt;Tramp Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org85f27c6"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6ad60d7" class="outline-3"&gt;
-&lt;h3 id="org6ad60d7"&gt;Use SSH&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6ad60d7"&gt;
+&lt;div id="outline-container-orgb76c288" class="outline-3"&gt;
+&lt;h3 id="orgb76c288"&gt;Use SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb76c288"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; tramp mode&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tramp-default-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"ssh"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgde72a1b" class="outline-3"&gt;
-&lt;h3 id="orgde72a1b"&gt;No Backups&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgde72a1b"&gt;
+&lt;div id="outline-container-org9a7bd84" class="outline-3"&gt;
+&lt;h3 id="org9a7bd84"&gt;No Backups&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9a7bd84"&gt;
+&lt;p&gt;
+This is from the &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html"&gt;emacs manual&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5709497" class="outline-4"&gt;
+&lt;h4 id="org5709497"&gt;Turn Off For Tramp Only&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org5709497"&gt;
 &lt;p&gt;
 The configuration is currently saving backups to a local directory, so when I use tramp I get warnings about it. It doesn't tell you why but according to the &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html"&gt;emacs wiki&lt;/a&gt; this is a potential security leak (although probably not in the way I'm using it). Anyway, I've never used the backups so I'll just disable them for tramp.
 &lt;/p&gt;
@@ -324,12 +335,39 @@ The configuration is currently saving backups to a local directory, so when I us
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'backup-directory-alist&lt;/span&gt;
 &lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cons&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tramp-file-name-regexp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="notecard" id="org39a6e51"&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; This turns out to solve the wrong problem so I added another rule in the next section.
+&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org89f374a" class="outline-2"&gt;
-&lt;h2 id="org89f374a"&gt;God Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org89f374a"&gt;
+
+&lt;div id="outline-container-org17aa169" class="outline-4"&gt;
+&lt;h4 id="org17aa169"&gt;Turn Off For Sudo&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org17aa169"&gt;
+&lt;p&gt;
+Turning off the backups for tramp only fixed one case, but it turned out that the thing that made me look into this was using &lt;code&gt;sudo&lt;/code&gt; on my local machine to opne the &lt;code&gt;/etc/hosts&lt;/code&gt; file so I was actually solving the wrong (or only part of the) problem. This next bit is supposed to turn off all backups where you use &lt;code&gt;sudo&lt;/code&gt;. So it probably doesn't belong under tramp any more. Maybe I'll move it later
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;backup-enable-predicate&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;normal-backup-enable-predicate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;file-remote-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'method&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;stringp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;method&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;member&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"su"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"sudo"&lt;/span&gt;&lt;span class="p"&gt;))))))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5797e24" class="outline-2"&gt;
+&lt;h2 id="org5797e24"&gt;God Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5797e24"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; god-mode&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'god-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&amp;lt;escape&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'god-mode-all&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -407,9 +445,9 @@ The configuration is currently saving backups to a local directory, so when I us
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org4dc2ab7" class="outline-2"&gt;
-&lt;h2 id="org4dc2ab7"&gt;Python and elpy&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4dc2ab7"&gt;
+&lt;div id="outline-container-orge62a42d" class="outline-2"&gt;
+&lt;h2 id="orge62a42d"&gt;Python and elpy&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge62a42d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; elpy&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;elpy&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
@@ -420,16 +458,16 @@ The configuration is currently saving backups to a local directory, so when I us
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6950457" class="outline-2"&gt;
-&lt;h2 id="org6950457"&gt;Emacs Jupyter&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6950457"&gt;
+&lt;div id="outline-container-orgc0671b8" class="outline-2"&gt;
+&lt;h2 id="orgc0671b8"&gt;Emacs Jupyter&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc0671b8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;babel&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;override&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt; &lt;span class="s2"&gt;"python"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb30bf95" class="outline-2"&gt;
-&lt;h2 id="orgb30bf95"&gt;Fish&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb30bf95"&gt;
+&lt;div id="outline-container-org7104985" class="outline-2"&gt;
+&lt;h2 id="org7104985"&gt;Fish&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7104985"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; fish functions&lt;/span&gt;
 &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sh-basic-offset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sh-indentation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -437,9 +475,9 @@ The configuration is currently saving backups to a local directory, so when I us
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgff438c2" class="outline-2"&gt;
-&lt;h2 id="orgff438c2"&gt;Org-mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgff438c2"&gt;
+&lt;div id="outline-container-org1c86017" class="outline-2"&gt;
+&lt;h2 id="org1c86017"&gt;Org-mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1c86017"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; org-mode&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'org&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;global-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\C&lt;/span&gt;&lt;span class="s"&gt;-cl"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'org-store-link&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -478,9 +516,9 @@ The configuration is currently saving backups to a local directory, so when I us
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9ff7884" class="outline-2"&gt;
-&lt;h2 id="org9ff7884"&gt;org-export python mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9ff7884"&gt;
+&lt;div id="outline-container-org0540dc8" class="outline-2"&gt;
+&lt;h2 id="org0540dc8"&gt;org-export python mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0540dc8"&gt;
 &lt;p&gt;
 This just stops emitting the message that emacs is using a default 4 spaces when exporting python.
 &lt;/p&gt;
@@ -490,9 +528,9 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org537cdb5" class="outline-2"&gt;
-&lt;h2 id="org537cdb5"&gt;web-mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org537cdb5"&gt;
+&lt;div id="outline-container-orgfddeac4" class="outline-2"&gt;
+&lt;h2 id="orgfddeac4"&gt;web-mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfddeac4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; web-mode&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'web-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.html?&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;web-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -521,9 +559,9 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8cb0f28" class="outline-2"&gt;
-&lt;h2 id="org8cb0f28"&gt;auto-complete&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8cb0f28"&gt;
+&lt;div id="outline-container-org4b1bc28" class="outline-2"&gt;
+&lt;h2 id="org4b1bc28"&gt;auto-complete&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4b1bc28"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; auto-complete&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; (defun turn-on-autocomplete () (auto-complete-mode 1))&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'load-path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"~/.emacs.d/lisp"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -536,26 +574,26 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb35367a" class="outline-2"&gt;
-&lt;h2 id="orgb35367a"&gt;general text&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb35367a"&gt;
+&lt;div id="outline-container-orgc641d95" class="outline-2"&gt;
+&lt;h2 id="orgc641d95"&gt;general text&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc641d95"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; increase/decrease text size&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"C-c C-+"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'text-scale-increase&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"C--"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'text-scale-decrease&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge8e5e45" class="outline-2"&gt;
-&lt;h2 id="orge8e5e45"&gt;javascript&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge8e5e45"&gt;
+&lt;div id="outline-container-orgd3c712f" class="outline-2"&gt;
+&lt;h2 id="orgd3c712f"&gt;javascript&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd3c712f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; js2&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.js&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;js2-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9ee5c9d" class="outline-2"&gt;
-&lt;h2 id="org9ee5c9d"&gt;org-babel&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9ee5c9d"&gt;
+&lt;div id="outline-container-orgadf662d" class="outline-2"&gt;
+&lt;h2 id="orgadf662d"&gt;org-babel&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgadf662d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; org-babel&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'ob-js&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -623,34 +661,34 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc25c432" class="outline-2"&gt;
-&lt;h2 id="orgc25c432"&gt;Feature Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc25c432"&gt;
+&lt;div id="outline-container-org56cac75" class="outline-2"&gt;
+&lt;h2 id="org56cac75"&gt;Feature Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org56cac75"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.feature"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;feature-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbfc8fab" class="outline-2"&gt;
-&lt;h2 id="orgbfc8fab"&gt;yaml&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbfc8fab"&gt;
+&lt;div id="outline-container-org51ad33f" class="outline-2"&gt;
+&lt;h2 id="org51ad33f"&gt;yaml&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org51ad33f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'yaml-mode-hook&lt;/span&gt;
 &lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;yaml-mode-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\C&lt;/span&gt;&lt;span class="s"&gt;-m"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'newline-and-indent&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9e57d75" class="outline-2"&gt;
-&lt;h2 id="org9e57d75"&gt;Vue.js&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9e57d75"&gt;
+&lt;div id="outline-container-org80228cc" class="outline-2"&gt;
+&lt;h2 id="org80228cc"&gt;Vue.js&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org80228cc"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; setup files ending in “.vue” to open in vue-mode&lt;/span&gt;
 &lt;span class="c1"&gt;;; (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd871b05" class="outline-2"&gt;
-&lt;h2 id="orgd871b05"&gt;Bats&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd871b05"&gt;
+&lt;div id="outline-container-org4547e18" class="outline-2"&gt;
+&lt;h2 id="org4547e18"&gt;Bats&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4547e18"&gt;
 &lt;p&gt;
 The Bash Automated Test System mode.
 &lt;/p&gt;
@@ -700,9 +738,9 @@ There's a ticket on github to add this feature (?) to bats, but the old develope
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org24d177e" class="outline-2"&gt;
-&lt;h2 id="org24d177e"&gt;Backups&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org24d177e"&gt;
+&lt;div id="outline-container-org8ce13e9" class="outline-2"&gt;
+&lt;h2 id="org8ce13e9"&gt;Backups&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8ce13e9"&gt;
 &lt;p&gt;
 From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs Wiki&lt;/a&gt;.
 &lt;/p&gt;
@@ -713,9 +751,9 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0b904c5" class="outline-2"&gt;
-&lt;h2 id="org0b904c5"&gt;Markdown Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0b904c5"&gt;
+&lt;div id="outline-container-org23b2f68" class="outline-2"&gt;
+&lt;h2 id="org23b2f68"&gt;Markdown Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org23b2f68"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;markdown-mode&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"README&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.md&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;gfm-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -726,17 +764,17 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge832eec" class="outline-2"&gt;
-&lt;h2 id="orge832eec"&gt;Dockerfile Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge832eec"&gt;
+&lt;div id="outline-container-org2dd9068" class="outline-2"&gt;
+&lt;h2 id="org2dd9068"&gt;Dockerfile Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2dd9068"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'dockerfile-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Dockerfile&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;dockerfile-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org920b33a" class="outline-2"&gt;
-&lt;h2 id="org920b33a"&gt;Flycheck&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org920b33a"&gt;
+&lt;div id="outline-container-org13a8923" class="outline-2"&gt;
+&lt;h2 id="org13a8923"&gt;Flycheck&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org13a8923"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; flycheck&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;flycheck&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
@@ -792,9 +830,9 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org225f1bd" class="outline-2"&gt;
-&lt;h2 id="org225f1bd"&gt;Keychain&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org225f1bd"&gt;
+&lt;div id="outline-container-org2f310b2" class="outline-2"&gt;
+&lt;h2 id="org2f310b2"&gt;Keychain&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2f310b2"&gt;
 &lt;p&gt;
 This is to be able to use ssh-agent (via keychain).
 &lt;/p&gt;
@@ -813,9 +851,9 @@ This is to be able to use ssh-agent (via keychain).
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org11570c5" class="outline-2"&gt;
-&lt;h2 id="org11570c5"&gt;Hideshow-Org&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org11570c5"&gt;
+&lt;div id="outline-container-orgb880344" class="outline-2"&gt;
+&lt;h2 id="orgb880344"&gt;Hideshow-Org&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb880344"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(add-to-list 'load-path "~/projects/third-party/hideshow-org/")
 (require 'hideshow-org)
 &lt;/pre&gt;&lt;/div&gt;
