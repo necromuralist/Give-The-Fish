@@ -1,0 +1,28 @@
+#+BEGIN_COMMENT
+.. title: Raspberry Pi: Abbreviations
+.. slug: raspberry-pi-abbreviations
+.. date: 2024-04-12 20:26:30 UTC-07:00
+.. tags: raspberrypi,abbreviations
+.. category: Raspberry-Pi
+.. link: 
+.. description: An abbreviations file for the Raspberry Pi's.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+* The Tangle
+These are Abbreviations that are meant for the Raspberry Pi's that will differ for the Ubuntu PC's.
+
+#+begin_src noweb :tangle ../dingehaufen/conf.d/raspberry-pi-abbreviations.fish :exports none
+<<apt-install>>
+#+end_src
+
+* Apt
+
+#+begin_src fish :noweb-ref apt-install
+abbr --add -- aptin sudo apt install --yes $argv
+#+end_src
