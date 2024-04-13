@@ -2,8 +2,8 @@
 .. title: Cerberus User Paths
 .. slug: cerberus-user-paths
 .. date: 2024-04-02 15:36:42 UTC-07:00
-.. tags: fish,configuration
-.. category: Configuration
+.. tags: fish,configuration,raspberrypi
+.. category: Raspberry-Pi
 .. link: 
 .. description: User Path configuration for older fish.
 .. type: text
@@ -18,7 +18,7 @@ This is a configuration to add to the fish ~PATH~. The current version of fish u
 
 The additions will be in ~dingehaufen/extra_paths.fish~ which has to be then linked or copied into ~/.config/fish/conf.d/~.
 
-#+begin_src sh :tangle ../dingehaufen/extra_paths.fish
+#+begin_src sh :tangle ../dingehaufen/conf.d/extra_paths.fish
 contains $HOME/bin $fish_user_paths; or set --universal --append fish_user_paths $HOME/bin
 contains $HOME/.local/bin $fish_user_paths; or set --universal --append fish_user_paths $HOME/.local/bin
 #+end_src
