@@ -19,7 +19,7 @@ This is the fragment to make sure the ssh-agent is running when you open the ter
 Put this in =~/.config/fish/conf.d/=.
 #+end_notecard
 
-#+begin_src fish :tangle ../dingehaufen/ssh-agent.fish
+#+begin_src fish :tangle ../dingehaufen/conf.d/ssh-agent.fish
 if status --is-interactive
     keychain --eval --quiet --quick id_rsa | source
 end
