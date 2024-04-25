@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #+BEGIN_COMMENT
 .. title: Abbreviations: Mother Ship
 .. slug: abbreviations-mother-ship
