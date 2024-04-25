@@ -67,4 +67,4 @@ abbr --add -- rsyncerd "rsync --verbose --archive --compress --delete"
 
 abbr --add -- rsyncerf 'rsync --verbose --archive --delete --include="*/" --exclude="*"'
 
-abbr --add -- rsyncery "rsync --verbose --archive --delete --dry-run"
+abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
