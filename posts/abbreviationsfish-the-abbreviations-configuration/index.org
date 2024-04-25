@@ -51,6 +51,13 @@
 <<vpn-disconnect-connect>>
 
 <<vpn-fastest>>
+
+# rsync
+<<rsyncer>>
+
+<<rsyncerd>>
+
+<<rsyncerf>>
 #+end_src
 
 #+begin_notecard
@@ -204,7 +211,35 @@ abbr --add -- vdc "protonvpn-cli disconnect; protonvpn-cli connect"
 abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --fastest; protonvpn-cli status"
 
 #+end_src
+* Rsync
+
+** Rsyncer
+
+#+begin_src fish :noweb-ref rsyncer
+abbr --add -- rsyncer "rsync --info=progress2 --archive --compress"
+#+end_src
+
+** Rsyncerd
+
+
+#+begin_src fish :noweb-ref rsyncerd
+abbr --add -- rsyncerd "rsync --info=progress2 --archive --compress --delete"
+#+end_src
+
+** Rsyncerf
+
+Creates the folder structure but doesn't copy the files over.
+
+#+begin_src fish :noweb-ref rsyncerf
+abbr --add -- rsyncerf 'rsync --info=progress2 --archive --delete --include="*/" --exclude="*"'
+#+end_src
+
+
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
 - faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: https://stackoverflow.com/a/48749763
 - Document conf.d / config.fish sourcing order · Issue #3099 · fish-shell/fish-shell [Internet]. GitHub. [cited 2023 Jun 23]. Available from: https://github.com/fish-shell/fish-shell/issues/3099
+
+** Rsync
+ - [[https://serverfault.com/a/141778][Server Fault]]: Answer explaining the ~--archive~ option (I was using it before but also adding other flags that were redundant to it).
+ - [[https://serverfault.com/a/204320][Server Fault answer]]: explaining how to create the folder structure but not copy the files.

@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/abbreviations.xml</loc>
-  <lastmod>2024-04-10T00:38:00Z</lastmod>
+  <lastmod>2024-04-25T00:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/alias.xml</loc>
@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_abbreviations.xml</loc>
-  <lastmod>2024-04-10T00:38:00Z</lastmod>
+  <lastmod>2024-04-25T00:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_configuration.xml</loc>
@@ -28,6 +28,10 @@
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_emacs.xml</loc>
   <lastmod>2024-04-10T01:04:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_function.xml</loc>
+  <lastmod>2024-04-25T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/cat_functions.xml</loc>
@@ -51,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/configuration.xml</loc>
-  <lastmod>2024-04-10T01:04:00Z</lastmod>
+  <lastmod>2024-04-25T00:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/emacs.xml</loc>
@@ -63,7 +67,7 @@
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/function.xml</loc>
-  <lastmod>2023-06-28T20:59:00Z</lastmod>
+  <lastmod>2024-04-25T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/functions.xml</loc>
@@ -76,6 +80,10 @@
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/latex.xml</loc>
   <lastmod>2023-11-28T23:48:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://necromuralist.github.io/Give-The-Fish/categories/mount.xml</loc>
+  <lastmod>2024-04-25T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/categories/org-mode.xml</loc>
@@ -99,10 +107,10 @@
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/rss.xml</loc>
-  <lastmod>2024-04-10T01:04:00Z</lastmod>
+  <lastmod>2024-04-25T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://necromuralist.github.io/Give-The-Fish/sitemap.xml</loc>
-  <lastmod>2024-04-10T01:04:00Z</lastmod>
+  <lastmod>2024-04-25T00:49:00Z</lastmod>
  </sitemap>
 </sitemapindex>

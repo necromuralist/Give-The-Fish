@@ -5,7 +5,241 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 10 Apr 2024 01:04:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Thu, 25 Apr 2024 00:49:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Mount Data</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-mount-data/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.
+&lt;/p&gt;
+
+&lt;div id="outline-container-orgd950c8c" class="outline-2"&gt;
+&lt;h2 id="orgd950c8c"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd950c8c"&gt;
+&lt;p&gt;
+This is the function declaration. There's going to be three optional arguments that it might take.
+&lt;/p&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-left"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="org-left"&gt;Argument&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;Default&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;&lt;i&gt;device&lt;/i&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;&lt;code&gt;sdb1&lt;/code&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;Name of the device as shown by &lt;code&gt;fdisk -l&lt;/code&gt; without the directory (&lt;code&gt;/dev/&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;&lt;i&gt;name&lt;/i&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;&lt;code&gt;monkeymount&lt;/code&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;Name to use when opening the device&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;&lt;i&gt;folder&lt;/i&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;&lt;code&gt;irvin&lt;/code&gt;&lt;/td&gt;
+&lt;td class="org-left"&gt;Place to mount the contents of the disk (without &lt;code&gt;/media/&lt;/code&gt; at the beginning).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;
+So if I plug in the USB drive and it shows up at &lt;code&gt;/dev/sda1&lt;/code&gt; and I decide that the mapped name will be "umma" and the folder will be "gumma". Then I
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; mount-data --argument-names device name folder --description &lt;span class="s2"&gt;"Mount an encrypted drive."&lt;/span&gt;
+    &lt;span class="k"&gt;set&lt;/span&gt; ERROR 1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The &lt;code&gt;ERROR&lt;/code&gt; is a number to return in the event we bail on mounting the drive for some reason.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6f42136" class="outline-2"&gt;
+&lt;h2 id="org6f42136"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6f42136"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org3f248eb" class="outline-3"&gt;
+&lt;h3 id="org3f248eb"&gt;The Device&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3f248eb"&gt;
+&lt;p&gt;
+This is the name of the device in &lt;code&gt;/dev&lt;/code&gt; that represents the drive to mount. 
+&lt;/p&gt;
+
+&lt;p&gt;
+This command is useful sometimes. More so after it's been mounted.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lsblk -e7
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This one is generally useful if you know the model of the drive.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo fdisk -l &lt;span class="o"&gt;|&lt;/span&gt; grep sd -A 1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="notecard" id="orgca5b9a0"&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Note to future self:&lt;/b&gt;&lt;/b&gt; Consider making this an environment variable so you don't have to edit it if you switch USB ports.
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$device&lt;/span&gt;
+    &lt;span class="k"&gt;set&lt;/span&gt; device &lt;span class="s2"&gt;"sdb1"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We'll add the &lt;code&gt;/dev&lt;/code&gt; to it (without checking that it's already there for now) and then make sure it's a valid block-device.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; DEVICE_PATH &lt;span class="s2"&gt;"/dev/&lt;/span&gt;&lt;span class="nv"&gt;$device&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;not&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -b &lt;span class="nv"&gt;$DEVICE_PATH&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"'&lt;/span&gt;&lt;span class="nv"&gt;$DEVICE_PATH&lt;/span&gt;&lt;span class="s2"&gt;' is not a valid block-device"&lt;/span&gt;
+    mount-data-help
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$ERROR&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+To be nice we'll let the user know what we're using.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Using Device: &lt;/span&gt;&lt;span class="nv"&gt;$DEVICE_PATH&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org24fee70" class="outline-3"&gt;
+&lt;h3 id="org24fee70"&gt;The Mapping Name&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org24fee70"&gt;
+&lt;p&gt;
+This is the name that will be put into &lt;code&gt;/dev/mapper/&lt;/code&gt; which &lt;code&gt;mount&lt;/code&gt; will use to mount the drive.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$name&lt;/span&gt;
+    &lt;span class="k"&gt;set&lt;/span&gt; name &lt;span class="s2"&gt;"monkeymount"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Device Mapping: &lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org55f9ac0" class="outline-3"&gt;
+&lt;h3 id="org55f9ac0"&gt;Mount Path&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org55f9ac0"&gt;
+&lt;p&gt;
+Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$folder&lt;/span&gt;
+    &lt;span class="k"&gt;set&lt;/span&gt; folder &lt;span class="s2"&gt;"irvin"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We'll assume that the folder is going inside the &lt;code&gt;/media/&lt;/code&gt; folder and that only the final folder (or path below &lt;code&gt;/media/&lt;/code&gt;) is being passed in.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; MOUNT_PATH &lt;span class="s2"&gt;"/media/&lt;/span&gt;&lt;span class="nv"&gt;$folder&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+If there's already something in the folder then we won't try and mount it.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; COUNT &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;count&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;path normalize &lt;span class="nv"&gt;$MOUNT_PATH&lt;/span&gt;/*&lt;span class="o"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$MOUNT_PATH&lt;/span&gt;&lt;span class="s2"&gt; not empty, not mounting"&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$ERROR&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+If the folder doesn't exist we'll create it.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;not&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -d &lt;span class="nv"&gt;$MOUNT_PATH&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Creating '&lt;/span&gt;&lt;span class="nv"&gt;$MOUNT_PATH&lt;/span&gt;&lt;span class="s2"&gt;'"&lt;/span&gt;
+    sudo mkdir --parents &lt;span class="nv"&gt;$MOUNT_PATH&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Mounting at: &lt;/span&gt;&lt;span class="nv"&gt;$MOUNT_PATH&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgbe9f49e" class="outline-3"&gt;
+&lt;h3 id="orgbe9f49e"&gt;Mounting the Drive&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbe9f49e"&gt;
+&lt;p&gt;
+First we'll use &lt;code&gt;cryptsetup&lt;/code&gt; to decrypt the drive and put the mapping into &lt;code&gt;/dev/mapper/&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;echo&lt;/span&gt;
+&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Mounting External Data Drive"&lt;/span&gt;
+
+sudo cryptsetup &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="nv"&gt;$DEVICE_PATH&lt;/span&gt; &lt;span class="nv"&gt;$name&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Now we'll mount the device to a folder.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount /dev/mapper/&lt;span class="nv"&gt;$name&lt;/span&gt; &lt;span class="nv"&gt;$MOUNT_PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgcdfa7e3" class="outline-2"&gt;
+&lt;h2 id="orgcdfa7e3"&gt;A Help Printer&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcdfa7e3"&gt;
+&lt;p&gt;
+This is just a function to print a help string.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; mount-data-help
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Mount an attached encrypted drive."&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Usage: mount-data [device [name [folder]]]"&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"    device: /dev/&amp;lt;device block file&amp;gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"    name: /dev/wrapper/&amp;lt;name&amp;gt; to use"&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"    folder: /media/&amp;lt;folder&amp;gt; to mount into"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge15a4ba" class="outline-2"&gt;
+&lt;h2 id="orge15a4ba"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge15a4ba"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/not.html"&gt;fish Not&lt;/a&gt;: Negate the exit status of a job (&lt;code&gt;test&lt;/code&gt; in this case).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;fish test&lt;/a&gt;: The &lt;code&gt;test&lt;/code&gt; command.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/path.html#normalize-subcommand"&gt;Fish normalize path&lt;/a&gt;: squash extra slashes and make it look like a valid path.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>function</category><category>mount</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-mount-data/index.html</guid><pubDate>Wed, 24 Apr 2024 21:19:08 GMT</pubDate></item><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
@@ -1194,31 +1428,42 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org42b8436"&gt;Nikola&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org3a6df83"&gt;Nikola&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org183b9a2"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org11ed916"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org85a8c98"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org6cd8f84"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org06de05e"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgb88c2cd"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org40769ed"&gt;Git&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgd73836c"&gt;Git&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org0c676c4"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org69db320"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org12ae465"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgb87e07d"&gt;Checkout Files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org8ab5ca0"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgee10726"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgb79976a"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orga2241ab"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgdc84ede"&gt;Checkout Files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org2895207"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orge433772"&gt;Pass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgc5b03c7"&gt;Grep&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9a459dc"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org90925f5"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgb792fa3"&gt;Pass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orga815e94"&gt;Grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org8700448"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org8beec67"&gt;Rsync&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgb9e7a1a"&gt;Rsyncer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgfcaab00"&gt;Rsyncerd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org80c847b"&gt;Rsyncerf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org5009b4c"&gt;Links&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org677f12e"&gt;Rsync&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="notecard" id="org634a2f7"&gt;
+&lt;div class="notecard" id="org8505108"&gt;
 &lt;p&gt;
 The abbreviations the file goes into &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -1233,9 +1478,9 @@ Abbreviations are sort of like aliases except fish will expand them once you hit
 According to &lt;a href="https://github.com/fish-shell/fish-shell/issues/3099"&gt;this github issue&lt;/a&gt; the files you put into &lt;code&gt;conf.d/&lt;/code&gt; get read before &lt;code&gt;config.fish&lt;/code&gt; so whatever you put in there is usable in &lt;code&gt;config.fish&lt;/code&gt; (and using &lt;code&gt;config.fish&lt;/code&gt;) at all is optional.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org42b8436" class="outline-2"&gt;
-&lt;h2 id="org42b8436"&gt;Nikola&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org42b8436"&gt;
+&lt;div id="outline-container-org3a6df83" class="outline-2"&gt;
+&lt;h2 id="org3a6df83"&gt;Nikola&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3a6df83"&gt;
 &lt;p&gt;
 Abbreviations to hopefully make working with &lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; a little quicker.
 &lt;/p&gt;
@@ -1244,9 +1489,9 @@ Abbreviations to hopefully make working with &lt;a href="https://getnikola.com/"
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org183b9a2" class="outline-3"&gt;
-&lt;h3 id="org183b9a2"&gt;New Posts and Pages&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org183b9a2"&gt;
+&lt;div id="outline-container-org6cd8f84" class="outline-3"&gt;
+&lt;h3 id="org6cd8f84"&gt;New Posts and Pages&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6cd8f84"&gt;
 &lt;p&gt;
 I only use org-mode so these are the commands to make new posts and pages.
 &lt;/p&gt;
@@ -1263,9 +1508,9 @@ They actually look like the same files are produced, just one gets put into your
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org11ed916" class="outline-3"&gt;
-&lt;h3 id="org11ed916"&gt;Build, Serve, and Develop&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org11ed916"&gt;
+&lt;div id="outline-container-org06de05e" class="outline-3"&gt;
+&lt;h3 id="org06de05e"&gt;Build, Serve, and Develop&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org06de05e"&gt;
 &lt;p&gt;
 These are the ones I use the most when making posts and pages.
 &lt;/p&gt;
@@ -1281,9 +1526,9 @@ abbr --add -- nauto &lt;span class="s2"&gt;"nikola auto"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org85a8c98" class="outline-3"&gt;
-&lt;h3 id="org85a8c98"&gt;Deploy to Github&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org85a8c98"&gt;
+&lt;div id="outline-container-orgb88c2cd" class="outline-3"&gt;
+&lt;h3 id="orgb88c2cd"&gt;Deploy to Github&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb88c2cd"&gt;
 &lt;p&gt;
 And once it's ready…
 &lt;/p&gt;
@@ -1294,29 +1539,29 @@ And once it's ready…
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org40769ed" class="outline-2"&gt;
-&lt;h2 id="org40769ed"&gt;Git&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org40769ed"&gt;
+&lt;div id="outline-container-orgd73836c" class="outline-2"&gt;
+&lt;h2 id="orgd73836c"&gt;Git&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd73836c"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- g &lt;span class="s2"&gt;"git"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0c676c4" class="outline-3"&gt;
-&lt;h3 id="org0c676c4"&gt;Add, Commit, Push Stuff&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org0c676c4"&gt;
+&lt;div id="outline-container-orgee10726" class="outline-3"&gt;
+&lt;h3 id="orgee10726"&gt;Add, Commit, Push Stuff&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgee10726"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9592140" class="outline-4"&gt;
-&lt;h4 id="org9592140"&gt;Adding Files&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org9592140"&gt;
+&lt;div id="outline-container-org58673a4" class="outline-4"&gt;
+&lt;h4 id="org58673a4"&gt;Adding Files&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org58673a4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- add &lt;span class="s2"&gt;"git add"&lt;/span&gt;
 abbr --add -- gaa &lt;span class="s2"&gt;"git add -A"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org107ed9d" class="outline-4"&gt;
-&lt;h4 id="org107ed9d"&gt;Are you ready for a commitment?&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org107ed9d"&gt;
+&lt;div id="outline-container-org97e079f" class="outline-4"&gt;
+&lt;h4 id="org97e079f"&gt;Are you ready for a commitment?&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org97e079f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- commit &lt;span class="s2"&gt;"git commit"&lt;/span&gt;
 abbr --add -- gcm &lt;span class="s2"&gt;"git commit --message"&lt;/span&gt;
 abbr --add -- amend &lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
@@ -1324,9 +1569,9 @@ abbr --add -- amend &lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org419a4f0" class="outline-4"&gt;
-&lt;h4 id="org419a4f0"&gt;Speak To The Gods On High&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org419a4f0"&gt;
+&lt;div id="outline-container-org28e9ec5" class="outline-4"&gt;
+&lt;h4 id="org28e9ec5"&gt;Speak To The Gods On High&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org28e9ec5"&gt;
 &lt;p&gt;
 &lt;a href="https://man7.org/linux/man-pages/man2/sync.2.html"&gt;&lt;code&gt;sync&lt;/code&gt;&lt;/a&gt; is a builtin command (it writes caches to disk) so I went with &lt;code&gt;gsync&lt;/code&gt; for the abbreviation.
 &lt;/p&gt;
@@ -1340,9 +1585,9 @@ abbr --add -- fetch &lt;span class="s2"&gt;"git fetch --prune"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org69db320" class="outline-3"&gt;
-&lt;h3 id="org69db320"&gt;The State of Things&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org69db320"&gt;
+&lt;div id="outline-container-orgb79976a" class="outline-3"&gt;
+&lt;h3 id="orgb79976a"&gt;The State of Things&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb79976a"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;&lt;code&gt;status&lt;/code&gt;&lt;/a&gt; gives you information about the fish-shell. This is the only thing I ever see, though.
 &lt;/p&gt;
@@ -1360,7 +1605,7 @@ Job control: Only on interactive jobs
 But, anyway, I went with &lt;code&gt;gstat&lt;/code&gt; to not block it in case it's really needed at some point.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org0ae7cc5"&gt;
+&lt;div class="notecard" id="orgbd92e6f"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; Look at the &lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html"&gt;SSH Agent Config Fragment&lt;/a&gt; post to see &lt;code&gt;status&lt;/code&gt; in use. It's probably meant for programming, not as a command-line command.
 &lt;/p&gt;
@@ -1373,9 +1618,9 @@ abbr --add -- gstat &lt;span class="s2"&gt;"git status"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org12ae465" class="outline-3"&gt;
-&lt;h3 id="org12ae465"&gt;Branch Work&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org12ae465"&gt;
+&lt;div id="outline-container-orga2241ab" class="outline-3"&gt;
+&lt;h3 id="orga2241ab"&gt;Branch Work&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga2241ab"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/switch.html"&gt;&lt;code&gt;switch&lt;/code&gt;&lt;/a&gt; is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).
 &lt;/p&gt;
@@ -1395,17 +1640,17 @@ abbr --add -- destroythegods &lt;span class="s2"&gt;"git push origin -d"&lt;/spa
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb87e07d" class="outline-3"&gt;
-&lt;h3 id="orgb87e07d"&gt;Checkout Files&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb87e07d"&gt;
+&lt;div id="outline-container-orgdc84ede" class="outline-3"&gt;
+&lt;h3 id="orgdc84ede"&gt;Checkout Files&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgdc84ede"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- usetheirs &lt;span class="s2"&gt;"git checkout --theirs"&lt;/span&gt;
 abbr --add -- useours &lt;span class="s2"&gt;"git checkout --ours"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8ab5ca0" class="outline-3"&gt;
-&lt;h3 id="org8ab5ca0"&gt;My, How Things Have Changed&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org8ab5ca0"&gt;
+&lt;div id="outline-container-org2895207" class="outline-3"&gt;
+&lt;h3 id="org2895207"&gt;My, How Things Have Changed&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2895207"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- codechanges &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 abbr --add -- logdiff &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 abbr --add -- gdiff &lt;span class="s2"&gt;"git diff"&lt;/span&gt;
@@ -1415,9 +1660,9 @@ abbr --add -- gdiffn &lt;span class="s2"&gt;"git diff --name-status"&lt;/span&gt
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge433772" class="outline-2"&gt;
-&lt;h2 id="orge433772"&gt;Pass&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge433772"&gt;
+&lt;div id="outline-container-orgb792fa3" class="outline-2"&gt;
+&lt;h2 id="orgb792fa3"&gt;Pass&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb792fa3"&gt;
 &lt;p&gt;
 For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-manager. I was doing the pull and push commands but decided to use the git &lt;code&gt;sync&lt;/code&gt; alias which is actuall calling &lt;code&gt;legit sync&lt;/code&gt;, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.
 &lt;/p&gt;
@@ -1428,16 +1673,16 @@ abbr --add -- pgs &lt;span class="s2"&gt;"pass git sync"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc5b03c7" class="outline-2"&gt;
-&lt;h2 id="orgc5b03c7"&gt;Grep&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc5b03c7"&gt;
+&lt;div id="outline-container-orga815e94" class="outline-2"&gt;
+&lt;h2 id="orga815e94"&gt;Grep&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga815e94"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- grepr &lt;span class="s2"&gt;"grep --color=always"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9a459dc" class="outline-2"&gt;
-&lt;h2 id="org9a459dc"&gt;Proton VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9a459dc"&gt;
+&lt;div id="outline-container-org8700448" class="outline-2"&gt;
+&lt;h2 id="org8700448"&gt;Proton VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8700448"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- vdc &lt;span class="s2"&gt;"protonvpn-cli disconnect; protonvpn-cli connect"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1445,85 +1690,57 @@ abbr --add -- pgs &lt;span class="s2"&gt;"pass git sync"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org90925f5" class="outline-2"&gt;
-&lt;h2 id="org90925f5"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org90925f5"&gt;
+&lt;div id="outline-container-org8beec67" class="outline-2"&gt;
+&lt;h2 id="org8beec67"&gt;Rsync&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8beec67"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgb9e7a1a" class="outline-3"&gt;
+&lt;h3 id="orgb9e7a1a"&gt;Rsyncer&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb9e7a1a"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- rsyncer &lt;span class="s2"&gt;"rsync --info=progress2 --archive --compress"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgfcaab00" class="outline-3"&gt;
+&lt;h3 id="orgfcaab00"&gt;Rsyncerd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfcaab00"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- rsyncerd &lt;span class="s2"&gt;"rsync --info=progress2 --archive --compress --delete"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org80c847b" class="outline-3"&gt;
+&lt;h3 id="org80c847b"&gt;Rsyncerf&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org80c847b"&gt;
+&lt;p&gt;
+Creates the folder structure but doesn't copy the files over.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- rsyncerf &lt;span class="s1"&gt;'rsync --info=progress2 --archive --delete --include="*/" --exclude="*"'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org5009b4c" class="outline-2"&gt;
+&lt;h2 id="org5009b4c"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5009b4c"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/abbr.html"&gt;https://fishshell.com/docs/current/cmds/abbr.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: &lt;a href="https://stackoverflow.com/a/48749763"&gt;https://stackoverflow.com/a/48749763&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Document conf.d / config.fish sourcing order · Issue #3099 · fish-shell/fish-shell [Internet]. GitHub. [cited 2023 Jun 23]. Available from: &lt;a href="https://github.com/fish-shell/fish-shell/issues/3099"&gt;https://github.com/fish-shell/fish-shell/issues/3099&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>abbreviations</category><category>configuration</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</guid><pubDate>Fri, 23 Jun 2023 20:51:15 GMT</pubDate></item><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
-&lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org45afe06"&gt;Environment Variables&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org52f7eec"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#orgf4b38e3"&gt;The Rest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org0a9844c"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 
-&lt;p&gt;
-This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;div id="outline-container-org45afe06" class="outline-2"&gt;
-&lt;h2 id="org45afe06"&gt;Environment Variables&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org45afe06"&gt;
-&lt;p&gt;
-The &lt;code&gt;--export&lt;/code&gt; flag exports the shell variable to child processes, making it an "environment variable".
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org52f7eec" class="outline-3"&gt;
-&lt;h3 id="org52f7eec"&gt;Emacs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org52f7eec"&gt;
-&lt;p&gt;
-Sets us up to use the emacs client as the default editor.
-&lt;/p&gt;
-
+&lt;div id="outline-container-org677f12e" class="outline-3"&gt;
+&lt;h3 id="org677f12e"&gt;Rsync&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org677f12e"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;--create-frame&lt;/code&gt; tells emacs to create a new frame instead of continuing in the current one (if it's already open).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--alternate-editor&lt;/code&gt;: what to fall back to if the emacs-client server isn't running.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://serverfault.com/a/141778"&gt;Server Fault&lt;/a&gt;: Answer explaining the &lt;code&gt;--archive&lt;/code&gt; option (I was using it before but also adding other flags that were redundant to it).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://serverfault.com/a/204320"&gt;Server Fault answer&lt;/a&gt;: explaining how to create the folder structure but not copy the files.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; --export ALTERNATE_EDITOR &lt;span class="s2"&gt;""&lt;/span&gt;
-&lt;span class="k"&gt;set&lt;/span&gt; --export EDITOR &lt;span class="s2"&gt;"emacsclient --create-frame"&lt;/span&gt;
-&lt;span class="k"&gt;set&lt;/span&gt; --export VISUAL &lt;span class="s2"&gt;"emacsclient --create-frame --alternate-editor emacs"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgf4b38e3" class="outline-3"&gt;
-&lt;h3 id="orgf4b38e3"&gt;The Rest&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgf4b38e3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# for extra docker build features (like smarter pip caching)&lt;/span&gt;
-&lt;span class="k"&gt;set&lt;/span&gt; --export DOCKER_BUILDKIT 1
-
-&lt;span class="c"&gt;# R Downloads&lt;/span&gt;
-&lt;span class="k"&gt;set&lt;/span&gt; --export R_LIBS ~/.local/lib/R/library/
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org0a9844c" class="outline-2"&gt;
-&lt;h2 id="org0a9844c"&gt;Proton VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0a9844c"&gt;
-&lt;p&gt;
-The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# check the vpn (requires the installation of the proton-vpn command-line command)&lt;/span&gt;
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;status&lt;/span&gt; --is-interactive
-  protonvpn-cli &lt;span class="nb"&gt;status&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html</guid><pubDate>Thu, 22 Jun 2023 20:14:19 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>abbreviations</category><category>configuration</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</guid><pubDate>Fri, 23 Jun 2023 20:51:15 GMT</pubDate></item></channel></rss>

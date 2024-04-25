@@ -48,6 +48,188 @@
 <div class="postindex">
 <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
+<h1 class="p-name entry-title"><a class="u-url" href="function-mount-data/index.html">Function: Mount Data</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="function-mount-data/index.html" rel="bookmark"><time class="published dt-published" datetime="2024-04-24T14:19:08-07:00" itemprop="datePublished" title="2024-04-24 14:19">2024-04-24 14:19</time></a></p>
+</div>
+</header>
+<div class="p-summary entry-summary">
+<p>This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.</p>
+<div class="outline-2" id="outline-container-orgd950c8c">
+<h2 id="orgd950c8c">The Function</h2>
+<div class="outline-text-2" id="text-orgd950c8c">
+<p>This is the function declaration. There's going to be three optional arguments that it might take.</p>
+<table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
+<colgroup>
+<col class="org-left">
+<col class="org-left">
+<col class="org-left"></colgroup>
+<thead>
+<tr>
+<th class="org-left" scope="col">Argument</th>
+<th class="org-left" scope="col">Default</th>
+<th class="org-left" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><i>device</i></td>
+<td class="org-left"><code>sdb1</code></td>
+<td class="org-left">Name of the device as shown by <code>fdisk -l</code> without the directory (<code>/dev/</code>)</td>
+</tr>
+<tr>
+<td class="org-left"><i>name</i></td>
+<td class="org-left"><code>monkeymount</code></td>
+<td class="org-left">Name to use when opening the device</td>
+</tr>
+<tr>
+<td class="org-left"><i>folder</i></td>
+<td class="org-left"><code>irvin</code></td>
+<td class="org-left">Place to mount the contents of the disk (without <code>/media/</code> at the beginning).</td>
+</tr>
+</tbody>
+</table>
+<p>So if I plug in the USB drive and it shows up at <code>/dev/sda1</code> and I decide that the mapped name will be "umma" and the folder will be "gumma". Then I</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> mount-data --argument-names device name folder --description <span class="s2">"Mount an encrypted drive."</span>
+    <span class="k">set</span> ERROR 1
+</pre></div>
+<p>The <code>ERROR</code> is a number to return in the event we bail on mounting the drive for some reason.</p>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org6f42136">
+<h2 id="org6f42136">The Parts</h2>
+<div class="outline-text-2" id="text-org6f42136"></div>
+<div class="outline-3" id="outline-container-org3f248eb">
+<h3 id="org3f248eb">The Device</h3>
+<div class="outline-text-3" id="text-org3f248eb">
+<p>This is the name of the device in <code>/dev</code> that represents the drive to mount.</p>
+<p>This command is useful sometimes. More so after it's been mounted.</p>
+<div class="highlight">
+<pre><span></span>lsblk -e7
+</pre></div>
+<p>This one is generally useful if you know the model of the drive.</p>
+<div class="highlight">
+<pre><span></span>sudo fdisk -l <span class="o">|</span> grep sd -A 1
+</pre></div>
+<div class="notecard" id="orgca5b9a0">
+<p><b>Note to future self:</b> Consider making this an environment variable so you don't have to edit it if you switch USB ports.</p>
+</div>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$device</span>
+    <span class="k">set</span> device <span class="s2">"sdb1"</span>
+<span class="k">end</span>
+</pre></div>
+<p>We'll add the <code>/dev</code> to it (without checking that it's already there for now) and then make sure it's a valid block-device.</p>
+<div class="highlight">
+<pre><span></span><span class="k">set</span> DEVICE_PATH <span class="s2">"/dev/</span><span class="nv">$device</span><span class="s2">"</span>
+
+<span class="k">if</span> <span class="k">not</span> <span class="k">test</span> -b <span class="nv">$DEVICE_PATH</span>
+    <span class="k">echo</span> <span class="s2">"'</span><span class="nv">$DEVICE_PATH</span><span class="s2">' is not a valid block-device"</span>
+    mount-data-help
+    <span class="k">return</span> <span class="nv">$ERROR</span>
+<span class="k">end</span>
+</pre></div>
+<p>To be nice we'll let the user know what we're using.</p>
+<div class="highlight">
+<pre><span></span><span class="k">echo</span> <span class="s2">"Using Device: </span><span class="nv">$DEVICE_PATH</span><span class="s2">"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org24fee70">
+<h3 id="org24fee70">The Mapping Name</h3>
+<div class="outline-text-3" id="text-org24fee70">
+<p>This is the name that will be put into <code>/dev/mapper/</code> which <code>mount</code> will use to mount the drive.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$name</span>
+    <span class="k">set</span> name <span class="s2">"monkeymount"</span>
+<span class="k">end</span>
+</pre></div>
+<div class="highlight">
+<pre><span></span><span class="k">echo</span> <span class="s2">"Device Mapping: </span><span class="nv">$name</span><span class="s2">"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org55f9ac0">
+<h3 id="org55f9ac0">Mount Path</h3>
+<div class="outline-text-3" id="text-org55f9ac0">
+<p>Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$folder</span>
+    <span class="k">set</span> folder <span class="s2">"irvin"</span>
+<span class="k">end</span>
+</pre></div>
+<p>We'll assume that the folder is going inside the <code>/media/</code> folder and that only the final folder (or path below <code>/media/</code>) is being passed in.</p>
+<div class="highlight">
+<pre><span></span><span class="k">set</span> MOUNT_PATH <span class="s2">"/media/</span><span class="nv">$folder</span><span class="s2">"</span>
+</pre></div>
+<p>If there's already something in the folder then we won't try and mount it.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">set</span> COUNT <span class="o">(</span><span class="k">count</span> <span class="o">(</span>path normalize <span class="nv">$MOUNT_PATH</span>/*<span class="o">))</span>
+    <span class="k">echo</span> <span class="s2">"</span><span class="nv">$MOUNT_PATH</span><span class="s2"> not empty, not mounting"</span>
+    <span class="k">return</span> <span class="nv">$ERROR</span>
+<span class="k">end</span>
+</pre></div>
+<p>If the folder doesn't exist we'll create it.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">not</span> <span class="k">test</span> -d <span class="nv">$MOUNT_PATH</span>
+    <span class="k">echo</span> <span class="s2">"Creating '</span><span class="nv">$MOUNT_PATH</span><span class="s2">'"</span>
+    sudo mkdir --parents <span class="nv">$MOUNT_PATH</span>
+<span class="k">end</span>
+</pre></div>
+<div class="highlight">
+<pre><span></span><span class="k">echo</span> <span class="s2">"Mounting at: </span><span class="nv">$MOUNT_PATH</span><span class="s2">"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgbe9f49e">
+<h3 id="orgbe9f49e">Mounting the Drive</h3>
+<div class="outline-text-3" id="text-orgbe9f49e">
+<p>First we'll use <code>cryptsetup</code> to decrypt the drive and put the mapping into <code>/dev/mapper/</code>.</p>
+<div class="highlight">
+<pre><span></span><span class="k">echo</span>
+<span class="k">echo</span> <span class="s2">"Mounting External Data Drive"</span>
+
+sudo cryptsetup <span class="nb">open</span> <span class="nv">$DEVICE_PATH</span> <span class="nv">$name</span>
+</pre></div>
+<p>Now we'll mount the device to a folder.</p>
+<div class="highlight">
+<pre><span></span>sudo mount /dev/mapper/<span class="nv">$name</span> <span class="nv">$MOUNT_PATH</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgcdfa7e3">
+<h2 id="orgcdfa7e3">A Help Printer</h2>
+<div class="outline-text-2" id="text-orgcdfa7e3">
+<p>This is just a function to print a help string.</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> mount-data-help
+    <span class="k">echo</span> <span class="s2">"Mount an attached encrypted drive."</span>
+    <span class="k">echo</span>
+    <span class="k">echo</span> <span class="s2">"Usage: mount-data [device [name [folder]]]"</span>
+    <span class="k">echo</span> <span class="s2">"    device: /dev/&lt;device block file&gt;"</span>
+    <span class="k">echo</span> <span class="s2">"    name: /dev/wrapper/&lt;name&gt; to use"</span>
+    <span class="k">echo</span> <span class="s2">"    folder: /media/&lt;folder&gt; to mount into"</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orge15a4ba">
+<h2 id="orge15a4ba">Links</h2>
+<div class="outline-text-2" id="text-orge15a4ba">
+<ul class="org-ul">
+<li><a href="https://fishshell.com/docs/current/cmds/not.html">fish Not</a>: Negate the exit status of a job (<code>test</code> in this case).</li>
+<li><a href="https://fishshell.com/docs/current/cmds/test.html">fish test</a>: The <code>test</code> command.</li>
+<li><a href="https://fishshell.com/docs/current/cmds/path.html#normalize-subcommand">Fish normalize path</a>: squash extra slashes and make it look like a valid path.</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
 <h1 class="p-name entry-title"><a class="u-url" href="cerberus-user-paths/index.html">Cerberus User Paths</a></h1>
 <div class="metadata">
 <p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
@@ -1228,45 +1410,56 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org42b8436">Nikola</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org3a6df83">Nikola</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org183b9a2">New Posts and Pages</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org11ed916">Build, Serve, and Develop</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org85a8c98">Deploy to Github</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6cd8f84">New Posts and Pages</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org06de05e">Build, Serve, and Develop</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb88c2cd">Deploy to Github</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org40769ed">Git</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgd73836c">Git</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org0c676c4">Add, Commit, Push Stuff</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org69db320">The State of Things</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org12ae465">Branch Work</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb87e07d">Checkout Files</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org8ab5ca0">My, How Things Have Changed</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgee10726">Add, Commit, Push Stuff</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb79976a">The State of Things</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orga2241ab">Branch Work</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgdc84ede">Checkout Files</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org2895207">My, How Things Have Changed</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orge433772">Pass</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgc5b03c7">Grep</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org9a459dc">Proton VPN</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org90925f5">Links</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb792fa3">Pass</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orga815e94">Grep</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org8700448">Proton VPN</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org8beec67">Rsync</a>
+<ul>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb9e7a1a">Rsyncer</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgfcaab00">Rsyncerd</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org80c847b">Rsyncerf</a></li>
+</ul>
+</li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org5009b4c">Links</a>
+<ul>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org677f12e">Rsync</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div class="notecard" id="org634a2f7">
+<div class="notecard" id="org8505108">
 <p>The abbreviations the file goes into <code>~/.config/fish/conf.d/</code>.</p>
 </div>
 <p>Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter <code>nb</code> ~ when you hit the space-bar fish will replace <code>nb</code> with <code>nikola bulid</code>. This makes them more transparent than functions, although they're also less powerful.</p>
 <p>According to <a href="https://github.com/fish-shell/fish-shell/issues/3099">this github issue</a> the files you put into <code>conf.d/</code> get read before <code>config.fish</code> so whatever you put in there is usable in <code>config.fish</code> (and using <code>config.fish</code>) at all is optional.</p>
-<div class="outline-2" id="outline-container-org42b8436">
-<h2 id="org42b8436">Nikola</h2>
-<div class="outline-text-2" id="text-org42b8436">
+<div class="outline-2" id="outline-container-org3a6df83">
+<h2 id="org3a6df83">Nikola</h2>
+<div class="outline-text-2" id="text-org3a6df83">
 <p>Abbreviations to hopefully make working with <a href="https://getnikola.com/">Nikola</a> a little quicker.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- n <span class="s2">"nikola"</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org183b9a2">
-<h3 id="org183b9a2">New Posts and Pages</h3>
-<div class="outline-text-3" id="text-org183b9a2">
+<div class="outline-3" id="outline-container-org6cd8f84">
+<h3 id="org6cd8f84">New Posts and Pages</h3>
+<div class="outline-text-3" id="text-org6cd8f84">
 <p>I only use org-mode so these are the commands to make new posts and pages.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- post nikola new_post --format orgmode --title
@@ -1277,9 +1470,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 <p>They actually look like the same files are produced, just one gets put into your pages folder and one gets put into your posts folder. Which is nice, I guess, in that we can move things back and forth between the blog and the web-pages as we need to.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org11ed916">
-<h3 id="org11ed916">Build, Serve, and Develop</h3>
-<div class="outline-text-3" id="text-org11ed916">
+<div class="outline-3" id="outline-container-org06de05e">
+<h3 id="org06de05e">Build, Serve, and Develop</h3>
+<div class="outline-text-3" id="text-org06de05e">
 <p>These are the ones I use the most when making posts and pages.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- nb <span class="s2">"nikola build"</span>
@@ -1289,9 +1482,9 @@ abbr --add -- nauto <span class="s2">"nikola auto"</span>
 <p><code>auto</code> will build and reload the page for you anytime it sees any changes. This can be convenient sometimes, but sometimes it detects changes to often (maybe when something is making a temporary backup) and it can end up reloading while you're reading the page so I don't use it as much as I used to.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org85a8c98">
-<h3 id="org85a8c98">Deploy to Github</h3>
-<div class="outline-text-3" id="text-org85a8c98">
+<div class="outline-3" id="outline-container-orgb88c2cd">
+<h3 id="orgb88c2cd">Deploy to Github</h3>
+<div class="outline-text-3" id="text-orgb88c2cd">
 <p>And once it's ready…</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- deploy <span class="s2">"nikola github_deploy"</span>
@@ -1299,28 +1492,28 @@ abbr --add -- nauto <span class="s2">"nikola auto"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org40769ed">
-<h2 id="org40769ed">Git</h2>
-<div class="outline-text-2" id="text-org40769ed">
+<div class="outline-2" id="outline-container-orgd73836c">
+<h2 id="orgd73836c">Git</h2>
+<div class="outline-text-2" id="text-orgd73836c">
 <div class="highlight">
 <pre><span></span>abbr --add -- g <span class="s2">"git"</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org0c676c4">
-<h3 id="org0c676c4">Add, Commit, Push Stuff</h3>
-<div class="outline-text-3" id="text-org0c676c4"></div>
-<div class="outline-4" id="outline-container-org9592140">
-<h4 id="org9592140">Adding Files</h4>
-<div class="outline-text-4" id="text-org9592140">
+<div class="outline-3" id="outline-container-orgee10726">
+<h3 id="orgee10726">Add, Commit, Push Stuff</h3>
+<div class="outline-text-3" id="text-orgee10726"></div>
+<div class="outline-4" id="outline-container-org58673a4">
+<h4 id="org58673a4">Adding Files</h4>
+<div class="outline-text-4" id="text-org58673a4">
 <div class="highlight">
 <pre><span></span>abbr --add -- add <span class="s2">"git add"</span>
 abbr --add -- gaa <span class="s2">"git add -A"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org107ed9d">
-<h4 id="org107ed9d">Are you ready for a commitment?</h4>
-<div class="outline-text-4" id="text-org107ed9d">
+<div class="outline-4" id="outline-container-org97e079f">
+<h4 id="org97e079f">Are you ready for a commitment?</h4>
+<div class="outline-text-4" id="text-org97e079f">
 <div class="highlight">
 <pre><span></span>abbr --add -- commit <span class="s2">"git commit"</span>
 abbr --add -- gcm <span class="s2">"git commit --message"</span>
@@ -1328,9 +1521,9 @@ abbr --add -- amend <span class="s2">"git commit --amend"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org419a4f0">
-<h4 id="org419a4f0">Speak To The Gods On High</h4>
-<div class="outline-text-4" id="text-org419a4f0">
+<div class="outline-4" id="outline-container-org28e9ec5">
+<h4 id="org28e9ec5">Speak To The Gods On High</h4>
+<div class="outline-text-4" id="text-org28e9ec5">
 <p><a href="https://man7.org/linux/man-pages/man2/sync.2.html"><code>sync</code></a> is a builtin command (it writes caches to disk) so I went with <code>gsync</code> for the abbreviation.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- push <span class="s2">"git push"</span>
@@ -1341,9 +1534,9 @@ abbr --add -- fetch <span class="s2">"git fetch --prune"</span>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org69db320">
-<h3 id="org69db320">The State of Things</h3>
-<div class="outline-text-3" id="text-org69db320">
+<div class="outline-3" id="outline-container-orgb79976a">
+<h3 id="orgb79976a">The State of Things</h3>
+<div class="outline-text-3" id="text-orgb79976a">
 <p><a href="https://fishshell.com/docs/current/cmds/status.html"><code>status</code></a> gives you information about the fish-shell. This is the only thing I ever see, though.</p>
 <div class="highlight">
 <pre><span></span><span class="nb">status</span>
@@ -1353,7 +1546,7 @@ This is not a login shell
 Job control: Only on interactive jobs
 </pre>
 <p>But, anyway, I went with <code>gstat</code> to not block it in case it's really needed at some point.</p>
-<div class="notecard" id="org0ae7cc5">
+<div class="notecard" id="orgbd92e6f">
 <p><b>Note:</b> Look at the <a href="ssh-agent-config-fragment/index.html">SSH Agent Config Fragment</a> post to see <code>status</code> in use. It's probably meant for programming, not as a command-line command.</p>
 </div>
 <div class="highlight">
@@ -1362,9 +1555,9 @@ abbr --add -- gstat <span class="s2">"git status"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org12ae465">
-<h3 id="org12ae465">Branch Work</h3>
-<div class="outline-text-3" id="text-org12ae465">
+<div class="outline-3" id="outline-container-orga2241ab">
+<h3 id="orga2241ab">Branch Work</h3>
+<div class="outline-text-3" id="text-orga2241ab">
 <p><a href="https://fishshell.com/docs/current/cmds/switch.html"><code>switch</code></a> is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- branches <span class="s2">"legit branches"</span>
@@ -1381,18 +1574,18 @@ abbr --add -- destroythegods <span class="s2">"git push origin -d"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgb87e07d">
-<h3 id="orgb87e07d">Checkout Files</h3>
-<div class="outline-text-3" id="text-orgb87e07d">
+<div class="outline-3" id="outline-container-orgdc84ede">
+<h3 id="orgdc84ede">Checkout Files</h3>
+<div class="outline-text-3" id="text-orgdc84ede">
 <div class="highlight">
 <pre><span></span>abbr --add -- usetheirs <span class="s2">"git checkout --theirs"</span>
 abbr --add -- useours <span class="s2">"git checkout --ours"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org8ab5ca0">
-<h3 id="org8ab5ca0">My, How Things Have Changed</h3>
-<div class="outline-text-3" id="text-org8ab5ca0">
+<div class="outline-3" id="outline-container-org2895207">
+<h3 id="org2895207">My, How Things Have Changed</h3>
+<div class="outline-text-3" id="text-org2895207">
 <div class="highlight">
 <pre><span></span>abbr --add -- codechanges <span class="s2">"git log -p"</span>
 abbr --add -- logdiff <span class="s2">"git log -p"</span>
@@ -1402,9 +1595,9 @@ abbr --add -- gdiffn <span class="s2">"git diff --name-status"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orge433772">
-<h2 id="orge433772">Pass</h2>
-<div class="outline-text-2" id="text-orge433772">
+<div class="outline-2" id="outline-container-orgb792fa3">
+<h2 id="orgb792fa3">Pass</h2>
+<div class="outline-text-2" id="text-orgb792fa3">
 <p>For <a href="https://www.passwordstore.org/">pass</a> the password-manager. I was doing the pull and push commands but decided to use the git <code>sync</code> alias which is actuall calling <code>legit sync</code>, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- p <span class="s2">"pass"</span>
@@ -1412,17 +1605,17 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgc5b03c7">
-<h2 id="orgc5b03c7">Grep</h2>
-<div class="outline-text-2" id="text-orgc5b03c7">
+<div class="outline-2" id="outline-container-orga815e94">
+<h2 id="orga815e94">Grep</h2>
+<div class="outline-text-2" id="text-orga815e94">
 <div class="highlight">
 <pre><span></span>abbr --add -- grepr <span class="s2">"grep --color=always"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org9a459dc">
-<h2 id="org9a459dc">Proton VPN</h2>
-<div class="outline-text-2" id="text-org9a459dc">
+<div class="outline-2" id="outline-container-org8700448">
+<h2 id="org8700448">Proton VPN</h2>
+<div class="outline-text-2" id="text-org8700448">
 <div class="highlight">
 <pre><span></span>abbr --add -- vdc <span class="s2">"protonvpn-cli disconnect; protonvpn-cli connect"</span>
 </pre></div>
@@ -1431,85 +1624,52 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org90925f5">
-<h2 id="org90925f5">Links</h2>
-<div class="outline-text-2" id="text-org90925f5">
+<div class="outline-2" id="outline-container-org8beec67">
+<h2 id="org8beec67">Rsync</h2>
+<div class="outline-text-2" id="text-org8beec67"></div>
+<div class="outline-3" id="outline-container-orgb9e7a1a">
+<h3 id="orgb9e7a1a">Rsyncer</h3>
+<div class="outline-text-3" id="text-orgb9e7a1a">
+<div class="highlight">
+<pre><span></span>abbr --add -- rsyncer <span class="s2">"rsync --info=progress2 --archive --compress"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgfcaab00">
+<h3 id="orgfcaab00">Rsyncerd</h3>
+<div class="outline-text-3" id="text-orgfcaab00">
+<div class="highlight">
+<pre><span></span>abbr --add -- rsyncerd <span class="s2">"rsync --info=progress2 --archive --compress --delete"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org80c847b">
+<h3 id="org80c847b">Rsyncerf</h3>
+<div class="outline-text-3" id="text-org80c847b">
+<p>Creates the folder structure but doesn't copy the files over.</p>
+<div class="highlight">
+<pre><span></span>abbr --add -- rsyncerf <span class="s1">'rsync --info=progress2 --archive --delete --include="*/" --exclude="*"'</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org5009b4c">
+<h2 id="org5009b4c">Links</h2>
+<div class="outline-text-2" id="text-org5009b4c">
 <ul class="org-ul">
 <li>abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: <a href="https://fishshell.com/docs/current/cmds/abbr.html">https://fishshell.com/docs/current/cmds/abbr.html</a></li>
 <li>faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: <a href="https://stackoverflow.com/a/48749763">https://stackoverflow.com/a/48749763</a></li>
 <li>Document conf.d / config.fish sourcing order · Issue #3099 · fish-shell/fish-shell [Internet]. GitHub. [cited 2023 Jun 23]. Available from: <a href="https://github.com/fish-shell/fish-shell/issues/3099">https://github.com/fish-shell/fish-shell/issues/3099</a></li>
 </ul>
 </div>
-</div>
-</div>
-</article>
-<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
-<header>
-<h1 class="p-name entry-title"><a class="u-url" href="configfish-the-fish-configuration/index.html">config.fish The Fish Configuration</a></h1>
-<div class="metadata">
-<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
-<p class="dateline"><a href="configfish-the-fish-configuration/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-06-22T13:14:19-07:00" itemprop="datePublished" title="2023-06-22 13:14">2023-06-22 13:14</time></a></p>
-</div>
-</header>
-<div class="p-summary entry-summary">
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="configfish-the-fish-configuration/index.html#org45afe06">Environment Variables</a>
-<ul>
-<li><a href="configfish-the-fish-configuration/index.html#org52f7eec">Emacs</a></li>
-<li><a href="configfish-the-fish-configuration/index.html#orgf4b38e3">The Rest</a></li>
-</ul>
-</li>
-<li><a href="configfish-the-fish-configuration/index.html#org0a9844c">Proton VPN</a></li>
-</ul>
-</div>
-</div>
-<p>This is the fish configuration file. It goes into <code>~/.config/fish/config.fish</code>.</p>
-<div class="outline-2" id="outline-container-org45afe06">
-<h2 id="org45afe06">Environment Variables</h2>
-<div class="outline-text-2" id="text-org45afe06">
-<p>The <code>--export</code> flag exports the shell variable to child processes, making it an "environment variable".</p>
-</div>
-<div class="outline-3" id="outline-container-org52f7eec">
-<h3 id="org52f7eec">Emacs</h3>
-<div class="outline-text-3" id="text-org52f7eec">
-<p>Sets us up to use the emacs client as the default editor.</p>
+<div class="outline-3" id="outline-container-org677f12e">
+<h3 id="org677f12e">Rsync</h3>
+<div class="outline-text-3" id="text-org677f12e">
 <ul class="org-ul">
-<li><code>--create-frame</code> tells emacs to create a new frame instead of continuing in the current one (if it's already open).</li>
-<li><code>--alternate-editor</code>: what to fall back to if the emacs-client server isn't running.</li>
+<li><a href="https://serverfault.com/a/141778">Server Fault</a>: Answer explaining the <code>--archive</code> option (I was using it before but also adding other flags that were redundant to it).</li>
+<li><a href="https://serverfault.com/a/204320">Server Fault answer</a>: explaining how to create the folder structure but not copy the files.</li>
 </ul>
-<div class="highlight">
-<pre><span></span><span class="k">set</span> --export ALTERNATE_EDITOR <span class="s2">""</span>
-<span class="k">set</span> --export EDITOR <span class="s2">"emacsclient --create-frame"</span>
-<span class="k">set</span> --export VISUAL <span class="s2">"emacsclient --create-frame --alternate-editor emacs"</span>
-</pre></div>
 </div>
-</div>
-<div class="outline-3" id="outline-container-orgf4b38e3">
-<h3 id="orgf4b38e3">The Rest</h3>
-<div class="outline-text-3" id="text-orgf4b38e3">
-<div class="highlight">
-<pre><span></span><span class="c"># for extra docker build features (like smarter pip caching)</span>
-<span class="k">set</span> --export DOCKER_BUILDKIT 1
-
-<span class="c"># R Downloads</span>
-<span class="k">set</span> --export R_LIBS ~/.local/lib/R/library/
-</pre></div>
-</div>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org0a9844c">
-<h2 id="org0a9844c">Proton VPN</h2>
-<div class="outline-text-2" id="text-org0a9844c">
-<p>The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).</p>
-<div class="highlight">
-<pre><span></span><span class="c"># check the vpn (requires the installation of the proton-vpn command-line command)</span>
-<span class="k">if</span> <span class="nb">status</span> --is-interactive
-  protonvpn-cli <span class="nb">status</span>
-<span class="k">end</span>
-</pre></div>
 </div>
 </div>
 </div>

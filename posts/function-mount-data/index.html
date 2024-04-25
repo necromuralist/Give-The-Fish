@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8">
+<meta content="A Function to mount the data drive." name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Function: Mount Data | Give the Fish</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<meta content="Nikola (getnikola.com)" name="generator">
+<link href="../../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/function-mount-data/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="../../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
+<link href="../../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
+<link href="../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../../site.webmanifest" rel="manifest">
+<meta content="Cloistered Monkey" name="author">
+<link href="../cerberus-user-paths/index.html" rel="prev" title="Cerberus User Paths" type="text/html">
+<meta content="Give the Fish" property="og:site_name">
+<meta content="Function: Mount Data" property="og:title">
+<meta content="https://necromuralist.github.io/Give-The-Fish/posts/function-mount-data/index.html" property="og:url">
+<meta content="A Function to mount the data drive." property="og:description">
+<meta content="article" property="og:type">
+<meta content="2024-04-24T14:19:08-07:00" property="article:published_time">
+<meta content="function" property="article:tag">
+<meta content="mount" property="article:tag">
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-light bg-light">
+<div class="container"><!-- This keeps the margins nice -->
+ <a class="navbar-brand" href="../../"><span id="blog-title">Give the Fish</span></a> <button aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="bs-navbar">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="../">Posts</a></li>
+<li class="nav-item"><a class="nav-link" href="../../archive.html">Archive</a></li>
+<li class="nav-item"><a class="nav-link" href="../../categories/">Tags</a></li>
+<li class="nav-item"><a class="nav-link" href="../../rss.xml">RSS feed</a></li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Monkey Sites</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="https://necromuralist.github.io/">The Cloistered Monkey</a> <a class="dropdown-item" href="https://necromuralist.github.io/Ape-Iron/">Ape Iron</a> <a class="dropdown-item" href="https://necromuralist.github.io/Beach-Pig-Thigh/">Beach Pig Runp & Thigh</a> <a class="dropdown-item" href="https://necromuralist.github.io/Bowling-For-Data/">Bowling For Data</a> <a class="dropdown-item" href="https://necromuralist.github.io/Neurotic-Networking/">Neurotic Networking</a> <a class="dropdown-item" href="https://necromuralist.github.io/Terribilis-Ludum/">Terribilis Ludum</a> <a class="dropdown-item" href="https://necromuralist.github.io/Visions-Voices-Data/">Visions, Voices, Data</a></div>
+</li>
+</ul>
+<!-- DuckDuckGo custom search -->
+<form action="https://duckduckgo.com/" class="navbar-form pull-left" id="search" method="get" name="search"><input name="sites" type="hidden" value="https://necromuralist.github.io/Give-The-Fish/"><input name="k8" type="hidden" value="#444444"><input name="k9" type="hidden" value="#D51920"><input name="kt" type="hidden" value="h"><input class="span2" maxlength="255" name="q" placeholder="Search…" type="text"><input style="visibility: hidden;display:none" type="submit" value="DuckDuckGo Search"></form>
+<!-- End of custom search -->
+<ul class="navbar-nav navbar-right">
+<li class="nav-item"><a class="nav-link" href="index.org" id="sourcelink">Source</a></li>
+</ul>
+</div>
+<!-- /.navbar-collapse --></div>
+<!-- /.container --></nav>
+<!-- End of Menubar -->
+<div class="container" id="content" role="main">
+<div class="body-content"><!--Body content-->
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Function: Mount Data</a></h1>
+<div class="metadata">
+<p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2024-04-24T14:19:08-07:00" itemprop="datePublished" title="2024-04-24 14:19">2024-04-24 14:19</time></a></p>
+<p class="sourceline"><a class="sourcelink" href="index.org">Source</a></p>
+</div>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<p>This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.</p>
+<div class="outline-2" id="outline-container-orgd950c8c">
+<h2 id="orgd950c8c">The Function</h2>
+<div class="outline-text-2" id="text-orgd950c8c">
+<p>This is the function declaration. There's going to be three optional arguments that it might take.</p>
+<table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
+<colgroup>
+<col class="org-left">
+<col class="org-left">
+<col class="org-left"></colgroup>
+<thead>
+<tr>
+<th class="org-left" scope="col">Argument</th>
+<th class="org-left" scope="col">Default</th>
+<th class="org-left" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><i>device</i></td>
+<td class="org-left"><code>sdb1</code></td>
+<td class="org-left">Name of the device as shown by <code>fdisk -l</code> without the directory (<code>/dev/</code>)</td>
+</tr>
+<tr>
+<td class="org-left"><i>name</i></td>
+<td class="org-left"><code>monkeymount</code></td>
+<td class="org-left">Name to use when opening the device</td>
+</tr>
+<tr>
+<td class="org-left"><i>folder</i></td>
+<td class="org-left"><code>irvin</code></td>
+<td class="org-left">Place to mount the contents of the disk (without <code>/media/</code> at the beginning).</td>
+</tr>
+</tbody>
+</table>
+<p>So if I plug in the USB drive and it shows up at <code>/dev/sda1</code> and I decide that the mapped name will be "umma" and the folder will be "gumma". Then I</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> mount-data --argument-names device name folder --description <span class="s2">"Mount an encrypted drive."</span>
+    <span class="k">set</span> ERROR 1
+</pre></div>
+<p>The <code>ERROR</code> is a number to return in the event we bail on mounting the drive for some reason.</p>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org6f42136">
+<h2 id="org6f42136">The Parts</h2>
+<div class="outline-text-2" id="text-org6f42136"></div>
+<div class="outline-3" id="outline-container-org3f248eb">
+<h3 id="org3f248eb">The Device</h3>
+<div class="outline-text-3" id="text-org3f248eb">
+<p>This is the name of the device in <code>/dev</code> that represents the drive to mount.</p>
+<p>This command is useful sometimes. More so after it's been mounted.</p>
+<div class="highlight">
+<pre><span></span>lsblk -e7
+</pre></div>
+<p>This one is generally useful if you know the model of the drive.</p>
+<div class="highlight">
+<pre><span></span>sudo fdisk -l <span class="o">|</span> grep sd -A 1
+</pre></div>
+<div class="notecard" id="orgca5b9a0">
+<p><b>Note to future self:</b> Consider making this an environment variable so you don't have to edit it if you switch USB ports.</p>
+</div>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$device</span>
+    <span class="k">set</span> device <span class="s2">"sdb1"</span>
+<span class="k">end</span>
+</pre></div>
+<p>We'll add the <code>/dev</code> to it (without checking that it's already there for now) and then make sure it's a valid block-device.</p>
+<div class="highlight">
+<pre><span></span><span class="k">set</span> DEVICE_PATH <span class="s2">"/dev/</span><span class="nv">$device</span><span class="s2">"</span>
+
+<span class="k">if</span> <span class="k">not</span> <span class="k">test</span> -b <span class="nv">$DEVICE_PATH</span>
+    <span class="k">echo</span> <span class="s2">"'</span><span class="nv">$DEVICE_PATH</span><span class="s2">' is not a valid block-device"</span>
+    mount-data-help
+    <span class="k">return</span> <span class="nv">$ERROR</span>
+<span class="k">end</span>
+</pre></div>
+<p>To be nice we'll let the user know what we're using.</p>
+<div class="highlight">
+<pre><span></span><span class="k">echo</span> <span class="s2">"Using Device: </span><span class="nv">$DEVICE_PATH</span><span class="s2">"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org24fee70">
+<h3 id="org24fee70">The Mapping Name</h3>
+<div class="outline-text-3" id="text-org24fee70">
+<p>This is the name that will be put into <code>/dev/mapper/</code> which <code>mount</code> will use to mount the drive.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$name</span>
+    <span class="k">set</span> name <span class="s2">"monkeymount"</span>
+<span class="k">end</span>
+</pre></div>
+<div class="highlight">
+<pre><span></span><span class="k">echo</span> <span class="s2">"Device Mapping: </span><span class="nv">$name</span><span class="s2">"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org55f9ac0">
+<h3 id="org55f9ac0">Mount Path</h3>
+<div class="outline-text-3" id="text-org55f9ac0">
+<p>Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$folder</span>
+    <span class="k">set</span> folder <span class="s2">"irvin"</span>
+<span class="k">end</span>
+</pre></div>
+<p>We'll assume that the folder is going inside the <code>/media/</code> folder and that only the final folder (or path below <code>/media/</code>) is being passed in.</p>
+<div class="highlight">
+<pre><span></span><span class="k">set</span> MOUNT_PATH <span class="s2">"/media/</span><span class="nv">$folder</span><span class="s2">"</span>
+</pre></div>
+<p>If there's already something in the folder then we won't try and mount it.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">set</span> COUNT <span class="o">(</span><span class="k">count</span> <span class="o">(</span>path normalize <span class="nv">$MOUNT_PATH</span>/*<span class="o">))</span>
+    <span class="k">echo</span> <span class="s2">"</span><span class="nv">$MOUNT_PATH</span><span class="s2"> not empty, not mounting"</span>
+    <span class="k">return</span> <span class="nv">$ERROR</span>
+<span class="k">end</span>
+</pre></div>
+<p>If the folder doesn't exist we'll create it.</p>
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">not</span> <span class="k">test</span> -d <span class="nv">$MOUNT_PATH</span>
+    <span class="k">echo</span> <span class="s2">"Creating '</span><span class="nv">$MOUNT_PATH</span><span class="s2">'"</span>
+    sudo mkdir --parents <span class="nv">$MOUNT_PATH</span>
+<span class="k">end</span>
+</pre></div>
+<div class="highlight">
+<pre><span></span><span class="k">echo</span> <span class="s2">"Mounting at: </span><span class="nv">$MOUNT_PATH</span><span class="s2">"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgbe9f49e">
+<h3 id="orgbe9f49e">Mounting the Drive</h3>
+<div class="outline-text-3" id="text-orgbe9f49e">
+<p>First we'll use <code>cryptsetup</code> to decrypt the drive and put the mapping into <code>/dev/mapper/</code>.</p>
+<div class="highlight">
+<pre><span></span><span class="k">echo</span>
+<span class="k">echo</span> <span class="s2">"Mounting External Data Drive"</span>
+
+sudo cryptsetup <span class="nb">open</span> <span class="nv">$DEVICE_PATH</span> <span class="nv">$name</span>
+</pre></div>
+<p>Now we'll mount the device to a folder.</p>
+<div class="highlight">
+<pre><span></span>sudo mount /dev/mapper/<span class="nv">$name</span> <span class="nv">$MOUNT_PATH</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgcdfa7e3">
+<h2 id="orgcdfa7e3">A Help Printer</h2>
+<div class="outline-text-2" id="text-orgcdfa7e3">
+<p>This is just a function to print a help string.</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> mount-data-help
+    <span class="k">echo</span> <span class="s2">"Mount an attached encrypted drive."</span>
+    <span class="k">echo</span>
+    <span class="k">echo</span> <span class="s2">"Usage: mount-data [device [name [folder]]]"</span>
+    <span class="k">echo</span> <span class="s2">"    device: /dev/&lt;device block file&gt;"</span>
+    <span class="k">echo</span> <span class="s2">"    name: /dev/wrapper/&lt;name&gt; to use"</span>
+    <span class="k">echo</span> <span class="s2">"    folder: /media/&lt;folder&gt; to mount into"</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orge15a4ba">
+<h2 id="orge15a4ba">Links</h2>
+<div class="outline-text-2" id="text-orge15a4ba">
+<ul class="org-ul">
+<li><a href="https://fishshell.com/docs/current/cmds/not.html">fish Not</a>: Negate the exit status of a job (<code>test</code> in this case).</li>
+<li><a href="https://fishshell.com/docs/current/cmds/test.html">fish test</a>: The <code>test</code> command.</li>
+<li><a href="https://fishshell.com/docs/current/cmds/path.html#normalize-subcommand">Fish normalize path</a>: squash extra slashes and make it look like a valid path.</li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="postpromonav">
+<nav>
+<ul class="tags" itemprop="keywords">
+<li><a class="tag p-category" href="../../categories/function/index.html" rel="tag">function</a></li>
+<li><a class="tag p-category" href="../../categories/mount/index.html" rel="tag">mount</a></li>
+</ul>
+<ul class="pager hidden-print">
+<li class="previous"><a href="../cerberus-user-paths/index.html" rel="prev" title="Cerberus User Paths">Previous post</a></li>
+</ul>
+</nav>
+</aside>
+</article>
+<!--End of body content-->
+<footer id="footer">Scribbled by the <a href="mailto:cloisteredmonkey.jmark@slmail.me">Cloistered Monkey</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+<div id="license" xmlns:cc="http://creativecommons.org/ns#">This work is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" rel="license noopener noreferrer" style="display:inline-block;" target="_blank">CC BY 4.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></div>
+</footer>
+</div>
+</div>
+<script src="../../assets/js/all-nocdn.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+</script>
+</body>
+</html>
