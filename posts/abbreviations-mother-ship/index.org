@@ -1,8 +1,9 @@
+<<<<<<< HEAD
 #+BEGIN_COMMENT
 .. title: Abbreviations: Mother Ship
 .. slug: abbreviations-mother-ship
 .. date: 2024-04-25 14:22:03 UTC-07:00
-.. tags: abbreviations,configuration
+.. tags: abbreviations,configuration,version-0
 .. category: Abbreviations
 .. link: 
 .. description: Abbreviations for PCs with users attached.
