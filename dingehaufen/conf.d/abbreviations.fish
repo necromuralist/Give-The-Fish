@@ -58,3 +58,11 @@ abbr --add -- grepr "grep --color=always"
 abbr --add -- vdc "protonvpn-cli disconnect; protonvpn-cli connect"
 
 abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --fastest; protonvpn-cli status"
+
+
+# rsync
+abbr --add -- rsyncer "rsync --info=progress2 --archive --compress"
+
+abbr --add -- rsyncerd "rsync --info=progress2 --archive --compress --delete"
+
+abbr --add -- rsyncerf 'rsync --info=progress2 --archive --delete --include="*/" --exclude="*"'

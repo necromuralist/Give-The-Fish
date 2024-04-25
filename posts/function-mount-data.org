@@ -1,0 +1,206 @@
+#+BEGIN_COMMENT
+.. title: Function: Mount Data
+.. slug: function-mount-data
+.. date: 2024-04-24 14:19:08 UTC-07:00
+.. tags: function,mount
+.. category: Function
+.. link: 
+.. description: A Function to mount the data drive.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+#+begin_src fish :tangle ../functions/mount-data-help.fish :exports none
+<<print-help>>
+#+end_src
+
+#+begin_src fish :tangle ../functions/mount-data.fish :exports none
+<<the-function>>
+    # set up the block-file for the device to mount
+    <<set-device>>
+
+    <<set-and-test-device-path>>
+
+    <<echo-device>>
+
+    # set up the name to map the device to
+    <<set-name>>
+
+    <<echo-name>>
+
+    # set up the folder to mount the drive to
+    <<set-folder>>
+
+    <<set-path>>
+
+    <<check-empty>>
+
+    <<check-path-exists>>
+
+    <<echo-path>>
+
+    # mount the drive
+    <<open-device>>
+    
+    <<mount-drive>>
+    
+end
+#+end_src
+
+This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.
+
+* The Function
+
+This is the function declaration. There's going to be three optional arguments that it might take.
+
+| Argument | Default       | Description                                                                   |
+|----------+---------------+-------------------------------------------------------------------------------|
+| /device/ | ~sdb1~        | Name of the device as shown by ~fdisk -l~ without the directory (~/dev/~)     |
+| /name/   | ~monkeymount~ | Name to use when opening the device                                           |
+| /folder/ | ~irvin~       | Place to mount the contents of the disk (without ~/media/~ at the beginning). |
+
+So if I plug in the USB drive and it shows up at ~/dev/sda1~ and I decide that the mapped name will be "umma" and the folder will be "gumma". Then I
+
+#+begin_src fish :noweb-ref the-function
+function mount-data --argument-names device name folder --description "Mount an encrypted drive."
+    set ERROR 1
+#+end_src
+
+The ~ERROR~ is a number to return in the event we bail on mounting the drive for some reason.
+
+* The Parts
+** The Device
+
+This is the name of the device in ~/dev~ that represents the drive to mount. 
+
+This command is useful sometimes. More so after it's been mounted.
+
+#+begin_src fish 
+lsblk -e7
+#+end_src
+
+This one is generally useful if you know the model of the drive.
+
+#+begin_src fish
+sudo fdisk -l | grep sd -A 1
+#+end_src
+
+
+#+begin_notecard
+**Note to future self:** Consider making this an environment variable so you don't have to edit it if you switch USB ports.
+#+end_notecard
+
+#+begin_src fish :noweb-ref set-device
+if test -z $device
+    set device "sdb1"
+end
+#+end_src
+
+We'll add the ~/dev~ to it (without checking that it's already there for now) and then make sure it's a valid block-device.
+
+#+begin_src fish :noweb-ref set-and-test-device-path
+set DEVICE_PATH "/dev/$device"
+
+if not test -b $DEVICE_PATH
+    echo "'$DEVICE_PATH' is not a valid block-device"
+    mount-data-help
+    return $ERROR
+end
+#+end_src
+
+To be nice we'll let the user know what we're using.
+
+#+begin_src fish :noweb-ref echo-device
+echo "Using Device: $DEVICE_PATH"
+#+end_src
+
+** The Mapping Name
+
+This is the name that will be put into ~/dev/mapper/~ which ~mount~ will use to mount the drive.
+
+#+begin_src fish :noweb-ref set-name
+if test -z $name
+    set name "monkeymount"
+end
+#+end_src
+
+#+begin_src fish :noweb-ref echo-name
+echo "Device Mapping: $name"
+#+end_src
+
+** Mount Path
+
+Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".
+
+#+begin_src fish :noweb-ref set-folder
+if test -z $folder
+    set folder "irvin"
+end
+#+end_src
+
+We'll assume that the folder is going inside the ~/media/~ folder and that only the final folder (or path below ~/media/~) is being passed in.
+
+#+begin_src fish :noweb-ref set-path
+set MOUNT_PATH "/media/$folder"
+#+end_src
+
+If there's already something in the folder then we won't try and mount it.
+
+#+begin_src fish :noweb-ref check-empty
+if set COUNT (count (path normalize $MOUNT_PATH/*))
+    echo "$MOUNT_PATH not empty, not mounting"
+    return $ERROR
+end
+#+end_src
+
+ If the folder doesn't exist we'll create it.
+ 
+#+begin_src fish :noweb-ref check-path-exists
+if not test -d $MOUNT_PATH
+    echo "Creating '$MOUNT_PATH'"
+    sudo mkdir --parents $MOUNT_PATH
+end
+#+end_src
+
+#+begin_src fish :noweb-ref echo-path
+echo "Mounting at: $MOUNT_PATH"
+#+end_src
+
+** Mounting the Drive
+
+First we'll use ~cryptsetup~ to decrypt the drive and put the mapping into ~/dev/mapper/~.
+
+#+begin_src fish :noweb-ref open-device
+echo
+echo "Mounting External Data Drive"
+
+sudo cryptsetup open $DEVICE_PATH $name
+#+end_src
+
+Now we'll mount the device to a folder.
+
+#+begin_src fish :noweb-ref mount-drive
+sudo mount /dev/mapper/$name $MOUNT_PATH
+#+end_src
+
+* A Help Printer
+
+This is just a function to print a help string.
+
+#+begin_src fish :noweb-ref print-help
+function mount-data-help
+    echo "Mount an attached encrypted drive."
+    echo
+    echo "Usage: mount-data [device [name [folder]]]"
+    echo "    device: /dev/<device block file>"
+    echo "    name: /dev/wrapper/<name> to use"
+    echo "    folder: /media/<folder> to mount into"
+end
+#+end_src
+* Links
+
+ - [[https://fishshell.com/docs/current/cmds/not.html][fish Not]]: Negate the exit status of a job (~test~ in this case).
+ - [[https://fishshell.com/docs/current/cmds/test.html][fish test]]: The ~test~ command.
+ - [[https://fishshell.com/docs/current/cmds/path.html#normalize-subcommand][Fish normalize path]]: squash extra slashes and make it look like a valid path.
