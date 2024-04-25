@@ -1,0 +1,30 @@
+#+BEGIN_COMMENT
+.. title: Abbreviations: Mother Ship
+.. slug: abbreviations-mother-ship
+.. date: 2024-04-25 14:22:03 UTC-07:00
+.. tags: abbreviations,configuration,version-0
+.. category: Abbreviations
+.. link: 
+.. description: Abbreviations for PCs with users attached.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+TOC: headlines 2
+
+#+begin_src noweb :tangle ../dingehaufen/conf.d/mother-ship.fish :exports none
+<<mount-drives>>
+#+end_src
+
+This tangle is for extra configurations that are meant for PCs with a GUI that a user interacts with directly (as opposed to a server) and it has stuff that aren't going to be used on servers.
+
+I'm putting it in ~dingehaufen/conf.d/~ so it should be linked to in ~.config/fish/conf.d/~ for PCs that need it.
+
+* Mount Drives
+
+This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.
+
+#+begin_src fish :noweb-ref mount-drives
+abbr --add -- mount-drives "mountcryfs; mount-data"
+#+end_src

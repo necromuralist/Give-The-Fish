@@ -14,7 +14,7 @@
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
 
-#+begin_src noweb :tangle ../dingehaufen/abbreviations.fish :exports none
+#+begin_src noweb :tangle ../dingehaufen/conf.d/abbreviations.fish :exports none
 # nikola
 <<nikola>>
 
