@@ -2,7 +2,7 @@
 .. title: abbreviations.fish The Abbreviations Configuration
 .. slug: abbreviationsfish-the-abbreviations-configuration
 .. date: 2023-06-23 13:51:15 UTC-07:00
-.. tags: abbreviations,configuration
+.. tags: abbreviations,configuration,version-1.1
 .. category: Abbreviations
 .. link: 
 .. description: The fish abbreviations file.
