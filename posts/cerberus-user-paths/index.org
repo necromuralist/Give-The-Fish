@@ -16,9 +16,9 @@
 
 This is a configuration to add to the fish ~PATH~. The current version of fish uses a special command called ~fish_add_path~ when you want to add locations to the user path. If you just naively append to the PATH in the config file then fish will keep adding to the PATH every time you log in so the ~fish_add_path~ prevents adding paths that are already stored in the environment variable. Unfortunately the raspberry PI I'm using has Debian 11 which has fish version 3.1.2 which predates the ~fish_add_path~ command so I'll have to add to the path the old fashioned way.
 
-The additions will be in ~dingehaufen/extra_paths.fish~ which has to be then linked or copied into ~/.config/fish/conf.d/~.
+The additions will be in ~dingehaufen/conf.d/extra_paths.fish~ which has to be then linked or copied into ~/.config/fish/conf.d/~.
 
-#+begin_src sh :tangle ../dingehaufen/extra_paths.fish
+#+begin_src sh :tangle ../dingehaufen/conf.d/extra_paths.fish
 contains $HOME/bin $fish_user_paths; or set --universal --append fish_user_paths $HOME/bin
 contains $HOME/.local/bin $fish_user_paths; or set --universal --append fish_user_paths $HOME/.local/bin
 #+end_src
