@@ -236,12 +236,12 @@ Creates the folder structure but doesn't copy the files over.
 abbr --add -- rsyncerf 'rsync --verbose --archive --delete --include="*/" --exclude="*"'
 #+end_src
 
-** Rsyncerf
+** Rsyncery
 
 Does a dry-run to show what would be done without actually transferring files. I made this because for some reason the Raspeberry Pi with Debian 11 on it has some kind of bug that makes rsync fail if the transfers take too long. I don't really know the cause, but it doesn't happen with newer ubuntu versions so it seem like either it's a bug in the creation of the LUKs drive (since I'm creating it on the Raspberry Pi) or in the running of rsync (when the error actually occurs), but in either case, I sometimes need to do sub-folders one at a time instead of just syncing the top folder in order to keep the transfers shorter and running this lets me see what folders need to be synced.
 
 #+begin_src fish :noweb-ref rsyncery
-abbr --add -- rsyncery "rsync --verbose --archive --delete --dry-run"
+abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
 #+end_src
 
 
