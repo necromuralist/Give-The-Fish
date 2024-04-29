@@ -61,10 +61,10 @@ abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --faste
 
 
 # rsync
-abbr --add -- rsyncer "rsync --verbose --archive --compress"
+abbr --add -- rsyncer "rsync --progress --archive --compress"
 
-abbr --add -- rsyncerd "rsync --verbose --archive --compress --delete"
+abbr --add -- rsyncerd "rsync --progress --archive --compress --delete"
 
-abbr --add -- rsyncerf 'rsync --verbose --archive --delete --include="*/" --exclude="*"'
+abbr --add -- rsyncerf 'rsync --progress --archive --delete --include="*/" --exclude="*"'
 
 abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
