@@ -35,9 +35,9 @@
 
     <<set-path>>
 
-    <<check-empty>>
-
     <<check-path-exists>>
+    
+    <<check-empty>>
 
     <<echo-path>>
 
@@ -149,7 +149,7 @@ set MOUNT_PATH "/media/$folder"
 If there's already something in the folder then we won't try and mount it.
 
 #+begin_src fish :noweb-ref check-empty
-if set COUNT (count (path normalize $MOUNT_PATH/*))
+if set COUNT (count (ls $MOUNT_PATH/))
     echo "$MOUNT_PATH not empty, not mounting"
     return $ERROR
 end
