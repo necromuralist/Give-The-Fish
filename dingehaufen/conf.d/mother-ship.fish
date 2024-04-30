@@ -1,1 +1,1 @@
-abbr --add -- mount-drives "mountcryfs; mount-data"
+abbr --add -- md "mountcryfs; mount-data"

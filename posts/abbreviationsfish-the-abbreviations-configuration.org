@@ -244,7 +244,6 @@ Does a dry-run to show what would be done without actually transferring files. I
 abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
 #+end_src
 
-
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
 - faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: https://stackoverflow.com/a/48749763
