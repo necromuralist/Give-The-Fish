@@ -27,5 +27,5 @@ I'm putting it in ~dingehaufen/conf.d/~ so it should be linked to in ~.config/fi
 This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.
 
 #+begin_src fish :noweb-ref mount-drives
-abbr --add -- mount-drives "mountcryfs; mount-data"
+abbr --add -- md "mountcryfs; mount-data"
 #+end_src

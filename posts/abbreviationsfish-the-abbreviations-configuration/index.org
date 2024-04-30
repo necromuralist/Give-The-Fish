@@ -218,14 +218,14 @@ abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --faste
 ** Rsyncer
 
 #+begin_src fish :noweb-ref rsyncer
-abbr --add -- rsyncer "rsync --verbose --archive --compress"
+abbr --add -- rsyncer "rsync --progress --archive --compress"
 #+end_src
 
 ** Rsyncerd
 
 
 #+begin_src fish :noweb-ref rsyncerd
-abbr --add -- rsyncerd "rsync --verbose --archive --compress --delete"
+abbr --add -- rsyncerd "rsync --progress --archive --compress --delete"
 #+end_src
 
 ** Rsyncerf
@@ -233,7 +233,7 @@ abbr --add -- rsyncerd "rsync --verbose --archive --compress --delete"
 Creates the folder structure but doesn't copy the files over.
 
 #+begin_src fish :noweb-ref rsyncerf
-abbr --add -- rsyncerf 'rsync --verbose --archive --delete --include="*/" --exclude="*"'
+abbr --add -- rsyncerf 'rsync --progress --archive --delete --include="*/" --exclude="*"'
 #+end_src
 
 ** Rsyncery
@@ -244,11 +244,11 @@ Does a dry-run to show what would be done without actually transferring files. I
 abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
 #+end_src
 
-
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
 - faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: https://stackoverflow.com/a/48749763
 - Document conf.d / config.fish sourcing order · Issue #3099 · fish-shell/fish-shell [Internet]. GitHub. [cited 2023 Jun 23]. Available from: https://github.com/fish-shell/fish-shell/issues/3099
+- [[https://askubuntu.com/questions/609303/how-can-i-view-a-progress-bar-when-running-rsync][Stack Exchange]]: Rsync progress information
 
 ** Rsync
  - [[https://serverfault.com/a/141778][Server Fault]]: Answer explaining the ~--archive~ option (I was using it before but also adding other flags that were redundant to it).
