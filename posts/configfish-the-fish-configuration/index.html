@@ -66,29 +66,29 @@
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
-<div id="table-of-contents" role="doc-toc">
+<div id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="index.html#org45afe06">Environment Variables</a>
+<li><a href="index.html#orgbdf1c0e">Environment Variables</a>
 <ul>
-<li><a href="index.html#org52f7eec">Emacs</a></li>
-<li><a href="index.html#orgf4b38e3">The Rest</a></li>
+<li><a href="index.html#org73d3eee">Emacs</a></li>
+<li><a href="index.html#org4527e43">The Rest</a></li>
 </ul>
 </li>
-<li><a href="index.html#org0a9844c">Proton VPN</a></li>
+<li><a href="index.html#org086eba7">Proton VPN</a></li>
 </ul>
 </div>
 </div>
 <p>This is the fish configuration file. It goes into <code>~/.config/fish/config.fish</code>.</p>
-<div class="outline-2" id="outline-container-org45afe06">
-<h2 id="org45afe06">Environment Variables</h2>
-<div class="outline-text-2" id="text-org45afe06">
+<div class="outline-2" id="outline-container-orgbdf1c0e">
+<h2 id="orgbdf1c0e">Environment Variables</h2>
+<div class="outline-text-2" id="text-orgbdf1c0e">
 <p>The <code>--export</code> flag exports the shell variable to child processes, making it an "environment variable".</p>
 </div>
-<div class="outline-3" id="outline-container-org52f7eec">
-<h3 id="org52f7eec">Emacs</h3>
-<div class="outline-text-3" id="text-org52f7eec">
+<div class="outline-3" id="outline-container-org73d3eee">
+<h3 id="org73d3eee">Emacs</h3>
+<div class="outline-text-3" id="text-org73d3eee">
 <p>Sets us up to use the emacs client as the default editor.</p>
 <ul class="org-ul">
 <li><code>--create-frame</code> tells emacs to create a new frame instead of continuing in the current one (if it's already open).</li>
@@ -101,9 +101,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgf4b38e3">
-<h3 id="orgf4b38e3">The Rest</h3>
-<div class="outline-text-3" id="text-orgf4b38e3">
+<div class="outline-3" id="outline-container-org4527e43">
+<h3 id="org4527e43">The Rest</h3>
+<div class="outline-text-3" id="text-org4527e43">
 <div class="highlight">
 <pre><span></span><span class="c"># for extra docker build features (like smarter pip caching)</span>
 <span class="k">set</span> --export DOCKER_BUILDKIT 1
@@ -114,9 +114,9 @@
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org0a9844c">
-<h2 id="org0a9844c">Proton VPN</h2>
-<div class="outline-text-2" id="text-org0a9844c">
+<div class="outline-2" id="outline-container-org086eba7">
+<h2 id="org086eba7">Proton VPN</h2>
+<div class="outline-text-2" id="text-org086eba7">
 <p>The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).</p>
 <div class="highlight">
 <pre><span></span><span class="c"># check the vpn (requires the installation of the proton-vpn command-line command)</span>

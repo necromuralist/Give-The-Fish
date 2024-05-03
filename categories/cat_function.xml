@@ -5,13 +5,13 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 30 Apr 2024 21:43:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Mount Data</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-mount-data/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Fri, 03 May 2024 22:10:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Mount Data</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-mount-data/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
 This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org823d040" class="outline-2"&gt;
-&lt;h2 id="org823d040"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org823d040"&gt;
+&lt;div id="outline-container-org7363ff8" class="outline-2"&gt;
+&lt;h2 id="org7363ff8"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7363ff8"&gt;
 &lt;p&gt;
 This is the function declaration. There's going to be three optional arguments that it might take.
 &lt;/p&gt;
@@ -68,13 +68,13 @@ The &lt;code&gt;ERROR&lt;/code&gt; is a number to return in the event we bail on
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org14054ed" class="outline-2"&gt;
-&lt;h2 id="org14054ed"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org14054ed"&gt;
+&lt;div id="outline-container-org1968a89" class="outline-2"&gt;
+&lt;h2 id="org1968a89"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1968a89"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org266e4ae" class="outline-3"&gt;
-&lt;h3 id="org266e4ae"&gt;The Device&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org266e4ae"&gt;
+&lt;div id="outline-container-orgb564e00" class="outline-3"&gt;
+&lt;h3 id="orgb564e00"&gt;The Device&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb564e00"&gt;
 &lt;p&gt;
 This is the name of the device in &lt;code&gt;/dev&lt;/code&gt; that represents the drive to mount. 
 &lt;/p&gt;
@@ -94,7 +94,7 @@ This one is generally useful if you know the model of the drive.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="notecard" id="org99eeb63"&gt;
+&lt;div class="notecard"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note to future self:&lt;/b&gt;&lt;/b&gt; Consider making this an environment variable so you don't have to edit it if you switch USB ports.
 &lt;/p&gt;
@@ -128,9 +128,9 @@ To be nice we'll let the user know what we're using.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2e40291" class="outline-3"&gt;
-&lt;h3 id="org2e40291"&gt;The Mapping Name&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2e40291"&gt;
+&lt;div id="outline-container-orgc3b0339" class="outline-3"&gt;
+&lt;h3 id="orgc3b0339"&gt;The Mapping Name&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc3b0339"&gt;
 &lt;p&gt;
 This is the name that will be put into &lt;code&gt;/dev/mapper/&lt;/code&gt; which &lt;code&gt;mount&lt;/code&gt; will use to mount the drive.
 &lt;/p&gt;
@@ -145,9 +145,9 @@ This is the name that will be put into &lt;code&gt;/dev/mapper/&lt;/code&gt; whi
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgde30ca9" class="outline-3"&gt;
-&lt;h3 id="orgde30ca9"&gt;Mount Path&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgde30ca9"&gt;
+&lt;div id="outline-container-org7d83e5a" class="outline-3"&gt;
+&lt;h3 id="org7d83e5a"&gt;Mount Path&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7d83e5a"&gt;
 &lt;p&gt;
 Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".
 &lt;/p&gt;
@@ -189,9 +189,9 @@ If the folder doesn't exist we'll create it.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge3f55c3" class="outline-3"&gt;
-&lt;h3 id="orge3f55c3"&gt;Mounting the Drive&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge3f55c3"&gt;
+&lt;div id="outline-container-org633ea43" class="outline-3"&gt;
+&lt;h3 id="org633ea43"&gt;Mounting the Drive&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org633ea43"&gt;
 &lt;p&gt;
 First we'll use &lt;code&gt;cryptsetup&lt;/code&gt; to decrypt the drive and put the mapping into &lt;code&gt;/dev/mapper/&lt;/code&gt;.
 &lt;/p&gt;
@@ -212,9 +212,9 @@ Now we'll mount the device to a folder.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3204cc6" class="outline-2"&gt;
-&lt;h2 id="org3204cc6"&gt;A Help Printer&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3204cc6"&gt;
+&lt;div id="outline-container-orgc57b0f1" class="outline-2"&gt;
+&lt;h2 id="orgc57b0f1"&gt;A Help Printer&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc57b0f1"&gt;
 &lt;p&gt;
 This is just a function to print a help string.
 &lt;/p&gt;
@@ -230,9 +230,9 @@ This is just a function to print a help string.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org370ba8d" class="outline-2"&gt;
-&lt;h2 id="org370ba8d"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org370ba8d"&gt;
+&lt;div id="outline-container-orgd7087ab" class="outline-2"&gt;
+&lt;h2 id="orgd7087ab"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd7087ab"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/not.html"&gt;fish Not&lt;/a&gt;: Negate the exit status of a job (&lt;code&gt;test&lt;/code&gt; in this case).&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;fish test&lt;/a&gt;: The &lt;code&gt;test&lt;/code&gt; command.&lt;/li&gt;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about org-mode)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/org-mode.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about org-mode)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/org-mode.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 28 Jun 2023 20:59:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>rst2org Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; rst2org -d &lt;span class="s2"&gt;"Convert text file to org"&lt;/span&gt; --argument-names sourcefile
+</copyright><lastBuildDate>Fri, 03 May 2024 22:10:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>rst2org Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; rst2org -d &lt;span class="s2"&gt;"Convert text file to org"&lt;/span&gt; --argument-names sourcefile
     &lt;span class="k"&gt;set&lt;/span&gt; target &lt;span class="nv"&gt;$(&lt;/span&gt;path change-extension org &lt;span class="nv"&gt;$sourcefile&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
     pandoc --standalone &lt;span class="nv"&gt;$sourcefile&lt;/span&gt; --output &lt;span class="nv"&gt;$target&lt;/span&gt; --wrap&lt;span class="o"&gt;=&lt;/span&gt;none
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -15,9 +15,9 @@
 This function will convert a text file to an org file using pandoc. I called it &lt;code&gt;rst2org&lt;/code&gt; because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org4161825" class="outline-2"&gt;
-&lt;h2 id="org4161825"&gt;What It's Doing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4161825"&gt;
+&lt;div id="outline-container-org5094801" class="outline-2"&gt;
+&lt;h2 id="org5094801"&gt;What It's Doing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5094801"&gt;
 &lt;p&gt;
 The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.
 &lt;/p&gt;
@@ -30,9 +30,9 @@ The first thing the function does is change the file extension from whatever it 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0d91875" class="outline-2"&gt;
-&lt;h2 id="org0d91875"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0d91875"&gt;
+&lt;div id="outline-container-org9ac2479" class="outline-2"&gt;
+&lt;h2 id="org9ac2479"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9ac2479"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: &lt;a href="https://stackoverflow.com/a/62990248"&gt;https://stackoverflow.com/a/62990248&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

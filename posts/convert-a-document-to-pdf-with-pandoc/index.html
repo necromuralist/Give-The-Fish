@@ -69,25 +69,25 @@
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
-<div id="table-of-contents" role="doc-toc">
+<div id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="index.html#org417621a">What's This About?</a></li>
-<li><a href="index.html#org566f97a">Headers</a>
+<li><a href="index.html#org7de1184">What's This About?</a></li>
+<li><a href="index.html#org9ed037c">Headers</a>
 <ul>
-<li><a href="index.html#orgd256c45">Libertinus</a></li>
-<li><a href="index.html#org7eaf241">Pagella</a></li>
+<li><a href="index.html#orgca23fc8">Libertinus</a></li>
+<li><a href="index.html#org14bd3de">Pagella</a></li>
 </ul>
 </li>
-<li><a href="index.html#org1077a56">The Function</a></li>
-<li><a href="index.html#orgfcf3c5c">Links</a></li>
+<li><a href="index.html#orge8c76d7">The Function</a></li>
+<li><a href="index.html#org33755d9">Links</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org417621a">
-<h2 id="org417621a">What's This About?</h2>
-<div class="outline-text-2" id="text-org417621a">
+<div class="outline-2" id="outline-container-org7de1184">
+<h2 id="org7de1184">What's This About?</h2>
+<div class="outline-text-2" id="text-org7de1184">
 <p>This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.</p>
 <p>Pandoc will convert an ePub or other formatted file to PDF (using <i>pdflatex</i>) without much configuration</p>
 <div class="highlight">
@@ -96,15 +96,15 @@
 <p>but it defaults to using <a href="https://en.wikipedia.org/wiki/Computer_Modern">Computer Modern</a>, making it look like those old Springer books in the library, so I thought I'd create this function to document how to change the font in case I forget later on.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org566f97a">
-<h2 id="org566f97a">Headers</h2>
-<div class="outline-text-2" id="text-org566f97a">
+<div class="outline-2" id="outline-container-org9ed037c">
+<h2 id="org9ed037c">Headers</h2>
+<div class="outline-text-2" id="text-org9ed037c">
 <p>You can set the font as a command line argument to pandoc (e.g. <code>-V fontfamily:libertine</code> ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.</p>
 <p>The function is going to assume that the pagella snippet is in a folder in <code>~/.config/fish/extras/</code> which I created using a symlink to the <code>extras</code> folder in this repository, but it'll also take a path to the header if it's given.</p>
 </div>
-<div class="outline-3" id="outline-container-orgd256c45">
-<h3 id="orgd256c45">Libertinus</h3>
-<div class="outline-text-3" id="text-orgd256c45">
+<div class="outline-3" id="outline-container-orgca23fc8">
+<h3 id="orgca23fc8">Libertinus</h3>
+<div class="outline-text-3" id="text-orgca23fc8">
 <p>This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.</p>
 <div class="highlight">
 <pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>libertinus<span class="nb">}</span>
@@ -114,9 +114,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org7eaf241">
-<h3 id="org7eaf241">Pagella</h3>
-<div class="outline-text-3" id="text-org7eaf241">
+<div class="outline-3" id="outline-container-org14bd3de">
+<h3 id="org14bd3de">Pagella</h3>
+<div class="outline-text-3" id="text-org14bd3de">
 <p>The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.</p>
 <div class="highlight">
 <pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>tgpagella<span class="nb">}</span>
@@ -124,15 +124,15 @@
 <span class="k">\usepackage</span><span class="nb">{</span>sectsty<span class="nb">}</span>
 <span class="k">\sectionfont</span><span class="nb">{</span><span class="k">\clearpage</span><span class="nb">}</span>
 </pre></div>
-<div class="notecard" id="org1a28b0c">
+<div class="notecard">
 <p><b>Note:</b> I originally accidentally put <i>pagella</i> and not <i>tgpagella</i> which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's <i>sectsty</i> not <i>secsty</i>.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org1077a56">
-<h2 id="org1077a56">The Function</h2>
-<div class="outline-text-2" id="text-org1077a56">
+<div class="outline-2" id="outline-container-orge8c76d7">
+<h2 id="orge8c76d7">The Function</h2>
+<div class="outline-text-2" id="text-orge8c76d7">
 <p>Nothing fancy here, it just adds the extra header file. I originally added the <code>--table-of-contents</code> flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> doc2pdf -d <span class="s2">"Convert document to pdf with pandoc"</span> --argument-names SOURCE HEADER
@@ -147,9 +147,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgfcf3c5c">
-<h2 id="orgfcf3c5c">Links</h2>
-<div class="outline-text-2" id="text-orgfcf3c5c">
+<div class="outline-2" id="outline-container-org33755d9">
+<h2 id="org33755d9">Links</h2>
+<div class="outline-text-2" id="text-org33755d9">
 <ul class="org-ul">
 <li><a href="https://learnbyexample.github.io/customizing-pandoc/">learnbyexample</a> : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output</li>
 <li><a href="https://tug.org/FontCatalogue/texgyrepagella/">Latex Font Catalogue</a> : Tex Gyre Pagella page</li>

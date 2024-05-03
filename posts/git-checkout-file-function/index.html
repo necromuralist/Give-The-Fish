@@ -67,20 +67,20 @@
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
-<div id="table-of-contents" role="doc-toc">
+<div id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="index.html#org1a8abe9">Declaring the Function</a></li>
-<li><a href="index.html#org5f33abe">Checkout the File</a></li>
-<li><a href="index.html#org265b8eb">Check If It Succeeded</a></li>
-<li><a href="index.html#orgcc45d42">References</a></li>
+<li><a href="index.html#org6cfb606">Declaring the Function</a></li>
+<li><a href="index.html#org5aa84f1">Checkout the File</a></li>
+<li><a href="index.html#orgb573eed">Check If It Succeeded</a></li>
+<li><a href="index.html#org37f113a">References</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org1a8abe9">
-<h2 id="org1a8abe9">Declaring the Function</h2>
-<div class="outline-text-2" id="text-org1a8abe9">
+<div class="outline-2" id="outline-container-org6cfb606">
+<h2 id="org6cfb606">Declaring the Function</h2>
+<div class="outline-text-2" id="text-org6cfb606">
 <p>This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> gitmefile -d <span class="s2">"Checkout folder or file from another branch"</span> <span class="se">\</span>
@@ -89,18 +89,18 @@
 <p>I originally called <code>PATH_TO_FILE</code> but that of course clobbered the <code>PATH</code> variable and all of a sudden it couldn't find git.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5f33abe">
-<h2 id="org5f33abe">Checkout the File</h2>
-<div class="outline-text-2" id="text-org5f33abe">
+<div class="outline-2" id="outline-container-org5aa84f1">
+<h2 id="org5aa84f1">Checkout the File</h2>
+<div class="outline-text-2" id="text-org5aa84f1">
 <p>This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.</p>
 <div class="highlight">
 <pre><span></span>git checkout <span class="nv">$BRANCH</span> -- <span class="nv">$PATH_TO_FILE</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org265b8eb">
-<h2 id="org265b8eb">Check If It Succeeded</h2>
-<div class="outline-text-2" id="text-org265b8eb">
+<div class="outline-2" id="outline-container-orgb573eed">
+<h2 id="orgb573eed">Check If It Succeeded</h2>
+<div class="outline-text-2" id="text-orgb573eed">
 <p>The git error message when you pass it an unknown branch is <code>fatal: invalid reference: &lt;branch&gt;</code> which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="nv">$status</span> -ne 0
@@ -136,9 +136,9 @@
 </table>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgcc45d42">
-<h2 id="orgcc45d42">References</h2>
-<div class="outline-text-2" id="text-orgcc45d42">
+<div class="outline-2" id="outline-container-org37f113a">
+<h2 id="org37f113a">References</h2>
+<div class="outline-text-2" id="text-org37f113a">
 <ul class="org-ul">
 <li>string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: <a href="https://fishshell.com/docs/current/cmds/string-match.html">https://fishshell.com/docs/current/cmds/string-match.html</a></li>
 <li>test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: <a href="https://fishshell.com/docs/current/cmds/test.html">https://fishshell.com/docs/current/cmds/test.html</a></li>

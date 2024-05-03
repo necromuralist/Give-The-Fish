@@ -5,15 +5,15 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 30 Apr 2024 21:43:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Abbreviations: Mother Ship</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Fri, 03 May 2024 22:10:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Abbreviations: Mother Ship</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
 &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
 &lt;/p&gt;
 
-&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html#orgd76bd6c"&gt;Mount Drives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html#orgf664ad7"&gt;Mount Drives&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -26,9 +26,9 @@ This tangle is for extra configurations that are meant for PCs with a GUI that a
 I'm putting it in &lt;code&gt;dingehaufen/conf.d/&lt;/code&gt; so it should be linked to in &lt;code&gt;.config/fish/conf.d/&lt;/code&gt; for PCs that need it.
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgd76bd6c" class="outline-2"&gt;
-&lt;h2 id="orgd76bd6c"&gt;Mount Drives&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd76bd6c"&gt;
+&lt;div id="outline-container-orgf664ad7" class="outline-2"&gt;
+&lt;h2 id="orgf664ad7"&gt;Mount Drives&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf664ad7"&gt;
 &lt;p&gt;
 This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.
 &lt;/p&gt;
@@ -36,11 +36,11 @@ This is an abbreviation that mounts both the cryfs folders and the external (LUK
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- md &lt;span class="s2"&gt;"mountcryfs; mount-data"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>abbreviations</category><category>configuration</category><category>version-0</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</guid><pubDate>Thu, 25 Apr 2024 21:22:03 GMT</pubDate></item><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>abbreviations</category><category>configuration</category><category>version-0</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</guid><pubDate>Thu, 25 Apr 2024 21:22:03 GMT</pubDate></item><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html#orge727859"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html#org1a7990d"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -57,53 +57,53 @@ The additions will be in &lt;code&gt;dingehaufen/conf.d/extra_paths.fish&lt;/cod
 contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.local/bin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$fish_user_paths&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--universal&lt;span class="w"&gt; &lt;/span&gt;--append&lt;span class="w"&gt; &lt;/span&gt;fish_user_paths&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.local/bin
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div id="outline-container-orge727859" class="outline-2"&gt;
-&lt;h2 id="orge727859"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge727859"&gt;
+&lt;div id="outline-container-org1a7990d" class="outline-2"&gt;
+&lt;h2 id="org1a7990d"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a7990d"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/a/61882414"&gt;Stack Overflow&lt;/a&gt;: Answer where I got the fish syntax.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><category>fish</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</guid><pubDate>Tue, 02 Apr 2024 22:36:42 GMT</pubDate></item><item><title>Emacs init.el</title><link>https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>configuration</category><category>fish</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</guid><pubDate>Tue, 02 Apr 2024 22:36:42 GMT</pubDate></item><item><title>Emacs init.el</title><link>https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orga864b24"&gt;Tangle Source&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5ee3eb3"&gt;Package Management&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org6761e80"&gt;Pyvenv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org1652da1"&gt;Emacs Settings&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org60389cf"&gt;Tangle Source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org723dbfe"&gt;Package Management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgc500f6e"&gt;Pyvenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgfe5bcf0"&gt;Emacs Settings&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5d67fb9"&gt;File Locks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org9943cde"&gt;Toggle Input Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orged7a88b"&gt;File Locks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org994a7e4"&gt;Toggle Input Mode&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org85f27c6"&gt;Tramp Mode&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org184f070"&gt;Tramp Mode&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb76c288"&gt;Use SSH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org9a7bd84"&gt;No Backups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org8a159ba"&gt;Use SSH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgfcad8a0"&gt;No Backups&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5797e24"&gt;God Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge62a42d"&gt;Python and elpy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgc0671b8"&gt;Emacs Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org7104985"&gt;Fish&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org1c86017"&gt;Org-mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org0540dc8"&gt;org-export python mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgfddeac4"&gt;web-mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org4b1bc28"&gt;auto-complete&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgc641d95"&gt;general text&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgd3c712f"&gt;javascript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgadf662d"&gt;org-babel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org56cac75"&gt;Feature Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org51ad33f"&gt;yaml&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org80228cc"&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org4547e18"&gt;Bats&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org8ce13e9"&gt;Backups&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org23b2f68"&gt;Markdown Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org2dd9068"&gt;Dockerfile Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org13a8923"&gt;Flycheck&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org2f310b2"&gt;Keychain&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb880344"&gt;Hideshow-Org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org8674986"&gt;God Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgaad8d59"&gt;Python and elpy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge006d13"&gt;Emacs Jupyter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org605e991"&gt;Fish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org726520e"&gt;Org-mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5016830"&gt;org-export python mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orga00a3bb"&gt;web-mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgd85a824"&gt;auto-complete&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgbecf2d8"&gt;general text&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org914e467"&gt;javascript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org91ee1f9"&gt;org-babel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5855e6e"&gt;Feature Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org272bef9"&gt;yaml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org200d90f"&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org3066f43"&gt;Bats&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org12a7e7c"&gt;Backups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge675578"&gt;Markdown Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org4a706be"&gt;Dockerfile Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org656d6b9"&gt;Flycheck&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgabfe169"&gt;Keychain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org35ddb03"&gt;Hideshow-Org&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -116,16 +116,16 @@ This is an emacs configuration file. I had this in another repository and have b
 The tangle creates a file &lt;code&gt;give-the-fish/dingehaufen/init.el&lt;/code&gt; that you should copy or link into the right place &lt;code&gt;~/.emacs.d&lt;/code&gt; right now.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="orga1db474"&gt;
+&lt;div class="notecard"&gt;
 &lt;p&gt;
 At some post I should look into breaking up the configuration (see &lt;a href="https://emacs.stackexchange.com/a/18441"&gt;https://emacs.stackexchange.com/a/18441&lt;/a&gt; for an example).
 &lt;/p&gt;
 
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga864b24" class="outline-2"&gt;
-&lt;h2 id="orga864b24"&gt;Tangle Source&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga864b24"&gt;
+&lt;div id="outline-container-org60389cf" class="outline-2"&gt;
+&lt;h2 id="org60389cf"&gt;Tangle Source&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org60389cf"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;&amp;lt;package-management&amp;gt;&amp;gt;&lt;/span&gt;
 
 &lt;span class="nv"&gt;&amp;lt;&amp;lt;activate-pyvenv&amp;gt;&amp;gt;&lt;/span&gt;
@@ -155,8 +155,8 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 &lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;js2-bounce-indent-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;org-export-backends&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;ascii&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;icalendar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;latex&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;org&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;package-selected-packages&lt;/span&gt;
-&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;quote&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;htmlize&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ox-nikola&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ox-rst&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;web-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;swiper&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;smex&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;paredit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;magit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;jedi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ido-ubiquitous&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;idle-highlight-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;god-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fuzzy&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;feature-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;csv-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;autopair&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ac-js2&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;	 &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;quote&lt;/span&gt;
+&lt;span class="w"&gt;	  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;htmlize&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ox-nikola&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ox-rst&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;web-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;swiper&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;smex&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;paredit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;magit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;jedi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ido-ubiquitous&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;idle-highlight-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;god-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fuzzy&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;feature-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;csv-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;autopair&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ac-js2&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
 
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;custom-set-faces&lt;/span&gt;
 &lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="c1"&gt;;; custom-set-faces was added by Custom.&lt;/span&gt;
@@ -181,17 +181,17 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;;; ipython shell&lt;/span&gt;
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;python-shell-interpreter&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"ipython"&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nv"&gt;python-shell-interpreter-args&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"-i"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	    &lt;/span&gt;&lt;span class="nv"&gt;python-shell-interpreter-args&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"-i"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;&amp;lt;web-mode&amp;gt;&amp;gt;&lt;/span&gt;
 
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;&amp;lt;auto-complete&amp;gt;&amp;gt;&lt;/span&gt;
 
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-global-minor-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;select-electric-pair-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;electric-pair-mode&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;memq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;major-mode&lt;/span&gt;
-&lt;span class="w"&gt;                           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'web-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'js2-mode&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;electric-pair-mode&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="w"&gt;	  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;memq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;major-mode&lt;/span&gt;
+&lt;span class="w"&gt;			   &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'web-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'js2-mode&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;	    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;electric-pair-mode&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
 
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;select-electric-pair-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -241,9 +241,9 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5ee3eb3" class="outline-2"&gt;
-&lt;h2 id="org5ee3eb3"&gt;Package Management&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5ee3eb3"&gt;
+&lt;div id="outline-container-org723dbfe" class="outline-2"&gt;
+&lt;h2 id="org723dbfe"&gt;Package Management&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org723dbfe"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; emacs package management&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -259,9 +259,9 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6761e80" class="outline-2"&gt;
-&lt;h2 id="org6761e80"&gt;Pyvenv&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6761e80"&gt;
+&lt;div id="outline-container-orgc500f6e" class="outline-2"&gt;
+&lt;h2 id="orgc500f6e"&gt;Pyvenv&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc500f6e"&gt;
 &lt;p&gt;
 To prevent errors when emacs starts up and tries to load jupyter (for emacs-jupyter) we need &lt;code&gt;jupyter&lt;/code&gt; to be on the path. Now that debian and ubuntu don't want you to install python packages globally we need another way. I had installed it with &lt;a href="https://github.com/pypa/pipx"&gt;pipx&lt;/a&gt;, which does work, but pipx doesn't doesn't install standalone libraries and sometimes breaks when trying to install dependencies so I think for this case it's better to avoid it and instead use a virtual-environment. Since it has to be activated before anything else that uses python packages, activating the environment should be put fairly early on in the &lt;code&gt;init.el&lt;/code&gt; file.
 &lt;/p&gt;
@@ -275,9 +275,9 @@ This assumes that there's a virtual-environment named &lt;code&gt;emacs-environm
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1652da1" class="outline-2"&gt;
-&lt;h2 id="org1652da1"&gt;Emacs Settings&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1652da1"&gt;
+&lt;div id="outline-container-orgfe5bcf0" class="outline-2"&gt;
+&lt;h2 id="orgfe5bcf0"&gt;Emacs Settings&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfe5bcf0"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; show column-numbers&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;column-number-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -312,9 +312,9 @@ This assumes that there's a virtual-environment named &lt;code&gt;emacs-environm
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ring-bell-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'ignore&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5d67fb9" class="outline-3"&gt;
-&lt;h3 id="org5d67fb9"&gt;File Locks&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5d67fb9"&gt;
+&lt;div id="outline-container-orged7a88b" class="outline-3"&gt;
+&lt;h3 id="orged7a88b"&gt;File Locks&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orged7a88b"&gt;
 &lt;p&gt;
 A lock got corrupted once in the cryfs directory, making the editing file unreadable. You can fix it by copying everything but the corrupted file out, destroying and re-creating the cryfs mount and copying the files back in, but hopefully this will fix it. It does mean that two people could edit the same file and cause problems, but oh, well.
 &lt;/p&gt;
@@ -323,9 +323,9 @@ A lock got corrupted once in the cryfs directory, making the editing file unread
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9943cde" class="outline-3"&gt;
-&lt;h3 id="org9943cde"&gt;Toggle Input Mode&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9943cde"&gt;
+&lt;div id="outline-container-org994a7e4" class="outline-3"&gt;
+&lt;h3 id="org994a7e4"&gt;Toggle Input Mode&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org994a7e4"&gt;
 &lt;p&gt;
 This allows you to switch to latex input and then back using &lt;code&gt;C-\&lt;/code&gt;. This is useful to embed special characters. Although you could probably just do the same thing with math mode if you want to wait until exporting.
 &lt;/p&gt;
@@ -335,39 +335,39 @@ This allows you to switch to latex input and then back using &lt;code&gt;C-\&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org85f27c6" class="outline-2"&gt;
-&lt;h2 id="org85f27c6"&gt;Tramp Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org85f27c6"&gt;
+&lt;div id="outline-container-org184f070" class="outline-2"&gt;
+&lt;h2 id="org184f070"&gt;Tramp Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org184f070"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb76c288" class="outline-3"&gt;
-&lt;h3 id="orgb76c288"&gt;Use SSH&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb76c288"&gt;
+&lt;div id="outline-container-org8a159ba" class="outline-3"&gt;
+&lt;h3 id="org8a159ba"&gt;Use SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8a159ba"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; tramp mode&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tramp-default-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"ssh"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9a7bd84" class="outline-3"&gt;
-&lt;h3 id="org9a7bd84"&gt;No Backups&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9a7bd84"&gt;
+&lt;div id="outline-container-orgfcad8a0" class="outline-3"&gt;
+&lt;h3 id="orgfcad8a0"&gt;No Backups&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfcad8a0"&gt;
 &lt;p&gt;
 This is from the &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html"&gt;emacs manual&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5709497" class="outline-4"&gt;
-&lt;h4 id="org5709497"&gt;Turn Off For Tramp Only&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org5709497"&gt;
+&lt;div id="outline-container-org61d8696" class="outline-4"&gt;
+&lt;h4 id="org61d8696"&gt;Turn Off For Tramp Only&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org61d8696"&gt;
 &lt;p&gt;
 The configuration is currently saving backups to a local directory, so when I use tramp I get warnings about it. It doesn't tell you why but according to the &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html"&gt;emacs wiki&lt;/a&gt; this is a potential security leak (although probably not in the way I'm using it). Anyway, I've never used the backups so I'll just disable them for tramp.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; disable tramp-backups&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'backup-directory-alist&lt;/span&gt;
-&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cons&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tramp-file-name-regexp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;	     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cons&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tramp-file-name-regexp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org39a6e51"&gt;
+&lt;div class="notecard"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; This turns out to solve the wrong problem so I added another rule in the next section.
 &lt;/p&gt;
@@ -376,29 +376,29 @@ The configuration is currently saving backups to a local directory, so when I us
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org17aa169" class="outline-4"&gt;
-&lt;h4 id="org17aa169"&gt;Turn Off For Sudo&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org17aa169"&gt;
+&lt;div id="outline-container-org9ea6861" class="outline-4"&gt;
+&lt;h4 id="org9ea6861"&gt;Turn Off For Sudo&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org9ea6861"&gt;
 &lt;p&gt;
 Turning off the backups for tramp only fixed one case, but it turned out that the thing that made me look into this was using &lt;code&gt;sudo&lt;/code&gt; on my local machine to opne the &lt;code&gt;/etc/hosts&lt;/code&gt; file so I was actually solving the wrong (or only part of the) problem. This next bit is supposed to turn off all backups where you use &lt;code&gt;sudo&lt;/code&gt;. So it probably doesn't belong under tramp any more. Maybe I'll move it later
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;backup-enable-predicate&lt;/span&gt;
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;normal-backup-enable-predicate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt;
-&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;file-remote-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'method&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;stringp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;method&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;member&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"su"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"sudo"&lt;/span&gt;&lt;span class="p"&gt;))))))))&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;normal-backup-enable-predicate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt;
+&lt;span class="w"&gt;	      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;file-remote-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'method&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;		&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;stringp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;method&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;		  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;member&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"su"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"sudo"&lt;/span&gt;&lt;span class="p"&gt;))))))))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5797e24" class="outline-2"&gt;
-&lt;h2 id="org5797e24"&gt;God Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5797e24"&gt;
+&lt;div id="outline-container-org8674986" class="outline-2"&gt;
+&lt;h2 id="org8674986"&gt;God Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8674986"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; god-mode&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'god-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&amp;lt;escape&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'god-mode-all&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -411,16 +411,16 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;my-update-cursor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;cursor-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;or&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;god-local-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;buffer-read-only&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;                        &lt;/span&gt;&lt;span class="ss"&gt;'box&lt;/span&gt;
-&lt;span class="w"&gt;                      &lt;/span&gt;&lt;span class="ss"&gt;'bar&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;			&lt;/span&gt;&lt;span class="ss"&gt;'box&lt;/span&gt;
+&lt;span class="w"&gt;		      &lt;/span&gt;&lt;span class="ss"&gt;'bar&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;c/god-mode-update-cursor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;257&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;length&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defined-colors&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;cond&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;god-local-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;progn&lt;/span&gt;
-&lt;span class="w"&gt;                            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-face-background&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'mode-line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"white"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#e9e2cb"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;                            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-face-background&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'mode-line-inactive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"white"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#e9e2cb"&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;progn&lt;/span&gt;
-&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-face-background&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'mode-line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"black"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#0a2832"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-face-background&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'mode-line-inactive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"black"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#0a2832"&lt;/span&gt;&lt;span class="p"&gt;)))))))&lt;/span&gt;
+&lt;span class="w"&gt;			    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-face-background&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'mode-line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"white"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#e9e2cb"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;			    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-face-background&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'mode-line-inactive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"white"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#e9e2cb"&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;	  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;progn&lt;/span&gt;
+&lt;span class="w"&gt;	       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-face-background&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'mode-line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"black"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#0a2832"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;	       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-face-background&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'mode-line-inactive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;limited-colors-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"black"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#0a2832"&lt;/span&gt;&lt;span class="p"&gt;)))))))&lt;/span&gt;
 
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'god-mode-enabled-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'my-update-cursor&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'god-mode-disabled-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'my-update-cursor&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -446,26 +446,26 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;span class="c1"&gt;;; this adds universal quick and dirty code-folding that works&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defvar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;hs-special-modes-alist&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;mapcar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'purecopy&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;c-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"}"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/[*/]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;c++-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"}"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/[*/]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;bibtex-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"@&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;S(*&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;s(&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;)"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;java-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"}"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/[*/]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;js2-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"}"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/[*/]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;	  &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;c-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"}"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/[*/]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;c++-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"}"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/[*/]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;bibtex-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"@&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;S(*&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;s(&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;)"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;	    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;java-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"}"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/[*/]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;js2-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"{"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"}"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"/[*/]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
 
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;toggle-selective-display&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;column&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;interactive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"P"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;set-selective-display&lt;/span&gt;
 &lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;or&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;column&lt;/span&gt;
 &lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;unless&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;selective-display&lt;/span&gt;
-&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;current-column&lt;/span&gt;&lt;span class="p"&gt;))))))&lt;/span&gt;
+&lt;span class="w"&gt;	 &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;current-column&lt;/span&gt;&lt;span class="p"&gt;))))))&lt;/span&gt;
 
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;toggle-hiding&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;column&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;interactive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"P"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;hs-minor-mode&lt;/span&gt;
 &lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;condition-case&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;
-&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;hs-toggle-hiding&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;error&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;hs-show-all&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;	      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;hs-toggle-hiding&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;error&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;	  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;hs-show-all&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;toggle-selective-display&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;column&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;load-library&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"hideshow"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"C-+"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'toggle-hiding&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -476,9 +476,9 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge62a42d" class="outline-2"&gt;
-&lt;h2 id="orge62a42d"&gt;Python and elpy&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge62a42d"&gt;
+&lt;div id="outline-container-orgaad8d59" class="outline-2"&gt;
+&lt;h2 id="orgaad8d59"&gt;Python and elpy&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgaad8d59"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; elpy&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;elpy&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
@@ -489,16 +489,16 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc0671b8" class="outline-2"&gt;
-&lt;h2 id="orgc0671b8"&gt;Emacs Jupyter&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc0671b8"&gt;
+&lt;div id="outline-container-orge006d13" class="outline-2"&gt;
+&lt;h2 id="orge006d13"&gt;Emacs Jupyter&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge006d13"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;babel&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;override&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt; &lt;span class="s2"&gt;"python"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7104985" class="outline-2"&gt;
-&lt;h2 id="org7104985"&gt;Fish&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7104985"&gt;
+&lt;div id="outline-container-org605e991" class="outline-2"&gt;
+&lt;h2 id="org605e991"&gt;Fish&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org605e991"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; fish functions&lt;/span&gt;
 &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sh-basic-offset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sh-indentation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -506,9 +506,9 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1c86017" class="outline-2"&gt;
-&lt;h2 id="org1c86017"&gt;Org-mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1c86017"&gt;
+&lt;div id="outline-container-org726520e" class="outline-2"&gt;
+&lt;h2 id="org726520e"&gt;Org-mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org726520e"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; org-mode&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'org&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;global-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\C&lt;/span&gt;&lt;span class="s"&gt;-cl"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'org-store-link&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -523,18 +523,18 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;global-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\C&lt;/span&gt;&lt;span class="s"&gt;-cc"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'org-capture&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;org-capture-templates&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"b"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Bug"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;file+headline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"~/documents/roku-chiji/repository/bugs.org"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Bugs"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="s"&gt;"* BUG %?&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;  %i&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;  %a"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"b"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Bug"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;entry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;file+headline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"~/documents/roku-chiji/repository/bugs.org"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Bugs"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	   &lt;/span&gt;&lt;span class="s"&gt;"* BUG %?&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;  %i&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;  %a"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; todo-state names&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;org-todo-keywords&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;sequence&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"TOMORROW"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"TODAY"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"DOING"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"|"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"DONE"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;	  &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;sequence&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"TOMORROW"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"TODAY"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"DOING"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"|"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"DONE"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; org clean-outlines&lt;/span&gt;
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;org-startup-indented&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;org-hide-leading-stars&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;org-indent-indentation-per-level&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="nv"&gt;org-hide-leading-stars&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="nv"&gt;org-indent-indentation-per-level&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; word-wrap&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-visual-line-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -547,9 +547,9 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0540dc8" class="outline-2"&gt;
-&lt;h2 id="org0540dc8"&gt;org-export python mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0540dc8"&gt;
+&lt;div id="outline-container-org5016830" class="outline-2"&gt;
+&lt;h2 id="org5016830"&gt;org-export python mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5016830"&gt;
 &lt;p&gt;
 This just stops emitting the message that emacs is using a default 4 spaces when exporting python.
 &lt;/p&gt;
@@ -559,9 +559,9 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgfddeac4" class="outline-2"&gt;
-&lt;h2 id="orgfddeac4"&gt;web-mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfddeac4"&gt;
+&lt;div id="outline-container-orga00a3bb" class="outline-2"&gt;
+&lt;h2 id="orga00a3bb"&gt;web-mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga00a3bb"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; web-mode&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'web-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.html?&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;web-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -582,17 +582,17 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;web-mode-enable-current-column-highlight&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;web-mode-enable-current-element-highlight&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;web-mode-engines-alist&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"jinja"&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.html&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"jinja"&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.html&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'web-mode-hook&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="ss"&gt;'my-web-mode-hook&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4b1bc28" class="outline-2"&gt;
-&lt;h2 id="org4b1bc28"&gt;auto-complete&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4b1bc28"&gt;
+&lt;div id="outline-container-orgd85a824" class="outline-2"&gt;
+&lt;h2 id="orgd85a824"&gt;auto-complete&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd85a824"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; auto-complete&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; (defun turn-on-autocomplete () (auto-complete-mode 1))&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'load-path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"~/.emacs.d/lisp"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -605,26 +605,26 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc641d95" class="outline-2"&gt;
-&lt;h2 id="orgc641d95"&gt;general text&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc641d95"&gt;
+&lt;div id="outline-container-orgbecf2d8" class="outline-2"&gt;
+&lt;h2 id="orgbecf2d8"&gt;general text&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbecf2d8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; increase/decrease text size&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"C-c C-+"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'text-scale-increase&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"C--"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'text-scale-decrease&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd3c712f" class="outline-2"&gt;
-&lt;h2 id="orgd3c712f"&gt;javascript&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd3c712f"&gt;
+&lt;div id="outline-container-org914e467" class="outline-2"&gt;
+&lt;h2 id="org914e467"&gt;javascript&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org914e467"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; js2&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.js&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;js2-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgadf662d" class="outline-2"&gt;
-&lt;h2 id="orgadf662d"&gt;org-babel&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgadf662d"&gt;
+&lt;div id="outline-container-org91ee1f9" class="outline-2"&gt;
+&lt;h2 id="org91ee1f9"&gt;org-babel&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org91ee1f9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; org-babel&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'ob-js&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -663,9 +663,9 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; noweb expansion only when you tangle&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;org-babel-default-header-args&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cons&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;:noweb&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"tangle"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;assq-delete-all&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:noweb&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;org-babel-default-header-args&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cons&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;:noweb&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"tangle"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;assq-delete-all&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:noweb&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;org-babel-default-header-args&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; syntax highlighting in org-files&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;org-src-fontify-natively&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -692,34 +692,34 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org56cac75" class="outline-2"&gt;
-&lt;h2 id="org56cac75"&gt;Feature Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org56cac75"&gt;
+&lt;div id="outline-container-org5855e6e" class="outline-2"&gt;
+&lt;h2 id="org5855e6e"&gt;Feature Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5855e6e"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.feature"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;feature-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org51ad33f" class="outline-2"&gt;
-&lt;h2 id="org51ad33f"&gt;yaml&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org51ad33f"&gt;
+&lt;div id="outline-container-org272bef9" class="outline-2"&gt;
+&lt;h2 id="org272bef9"&gt;yaml&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org272bef9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'yaml-mode-hook&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;yaml-mode-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\C&lt;/span&gt;&lt;span class="s"&gt;-m"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'newline-and-indent&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;	  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="w"&gt;	    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;yaml-mode-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\C&lt;/span&gt;&lt;span class="s"&gt;-m"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'newline-and-indent&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org80228cc" class="outline-2"&gt;
-&lt;h2 id="org80228cc"&gt;Vue.js&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org80228cc"&gt;
+&lt;div id="outline-container-org200d90f" class="outline-2"&gt;
+&lt;h2 id="org200d90f"&gt;Vue.js&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org200d90f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; setup files ending in “.vue” to open in vue-mode&lt;/span&gt;
 &lt;span class="c1"&gt;;; (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org4547e18" class="outline-2"&gt;
-&lt;h2 id="org4547e18"&gt;Bats&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4547e18"&gt;
+&lt;div id="outline-container-org3066f43" class="outline-2"&gt;
+&lt;h2 id="org3066f43"&gt;Bats&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3066f43"&gt;
 &lt;p&gt;
 The Bash Automated Test System mode.
 &lt;/p&gt;
@@ -769,9 +769,9 @@ There's a ticket on github to add this feature (?) to bats, but the old develope
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8ce13e9" class="outline-2"&gt;
-&lt;h2 id="org8ce13e9"&gt;Backups&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8ce13e9"&gt;
+&lt;div id="outline-container-org12a7e7c" class="outline-2"&gt;
+&lt;h2 id="org12a7e7c"&gt;Backups&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org12a7e7c"&gt;
 &lt;p&gt;
 From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs Wiki&lt;/a&gt;.
 &lt;/p&gt;
@@ -782,30 +782,30 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org23b2f68" class="outline-2"&gt;
-&lt;h2 id="org23b2f68"&gt;Markdown Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org23b2f68"&gt;
+&lt;div id="outline-container-orge675578" class="outline-2"&gt;
+&lt;h2 id="orge675578"&gt;Markdown Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge675578"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;markdown-mode&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"README&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.md&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;gfm-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.md&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;markdown-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.markdown&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;markdown-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;	 &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.md&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;markdown-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	 &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.markdown&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;markdown-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:init&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;markdown-command&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"pandoc"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2dd9068" class="outline-2"&gt;
-&lt;h2 id="org2dd9068"&gt;Dockerfile Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2dd9068"&gt;
+&lt;div id="outline-container-org4a706be" class="outline-2"&gt;
+&lt;h2 id="org4a706be"&gt;Dockerfile Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4a706be"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'dockerfile-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Dockerfile&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;dockerfile-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org13a8923" class="outline-2"&gt;
-&lt;h2 id="org13a8923"&gt;Flycheck&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org13a8923"&gt;
+&lt;div id="outline-container-org656d6b9" class="outline-2"&gt;
+&lt;h2 id="org656d6b9"&gt;Flycheck&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org656d6b9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; flycheck&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;flycheck&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
@@ -845,11 +845,11 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;elpy-syntax-check-command&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"~/.virtualenvs/neurotic-networks/bin/pyflakes"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;;; or replace with the path to your pyflakes binary&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; allows Elpy to see virtualenv&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'elpy-mode-hook&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;;; pyvenv-mode&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;pyvenv-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;+1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="c1"&gt;;; pyvenv-mode&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="w"&gt;	   &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;pyvenv-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;+1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	   &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; use flycheck instead of flymake&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;load&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"flycheck"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;elpy-modules&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;delq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'elpy-module-flymake&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;elpy-modules&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -861,9 +861,9 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2f310b2" class="outline-2"&gt;
-&lt;h2 id="org2f310b2"&gt;Keychain&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2f310b2"&gt;
+&lt;div id="outline-container-orgabfe169" class="outline-2"&gt;
+&lt;h2 id="orgabfe169"&gt;Keychain&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgabfe169"&gt;
 &lt;p&gt;
 This is to be able to use ssh-agent (via keychain).
 &lt;/p&gt;
@@ -882,21 +882,21 @@ This is to be able to use ssh-agent (via keychain).
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb880344" class="outline-2"&gt;
-&lt;h2 id="orgb880344"&gt;Hideshow-Org&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb880344"&gt;
+&lt;div id="outline-container-org35ddb03" class="outline-2"&gt;
+&lt;h2 id="org35ddb03"&gt;Hideshow-Org&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org35ddb03"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(add-to-list 'load-path "~/projects/third-party/hideshow-org/")
 (require 'hideshow-org)
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><category>emacs</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html</guid><pubDate>Tue, 02 Apr 2024 20:29:37 GMT</pubDate></item><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org6f5146c" class="outline-2"&gt;
-&lt;h2 id="org6f5146c"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6f5146c"&gt;
+&lt;/div&gt;</description><category>configuration</category><category>emacs</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html</guid><pubDate>Tue, 02 Apr 2024 20:29:37 GMT</pubDate></item><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orgb30c732" class="outline-2"&gt;
+&lt;h2 id="orgb30c732"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb30c732"&gt;
 &lt;p&gt;
 This is the fragment to make sure the ssh-agent is running when you open the terminal.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org4df2316"&gt;
+&lt;div class="notecard"&gt;
 &lt;p&gt;
 Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -932,56 +932,56 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org45ebd09" class="outline-2"&gt;
-&lt;h2 id="org45ebd09"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org45ebd09"&gt;
+&lt;div id="outline-container-org0c6c218" class="outline-2"&gt;
+&lt;h2 id="org0c6c218"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0c6c218"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;status - query fish runtime information — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;https://fishshell.com/docs/current/cmds/status.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><category>ssh</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</guid><pubDate>Sat, 24 Jun 2023 19:47:47 GMT</pubDate></item><item><title>abbreviations.fish The Abbreviations Configuration</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>configuration</category><category>ssh</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</guid><pubDate>Sat, 24 Jun 2023 19:47:47 GMT</pubDate></item><item><title>abbreviations.fish The Abbreviations Configuration</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org245a29b"&gt;Nikola&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgc6bebd5"&gt;Nikola&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgfe24e40"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org63a7087"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org5e48697"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org32140d0"&gt;New Posts and Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org76ecff4"&gt;Build, Serve, and Develop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9eecbc5"&gt;Deploy to Github&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org8649cce"&gt;Git&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9c09945"&gt;Git&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org373d862"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org53facb9"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org4d0b435"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org84493cc"&gt;Checkout Files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org25cf4b7"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgb3ff847"&gt;Add, Commit, Push Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org2e28a9f"&gt;The State of Things&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgcad9914"&gt;Branch Work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org0480424"&gt;Checkout Files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgf7d2be0"&gt;My, How Things Have Changed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org78fd5d6"&gt;Pass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org452b609"&gt;Grep&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org7a40461"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgf99528f"&gt;Rsync&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org387270e"&gt;Pass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org85f0be9"&gt;Grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgd041166"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org9c3a9dc"&gt;Rsync&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgee7d9d1"&gt;Rsyncer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org5dc3246"&gt;Rsyncerd&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org1904bfb"&gt;Rsyncerf&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org541dc38"&gt;Rsyncery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orgdc6e2dd"&gt;Rsyncer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org3c1ffdf"&gt;Rsyncerd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org40ec116"&gt;Rsyncerf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orge0a8561"&gt;Rsyncery&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org3cfa1b7"&gt;Links&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#org8f7b6eb"&gt;Links&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orga051899"&gt;Rsync&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html#orge3c3f2b"&gt;Rsync&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="notecard" id="org9f55b38"&gt;
+&lt;div class="notecard"&gt;
 &lt;p&gt;
 The abbreviations the file goes into &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -996,9 +996,9 @@ Abbreviations are sort of like aliases except fish will expand them once you hit
 According to &lt;a href="https://github.com/fish-shell/fish-shell/issues/3099"&gt;this github issue&lt;/a&gt; the files you put into &lt;code&gt;conf.d/&lt;/code&gt; get read before &lt;code&gt;config.fish&lt;/code&gt; so whatever you put in there is usable in &lt;code&gt;config.fish&lt;/code&gt; (and using &lt;code&gt;config.fish&lt;/code&gt;) at all is optional.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org245a29b" class="outline-2"&gt;
-&lt;h2 id="org245a29b"&gt;Nikola&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org245a29b"&gt;
+&lt;div id="outline-container-orgc6bebd5" class="outline-2"&gt;
+&lt;h2 id="orgc6bebd5"&gt;Nikola&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc6bebd5"&gt;
 &lt;p&gt;
 Abbreviations to hopefully make working with &lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; a little quicker.
 &lt;/p&gt;
@@ -1007,9 +1007,9 @@ Abbreviations to hopefully make working with &lt;a href="https://getnikola.com/"
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfe24e40" class="outline-3"&gt;
-&lt;h3 id="orgfe24e40"&gt;New Posts and Pages&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgfe24e40"&gt;
+&lt;div id="outline-container-org32140d0" class="outline-3"&gt;
+&lt;h3 id="org32140d0"&gt;New Posts and Pages&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org32140d0"&gt;
 &lt;p&gt;
 I only use org-mode so these are the commands to make new posts and pages.
 &lt;/p&gt;
@@ -1026,9 +1026,9 @@ They actually look like the same files are produced, just one gets put into your
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org63a7087" class="outline-3"&gt;
-&lt;h3 id="org63a7087"&gt;Build, Serve, and Develop&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org63a7087"&gt;
+&lt;div id="outline-container-org76ecff4" class="outline-3"&gt;
+&lt;h3 id="org76ecff4"&gt;Build, Serve, and Develop&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org76ecff4"&gt;
 &lt;p&gt;
 These are the ones I use the most when making posts and pages.
 &lt;/p&gt;
@@ -1044,9 +1044,9 @@ abbr --add -- nauto &lt;span class="s2"&gt;"nikola auto"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5e48697" class="outline-3"&gt;
-&lt;h3 id="org5e48697"&gt;Deploy to Github&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5e48697"&gt;
+&lt;div id="outline-container-org9eecbc5" class="outline-3"&gt;
+&lt;h3 id="org9eecbc5"&gt;Deploy to Github&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9eecbc5"&gt;
 &lt;p&gt;
 And once it's ready…
 &lt;/p&gt;
@@ -1057,29 +1057,29 @@ And once it's ready…
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8649cce" class="outline-2"&gt;
-&lt;h2 id="org8649cce"&gt;Git&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8649cce"&gt;
+&lt;div id="outline-container-org9c09945" class="outline-2"&gt;
+&lt;h2 id="org9c09945"&gt;Git&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9c09945"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- g &lt;span class="s2"&gt;"git"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org373d862" class="outline-3"&gt;
-&lt;h3 id="org373d862"&gt;Add, Commit, Push Stuff&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org373d862"&gt;
+&lt;div id="outline-container-orgb3ff847" class="outline-3"&gt;
+&lt;h3 id="orgb3ff847"&gt;Add, Commit, Push Stuff&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb3ff847"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1c7e4b4" class="outline-4"&gt;
-&lt;h4 id="org1c7e4b4"&gt;Adding Files&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org1c7e4b4"&gt;
+&lt;div id="outline-container-org321e310" class="outline-4"&gt;
+&lt;h4 id="org321e310"&gt;Adding Files&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org321e310"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- add &lt;span class="s2"&gt;"git add"&lt;/span&gt;
 abbr --add -- gaa &lt;span class="s2"&gt;"git add -A"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbbe2ec8" class="outline-4"&gt;
-&lt;h4 id="orgbbe2ec8"&gt;Are you ready for a commitment?&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgbbe2ec8"&gt;
+&lt;div id="outline-container-org5e8dfea" class="outline-4"&gt;
+&lt;h4 id="org5e8dfea"&gt;Are you ready for a commitment?&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org5e8dfea"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- commit &lt;span class="s2"&gt;"git commit"&lt;/span&gt;
 abbr --add -- gcm &lt;span class="s2"&gt;"git commit --message"&lt;/span&gt;
 abbr --add -- amend &lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
@@ -1087,9 +1087,9 @@ abbr --add -- amend &lt;span class="s2"&gt;"git commit --amend"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbc9bb3e" class="outline-4"&gt;
-&lt;h4 id="orgbc9bb3e"&gt;Speak To The Gods On High&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgbc9bb3e"&gt;
+&lt;div id="outline-container-orgffac4b4" class="outline-4"&gt;
+&lt;h4 id="orgffac4b4"&gt;Speak To The Gods On High&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgffac4b4"&gt;
 &lt;p&gt;
 &lt;a href="https://man7.org/linux/man-pages/man2/sync.2.html"&gt;&lt;code&gt;sync&lt;/code&gt;&lt;/a&gt; is a builtin command (it writes caches to disk) so I went with &lt;code&gt;gsync&lt;/code&gt; for the abbreviation.
 &lt;/p&gt;
@@ -1103,9 +1103,9 @@ abbr --add -- fetch &lt;span class="s2"&gt;"git fetch --prune"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org53facb9" class="outline-3"&gt;
-&lt;h3 id="org53facb9"&gt;The State of Things&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org53facb9"&gt;
+&lt;div id="outline-container-org2e28a9f" class="outline-3"&gt;
+&lt;h3 id="org2e28a9f"&gt;The State of Things&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2e28a9f"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;&lt;code&gt;status&lt;/code&gt;&lt;/a&gt; gives you information about the fish-shell. This is the only thing I ever see, though.
 &lt;/p&gt;
@@ -1123,7 +1123,7 @@ Job control: Only on interactive jobs
 But, anyway, I went with &lt;code&gt;gstat&lt;/code&gt; to not block it in case it's really needed at some point.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="orgc0c61c9"&gt;
+&lt;div class="notecard"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; Look at the &lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html"&gt;SSH Agent Config Fragment&lt;/a&gt; post to see &lt;code&gt;status&lt;/code&gt; in use. It's probably meant for programming, not as a command-line command.
 &lt;/p&gt;
@@ -1136,9 +1136,9 @@ abbr --add -- gstat &lt;span class="s2"&gt;"git status"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4d0b435" class="outline-3"&gt;
-&lt;h3 id="org4d0b435"&gt;Branch Work&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org4d0b435"&gt;
+&lt;div id="outline-container-orgcad9914" class="outline-3"&gt;
+&lt;h3 id="orgcad9914"&gt;Branch Work&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgcad9914"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/switch.html"&gt;&lt;code&gt;switch&lt;/code&gt;&lt;/a&gt; is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).
 &lt;/p&gt;
@@ -1158,17 +1158,17 @@ abbr --add -- destroythegods &lt;span class="s2"&gt;"git push origin -d"&lt;/spa
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org84493cc" class="outline-3"&gt;
-&lt;h3 id="org84493cc"&gt;Checkout Files&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org84493cc"&gt;
+&lt;div id="outline-container-org0480424" class="outline-3"&gt;
+&lt;h3 id="org0480424"&gt;Checkout Files&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0480424"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- usetheirs &lt;span class="s2"&gt;"git checkout --theirs"&lt;/span&gt;
 abbr --add -- useours &lt;span class="s2"&gt;"git checkout --ours"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org25cf4b7" class="outline-3"&gt;
-&lt;h3 id="org25cf4b7"&gt;My, How Things Have Changed&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org25cf4b7"&gt;
+&lt;div id="outline-container-orgf7d2be0" class="outline-3"&gt;
+&lt;h3 id="orgf7d2be0"&gt;My, How Things Have Changed&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf7d2be0"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- codechanges &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 abbr --add -- logdiff &lt;span class="s2"&gt;"git log -p"&lt;/span&gt;
 abbr --add -- gdiff &lt;span class="s2"&gt;"git diff"&lt;/span&gt;
@@ -1178,9 +1178,9 @@ abbr --add -- gdiffn &lt;span class="s2"&gt;"git diff --name-status"&lt;/span&gt
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org78fd5d6" class="outline-2"&gt;
-&lt;h2 id="org78fd5d6"&gt;Pass&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org78fd5d6"&gt;
+&lt;div id="outline-container-org387270e" class="outline-2"&gt;
+&lt;h2 id="org387270e"&gt;Pass&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org387270e"&gt;
 &lt;p&gt;
 For &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; the password-manager. I was doing the pull and push commands but decided to use the git &lt;code&gt;sync&lt;/code&gt; alias which is actuall calling &lt;code&gt;legit sync&lt;/code&gt;, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.
 &lt;/p&gt;
@@ -1191,16 +1191,16 @@ abbr --add -- pgs &lt;span class="s2"&gt;"pass git sync"&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org452b609" class="outline-2"&gt;
-&lt;h2 id="org452b609"&gt;Grep&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org452b609"&gt;
+&lt;div id="outline-container-org85f0be9" class="outline-2"&gt;
+&lt;h2 id="org85f0be9"&gt;Grep&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org85f0be9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- grepr &lt;span class="s2"&gt;"grep --color=always"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7a40461" class="outline-2"&gt;
-&lt;h2 id="org7a40461"&gt;Proton VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7a40461"&gt;
+&lt;div id="outline-container-orgd041166" class="outline-2"&gt;
+&lt;h2 id="orgd041166"&gt;Proton VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd041166"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- vdc &lt;span class="s2"&gt;"protonvpn-cli disconnect; protonvpn-cli connect"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1208,29 +1208,29 @@ abbr --add -- pgs &lt;span class="s2"&gt;"pass git sync"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgf99528f" class="outline-2"&gt;
-&lt;h2 id="orgf99528f"&gt;Rsync&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf99528f"&gt;
+&lt;div id="outline-container-org9c3a9dc" class="outline-2"&gt;
+&lt;h2 id="org9c3a9dc"&gt;Rsync&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9c3a9dc"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgee7d9d1" class="outline-3"&gt;
-&lt;h3 id="orgee7d9d1"&gt;Rsyncer&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgee7d9d1"&gt;
+&lt;div id="outline-container-orgdc6e2dd" class="outline-3"&gt;
+&lt;h3 id="orgdc6e2dd"&gt;Rsyncer&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgdc6e2dd"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- rsyncer &lt;span class="s2"&gt;"rsync --progress --archive --compress"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5dc3246" class="outline-3"&gt;
-&lt;h3 id="org5dc3246"&gt;Rsyncerd&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5dc3246"&gt;
+&lt;div id="outline-container-org3c1ffdf" class="outline-3"&gt;
+&lt;h3 id="org3c1ffdf"&gt;Rsyncerd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3c1ffdf"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- rsyncerd &lt;span class="s2"&gt;"rsync --progress --archive --compress --delete"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1904bfb" class="outline-3"&gt;
-&lt;h3 id="org1904bfb"&gt;Rsyncerf&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1904bfb"&gt;
+&lt;div id="outline-container-org40ec116" class="outline-3"&gt;
+&lt;h3 id="org40ec116"&gt;Rsyncerf&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org40ec116"&gt;
 &lt;p&gt;
 Creates the folder structure but doesn't copy the files over.
 &lt;/p&gt;
@@ -1240,9 +1240,9 @@ Creates the folder structure but doesn't copy the files over.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org541dc38" class="outline-3"&gt;
-&lt;h3 id="org541dc38"&gt;Rsyncery&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org541dc38"&gt;
+&lt;div id="outline-container-orge0a8561" class="outline-3"&gt;
+&lt;h3 id="orge0a8561"&gt;Rsyncery&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge0a8561"&gt;
 &lt;p&gt;
 Does a dry-run to show what would be done without actually transferring files. I made this because for some reason the Raspeberry Pi with Debian 11 on it has some kind of bug that makes rsync fail if the transfers take too long. I don't really know the cause, but it doesn't happen with newer ubuntu versions so it seem like either it's a bug in the creation of the LUKs drive (since I'm creating it on the Raspberry Pi) or in the running of rsync (when the error actually occurs), but in either case, I sometimes need to do sub-folders one at a time instead of just syncing the top folder in order to keep the transfers shorter and running this lets me see what folders need to be synced.
 &lt;/p&gt;
@@ -1253,9 +1253,9 @@ Does a dry-run to show what would be done without actually transferring files. I
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3cfa1b7" class="outline-2"&gt;
-&lt;h2 id="org3cfa1b7"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3cfa1b7"&gt;
+&lt;div id="outline-container-org8f7b6eb" class="outline-2"&gt;
+&lt;h2 id="org8f7b6eb"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8f7b6eb"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/abbr.html"&gt;https://fishshell.com/docs/current/cmds/abbr.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: &lt;a href="https://stackoverflow.com/a/48749763"&gt;https://stackoverflow.com/a/48749763&lt;/a&gt;&lt;/li&gt;
@@ -1264,26 +1264,26 @@ Does a dry-run to show what would be done without actually transferring files. I
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga051899" class="outline-3"&gt;
-&lt;h3 id="orga051899"&gt;Rsync&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga051899"&gt;
+&lt;div id="outline-container-orge3c3f2b" class="outline-3"&gt;
+&lt;h3 id="orge3c3f2b"&gt;Rsync&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge3c3f2b"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://serverfault.com/a/141778"&gt;Server Fault&lt;/a&gt;: Answer explaining the &lt;code&gt;--archive&lt;/code&gt; option (I was using it before but also adding other flags that were redundant to it).&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://serverfault.com/a/204320"&gt;Server Fault answer&lt;/a&gt;: explaining how to create the folder structure but not copy the files.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>abbreviations</category><category>configuration</category><category>version-1.1</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</guid><pubDate>Fri, 23 Jun 2023 20:51:15 GMT</pubDate></item><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>abbreviations</category><category>configuration</category><category>version-1.1</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviationsfish-the-abbreviations-configuration/index.html</guid><pubDate>Fri, 23 Jun 2023 20:51:15 GMT</pubDate></item><item><title>config.fish The Fish Configuration</title><link>https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org45afe06"&gt;Environment Variables&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#orgbdf1c0e"&gt;Environment Variables&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org52f7eec"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#orgf4b38e3"&gt;The Rest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org73d3eee"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org4527e43"&gt;The Rest&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org0a9844c"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org086eba7"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1292,17 +1292,17 @@ Does a dry-run to show what would be done without actually transferring files. I
 This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org45afe06" class="outline-2"&gt;
-&lt;h2 id="org45afe06"&gt;Environment Variables&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org45afe06"&gt;
+&lt;div id="outline-container-orgbdf1c0e" class="outline-2"&gt;
+&lt;h2 id="orgbdf1c0e"&gt;Environment Variables&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbdf1c0e"&gt;
 &lt;p&gt;
 The &lt;code&gt;--export&lt;/code&gt; flag exports the shell variable to child processes, making it an "environment variable".
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org52f7eec" class="outline-3"&gt;
-&lt;h3 id="org52f7eec"&gt;Emacs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org52f7eec"&gt;
+&lt;div id="outline-container-org73d3eee" class="outline-3"&gt;
+&lt;h3 id="org73d3eee"&gt;Emacs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org73d3eee"&gt;
 &lt;p&gt;
 Sets us up to use the emacs client as the default editor.
 &lt;/p&gt;
@@ -1319,9 +1319,9 @@ Sets us up to use the emacs client as the default editor.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf4b38e3" class="outline-3"&gt;
-&lt;h3 id="orgf4b38e3"&gt;The Rest&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgf4b38e3"&gt;
+&lt;div id="outline-container-org4527e43" class="outline-3"&gt;
+&lt;h3 id="org4527e43"&gt;The Rest&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4527e43"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# for extra docker build features (like smarter pip caching)&lt;/span&gt;
 &lt;span class="k"&gt;set&lt;/span&gt; --export DOCKER_BUILDKIT 1
 
@@ -1332,9 +1332,9 @@ Sets us up to use the emacs client as the default editor.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0a9844c" class="outline-2"&gt;
-&lt;h2 id="org0a9844c"&gt;Proton VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0a9844c"&gt;
+&lt;div id="outline-container-org086eba7" class="outline-2"&gt;
+&lt;h2 id="org086eba7"&gt;Proton VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org086eba7"&gt;
 &lt;p&gt;
 The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).
 &lt;/p&gt;
