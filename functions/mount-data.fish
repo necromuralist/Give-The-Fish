@@ -29,14 +29,14 @@ function mount-data --argument-names device name folder --description "Mount an 
 
     set MOUNT_PATH "/media/$folder"
 
-    if set COUNT (count (path normalize $MOUNT_PATH/*))
-        echo "$MOUNT_PATH not empty, not mounting"
-        return $ERROR
-    end
-
     if not test -d $MOUNT_PATH
         echo "Creating '$MOUNT_PATH'"
         sudo mkdir --parents $MOUNT_PATH
+    end
+    
+    if set COUNT (count (ls $MOUNT_PATH/))
+        echo "$MOUNT_PATH not empty, not mounting"
+        return $ERROR
     end
 
     echo "Mounting at: $MOUNT_PATH"
