@@ -42,3 +42,10 @@ function undimleftmonitor -d "Undim the Left Monitor" \
       dimleftmonitor 1 $OUTPUT
 end
 #+end_src
+
+#+begin_src fish :tangle ../functions/udm.fish
+function udm -d "Undim the Monitors"
+    undimleftmonitor
+    undimrightmonitor
+end
+#+end_src
