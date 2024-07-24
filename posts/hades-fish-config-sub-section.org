@@ -8,16 +8,18 @@
 .. description: Hades'-specific section of config.fish.
 .. type: text
 .. status: 
-.. updated: 
+.. updated: 2024-07-23 12:59:45 UTC-07:00
 
 #+END_COMMENT
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
 
-#+begin_src sh :tangle ../dingehaufen/hades.fish :exports none
+#+begin_src sh :tangle ../dingehaufen/conf.d/hades.fish :exports none
 <<firefox>>
 
 <<monstery-hosts>>
+
+<<random-word>>
 #+end_src
 
 This creates a file in ~give-the-fish/dingehaufen/~ named ~hades.fish~. To use it, link or copy the file into the folder =~/.config/fish/conf.d/=
@@ -42,4 +44,10 @@ set --export ATHENA "04:92:26:c3:a6:c7"
 
 # monstery LAN
 set --export APOLLO "192.168.86.172"
+#+end_src
+
+* Random Word
+
+#+begin_src fish :noweb-ref random-word
+abbr --add -- word "random choice (cat ~/.local/share/choice/words.txt)"
 #+end_src
