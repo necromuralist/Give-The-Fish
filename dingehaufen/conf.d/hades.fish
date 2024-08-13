@@ -7,3 +7,6 @@ set --export ATHENA "04:92:26:c3:a6:c7"
 set --export APOLLO "192.168.86.172"
 
 abbr --add -- word "random choice (cat ~/.local/share/choice/words.txt)"
+
+abbr --add -- motif "random choice (gzip -cd \
+    ~/.local/share/choice/thompson-2016-motif-index.txt.gz)"
