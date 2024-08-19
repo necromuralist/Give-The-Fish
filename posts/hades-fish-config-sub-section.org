@@ -70,7 +70,7 @@ This selects a random motif from the [[https://en.wikipedia.org/wiki/Motif-Index
 
 #+begin_src fish :noweb-ref random-motif
 abbr --add -- motif "random choice (gzip -cd \
-    ~/.local/share/choice/thompson-2016-motif-index.txt.gz)"
+    ~/.local/share/choice/motif-index.txt.gz)"
 #+end_src
 
 The ~words.txt~ file was created from the =~/pCloud/synced/reading/423-websters-unabridged-dictionary/websters-unabridged-dictionary-project-gutenberg.txt= using grep.

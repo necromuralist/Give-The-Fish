@@ -9,4 +9,4 @@ set --export APOLLO "192.168.86.172"
 abbr --add -- word "random choice (cat ~/.local/share/choice/words.txt)"
 
 abbr --add -- motif "random choice (gzip -cd \
-    ~/.local/share/choice/thompson-2016-motif-index.txt.gz)"
+    ~/.local/share/choice/motif-index.txt.gz)"
