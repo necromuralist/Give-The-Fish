@@ -18,10 +18,6 @@
 <<firefox>>
 
 <<monstery-hosts>>
-
-<<random-word>>
-
-<<random-motif>>
 #+end_src
 
 This creates a file in ~give-the-fish/dingehaufen/~ named ~hades.fish~. To use it, link or copy the file into the folder =~/.config/fish/conf.d/=
@@ -48,37 +44,3 @@ set --export ATHENA "04:92:26:c3:a6:c7"
 set --export APOLLO "192.168.86.172"
 #+end_src
 
-* Random Word
-
-This selects a random word from a file created by grepping the Gutenberg unabridged Webster's dictionary.
-
-#+begin_src fish :noweb-ref random-word
-abbr --add -- word "random choice (cat ~/.local/share/choice/words.txt)"
-#+end_src
-
-The ~words.txt~ file was created from the =~/pCloud/synced/reading/423-websters-unabridged-dictionary/websters-unabridged-dictionary-project-gutenberg.txt= using grep.
-
-#+begin_src fish
-grep -P "[A-Z][A-Z]+" <file> > words.txt
-#+end_src
-
-This relies on the fact that words being defined are in all-caps. It ends up catching more than just the words but I figure I'll update it as I find the other cases.
-
-* Random Motif
-
-This selects a random motif from the [[https://en.wikipedia.org/wiki/Motif-Index_of_Folk-Literature?useskin=vector][Motif-Index of Folk Literature]]. The file came from [[https://archive.org/details/Thompson2016MotifIndex][archive.org]] (the searchable text version).
-
-#+begin_src fish :noweb-ref random-motif
-abbr --add -- motif "random choice (gzip -cd \
-    ~/.local/share/choice/motif-index.txt.gz)"
-#+end_src
-
-The ~words.txt~ file was created from the =~/pCloud/synced/reading/423-websters-unabridged-dictionary/websters-unabridged-dictionary-project-gutenberg.txt= using grep.
-
-#+begin_src fish
-grep -P "[A-Z][A-Z]+" <file> > words.txt
-#+end_src
-
-This relies on the fact that words being defined are in all-caps. It ends up catching more than just the words but I figure I'll update it as I find the other cases.
-
-- [[https://stackoverflow.com/a/8151437][Stackoverflow on using gzip to extract lines]]
