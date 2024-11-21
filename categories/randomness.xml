@@ -5,18 +5,18 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 03 May 2024 22:10:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Choose Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orga88d3e4" class="outline-2"&gt;
-&lt;h2 id="orga88d3e4"&gt;Choose&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga88d3e4"&gt;
+</copyright><lastBuildDate>Thu, 21 Nov 2024 01:41:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Choose Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org2aff80b" class="outline-2"&gt;
+&lt;h2 id="org2aff80b"&gt;Choose&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2aff80b"&gt;
 &lt;p&gt;
 An alias function that will pick a random line (or lines) out of a text file.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge8cb638" class="outline-2"&gt;
-&lt;h2 id="orge8cb638"&gt;The Function Declaration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge8cb638"&gt;
+&lt;div id="outline-container-org887fe7d" class="outline-2"&gt;
+&lt;h2 id="org887fe7d"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org887fe7d"&gt;
 &lt;p&gt;
 Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument that we'll assign to the variable &lt;code&gt;filename&lt;/code&gt; and one optional argument &lt;code&gt;lines&lt;/code&gt; to indicate the number of lines to pull.
 &lt;/p&gt;
@@ -26,9 +26,9 @@ Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge48443c" class="outline-2"&gt;
-&lt;h2 id="orge48443c"&gt;The Error String&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge48443c"&gt;
+&lt;div id="outline-container-org56a9bc3" class="outline-2"&gt;
+&lt;h2 id="org56a9bc3"&gt;The Error String&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org56a9bc3"&gt;
 &lt;p&gt;
 I'm setting a string-format variable that I'll use to color error messages in bold red.
 &lt;/p&gt;
@@ -42,9 +42,9 @@ See &lt;a href="https://stackoverflow.com/a/33206814"&gt;this stack overflow ans
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc8d8cab" class="outline-2"&gt;
-&lt;h2 id="orgc8d8cab"&gt;The Okay Variable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc8d8cab"&gt;
+&lt;div id="outline-container-org771c3ea" class="outline-2"&gt;
+&lt;h2 id="org771c3ea"&gt;The Okay Variable&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org771c3ea"&gt;
 &lt;p&gt;
 This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
 &lt;/p&gt;
@@ -58,9 +58,9 @@ I'm setting it to False so that it has to pass the checks in order to be unset.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4f43c95" class="outline-2"&gt;
-&lt;h2 id="org4f43c95"&gt;Check the Number of Lines&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4f43c95"&gt;
+&lt;div id="outline-container-org3e2043a" class="outline-2"&gt;
+&lt;h2 id="org3e2043a"&gt;Check the Number of Lines&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3e2043a"&gt;
 &lt;p&gt;
 Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the &lt;code&gt;shuf&lt;/code&gt; command later on.
 &lt;/p&gt;
@@ -82,9 +82,9 @@ Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcc3afa8" class="outline-2"&gt;
-&lt;h2 id="orgcc3afa8"&gt;If It's a Text File, Use It&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgcc3afa8"&gt;
+&lt;div id="outline-container-orgb7dd00f" class="outline-2"&gt;
+&lt;h2 id="orgb7dd00f"&gt;If It's a Text File, Use It&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb7dd00f"&gt;
 &lt;p&gt;
 We'll be grabbing a line using the &lt;a href="https://man7.org/linux/man-pages/man1/shuf.1.html"&gt;shuf&lt;/a&gt; command. &lt;code&gt;shuf&lt;/code&gt; will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.
 &lt;/p&gt;
@@ -108,9 +108,9 @@ First, though, we check if the &lt;code&gt;lines&lt;/code&gt; argument was okay 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgef39b45" class="outline-2"&gt;
-&lt;h2 id="orgef39b45"&gt;Handle the Errors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgef39b45"&gt;
+&lt;div id="outline-container-org28b83d4" class="outline-2"&gt;
+&lt;h2 id="org28b83d4"&gt;Handle the Errors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org28b83d4"&gt;
 &lt;p&gt;
 If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
 &lt;/p&gt;
@@ -127,35 +127,35 @@ If the number of lines wasn't okay or the filename wasn't valid then we'll emit 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6234c56" class="outline-2"&gt;
-&lt;h2 id="org6234c56"&gt;Emit a Help Message&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6234c56"&gt;
+&lt;div id="outline-container-org0ce59eb" class="outline-2"&gt;
+&lt;h2 id="org0ce59eb"&gt;Emit a Help Message&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0ce59eb"&gt;
 &lt;p&gt;
 If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;/code&gt; will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$OKAY&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt;     
   &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;"\t%s\n"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-	 &lt;span class="s2"&gt;"Output a random line or lines from a text file."&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
-	 &lt;span class="s2"&gt;"Usage:"&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
-	 &lt;span class="s2"&gt;"    choose &amp;lt;filename&amp;gt; [&amp;lt;number of lines&amp;gt;]"&lt;/span&gt;
+         &lt;span class="s2"&gt;"Output a random line or lines from a text file."&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
+         &lt;span class="s2"&gt;"Usage:"&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
+         &lt;span class="s2"&gt;"    choose &amp;lt;filename&amp;gt; [&amp;lt;number of lines&amp;gt;]"&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt; &lt;span class="c"&gt;# help message&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org479819d" class="outline-2"&gt;
-&lt;h2 id="org479819d"&gt;One Last Thing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org479819d"&gt;
+&lt;div id="outline-container-org8dfe448" class="outline-2"&gt;
+&lt;h2 id="org8dfe448"&gt;One Last Thing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8dfe448"&gt;
 &lt;p&gt;
 If the user passes in a flag as a filename this will get passed to the &lt;code&gt;file&lt;/code&gt; command and in some cases this will cause it to emit a help message which will get passed to the &lt;code&gt;shuf&lt;/code&gt; command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for &lt;code&gt;shuf&lt;/code&gt;, so hopefully it'll work okay.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org477a532" class="outline-2"&gt;
-&lt;h2 id="org477a532"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org477a532"&gt;
+&lt;div id="outline-container-orgf20608d" class="outline-2"&gt;
+&lt;h2 id="orgf20608d"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf20608d"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 
@@ -166,40 +166,40 @@ If the user passes in a flag as a filename this will get passed to the &lt;code&
 &lt;li&gt;file(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://www.man7.org/linux/man-pages/man1/file.1.html"&gt;https://www.man7.org/linux/man-pages/man1/file.1.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents"&gt;
+&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item><item><title>Random Hex</title><link>https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org82aaa37"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgee07b88"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgc938b15"&gt;Argument Check&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org53dfd4b"&gt;The randomdhex Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org65536a4"&gt;The Function Header&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org7fb79ae"&gt;Argument Check&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgab716ba"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgc628a34"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org2a7761d"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org9d56e58"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org991fc76"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgf89c001"&gt;Check For An Argument&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgddc5f02"&gt;Check If The Argument Is An Integer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org6167a99"&gt;Set the Argument Value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgc0bcda7"&gt;Error Message&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org116f0f4"&gt;Use The Default&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgbcce817"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgda45c86"&gt;Sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#org6d8cabd"&gt;Output the Random Hexadecimal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/random-hex/index.html#orgd641090"&gt;Sources&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org82aaa37" class="outline-2"&gt;
-&lt;h2 id="org82aaa37"&gt;The randomdhex Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org82aaa37"&gt;
+&lt;div id="outline-container-org53dfd4b" class="outline-2"&gt;
+&lt;h2 id="org53dfd4b"&gt;The randomdhex Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org53dfd4b"&gt;
 &lt;p&gt;
 This an alias function to output a random hexadecimal number. There are many ways to do this but I took this from &lt;a href="https://stackoverflow.com/a/53668354"&gt;a StackOverFlow answer&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgee07b88" class="outline-2"&gt;
-&lt;h2 id="orgee07b88"&gt;The Function Header&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgee07b88"&gt;
+&lt;div id="outline-container-org65536a4" class="outline-2"&gt;
+&lt;h2 id="org65536a4"&gt;The Function Header&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org65536a4"&gt;
 &lt;p&gt;
 I'm going to create a function named &lt;code&gt;randomhex&lt;/code&gt; that takes one optional argument named &lt;code&gt;digits&lt;/code&gt;.
 &lt;/p&gt;
@@ -209,17 +209,17 @@ I'm going to create a function named &lt;code&gt;randomhex&lt;/code&gt; that tak
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc938b15" class="outline-2"&gt;
-&lt;h2 id="orgc938b15"&gt;Argument Check&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc938b15"&gt;
+&lt;div id="outline-container-org7fb79ae" class="outline-2"&gt;
+&lt;h2 id="org7fb79ae"&gt;Argument Check&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7fb79ae"&gt;
 &lt;p&gt;
 The first thing to do is to check if the user passed in an argument and handle it if they did or use a default if they didn't.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgab716ba" class="outline-3"&gt;
-&lt;h3 id="orgab716ba"&gt;Check For An Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgab716ba"&gt;
+&lt;div id="outline-container-orgf89c001" class="outline-3"&gt;
+&lt;h3 id="orgf89c001"&gt;Check For An Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf89c001"&gt;
 &lt;p&gt;
 The first check uses the &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;test&lt;/a&gt; command to see if the user passed in an argument. the &lt;code&gt;-n&lt;/code&gt; flag tells it to check if there's a string with one or more characters in it in our &lt;code&gt;digits&lt;/code&gt; variable.
 &lt;/p&gt;
@@ -229,9 +229,9 @@ The first check uses the &lt;a href="https://fishshell.com/docs/current/cmds/tes
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc628a34" class="outline-3"&gt;
-&lt;h3 id="orgc628a34"&gt;Check If The Argument Is An Integer&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc628a34"&gt;
+&lt;div id="outline-container-orgddc5f02" class="outline-3"&gt;
+&lt;h3 id="orgddc5f02"&gt;Check If The Argument Is An Integer&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgddc5f02"&gt;
 &lt;p&gt;
 If the user &lt;i&gt;did&lt;/i&gt; pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;string match&lt;/a&gt; command and a regular expression to make sure it's only made up of one or more digits.
 &lt;/p&gt;
@@ -241,9 +241,9 @@ If the user &lt;i&gt;did&lt;/i&gt; pass in an argument but it can't be coerced t
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2a7761d" class="outline-3"&gt;
-&lt;h3 id="org2a7761d"&gt;Set the Argument Value&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2a7761d"&gt;
+&lt;div id="outline-container-org6167a99" class="outline-3"&gt;
+&lt;h3 id="org6167a99"&gt;Set the Argument Value&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6167a99"&gt;
 &lt;p&gt;
 If the argument was an integer then we'll set the &lt;code&gt;BYTES&lt;/code&gt; variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (&lt;code&gt;$digits/2&lt;/code&gt;) to the &lt;code&gt;math&lt;/code&gt; command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the &lt;code&gt;ceil&lt;/code&gt; argument to round up to the nearest integer.
 &lt;/p&gt;
@@ -253,9 +253,9 @@ If the argument was an integer then we'll set the &lt;code&gt;BYTES&lt;/code&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9d56e58" class="outline-3"&gt;
-&lt;h3 id="org9d56e58"&gt;Error Message&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9d56e58"&gt;
+&lt;div id="outline-container-orgc0bcda7" class="outline-3"&gt;
+&lt;h3 id="orgc0bcda7"&gt;Error Message&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc0bcda7"&gt;
 &lt;p&gt;
 If the user passed in an argument but it doesn't look like an integer then we'll output a help message. I got the idea of using &lt;code&gt;printf&lt;/code&gt; this way from &lt;a href="https://stackoverflow.com/a/48249785"&gt;this StackOverflow answer&lt;/a&gt;.
 &lt;/p&gt;
@@ -280,9 +280,9 @@ If the user passed in an argument but it doesn't look like an integer then we'll
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org991fc76" class="outline-3"&gt;
-&lt;h3 id="org991fc76"&gt;Use The Default&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org991fc76"&gt;
+&lt;div id="outline-container-org116f0f4" class="outline-3"&gt;
+&lt;h3 id="org116f0f4"&gt;Use The Default&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org116f0f4"&gt;
 &lt;p&gt;
 If the user didn't pass in an argument then use a default of 8 hexadecimal digits.
 &lt;/p&gt;
@@ -295,9 +295,9 @@ If the user didn't pass in an argument then use a default of 8 hexadecimal digit
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbcce817" class="outline-2"&gt;
-&lt;h2 id="orgbcce817"&gt;Output the Random Hexadecimal&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbcce817"&gt;
+&lt;div id="outline-container-org6d8cabd" class="outline-2"&gt;
+&lt;h2 id="org6d8cabd"&gt;Output the Random Hexadecimal&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6d8cabd"&gt;
 &lt;p&gt;
 Finally we output the random hexadecimal number that &lt;a href="https://www.openssl.org/"&gt;&lt;code&gt;openssl&lt;/code&gt;&lt;/a&gt; generates.
 &lt;/p&gt;
@@ -307,9 +307,9 @@ Finally we output the random hexadecimal number that &lt;a href="https://www.ope
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgda45c86" class="outline-2"&gt;
-&lt;h2 id="orgda45c86"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgda45c86"&gt;
+&lt;div id="outline-container-orgd641090" class="outline-2"&gt;
+&lt;h2 id="orgd641090"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd641090"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;OpenSSL rand [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://www.openssl.org/docs/man1.1.1/man1/rand.html"&gt;https://www.openssl.org/docs/man1.1.1/man1/rand.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: &lt;a href="https://stackoverflow.com/q/34328759"&gt;https://stackoverflow.com/q/34328759&lt;/a&gt;&lt;/li&gt;

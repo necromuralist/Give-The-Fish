@@ -5,26 +5,26 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 03 May 2024 22:10:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Convert a Document To PDF With Pandoc</title><link>https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents"&gt;
+</copyright><lastBuildDate>Thu, 21 Nov 2024 01:41:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Convert a Document To PDF With Pandoc</title><link>https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org7de1184"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org9ed037c"&gt;Headers&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge4bc39a"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgd9ecb54"&gt;Headers&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgca23fc8"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org14bd3de"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org17b54e4"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org7b3014b"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge8c76d7"&gt;The Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org33755d9"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org20a0a29"&gt;The Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge1b6975"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7de1184" class="outline-2"&gt;
-&lt;h2 id="org7de1184"&gt;What's This About?&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7de1184"&gt;
+&lt;div id="outline-container-orge4bc39a" class="outline-2"&gt;
+&lt;h2 id="orge4bc39a"&gt;What's This About?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge4bc39a"&gt;
 &lt;p&gt;
 This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.
 &lt;/p&gt;
@@ -42,9 +42,9 @@ but it defaults to using &lt;a href="https://en.wikipedia.org/wiki/Computer_Mode
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9ed037c" class="outline-2"&gt;
-&lt;h2 id="org9ed037c"&gt;Headers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9ed037c"&gt;
+&lt;div id="outline-container-orgd9ecb54" class="outline-2"&gt;
+&lt;h2 id="orgd9ecb54"&gt;Headers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd9ecb54"&gt;
 &lt;p&gt;
 You can set the font as a command line argument to pandoc (e.g. &lt;code&gt;-V fontfamily:libertine&lt;/code&gt; ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.
 &lt;/p&gt;
@@ -54,9 +54,9 @@ The function is going to assume that the pagella snippet is in a folder in &lt;c
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgca23fc8" class="outline-3"&gt;
-&lt;h3 id="orgca23fc8"&gt;Libertinus&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgca23fc8"&gt;
+&lt;div id="outline-container-org17b54e4" class="outline-3"&gt;
+&lt;h3 id="org17b54e4"&gt;Libertinus&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org17b54e4"&gt;
 &lt;p&gt;
 This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.
 &lt;/p&gt;
@@ -69,9 +69,9 @@ This is a font I ran into while searching around for instructions on changing th
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org14bd3de" class="outline-3"&gt;
-&lt;h3 id="org14bd3de"&gt;Pagella&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org14bd3de"&gt;
+&lt;div id="outline-container-org7b3014b" class="outline-3"&gt;
+&lt;h3 id="org7b3014b"&gt;Pagella&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7b3014b"&gt;
 &lt;p&gt;
 The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.
 &lt;/p&gt;
@@ -82,7 +82,7 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;span class="k"&gt;\sectionfont&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\clearpage&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard"&gt;
+&lt;div class="notecard" id="orge5fe192"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; I originally accidentally put &lt;i&gt;pagella&lt;/i&gt; and not &lt;i&gt;tgpagella&lt;/i&gt; which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's &lt;i&gt;sectsty&lt;/i&gt; not &lt;i&gt;secsty&lt;/i&gt;.
 &lt;/p&gt;
@@ -91,9 +91,9 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge8c76d7" class="outline-2"&gt;
-&lt;h2 id="orge8c76d7"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge8c76d7"&gt;
+&lt;div id="outline-container-org20a0a29" class="outline-2"&gt;
+&lt;h2 id="org20a0a29"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org20a0a29"&gt;
 &lt;p&gt;
 Nothing fancy here, it just adds the extra header file. I originally added the &lt;code&gt;--table-of-contents&lt;/code&gt; flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.
 &lt;/p&gt;
@@ -102,7 +102,7 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
     &lt;span class="k"&gt;set&lt;/span&gt; TARGET &lt;span class="nv"&gt;$(&lt;/span&gt;path change-extension pdf &lt;span class="nv"&gt;$SOURCE&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$HEADER&lt;/span&gt;
-	&lt;span class="k"&gt;set&lt;/span&gt; HEADER ~/.config/fish/extras/pagella.tex
+        &lt;span class="k"&gt;set&lt;/span&gt; HEADER ~/.config/fish/extras/pagella.tex
     &lt;span class="k"&gt;end&lt;/span&gt;
 
     pandoc --standalone &lt;span class="nv"&gt;$SOURCE&lt;/span&gt; --output &lt;span class="nv"&gt;$TARGET&lt;/span&gt; --include-in-header &lt;span class="nv"&gt;$HEADER&lt;/span&gt;
@@ -111,9 +111,9 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org33755d9" class="outline-2"&gt;
-&lt;h2 id="org33755d9"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org33755d9"&gt;
+&lt;div id="outline-container-orge1b6975" class="outline-2"&gt;
+&lt;h2 id="orge1b6975"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge1b6975"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://learnbyexample.github.io/customizing-pandoc/"&gt;learnbyexample&lt;/a&gt; : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://tug.org/FontCatalogue/texgyrepagella/"&gt;Latex Font Catalogue&lt;/a&gt; : Tex Gyre Pagella page&lt;/li&gt;

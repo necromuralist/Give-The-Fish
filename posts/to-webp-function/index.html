@@ -2,16 +2,16 @@
 <html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
 <head>
 <meta charset="utf-8">
-<meta content="Abbreviations for PCs with users attached." name="description">
+<meta content="A cwebp converter." name="description">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Abbreviations: Mother Ship | Give the Fish</title>
+<title>To Webp Function | Give the Fish</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <meta content="Nikola (getnikola.com)" name="generator">
 <link href="../../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
 <link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="../../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
 <link href="../../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
@@ -19,17 +19,16 @@
 <link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
 <link href="../../site.webmanifest" rel="manifest">
 <meta content="Cloistered Monkey" name="author">
-<link href="../function-mount-data/index.html" rel="prev" title="Function: Mount Data" type="text/html">
-<link href="../to-webp-function/index.html" rel="next" title="To Webp Function" type="text/html">
+<link href="../abbreviations-mother-ship/index.html" rel="prev" title="Abbreviations: Mother Ship" type="text/html">
 <meta content="Give the Fish" property="og:site_name">
-<meta content="Abbreviations: Mother Ship" property="og:title">
-<meta content="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html" property="og:url">
-<meta content="Abbreviations for PCs with users attached." property="og:description">
+<meta content="To Webp Function" property="og:title">
+<meta content="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html" property="og:url">
+<meta content="A cwebp converter." property="og:description">
 <meta content="article" property="og:type">
-<meta content="2024-04-25T14:22:03-07:00" property="article:published_time">
-<meta content="abbreviations" property="article:tag">
-<meta content="configuration" property="article:tag">
-<meta content="version-0" property="article:tag">
+<meta content="2024-11-20T17:28:44-08:00" property="article:published_time">
+<meta content="cli" property="article:tag">
+<meta content="functions" property="article:tag">
+<meta content="webp" property="article:tag">
 </head>
 <body>
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
@@ -60,44 +59,35 @@
 <div class="body-content"><!--Body content-->
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
-<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Abbreviations: Mother Ship</a></h1>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">To Webp Function</a></h1>
 <div class="metadata">
 <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
-<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2024-04-25T14:22:03-07:00" itemprop="datePublished" title="2024-04-25 14:22">2024-04-25 14:22</time></a></p>
+<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2024-11-20T17:28:44-08:00" itemprop="datePublished" title="2024-11-20 17:28">2024-11-20 17:28</time></a></p>
 <p class="sourceline"><a class="sourcelink" href="index.org">Source</a></p>
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="index.html#org599d304">Mount Drives</a></li>
-</ul>
-</div>
-</div>
-<p>This tangle is for extra configurations that are meant for PCs with a GUI that a user interacts with directly (as opposed to a server) and it has stuff that aren't going to be used on servers.</p>
-<p>I'm putting it in <code>dingehaufen/conf.d/</code> so it should be linked to in <code>.config/fish/conf.d/</code> for PCs that need it.</p>
-<div class="outline-2" id="outline-container-org599d304">
-<h2 id="org599d304">Mount Drives</h2>
-<div class="outline-text-2" id="text-org599d304">
-<p>This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.</p>
+<p>A simple for loop to make using globs easier with cwebp.</p>
 <div class="highlight">
-<pre><span></span>abbr --add -- md <span class="s2">"mountcryfs; mount-data"</span>
+<pre><span></span><span class="k">function</span> towebp -d <span class="s2">"Convert image files to web with cweb"</span>
+
+    <span class="k">for</span> SOURCE_IMAGE <span class="k">in</span> <span class="nv">$argv</span>
+        <span class="k">set</span> OUTPUT <span class="o">(</span>path change-extension webp <span class="nv">$SOURCE_IMAGE</span><span class="o">)</span>
+        cwebp <span class="nv">$SOURCE_IMAGE</span> -o <span class="nv">$OUTPUT</span>
+    <span class="k">end</span>
+<span class="k">end</span>
 </pre></div>
-</div>
-</div>
+<p>I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.</p>
 </div>
 <aside class="postpromonav">
 <nav>
 <ul class="tags" itemprop="keywords">
-<li><a class="tag p-category" href="../../categories/abbreviations/index.html" rel="tag">abbreviations</a></li>
-<li><a class="tag p-category" href="../../categories/configuration/index.html" rel="tag">configuration</a></li>
-<li><a class="tag p-category" href="../../categories/version-0/index.html" rel="tag">version-0</a></li>
+<li><a class="tag p-category" href="../../categories/cli/index.html" rel="tag">cli</a></li>
+<li><a class="tag p-category" href="../../categories/functions/index.html" rel="tag">functions</a></li>
+<li><a class="tag p-category" href="../../categories/webp/index.html" rel="tag">webp</a></li>
 </ul>
 <ul class="pager hidden-print">
-<li class="previous"><a href="../function-mount-data/index.html" rel="prev" title="Function: Mount Data">Previous post</a></li>
-<li class="next"><a href="../to-webp-function/index.html" rel="next" title="To Webp Function">Next post</a></li>
+<li class="previous"><a href="../abbreviations-mother-ship/index.html" rel="prev" title="Abbreviations: Mother Ship">Previous post</a></li>
 </ul>
 </nav>
 </aside>

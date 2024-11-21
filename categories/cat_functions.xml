@@ -5,26 +5,41 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 03 May 2024 22:10:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Convert a Document To PDF With Pandoc</title><link>https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents"&gt;
+</copyright><lastBuildDate>Thu, 21 Nov 2024 01:47:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>To Webp Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+A simple for loop to make using globs easier with cwebp.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; towebp -d &lt;span class="s2"&gt;"Convert image files to web with cweb"&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; SOURCE_IMAGE &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;
+        &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="o"&gt;(&lt;/span&gt;path change-extension webp &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+        cwebp &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt; -o &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.
+&lt;/p&gt;</description><category>cli</category><category>functions</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item><item><title>Convert a Document To PDF With Pandoc</title><link>https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org7de1184"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org9ed037c"&gt;Headers&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge4bc39a"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgd9ecb54"&gt;Headers&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgca23fc8"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org14bd3de"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org17b54e4"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org7b3014b"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge8c76d7"&gt;The Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org33755d9"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org20a0a29"&gt;The Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge1b6975"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7de1184" class="outline-2"&gt;
-&lt;h2 id="org7de1184"&gt;What's This About?&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7de1184"&gt;
+&lt;div id="outline-container-orge4bc39a" class="outline-2"&gt;
+&lt;h2 id="orge4bc39a"&gt;What's This About?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge4bc39a"&gt;
 &lt;p&gt;
 This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.
 &lt;/p&gt;
@@ -42,9 +57,9 @@ but it defaults to using &lt;a href="https://en.wikipedia.org/wiki/Computer_Mode
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9ed037c" class="outline-2"&gt;
-&lt;h2 id="org9ed037c"&gt;Headers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9ed037c"&gt;
+&lt;div id="outline-container-orgd9ecb54" class="outline-2"&gt;
+&lt;h2 id="orgd9ecb54"&gt;Headers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd9ecb54"&gt;
 &lt;p&gt;
 You can set the font as a command line argument to pandoc (e.g. &lt;code&gt;-V fontfamily:libertine&lt;/code&gt; ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.
 &lt;/p&gt;
@@ -54,9 +69,9 @@ The function is going to assume that the pagella snippet is in a folder in &lt;c
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgca23fc8" class="outline-3"&gt;
-&lt;h3 id="orgca23fc8"&gt;Libertinus&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgca23fc8"&gt;
+&lt;div id="outline-container-org17b54e4" class="outline-3"&gt;
+&lt;h3 id="org17b54e4"&gt;Libertinus&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org17b54e4"&gt;
 &lt;p&gt;
 This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.
 &lt;/p&gt;
@@ -69,9 +84,9 @@ This is a font I ran into while searching around for instructions on changing th
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org14bd3de" class="outline-3"&gt;
-&lt;h3 id="org14bd3de"&gt;Pagella&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org14bd3de"&gt;
+&lt;div id="outline-container-org7b3014b" class="outline-3"&gt;
+&lt;h3 id="org7b3014b"&gt;Pagella&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7b3014b"&gt;
 &lt;p&gt;
 The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.
 &lt;/p&gt;
@@ -82,7 +97,7 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;span class="k"&gt;\sectionfont&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\clearpage&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard"&gt;
+&lt;div class="notecard" id="orge5fe192"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; I originally accidentally put &lt;i&gt;pagella&lt;/i&gt; and not &lt;i&gt;tgpagella&lt;/i&gt; which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's &lt;i&gt;sectsty&lt;/i&gt; not &lt;i&gt;secsty&lt;/i&gt;.
 &lt;/p&gt;
@@ -91,9 +106,9 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge8c76d7" class="outline-2"&gt;
-&lt;h2 id="orge8c76d7"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge8c76d7"&gt;
+&lt;div id="outline-container-org20a0a29" class="outline-2"&gt;
+&lt;h2 id="org20a0a29"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org20a0a29"&gt;
 &lt;p&gt;
 Nothing fancy here, it just adds the extra header file. I originally added the &lt;code&gt;--table-of-contents&lt;/code&gt; flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.
 &lt;/p&gt;
@@ -102,7 +117,7 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
     &lt;span class="k"&gt;set&lt;/span&gt; TARGET &lt;span class="nv"&gt;$(&lt;/span&gt;path change-extension pdf &lt;span class="nv"&gt;$SOURCE&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$HEADER&lt;/span&gt;
-	&lt;span class="k"&gt;set&lt;/span&gt; HEADER ~/.config/fish/extras/pagella.tex
+        &lt;span class="k"&gt;set&lt;/span&gt; HEADER ~/.config/fish/extras/pagella.tex
     &lt;span class="k"&gt;end&lt;/span&gt;
 
     pandoc --standalone &lt;span class="nv"&gt;$SOURCE&lt;/span&gt; --output &lt;span class="nv"&gt;$TARGET&lt;/span&gt; --include-in-header &lt;span class="nv"&gt;$HEADER&lt;/span&gt;
@@ -111,9 +126,9 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org33755d9" class="outline-2"&gt;
-&lt;h2 id="org33755d9"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org33755d9"&gt;
+&lt;div id="outline-container-orge1b6975" class="outline-2"&gt;
+&lt;h2 id="orge1b6975"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge1b6975"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://learnbyexample.github.io/customizing-pandoc/"&gt;learnbyexample&lt;/a&gt; : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://tug.org/FontCatalogue/texgyrepagella/"&gt;Latex Font Catalogue&lt;/a&gt; : Tex Gyre Pagella page&lt;/li&gt;
@@ -151,9 +166,9 @@ This function pipes the output of apt search to less, preserving the colors. &lt
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div id="outline-container-orga2816a3" class="outline-2"&gt;
-&lt;h2 id="orga2816a3"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga2816a3"&gt;
+&lt;div id="outline-container-org8964e73" class="outline-2"&gt;
+&lt;h2 id="org8964e73"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8964e73"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;expect(1) - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/expect"&gt;https://linux.die.net/man/1/expect&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;unbuffer(1): unbuffer output - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;https://linux.die.net/man/1/unbuffer&lt;/a&gt;&lt;/li&gt;
@@ -169,9 +184,9 @@ This function pipes the output of apt search to less, preserving the colors. &lt
 This function will convert a text file to an org file using pandoc. I called it &lt;code&gt;rst2org&lt;/code&gt; because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org5094801" class="outline-2"&gt;
-&lt;h2 id="org5094801"&gt;What It's Doing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5094801"&gt;
+&lt;div id="outline-container-org8005818" class="outline-2"&gt;
+&lt;h2 id="org8005818"&gt;What It's Doing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8005818"&gt;
 &lt;p&gt;
 The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.
 &lt;/p&gt;
@@ -184,9 +199,9 @@ The first thing the function does is change the file extension from whatever it 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9ac2479" class="outline-2"&gt;
-&lt;h2 id="org9ac2479"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9ac2479"&gt;
+&lt;div id="outline-container-orge6ec024" class="outline-2"&gt;
+&lt;h2 id="orge6ec024"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge6ec024"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: &lt;a href="https://stackoverflow.com/a/62990248"&gt;https://stackoverflow.com/a/62990248&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -205,7 +220,7 @@ The first option documented in the options section of the pandoc documentation i
        --dereference-command-line &lt;span class="se"&gt;\&lt;/span&gt;
        --human-readable &lt;span class="se"&gt;\&lt;/span&gt;
        -l &lt;span class="nv"&gt;$argv&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-	less --RAW-CONTROL-CHARS
+        less --RAW-CONTROL-CHARS
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -213,13 +228,13 @@ The first option documented in the options section of the pandoc documentation i
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org248cbf1" class="outline-2"&gt;
-&lt;h2 id="org248cbf1"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org248cbf1"&gt;
+&lt;div id="outline-container-orged5f25e" class="outline-2"&gt;
+&lt;h2 id="orged5f25e"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orged5f25e"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org90b629f" class="outline-3"&gt;
-&lt;h3 id="org90b629f"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org90b629f"&gt;
+&lt;div id="outline-container-org5798bba" class="outline-3"&gt;
+&lt;h3 id="org5798bba"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5798bba"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -230,14 +245,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdab2d87" class="outline-3"&gt;
-&lt;h3 id="orgdab2d87"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgdab2d87"&gt;
+&lt;div id="outline-container-org35ed6d1" class="outline-3"&gt;
+&lt;h3 id="org35ed6d1"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org35ed6d1"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard"&gt;
+&lt;div class="notecard" id="org5ccda07"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;

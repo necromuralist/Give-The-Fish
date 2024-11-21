@@ -5,7 +5,7 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 03 May 2024 22:10:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Apt Search</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Thu, 21 Nov 2024 01:41:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Apt Search</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
 This function pipes the output of apt search to less, preserving the colors. &lt;code&gt;apt&lt;/code&gt; doesn't have an option to preserve color when the output is piped so the function uses &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;unbuffer&lt;/a&gt; which disables the stripping of the color. &lt;code&gt;unbuffer&lt;/code&gt; is part of the &lt;a href="https://www.man7.org/linux/man-pages/man1/expect.1.html"&gt;expect&lt;/a&gt; package. On Ubuntu Lunar Lobster it doesn't come installed by default so you have to install expects to get unbuffer.
 &lt;/p&gt;
 
@@ -17,9 +17,9 @@ This function pipes the output of apt search to less, preserving the colors. &lt
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div id="outline-container-orga2816a3" class="outline-2"&gt;
-&lt;h2 id="orga2816a3"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga2816a3"&gt;
+&lt;div id="outline-container-org8964e73" class="outline-2"&gt;
+&lt;h2 id="org8964e73"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8964e73"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;expect(1) - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/expect"&gt;https://linux.die.net/man/1/expect&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;unbuffer(1): unbuffer output - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;https://linux.die.net/man/1/unbuffer&lt;/a&gt;&lt;/li&gt;

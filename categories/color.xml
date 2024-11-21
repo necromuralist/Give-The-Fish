@@ -5,13 +5,13 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 03 May 2024 22:10:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
+</copyright><lastBuildDate>Thu, 21 Nov 2024 01:41:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
     ls --almost-all &lt;span class="se"&gt;\&lt;/span&gt;
        --color &lt;span class="se"&gt;\&lt;/span&gt;
        --dereference-command-line &lt;span class="se"&gt;\&lt;/span&gt;
        --human-readable &lt;span class="se"&gt;\&lt;/span&gt;
        -l &lt;span class="nv"&gt;$argv&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-	less --RAW-CONTROL-CHARS
+        less --RAW-CONTROL-CHARS
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -19,13 +19,13 @@
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org248cbf1" class="outline-2"&gt;
-&lt;h2 id="org248cbf1"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org248cbf1"&gt;
+&lt;div id="outline-container-orged5f25e" class="outline-2"&gt;
+&lt;h2 id="orged5f25e"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orged5f25e"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org90b629f" class="outline-3"&gt;
-&lt;h3 id="org90b629f"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org90b629f"&gt;
+&lt;div id="outline-container-org5798bba" class="outline-3"&gt;
+&lt;h3 id="org5798bba"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5798bba"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -36,14 +36,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdab2d87" class="outline-3"&gt;
-&lt;h3 id="orgdab2d87"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgdab2d87"&gt;
+&lt;div id="outline-container-org35ed6d1" class="outline-3"&gt;
+&lt;h3 id="org35ed6d1"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org35ed6d1"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard"&gt;
+&lt;div class="notecard" id="org5ccda07"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;

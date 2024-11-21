@@ -5,21 +5,21 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 03 May 2024 22:10:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents"&gt;
+</copyright><lastBuildDate>Thu, 21 Nov 2024 01:41:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org6cfb606"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org5aa84f1"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgb573eed"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org37f113a"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgd861710"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org62c3b58"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgb96212a"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org3b339d5"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6cfb606" class="outline-2"&gt;
-&lt;h2 id="org6cfb606"&gt;Declaring the Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6cfb606"&gt;
+&lt;div id="outline-container-orgd861710" class="outline-2"&gt;
+&lt;h2 id="orgd861710"&gt;Declaring the Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd861710"&gt;
 &lt;p&gt;
 This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.
 &lt;/p&gt;
@@ -34,9 +34,9 @@ I originally called &lt;code&gt;PATH_TO_FILE&lt;/code&gt; but that of course clo
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5aa84f1" class="outline-2"&gt;
-&lt;h2 id="org5aa84f1"&gt;Checkout the File&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5aa84f1"&gt;
+&lt;div id="outline-container-org62c3b58" class="outline-2"&gt;
+&lt;h2 id="org62c3b58"&gt;Checkout the File&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org62c3b58"&gt;
 &lt;p&gt;
 This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.
 &lt;/p&gt;
@@ -46,9 +46,9 @@ This is the git command, nothing fancy, although trying to read the documentatio
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb573eed" class="outline-2"&gt;
-&lt;h2 id="orgb573eed"&gt;Check If It Succeeded&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb573eed"&gt;
+&lt;div id="outline-container-orgb96212a" class="outline-2"&gt;
+&lt;h2 id="orgb96212a"&gt;Check If It Succeeded&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb96212a"&gt;
 &lt;p&gt;
 The git error message when you pass it an unknown branch is &lt;code&gt;fatal: invalid reference: &amp;lt;branch&amp;gt;&lt;/code&gt; which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.
 &lt;/p&gt;
@@ -58,7 +58,7 @@ The git error message when you pass it an unknown branch is &lt;code&gt;fatal: i
 
     string match --regex --quiet &lt;span class="s2"&gt;"(?&amp;lt;matched&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;)"&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;git branch&lt;span class="o"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$matched&lt;/span&gt;
-	&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"No branch matches '&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"No branch matches '&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt;
     &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -96,9 +96,9 @@ The option given to &lt;code&gt;string match&lt;/code&gt; tell fish to use regul
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org37f113a" class="outline-2"&gt;
-&lt;h2 id="org37f113a"&gt;References&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org37f113a"&gt;
+&lt;div id="outline-container-org3b339d5" class="outline-2"&gt;
+&lt;h2 id="org3b339d5"&gt;References&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3b339d5"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;https://fishshell.com/docs/current/cmds/test.html&lt;/a&gt;&lt;/li&gt;
