@@ -18,6 +18,8 @@
 <<firefox>>
 
 <<monstery-hosts>>
+
+<<proton-vpn>>
 #+end_src
 
 This creates a file in ~give-the-fish/dingehaufen/~ named ~hades.fish~. To use it, link or copy the file into the folder =~/.config/fish/conf.d/=
@@ -44,3 +46,15 @@ set --export ATHENA "04:92:26:c3:a6:c7"
 set --export APOLLO "192.168.86.172"
 #+end_src
 
+* Proton VPN
+
+The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).
+
+#+begin_src fish :noweb-ref proton-vpn
+# check the vpn (requires the installation of the proton-vpn command-line command)
+# if status --is-interactive
+#   protonvpn-cli status
+# end
+#+end_src
+
+**Okay:** so I installed the GUI again. It has fewer features than the CLI but after a year they haven't released the updated CLI and the community version is falling behind in  dependency-versions so for now, this is out.
