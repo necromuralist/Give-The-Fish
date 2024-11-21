@@ -1,0 +1,32 @@
+#+BEGIN_COMMENT
+.. title: To Webp Function
+.. slug: to-webp-function
+.. date: 2024-11-20 17:28:44 UTC-08:00
+.. tags: functions,webp, cli
+.. category: Functions
+.. link: 
+.. description: A cwebp converter.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+begin_src sh :tangle ../functions/towebp.fish :exports none
+#! /usr/bin/env fish
+
+<<toweb>>
+#+end_src
+
+A simple for loop to make using globs easier with cwebp.
+
+#+begin_src fish :noweb-ref toweb
+function towebp -d "Convert image files to web with cweb"
+
+    for SOURCE_IMAGE in $argv
+        set OUTPUT (path change-extension webp $SOURCE_IMAGE)
+        cwebp $SOURCE_IMAGE -o $OUTPUT
+    end
+end
+#+end_src
+
+I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.
