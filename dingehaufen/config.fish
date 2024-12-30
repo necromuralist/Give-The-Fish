@@ -9,3 +9,9 @@ set --export DOCKER_BUILDKIT 1
 set --export R_LIBS ~/.local/lib/R/library/
         
 # path additions moved to extra_paths.fish
+
+  # waiting for proton-vpn to get this working again.
+# # check the vpn (requires the installation of the proton-vpn command-line command)
+# if status --is-interactive
+#   protonvpn-cli status
+# end
