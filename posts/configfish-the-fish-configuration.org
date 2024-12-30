@@ -21,7 +21,8 @@
         
 # path additions moved to extra_paths.fish
 
-<<vpn>>
+  # waiting for proton-vpn to get this working again.
+# <<vpn>>
 #+end_src
 
 This is the fish configuration file. It goes into ~~/.config/fish/config.fish~.
@@ -63,3 +64,7 @@ if status --is-interactive
   protonvpn-cli status
 end
 #+end_src
+
+#+begin_notecard
+I went back to using the GUI to test some things out... hopefully they'll get the CLI working again, but for now (2024-12-29) no CLI.
+#+end_notecard

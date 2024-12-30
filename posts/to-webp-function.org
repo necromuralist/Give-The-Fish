@@ -1,8 +1,8 @@
 #+BEGIN_COMMENT
-.. title: To Webp Function
+.. title: To Webp Functions
 .. slug: to-webp-function
 .. date: 2024-11-20 17:28:44 UTC-08:00
-.. tags: functions,webp, cli
+.. tags: functions,webp,cli,images
 .. category: Functions
 .. link: 
 .. description: A cwebp converter.
@@ -17,6 +17,11 @@
 <<toweb>>
 #+end_src
 
+#+begin_src noweb :tangle ../functions/losslesswebp.fish :exports none
+<<lossless-webp>>
+#+end_src
+
+* To Webp
 A simple for loop to make using globs easier with cwebp.
 
 #+begin_src fish :noweb-ref toweb
@@ -30,3 +35,21 @@ end
 #+end_src
 
 I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.
+
+* Lossless Webp
+
+The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.
+
+#+begin_notecard
+I looked in the source code (from Google's [[https://chromium.googlesource.com/webm/libwebp/][~libwebp~]] git repository) and the ~-z~ flag is equivalent to using ~-lossless -m 6 -q 10~ (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier...
+#+end_notecard
+
+#+begin_src fish :noweb-ref lossless-webp
+function losslesswebp --description 'Convert image files to lossless webp'
+
+    for SOURCE_IMAGE in $argv
+        set OUTPUT (path change-extension .z9.webp $SOURCE_IMAGE)
+        cwebp -z 9 $SOURCE_IMAGE -o $OUTPUT
+    end
+end
+#+end_src
