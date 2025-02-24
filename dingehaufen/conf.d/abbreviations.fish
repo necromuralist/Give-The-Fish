@@ -68,3 +68,6 @@ abbr --add -- rsyncerd "rsync --progress --archive --compress --delete"
 abbr --add -- rsyncerf 'rsync --progress --archive --delete --include="*/" --exclude="*"'
 
 abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
+
+# PDFs
+abbr --add -- pdfjoin "gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile="
