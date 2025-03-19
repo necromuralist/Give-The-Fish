@@ -1,0 +1,48 @@
+#+BEGIN_COMMENT
+.. title: Function: Host Grep
+.. slug: function-host-grep
+.. date: 2025-03-19 11:31:15 UTC-07:00
+.. tags: function,network
+.. category: Function
+.. link: 
+.. description: A function to look for a host in the local configurations.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+begin_src fish :tangle ../functions/hostgrep.fish :exports none
+<<the-function>>
+
+    # check the hosts file
+    <<check-hosts>>
+
+    # check the ssh configuration
+    <<check-ssh>>
+
+end
+#+end_src
+
+* The Function
+
+This is a function to check what we have set-up as a hostname for the times that I forget an IP address for a device on the LAN. It checks the hosts file and the ssh-config. The ~hosts~ file has the IP address, but sometimes I can't remember the host-name, just the user-name, in which case checking the SSH config file can sometimes be helpful.
+
+#+begin_src fish :noweb-ref the-function
+function hostgrep --argument-names HOST --description "Look for a hostname."
+#+end_src
+
+* The Parts
+** Check Hosts
+First check the ~/etc/hosts~ file.
+
+#+begin_src fish :noweb-ref check-hosts
+grep $HOST /etc/hosts
+#+end_src
+
+** Check SSH
+
+Now Check the ssh configuration.
+
+#+begin_src fish :noweb-ref check-ssh
+grep --after-context 3 $HOST $HOME/.ssh/config
+#+end_src
