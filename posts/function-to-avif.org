@@ -1,0 +1,30 @@
+#+BEGIN_COMMENT
+.. title: Function: To Avif
+.. slug: function-to-avif
+.. date: 2025-03-25 22:09:38 UTC-07:00
+.. tags: functions,images
+.. category: Functions
+.. link: 
+.. description: 
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+begin_src sh :tangle ../functions/toavif.fish :exports none
+#! /usr/bin/env fish
+
+<<toavif>>
+#+end_src
+
+* To AVIF
+
+#+begin_src fish :noweb-ref toavif
+function toavif --description 'Convert image files to avif with avifenc'
+
+    for SOURCE_IMAGE in $argv
+        set OUTPUT (path change-extension avif $SOURCE_IMAGE)
+        avifenc $SOURCE_IMAGE -o $OUTPUT
+    end
+end
+#+end_src
