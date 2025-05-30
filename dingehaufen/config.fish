@@ -7,7 +7,9 @@ set --export DOCKER_BUILDKIT 1
 
 # R Downloads
 set --export R_LIBS ~/.local/lib/R/library/
-        
+
+# use the most pager instead of less
+set -x PAGER most      
 # path additions moved to extra_paths.fish
 
   # waiting for proton-vpn to get this working again.

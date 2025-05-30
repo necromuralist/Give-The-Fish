@@ -18,7 +18,8 @@
 <<emacs-environment>>
 
 <<environment>>
-        
+
+<<most-pager>>      
 # path additions moved to extra_paths.fish
 
   # waiting for proton-vpn to get this working again.
@@ -54,6 +55,14 @@ set --export DOCKER_BUILDKIT 1
 set --export R_LIBS ~/.local/lib/R/library/
 #+end_src
 
+** The Most Pager
+
+The [[https://en.wikipedia.org/wiki/Most_(Unix)?useskin=vector][most pager]] is a slightly fancier version of ~less~ and ~more~. Setting it as the default pager will cause programs that use pagers (like ~man~) to use it.
+
+#+begin_src fish :noweb-ref most-pager
+# use the most pager instead of less
+set -x PAGER most
+#+end_src
 * Proton VPN
 
 The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).
