@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about functions)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/functions.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about functions)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/functions.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Thu, 21 Nov 2024 01:47:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>To Webp Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Fri, 30 May 2025 19:53:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tar XZ Compression Abbreviation</title><link>https://necromuralist.github.io/Give-The-Fish/posts/tar-xz-compression-abbreviation/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; xtard
+    &lt;span class="k"&gt;set&lt;/span&gt; BASE &lt;span class="o"&gt;(&lt;/span&gt;string replace --regex &lt;span class="s2"&gt;"/\$"&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    tar --create --xz --file &lt;span class="nv"&gt;$BASE&lt;/span&gt;.tar.xz &lt;span class="nv"&gt;$argv&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>compression</category><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/tar-xz-compression-abbreviation/index.html</guid><pubDate>Mon, 02 Dec 2024 01:36:28 GMT</pubDate></item><item><title>To Webp Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org1810999" class="outline-2"&gt;
+&lt;h2 id="org1810999"&gt;To Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1810999"&gt;
+&lt;p&gt;
 A simple for loop to make using globs easier with cwebp.
 &lt;/p&gt;
 
@@ -20,26 +27,51 @@ A simple for loop to make using globs easier with cwebp.
 
 &lt;p&gt;
 I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.
-&lt;/p&gt;</description><category>cli</category><category>functions</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item><item><title>Convert a Document To PDF With Pandoc</title><link>https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgd32e809" class="outline-2"&gt;
+&lt;h2 id="orgd32e809"&gt;Lossless Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd32e809"&gt;
+&lt;p&gt;
+The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.
+&lt;/p&gt;
+
+&lt;div class="notecard" id="org2220a5e"&gt;
+&lt;p&gt;
+I looked in the source code (from Google's &lt;a href="https://chromium.googlesource.com/webm/libwebp/"&gt;&lt;code&gt;libwebp&lt;/code&gt;&lt;/a&gt; git repository) and the &lt;code&gt;-z&lt;/code&gt; flag is equivalent to using &lt;code&gt;-lossless -m 6 -q 10&lt;/code&gt; (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; losslesswebp --description &lt;span class="s1"&gt;'Convert image files to lossless webp'&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; SOURCE_IMAGE &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;
+        &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="o"&gt;(&lt;/span&gt;path change-extension .z9.webp &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+        cwebp -z &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt; -o &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>cli</category><category>functions</category><category>images</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item><item><title>Convert a Document To PDF With Pandoc</title><link>https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge4bc39a"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgd9ecb54"&gt;Headers&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org2d5b7e2"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgc9cc44d"&gt;Headers&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org17b54e4"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org7b3014b"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgabb50f3"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org3c34b24"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org20a0a29"&gt;The Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge1b6975"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org3fd93b9"&gt;The Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org8ef3aab"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orge4bc39a" class="outline-2"&gt;
-&lt;h2 id="orge4bc39a"&gt;What's This About?&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge4bc39a"&gt;
+&lt;div id="outline-container-org2d5b7e2" class="outline-2"&gt;
+&lt;h2 id="org2d5b7e2"&gt;What's This About?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2d5b7e2"&gt;
 &lt;p&gt;
 This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.
 &lt;/p&gt;
@@ -56,10 +88,9 @@ but it defaults to using &lt;a href="https://en.wikipedia.org/wiki/Computer_Mode
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgd9ecb54" class="outline-2"&gt;
-&lt;h2 id="orgd9ecb54"&gt;Headers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd9ecb54"&gt;
+&lt;div id="outline-container-orgc9cc44d" class="outline-2"&gt;
+&lt;h2 id="orgc9cc44d"&gt;Headers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc9cc44d"&gt;
 &lt;p&gt;
 You can set the font as a command line argument to pandoc (e.g. &lt;code&gt;-V fontfamily:libertine&lt;/code&gt; ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.
 &lt;/p&gt;
@@ -68,10 +99,9 @@ You can set the font as a command line argument to pandoc (e.g. &lt;code&gt;-V f
 The function is going to assume that the pagella snippet is in a folder in &lt;code&gt;~/.config/fish/extras/&lt;/code&gt; which I created using a symlink to the &lt;code&gt;extras&lt;/code&gt; folder in this repository, but it'll also take a path to the header if it's given.
 &lt;/p&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org17b54e4" class="outline-3"&gt;
-&lt;h3 id="org17b54e4"&gt;Libertinus&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org17b54e4"&gt;
+&lt;div id="outline-container-orgabb50f3" class="outline-3"&gt;
+&lt;h3 id="orgabb50f3"&gt;Libertinus&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgabb50f3"&gt;
 &lt;p&gt;
 This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.
 &lt;/p&gt;
@@ -83,10 +113,9 @@ This is a font I ran into while searching around for instructions on changing th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org7b3014b" class="outline-3"&gt;
-&lt;h3 id="org7b3014b"&gt;Pagella&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7b3014b"&gt;
+&lt;div id="outline-container-org3c34b24" class="outline-3"&gt;
+&lt;h3 id="org3c34b24"&gt;Pagella&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3c34b24"&gt;
 &lt;p&gt;
 The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.
 &lt;/p&gt;
@@ -97,7 +126,7 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;span class="k"&gt;\sectionfont&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\clearpage&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="orge5fe192"&gt;
+&lt;div class="notecard" id="orgb620824"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; I originally accidentally put &lt;i&gt;pagella&lt;/i&gt; and not &lt;i&gt;tgpagella&lt;/i&gt; which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's &lt;i&gt;sectsty&lt;/i&gt; not &lt;i&gt;secsty&lt;/i&gt;.
 &lt;/p&gt;
@@ -106,9 +135,9 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org20a0a29" class="outline-2"&gt;
-&lt;h2 id="org20a0a29"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org20a0a29"&gt;
+&lt;div id="outline-container-org3fd93b9" class="outline-2"&gt;
+&lt;h2 id="org3fd93b9"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3fd93b9"&gt;
 &lt;p&gt;
 Nothing fancy here, it just adds the extra header file. I originally added the &lt;code&gt;--table-of-contents&lt;/code&gt; flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.
 &lt;/p&gt;
@@ -125,10 +154,9 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orge1b6975" class="outline-2"&gt;
-&lt;h2 id="orge1b6975"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge1b6975"&gt;
+&lt;div id="outline-container-org8ef3aab" class="outline-2"&gt;
+&lt;h2 id="org8ef3aab"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8ef3aab"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://learnbyexample.github.io/customizing-pandoc/"&gt;learnbyexample&lt;/a&gt; : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://tug.org/FontCatalogue/texgyrepagella/"&gt;Latex Font Catalogue&lt;/a&gt; : Tex Gyre Pagella page&lt;/li&gt;
@@ -158,17 +186,16 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgd861710"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org62c3b58"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgb96212a"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org3b339d5"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org0b55eb5"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgce85f84"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgb704941"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org47f7c4b"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgd861710" class="outline-2"&gt;
-&lt;h2 id="orgd861710"&gt;Declaring the Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd861710"&gt;
+&lt;div id="outline-container-org0b55eb5" class="outline-2"&gt;
+&lt;h2 id="org0b55eb5"&gt;Declaring the Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0b55eb5"&gt;
 &lt;p&gt;
 This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.
 &lt;/p&gt;
@@ -182,10 +209,9 @@ I originally called &lt;code&gt;PATH_TO_FILE&lt;/code&gt; but that of course clo
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org62c3b58" class="outline-2"&gt;
-&lt;h2 id="org62c3b58"&gt;Checkout the File&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org62c3b58"&gt;
+&lt;div id="outline-container-orgce85f84" class="outline-2"&gt;
+&lt;h2 id="orgce85f84"&gt;Checkout the File&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgce85f84"&gt;
 &lt;p&gt;
 This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.
 &lt;/p&gt;
@@ -194,10 +220,9 @@ This is the git command, nothing fancy, although trying to read the documentatio
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgb96212a" class="outline-2"&gt;
-&lt;h2 id="orgb96212a"&gt;Check If It Succeeded&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb96212a"&gt;
+&lt;div id="outline-container-orgb704941" class="outline-2"&gt;
+&lt;h2 id="orgb704941"&gt;Check If It Succeeded&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb704941"&gt;
 &lt;p&gt;
 The git error message when you pass it an unknown branch is &lt;code&gt;fatal: invalid reference: &amp;lt;branch&amp;gt;&lt;/code&gt; which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.
 &lt;/p&gt;
@@ -244,10 +269,9 @@ The option given to &lt;code&gt;string match&lt;/code&gt; tell fish to use regul
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org3b339d5" class="outline-2"&gt;
-&lt;h2 id="org3b339d5"&gt;References&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3b339d5"&gt;
+&lt;div id="outline-container-org47f7c4b" class="outline-2"&gt;
+&lt;h2 id="org47f7c4b"&gt;References&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org47f7c4b"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;https://fishshell.com/docs/current/cmds/test.html&lt;/a&gt;&lt;/li&gt;
@@ -262,10 +286,9 @@ The option given to &lt;code&gt;string match&lt;/code&gt; tell fish to use regul
 &lt;p&gt;
 This function will convert a text file to an org file using pandoc. I called it &lt;code&gt;rst2org&lt;/code&gt; because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.
 &lt;/p&gt;
-
-&lt;div id="outline-container-org8005818" class="outline-2"&gt;
-&lt;h2 id="org8005818"&gt;What It's Doing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8005818"&gt;
+&lt;div id="outline-container-orgecc729a" class="outline-2"&gt;
+&lt;h2 id="orgecc729a"&gt;What It's Doing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgecc729a"&gt;
 &lt;p&gt;
 The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.
 &lt;/p&gt;
@@ -277,10 +300,9 @@ The first thing the function does is change the file extension from whatever it 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orge6ec024" class="outline-2"&gt;
-&lt;h2 id="orge6ec024"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge6ec024"&gt;
+&lt;div id="outline-container-org59dedf4" class="outline-2"&gt;
+&lt;h2 id="org59dedf4"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org59dedf4"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: &lt;a href="https://stackoverflow.com/a/62990248"&gt;https://stackoverflow.com/a/62990248&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -306,14 +328,13 @@ The first option documented in the options section of the pandoc documentation i
 &lt;p&gt;
 The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
 &lt;/p&gt;
-
-&lt;div id="outline-container-orged5f25e" class="outline-2"&gt;
-&lt;h2 id="orged5f25e"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orged5f25e"&gt;
+&lt;div id="outline-container-org6d179f6" class="outline-2"&gt;
+&lt;h2 id="org6d179f6"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6d179f6"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5798bba" class="outline-3"&gt;
-&lt;h3 id="org5798bba"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5798bba"&gt;
+&lt;div id="outline-container-orgc3d6bfa" class="outline-3"&gt;
+&lt;h3 id="orgc3d6bfa"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc3d6bfa"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
@@ -323,15 +344,14 @@ The point of this function is to show all the files in the directory (including 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org35ed6d1" class="outline-3"&gt;
-&lt;h3 id="org35ed6d1"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org35ed6d1"&gt;
+&lt;div id="outline-container-org02d0fd5" class="outline-3"&gt;
+&lt;h3 id="org02d0fd5"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org02d0fd5"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class="notecard" id="org5ccda07"&gt;
+&lt;div class="notecard" id="org89cd72e"&gt;
 &lt;p&gt;
 There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
 &lt;/p&gt;
@@ -339,18 +359,17 @@ There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will i
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org2aff80b" class="outline-2"&gt;
-&lt;h2 id="org2aff80b"&gt;Choose&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2aff80b"&gt;
+&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org5d00af4" class="outline-2"&gt;
+&lt;h2 id="org5d00af4"&gt;Choose&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5d00af4"&gt;
 &lt;p&gt;
 An alias function that will pick a random line (or lines) out of a text file.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org887fe7d" class="outline-2"&gt;
-&lt;h2 id="org887fe7d"&gt;The Function Declaration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org887fe7d"&gt;
+&lt;div id="outline-container-org601550a" class="outline-2"&gt;
+&lt;h2 id="org601550a"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org601550a"&gt;
 &lt;p&gt;
 Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument that we'll assign to the variable &lt;code&gt;filename&lt;/code&gt; and one optional argument &lt;code&gt;lines&lt;/code&gt; to indicate the number of lines to pull.
 &lt;/p&gt;
@@ -359,10 +378,9 @@ Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org56a9bc3" class="outline-2"&gt;
-&lt;h2 id="org56a9bc3"&gt;The Error String&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org56a9bc3"&gt;
+&lt;div id="outline-container-orgc49440f" class="outline-2"&gt;
+&lt;h2 id="orgc49440f"&gt;The Error String&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc49440f"&gt;
 &lt;p&gt;
 I'm setting a string-format variable that I'll use to color error messages in bold red.
 &lt;/p&gt;
@@ -375,10 +393,9 @@ See &lt;a href="https://stackoverflow.com/a/33206814"&gt;this stack overflow ans
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org771c3ea" class="outline-2"&gt;
-&lt;h2 id="org771c3ea"&gt;The Okay Variable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org771c3ea"&gt;
+&lt;div id="outline-container-orgd444c7f" class="outline-2"&gt;
+&lt;h2 id="orgd444c7f"&gt;The Okay Variable&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd444c7f"&gt;
 &lt;p&gt;
 This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
 &lt;/p&gt;
@@ -391,10 +408,9 @@ I'm setting it to False so that it has to pass the checks in order to be unset.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org3e2043a" class="outline-2"&gt;
-&lt;h2 id="org3e2043a"&gt;Check the Number of Lines&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3e2043a"&gt;
+&lt;div id="outline-container-orgde675b7" class="outline-2"&gt;
+&lt;h2 id="orgde675b7"&gt;Check the Number of Lines&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgde675b7"&gt;
 &lt;p&gt;
 Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the &lt;code&gt;shuf&lt;/code&gt; command later on.
 &lt;/p&gt;
@@ -415,10 +431,9 @@ Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgb7dd00f" class="outline-2"&gt;
-&lt;h2 id="orgb7dd00f"&gt;If It's a Text File, Use It&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb7dd00f"&gt;
+&lt;div id="outline-container-org5f4359f" class="outline-2"&gt;
+&lt;h2 id="org5f4359f"&gt;If It's a Text File, Use It&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5f4359f"&gt;
 &lt;p&gt;
 We'll be grabbing a line using the &lt;a href="https://man7.org/linux/man-pages/man1/shuf.1.html"&gt;shuf&lt;/a&gt; command. &lt;code&gt;shuf&lt;/code&gt; will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.
 &lt;/p&gt;
@@ -441,10 +456,9 @@ First, though, we check if the &lt;code&gt;lines&lt;/code&gt; argument was okay 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org28b83d4" class="outline-2"&gt;
-&lt;h2 id="org28b83d4"&gt;Handle the Errors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org28b83d4"&gt;
+&lt;div id="outline-container-org68e0f07" class="outline-2"&gt;
+&lt;h2 id="org68e0f07"&gt;Handle the Errors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org68e0f07"&gt;
 &lt;p&gt;
 If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
 &lt;/p&gt;
@@ -460,10 +474,9 @@ If the number of lines wasn't okay or the filename wasn't valid then we'll emit 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org0ce59eb" class="outline-2"&gt;
-&lt;h2 id="org0ce59eb"&gt;Emit a Help Message&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0ce59eb"&gt;
+&lt;div id="outline-container-org34c0d10" class="outline-2"&gt;
+&lt;h2 id="org34c0d10"&gt;Emit a Help Message&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org34c0d10"&gt;
 &lt;p&gt;
 If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;/code&gt; will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
 &lt;/p&gt;
@@ -477,19 +490,17 @@ If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org8dfe448" class="outline-2"&gt;
-&lt;h2 id="org8dfe448"&gt;One Last Thing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8dfe448"&gt;
+&lt;div id="outline-container-org1e80cbc" class="outline-2"&gt;
+&lt;h2 id="org1e80cbc"&gt;One Last Thing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1e80cbc"&gt;
 &lt;p&gt;
 If the user passes in a flag as a filename this will get passed to the &lt;code&gt;file&lt;/code&gt; command and in some cases this will cause it to emit a help message which will get passed to the &lt;code&gt;shuf&lt;/code&gt; command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for &lt;code&gt;shuf&lt;/code&gt;, so hopefully it'll work okay.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgf20608d" class="outline-2"&gt;
-&lt;h2 id="orgf20608d"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf20608d"&gt;
+&lt;div id="outline-container-orgaecba27" class="outline-2"&gt;
+&lt;h2 id="orgaecba27"&gt;Sources&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgaecba27"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 

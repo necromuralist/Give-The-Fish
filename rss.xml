@@ -1,11 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description>The functions of a fish.</description><atom:link href="https://necromuralist.github.io/Give-The-Fish/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description>The functions of a fish.</description><atom:link href="https://necromuralist.github.io/Give-The-Fish/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Thu, 21 Nov 2024 01:47:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>To Webp Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Fri, 30 May 2025 19:53:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tealdeer Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orga4f5b9d"&gt;Patches&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orga25b017"&gt;Virtual Fish&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org943b374"&gt;Check The Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org272063e"&gt;Rebuild the Environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+This is for configuring &lt;a href="https://tealdeer-rs.github.io/tealdeer/"&gt;tealdeer&lt;/a&gt;, a command-line help system.
+&lt;/p&gt;
+
+&lt;p&gt;
+The expected folder in this repository to put these pages is &lt;code&gt;dingehaufen/tealdeer/pages/&lt;/code&gt;. The default location that &lt;code&gt;tealdeer&lt;/code&gt; will look for the pages is \(~/.local/share/tealdeer/pages/~\).
+&lt;/p&gt;
+&lt;div id="outline-container-orga4f5b9d" class="outline-2"&gt;
+&lt;h2 id="orga4f5b9d"&gt;Patches&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga4f5b9d"&gt;
+&lt;p&gt;
+These are &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches"&gt;patches&lt;/a&gt; which extend existing help pages rather than replacing them.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga25b017" class="outline-2"&gt;
+&lt;h2 id="orga25b017"&gt;Virtual Fish&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga25b017"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org943b374" class="outline-3"&gt;
+&lt;h3 id="org943b374"&gt;Check The Environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org943b374"&gt;
+&lt;p&gt;
+This adds the build-state for the virtual-environments managed by virtualfish.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;List Environments and the Current State (do they need to be rebuilt?):
+
+&lt;span class="sb"&gt;`vf ls --details`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org272063e" class="outline-3"&gt;
+&lt;h3 id="org272063e"&gt;Rebuild the Environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org272063e"&gt;
+&lt;p&gt;
+This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Rebuild the current environment (e.g. after Ubuntu changes pip):
+
+&lt;span class="sb"&gt;`vf upgrade --rebuild`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+You can also rebuild a specific environment (not necessarily the one you're in).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Rebuild a specific environment
+
+&lt;span class="sb"&gt;`vf upgrade --rebuild {{virtualenv-name}}`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="notecard" id="org51b51ab"&gt;
+&lt;p&gt;
+If the environments are broken by an update, &lt;code&gt;pipx&lt;/code&gt; is likely broken too, run this too, maybe:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;pipx reinstall-all&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pip install setuptools --upgrade&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>tealdeer</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html</guid><pubDate>Fri, 30 May 2025 18:43:01 GMT</pubDate></item><item><title>Function: Host Grep</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org0bc6fe2" class="outline-2"&gt;
+&lt;h2 id="org0bc6fe2"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0bc6fe2"&gt;
+&lt;p&gt;
+This is a function to check what we have set-up as a hostname for the times that I forget an IP address for a device on the LAN. It checks the hosts file and the ssh-config. The &lt;code&gt;hosts&lt;/code&gt; file has the IP address, but sometimes I can't remember the host-name, just the user-name, in which case checking the SSH config file can sometimes be helpful.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; hostgrep --argument-names HOST --description &lt;span class="s2"&gt;"Look for a hostname."&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org4a6b9dc" class="outline-2"&gt;
+&lt;h2 id="org4a6b9dc"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4a6b9dc"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org4bc89fc" class="outline-3"&gt;
+&lt;h3 id="org4bc89fc"&gt;Check Hosts&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4bc89fc"&gt;
+&lt;p&gt;
+First check the &lt;code&gt;/etc/hosts&lt;/code&gt; file.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grep &lt;span class="nv"&gt;$HOST&lt;/span&gt; /etc/hosts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org5abb39d" class="outline-3"&gt;
+&lt;h3 id="org5abb39d"&gt;Check SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5abb39d"&gt;
+&lt;p&gt;
+Now Check the ssh configuration.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grep --after-context &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;$HOST&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.ssh/config
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>function</category><category>network</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</guid><pubDate>Wed, 19 Mar 2025 18:31:15 GMT</pubDate></item><item><title>Tar XZ Compression Abbreviation</title><link>https://necromuralist.github.io/Give-The-Fish/posts/tar-xz-compression-abbreviation/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; xtard
+    &lt;span class="k"&gt;set&lt;/span&gt; BASE &lt;span class="o"&gt;(&lt;/span&gt;string replace --regex &lt;span class="s2"&gt;"/\$"&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    tar --create --xz --file &lt;span class="nv"&gt;$BASE&lt;/span&gt;.tar.xz &lt;span class="nv"&gt;$argv&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>compression</category><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/tar-xz-compression-abbreviation/index.html</guid><pubDate>Mon, 02 Dec 2024 01:36:28 GMT</pubDate></item><item><title>To Webp Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org1810999" class="outline-2"&gt;
+&lt;h2 id="org1810999"&gt;To Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1810999"&gt;
+&lt;p&gt;
 A simple for loop to make using globs easier with cwebp.
 &lt;/p&gt;
 
@@ -20,11 +145,37 @@ A simple for loop to make using globs easier with cwebp.
 
 &lt;p&gt;
 I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.
-&lt;/p&gt;</description><category>cli</category><category>functions</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item><item><title>Abbreviations: Mother Ship</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgd32e809" class="outline-2"&gt;
+&lt;h2 id="orgd32e809"&gt;Lossless Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd32e809"&gt;
+&lt;p&gt;
+The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.
+&lt;/p&gt;
+
+&lt;div class="notecard" id="org2220a5e"&gt;
+&lt;p&gt;
+I looked in the source code (from Google's &lt;a href="https://chromium.googlesource.com/webm/libwebp/"&gt;&lt;code&gt;libwebp&lt;/code&gt;&lt;/a&gt; git repository) and the &lt;code&gt;-z&lt;/code&gt; flag is equivalent to using &lt;code&gt;-lossless -m 6 -q 10&lt;/code&gt; (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; losslesswebp --description &lt;span class="s1"&gt;'Convert image files to lossless webp'&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; SOURCE_IMAGE &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;
+        &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="o"&gt;(&lt;/span&gt;path change-extension .z9.webp &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+        cwebp -z &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt; -o &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>cli</category><category>functions</category><category>images</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item><item><title>Abbreviations: Mother Ship</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html#org599d304"&gt;Mount Drives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html#orgcae1c29"&gt;Mount Drives&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -36,10 +187,9 @@ This tangle is for extra configurations that are meant for PCs with a GUI that a
 &lt;p&gt;
 I'm putting it in &lt;code&gt;dingehaufen/conf.d/&lt;/code&gt; so it should be linked to in &lt;code&gt;.config/fish/conf.d/&lt;/code&gt; for PCs that need it.
 &lt;/p&gt;
-
-&lt;div id="outline-container-org599d304" class="outline-2"&gt;
-&lt;h2 id="org599d304"&gt;Mount Drives&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org599d304"&gt;
+&lt;div id="outline-container-orgcae1c29" class="outline-2"&gt;
+&lt;h2 id="orgcae1c29"&gt;Mount Drives&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcae1c29"&gt;
 &lt;p&gt;
 This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.
 &lt;/p&gt;
@@ -50,10 +200,9 @@ This is an abbreviation that mounts both the cryfs folders and the external (LUK
 &lt;/div&gt;</description><category>abbreviations</category><category>configuration</category><category>version-0</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</guid><pubDate>Thu, 25 Apr 2024 21:22:03 GMT</pubDate></item><item><title>Function: Mount Data</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-mount-data/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
 This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.
 &lt;/p&gt;
-
-&lt;div id="outline-container-orgd848525" class="outline-2"&gt;
-&lt;h2 id="orgd848525"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd848525"&gt;
+&lt;div id="outline-container-orgd377175" class="outline-2"&gt;
+&lt;h2 id="orgd377175"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd377175"&gt;
 &lt;p&gt;
 This is the function declaration. There's going to be three optional arguments that it might take.
 &lt;/p&gt;
@@ -109,14 +258,13 @@ The &lt;code&gt;ERROR&lt;/code&gt; is a number to return in the event we bail on
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orga8b3fe2" class="outline-2"&gt;
-&lt;h2 id="orga8b3fe2"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga8b3fe2"&gt;
+&lt;div id="outline-container-org5674d5a" class="outline-2"&gt;
+&lt;h2 id="org5674d5a"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5674d5a"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgacf1a9d" class="outline-3"&gt;
-&lt;h3 id="orgacf1a9d"&gt;The Device&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgacf1a9d"&gt;
+&lt;div id="outline-container-orgc0f008a" class="outline-3"&gt;
+&lt;h3 id="orgc0f008a"&gt;The Device&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc0f008a"&gt;
 &lt;p&gt;
 This is the name of the device in &lt;code&gt;/dev&lt;/code&gt; that represents the drive to mount. 
 &lt;/p&gt;
@@ -136,7 +284,7 @@ This one is generally useful if you know the model of the drive.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="notecard" id="orgf97b52a"&gt;
+&lt;div class="notecard" id="orgea13705"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note to future self:&lt;/b&gt;&lt;/b&gt; Consider making this an environment variable so you don't have to edit it if you switch USB ports.
 &lt;/p&gt;
@@ -169,10 +317,9 @@ To be nice we'll let the user know what we're using.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org2ae8d27" class="outline-3"&gt;
-&lt;h3 id="org2ae8d27"&gt;The Mapping Name&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2ae8d27"&gt;
+&lt;div id="outline-container-org5f1bfc2" class="outline-3"&gt;
+&lt;h3 id="org5f1bfc2"&gt;The Mapping Name&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5f1bfc2"&gt;
 &lt;p&gt;
 This is the name that will be put into &lt;code&gt;/dev/mapper/&lt;/code&gt; which &lt;code&gt;mount&lt;/code&gt; will use to mount the drive.
 &lt;/p&gt;
@@ -186,10 +333,9 @@ This is the name that will be put into &lt;code&gt;/dev/mapper/&lt;/code&gt; whi
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org14ab5c9" class="outline-3"&gt;
-&lt;h3 id="org14ab5c9"&gt;Mount Path&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org14ab5c9"&gt;
+&lt;div id="outline-container-orgfa4c24c" class="outline-3"&gt;
+&lt;h3 id="orgfa4c24c"&gt;Mount Path&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfa4c24c"&gt;
 &lt;p&gt;
 Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".
 &lt;/p&gt;
@@ -230,10 +376,9 @@ If the folder doesn't exist we'll create it.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orge789b65" class="outline-3"&gt;
-&lt;h3 id="orge789b65"&gt;Mounting the Drive&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge789b65"&gt;
+&lt;div id="outline-container-orga30f23d" class="outline-3"&gt;
+&lt;h3 id="orga30f23d"&gt;Mounting the Drive&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga30f23d"&gt;
 &lt;p&gt;
 First we'll use &lt;code&gt;cryptsetup&lt;/code&gt; to decrypt the drive and put the mapping into &lt;code&gt;/dev/mapper/&lt;/code&gt;.
 &lt;/p&gt;
@@ -253,10 +398,9 @@ Now we'll mount the device to a folder.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org931c2c4" class="outline-2"&gt;
-&lt;h2 id="org931c2c4"&gt;A Help Printer&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org931c2c4"&gt;
+&lt;div id="outline-container-org0d51cf6" class="outline-2"&gt;
+&lt;h2 id="org0d51cf6"&gt;A Help Printer&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0d51cf6"&gt;
 &lt;p&gt;
 This is just a function to print a help string.
 &lt;/p&gt;
@@ -272,9 +416,9 @@ This is just a function to print a help string.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd18b96d" class="outline-2"&gt;
-&lt;h2 id="orgd18b96d"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd18b96d"&gt;
+&lt;div id="outline-container-orgf18719b" class="outline-2"&gt;
+&lt;h2 id="orgf18719b"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf18719b"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/not.html"&gt;fish Not&lt;/a&gt;: Negate the exit status of a job (&lt;code&gt;test&lt;/code&gt; in this case).&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;fish test&lt;/a&gt;: The &lt;code&gt;test&lt;/code&gt; command.&lt;/li&gt;
@@ -285,7 +429,7 @@ This is just a function to print a help string.
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html#org9ce44a7"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html#orgbf2714d"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -301,10 +445,9 @@ The additions will be in &lt;code&gt;dingehaufen/conf.d/extra_paths.fish&lt;/cod
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$fish_user_paths&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--universal&lt;span class="w"&gt; &lt;/span&gt;--append&lt;span class="w"&gt; &lt;/span&gt;fish_user_paths&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
 contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.local/bin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$fish_user_paths&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--universal&lt;span class="w"&gt; &lt;/span&gt;--append&lt;span class="w"&gt; &lt;/span&gt;fish_user_paths&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.local/bin
 &lt;/pre&gt;&lt;/div&gt;
-
-&lt;div id="outline-container-org9ce44a7" class="outline-2"&gt;
-&lt;h2 id="org9ce44a7"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9ce44a7"&gt;
+&lt;div id="outline-container-orgbf2714d" class="outline-2"&gt;
+&lt;h2 id="orgbf2714d"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbf2714d"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/a/61882414"&gt;Stack Overflow&lt;/a&gt;: Answer where I got the fish syntax.&lt;/li&gt;
 &lt;/ul&gt;
@@ -313,42 +456,42 @@ contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/spa
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org3491837"&gt;Tangle Source&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org649a4b0"&gt;Package Management&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org94836d8"&gt;Pyvenv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgc3820ea"&gt;Emacs Settings&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgcc7ed10"&gt;Tangle Source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgfded706"&gt;Package Management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgf2247c2"&gt;Pyvenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org5f43901"&gt;Emacs Settings&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org152bb58"&gt;File Locks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgbc64c61"&gt;Toggle Input Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orga119a9e"&gt;File Locks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org80ebea4"&gt;Toggle Input Mode&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org28660a9"&gt;Tramp Mode&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb38f092"&gt;Tramp Mode&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org735507a"&gt;Use SSH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgef814b0"&gt;No Backups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org064d0e0"&gt;Use SSH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org3823c87"&gt;No Backups&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge2ef75f"&gt;God Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgced5f87"&gt;Python and elpy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org9edb2e6"&gt;Emacs Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org082e74b"&gt;Fish&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgbd5d442"&gt;Org-mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge34875b"&gt;org-export python mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org7930339"&gt;web-mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgc08cf3a"&gt;auto-complete&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org884537e"&gt;general text&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org08518e4"&gt;javascript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org318da91"&gt;org-babel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org878a770"&gt;Feature Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge99684d"&gt;yaml&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org2dfc795"&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org78cdfdf"&gt;Bats&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgd0fb164"&gt;Backups&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb65efb1"&gt;Markdown Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org23aca52"&gt;Dockerfile Mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org4d7d01e"&gt;Flycheck&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org8dc5a9e"&gt;Keychain&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org91fb6b9"&gt;Hideshow-Org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org560cd61"&gt;God Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgffd2996"&gt;Python and elpy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org46bc9ea"&gt;Emacs Jupyter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org6454681"&gt;Fish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orga771001"&gt;Org-mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgbbac72e"&gt;org-export python mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org6375148"&gt;web-mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge0fc9b0"&gt;auto-complete&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgedc52ef"&gt;general text&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgade0b1f"&gt;javascript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org2ac472a"&gt;org-babel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org2d5e445"&gt;Feature Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org438e72d"&gt;yaml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgacfc072"&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orge9fcd1a"&gt;Bats&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org1da49dc"&gt;Backups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org64ccc72"&gt;Markdown Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgcbea9a7"&gt;Dockerfile Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb81eba7"&gt;Flycheck&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#org0c0f5e3"&gt;Keychain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/emacs-initel/index.html#orgb9b6b24"&gt;Hideshow-Org&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -361,16 +504,15 @@ This is an emacs configuration file. I had this in another repository and have b
 The tangle creates a file &lt;code&gt;give-the-fish/dingehaufen/init.el&lt;/code&gt; that you should copy or link into the right place &lt;code&gt;~/.emacs.d&lt;/code&gt; right now.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="orgbd04f7e"&gt;
+&lt;div class="notecard" id="org28389c2"&gt;
 &lt;p&gt;
 At some post I should look into breaking up the configuration (see &lt;a href="https://emacs.stackexchange.com/a/18441"&gt;https://emacs.stackexchange.com/a/18441&lt;/a&gt; for an example).
 &lt;/p&gt;
 
 &lt;/div&gt;
-
-&lt;div id="outline-container-org3491837" class="outline-2"&gt;
-&lt;h2 id="org3491837"&gt;Tangle Source&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3491837"&gt;
+&lt;div id="outline-container-orgcc7ed10" class="outline-2"&gt;
+&lt;h2 id="orgcc7ed10"&gt;Tangle Source&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcc7ed10"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;&amp;lt;package-management&amp;gt;&amp;gt;&lt;/span&gt;
 
 &lt;span class="nv"&gt;&amp;lt;&amp;lt;activate-pyvenv&amp;gt;&amp;gt;&lt;/span&gt;
@@ -486,9 +628,9 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org649a4b0" class="outline-2"&gt;
-&lt;h2 id="org649a4b0"&gt;Package Management&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org649a4b0"&gt;
+&lt;div id="outline-container-orgfded706" class="outline-2"&gt;
+&lt;h2 id="orgfded706"&gt;Package Management&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfded706"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; emacs package management&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -504,9 +646,9 @@ At some post I should look into breaking up the configuration (see &lt;a href="h
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org94836d8" class="outline-2"&gt;
-&lt;h2 id="org94836d8"&gt;Pyvenv&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org94836d8"&gt;
+&lt;div id="outline-container-orgf2247c2" class="outline-2"&gt;
+&lt;h2 id="orgf2247c2"&gt;Pyvenv&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf2247c2"&gt;
 &lt;p&gt;
 To prevent errors when emacs starts up and tries to load jupyter (for emacs-jupyter) we need &lt;code&gt;jupyter&lt;/code&gt; to be on the path. Now that debian and ubuntu don't want you to install python packages globally we need another way. I had installed it with &lt;a href="https://github.com/pypa/pipx"&gt;pipx&lt;/a&gt;, which does work, but pipx doesn't doesn't install standalone libraries and sometimes breaks when trying to install dependencies so I think for this case it's better to avoid it and instead use a virtual-environment. Since it has to be activated before anything else that uses python packages, activating the environment should be put fairly early on in the &lt;code&gt;init.el&lt;/code&gt; file.
 &lt;/p&gt;
@@ -520,9 +662,9 @@ This assumes that there's a virtual-environment named &lt;code&gt;emacs-environm
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc3820ea" class="outline-2"&gt;
-&lt;h2 id="orgc3820ea"&gt;Emacs Settings&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc3820ea"&gt;
+&lt;div id="outline-container-org5f43901" class="outline-2"&gt;
+&lt;h2 id="org5f43901"&gt;Emacs Settings&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5f43901"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; show column-numbers&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;column-number-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -557,9 +699,9 @@ This assumes that there's a virtual-environment named &lt;code&gt;emacs-environm
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ring-bell-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'ignore&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org152bb58" class="outline-3"&gt;
-&lt;h3 id="org152bb58"&gt;File Locks&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org152bb58"&gt;
+&lt;div id="outline-container-orga119a9e" class="outline-3"&gt;
+&lt;h3 id="orga119a9e"&gt;File Locks&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga119a9e"&gt;
 &lt;p&gt;
 A lock got corrupted once in the cryfs directory, making the editing file unreadable. You can fix it by copying everything but the corrupted file out, destroying and re-creating the cryfs mount and copying the files back in, but hopefully this will fix it. It does mean that two people could edit the same file and cause problems, but oh, well.
 &lt;/p&gt;
@@ -568,9 +710,9 @@ A lock got corrupted once in the cryfs directory, making the editing file unread
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgbc64c61" class="outline-3"&gt;
-&lt;h3 id="orgbc64c61"&gt;Toggle Input Mode&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgbc64c61"&gt;
+&lt;div id="outline-container-org80ebea4" class="outline-3"&gt;
+&lt;h3 id="org80ebea4"&gt;Toggle Input Mode&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org80ebea4"&gt;
 &lt;p&gt;
 This allows you to switch to latex input and then back using &lt;code&gt;C-\&lt;/code&gt;. This is useful to embed special characters. Although you could probably just do the same thing with math mode if you want to wait until exporting.
 &lt;/p&gt;
@@ -580,29 +722,28 @@ This allows you to switch to latex input and then back using &lt;code&gt;C-\&lt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org28660a9" class="outline-2"&gt;
-&lt;h2 id="org28660a9"&gt;Tramp Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org28660a9"&gt;
+&lt;div id="outline-container-orgb38f092" class="outline-2"&gt;
+&lt;h2 id="orgb38f092"&gt;Tramp Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb38f092"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org735507a" class="outline-3"&gt;
-&lt;h3 id="org735507a"&gt;Use SSH&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org735507a"&gt;
+&lt;div id="outline-container-org064d0e0" class="outline-3"&gt;
+&lt;h3 id="org064d0e0"&gt;Use SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org064d0e0"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; tramp mode&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tramp-default-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"ssh"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgef814b0" class="outline-3"&gt;
-&lt;h3 id="orgef814b0"&gt;No Backups&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgef814b0"&gt;
+&lt;div id="outline-container-org3823c87" class="outline-3"&gt;
+&lt;h3 id="org3823c87"&gt;No Backups&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3823c87"&gt;
 &lt;p&gt;
 This is from the &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html"&gt;emacs manual&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org6f81c23" class="outline-4"&gt;
-&lt;h4 id="org6f81c23"&gt;Turn Off For Tramp Only&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org6f81c23"&gt;
+&lt;div id="outline-container-org64b74d3" class="outline-4"&gt;
+&lt;h4 id="org64b74d3"&gt;Turn Off For Tramp Only&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org64b74d3"&gt;
 &lt;p&gt;
 The configuration is currently saving backups to a local directory, so when I use tramp I get warnings about it. It doesn't tell you why but according to the &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html"&gt;emacs wiki&lt;/a&gt; this is a potential security leak (although probably not in the way I'm using it). Anyway, I've never used the backups so I'll just disable them for tramp.
 &lt;/p&gt;
@@ -612,7 +753,7 @@ The configuration is currently saving backups to a local directory, so when I us
 &lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cons&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tramp-file-name-regexp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org0deb69c"&gt;
+&lt;div class="notecard" id="org8c7a3bb"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; This turns out to solve the wrong problem so I added another rule in the next section.
 &lt;/p&gt;
@@ -620,10 +761,9 @@ The configuration is currently saving backups to a local directory, so when I us
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org9f2d113" class="outline-4"&gt;
-&lt;h4 id="org9f2d113"&gt;Turn Off For Sudo&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org9f2d113"&gt;
+&lt;div id="outline-container-org705f206" class="outline-4"&gt;
+&lt;h4 id="org705f206"&gt;Turn Off For Sudo&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org705f206"&gt;
 &lt;p&gt;
 Turning off the backups for tramp only fixed one case, but it turned out that the thing that made me look into this was using &lt;code&gt;sudo&lt;/code&gt; on my local machine to opne the &lt;code&gt;/etc/hosts&lt;/code&gt; file so I was actually solving the wrong (or only part of the) problem. This next bit is supposed to turn off all backups where you use &lt;code&gt;sudo&lt;/code&gt;. So it probably doesn't belong under tramp any more. Maybe I'll move it later
 &lt;/p&gt;
@@ -640,10 +780,9 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orge2ef75f" class="outline-2"&gt;
-&lt;h2 id="orge2ef75f"&gt;God Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge2ef75f"&gt;
+&lt;div id="outline-container-org560cd61" class="outline-2"&gt;
+&lt;h2 id="org560cd61"&gt;God Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org560cd61"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; god-mode&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'god-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&amp;lt;escape&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'god-mode-all&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -721,9 +860,9 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgced5f87" class="outline-2"&gt;
-&lt;h2 id="orgced5f87"&gt;Python and elpy&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgced5f87"&gt;
+&lt;div id="outline-container-orgffd2996" class="outline-2"&gt;
+&lt;h2 id="orgffd2996"&gt;Python and elpy&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgffd2996"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; elpy&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;elpy&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
@@ -734,16 +873,16 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9edb2e6" class="outline-2"&gt;
-&lt;h2 id="org9edb2e6"&gt;Emacs Jupyter&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9edb2e6"&gt;
+&lt;div id="outline-container-org46bc9ea" class="outline-2"&gt;
+&lt;h2 id="org46bc9ea"&gt;Emacs Jupyter&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org46bc9ea"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;babel&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;override&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt; &lt;span class="s2"&gt;"python"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org082e74b" class="outline-2"&gt;
-&lt;h2 id="org082e74b"&gt;Fish&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org082e74b"&gt;
+&lt;div id="outline-container-org6454681" class="outline-2"&gt;
+&lt;h2 id="org6454681"&gt;Fish&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6454681"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; fish functions&lt;/span&gt;
 &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sh-basic-offset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;sh-indentation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -751,9 +890,9 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgbd5d442" class="outline-2"&gt;
-&lt;h2 id="orgbd5d442"&gt;Org-mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbd5d442"&gt;
+&lt;div id="outline-container-orga771001" class="outline-2"&gt;
+&lt;h2 id="orga771001"&gt;Org-mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga771001"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; org-mode&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'org&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;global-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\C&lt;/span&gt;&lt;span class="s"&gt;-cl"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'org-store-link&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -792,9 +931,9 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge34875b" class="outline-2"&gt;
-&lt;h2 id="orge34875b"&gt;org-export python mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge34875b"&gt;
+&lt;div id="outline-container-orgbbac72e" class="outline-2"&gt;
+&lt;h2 id="orgbbac72e"&gt;org-export python mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbbac72e"&gt;
 &lt;p&gt;
 This just stops emitting the message that emacs is using a default 4 spaces when exporting python.
 &lt;/p&gt;
@@ -804,9 +943,9 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7930339" class="outline-2"&gt;
-&lt;h2 id="org7930339"&gt;web-mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7930339"&gt;
+&lt;div id="outline-container-org6375148" class="outline-2"&gt;
+&lt;h2 id="org6375148"&gt;web-mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6375148"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; web-mode&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'web-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.html?&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;web-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -834,10 +973,9 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgc08cf3a" class="outline-2"&gt;
-&lt;h2 id="orgc08cf3a"&gt;auto-complete&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc08cf3a"&gt;
+&lt;div id="outline-container-orge0fc9b0" class="outline-2"&gt;
+&lt;h2 id="orge0fc9b0"&gt;auto-complete&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge0fc9b0"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; auto-complete&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; (defun turn-on-autocomplete () (auto-complete-mode 1))&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'load-path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"~/.emacs.d/lisp"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -849,27 +987,26 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org884537e" class="outline-2"&gt;
-&lt;h2 id="org884537e"&gt;general text&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org884537e"&gt;
+&lt;div id="outline-container-orgedc52ef" class="outline-2"&gt;
+&lt;h2 id="orgedc52ef"&gt;general text&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgedc52ef"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; increase/decrease text size&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"C-c C-+"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'text-scale-increase&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;global-set-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"C--"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'text-scale-decrease&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org08518e4" class="outline-2"&gt;
-&lt;h2 id="org08518e4"&gt;javascript&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org08518e4"&gt;
+&lt;div id="outline-container-orgade0b1f" class="outline-2"&gt;
+&lt;h2 id="orgade0b1f"&gt;javascript&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgade0b1f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; js2&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.js&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;js2-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org318da91" class="outline-2"&gt;
-&lt;h2 id="org318da91"&gt;org-babel&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org318da91"&gt;
+&lt;div id="outline-container-org2ac472a" class="outline-2"&gt;
+&lt;h2 id="org2ac472a"&gt;org-babel&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2ac472a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;;; org-babel&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'ob-js&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -937,34 +1074,33 @@ This just stops emitting the message that emacs is using a default 4 spaces when
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org878a770" class="outline-2"&gt;
-&lt;h2 id="org878a770"&gt;Feature Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org878a770"&gt;
+&lt;div id="outline-container-org2d5e445" class="outline-2"&gt;
+&lt;h2 id="org2d5e445"&gt;Feature Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2d5e445"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.feature"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;feature-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orge99684d" class="outline-2"&gt;
-&lt;h2 id="orge99684d"&gt;yaml&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge99684d"&gt;
+&lt;div id="outline-container-org438e72d" class="outline-2"&gt;
+&lt;h2 id="org438e72d"&gt;yaml&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org438e72d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'yaml-mode-hook&lt;/span&gt;
 &lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;yaml-mode-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\C&lt;/span&gt;&lt;span class="s"&gt;-m"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'newline-and-indent&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2dfc795" class="outline-2"&gt;
-&lt;h2 id="org2dfc795"&gt;Vue.js&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2dfc795"&gt;
+&lt;div id="outline-container-orgacfc072" class="outline-2"&gt;
+&lt;h2 id="orgacfc072"&gt;Vue.js&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgacfc072"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; setup files ending in “.vue” to open in vue-mode&lt;/span&gt;
 &lt;span class="c1"&gt;;; (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org78cdfdf" class="outline-2"&gt;
-&lt;h2 id="org78cdfdf"&gt;Bats&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org78cdfdf"&gt;
+&lt;div id="outline-container-orge9fcd1a" class="outline-2"&gt;
+&lt;h2 id="orge9fcd1a"&gt;Bats&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge9fcd1a"&gt;
 &lt;p&gt;
 The Bash Automated Test System mode.
 &lt;/p&gt;
@@ -1014,9 +1150,9 @@ There's a ticket on github to add this feature (?) to bats, but the old develope
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd0fb164" class="outline-2"&gt;
-&lt;h2 id="orgd0fb164"&gt;Backups&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd0fb164"&gt;
+&lt;div id="outline-container-org1da49dc" class="outline-2"&gt;
+&lt;h2 id="org1da49dc"&gt;Backups&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1da49dc"&gt;
 &lt;p&gt;
 From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs Wiki&lt;/a&gt;.
 &lt;/p&gt;
@@ -1027,9 +1163,9 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb65efb1" class="outline-2"&gt;
-&lt;h2 id="orgb65efb1"&gt;Markdown Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb65efb1"&gt;
+&lt;div id="outline-container-org64ccc72" class="outline-2"&gt;
+&lt;h2 id="org64ccc72"&gt;Markdown Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org64ccc72"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;markdown-mode&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;:mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"README&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;.md&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;gfm-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1040,17 +1176,17 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org23aca52" class="outline-2"&gt;
-&lt;h2 id="org23aca52"&gt;Dockerfile Mode&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org23aca52"&gt;
+&lt;div id="outline-container-orgcbea9a7" class="outline-2"&gt;
+&lt;h2 id="orgcbea9a7"&gt;Dockerfile Mode&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcbea9a7"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'dockerfile-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'auto-mode-alist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Dockerfile&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;'"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;dockerfile-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org4d7d01e" class="outline-2"&gt;
-&lt;h2 id="org4d7d01e"&gt;Flycheck&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4d7d01e"&gt;
+&lt;div id="outline-container-orgb81eba7" class="outline-2"&gt;
+&lt;h2 id="orgb81eba7"&gt;Flycheck&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb81eba7"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; flycheck&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;flycheck&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;:ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
@@ -1106,9 +1242,9 @@ From the &lt;a href="https://www.emacswiki.org/emacs/BackupDirectory"&gt;Emacs W
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8dc5a9e" class="outline-2"&gt;
-&lt;h2 id="org8dc5a9e"&gt;Keychain&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8dc5a9e"&gt;
+&lt;div id="outline-container-org0c0f5e3" class="outline-2"&gt;
+&lt;h2 id="org0c0f5e3"&gt;Keychain&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0c0f5e3"&gt;
 &lt;p&gt;
 This is to be able to use ssh-agent (via keychain).
 &lt;/p&gt;
@@ -1127,9 +1263,9 @@ This is to be able to use ssh-agent (via keychain).
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org91fb6b9" class="outline-2"&gt;
-&lt;h2 id="org91fb6b9"&gt;Hideshow-Org&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org91fb6b9"&gt;
+&lt;div id="outline-container-orgb9b6b24" class="outline-2"&gt;
+&lt;h2 id="orgb9b6b24"&gt;Hideshow-Org&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb9b6b24"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(add-to-list 'load-path "~/projects/third-party/hideshow-org/")
 (require 'hideshow-org)
 &lt;/pre&gt;&lt;/div&gt;
@@ -1138,22 +1274,21 @@ This is to be able to use ssh-agent (via keychain).
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge4bc39a"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgd9ecb54"&gt;Headers&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org2d5b7e2"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgc9cc44d"&gt;Headers&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org17b54e4"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org7b3014b"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgabb50f3"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org3c34b24"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org20a0a29"&gt;The Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orge1b6975"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org3fd93b9"&gt;The Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org8ef3aab"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orge4bc39a" class="outline-2"&gt;
-&lt;h2 id="orge4bc39a"&gt;What's This About?&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge4bc39a"&gt;
+&lt;div id="outline-container-org2d5b7e2" class="outline-2"&gt;
+&lt;h2 id="org2d5b7e2"&gt;What's This About?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2d5b7e2"&gt;
 &lt;p&gt;
 This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.
 &lt;/p&gt;
@@ -1170,10 +1305,9 @@ but it defaults to using &lt;a href="https://en.wikipedia.org/wiki/Computer_Mode
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgd9ecb54" class="outline-2"&gt;
-&lt;h2 id="orgd9ecb54"&gt;Headers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd9ecb54"&gt;
+&lt;div id="outline-container-orgc9cc44d" class="outline-2"&gt;
+&lt;h2 id="orgc9cc44d"&gt;Headers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc9cc44d"&gt;
 &lt;p&gt;
 You can set the font as a command line argument to pandoc (e.g. &lt;code&gt;-V fontfamily:libertine&lt;/code&gt; ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.
 &lt;/p&gt;
@@ -1182,10 +1316,9 @@ You can set the font as a command line argument to pandoc (e.g. &lt;code&gt;-V f
 The function is going to assume that the pagella snippet is in a folder in &lt;code&gt;~/.config/fish/extras/&lt;/code&gt; which I created using a symlink to the &lt;code&gt;extras&lt;/code&gt; folder in this repository, but it'll also take a path to the header if it's given.
 &lt;/p&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org17b54e4" class="outline-3"&gt;
-&lt;h3 id="org17b54e4"&gt;Libertinus&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org17b54e4"&gt;
+&lt;div id="outline-container-orgabb50f3" class="outline-3"&gt;
+&lt;h3 id="orgabb50f3"&gt;Libertinus&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgabb50f3"&gt;
 &lt;p&gt;
 This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.
 &lt;/p&gt;
@@ -1197,10 +1330,9 @@ This is a font I ran into while searching around for instructions on changing th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org7b3014b" class="outline-3"&gt;
-&lt;h3 id="org7b3014b"&gt;Pagella&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7b3014b"&gt;
+&lt;div id="outline-container-org3c34b24" class="outline-3"&gt;
+&lt;h3 id="org3c34b24"&gt;Pagella&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3c34b24"&gt;
 &lt;p&gt;
 The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.
 &lt;/p&gt;
@@ -1211,7 +1343,7 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;span class="k"&gt;\sectionfont&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\clearpage&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="orge5fe192"&gt;
+&lt;div class="notecard" id="orgb620824"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; I originally accidentally put &lt;i&gt;pagella&lt;/i&gt; and not &lt;i&gt;tgpagella&lt;/i&gt; which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's &lt;i&gt;sectsty&lt;/i&gt; not &lt;i&gt;secsty&lt;/i&gt;.
 &lt;/p&gt;
@@ -1220,9 +1352,9 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org20a0a29" class="outline-2"&gt;
-&lt;h2 id="org20a0a29"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org20a0a29"&gt;
+&lt;div id="outline-container-org3fd93b9" class="outline-2"&gt;
+&lt;h2 id="org3fd93b9"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3fd93b9"&gt;
 &lt;p&gt;
 Nothing fancy here, it just adds the extra header file. I originally added the &lt;code&gt;--table-of-contents&lt;/code&gt; flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.
 &lt;/p&gt;
@@ -1239,10 +1371,9 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orge1b6975" class="outline-2"&gt;
-&lt;h2 id="orge1b6975"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge1b6975"&gt;
+&lt;div id="outline-container-org8ef3aab" class="outline-2"&gt;
+&lt;h2 id="org8ef3aab"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8ef3aab"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://learnbyexample.github.io/customizing-pandoc/"&gt;learnbyexample&lt;/a&gt; : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://tug.org/FontCatalogue/texgyrepagella/"&gt;Latex Font Catalogue&lt;/a&gt; : Tex Gyre Pagella page&lt;/li&gt;
@@ -1268,150 +1399,4 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
        xrandr --output &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt; --brightness &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt; --auto
    &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/dim-monitor/index.html</guid><pubDate>Thu, 05 Oct 2023 00:14:37 GMT</pubDate></item><item><title>Dim Left Monitor</title><link>https://necromuralist.github.io/Give-The-Fish/posts/dim-left-monitor/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; dimleftmonitor -d &lt;span class="s2"&gt;"Set HDMI-0 brightness"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    --argument-names BRIGHTNESS OUTPUT
-
-  &lt;span class="c"&gt;# -z : test for zero (empty) string&lt;/span&gt;
-
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
-      &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="s2"&gt;"HDMI-0"&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt;
-      &lt;span class="k"&gt;set&lt;/span&gt; BRIGHTNESS 0
-  &lt;span class="k"&gt;end&lt;/span&gt;
-
-  &lt;span class="c"&gt;# xrandr --output $OUTPUT --brightness $BRIGHTNESS --auto&lt;/span&gt;
-  dim_monitor &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt; &lt;span class="nv"&gt;$BRIGHTNESS&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; undimleftmonitor -d &lt;span class="s2"&gt;"Undim the Left Monitor"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    --argument-names OUTPUT
-
-      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
-          &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="s2"&gt;"HDMI-0"&lt;/span&gt;
-      &lt;span class="k"&gt;end&lt;/span&gt;
-
-      dimleftmonitor &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><guid>https://necromuralist.github.io/Give-The-Fish/posts/dim-left-monitor/index.html</guid><pubDate>Thu, 05 Oct 2023 00:14:20 GMT</pubDate></item><item><title>Git Checkout File Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
-&lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgd861710"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org62c3b58"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgb96212a"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org3b339d5"&gt;References&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgd861710" class="outline-2"&gt;
-&lt;h2 id="orgd861710"&gt;Declaring the Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd861710"&gt;
-&lt;p&gt;
-This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; gitmefile -d &lt;span class="s2"&gt;"Checkout folder or file from another branch"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    --argument-names BRANCH PATH_TO_FILE
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-I originally called &lt;code&gt;PATH_TO_FILE&lt;/code&gt; but that of course clobbered the &lt;code&gt;PATH&lt;/code&gt; variable and all of a sudden it couldn't find git.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org62c3b58" class="outline-2"&gt;
-&lt;h2 id="org62c3b58"&gt;Checkout the File&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org62c3b58"&gt;
-&lt;p&gt;
-This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git checkout &lt;span class="nv"&gt;$BRANCH&lt;/span&gt; -- &lt;span class="nv"&gt;$PATH_TO_FILE&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgb96212a" class="outline-2"&gt;
-&lt;h2 id="orgb96212a"&gt;Check If It Succeeded&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb96212a"&gt;
-&lt;p&gt;
-The git error message when you pass it an unknown branch is &lt;code&gt;fatal: invalid reference: &amp;lt;branch&amp;gt;&lt;/code&gt; which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$status&lt;/span&gt; -ne 0
-    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"There was a git error using your arguments: branch='&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;' path='&lt;/span&gt;&lt;span class="nv"&gt;$PATH_TO_FILE&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt;
-
-    string match --regex --quiet &lt;span class="s2"&gt;"(?&amp;lt;matched&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;)"&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;git branch&lt;span class="o"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; -z &lt;span class="nv"&gt;$matched&lt;/span&gt;
-        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"No branch matches '&lt;/span&gt;&lt;span class="nv"&gt;$BRANCH&lt;/span&gt;&lt;span class="s2"&gt;'."&lt;/span&gt;
-    &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The option given to &lt;code&gt;string match&lt;/code&gt; tell fish to use regular expressions instead of the default glob-type expressions and to not echo any matches it finds to the screen. The arguments to &lt;code&gt;test&lt;/code&gt; don't have long-versions so I'll put them in a table to make it clearer.
-&lt;/p&gt;
-
-&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
-
-
-&lt;colgroup&gt;
-&lt;col class="org-left"&gt;
-
-&lt;col class="org-left"&gt;
-&lt;/colgroup&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th scope="col" class="org-left"&gt;Option&lt;/th&gt;
-&lt;th scope="col" class="org-left"&gt;Meaning&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td class="org-left"&gt;&lt;code&gt;-ne&lt;/code&gt;&lt;/td&gt;
-&lt;td class="org-left"&gt;Not equal to&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-left"&gt;&lt;code&gt;-z&lt;/code&gt;&lt;/td&gt;
-&lt;td class="org-left"&gt;It is a &lt;i&gt;zero&lt;/i&gt; (empty) string&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org3b339d5" class="outline-2"&gt;
-&lt;h2 id="org3b339d5"&gt;References&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3b339d5"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;https://fishshell.com/docs/current/cmds/test.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>functions</category><category>git</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html</guid><pubDate>Wed, 27 Sep 2023 19:38:49 GMT</pubDate></item><item><title>Function: Apt Search</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
-This function pipes the output of apt search to less, preserving the colors. &lt;code&gt;apt&lt;/code&gt; doesn't have an option to preserve color when the output is piped so the function uses &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;unbuffer&lt;/a&gt; which disables the stripping of the color. &lt;code&gt;unbuffer&lt;/code&gt; is part of the &lt;a href="https://www.man7.org/linux/man-pages/man1/expect.1.html"&gt;expect&lt;/a&gt; package. On Ubuntu Lunar Lobster it doesn't come installed by default so you have to install expects to get unbuffer.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install expects
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; aptsearch -d &lt;span class="s2"&gt;"Paging apt search"&lt;/span&gt; --argument-names keyword
-    unbuffer apt search &lt;span class="nv"&gt;$keyword&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; less -R
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div id="outline-container-org8964e73" class="outline-2"&gt;
-&lt;h2 id="org8964e73"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8964e73"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;expect(1) - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/expect"&gt;https://linux.die.net/man/1/expect&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;unbuffer(1): unbuffer output - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;https://linux.die.net/man/1/unbuffer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>apt</category><category>function</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</guid><pubDate>Wed, 28 Jun 2023 20:26:53 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/dim-monitor/index.html</guid><pubDate>Thu, 05 Oct 2023 00:14:37 GMT</pubDate></item></channel></rss>

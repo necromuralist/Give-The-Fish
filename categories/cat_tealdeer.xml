@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about Tealdeer)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/cat_tealdeer.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+&lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
+&lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
+&lt;/div&gt;
+</copyright><lastBuildDate>Fri, 30 May 2025 19:53:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tealdeer Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orga4f5b9d"&gt;Patches&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orga25b017"&gt;Virtual Fish&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org943b374"&gt;Check The Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org272063e"&gt;Rebuild the Environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+This is for configuring &lt;a href="https://tealdeer-rs.github.io/tealdeer/"&gt;tealdeer&lt;/a&gt;, a command-line help system.
+&lt;/p&gt;
+
+&lt;p&gt;
+The expected folder in this repository to put these pages is &lt;code&gt;dingehaufen/tealdeer/pages/&lt;/code&gt;. The default location that &lt;code&gt;tealdeer&lt;/code&gt; will look for the pages is \(~/.local/share/tealdeer/pages/~\).
+&lt;/p&gt;
+&lt;div id="outline-container-orga4f5b9d" class="outline-2"&gt;
+&lt;h2 id="orga4f5b9d"&gt;Patches&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga4f5b9d"&gt;
+&lt;p&gt;
+These are &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches"&gt;patches&lt;/a&gt; which extend existing help pages rather than replacing them.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga25b017" class="outline-2"&gt;
+&lt;h2 id="orga25b017"&gt;Virtual Fish&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga25b017"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org943b374" class="outline-3"&gt;
+&lt;h3 id="org943b374"&gt;Check The Environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org943b374"&gt;
+&lt;p&gt;
+This adds the build-state for the virtual-environments managed by virtualfish.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;List Environments and the Current State (do they need to be rebuilt?):
+
+&lt;span class="sb"&gt;`vf ls --details`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org272063e" class="outline-3"&gt;
+&lt;h3 id="org272063e"&gt;Rebuild the Environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org272063e"&gt;
+&lt;p&gt;
+This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Rebuild the current environment (e.g. after Ubuntu changes pip):
+
+&lt;span class="sb"&gt;`vf upgrade --rebuild`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+You can also rebuild a specific environment (not necessarily the one you're in).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Rebuild a specific environment
+
+&lt;span class="sb"&gt;`vf upgrade --rebuild {{virtualenv-name}}`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="notecard" id="org51b51ab"&gt;
+&lt;p&gt;
+If the environments are broken by an update, &lt;code&gt;pipx&lt;/code&gt; is likely broken too, run this too, maybe:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;pipx reinstall-all&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pip install setuptools --upgrade&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>tealdeer</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html</guid><pubDate>Fri, 30 May 2025 18:43:01 GMT</pubDate></item></channel></rss>

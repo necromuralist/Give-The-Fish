@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about cli)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/cli.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about cli)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/cli.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Thu, 21 Nov 2024 01:47:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>To Webp Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Fri, 30 May 2025 19:53:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>To Webp Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org1810999" class="outline-2"&gt;
+&lt;h2 id="org1810999"&gt;To Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1810999"&gt;
+&lt;p&gt;
 A simple for loop to make using globs easier with cwebp.
 &lt;/p&gt;
 
@@ -20,4 +23,30 @@ A simple for loop to make using globs easier with cwebp.
 
 &lt;p&gt;
 I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.
-&lt;/p&gt;</description><category>cli</category><category>functions</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgd32e809" class="outline-2"&gt;
+&lt;h2 id="orgd32e809"&gt;Lossless Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd32e809"&gt;
+&lt;p&gt;
+The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.
+&lt;/p&gt;
+
+&lt;div class="notecard" id="org2220a5e"&gt;
+&lt;p&gt;
+I looked in the source code (from Google's &lt;a href="https://chromium.googlesource.com/webm/libwebp/"&gt;&lt;code&gt;libwebp&lt;/code&gt;&lt;/a&gt; git repository) and the &lt;code&gt;-z&lt;/code&gt; flag is equivalent to using &lt;code&gt;-lossless -m 6 -q 10&lt;/code&gt; (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; losslesswebp --description &lt;span class="s1"&gt;'Convert image files to lossless webp'&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; SOURCE_IMAGE &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;
+        &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="o"&gt;(&lt;/span&gt;path change-extension .z9.webp &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+        cwebp -z &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt; -o &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>cli</category><category>functions</category><category>images</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item></channel></rss>

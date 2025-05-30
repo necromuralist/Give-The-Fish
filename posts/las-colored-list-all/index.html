@@ -79,12 +79,12 @@
 <span class="k">end</span>
 </pre></div>
 <p>The point of this function is to show all the files in the directory (including hidden files) and pipe them to <code>less</code> so they won't go scrolling off the screen while keeping the color highlighting.</p>
-<div class="outline-2" id="outline-container-orged5f25e">
-<h2 id="orged5f25e">The Parts</h2>
-<div class="outline-text-2" id="text-orged5f25e"></div>
-<div class="outline-3" id="outline-container-org5798bba">
-<h3 id="org5798bba">The <code>ls</code> Arguments</h3>
-<div class="outline-text-3" id="text-org5798bba">
+<div class="outline-2" id="outline-container-org6d179f6">
+<h2 id="org6d179f6">The Parts</h2>
+<div class="outline-text-2" id="text-org6d179f6"></div>
+<div class="outline-3" id="outline-container-orgc3d6bfa">
+<h3 id="orgc3d6bfa">The <code>ls</code> Arguments</h3>
+<div class="outline-text-3" id="text-orgc3d6bfa">
 <ul class="org-ul">
 <li><code>--almost-all</code>: don't list the <code>.</code> and <code>..</code> files</li>
 <li><code>--color</code>: Color the output when (defaults to "always" but you can set to "auto" or "never")</li>
@@ -94,13 +94,13 @@
 </ul>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org35ed6d1">
-<h3 id="org35ed6d1">The <code>less</code> Argument</h3>
-<div class="outline-text-3" id="text-org35ed6d1">
+<div class="outline-3" id="outline-container-org02d0fd5">
+<h3 id="org02d0fd5">The <code>less</code> Argument</h3>
+<div class="outline-text-3" id="text-org02d0fd5">
 <ul class="org-ul">
 <li><code>--RAW-CONTROL-CHARS</code>: Keep colors and hyperlink sequences.</li>
 </ul>
-<div class="notecard" id="org5ccda07">
+<div class="notecard" id="org89cd72e">
 <p>There is also a <code>--raw-control-chars</code> option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the <code>LESS</code> environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.</p>
 </div>
 </div>

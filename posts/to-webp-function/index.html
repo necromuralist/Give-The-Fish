@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="A cwebp converter." name="description">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>To Webp Function | Give the Fish</title>
+<title>To Webp Functions | Give the Fish</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -20,14 +20,16 @@
 <link href="../../site.webmanifest" rel="manifest">
 <meta content="Cloistered Monkey" name="author">
 <link href="../abbreviations-mother-ship/index.html" rel="prev" title="Abbreviations: Mother Ship" type="text/html">
+<link href="../tar-xz-compression-abbreviation/index.html" rel="next" title="Tar XZ Compression Abbreviation" type="text/html">
 <meta content="Give the Fish" property="og:site_name">
-<meta content="To Webp Function" property="og:title">
+<meta content="To Webp Functions" property="og:title">
 <meta content="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html" property="og:url">
 <meta content="A cwebp converter." property="og:description">
 <meta content="article" property="og:type">
 <meta content="2024-11-20T17:28:44-08:00" property="article:published_time">
 <meta content="cli" property="article:tag">
 <meta content="functions" property="article:tag">
+<meta content="images" property="article:tag">
 <meta content="webp" property="article:tag">
 </head>
 <body>
@@ -59,7 +61,7 @@
 <div class="body-content"><!--Body content-->
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
-<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">To Webp Function</a></h1>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">To Webp Functions</a></h1>
 <div class="metadata">
 <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
 <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2024-11-20T17:28:44-08:00" itemprop="datePublished" title="2024-11-20 17:28">2024-11-20 17:28</time></a></p>
@@ -67,6 +69,9 @@
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
+<div class="outline-2" id="outline-container-org1810999">
+<h2 id="org1810999">To Webp</h2>
+<div class="outline-text-2" id="text-org1810999">
 <p>A simple for loop to make using globs easier with cwebp.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> towebp -d <span class="s2">"Convert image files to web with cweb"</span>
@@ -79,15 +84,37 @@
 </pre></div>
 <p>I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.</p>
 </div>
+</div>
+<div class="outline-2" id="outline-container-orgd32e809">
+<h2 id="orgd32e809">Lossless Webp</h2>
+<div class="outline-text-2" id="text-orgd32e809">
+<p>The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.</p>
+<div class="notecard" id="org2220a5e">
+<p>I looked in the source code (from Google's <a href="https://chromium.googlesource.com/webm/libwebp/"><code>libwebp</code></a> git repository) and the <code>-z</code> flag is equivalent to using <code>-lossless -m 6 -q 10</code> (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…</p>
+</div>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> losslesswebp --description <span class="s1">'Convert image files to lossless webp'</span>
+
+    <span class="k">for</span> SOURCE_IMAGE <span class="k">in</span> <span class="nv">$argv</span>
+        <span class="k">set</span> OUTPUT <span class="o">(</span>path change-extension .z9.webp <span class="nv">$SOURCE_IMAGE</span><span class="o">)</span>
+        cwebp -z <span class="m">9</span> <span class="nv">$SOURCE_IMAGE</span> -o <span class="nv">$OUTPUT</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+</div>
 <aside class="postpromonav">
 <nav>
 <ul class="tags" itemprop="keywords">
 <li><a class="tag p-category" href="../../categories/cli/index.html" rel="tag">cli</a></li>
 <li><a class="tag p-category" href="../../categories/functions/index.html" rel="tag">functions</a></li>
+<li><a class="tag p-category" href="../../categories/images/index.html" rel="tag">images</a></li>
 <li><a class="tag p-category" href="../../categories/webp/index.html" rel="tag">webp</a></li>
 </ul>
 <ul class="pager hidden-print">
 <li class="previous"><a href="../abbreviations-mother-ship/index.html" rel="prev" title="Abbreviations: Mother Ship">Previous post</a></li>
+<li class="next"><a href="../tar-xz-compression-abbreviation/index.html" rel="next" title="Tar XZ Compression Abbreviation">Next post</a></li>
 </ul>
 </nav>
 </aside>

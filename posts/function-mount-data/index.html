@@ -68,9 +68,9 @@
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
 <p>This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.</p>
-<div class="outline-2" id="outline-container-orgd848525">
-<h2 id="orgd848525">The Function</h2>
-<div class="outline-text-2" id="text-orgd848525">
+<div class="outline-2" id="outline-container-orgd377175">
+<h2 id="orgd377175">The Function</h2>
+<div class="outline-text-2" id="text-orgd377175">
 <p>This is the function declaration. There's going to be three optional arguments that it might take.</p>
 <table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
 <colgroup>
@@ -110,12 +110,12 @@
 <p>The <code>ERROR</code> is a number to return in the event we bail on mounting the drive for some reason.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga8b3fe2">
-<h2 id="orga8b3fe2">The Parts</h2>
-<div class="outline-text-2" id="text-orga8b3fe2"></div>
-<div class="outline-3" id="outline-container-orgacf1a9d">
-<h3 id="orgacf1a9d">The Device</h3>
-<div class="outline-text-3" id="text-orgacf1a9d">
+<div class="outline-2" id="outline-container-org5674d5a">
+<h2 id="org5674d5a">The Parts</h2>
+<div class="outline-text-2" id="text-org5674d5a"></div>
+<div class="outline-3" id="outline-container-orgc0f008a">
+<h3 id="orgc0f008a">The Device</h3>
+<div class="outline-text-3" id="text-orgc0f008a">
 <p>This is the name of the device in <code>/dev</code> that represents the drive to mount.</p>
 <p>This command is useful sometimes. More so after it's been mounted.</p>
 <div class="highlight">
@@ -125,7 +125,7 @@
 <div class="highlight">
 <pre><span></span>sudo fdisk -l <span class="o">|</span> grep sd -A 1
 </pre></div>
-<div class="notecard" id="orgf97b52a">
+<div class="notecard" id="orgea13705">
 <p><b>Note to future self:</b> Consider making this an environment variable so you don't have to edit it if you switch USB ports.</p>
 </div>
 <div class="highlight">
@@ -149,9 +149,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org2ae8d27">
-<h3 id="org2ae8d27">The Mapping Name</h3>
-<div class="outline-text-3" id="text-org2ae8d27">
+<div class="outline-3" id="outline-container-org5f1bfc2">
+<h3 id="org5f1bfc2">The Mapping Name</h3>
+<div class="outline-text-3" id="text-org5f1bfc2">
 <p>This is the name that will be put into <code>/dev/mapper/</code> which <code>mount</code> will use to mount the drive.</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$name</span>
@@ -163,9 +163,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org14ab5c9">
-<h3 id="org14ab5c9">Mount Path</h3>
-<div class="outline-text-3" id="text-org14ab5c9">
+<div class="outline-3" id="outline-container-orgfa4c24c">
+<h3 id="orgfa4c24c">Mount Path</h3>
+<div class="outline-text-3" id="text-orgfa4c24c">
 <p>Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$folder</span>
@@ -195,9 +195,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orge789b65">
-<h3 id="orge789b65">Mounting the Drive</h3>
-<div class="outline-text-3" id="text-orge789b65">
+<div class="outline-3" id="outline-container-orga30f23d">
+<h3 id="orga30f23d">Mounting the Drive</h3>
+<div class="outline-text-3" id="text-orga30f23d">
 <p>First we'll use <code>cryptsetup</code> to decrypt the drive and put the mapping into <code>/dev/mapper/</code>.</p>
 <div class="highlight">
 <pre><span></span><span class="k">echo</span>
@@ -212,9 +212,9 @@ sudo cryptsetup <span class="nb">open</span> <span class="nv">$DEVICE_PATH</span
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org931c2c4">
-<h2 id="org931c2c4">A Help Printer</h2>
-<div class="outline-text-2" id="text-org931c2c4">
+<div class="outline-2" id="outline-container-org0d51cf6">
+<h2 id="org0d51cf6">A Help Printer</h2>
+<div class="outline-text-2" id="text-org0d51cf6">
 <p>This is just a function to print a help string.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> mount-data-help
@@ -228,9 +228,9 @@ sudo cryptsetup <span class="nb">open</span> <span class="nv">$DEVICE_PATH</span
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgd18b96d">
-<h2 id="orgd18b96d">Links</h2>
-<div class="outline-text-2" id="text-orgd18b96d">
+<div class="outline-2" id="outline-container-orgf18719b">
+<h2 id="orgf18719b">Links</h2>
+<div class="outline-text-2" id="text-orgf18719b">
 <ul class="org-ul">
 <li><a href="https://fishshell.com/docs/current/cmds/not.html">fish Not</a>: Negate the exit status of a job (<code>test</code> in this case).</li>
 <li><a href="https://fishshell.com/docs/current/cmds/test.html">fish test</a>: The <code>test</code> command.</li>

@@ -1,0 +1,67 @@
+#+BEGIN_COMMENT
+.. title: Tealdeer Pages
+.. slug: tealdeer-pages
+.. date: 2025-05-30 11:43:01 UTC-07:00
+.. tags: tealdeer
+.. category: Tealdeer
+.. link: 
+.. description: Pages for tealdeer.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a command-line help system.
+
+The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~. The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$.
+
+* Patches
+These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them.
+
+* Virtual Fish
+
+#+begin_src sh :tangle ../dingehaufen/tealdeer/pages/vf.patch.md :exports none
+<<vf-list>>
+
+<<vf-rebuild>>
+
+<<vf-rebuild-another>>
+#+end_src
+
+** Check The Environment
+
+This adds the build-state for the virtual-environments managed by virtualfish.
+
+#+begin_src markdown :noweb-ref vf-list
+- List Environments and the Current State (do they need to be rebuilt?):
+
+`vf ls --details`
+#+end_src
+
+** Rebuild the Environment
+
+This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.
+
+#+begin_src markdown :noweb-ref vf-rebuild
+- Rebuild the current environment (e.g. after Ubuntu changes pip):
+
+`vf upgrade --rebuild`
+#+end_src
+
+You can also rebuild a specific environment (not necessarily the one you're in).
+
+#+begin_src markdown :noweb-ref vf-rebuild-another
+- Rebuild a specific environment
+
+`vf upgrade --rebuild {{virtualenv-name}}`
+#+end_src
+
+#+begin_notecard
+If the environments are broken by an update, ~pipx~ is likely broken too, run this too, maybe:
+
+ - ~pipx reinstall-all~
+ - ~pip install setuptools --upgrade~
+#+end_notecard

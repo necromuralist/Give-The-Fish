@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about network)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/network.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+&lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
+&lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
+&lt;/div&gt;
+</copyright><lastBuildDate>Fri, 30 May 2025 19:53:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Host Grep</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org0bc6fe2" class="outline-2"&gt;
+&lt;h2 id="org0bc6fe2"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0bc6fe2"&gt;
+&lt;p&gt;
+This is a function to check what we have set-up as a hostname for the times that I forget an IP address for a device on the LAN. It checks the hosts file and the ssh-config. The &lt;code&gt;hosts&lt;/code&gt; file has the IP address, but sometimes I can't remember the host-name, just the user-name, in which case checking the SSH config file can sometimes be helpful.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; hostgrep --argument-names HOST --description &lt;span class="s2"&gt;"Look for a hostname."&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org4a6b9dc" class="outline-2"&gt;
+&lt;h2 id="org4a6b9dc"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4a6b9dc"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org4bc89fc" class="outline-3"&gt;
+&lt;h3 id="org4bc89fc"&gt;Check Hosts&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4bc89fc"&gt;
+&lt;p&gt;
+First check the &lt;code&gt;/etc/hosts&lt;/code&gt; file.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grep &lt;span class="nv"&gt;$HOST&lt;/span&gt; /etc/hosts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org5abb39d" class="outline-3"&gt;
+&lt;h3 id="org5abb39d"&gt;Check SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5abb39d"&gt;
+&lt;p&gt;
+Now Check the ssh configuration.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grep --after-context &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;$HOST&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.ssh/config
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>function</category><category>network</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</guid><pubDate>Wed, 19 Mar 2025 18:31:15 GMT</pubDate></item></channel></rss>
