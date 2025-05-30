@@ -23,7 +23,7 @@ These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custo
 
 * Virtual Fish
 
-#+begin_src sh :tangle ../dingehaufen/tealdeer/pages/vf.patch.md
+#+begin_src sh :tangle ../dingehaufen/tealdeer/pages/vf.patch.md :exports none
 <<vf-list>>
 
 <<vf-rebuild>>
@@ -35,7 +35,7 @@ These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custo
 
 This adds the build-state for the virtual-environments managed by virtualfish.
 
-#+begin_src md :noweb-ref vf-list
+#+begin_src markdown :noweb-ref vf-list
 - List Environments and the Current State (do they need to be rebuilt?):
 
 `vf ls --details`
@@ -45,7 +45,7 @@ This adds the build-state for the virtual-environments managed by virtualfish.
 
 This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.
 
-#+begin_src md :noweb-ref vf-rebuild
+#+begin_src markdown :noweb-ref vf-rebuild
 - Rebuild the current environment (e.g. after Ubuntu changes pip):
 
 `vf upgrade --rebuild`
@@ -53,8 +53,15 @@ This is the command to use after an Ubuntu upgrade where they change the python 
 
 You can also rebuild a specific environment (not necessarily the one you're in).
 
-#+begin_src md :noweb-ref vf-rebuild-another
+#+begin_src markdown :noweb-ref vf-rebuild-another
 - Rebuild a specific environment
 
 `vf upgrade --rebuild {{virtualenv-name}}`
 #+end_src
+
+#+begin_notecard
+If the environments are broken by an update, ~pipx~ is likely broken too, run this too, maybe:
+
+ - ~pipx reinstall-all~
+ - ~pip install setuptools --upgrade~
+#+end_notecard
