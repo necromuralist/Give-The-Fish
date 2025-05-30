@@ -3,7 +3,7 @@
 .. slug: configfish-the-fish-configuration
 .. date: 2023-06-22 13:14:19 UTC-07:00
 .. tags: configuration
-.. category: 
+.. category: Configuration
 .. link: 
 .. description: The fish configuration file.
 .. type: text
