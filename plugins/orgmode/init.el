@@ -75,6 +75,7 @@
     ("latex" . "latex")
     ("lisp" . "lisp")
     ("makefile" . "makefile")
+    ("markdown" . "markdown")
     ("matlab" . "matlab")
     ("mscgen" . "mscgen")
     ("ocaml" . "ocaml")
