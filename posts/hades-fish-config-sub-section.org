@@ -20,6 +20,8 @@
 <<monstery-hosts>>
 
 <<proton-vpn>>
+
+<<vterm-printf>>
 #+end_src
 
 This creates a file in ~give-the-fish/dingehaufen/~ named ~hades.fish~. To use it, link or copy the file into the folder =~/.config/fish/conf.d/=
@@ -58,3 +60,29 @@ The current command-line interface is deprecated so it gets uninstalled when you
 #+end_src
 
 **Okay:** so I installed the GUI again. It has fewer features than the CLI but after a year they haven't released the updated CLI and the community version is falling behind in  dependency-versions so for now, this is out.
+
+* Vterm Printf
+
+This is for [[https://github.com/akermu/emacs-libvterm][emacs-libvterm]], weirdly enough. I didn't see anything wrong with running vterm (in emacs) without this function, but the README says we need it for some things.
+
+#+begin_src fish :noweb-ref vterm-printf
+function vterm_printf;
+    if begin; [  -n "$TMUX" ]  ; and  string match -q -r "screen|tmux" "$TERM"; end
+        # tell tmux to pass the escape sequences through
+        printf "\ePtmux;\e\e]%s\007\e\\" "$argv"
+    else if string match -q -- "screen*" "$TERM"
+        # GNU screen (screen, screen-256color, screen-256color-bce)
+        printf "\eP\e]%s\007\e\\" "$argv"
+    else
+        printf "\e]%s\e\\" "$argv"
+    end
+end
+#+end_src
+
+- From the [[https://github.com/akermu/emacs-libvterm?tab=readme-ov-file#shell-side-configuration][Shell-Side Configuration]] section of the vterm README
+- Although the vterm installation instructions recommends using Melpa, from what I can tell the version of emacs that ubuntu gives out through ~apt~ doesn't support dynamic module loading (a requirement to get vterm through melpa) so I installed it using ~apt~:
+
+  + elpa-vterm
+  + emacs-libvterm
+
+  Installing ~elpa-vterm~ via ~apt~ automatically installs ~emacs-libvterm~.
