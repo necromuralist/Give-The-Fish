@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 function upgrade --description "Upgrade packages."
     function boldblue
         set_color --bold blue
