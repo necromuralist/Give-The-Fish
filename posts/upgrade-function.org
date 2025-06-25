@@ -1,0 +1,116 @@
+#+BEGIN_COMMENT
+.. title: Upgrade Function
+.. slug: upgrade-function
+.. date: 2025-06-24 12:04:29 UTC-07:00
+.. tags: functions,cli,packages,apt,snap
+.. category: Functions
+.. link: 
+.. description: A package upgrade function.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+#+begin_src noweb :tangle ../functions/upgrade.fish :exports none
+<<function-upgrade>>
+    <<function-bold-blue>>
+
+    <<update-apt>>
+
+    <<upgrade-apt>>
+
+    <<upgrade-snaps>>
+
+    <<upgrade-flatpak>>
+
+    <<clean-flatpak>>
+end
+#+end_src
+
+* The Function
+This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation...
+
+#+begin_src fish :noweb-ref function-upgrade
+function upgrade --description "Upgrade packages."
+#+end_src
+
+** Bold Blue
+
+This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the ~upgrade~ function.
+
+#+begin_src fish :noweb-ref function-bold-blue
+function boldblue
+    set_color --bold blue
+    echo $argv
+    set_color normal
+end
+#+end_src
+** Apt Calls
+
+These are calls to update the debian-based packages.
+
+*** Update
+
+These calls update the database and then show us what is upgradable. 
+
+#+begin_src fish :noweb-ref update-apt
+boldblue Checking apt
+sudo apt-fast update --yes
+sudo apt-get --just-print upgrade
+#+end_src
+
+#+begin_notecard
+I was initially using ~apt~ to list the upgradable packages, but installing ~more~ as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that ~apt~ is a front-end to other packages to make them easier to use, and that ~apt-get~ is  better for non-interactive use (and is one of the things that ~apt~ is using behind the scenes anyway).
+#+end_notecard
+
+*** Upgrade and Autoremove
+
+Now we run the upgrade. ~upgrade~ will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. ~full-upgrade~ will do what ~upgrade~ does but will remove any installed packages if needed to upgrade an installed package. So, we're going with ~full-upgrade~.
+
+I'm also auto-removing any packages that get orphaned as dependencies by an upgrade. 
+
+#+begin_src fish :noweb-ref upgrade-apt
+boldblue Upgrading apt
+sudo apt-fast full-upgrade --yes
+sudo apt-get autoremove --yes
+#+end_src
+
+** Snap
+
+Snaps should update themselves. But let's see what happens if we do it.
+
+#+begin_src fish :noweb-ref upgrade-snaps
+boldblue Updating snaps
+sudo snap refresh
+#+end_src
+
+** Flatpak
+
+*** Update
+
+#+begin_src fish :noweb-ref upgrade-flatpak
+boldblue Updating flatpak
+flatpak update --assumeyes
+#+end_src
+
+#+begin_notecard
+**Note:** I was running this with ~--noninteractive~ but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.
+#+end_notecard
+** Uninstall
+
+#+begin_src fish :noweb-ref clean-flatpak
+boldblue Uninstalling unused flatpaks
+flatpak uninstall --unused --assumeyes
+#+end_src
+
+* Some Messages
+** Phased Updates
+
+#+begin_src fish
+The following upgrades have been deferred due to phasing:
+  alsa-ucm-conf
+#+end_src
+
+This message is referring to [[https://documentation.ubuntu.com/server/explanation/software/about-apt-upgrade-and-phased-updates/][Phased Updating]]. That is, there is an update that is being rolled out in stages to see if it is stable before it's given out to everybody. So the update exists, but you won't get it until the developers decide it's okay to roll it out to everybody.

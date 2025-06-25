@@ -11,6 +11,9 @@
 .. updated: 
 
 #+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
 #+begin_src sh :tangle ../functions/towebp.fish :exports none
 #! /usr/bin/env fish
 
