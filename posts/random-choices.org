@@ -16,6 +16,8 @@
 <<random-word>>
 
 <<random-motif>>
+
+<<random-imdb-movie>>
 #+end_src
 * Random Word
 
@@ -38,8 +40,8 @@ This relies on the fact that words being defined are in all-caps. It ends up cat
 This selects a random motif from the [[https://en.wikipedia.org/wiki/Motif-Index_of_Folk-Literature?useskin=vector][Motif-Index of Folk Literature]]. The file came from [[https://archive.org/details/Thompson2016MotifIndex][archive.org]] (the searchable text version).
 
 #+begin_src fish :noweb-ref random-motif
-abbr --add -- motif "random choice (gzip -cd \
-    ~/.local/share/choice/motif-index.txt.gz)"
+abbr --add -- motif "zcat \
+    ~/.local/share/choice/motif-index.txt.gz | shuf -n1"
 #+end_src
 
 The ~words.txt~ file was created from the =~/pCloud/synced/reading/423-websters-unabridged-dictionary/websters-unabridged-dictionary-project-gutenberg.txt= using grep.
@@ -51,3 +53,14 @@ grep -P "[A-Z][A-Z]+" <file> > words.txt
 This relies on the fact that words being defined are in all-caps. It ends up catching more than just the words but I figure I'll update it as I find the other cases.
 
 - [[https://stackoverflow.com/a/8151437][Stackoverflow on using gzip to extract lines]]
+- [[https://unix.stackexchange.com/a/683295][Stack Exchange on extracting one line]]
+
+#+begin_notecard
+**Note:** Using 'gzip' worked for this, but when I tried it on a bigger file it gave an error (too many responses) so I think it isn't the best way to do it. Using 'zcat' works even with really big files.
+#+end_notecard
+
+* Random IMDB Movie
+
+#+begin_src fish :noweb-ref random-imdb-movie
+abbr --add -- imdb "zcat /media/irvin/datasets/imdb/movie.basics.tsv.gz | shuf -n1"
+#+end_src

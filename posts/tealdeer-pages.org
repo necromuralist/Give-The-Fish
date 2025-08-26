@@ -16,12 +16,27 @@
 
 This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a command-line help system.
 
-The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~. The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$.
+The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~. The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$ so maybe symlink it there.
 
 * Patches
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them.
 
-* Virtual Fish
+** Emacs
+#+begin_src sh :tangle ../dingehaufen/tealdeer/pages/emacs.patch.md :exports none
+<<emacs-init-directory>>
+#+end_src
+
+*** Init Directory
+
+This is to use a different ~init.el~ file (presumably for debugging).
+
+#+begin_src md :noweb-ref emacs-init-directory
+- Use a different initialization file when starting up:
+
+`emacs --init-directory={{path/to/directory-with-init/}}`
+#+end_src
+
+** Virtual Fish
 
 #+begin_src sh :tangle ../dingehaufen/tealdeer/pages/vf.patch.md :exports none
 <<vf-list>>
@@ -31,7 +46,7 @@ These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custo
 <<vf-rebuild-another>>
 #+end_src
 
-** Check The Environment
+*** Check The Environment
 
 This adds the build-state for the virtual-environments managed by virtualfish.
 
@@ -41,7 +56,7 @@ This adds the build-state for the virtual-environments managed by virtualfish.
 `vf ls --details`
 #+end_src
 
-** Rebuild the Environment
+*** Rebuild the Environment
 
 This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.
 
