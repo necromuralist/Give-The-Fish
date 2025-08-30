@@ -337,8 +337,11 @@ Turning off the backups for tramp only fixed one case, but it turned out that th
   (add-to-list 'auto-mode-alist '("\\.py" . python-mode))
 #+END_SRC
 * Emacs Jupyter
-#+begin_src python :noweb-ref jupyter-emacs
-(org-babel-jupyter-override-src-block "python")
+The ~org-babel-jupyter-override-src-block~ function is loaded by the ~ob-jupyter~ package and sometimes fails if it isn't loaded yet. This only seems to happen while troubleshooting and the init file is being altered, but since it's confusing when it does happen (and a distraction from whatever I'm actually fixing) I'm adding the solution from [[https://github.com/emacs-jupyter/jupyter/issues/461#issuecomment-1678501097][this github bug report]] (the ~with-eval-after-load~ function will wait until the init file is loaded).
+
+#+begin_src emacs-lisp :noweb-ref jupyter-emacs
+(with-eval-after-load 'ob-jupyter
+  (org-babel-jupyter-override-src-block "python"))
 #+end_src
 * Fish
 #+begin_src emacs-lisp :noweb-ref fish-shell
