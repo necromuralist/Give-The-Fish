@@ -473,6 +473,7 @@ This just stops emitting the message that emacs is using a default 4 spaces when
      (latex . t)
      (org . t)
      (js . t)
+     (python . t)
      (jupyter . t)
      ))
 

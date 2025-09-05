@@ -70,6 +70,7 @@
      (latex . t)
      (org . t)
      (js . t)
+     (python . t)
      (jupyter . t)
      ))
 
