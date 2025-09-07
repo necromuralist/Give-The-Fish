@@ -343,6 +343,11 @@ The ~org-babel-jupyter-override-src-block~ function is loaded by the ~ob-jupyter
 (with-eval-after-load 'ob-jupyter
   (org-babel-jupyter-override-src-block "python"))
 #+end_src
+
+#+begin_notecard
+**Note:** This makes it so you (kind of) have to edit python blocks using the command ~C-c v~ to open the editor. For some reason this was broken for a little while and I could edit it both in the org-file and in the editor, but when I "fixed" the setup, the org-file blocks stopped auto-indenting or tabbing and I forgot about opening the editor so I thought the setup was "broken". If things don't seem to be working right, try opening the editor and see if that's working.
+#+end_notecard
+
 * Fish
 #+begin_src emacs-lisp :noweb-ref fish-shell
 ;; fish functions
@@ -521,10 +526,19 @@ This just stops emitting the message that emacs is using a default 4 spaces when
   (add-to-list 'org-latex-minted-langs '(ipython "python"))
 #+END_SRC
 * Feature Mode
+
+For this to work you need to install the ~feature-mode~ package.
+
 #+NAME: feature-mode
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'auto-mode-alist '("\\.feature" . feature-mode))
 #+END_SRC
+
+This line just tells emacs to use feature-mode with files ending with the ~.feature~ extension, most of the time I use it with org-babel, so to set that up you need the line:
+
+ - ~(add-to-list 'org-src-lang-modes '("feature" . "feature"))~
+
+In the org-babel list of languages.
 
 * yaml
 #+BEGIN_SRC emacs-lisp :noweb-ref yaml
