@@ -13,6 +13,7 @@
 #+END_COMMENT
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
+#+PROPERTY: header-args :dir 
 
 This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a command-line help system.
 
@@ -80,3 +81,19 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
  - ~pipx reinstall-all~
  - ~pip install setuptools --upgrade~
 #+end_notecard
+
+* pdfjam
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/pdfjam.patch.md :exports none
+<<pdfjam-letter-size>>
+#+end_src
+
+** Resize to Letter
+
+#+begin_src markdown :noweb-ref pdfjam-letter-size
+- Resize PDF document to letter-paper size
+
+`pdfjam {{input-file}} --paper letter --outfile {{output-file-name}}`
+
+`pdfjam {{input-file}} --papersize 8.5in,11in --outfile {{output-file-name}}`
+#+end_src
