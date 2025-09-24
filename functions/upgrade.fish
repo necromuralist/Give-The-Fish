@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 function upgrade --description "Upgrade packages."
     function boldblue
         set_color --bold blue
@@ -7,13 +6,6 @@ function upgrade --description "Upgrade packages."
     end
 
     boldblue Checking apt
-||||||| Stash base
-function upgrade
-=======
-#! /usr/bin/env fish
-
-function upgrade
->>>>>>> Stashed changes
     sudo apt-fast update --yes
     sudo apt-get --just-print upgrade
 
