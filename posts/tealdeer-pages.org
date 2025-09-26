@@ -19,7 +19,7 @@ This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a
 The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~. The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$.
 
 * Patches
-These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them.
+These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] instead (they go in the same folder, there's just a different file-name convention).
 
 * Virtual Fish
 
