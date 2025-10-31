@@ -13,33 +13,18 @@
 #+END_COMMENT
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
-#+PROPERTY: header-args :dir 
 
 This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a command-line help system.
 
 The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~. The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$ so maybe symlink it there.
 
 * Patches
-These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them.
+These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] instead (they go in the same folder, there's just a different file-name convention).
 
-** Emacs
-#+begin_src sh :tangle ../dingehaufen/tealdeer/pages/emacs.patch.md :exports none
-<<emacs-init-directory>>
-#+end_src
-
-*** Init Directory
-
-This is to use a different ~init.el~ file (presumably for debugging).
-
-#+begin_src md :noweb-ref emacs-init-directory
-- Use a different initialization file when starting up:
-
-`emacs --init-directory={{path/to/directory-with-init/}}`
-#+end_src
 
 ** Virtual Fish
 
-#+begin_src sh :tangle ../dingehaufen/tealdeer/pages/vf.patch.md :exports none
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/vf.patch.md
 <<vf-list>>
 
 <<vf-rebuild>>
@@ -82,13 +67,14 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
  - ~pip install setuptools --upgrade~
 #+end_notecard
 
-* pdfjam
 
-#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/pdfjam.patch.md :exports none
+** pdfjam
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/pdfjam.patch.md
 <<pdfjam-letter-size>>
 #+end_src
 
-** Resize to Letter
+*** Resize to Letter
 
 #+begin_src markdown :noweb-ref pdfjam-letter-size
 - Resize PDF document to letter-paper size
@@ -96,4 +82,30 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
 `pdfjam {{input-file}} --paper letter --outfile {{output-file-name}}`
 
 `pdfjam {{input-file}} --papersize 8.5in,11in --outfile {{output-file-name}}`
+#+end_src
+
+
+** Emacs
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/emacs.patch.md
+<<emacs-sudo-file>>
+
+<<emacs-init-directory>>
+#+end_src
+
+*** Open File With Sudo
+Got this from [[https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs][a Stack Overflow Question]]. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).
+
+#+begin_src markdown :noweb-ref emacs-sudo-file
+- Open a (local) file with sudo.
+
+`C-x C-f /sudo::/path/to/file`
+#+end_src
+
+*** Use a Different Init.el
+This is to use a different ~init.el~ file (presumably for debugging).
+
+#+begin_src markdown :noweb-ref emacs-init-directory
+- Use a different initialization file when starting up:
+
+`emacs --init-directory={{path/to/directory-with-init/}}`
 #+end_src
