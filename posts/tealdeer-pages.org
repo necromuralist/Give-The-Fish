@@ -21,6 +21,26 @@ The expected folder in this repository to put these pages is ~dingehaufen/tealde
 * Patches
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] instead (they go in the same folder, there's just a different file-name convention).
 
+** gs
+This is for ghost script.
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/gs.patch.md
+<<gs-black-and-white-pdf>>
+#+end_src
+
+** Black and White PDF
+
+This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a [[https://askubuntu.com/a/1474303][Ask Ubunt (Stack Exchange)]] answer.
+
+#+begin_notecard
+In the cases I've tried this doesn't convert raster images.
+#+end_notecard
+
+#+begin_src markdown :noweb-ref gs-black-and-white-pdf
+- Convert PDF text to black and white (not grayscale)
+
+`gs -sDEVICE=pdfwrite -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile=<output-file-name> <pdf-input-file-name>`
+#+end_src
 
 ** Virtual Fish
 
