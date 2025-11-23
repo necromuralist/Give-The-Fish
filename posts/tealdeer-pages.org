@@ -87,7 +87,6 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
  - ~pip install setuptools --upgrade~
 #+end_notecard
 
-
 ** pdfjam
 
 #+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/pdfjam.patch.md
@@ -103,7 +102,6 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
 
 `pdfjam {{input-file}} --papersize 8.5in,11in --outfile {{output-file-name}}`
 #+end_src
-
 
 ** Emacs
 #+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/emacs.patch.md
@@ -129,3 +127,21 @@ This is to use a different ~init.el~ file (presumably for debugging).
 
 `emacs --init-directory={{path/to/directory-with-init/}}`
 #+end_src
+
+** Image Magick
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/magick-convert.patch.md
+<<magick-remove-background>>
+#+end_src
+
+*** Remove PDF Background
+This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.
+
+#+begin_src markdown :noweb-ref magick-remove-background
+- Remove background of PDF assuming the image density
+
+`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`
+#+end_src
+
+#+begin_notecard
+I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).
+#+end_notecard
