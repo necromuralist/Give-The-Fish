@@ -16,12 +16,33 @@
 
 This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a command-line help system.
 
-The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~. The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$.
+The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~. The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$ so maybe symlink it there.
 
 * Patches
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] instead (they go in the same folder, there's just a different file-name convention).
 
-* Virtual Fish
+** gs
+This is for ghost script.
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/gs.patch.md
+<<gs-black-and-white-pdf>>
+#+end_src
+
+** Black and White PDF
+
+This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a [[https://askubuntu.com/a/1474303][Ask Ubunt (Stack Exchange)]] answer.
+
+#+begin_notecard
+In the cases I've tried this doesn't convert raster images.
+#+end_notecard
+
+#+begin_src markdown :noweb-ref gs-black-and-white-pdf
+- Convert PDF text to black and white (not grayscale)
+
+`gs -sDEVICE=pdfwrite -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile=<output-file-name> <pdf-input-file-name>`
+#+end_src
+
+** Virtual Fish
 
 #+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/vf.patch.md
 <<vf-list>>
@@ -31,7 +52,7 @@ These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custo
 <<vf-rebuild-another>>
 #+end_src
 
-** Check The Environment
+*** Check The Environment
 
 This adds the build-state for the virtual-environments managed by virtualfish.
 
@@ -41,7 +62,7 @@ This adds the build-state for the virtual-environments managed by virtualfish.
 `vf ls --details`
 #+end_src
 
-** Rebuild the Environment
+*** Rebuild the Environment
 
 This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.
 
@@ -66,13 +87,13 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
  - ~pip install setuptools --upgrade~
 #+end_notecard
 
-* pdfjam
+** pdfjam
 
 #+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/pdfjam.patch.md
 <<pdfjam-letter-size>>
 #+end_src
 
-** Resize to Letter
+*** Resize to Letter
 
 #+begin_src markdown :noweb-ref pdfjam-letter-size
 - Resize PDF document to letter-paper size
@@ -82,13 +103,14 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
 `pdfjam {{input-file}} --papersize 8.5in,11in --outfile {{output-file-name}}`
 #+end_src
 
-* Emacs
-
+** Emacs
 #+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/emacs.patch.md
 <<emacs-sudo-file>>
+
+<<emacs-init-directory>>
 #+end_src
 
-** Open File With Sudo
+*** Open File With Sudo
 Got this from [[https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs][a Stack Overflow Question]]. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).
 
 #+begin_src markdown :noweb-ref emacs-sudo-file
@@ -96,3 +118,30 @@ Got this from [[https://stackoverflow.com/questions/95631/open-a-file-with-su-su
 
 `C-x C-f /sudo::/path/to/file`
 #+end_src
+
+*** Use a Different Init.el
+This is to use a different ~init.el~ file (presumably for debugging).
+
+#+begin_src markdown :noweb-ref emacs-init-directory
+- Use a different initialization file when starting up:
+
+`emacs --init-directory={{path/to/directory-with-init/}}`
+#+end_src
+
+** Image Magick
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/magick-convert.patch.md
+<<magick-remove-background>>
+#+end_src
+
+*** Remove PDF Background
+This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.
+
+#+begin_src markdown :noweb-ref magick-remove-background
+- Remove background of PDF assuming the image density
+
+`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`
+#+end_src
+
+#+begin_notecard
+I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).
+#+end_notecard
