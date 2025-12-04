@@ -71,53 +71,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#orgcc7ed10">Tangle Source</a></li>
-<li><a href="index.html#orgfded706">Package Management</a></li>
-<li><a href="index.html#orgf2247c2">Pyvenv</a></li>
-<li><a href="index.html#org5f43901">Emacs Settings</a>
+<li><a href="index.html#org9bffb2f">Tangle Source</a></li>
+<li><a href="index.html#orgf3a619f">Package Management</a></li>
+<li><a href="index.html#org483b97a">Pyvenv</a></li>
+<li><a href="index.html#org9843cec">Emacs Settings</a>
 <ul>
-<li><a href="index.html#orga119a9e">File Locks</a></li>
-<li><a href="index.html#org80ebea4">Toggle Input Mode</a></li>
+<li><a href="index.html#orgf842123">File Locks</a></li>
+<li><a href="index.html#org622c353">Toggle Input Mode</a></li>
 </ul>
 </li>
-<li><a href="index.html#orgb38f092">Tramp Mode</a>
+<li><a href="index.html#orgfbd7f39">Tramp Mode</a>
 <ul>
-<li><a href="index.html#org064d0e0">Use SSH</a></li>
-<li><a href="index.html#org3823c87">No Backups</a></li>
+<li><a href="index.html#org4c4992f">Use SSH</a></li>
+<li><a href="index.html#orgb07d0cd">No Backups</a></li>
 </ul>
 </li>
-<li><a href="index.html#org560cd61">God Mode</a></li>
-<li><a href="index.html#orgffd2996">Python and elpy</a></li>
-<li><a href="index.html#org46bc9ea">Emacs Jupyter</a></li>
-<li><a href="index.html#org6454681">Fish</a></li>
-<li><a href="index.html#orga771001">Org-mode</a></li>
-<li><a href="index.html#orgbbac72e">org-export python mode</a></li>
-<li><a href="index.html#org6375148">web-mode</a></li>
-<li><a href="index.html#orge0fc9b0">auto-complete</a></li>
-<li><a href="index.html#orgedc52ef">general text</a></li>
-<li><a href="index.html#orgade0b1f">javascript</a></li>
-<li><a href="index.html#org2ac472a">org-babel</a></li>
-<li><a href="index.html#org2d5e445">Feature Mode</a></li>
-<li><a href="index.html#org438e72d">yaml</a></li>
-<li><a href="index.html#orgacfc072">Vue.js</a></li>
-<li><a href="index.html#orge9fcd1a">Bats</a></li>
-<li><a href="index.html#org1da49dc">Backups</a></li>
-<li><a href="index.html#org64ccc72">Markdown Mode</a></li>
-<li><a href="index.html#orgcbea9a7">Dockerfile Mode</a></li>
-<li><a href="index.html#orgb81eba7">Flycheck</a></li>
-<li><a href="index.html#org0c0f5e3">Keychain</a></li>
-<li><a href="index.html#orgb9b6b24">Hideshow-Org</a></li>
+<li><a href="index.html#org73bf8d3">God Mode</a></li>
+<li><a href="index.html#org166c4b7">Python and elpy</a></li>
+<li><a href="index.html#orgb54e350">Emacs Jupyter</a></li>
+<li><a href="index.html#org354538e">Fish</a></li>
+<li><a href="index.html#orgbb7a289">Org-mode</a></li>
+<li><a href="index.html#org11fbdc2">org-export python mode</a></li>
+<li><a href="index.html#orgdcd46c2">web-mode</a></li>
+<li><a href="index.html#org45ca7f1">auto-complete</a></li>
+<li><a href="index.html#org6637fd4">general text</a></li>
+<li><a href="index.html#org34cd6ff">javascript</a></li>
+<li><a href="index.html#org63f99a8">org-babel</a></li>
+<li><a href="index.html#org121064f">Feature Mode</a></li>
+<li><a href="index.html#org32e623f">yaml</a></li>
+<li><a href="index.html#orgbc9a213">Vue.js</a></li>
+<li><a href="index.html#org84b8b3a">Bats</a></li>
+<li><a href="index.html#orgb5d6510">Backups</a></li>
+<li><a href="index.html#org5746116">Markdown Mode</a></li>
+<li><a href="index.html#org7af96fa">Dockerfile Mode</a></li>
+<li><a href="index.html#org98c715d">Flycheck</a></li>
+<li><a href="index.html#org14c14c5">Keychain</a></li>
+<li><a href="index.html#orgadfb66b">Hideshow-Org</a></li>
 </ul>
 </div>
 </div>
 <p>This is an emacs configuration file. I had this in another repository and have been adding to it over the decades, occasionally removing things when troubleshooting but otherwise it's just a jumble right now, so I'm putting it in the fish-based repository to work on it.</p>
 <p>The tangle creates a file <code>give-the-fish/dingehaufen/init.el</code> that you should copy or link into the right place <code>~/.emacs.d</code> right now.</p>
-<div class="notecard" id="org28389c2">
+<div class="notecard" id="org3e30e37">
 <p>At some post I should look into breaking up the configuration (see <a href="https://emacs.stackexchange.com/a/18441">https://emacs.stackexchange.com/a/18441</a> for an example).</p>
 </div>
-<div class="outline-2" id="outline-container-orgcc7ed10">
-<h2 id="orgcc7ed10">Tangle Source</h2>
-<div class="outline-text-2" id="text-orgcc7ed10">
+<div class="outline-2" id="outline-container-org9bffb2f">
+<h2 id="org9bffb2f">Tangle Source</h2>
+<div class="outline-text-2" id="text-org9bffb2f">
 <div class="highlight">
 <pre><span></span><span class="nv">&lt;&lt;package-management&gt;&gt;</span>
 
@@ -234,9 +234,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgfded706">
-<h2 id="orgfded706">Package Management</h2>
-<div class="outline-text-2" id="text-orgfded706">
+<div class="outline-2" id="outline-container-orgf3a619f">
+<h2 id="orgf3a619f">Package Management</h2>
+<div class="outline-text-2" id="text-orgf3a619f">
 <div class="highlight">
 <pre><span></span><span class="c1">;; emacs package management</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'package</span><span class="p">)</span>
@@ -253,9 +253,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgf2247c2">
-<h2 id="orgf2247c2">Pyvenv</h2>
-<div class="outline-text-2" id="text-orgf2247c2">
+<div class="outline-2" id="outline-container-org483b97a">
+<h2 id="org483b97a">Pyvenv</h2>
+<div class="outline-text-2" id="text-org483b97a">
 <p>To prevent errors when emacs starts up and tries to load jupyter (for emacs-jupyter) we need <code>jupyter</code> to be on the path. Now that debian and ubuntu don't want you to install python packages globally we need another way. I had installed it with <a href="https://github.com/pypa/pipx">pipx</a>, which does work, but pipx doesn't doesn't install standalone libraries and sometimes breaks when trying to install dependencies so I think for this case it's better to avoid it and instead use a virtual-environment. Since it has to be activated before anything else that uses python packages, activating the environment should be put fairly early on in the <code>init.el</code> file.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'pyvenv</span><span class="p">)</span>
@@ -264,9 +264,9 @@
 <p>This assumes that there's a virtual-environment named <code>emacs-environment</code> setup (with jupyter at least). Note that you could load <code>elpy</code> instead of just <code>pyvenv</code> by itself, but <code>elpy</code> is giving me errors (or at least lots of warnings) when it loads and I don't feel like troubleshooting it right now, since it doesn't play well with org-mode anyway.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5f43901">
-<h2 id="org5f43901">Emacs Settings</h2>
-<div class="outline-text-2" id="text-org5f43901">
+<div class="outline-2" id="outline-container-org9843cec">
+<h2 id="org9843cec">Emacs Settings</h2>
+<div class="outline-text-2" id="text-org9843cec">
 <div class="highlight">
 <pre><span></span><span class="c1">;; show column-numbers</span>
 <span class="p">(</span><span class="nf">column-number-mode</span><span class="p">)</span>
@@ -302,18 +302,18 @@
 <span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">ring-bell-function</span><span class="w"> </span><span class="ss">'ignore</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-orga119a9e">
-<h3 id="orga119a9e">File Locks</h3>
-<div class="outline-text-3" id="text-orga119a9e">
+<div class="outline-3" id="outline-container-orgf842123">
+<h3 id="orgf842123">File Locks</h3>
+<div class="outline-text-3" id="text-orgf842123">
 <p>A lock got corrupted once in the cryfs directory, making the editing file unreadable. You can fix it by copying everything but the corrupted file out, destroying and re-creating the cryfs mount and copying the files back in, but hopefully this will fix it. It does mean that two people could edit the same file and cause problems, but oh, well.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">create-lockfiles</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org80ebea4">
-<h3 id="org80ebea4">Toggle Input Mode</h3>
-<div class="outline-text-3" id="text-org80ebea4">
+<div class="outline-3" id="outline-container-org622c353">
+<h3 id="org622c353">Toggle Input Mode</h3>
+<div class="outline-text-3" id="text-org622c353">
 <p>This allows you to switch to latex input and then back using <code>C-\</code>. This is useful to embed special characters. Although you could probably just do the same thing with math mode if you want to wait until exporting.</p>
 <div class="highlight">
 <pre><span></span><span class="c1">;; (setq default-input-method "TeX")</span>
@@ -322,40 +322,40 @@
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb38f092">
-<h2 id="orgb38f092">Tramp Mode</h2>
-<div class="outline-text-2" id="text-orgb38f092"></div>
-<div class="outline-3" id="outline-container-org064d0e0">
-<h3 id="org064d0e0">Use SSH</h3>
-<div class="outline-text-3" id="text-org064d0e0">
+<div class="outline-2" id="outline-container-orgfbd7f39">
+<h2 id="orgfbd7f39">Tramp Mode</h2>
+<div class="outline-text-2" id="text-orgfbd7f39"></div>
+<div class="outline-3" id="outline-container-org4c4992f">
+<h3 id="org4c4992f">Use SSH</h3>
+<div class="outline-text-3" id="text-org4c4992f">
 <div class="highlight">
 <pre><span></span><span class="c1">;; tramp mode</span>
 <span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">tramp-default-method</span><span class="w"> </span><span class="s">"ssh"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org3823c87">
-<h3 id="org3823c87">No Backups</h3>
-<div class="outline-text-3" id="text-org3823c87">
+<div class="outline-3" id="outline-container-orgb07d0cd">
+<h3 id="orgb07d0cd">No Backups</h3>
+<div class="outline-text-3" id="text-orgb07d0cd">
 <p>This is from the <a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html">emacs manual</a>.</p>
 </div>
-<div class="outline-4" id="outline-container-org64b74d3">
-<h4 id="org64b74d3">Turn Off For Tramp Only</h4>
-<div class="outline-text-4" id="text-org64b74d3">
+<div class="outline-4" id="outline-container-org1e074aa">
+<h4 id="org1e074aa">Turn Off For Tramp Only</h4>
+<div class="outline-text-4" id="text-org1e074aa">
 <p>The configuration is currently saving backups to a local directory, so when I use tramp I get warnings about it. It doesn't tell you why but according to the <a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html">emacs wiki</a> this is a potential security leak (although probably not in the way I'm using it). Anyway, I've never used the backups so I'll just disable them for tramp.</p>
 <div class="highlight">
 <pre><span></span><span class="c1">;; disable tramp-backups</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'backup-directory-alist</span>
 <span class="w">             </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="nv">tramp-file-name-regexp</span><span class="w"> </span><span class="nv">nil</span><span class="p">))</span>
 </pre></div>
-<div class="notecard" id="org8c7a3bb">
+<div class="notecard" id="org4723f93">
 <p><b>Note:</b> This turns out to solve the wrong problem so I added another rule in the next section.</p>
 </div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org705f206">
-<h4 id="org705f206">Turn Off For Sudo</h4>
-<div class="outline-text-4" id="text-org705f206">
+<div class="outline-4" id="outline-container-org33e4242">
+<h4 id="org33e4242">Turn Off For Sudo</h4>
+<div class="outline-text-4" id="text-org33e4242">
 <p>Turning off the backups for tramp only fixed one case, but it turned out that the thing that made me look into this was using <code>sudo</code> on my local machine to opne the <code>/etc/hosts</code> file so I was actually solving the wrong (or only part of the) problem. This next bit is supposed to turn off all backups where you use <code>sudo</code>. So it probably doesn't belong under tramp any more. Maybe I'll move it later</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">backup-enable-predicate</span>
@@ -370,9 +370,9 @@
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org560cd61">
-<h2 id="org560cd61">God Mode</h2>
-<div class="outline-text-2" id="text-org560cd61">
+<div class="outline-2" id="outline-container-org73bf8d3">
+<h2 id="org73bf8d3">God Mode</h2>
+<div class="outline-text-2" id="text-org73bf8d3">
 <div class="highlight">
 <pre><span></span><span class="c1">;; god-mode</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'god-mode</span><span class="p">)</span>
@@ -451,9 +451,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgffd2996">
-<h2 id="orgffd2996">Python and elpy</h2>
-<div class="outline-text-2" id="text-orgffd2996">
+<div class="outline-2" id="outline-container-org166c4b7">
+<h2 id="org166c4b7">Python and elpy</h2>
+<div class="outline-text-2" id="text-org166c4b7">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; elpy</span>
 <span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">elpy</span>
@@ -465,17 +465,19 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org46bc9ea">
-<h2 id="org46bc9ea">Emacs Jupyter</h2>
-<div class="outline-text-2" id="text-org46bc9ea">
+<div class="outline-2" id="outline-container-orgb54e350">
+<h2 id="orgb54e350">Emacs Jupyter</h2>
+<div class="outline-text-2" id="text-orgb54e350">
+<p>The <code>org-babel-jupyter-override-src-block</code> function is loaded by the <code>ob-jupyter</code> package and sometimes fails if it isn't loaded yet. This only seems to happen while troubleshooting and the init file is being altered, but since it's confusing when it does happen (and a distraction from whatever I'm actually fixing) I'm adding the solution from <a href="https://github.com/emacs-jupyter/jupyter/issues/461#issuecomment-1678501097">this github bug report</a> (the <code>with-eval-after-load</code> function will wait until the init file is loaded).</p>
 <div class="highlight">
-<pre><span></span><span class="p">(</span><span class="n">org</span><span class="o">-</span><span class="n">babel</span><span class="o">-</span><span class="n">jupyter</span><span class="o">-</span><span class="n">override</span><span class="o">-</span><span class="n">src</span><span class="o">-</span><span class="n">block</span> <span class="s2">"python"</span><span class="p">)</span>
+<pre><span></span><span class="p">(</span><span class="nf">with-eval-after-load</span><span class="w"> </span><span class="ss">'ob-jupyter</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">org-babel-jupyter-override-src-block</span><span class="w"> </span><span class="s">"python"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org6454681">
-<h2 id="org6454681">Fish</h2>
-<div class="outline-text-2" id="text-org6454681">
+<div class="outline-2" id="outline-container-org354538e">
+<h2 id="org354538e">Fish</h2>
+<div class="outline-text-2" id="text-org354538e">
 <div class="highlight">
 <pre><span></span><span class="c1">;; fish functions</span>
 <span class="o">'</span><span class="p">(</span><span class="nv">sh-basic-offset</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
@@ -484,9 +486,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga771001">
-<h2 id="orga771001">Org-mode</h2>
-<div class="outline-text-2" id="text-orga771001">
+<div class="outline-2" id="outline-container-orgbb7a289">
+<h2 id="orgbb7a289">Org-mode</h2>
+<div class="outline-text-2" id="text-orgbb7a289">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; org-mode</span>
 <span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'org</span><span class="p">)</span>
@@ -526,9 +528,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgbbac72e">
-<h2 id="orgbbac72e">org-export python mode</h2>
-<div class="outline-text-2" id="text-orgbbac72e">
+<div class="outline-2" id="outline-container-org11fbdc2">
+<h2 id="org11fbdc2">org-export python mode</h2>
+<div class="outline-text-2" id="text-org11fbdc2">
 <p>This just stops emitting the message that emacs is using a default 4 spaces when exporting python.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">python-indent-guess-indent-offset</span><span class="w"> </span><span class="nv">t</span><span class="p">)</span><span class="w">  </span>
@@ -536,9 +538,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org6375148">
-<h2 id="org6375148">web-mode</h2>
-<div class="outline-text-2" id="text-org6375148">
+<div class="outline-2" id="outline-container-orgdcd46c2">
+<h2 id="orgdcd46c2">web-mode</h2>
+<div class="outline-text-2" id="text-orgdcd46c2">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; web-mode</span>
 <span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'web-mode</span><span class="p">)</span>
@@ -567,9 +569,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orge0fc9b0">
-<h2 id="orge0fc9b0">auto-complete</h2>
-<div class="outline-text-2" id="text-orge0fc9b0">
+<div class="outline-2" id="outline-container-org45ca7f1">
+<h2 id="org45ca7f1">auto-complete</h2>
+<div class="outline-text-2" id="text-org45ca7f1">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; auto-complete</span>
 <span class="w">  </span><span class="c1">;; (defun turn-on-autocomplete () (auto-complete-mode 1))</span>
@@ -582,9 +584,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgedc52ef">
-<h2 id="orgedc52ef">general text</h2>
-<div class="outline-text-2" id="text-orgedc52ef">
+<div class="outline-2" id="outline-container-org6637fd4">
+<h2 id="org6637fd4">general text</h2>
+<div class="outline-text-2" id="text-org6637fd4">
 <div class="highlight">
 <pre><span></span><span class="c1">;; increase/decrease text size</span>
 <span class="p">(</span><span class="nf">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nf">kbd</span><span class="w"> </span><span class="s">"C-c C-+"</span><span class="p">)</span><span class="w"> </span><span class="ss">'text-scale-increase</span><span class="p">)</span>
@@ -592,18 +594,18 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgade0b1f">
-<h2 id="orgade0b1f">javascript</h2>
-<div class="outline-text-2" id="text-orgade0b1f">
+<div class="outline-2" id="outline-container-org34cd6ff">
+<h2 id="org34cd6ff">javascript</h2>
+<div class="outline-text-2" id="text-org34cd6ff">
 <div class="highlight">
 <pre><span></span><span class="c1">;; js2</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">.js</span><span class="se">\\</span><span class="s">'"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">js2-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org2ac472a">
-<h2 id="org2ac472a">org-babel</h2>
-<div class="outline-text-2" id="text-org2ac472a">
+<div class="outline-2" id="outline-container-org63f99a8">
+<h2 id="org63f99a8">org-babel</h2>
+<div class="outline-text-2" id="text-org63f99a8">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; org-babel</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'ob-js</span><span class="p">)</span>
@@ -672,17 +674,17 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org2d5e445">
-<h2 id="org2d5e445">Feature Mode</h2>
-<div class="outline-text-2" id="text-org2d5e445">
+<div class="outline-2" id="outline-container-org121064f">
+<h2 id="org121064f">Feature Mode</h2>
+<div class="outline-text-2" id="text-org121064f">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">.feature"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">feature-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org438e72d">
-<h2 id="org438e72d">yaml</h2>
-<div class="outline-text-2" id="text-org438e72d">
+<div class="outline-2" id="outline-container-org32e623f">
+<h2 id="org32e623f">yaml</h2>
+<div class="outline-text-2" id="text-org32e623f">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">add-hook</span><span class="w"> </span><span class="ss">'yaml-mode-hook</span>
 <span class="w">          </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span>
@@ -690,18 +692,18 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgacfc072">
-<h2 id="orgacfc072">Vue.js</h2>
-<div class="outline-text-2" id="text-orgacfc072">
+<div class="outline-2" id="outline-container-orgbc9a213">
+<h2 id="orgbc9a213">Vue.js</h2>
+<div class="outline-text-2" id="text-orgbc9a213">
 <div class="highlight">
 <pre><span></span><span class="c1">;; setup files ending in “.vue” to open in vue-mode</span>
 <span class="c1">;; (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orge9fcd1a">
-<h2 id="orge9fcd1a">Bats</h2>
-<div class="outline-text-2" id="text-orge9fcd1a">
+<div class="outline-2" id="outline-container-org84b8b3a">
+<h2 id="org84b8b3a">Bats</h2>
+<div class="outline-text-2" id="text-org84b8b3a">
 <p>The Bash Automated Test System mode.</p>
 <table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
 <colgroup>
@@ -739,9 +741,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org1da49dc">
-<h2 id="org1da49dc">Backups</h2>
-<div class="outline-text-2" id="text-org1da49dc">
+<div class="outline-2" id="outline-container-orgb5d6510">
+<h2 id="orgb5d6510">Backups</h2>
+<div class="outline-text-2" id="text-orgb5d6510">
 <p>From the <a href="https://www.emacswiki.org/emacs/BackupDirectory">Emacs Wiki</a>.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">backup-directory-alist</span><span class="w"> </span>
@@ -751,9 +753,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org64ccc72">
-<h2 id="org64ccc72">Markdown Mode</h2>
-<div class="outline-text-2" id="text-org64ccc72">
+<div class="outline-2" id="outline-container-org5746116">
+<h2 id="org5746116">Markdown Mode</h2>
+<div class="outline-text-2" id="text-org5746116">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">markdown-mode</span>
 <span class="w"> </span><span class="nv">:ensure</span><span class="w"> </span><span class="nv">t</span>
@@ -765,18 +767,18 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgcbea9a7">
-<h2 id="orgcbea9a7">Dockerfile Mode</h2>
-<div class="outline-text-2" id="text-orgcbea9a7">
+<div class="outline-2" id="outline-container-org7af96fa">
+<h2 id="org7af96fa">Dockerfile Mode</h2>
+<div class="outline-text-2" id="text-org7af96fa">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'dockerfile-mode</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"Dockerfile</span><span class="se">\\</span><span class="s">'"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">dockerfile-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb81eba7">
-<h2 id="orgb81eba7">Flycheck</h2>
-<div class="outline-text-2" id="text-orgb81eba7">
+<div class="outline-2" id="outline-container-org98c715d">
+<h2 id="org98c715d">Flycheck</h2>
+<div class="outline-text-2" id="text-org98c715d">
 <div class="highlight">
 <pre><span></span><span class="c1">;; flycheck</span>
 <span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">flycheck</span>
@@ -833,9 +835,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org0c0f5e3">
-<h2 id="org0c0f5e3">Keychain</h2>
-<div class="outline-text-2" id="text-org0c0f5e3">
+<div class="outline-2" id="outline-container-org14c14c5">
+<h2 id="org14c14c5">Keychain</h2>
+<div class="outline-text-2" id="text-org14c14c5">
 <p>This is to be able to use ssh-agent (via keychain).</p>
 <ul class="org-ul">
 <li>`keychain` needs to be installed (e.g. via apt)</li>
@@ -852,9 +854,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb9b6b24">
-<h2 id="orgb9b6b24">Hideshow-Org</h2>
-<div class="outline-text-2" id="text-orgb9b6b24">
+<div class="outline-2" id="outline-container-orgadfb66b">
+<h2 id="orgadfb66b">Hideshow-Org</h2>
+<div class="outline-text-2" id="text-orgadfb66b">
 <div class="highlight">
 <pre><span></span>(add-to-list 'load-path "~/projects/third-party/hideshow-org/")
 (require 'hideshow-org)

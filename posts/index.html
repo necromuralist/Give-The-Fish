@@ -12,7 +12,7 @@
 <meta content="Nikola (getnikola.com)" name="generator">
 <link href="../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
 <link href="https://necromuralist.github.io/Give-The-Fish/posts/index.html" rel="canonical">
-<link href="index-1.html" rel="next" type="text/html"><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="index-2.html" rel="next" type="text/html"><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- favicons -->
 <link href="../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
 <link href="../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
@@ -48,6 +48,141 @@
 <div class="postindex">
 <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
+<h1 class="p-name entry-title"><a class="u-url" href="upgrade-function/index.html">Upgrade Function</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="upgrade-function/index.html" rel="bookmark"><time class="published dt-published" datetime="2025-06-24T12:04:29-07:00" itemprop="datePublished" title="2025-06-24 12:04">2025-06-24 12:04</time></a></p>
+</div>
+</header>
+<div class="p-summary entry-summary">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="upgrade-function/index.html#orgeb1a962">The Function</a>
+<ul>
+<li><a href="upgrade-function/index.html#org102a4c6">Bold Blue</a></li>
+<li><a href="upgrade-function/index.html#orge3e710d">Apt Calls</a></li>
+<li><a href="upgrade-function/index.html#org32fb363">Snap</a></li>
+<li><a href="upgrade-function/index.html#orgfa0829b">Flatpak</a></li>
+<li><a href="upgrade-function/index.html#orga408d75">Uninstall</a></li>
+</ul>
+</li>
+<li><a href="upgrade-function/index.html#orga1da25c">Some Messages</a>
+<ul>
+<li><a href="upgrade-function/index.html#org904f869">Phased Updates</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgeb1a962">
+<h2 id="orgeb1a962">The Function</h2>
+<div class="outline-text-2" id="text-orgeb1a962">
+<p>This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation…</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> upgrade --description <span class="s2">"Upgrade packages."</span>
+</pre></div>
+</div>
+<div class="outline-3" id="outline-container-org102a4c6">
+<h3 id="org102a4c6">Bold Blue</h3>
+<div class="outline-text-3" id="text-org102a4c6">
+<p>This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the <code>upgrade</code> function.</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> boldblue
+    <span class="nb">set_color</span> --bold blue
+    <span class="k">echo</span> <span class="nv">$argv</span>
+    <span class="nb">set_color </span>normal
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orge3e710d">
+<h3 id="orge3e710d">Apt Calls</h3>
+<div class="outline-text-3" id="text-orge3e710d">
+<p>These are calls to update the debian-based packages.</p>
+</div>
+<div class="outline-4" id="outline-container-org613a01c">
+<h4 id="org613a01c">Update</h4>
+<div class="outline-text-4" id="text-org613a01c">
+<p>These calls update the database and then show us what is upgradable.</p>
+<div class="highlight">
+<pre><span></span>boldblue Checking apt
+sudo apt-fast update --yes
+sudo apt-get --just-print upgrade
+</pre></div>
+<div class="notecard" id="orgd3bd8e3">
+<p>I was initially using <code>apt</code> to list the upgradable packages, but installing <code>more</code> as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that <code>apt</code> is a front-end to other packages to make them easier to use, and that <code>apt-get</code> is better for non-interactive use (and is one of the things that <code>apt</code> is using behind the scenes anyway).</p>
+</div>
+</div>
+</div>
+<div class="outline-4" id="outline-container-org127b823">
+<h4 id="org127b823">Upgrade and Autoremove</h4>
+<div class="outline-text-4" id="text-org127b823">
+<p>Now we run the upgrade. <code>upgrade</code> will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. <code>full-upgrade</code> will do what <code>upgrade</code> does but will remove any installed packages if needed to upgrade an installed package. So, we're going with <code>full-upgrade</code>.</p>
+<p>I'm also auto-removing any packages that get orphaned as dependencies by an upgrade.</p>
+<div class="highlight">
+<pre><span></span>boldblue Upgrading apt
+sudo apt-fast full-upgrade --yes
+sudo apt-get autoremove --yes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org32fb363">
+<h3 id="org32fb363">Snap</h3>
+<div class="outline-text-3" id="text-org32fb363">
+<p>Snaps should update themselves. But let's see what happens if we do it.</p>
+<div class="highlight">
+<pre><span></span>boldblue Updating snaps
+sudo snap refresh
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgfa0829b">
+<h3 id="orgfa0829b">Flatpak</h3>
+<div class="outline-text-3" id="text-orgfa0829b"></div>
+<div class="outline-4" id="outline-container-org377941a">
+<h4 id="org377941a">Update</h4>
+<div class="outline-text-4" id="text-org377941a">
+<div class="highlight">
+<pre><span></span>boldblue Updating flatpak
+flatpak update --assumeyes
+</pre></div>
+<div class="notecard" id="org4d743ac">
+<p><b>Note:</b> I was running this with <code>--noninteractive</code> but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orga408d75">
+<h3 id="orga408d75">Uninstall</h3>
+<div class="outline-text-3" id="text-orga408d75">
+<div class="highlight">
+<pre><span></span>boldblue Uninstalling unused flatpaks
+flatpak uninstall --unused --assumeyes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orga1da25c">
+<h2 id="orga1da25c">Some Messages</h2>
+<div class="outline-text-2" id="text-orga1da25c"></div>
+<div class="outline-3" id="outline-container-org904f869">
+<h3 id="org904f869">Phased Updates</h3>
+<div class="outline-text-3" id="text-org904f869">
+<div class="highlight">
+<pre><span></span>The following upgrades have been deferred due to phasing:
+  alsa-ucm-conf
+</pre></div>
+<p>This message is referring to <a href="https://documentation.ubuntu.com/server/explanation/software/about-apt-upgrade-and-phased-updates/">Phased Updating</a>. That is, there is an update that is being rolled out in stages to see if it is stable before it's given out to everybody. So the update exists, but you won't get it until the developers decide it's okay to roll it out to everybody.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
 <h1 class="p-name entry-title"><a class="u-url" href="tealdeer-pages/index.html">Tealdeer Pages</a></h1>
 <div class="metadata">
 <p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
@@ -59,30 +194,61 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="tealdeer-pages/index.html#orga4f5b9d">Patches</a></li>
-<li><a href="tealdeer-pages/index.html#orga25b017">Virtual Fish</a>
+<li><a href="tealdeer-pages/index.html#orgd1f37f6">Patches</a>
 <ul>
-<li><a href="tealdeer-pages/index.html#org943b374">Check The Environment</a></li>
-<li><a href="tealdeer-pages/index.html#org272063e">Rebuild the Environment</a></li>
+<li><a href="tealdeer-pages/index.html#orge374e07">gs</a></li>
+<li><a href="tealdeer-pages/index.html#org76a5f3a">Black and White PDF</a></li>
+<li><a href="tealdeer-pages/index.html#org337a7fc">Virtual Fish</a></li>
+<li><a href="tealdeer-pages/index.html#orgca7ab6a">pdfjam</a></li>
+<li><a href="tealdeer-pages/index.html#org1156c47">Emacs</a></li>
+<li><a href="tealdeer-pages/index.html#org8e98754">Image Magick</a></li>
+</ul>
+</li>
+<li><a href="tealdeer-pages/index.html#org2574397">Pages</a>
+<ul>
+<li><a href="tealdeer-pages/index.html#org967e2f6">MakeMKV Command Line</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <p>This is for configuring <a href="https://tealdeer-rs.github.io/tealdeer/">tealdeer</a>, a command-line help system.</p>
-<p>The expected folder in this repository to put these pages is <code>dingehaufen/tealdeer/pages/</code>. The default location that <code>tealdeer</code> will look for the pages is \(~/.local/share/tealdeer/pages/~\).</p>
-<div class="outline-2" id="outline-container-orga4f5b9d">
-<h2 id="orga4f5b9d">Patches</h2>
-<div class="outline-text-2" id="text-orga4f5b9d">
-<p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches">patches</a> which extend existing help pages rather than replacing them.</p>
+<ul class="org-ul">
+<li>The expected folder in this repository to put these pages is <code>dingehaufen/tealdeer/pages/</code>.</li>
+<li>The default location that <code>tealdeer</code> will look for the pages is \(~/.local/share/tealdeer/pages/~\) so maybe symlink it there.</li>
+<li>The pages that come with <code>tealdeer</code> are at \(~/.cache/tealdeer/tldr-pages/pages/\) (look here for examples)</li>
+</ul>
+<div class="outline-2" id="outline-container-orgd1f37f6">
+<h2 id="orgd1f37f6">Patches</h2>
+<div class="outline-text-2" id="text-orgd1f37f6">
+<p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches">patches</a> which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> instead (they go in the same folder, there's just a different file-name convention).</p>
+</div>
+<div class="outline-3" id="outline-container-orge374e07">
+<h3 id="orge374e07">gs</h3>
+<div class="outline-text-3" id="text-orge374e07">
+<p>This is for ghost script.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga25b017">
-<h2 id="orga25b017">Virtual Fish</h2>
-<div class="outline-text-2" id="text-orga25b017"></div>
-<div class="outline-3" id="outline-container-org943b374">
-<h3 id="org943b374">Check The Environment</h3>
-<div class="outline-text-3" id="text-org943b374">
+<div class="outline-3" id="outline-container-org76a5f3a">
+<h3 id="org76a5f3a">Black and White PDF</h3>
+<div class="outline-text-3" id="text-org76a5f3a">
+<p>This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a <a href="https://askubuntu.com/a/1474303">Ask Ubunt (Stack Exchange)</a> answer.</p>
+<div class="notecard" id="orgdfd66b0">
+<p>In the cases I've tried this doesn't convert raster images.</p>
+</div>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Convert PDF text to black and white (not grayscale)
+
+<span class="sb">`gs -sDEVICE=pdfwrite -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile={{output-file-name}} {{pdf-input-file-name}}`</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org337a7fc">
+<h3 id="org337a7fc">Virtual Fish</h3>
+<div class="outline-text-3" id="text-org337a7fc"></div>
+<div class="outline-4" id="outline-container-org240666c">
+<h4 id="org240666c">Check The Environment</h4>
+<div class="outline-text-4" id="text-org240666c">
 <p>This adds the build-state for the virtual-environments managed by virtualfish.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>List Environments and the Current State (do they need to be rebuilt?):
@@ -91,9 +257,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org272063e">
-<h3 id="org272063e">Rebuild the Environment</h3>
-<div class="outline-text-3" id="text-org272063e">
+<div class="outline-4" id="outline-container-org6f0d0a5">
+<h4 id="org6f0d0a5">Rebuild the Environment</h4>
+<div class="outline-text-4" id="text-org6f0d0a5">
 <p>This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Rebuild the current environment (e.g. after Ubuntu changes pip):
@@ -106,12 +272,167 @@
 
 <span class="sb">`vf upgrade --rebuild {{virtualenv-name}}`</span>
 </pre></div>
-<div class="notecard" id="org51b51ab">
+<div class="notecard" id="org205390a">
 <p>If the environments are broken by an update, <code>pipx</code> is likely broken too, run this too, maybe:</p>
 <ul class="org-ul">
 <li><code>pipx reinstall-all</code></li>
 <li><code>pip install setuptools --upgrade</code></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgca7ab6a">
+<h3 id="orgca7ab6a">pdfjam</h3>
+<div class="outline-text-3" id="text-orgca7ab6a"></div>
+<div class="outline-4" id="outline-container-org613219f">
+<h4 id="org613219f">Resize to Letter</h4>
+<div class="outline-text-4" id="text-org613219f">
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Resize PDF document to letter-paper size
+
+<span class="sb">`pdfjam {{input-file}} --paper letter --outfile {{output-file-name}}`</span>
+
+<span class="sb">`pdfjam {{input-file}} --papersize 8.5in,11in --outfile {{output-file-name}}`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org1156c47">
+<h3 id="org1156c47">Emacs</h3>
+<div class="outline-text-3" id="text-org1156c47"></div>
+<div class="outline-4" id="outline-container-org4e9f16d">
+<h4 id="org4e9f16d">Open File With Sudo</h4>
+<div class="outline-text-4" id="text-org4e9f16d">
+<p>Got this from <a href="https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs">a Stack Overflow Question</a>. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).</p>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Open a (local) file with sudo.
+
+<span class="sb">`C-x C-f /sudo::/path/to/file`</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-4" id="outline-container-org5a365d6">
+<h4 id="org5a365d6">Use a Different Init.el</h4>
+<div class="outline-text-4" id="text-org5a365d6">
+<p>This is to use a different <code>init.el</code> file (presumably for debugging).</p>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Use a different initialization file when starting up:
+
+<span class="sb">`emacs --init-directory={{path/to/directory-with-init/}}`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org8e98754">
+<h3 id="org8e98754">Image Magick</h3>
+<div class="outline-text-3" id="text-org8e98754"></div>
+<div class="outline-4" id="outline-container-orgf7ce77c">
+<h4 id="orgf7ce77c">Remove PDF Background</h4>
+<div class="outline-text-4" id="text-orgf7ce77c">
+<p>This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.</p>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Remove background of PDF assuming the image density
+
+<span class="sb">`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`</span>
+</pre></div>
+<div class="notecard" id="org7b3c84a">
+<p>I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org2574397">
+<h2 id="org2574397">Pages</h2>
+<div class="outline-text-2" id="text-org2574397">
+<p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with <code>page.md</code> instead of <code>patch.md</code>. Otherwise the contents look the same.</p>
+</div>
+<div class="outline-3" id="outline-container-org967e2f6">
+<h3 id="org967e2f6">MakeMKV Command Line</h3>
+<div class="outline-text-3" id="text-org967e2f6">
+<p>The <code>makemkvcon</code> command has a <code>--help</code> output, which is somewhat vague. I got the information for this from a developers text file <a href="https://www.makemkv.com/developers/usage.txt">usage.txt</a> on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due errors specific to the GUI so the command line interface is useful to work around those cases.</p>
+</div>
+<div class="outline-4" id="outline-container-org40b16b7">
+<h4 id="org40b16b7">List Drives</h4>
+<div class="outline-text-4" id="text-org40b16b7">
+<p>This lists the drives as <code>makemkvcon</code> sees them.</p>
+<ul class="org-ul">
+<li><code>--robot</code>: meant for automation, tells the program to output the information to the screen</li>
+<li><code>--cache=1</code>: reduce the cache size (optional)</li>
+<li><code>info</code>: the sub-command to print information</li>
+<li><code>disc:9999</code>: show discs (not files, etc.)</li>
+</ul>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>List drives - DRV:index,visible,enabled,flags,drive name,disc name
+
+<span class="sb">`makemkvcon --robot --cache=1 info disc:9999`</span>
+</pre></div>
+<p>The output looks something like:</p>
+<div class="highlight">
+<pre><span></span>MSG:1005,0,1,<span class="s2">"MakeMKV v1.18.2 linux(x64-release) started"</span>,<span class="s2">"%1 started"</span>,<span class="s2">"MakeMKV v1.18.2 linux(x64-release)"</span>
+DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ1028"</span>,<span class="s2">"MAD_MAX_FURY_ROAD"</span>,<span class="s2">"/dev/sr0"</span>
+</pre></div>
+<p>With more lines below it. The second line is the one I'm interested in. It has the format:</p>
+<p>`DRV:index,visible,enabled,flags,drive name,disc name`</p>
+<p>This table shows what their text file says the fields mean.</p>
+<table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
+<colgroup>
+<col class="org-left">
+<col class="org-left"></colgroup>
+<thead>
+<tr>
+<th class="org-left" scope="col">Field</th>
+<th class="org-left" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">DRV</td>
+<td class="org-left">This is a drive</td>
+</tr>
+<tr>
+<td class="org-left">index</td>
+<td class="org-left">The number we'll use to refer to the drive</td>
+</tr>
+<tr>
+<td class="org-left">visible</td>
+<td class="org-left">1 if drive is present</td>
+</tr>
+<tr>
+<td class="org-left">enabled</td>
+<td class="org-left">1 if drive is accessible</td>
+</tr>
+<tr>
+<td class="org-left">flags</td>
+<td class="org-left">media flags (see AP_DskFsFlagXXX in apdefs.h)</td>
+</tr>
+<tr>
+<td class="org-left">drive name</td>
+<td class="org-left">drive name string</td>
+</tr>
+<tr>
+<td class="org-left">disc name</td>
+<td class="org-left">disc name string</td>
+</tr>
+</tbody>
+</table>
+<p>Looking at the sample output, it would appear that the drive isn't present or accessible, which doesn't seem right so I just ignore everything but the <code>drive name</code> to find the right entry in the output and the <code>index</code> for use in invoking <code>makemkvcon</code>.</p>
+</div>
+</div>
+<div class="outline-4" id="outline-container-orga2e4c0c">
+<h4 id="orga2e4c0c">Copy Disc As MKV Files</h4>
+<div class="outline-text-4" id="text-orga2e4c0c">
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Save disk to the current directory as MKV files
+
+<span class="sb">`makemkvcon mkv disc:{{index}} all .`</span>
+
+<span class="k">-</span><span class="w"> </span>Save disk to another directory as MKV files
+
+<span class="sb">`makemkvcon mkv disc:{{index}} all {{/absolute-path-to-folder/}}`</span>
+</pre></div>
+<p>The sample shows the output being copied to `c:\folder` which is a DOS format (I think). It didn't seem to work when I used a relative path (other than the current directory) so I assume you need to use the full path starting from <code>/home/</code>.</p>
 </div>
 </div>
 </div>
@@ -186,9 +507,18 @@
 </div>
 </header>
 <div class="p-summary entry-summary">
-<div class="outline-2" id="outline-container-org1810999">
-<h2 id="org1810999">To Webp</h2>
-<div class="outline-text-2" id="text-org1810999">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="to-webp-function/index.html#org02287fe">To Webp</a></li>
+<li><a href="to-webp-function/index.html#org39a615b">Lossless Webp</a></li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org02287fe">
+<h2 id="org02287fe">To Webp</h2>
+<div class="outline-text-2" id="text-org02287fe">
 <p>A simple for loop to make using globs easier with cwebp.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> towebp -d <span class="s2">"Convert image files to web with cweb"</span>
@@ -202,11 +532,11 @@
 <p>I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgd32e809">
-<h2 id="orgd32e809">Lossless Webp</h2>
-<div class="outline-text-2" id="text-orgd32e809">
+<div class="outline-2" id="outline-container-org39a615b">
+<h2 id="org39a615b">Lossless Webp</h2>
+<div class="outline-text-2" id="text-org39a615b">
 <p>The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.</p>
-<div class="notecard" id="org2220a5e">
+<div class="notecard" id="orgd99a39f">
 <p>I looked in the source code (from Google's <a href="https://chromium.googlesource.com/webm/libwebp/"><code>libwebp</code></a> git repository) and the <code>-z</code> flag is equivalent to using <code>-lossless -m 6 -q 10</code> (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…</p>
 </div>
 <div class="highlight">
@@ -480,53 +810,53 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="emacs-initel/index.html#orgcc7ed10">Tangle Source</a></li>
-<li><a href="emacs-initel/index.html#orgfded706">Package Management</a></li>
-<li><a href="emacs-initel/index.html#orgf2247c2">Pyvenv</a></li>
-<li><a href="emacs-initel/index.html#org5f43901">Emacs Settings</a>
+<li><a href="emacs-initel/index.html#org9bffb2f">Tangle Source</a></li>
+<li><a href="emacs-initel/index.html#orgf3a619f">Package Management</a></li>
+<li><a href="emacs-initel/index.html#org483b97a">Pyvenv</a></li>
+<li><a href="emacs-initel/index.html#org9843cec">Emacs Settings</a>
 <ul>
-<li><a href="emacs-initel/index.html#orga119a9e">File Locks</a></li>
-<li><a href="emacs-initel/index.html#org80ebea4">Toggle Input Mode</a></li>
+<li><a href="emacs-initel/index.html#orgf842123">File Locks</a></li>
+<li><a href="emacs-initel/index.html#org622c353">Toggle Input Mode</a></li>
 </ul>
 </li>
-<li><a href="emacs-initel/index.html#orgb38f092">Tramp Mode</a>
+<li><a href="emacs-initel/index.html#orgfbd7f39">Tramp Mode</a>
 <ul>
-<li><a href="emacs-initel/index.html#org064d0e0">Use SSH</a></li>
-<li><a href="emacs-initel/index.html#org3823c87">No Backups</a></li>
+<li><a href="emacs-initel/index.html#org4c4992f">Use SSH</a></li>
+<li><a href="emacs-initel/index.html#orgb07d0cd">No Backups</a></li>
 </ul>
 </li>
-<li><a href="emacs-initel/index.html#org560cd61">God Mode</a></li>
-<li><a href="emacs-initel/index.html#orgffd2996">Python and elpy</a></li>
-<li><a href="emacs-initel/index.html#org46bc9ea">Emacs Jupyter</a></li>
-<li><a href="emacs-initel/index.html#org6454681">Fish</a></li>
-<li><a href="emacs-initel/index.html#orga771001">Org-mode</a></li>
-<li><a href="emacs-initel/index.html#orgbbac72e">org-export python mode</a></li>
-<li><a href="emacs-initel/index.html#org6375148">web-mode</a></li>
-<li><a href="emacs-initel/index.html#orge0fc9b0">auto-complete</a></li>
-<li><a href="emacs-initel/index.html#orgedc52ef">general text</a></li>
-<li><a href="emacs-initel/index.html#orgade0b1f">javascript</a></li>
-<li><a href="emacs-initel/index.html#org2ac472a">org-babel</a></li>
-<li><a href="emacs-initel/index.html#org2d5e445">Feature Mode</a></li>
-<li><a href="emacs-initel/index.html#org438e72d">yaml</a></li>
-<li><a href="emacs-initel/index.html#orgacfc072">Vue.js</a></li>
-<li><a href="emacs-initel/index.html#orge9fcd1a">Bats</a></li>
-<li><a href="emacs-initel/index.html#org1da49dc">Backups</a></li>
-<li><a href="emacs-initel/index.html#org64ccc72">Markdown Mode</a></li>
-<li><a href="emacs-initel/index.html#orgcbea9a7">Dockerfile Mode</a></li>
-<li><a href="emacs-initel/index.html#orgb81eba7">Flycheck</a></li>
-<li><a href="emacs-initel/index.html#org0c0f5e3">Keychain</a></li>
-<li><a href="emacs-initel/index.html#orgb9b6b24">Hideshow-Org</a></li>
+<li><a href="emacs-initel/index.html#org73bf8d3">God Mode</a></li>
+<li><a href="emacs-initel/index.html#org166c4b7">Python and elpy</a></li>
+<li><a href="emacs-initel/index.html#orgb54e350">Emacs Jupyter</a></li>
+<li><a href="emacs-initel/index.html#org354538e">Fish</a></li>
+<li><a href="emacs-initel/index.html#orgbb7a289">Org-mode</a></li>
+<li><a href="emacs-initel/index.html#org11fbdc2">org-export python mode</a></li>
+<li><a href="emacs-initel/index.html#orgdcd46c2">web-mode</a></li>
+<li><a href="emacs-initel/index.html#org45ca7f1">auto-complete</a></li>
+<li><a href="emacs-initel/index.html#org6637fd4">general text</a></li>
+<li><a href="emacs-initel/index.html#org34cd6ff">javascript</a></li>
+<li><a href="emacs-initel/index.html#org63f99a8">org-babel</a></li>
+<li><a href="emacs-initel/index.html#org121064f">Feature Mode</a></li>
+<li><a href="emacs-initel/index.html#org32e623f">yaml</a></li>
+<li><a href="emacs-initel/index.html#orgbc9a213">Vue.js</a></li>
+<li><a href="emacs-initel/index.html#org84b8b3a">Bats</a></li>
+<li><a href="emacs-initel/index.html#orgb5d6510">Backups</a></li>
+<li><a href="emacs-initel/index.html#org5746116">Markdown Mode</a></li>
+<li><a href="emacs-initel/index.html#org7af96fa">Dockerfile Mode</a></li>
+<li><a href="emacs-initel/index.html#org98c715d">Flycheck</a></li>
+<li><a href="emacs-initel/index.html#org14c14c5">Keychain</a></li>
+<li><a href="emacs-initel/index.html#orgadfb66b">Hideshow-Org</a></li>
 </ul>
 </div>
 </div>
 <p>This is an emacs configuration file. I had this in another repository and have been adding to it over the decades, occasionally removing things when troubleshooting but otherwise it's just a jumble right now, so I'm putting it in the fish-based repository to work on it.</p>
 <p>The tangle creates a file <code>give-the-fish/dingehaufen/init.el</code> that you should copy or link into the right place <code>~/.emacs.d</code> right now.</p>
-<div class="notecard" id="org28389c2">
+<div class="notecard" id="org3e30e37">
 <p>At some post I should look into breaking up the configuration (see <a href="https://emacs.stackexchange.com/a/18441">https://emacs.stackexchange.com/a/18441</a> for an example).</p>
 </div>
-<div class="outline-2" id="outline-container-orgcc7ed10">
-<h2 id="orgcc7ed10">Tangle Source</h2>
-<div class="outline-text-2" id="text-orgcc7ed10">
+<div class="outline-2" id="outline-container-org9bffb2f">
+<h2 id="org9bffb2f">Tangle Source</h2>
+<div class="outline-text-2" id="text-org9bffb2f">
 <div class="highlight">
 <pre><span></span><span class="nv">&lt;&lt;package-management&gt;&gt;</span>
 
@@ -643,9 +973,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgfded706">
-<h2 id="orgfded706">Package Management</h2>
-<div class="outline-text-2" id="text-orgfded706">
+<div class="outline-2" id="outline-container-orgf3a619f">
+<h2 id="orgf3a619f">Package Management</h2>
+<div class="outline-text-2" id="text-orgf3a619f">
 <div class="highlight">
 <pre><span></span><span class="c1">;; emacs package management</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'package</span><span class="p">)</span>
@@ -662,9 +992,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgf2247c2">
-<h2 id="orgf2247c2">Pyvenv</h2>
-<div class="outline-text-2" id="text-orgf2247c2">
+<div class="outline-2" id="outline-container-org483b97a">
+<h2 id="org483b97a">Pyvenv</h2>
+<div class="outline-text-2" id="text-org483b97a">
 <p>To prevent errors when emacs starts up and tries to load jupyter (for emacs-jupyter) we need <code>jupyter</code> to be on the path. Now that debian and ubuntu don't want you to install python packages globally we need another way. I had installed it with <a href="https://github.com/pypa/pipx">pipx</a>, which does work, but pipx doesn't doesn't install standalone libraries and sometimes breaks when trying to install dependencies so I think for this case it's better to avoid it and instead use a virtual-environment. Since it has to be activated before anything else that uses python packages, activating the environment should be put fairly early on in the <code>init.el</code> file.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'pyvenv</span><span class="p">)</span>
@@ -673,9 +1003,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 <p>This assumes that there's a virtual-environment named <code>emacs-environment</code> setup (with jupyter at least). Note that you could load <code>elpy</code> instead of just <code>pyvenv</code> by itself, but <code>elpy</code> is giving me errors (or at least lots of warnings) when it loads and I don't feel like troubleshooting it right now, since it doesn't play well with org-mode anyway.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5f43901">
-<h2 id="org5f43901">Emacs Settings</h2>
-<div class="outline-text-2" id="text-org5f43901">
+<div class="outline-2" id="outline-container-org9843cec">
+<h2 id="org9843cec">Emacs Settings</h2>
+<div class="outline-text-2" id="text-org9843cec">
 <div class="highlight">
 <pre><span></span><span class="c1">;; show column-numbers</span>
 <span class="p">(</span><span class="nf">column-number-mode</span><span class="p">)</span>
@@ -711,18 +1041,18 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 <span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">ring-bell-function</span><span class="w"> </span><span class="ss">'ignore</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-orga119a9e">
-<h3 id="orga119a9e">File Locks</h3>
-<div class="outline-text-3" id="text-orga119a9e">
+<div class="outline-3" id="outline-container-orgf842123">
+<h3 id="orgf842123">File Locks</h3>
+<div class="outline-text-3" id="text-orgf842123">
 <p>A lock got corrupted once in the cryfs directory, making the editing file unreadable. You can fix it by copying everything but the corrupted file out, destroying and re-creating the cryfs mount and copying the files back in, but hopefully this will fix it. It does mean that two people could edit the same file and cause problems, but oh, well.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">create-lockfiles</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org80ebea4">
-<h3 id="org80ebea4">Toggle Input Mode</h3>
-<div class="outline-text-3" id="text-org80ebea4">
+<div class="outline-3" id="outline-container-org622c353">
+<h3 id="org622c353">Toggle Input Mode</h3>
+<div class="outline-text-3" id="text-org622c353">
 <p>This allows you to switch to latex input and then back using <code>C-\</code>. This is useful to embed special characters. Although you could probably just do the same thing with math mode if you want to wait until exporting.</p>
 <div class="highlight">
 <pre><span></span><span class="c1">;; (setq default-input-method "TeX")</span>
@@ -731,40 +1061,40 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb38f092">
-<h2 id="orgb38f092">Tramp Mode</h2>
-<div class="outline-text-2" id="text-orgb38f092"></div>
-<div class="outline-3" id="outline-container-org064d0e0">
-<h3 id="org064d0e0">Use SSH</h3>
-<div class="outline-text-3" id="text-org064d0e0">
+<div class="outline-2" id="outline-container-orgfbd7f39">
+<h2 id="orgfbd7f39">Tramp Mode</h2>
+<div class="outline-text-2" id="text-orgfbd7f39"></div>
+<div class="outline-3" id="outline-container-org4c4992f">
+<h3 id="org4c4992f">Use SSH</h3>
+<div class="outline-text-3" id="text-org4c4992f">
 <div class="highlight">
 <pre><span></span><span class="c1">;; tramp mode</span>
 <span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">tramp-default-method</span><span class="w"> </span><span class="s">"ssh"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org3823c87">
-<h3 id="org3823c87">No Backups</h3>
-<div class="outline-text-3" id="text-org3823c87">
+<div class="outline-3" id="outline-container-orgb07d0cd">
+<h3 id="orgb07d0cd">No Backups</h3>
+<div class="outline-text-3" id="text-orgb07d0cd">
 <p>This is from the <a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html">emacs manual</a>.</p>
 </div>
-<div class="outline-4" id="outline-container-org64b74d3">
-<h4 id="org64b74d3">Turn Off For Tramp Only</h4>
-<div class="outline-text-4" id="text-org64b74d3">
+<div class="outline-4" id="outline-container-org1e074aa">
+<h4 id="org1e074aa">Turn Off For Tramp Only</h4>
+<div class="outline-text-4" id="text-org1e074aa">
 <p>The configuration is currently saving backups to a local directory, so when I use tramp I get warnings about it. It doesn't tell you why but according to the <a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html">emacs wiki</a> this is a potential security leak (although probably not in the way I'm using it). Anyway, I've never used the backups so I'll just disable them for tramp.</p>
 <div class="highlight">
 <pre><span></span><span class="c1">;; disable tramp-backups</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'backup-directory-alist</span>
 <span class="w">             </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="nv">tramp-file-name-regexp</span><span class="w"> </span><span class="nv">nil</span><span class="p">))</span>
 </pre></div>
-<div class="notecard" id="org8c7a3bb">
+<div class="notecard" id="org4723f93">
 <p><b>Note:</b> This turns out to solve the wrong problem so I added another rule in the next section.</p>
 </div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org705f206">
-<h4 id="org705f206">Turn Off For Sudo</h4>
-<div class="outline-text-4" id="text-org705f206">
+<div class="outline-4" id="outline-container-org33e4242">
+<h4 id="org33e4242">Turn Off For Sudo</h4>
+<div class="outline-text-4" id="text-org33e4242">
 <p>Turning off the backups for tramp only fixed one case, but it turned out that the thing that made me look into this was using <code>sudo</code> on my local machine to opne the <code>/etc/hosts</code> file so I was actually solving the wrong (or only part of the) problem. This next bit is supposed to turn off all backups where you use <code>sudo</code>. So it probably doesn't belong under tramp any more. Maybe I'll move it later</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">backup-enable-predicate</span>
@@ -779,9 +1109,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org560cd61">
-<h2 id="org560cd61">God Mode</h2>
-<div class="outline-text-2" id="text-org560cd61">
+<div class="outline-2" id="outline-container-org73bf8d3">
+<h2 id="org73bf8d3">God Mode</h2>
+<div class="outline-text-2" id="text-org73bf8d3">
 <div class="highlight">
 <pre><span></span><span class="c1">;; god-mode</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'god-mode</span><span class="p">)</span>
@@ -860,9 +1190,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgffd2996">
-<h2 id="orgffd2996">Python and elpy</h2>
-<div class="outline-text-2" id="text-orgffd2996">
+<div class="outline-2" id="outline-container-org166c4b7">
+<h2 id="org166c4b7">Python and elpy</h2>
+<div class="outline-text-2" id="text-org166c4b7">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; elpy</span>
 <span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">elpy</span>
@@ -874,17 +1204,19 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org46bc9ea">
-<h2 id="org46bc9ea">Emacs Jupyter</h2>
-<div class="outline-text-2" id="text-org46bc9ea">
+<div class="outline-2" id="outline-container-orgb54e350">
+<h2 id="orgb54e350">Emacs Jupyter</h2>
+<div class="outline-text-2" id="text-orgb54e350">
+<p>The <code>org-babel-jupyter-override-src-block</code> function is loaded by the <code>ob-jupyter</code> package and sometimes fails if it isn't loaded yet. This only seems to happen while troubleshooting and the init file is being altered, but since it's confusing when it does happen (and a distraction from whatever I'm actually fixing) I'm adding the solution from <a href="https://github.com/emacs-jupyter/jupyter/issues/461#issuecomment-1678501097">this github bug report</a> (the <code>with-eval-after-load</code> function will wait until the init file is loaded).</p>
 <div class="highlight">
-<pre><span></span><span class="p">(</span><span class="n">org</span><span class="o">-</span><span class="n">babel</span><span class="o">-</span><span class="n">jupyter</span><span class="o">-</span><span class="n">override</span><span class="o">-</span><span class="n">src</span><span class="o">-</span><span class="n">block</span> <span class="s2">"python"</span><span class="p">)</span>
+<pre><span></span><span class="p">(</span><span class="nf">with-eval-after-load</span><span class="w"> </span><span class="ss">'ob-jupyter</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">org-babel-jupyter-override-src-block</span><span class="w"> </span><span class="s">"python"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org6454681">
-<h2 id="org6454681">Fish</h2>
-<div class="outline-text-2" id="text-org6454681">
+<div class="outline-2" id="outline-container-org354538e">
+<h2 id="org354538e">Fish</h2>
+<div class="outline-text-2" id="text-org354538e">
 <div class="highlight">
 <pre><span></span><span class="c1">;; fish functions</span>
 <span class="o">'</span><span class="p">(</span><span class="nv">sh-basic-offset</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
@@ -893,9 +1225,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga771001">
-<h2 id="orga771001">Org-mode</h2>
-<div class="outline-text-2" id="text-orga771001">
+<div class="outline-2" id="outline-container-orgbb7a289">
+<h2 id="orgbb7a289">Org-mode</h2>
+<div class="outline-text-2" id="text-orgbb7a289">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; org-mode</span>
 <span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'org</span><span class="p">)</span>
@@ -935,9 +1267,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgbbac72e">
-<h2 id="orgbbac72e">org-export python mode</h2>
-<div class="outline-text-2" id="text-orgbbac72e">
+<div class="outline-2" id="outline-container-org11fbdc2">
+<h2 id="org11fbdc2">org-export python mode</h2>
+<div class="outline-text-2" id="text-org11fbdc2">
 <p>This just stops emitting the message that emacs is using a default 4 spaces when exporting python.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">python-indent-guess-indent-offset</span><span class="w"> </span><span class="nv">t</span><span class="p">)</span><span class="w">  </span>
@@ -945,9 +1277,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org6375148">
-<h2 id="org6375148">web-mode</h2>
-<div class="outline-text-2" id="text-org6375148">
+<div class="outline-2" id="outline-container-orgdcd46c2">
+<h2 id="orgdcd46c2">web-mode</h2>
+<div class="outline-text-2" id="text-orgdcd46c2">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; web-mode</span>
 <span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'web-mode</span><span class="p">)</span>
@@ -976,9 +1308,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orge0fc9b0">
-<h2 id="orge0fc9b0">auto-complete</h2>
-<div class="outline-text-2" id="text-orge0fc9b0">
+<div class="outline-2" id="outline-container-org45ca7f1">
+<h2 id="org45ca7f1">auto-complete</h2>
+<div class="outline-text-2" id="text-org45ca7f1">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; auto-complete</span>
 <span class="w">  </span><span class="c1">;; (defun turn-on-autocomplete () (auto-complete-mode 1))</span>
@@ -991,9 +1323,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgedc52ef">
-<h2 id="orgedc52ef">general text</h2>
-<div class="outline-text-2" id="text-orgedc52ef">
+<div class="outline-2" id="outline-container-org6637fd4">
+<h2 id="org6637fd4">general text</h2>
+<div class="outline-text-2" id="text-org6637fd4">
 <div class="highlight">
 <pre><span></span><span class="c1">;; increase/decrease text size</span>
 <span class="p">(</span><span class="nf">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nf">kbd</span><span class="w"> </span><span class="s">"C-c C-+"</span><span class="p">)</span><span class="w"> </span><span class="ss">'text-scale-increase</span><span class="p">)</span>
@@ -1001,18 +1333,18 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgade0b1f">
-<h2 id="orgade0b1f">javascript</h2>
-<div class="outline-text-2" id="text-orgade0b1f">
+<div class="outline-2" id="outline-container-org34cd6ff">
+<h2 id="org34cd6ff">javascript</h2>
+<div class="outline-text-2" id="text-org34cd6ff">
 <div class="highlight">
 <pre><span></span><span class="c1">;; js2</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">.js</span><span class="se">\\</span><span class="s">'"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">js2-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org2ac472a">
-<h2 id="org2ac472a">org-babel</h2>
-<div class="outline-text-2" id="text-org2ac472a">
+<div class="outline-2" id="outline-container-org63f99a8">
+<h2 id="org63f99a8">org-babel</h2>
+<div class="outline-text-2" id="text-org63f99a8">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; org-babel</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'ob-js</span><span class="p">)</span>
@@ -1081,17 +1413,17 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org2d5e445">
-<h2 id="org2d5e445">Feature Mode</h2>
-<div class="outline-text-2" id="text-org2d5e445">
+<div class="outline-2" id="outline-container-org121064f">
+<h2 id="org121064f">Feature Mode</h2>
+<div class="outline-text-2" id="text-org121064f">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">.feature"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">feature-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org438e72d">
-<h2 id="org438e72d">yaml</h2>
-<div class="outline-text-2" id="text-org438e72d">
+<div class="outline-2" id="outline-container-org32e623f">
+<h2 id="org32e623f">yaml</h2>
+<div class="outline-text-2" id="text-org32e623f">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">add-hook</span><span class="w"> </span><span class="ss">'yaml-mode-hook</span>
 <span class="w">          </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span>
@@ -1099,18 +1431,18 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgacfc072">
-<h2 id="orgacfc072">Vue.js</h2>
-<div class="outline-text-2" id="text-orgacfc072">
+<div class="outline-2" id="outline-container-orgbc9a213">
+<h2 id="orgbc9a213">Vue.js</h2>
+<div class="outline-text-2" id="text-orgbc9a213">
 <div class="highlight">
 <pre><span></span><span class="c1">;; setup files ending in “.vue” to open in vue-mode</span>
 <span class="c1">;; (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orge9fcd1a">
-<h2 id="orge9fcd1a">Bats</h2>
-<div class="outline-text-2" id="text-orge9fcd1a">
+<div class="outline-2" id="outline-container-org84b8b3a">
+<h2 id="org84b8b3a">Bats</h2>
+<div class="outline-text-2" id="text-org84b8b3a">
 <p>The Bash Automated Test System mode.</p>
 <table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
 <colgroup>
@@ -1148,9 +1480,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org1da49dc">
-<h2 id="org1da49dc">Backups</h2>
-<div class="outline-text-2" id="text-org1da49dc">
+<div class="outline-2" id="outline-container-orgb5d6510">
+<h2 id="orgb5d6510">Backups</h2>
+<div class="outline-text-2" id="text-orgb5d6510">
 <p>From the <a href="https://www.emacswiki.org/emacs/BackupDirectory">Emacs Wiki</a>.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">backup-directory-alist</span><span class="w"> </span>
@@ -1160,9 +1492,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org64ccc72">
-<h2 id="org64ccc72">Markdown Mode</h2>
-<div class="outline-text-2" id="text-org64ccc72">
+<div class="outline-2" id="outline-container-org5746116">
+<h2 id="org5746116">Markdown Mode</h2>
+<div class="outline-text-2" id="text-org5746116">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">markdown-mode</span>
 <span class="w"> </span><span class="nv">:ensure</span><span class="w"> </span><span class="nv">t</span>
@@ -1174,18 +1506,18 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgcbea9a7">
-<h2 id="orgcbea9a7">Dockerfile Mode</h2>
-<div class="outline-text-2" id="text-orgcbea9a7">
+<div class="outline-2" id="outline-container-org7af96fa">
+<h2 id="org7af96fa">Dockerfile Mode</h2>
+<div class="outline-text-2" id="text-org7af96fa">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'dockerfile-mode</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"Dockerfile</span><span class="se">\\</span><span class="s">'"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">dockerfile-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb81eba7">
-<h2 id="orgb81eba7">Flycheck</h2>
-<div class="outline-text-2" id="text-orgb81eba7">
+<div class="outline-2" id="outline-container-org98c715d">
+<h2 id="org98c715d">Flycheck</h2>
+<div class="outline-text-2" id="text-org98c715d">
 <div class="highlight">
 <pre><span></span><span class="c1">;; flycheck</span>
 <span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">flycheck</span>
@@ -1242,9 +1574,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org0c0f5e3">
-<h2 id="org0c0f5e3">Keychain</h2>
-<div class="outline-text-2" id="text-org0c0f5e3">
+<div class="outline-2" id="outline-container-org14c14c5">
+<h2 id="org14c14c5">Keychain</h2>
+<div class="outline-text-2" id="text-org14c14c5">
 <p>This is to be able to use ssh-agent (via keychain).</p>
 <ul class="org-ul">
 <li>`keychain` needs to be installed (e.g. via apt)</li>
@@ -1261,9 +1593,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb9b6b24">
-<h2 id="orgb9b6b24">Hideshow-Org</h2>
-<div class="outline-text-2" id="text-orgb9b6b24">
+<div class="outline-2" id="outline-container-orgadfb66b">
+<h2 id="orgadfb66b">Hideshow-Org</h2>
+<div class="outline-text-2" id="text-orgadfb66b">
 <div class="highlight">
 <pre><span></span>(add-to-list 'load-path "~/projects/third-party/hideshow-org/")
 (require 'hideshow-org)
@@ -1375,37 +1707,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </div>
 </div>
 </article>
-<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
-<header>
-<h1 class="p-name entry-title"><a class="u-url" href="dim-monitor/index.html">Dim Monitor</a></h1>
-<div class="metadata">
-<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
-<p class="dateline"><a href="dim-monitor/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-10-04T17:14:37-07:00" itemprop="datePublished" title="2023-10-04 17:14">2023-10-04 17:14</time></a></p>
-</div>
-</header>
-<div class="p-summary entry-summary">
-<div class="highlight">
-<pre><span></span><span class="k">function</span> dim_monitor -d <span class="s2">"Set monitor brightness"</span> <span class="se">\</span>
-    --argument-names OUTPUT BRIGHTNESS
-
-  <span class="c"># -z : test for empty string</span>
-  <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$BRIGHTNESS</span>
-    <span class="k">set</span> BRIGHTNESS 0
-  <span class="k">end</span>
-
-  <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$OUTPUT</span>
-      <span class="k">echo</span> <span class="s2">"You must pass in the 'output' e.g. 'DVI-D-0'"</span>
-      <span class="k">echo</span> <span class="s2">"Usage: dim_monitor OUTPUT BRIGHTNESS"</span>
-   <span class="k">else</span>
-       xrandr --output <span class="nv">$OUTPUT</span> --brightness <span class="nv">$BRIGHTNESS</span> --auto
-   <span class="k">end</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-</article>
 </div>
 <ul class="pager postindexpager clearfix">
-<li class="next"><a href="index-1.html" rel="next">Older posts</a></li>
+<li class="next"><a href="index-2.html" rel="next">Older posts</a></li>
 </ul>
 <!--End of body content-->
 <footer id="footer">Scribbled by the <a href="mailto:cloisteredmonkey.jmark@slmail.me">Cloistered Monkey</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>

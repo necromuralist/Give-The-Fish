@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about apt)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/apt.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about packages)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/packages.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
 &lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
 &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
@@ -153,23 +153,4 @@ This message is referring to &lt;a href="https://documentation.ubuntu.com/server
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>apt</category><category>cli</category><category>functions</category><category>packages</category><category>snap</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</guid><pubDate>Tue, 24 Jun 2025 19:04:29 GMT</pubDate></item><item><title>Function: Apt Search</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
-This function pipes the output of apt search to less, preserving the colors. &lt;code&gt;apt&lt;/code&gt; doesn't have an option to preserve color when the output is piped so the function uses &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;unbuffer&lt;/a&gt; which disables the stripping of the color. &lt;code&gt;unbuffer&lt;/code&gt; is part of the &lt;a href="https://www.man7.org/linux/man-pages/man1/expect.1.html"&gt;expect&lt;/a&gt; package. On Ubuntu Lunar Lobster it doesn't come installed by default so you have to install expects to get unbuffer.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install expects
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; aptsearch -d &lt;span class="s2"&gt;"Paging apt search"&lt;/span&gt; --argument-names keyword
-    unbuffer apt search &lt;span class="nv"&gt;$keyword&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; less -R
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div id="outline-container-org785920e" class="outline-2"&gt;
-&lt;h2 id="org785920e"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org785920e"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;expect(1) - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/expect"&gt;https://linux.die.net/man/1/expect&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;unbuffer(1): unbuffer output - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: &lt;a href="https://linux.die.net/man/1/unbuffer"&gt;https://linux.die.net/man/1/unbuffer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>apt</category><category>function</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-apt-search/index.html</guid><pubDate>Wed, 28 Jun 2023 20:26:53 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>apt</category><category>cli</category><category>functions</category><category>packages</category><category>snap</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</guid><pubDate>Tue, 24 Jun 2025 19:04:29 GMT</pubDate></item></channel></rss>

@@ -20,6 +20,7 @@
 <link href="../../site.webmanifest" rel="manifest">
 <meta content="Cloistered Monkey" name="author">
 <link href="../function-host-grep/index.html" rel="prev" title="Function: Host Grep" type="text/html">
+<link href="../upgrade-function/index.html" rel="next" title="Upgrade Function" type="text/html">
 <meta content="Give the Fish" property="og:site_name">
 <meta content="Tealdeer Pages" property="og:title">
 <meta content="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html" property="og:url">
@@ -69,30 +70,61 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#orga4f5b9d">Patches</a></li>
-<li><a href="index.html#orga25b017">Virtual Fish</a>
+<li><a href="index.html#orgd1f37f6">Patches</a>
 <ul>
-<li><a href="index.html#org943b374">Check The Environment</a></li>
-<li><a href="index.html#org272063e">Rebuild the Environment</a></li>
+<li><a href="index.html#orge374e07">gs</a></li>
+<li><a href="index.html#org76a5f3a">Black and White PDF</a></li>
+<li><a href="index.html#org337a7fc">Virtual Fish</a></li>
+<li><a href="index.html#orgca7ab6a">pdfjam</a></li>
+<li><a href="index.html#org1156c47">Emacs</a></li>
+<li><a href="index.html#org8e98754">Image Magick</a></li>
+</ul>
+</li>
+<li><a href="index.html#org2574397">Pages</a>
+<ul>
+<li><a href="index.html#org967e2f6">MakeMKV Command Line</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <p>This is for configuring <a href="https://tealdeer-rs.github.io/tealdeer/">tealdeer</a>, a command-line help system.</p>
-<p>The expected folder in this repository to put these pages is <code>dingehaufen/tealdeer/pages/</code>. The default location that <code>tealdeer</code> will look for the pages is \(~/.local/share/tealdeer/pages/~\).</p>
-<div class="outline-2" id="outline-container-orga4f5b9d">
-<h2 id="orga4f5b9d">Patches</h2>
-<div class="outline-text-2" id="text-orga4f5b9d">
-<p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches">patches</a> which extend existing help pages rather than replacing them.</p>
+<ul class="org-ul">
+<li>The expected folder in this repository to put these pages is <code>dingehaufen/tealdeer/pages/</code>.</li>
+<li>The default location that <code>tealdeer</code> will look for the pages is \(~/.local/share/tealdeer/pages/~\) so maybe symlink it there.</li>
+<li>The pages that come with <code>tealdeer</code> are at \(~/.cache/tealdeer/tldr-pages/pages/\) (look here for examples)</li>
+</ul>
+<div class="outline-2" id="outline-container-orgd1f37f6">
+<h2 id="orgd1f37f6">Patches</h2>
+<div class="outline-text-2" id="text-orgd1f37f6">
+<p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches">patches</a> which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> instead (they go in the same folder, there's just a different file-name convention).</p>
+</div>
+<div class="outline-3" id="outline-container-orge374e07">
+<h3 id="orge374e07">gs</h3>
+<div class="outline-text-3" id="text-orge374e07">
+<p>This is for ghost script.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga25b017">
-<h2 id="orga25b017">Virtual Fish</h2>
-<div class="outline-text-2" id="text-orga25b017"></div>
-<div class="outline-3" id="outline-container-org943b374">
-<h3 id="org943b374">Check The Environment</h3>
-<div class="outline-text-3" id="text-org943b374">
+<div class="outline-3" id="outline-container-org76a5f3a">
+<h3 id="org76a5f3a">Black and White PDF</h3>
+<div class="outline-text-3" id="text-org76a5f3a">
+<p>This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a <a href="https://askubuntu.com/a/1474303">Ask Ubunt (Stack Exchange)</a> answer.</p>
+<div class="notecard" id="orgdfd66b0">
+<p>In the cases I've tried this doesn't convert raster images.</p>
+</div>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Convert PDF text to black and white (not grayscale)
+
+<span class="sb">`gs -sDEVICE=pdfwrite -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile={{output-file-name}} {{pdf-input-file-name}}`</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org337a7fc">
+<h3 id="org337a7fc">Virtual Fish</h3>
+<div class="outline-text-3" id="text-org337a7fc"></div>
+<div class="outline-4" id="outline-container-org240666c">
+<h4 id="org240666c">Check The Environment</h4>
+<div class="outline-text-4" id="text-org240666c">
 <p>This adds the build-state for the virtual-environments managed by virtualfish.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>List Environments and the Current State (do they need to be rebuilt?):
@@ -101,9 +133,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org272063e">
-<h3 id="org272063e">Rebuild the Environment</h3>
-<div class="outline-text-3" id="text-org272063e">
+<div class="outline-4" id="outline-container-org6f0d0a5">
+<h4 id="org6f0d0a5">Rebuild the Environment</h4>
+<div class="outline-text-4" id="text-org6f0d0a5">
 <p>This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Rebuild the current environment (e.g. after Ubuntu changes pip):
@@ -116,12 +148,167 @@
 
 <span class="sb">`vf upgrade --rebuild {{virtualenv-name}}`</span>
 </pre></div>
-<div class="notecard" id="org51b51ab">
+<div class="notecard" id="org205390a">
 <p>If the environments are broken by an update, <code>pipx</code> is likely broken too, run this too, maybe:</p>
 <ul class="org-ul">
 <li><code>pipx reinstall-all</code></li>
 <li><code>pip install setuptools --upgrade</code></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgca7ab6a">
+<h3 id="orgca7ab6a">pdfjam</h3>
+<div class="outline-text-3" id="text-orgca7ab6a"></div>
+<div class="outline-4" id="outline-container-org613219f">
+<h4 id="org613219f">Resize to Letter</h4>
+<div class="outline-text-4" id="text-org613219f">
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Resize PDF document to letter-paper size
+
+<span class="sb">`pdfjam {{input-file}} --paper letter --outfile {{output-file-name}}`</span>
+
+<span class="sb">`pdfjam {{input-file}} --papersize 8.5in,11in --outfile {{output-file-name}}`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org1156c47">
+<h3 id="org1156c47">Emacs</h3>
+<div class="outline-text-3" id="text-org1156c47"></div>
+<div class="outline-4" id="outline-container-org4e9f16d">
+<h4 id="org4e9f16d">Open File With Sudo</h4>
+<div class="outline-text-4" id="text-org4e9f16d">
+<p>Got this from <a href="https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs">a Stack Overflow Question</a>. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).</p>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Open a (local) file with sudo.
+
+<span class="sb">`C-x C-f /sudo::/path/to/file`</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-4" id="outline-container-org5a365d6">
+<h4 id="org5a365d6">Use a Different Init.el</h4>
+<div class="outline-text-4" id="text-org5a365d6">
+<p>This is to use a different <code>init.el</code> file (presumably for debugging).</p>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Use a different initialization file when starting up:
+
+<span class="sb">`emacs --init-directory={{path/to/directory-with-init/}}`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org8e98754">
+<h3 id="org8e98754">Image Magick</h3>
+<div class="outline-text-3" id="text-org8e98754"></div>
+<div class="outline-4" id="outline-container-orgf7ce77c">
+<h4 id="orgf7ce77c">Remove PDF Background</h4>
+<div class="outline-text-4" id="text-orgf7ce77c">
+<p>This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.</p>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Remove background of PDF assuming the image density
+
+<span class="sb">`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`</span>
+</pre></div>
+<div class="notecard" id="org7b3c84a">
+<p>I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org2574397">
+<h2 id="org2574397">Pages</h2>
+<div class="outline-text-2" id="text-org2574397">
+<p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with <code>page.md</code> instead of <code>patch.md</code>. Otherwise the contents look the same.</p>
+</div>
+<div class="outline-3" id="outline-container-org967e2f6">
+<h3 id="org967e2f6">MakeMKV Command Line</h3>
+<div class="outline-text-3" id="text-org967e2f6">
+<p>The <code>makemkvcon</code> command has a <code>--help</code> output, which is somewhat vague. I got the information for this from a developers text file <a href="https://www.makemkv.com/developers/usage.txt">usage.txt</a> on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due errors specific to the GUI so the command line interface is useful to work around those cases.</p>
+</div>
+<div class="outline-4" id="outline-container-org40b16b7">
+<h4 id="org40b16b7">List Drives</h4>
+<div class="outline-text-4" id="text-org40b16b7">
+<p>This lists the drives as <code>makemkvcon</code> sees them.</p>
+<ul class="org-ul">
+<li><code>--robot</code>: meant for automation, tells the program to output the information to the screen</li>
+<li><code>--cache=1</code>: reduce the cache size (optional)</li>
+<li><code>info</code>: the sub-command to print information</li>
+<li><code>disc:9999</code>: show discs (not files, etc.)</li>
+</ul>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>List drives - DRV:index,visible,enabled,flags,drive name,disc name
+
+<span class="sb">`makemkvcon --robot --cache=1 info disc:9999`</span>
+</pre></div>
+<p>The output looks something like:</p>
+<div class="highlight">
+<pre><span></span>MSG:1005,0,1,<span class="s2">"MakeMKV v1.18.2 linux(x64-release) started"</span>,<span class="s2">"%1 started"</span>,<span class="s2">"MakeMKV v1.18.2 linux(x64-release)"</span>
+DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ1028"</span>,<span class="s2">"MAD_MAX_FURY_ROAD"</span>,<span class="s2">"/dev/sr0"</span>
+</pre></div>
+<p>With more lines below it. The second line is the one I'm interested in. It has the format:</p>
+<p>`DRV:index,visible,enabled,flags,drive name,disc name`</p>
+<p>This table shows what their text file says the fields mean.</p>
+<table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
+<colgroup>
+<col class="org-left">
+<col class="org-left"></colgroup>
+<thead>
+<tr>
+<th class="org-left" scope="col">Field</th>
+<th class="org-left" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">DRV</td>
+<td class="org-left">This is a drive</td>
+</tr>
+<tr>
+<td class="org-left">index</td>
+<td class="org-left">The number we'll use to refer to the drive</td>
+</tr>
+<tr>
+<td class="org-left">visible</td>
+<td class="org-left">1 if drive is present</td>
+</tr>
+<tr>
+<td class="org-left">enabled</td>
+<td class="org-left">1 if drive is accessible</td>
+</tr>
+<tr>
+<td class="org-left">flags</td>
+<td class="org-left">media flags (see AP_DskFsFlagXXX in apdefs.h)</td>
+</tr>
+<tr>
+<td class="org-left">drive name</td>
+<td class="org-left">drive name string</td>
+</tr>
+<tr>
+<td class="org-left">disc name</td>
+<td class="org-left">disc name string</td>
+</tr>
+</tbody>
+</table>
+<p>Looking at the sample output, it would appear that the drive isn't present or accessible, which doesn't seem right so I just ignore everything but the <code>drive name</code> to find the right entry in the output and the <code>index</code> for use in invoking <code>makemkvcon</code>.</p>
+</div>
+</div>
+<div class="outline-4" id="outline-container-orga2e4c0c">
+<h4 id="orga2e4c0c">Copy Disc As MKV Files</h4>
+<div class="outline-text-4" id="text-orga2e4c0c">
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Save disk to the current directory as MKV files
+
+<span class="sb">`makemkvcon mkv disc:{{index}} all .`</span>
+
+<span class="k">-</span><span class="w"> </span>Save disk to another directory as MKV files
+
+<span class="sb">`makemkvcon mkv disc:{{index}} all {{/absolute-path-to-folder/}}`</span>
+</pre></div>
+<p>The sample shows the output being copied to `c:\folder` which is a DOS format (I think). It didn't seem to work when I used a relative path (other than the current directory) so I assume you need to use the full path starting from <code>/home/</code>.</p>
 </div>
 </div>
 </div>
@@ -134,6 +321,7 @@
 </ul>
 <ul class="pager hidden-print">
 <li class="previous"><a href="../function-host-grep/index.html" rel="prev" title="Function: Host Grep">Previous post</a></li>
+<li class="next"><a href="../upgrade-function/index.html" rel="next" title="Upgrade Function">Next post</a></li>
 </ul>
 </nav>
 </aside>

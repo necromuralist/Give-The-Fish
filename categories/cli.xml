@@ -5,9 +5,166 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 30 May 2025 19:53:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>To Webp Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org1810999" class="outline-2"&gt;
-&lt;h2 id="org1810999"&gt;To Webp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1810999"&gt;
+</copyright><lastBuildDate>Wed, 25 Jun 2025 02:03:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Upgrade Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgeb1a962"&gt;The Function&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org102a4c6"&gt;Bold Blue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orge3e710d"&gt;Apt Calls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org32fb363"&gt;Snap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgfa0829b"&gt;Flatpak&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orga408d75"&gt;Uninstall&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orga1da25c"&gt;Some Messages&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org904f869"&gt;Phased Updates&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgeb1a962" class="outline-2"&gt;
+&lt;h2 id="orgeb1a962"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgeb1a962"&gt;
+&lt;p&gt;
+This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation…
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; upgrade --description &lt;span class="s2"&gt;"Upgrade packages."&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org102a4c6" class="outline-3"&gt;
+&lt;h3 id="org102a4c6"&gt;Bold Blue&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org102a4c6"&gt;
+&lt;p&gt;
+This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the &lt;code&gt;upgrade&lt;/code&gt; function.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; boldblue
+    &lt;span class="nb"&gt;set_color&lt;/span&gt; --bold blue
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;
+    &lt;span class="nb"&gt;set_color &lt;/span&gt;normal
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge3e710d" class="outline-3"&gt;
+&lt;h3 id="orge3e710d"&gt;Apt Calls&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge3e710d"&gt;
+&lt;p&gt;
+These are calls to update the debian-based packages.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org613a01c" class="outline-4"&gt;
+&lt;h4 id="org613a01c"&gt;Update&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org613a01c"&gt;
+&lt;p&gt;
+These calls update the database and then show us what is upgradable. 
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Checking apt
+sudo apt-fast update --yes
+sudo apt-get --just-print upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="notecard" id="orgd3bd8e3"&gt;
+&lt;p&gt;
+I was initially using &lt;code&gt;apt&lt;/code&gt; to list the upgradable packages, but installing &lt;code&gt;more&lt;/code&gt; as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that &lt;code&gt;apt&lt;/code&gt; is a front-end to other packages to make them easier to use, and that &lt;code&gt;apt-get&lt;/code&gt; is  better for non-interactive use (and is one of the things that &lt;code&gt;apt&lt;/code&gt; is using behind the scenes anyway).
+&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org127b823" class="outline-4"&gt;
+&lt;h4 id="org127b823"&gt;Upgrade and Autoremove&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org127b823"&gt;
+&lt;p&gt;
+Now we run the upgrade. &lt;code&gt;upgrade&lt;/code&gt; will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. &lt;code&gt;full-upgrade&lt;/code&gt; will do what &lt;code&gt;upgrade&lt;/code&gt; does but will remove any installed packages if needed to upgrade an installed package. So, we're going with &lt;code&gt;full-upgrade&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+I'm also auto-removing any packages that get orphaned as dependencies by an upgrade. 
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Upgrading apt
+sudo apt-fast full-upgrade --yes
+sudo apt-get autoremove --yes
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org32fb363" class="outline-3"&gt;
+&lt;h3 id="org32fb363"&gt;Snap&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org32fb363"&gt;
+&lt;p&gt;
+Snaps should update themselves. But let's see what happens if we do it.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Updating snaps
+sudo snap refresh
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgfa0829b" class="outline-3"&gt;
+&lt;h3 id="orgfa0829b"&gt;Flatpak&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfa0829b"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org377941a" class="outline-4"&gt;
+&lt;h4 id="org377941a"&gt;Update&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org377941a"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Updating flatpak
+flatpak update --assumeyes
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="notecard" id="org4d743ac"&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; I was running this with &lt;code&gt;--noninteractive&lt;/code&gt; but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.
+&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga408d75" class="outline-3"&gt;
+&lt;h3 id="orga408d75"&gt;Uninstall&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga408d75"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Uninstalling unused flatpaks
+flatpak uninstall --unused --assumeyes
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga1da25c" class="outline-2"&gt;
+&lt;h2 id="orga1da25c"&gt;Some Messages&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga1da25c"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org904f869" class="outline-3"&gt;
+&lt;h3 id="org904f869"&gt;Phased Updates&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org904f869"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;The following upgrades have been deferred due to phasing:
+  alsa-ucm-conf
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This message is referring to &lt;a href="https://documentation.ubuntu.com/server/explanation/software/about-apt-upgrade-and-phased-updates/"&gt;Phased Updating&lt;/a&gt;. That is, there is an update that is being rolled out in stages to see if it is stable before it's given out to everybody. So the update exists, but you won't get it until the developers decide it's okay to roll it out to everybody.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>apt</category><category>cli</category><category>functions</category><category>packages</category><category>snap</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</guid><pubDate>Tue, 24 Jun 2025 19:04:29 GMT</pubDate></item><item><title>To Webp Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html#org02287fe"&gt;To Webp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html#org39a615b"&gt;Lossless Webp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org02287fe" class="outline-2"&gt;
+&lt;h2 id="org02287fe"&gt;To Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org02287fe"&gt;
 &lt;p&gt;
 A simple for loop to make using globs easier with cwebp.
 &lt;/p&gt;
@@ -26,14 +183,14 @@ I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to un
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd32e809" class="outline-2"&gt;
-&lt;h2 id="orgd32e809"&gt;Lossless Webp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd32e809"&gt;
+&lt;div id="outline-container-org39a615b" class="outline-2"&gt;
+&lt;h2 id="org39a615b"&gt;Lossless Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org39a615b"&gt;
 &lt;p&gt;
 The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org2220a5e"&gt;
+&lt;div class="notecard" id="orgd99a39f"&gt;
 &lt;p&gt;
 I looked in the source code (from Google's &lt;a href="https://chromium.googlesource.com/webm/libwebp/"&gt;&lt;code&gt;libwebp&lt;/code&gt;&lt;/a&gt; git repository) and the &lt;code&gt;-z&lt;/code&gt; flag is equivalent to using &lt;code&gt;-lossless -m 6 -q 10&lt;/code&gt; (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…
 &lt;/p&gt;

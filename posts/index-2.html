@@ -4,14 +4,16 @@
 <meta charset="utf-8">
 <meta content="The functions of a fish." name="description">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Posts for year 2025 | Give the Fish</title>
+<title>Give the Fish (old posts, page 2) | Give the Fish</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <meta content="Nikola (getnikola.com)" name="generator">
 <link href="../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="https://necromuralist.github.io/Give-The-Fish/2025/index.html" rel="canonical"><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/index-2.html" rel="canonical">
+<link href="index.html" rel="prev" type="text/html">
+<link href="index-1.html" rel="next" type="text/html"><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- favicons -->
 <link href="../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
 <link href="../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
@@ -26,7 +28,7 @@
  <a class="navbar-brand" href="../"><span id="blog-title">Give the Fish</span></a> <button aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
 <div class="collapse navbar-collapse" id="bs-navbar">
 <ul class="navbar-nav mr-auto">
-<li class="nav-item"><a class="nav-link" href="../posts/">Posts</a></li>
+<li class="nav-item"><a class="nav-link" href=".">Posts</a></li>
 <li class="nav-item"><a class="nav-link" href="../archive.html">Archive</a></li>
 <li class="nav-item"><a class="nav-link" href="../categories/">Tags</a></li>
 <li class="nav-item"><a class="nav-link" href="../rss.xml">RSS feed</a></li>
@@ -44,16 +46,40 @@
 <!-- End of Menubar -->
 <div class="container" id="content" role="main">
 <div class="body-content"><!--Body content-->
-<article class="listpage">
+<div class="postindex">
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
-<h1>Posts for year 2025</h1>
+<h1 class="p-name entry-title"><a class="u-url" href="dim-monitor/index.html">Dim Monitor</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="dim-monitor/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-10-04T17:14:37-07:00" itemprop="datePublished" title="2023-10-04 17:14">2023-10-04 17:14</time></a></p>
+</div>
 </header>
-<ul class="postlist">
-<li><time class="listdate" datetime="2025-06-24T12:04:29-07:00" title="2025-06-24 12:04">2025-06-24 12:04</time><a class="listtitle" href="../posts/upgrade-function/index.html">Upgrade Function</a></li>
-<li><time class="listdate" datetime="2025-05-30T11:43:01-07:00" title="2025-05-30 11:43">2025-05-30 11:43</time><a class="listtitle" href="../posts/tealdeer-pages/index.html">Tealdeer Pages</a></li>
-<li><time class="listdate" datetime="2025-03-19T11:31:15-07:00" title="2025-03-19 11:31">2025-03-19 11:31</time><a class="listtitle" href="../posts/function-host-grep/index.html">Function: Host Grep</a></li>
-</ul>
+<div class="p-summary entry-summary">
+<div class="highlight">
+<pre><span></span><span class="k">function</span> dim_monitor -d <span class="s2">"Set monitor brightness"</span> <span class="se">\</span>
+    --argument-names OUTPUT BRIGHTNESS
+
+  <span class="c"># -z : test for empty string</span>
+  <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$BRIGHTNESS</span>
+    <span class="k">set</span> BRIGHTNESS 0
+  <span class="k">end</span>
+
+  <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$OUTPUT</span>
+      <span class="k">echo</span> <span class="s2">"You must pass in the 'output' e.g. 'DVI-D-0'"</span>
+      <span class="k">echo</span> <span class="s2">"Usage: dim_monitor OUTPUT BRIGHTNESS"</span>
+   <span class="k">else</span>
+       xrandr --output <span class="nv">$OUTPUT</span> --brightness <span class="nv">$BRIGHTNESS</span> --auto
+   <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
 </article>
+</div>
+<ul class="pager postindexpager clearfix">
+<li class="previous"><a href="index.html" rel="prev">Newer posts</a></li>
+<li class="next"><a href="index-1.html" rel="next">Older posts</a></li>
+</ul>
 <!--End of body content-->
 <footer id="footer">Scribbled by the <a href="mailto:cloisteredmonkey.jmark@slmail.me">Cloistered Monkey</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
 <div id="license" xmlns:cc="http://creativecommons.org/ns#">This work is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" rel="license noopener noreferrer" style="display:inline-block;" target="_blank">CC BY 4.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></div>

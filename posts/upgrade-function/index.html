@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8">
+<meta content="A package upgrade function." name="description">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Upgrade Function | Give the Fish</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<meta content="Nikola (getnikola.com)" name="generator">
+<link href="../../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="../../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
+<link href="../../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
+<link href="../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../../site.webmanifest" rel="manifest">
+<meta content="Cloistered Monkey" name="author">
+<link href="../tealdeer-pages/index.html" rel="prev" title="Tealdeer Pages" type="text/html">
+<meta content="Give the Fish" property="og:site_name">
+<meta content="Upgrade Function" property="og:title">
+<meta content="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html" property="og:url">
+<meta content="A package upgrade function." property="og:description">
+<meta content="article" property="og:type">
+<meta content="2025-06-24T12:04:29-07:00" property="article:published_time">
+<meta content="apt" property="article:tag">
+<meta content="cli" property="article:tag">
+<meta content="functions" property="article:tag">
+<meta content="packages" property="article:tag">
+<meta content="snap" property="article:tag">
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-light bg-light">
+<div class="container"><!-- This keeps the margins nice -->
+ <a class="navbar-brand" href="../../"><span id="blog-title">Give the Fish</span></a> <button aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="bs-navbar">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="../">Posts</a></li>
+<li class="nav-item"><a class="nav-link" href="../../archive.html">Archive</a></li>
+<li class="nav-item"><a class="nav-link" href="../../categories/">Tags</a></li>
+<li class="nav-item"><a class="nav-link" href="../../rss.xml">RSS feed</a></li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Monkey Sites</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="https://necromuralist.github.io/">The Cloistered Monkey</a> <a class="dropdown-item" href="https://necromuralist.github.io/Ape-Iron/">Ape Iron</a> <a class="dropdown-item" href="https://necromuralist.github.io/Beach-Pig-Thigh/">Beach Pig Runp & Thigh</a> <a class="dropdown-item" href="https://necromuralist.github.io/Bowling-For-Data/">Bowling For Data</a> <a class="dropdown-item" href="https://necromuralist.github.io/Neurotic-Networking/">Neurotic Networking</a> <a class="dropdown-item" href="https://necromuralist.github.io/Terribilis-Ludum/">Terribilis Ludum</a> <a class="dropdown-item" href="https://necromuralist.github.io/Visions-Voices-Data/">Visions, Voices, Data</a></div>
+</li>
+</ul>
+<!-- DuckDuckGo custom search -->
+<form action="https://duckduckgo.com/" class="navbar-form pull-left" id="search" method="get" name="search"><input name="sites" type="hidden" value="https://necromuralist.github.io/Give-The-Fish/"><input name="k8" type="hidden" value="#444444"><input name="k9" type="hidden" value="#D51920"><input name="kt" type="hidden" value="h"><input class="span2" maxlength="255" name="q" placeholder="Search…" type="text"><input style="visibility: hidden;display:none" type="submit" value="DuckDuckGo Search"></form>
+<!-- End of custom search -->
+<ul class="navbar-nav navbar-right">
+<li class="nav-item"><a class="nav-link" href="index.org" id="sourcelink">Source</a></li>
+</ul>
+</div>
+<!-- /.navbar-collapse --></div>
+<!-- /.container --></nav>
+<!-- End of Menubar -->
+<div class="container" id="content" role="main">
+<div class="body-content"><!--Body content-->
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Upgrade Function</a></h1>
+<div class="metadata">
+<p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2025-06-24T12:04:29-07:00" itemprop="datePublished" title="2025-06-24 12:04">2025-06-24 12:04</time></a></p>
+<p class="sourceline"><a class="sourcelink" href="index.org">Source</a></p>
+</div>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="index.html#orgeb1a962">The Function</a>
+<ul>
+<li><a href="index.html#org102a4c6">Bold Blue</a></li>
+<li><a href="index.html#orge3e710d">Apt Calls</a></li>
+<li><a href="index.html#org32fb363">Snap</a></li>
+<li><a href="index.html#orgfa0829b">Flatpak</a></li>
+<li><a href="index.html#orga408d75">Uninstall</a></li>
+</ul>
+</li>
+<li><a href="index.html#orga1da25c">Some Messages</a>
+<ul>
+<li><a href="index.html#org904f869">Phased Updates</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgeb1a962">
+<h2 id="orgeb1a962">The Function</h2>
+<div class="outline-text-2" id="text-orgeb1a962">
+<p>This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation…</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> upgrade --description <span class="s2">"Upgrade packages."</span>
+</pre></div>
+</div>
+<div class="outline-3" id="outline-container-org102a4c6">
+<h3 id="org102a4c6">Bold Blue</h3>
+<div class="outline-text-3" id="text-org102a4c6">
+<p>This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the <code>upgrade</code> function.</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> boldblue
+    <span class="nb">set_color</span> --bold blue
+    <span class="k">echo</span> <span class="nv">$argv</span>
+    <span class="nb">set_color </span>normal
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orge3e710d">
+<h3 id="orge3e710d">Apt Calls</h3>
+<div class="outline-text-3" id="text-orge3e710d">
+<p>These are calls to update the debian-based packages.</p>
+</div>
+<div class="outline-4" id="outline-container-org613a01c">
+<h4 id="org613a01c">Update</h4>
+<div class="outline-text-4" id="text-org613a01c">
+<p>These calls update the database and then show us what is upgradable.</p>
+<div class="highlight">
+<pre><span></span>boldblue Checking apt
+sudo apt-fast update --yes
+sudo apt-get --just-print upgrade
+</pre></div>
+<div class="notecard" id="orgd3bd8e3">
+<p>I was initially using <code>apt</code> to list the upgradable packages, but installing <code>more</code> as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that <code>apt</code> is a front-end to other packages to make them easier to use, and that <code>apt-get</code> is better for non-interactive use (and is one of the things that <code>apt</code> is using behind the scenes anyway).</p>
+</div>
+</div>
+</div>
+<div class="outline-4" id="outline-container-org127b823">
+<h4 id="org127b823">Upgrade and Autoremove</h4>
+<div class="outline-text-4" id="text-org127b823">
+<p>Now we run the upgrade. <code>upgrade</code> will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. <code>full-upgrade</code> will do what <code>upgrade</code> does but will remove any installed packages if needed to upgrade an installed package. So, we're going with <code>full-upgrade</code>.</p>
+<p>I'm also auto-removing any packages that get orphaned as dependencies by an upgrade.</p>
+<div class="highlight">
+<pre><span></span>boldblue Upgrading apt
+sudo apt-fast full-upgrade --yes
+sudo apt-get autoremove --yes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org32fb363">
+<h3 id="org32fb363">Snap</h3>
+<div class="outline-text-3" id="text-org32fb363">
+<p>Snaps should update themselves. But let's see what happens if we do it.</p>
+<div class="highlight">
+<pre><span></span>boldblue Updating snaps
+sudo snap refresh
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgfa0829b">
+<h3 id="orgfa0829b">Flatpak</h3>
+<div class="outline-text-3" id="text-orgfa0829b"></div>
+<div class="outline-4" id="outline-container-org377941a">
+<h4 id="org377941a">Update</h4>
+<div class="outline-text-4" id="text-org377941a">
+<div class="highlight">
+<pre><span></span>boldblue Updating flatpak
+flatpak update --assumeyes
+</pre></div>
+<div class="notecard" id="org4d743ac">
+<p><b>Note:</b> I was running this with <code>--noninteractive</code> but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-orga408d75">
+<h3 id="orga408d75">Uninstall</h3>
+<div class="outline-text-3" id="text-orga408d75">
+<div class="highlight">
+<pre><span></span>boldblue Uninstalling unused flatpaks
+flatpak uninstall --unused --assumeyes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orga1da25c">
+<h2 id="orga1da25c">Some Messages</h2>
+<div class="outline-text-2" id="text-orga1da25c"></div>
+<div class="outline-3" id="outline-container-org904f869">
+<h3 id="org904f869">Phased Updates</h3>
+<div class="outline-text-3" id="text-org904f869">
+<div class="highlight">
+<pre><span></span>The following upgrades have been deferred due to phasing:
+  alsa-ucm-conf
+</pre></div>
+<p>This message is referring to <a href="https://documentation.ubuntu.com/server/explanation/software/about-apt-upgrade-and-phased-updates/">Phased Updating</a>. That is, there is an update that is being rolled out in stages to see if it is stable before it's given out to everybody. So the update exists, but you won't get it until the developers decide it's okay to roll it out to everybody.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="postpromonav">
+<nav>
+<ul class="tags" itemprop="keywords">
+<li><a class="tag p-category" href="../../categories/apt/index.html" rel="tag">apt</a></li>
+<li><a class="tag p-category" href="../../categories/cli/index.html" rel="tag">cli</a></li>
+<li><a class="tag p-category" href="../../categories/functions/index.html" rel="tag">functions</a></li>
+<li><a class="tag p-category" href="../../categories/packages/index.html" rel="tag">packages</a></li>
+<li><a class="tag p-category" href="../../categories/snap/index.html" rel="tag">snap</a></li>
+</ul>
+<ul class="pager hidden-print">
+<li class="previous"><a href="../tealdeer-pages/index.html" rel="prev" title="Tealdeer Pages">Previous post</a></li>
+</ul>
+</nav>
+</aside>
+</article>
+<!--End of body content-->
+<footer id="footer">Scribbled by the <a href="mailto:cloisteredmonkey.jmark@slmail.me">Cloistered Monkey</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+<div id="license" xmlns:cc="http://creativecommons.org/ns#">This work is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" rel="license noopener noreferrer" style="display:inline-block;" target="_blank">CC BY 4.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></div>
+</footer>
+</div>
+</div>
+<script src="../../assets/js/all-nocdn.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+</script>
+</body>
+</html>
