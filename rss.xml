@@ -5,7 +5,7 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Thu, 04 Dec 2025 22:55:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Upgrade Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Sun, 07 Dec 2025 20:27:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Upgrade Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
@@ -157,19 +157,18 @@ This message is referring to &lt;a href="https://documentation.ubuntu.com/server
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgd1f37f6"&gt;Patches&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgf1c8ac3"&gt;Patches&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orge374e07"&gt;gs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org76a5f3a"&gt;Black and White PDF&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org337a7fc"&gt;Virtual Fish&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgca7ab6a"&gt;pdfjam&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org1156c47"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org8e98754"&gt;Image Magick&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org92f510f"&gt;gs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org665deba"&gt;Virtual Fish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org458f2f4"&gt;pdfjam&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org098ee36"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org93d40a0"&gt;Image Magick&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org2574397"&gt;Pages&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgc3b2f17"&gt;Pages&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org967e2f6"&gt;MakeMKV Command Line&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org80f9087"&gt;MakeMKV Command Line&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -185,29 +184,28 @@ This is for configuring &lt;a href="https://tealdeer-rs.github.io/tealdeer/"&gt;
 &lt;li&gt;The default location that &lt;code&gt;tealdeer&lt;/code&gt; will look for the pages is \(~/.local/share/tealdeer/pages/~\) so maybe symlink it there.&lt;/li&gt;
 &lt;li&gt;The pages that come with &lt;code&gt;tealdeer&lt;/code&gt; are at \(~/.cache/tealdeer/tldr-pages/pages/\) (look here for examples)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div id="outline-container-orgd1f37f6" class="outline-2"&gt;
-&lt;h2 id="orgd1f37f6"&gt;Patches&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd1f37f6"&gt;
+&lt;div id="outline-container-orgf1c8ac3" class="outline-2"&gt;
+&lt;h2 id="orgf1c8ac3"&gt;Patches&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf1c8ac3"&gt;
 &lt;p&gt;
 These are &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches"&gt;patches&lt;/a&gt; which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages"&gt;pages&lt;/a&gt; instead (they go in the same folder, there's just a different file-name convention).
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge374e07" class="outline-3"&gt;
-&lt;h3 id="orge374e07"&gt;gs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge374e07"&gt;
+&lt;div id="outline-container-org92f510f" class="outline-3"&gt;
+&lt;h3 id="org92f510f"&gt;gs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org92f510f"&gt;
 &lt;p&gt;
 This is for ghost script.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org76a5f3a" class="outline-3"&gt;
-&lt;h3 id="org76a5f3a"&gt;Black and White PDF&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org76a5f3a"&gt;
+&lt;div id="outline-container-org0597a64" class="outline-4"&gt;
+&lt;h4 id="org0597a64"&gt;Black and White PDF&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org0597a64"&gt;
 &lt;p&gt;
 This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a &lt;a href="https://askubuntu.com/a/1474303"&gt;Ask Ubunt (Stack Exchange)&lt;/a&gt; answer.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="orgdfd66b0"&gt;
+&lt;div class="notecard" id="org0683f00"&gt;
 &lt;p&gt;
 In the cases I've tried this doesn't convert raster images.
 &lt;/p&gt;
@@ -220,13 +218,14 @@ In the cases I've tried this doesn't convert raster images.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org337a7fc" class="outline-3"&gt;
-&lt;h3 id="org337a7fc"&gt;Virtual Fish&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org337a7fc"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org240666c" class="outline-4"&gt;
-&lt;h4 id="org240666c"&gt;Check The Environment&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org240666c"&gt;
+&lt;div id="outline-container-org665deba" class="outline-3"&gt;
+&lt;h3 id="org665deba"&gt;Virtual Fish&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org665deba"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org8b4095d" class="outline-4"&gt;
+&lt;h4 id="org8b4095d"&gt;Check The Environment&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org8b4095d"&gt;
 &lt;p&gt;
 This adds the build-state for the virtual-environments managed by virtualfish.
 &lt;/p&gt;
@@ -237,9 +236,9 @@ This adds the build-state for the virtual-environments managed by virtualfish.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6f0d0a5" class="outline-4"&gt;
-&lt;h4 id="org6f0d0a5"&gt;Rebuild the Environment&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org6f0d0a5"&gt;
+&lt;div id="outline-container-orgdd1c963" class="outline-4"&gt;
+&lt;h4 id="orgdd1c963"&gt;Rebuild the Environment&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgdd1c963"&gt;
 &lt;p&gt;
 This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.
 &lt;/p&gt;
@@ -258,7 +257,7 @@ You can also rebuild a specific environment (not necessarily the one you're in).
 &lt;span class="sb"&gt;`vf upgrade --rebuild {{virtualenv-name}}`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org205390a"&gt;
+&lt;div class="notecard" id="org70cf332"&gt;
 &lt;p&gt;
 If the environments are broken by an update, &lt;code&gt;pipx&lt;/code&gt; is likely broken too, run this too, maybe:
 &lt;/p&gt;
@@ -272,13 +271,13 @@ If the environments are broken by an update, &lt;code&gt;pipx&lt;/code&gt; is li
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgca7ab6a" class="outline-3"&gt;
-&lt;h3 id="orgca7ab6a"&gt;pdfjam&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgca7ab6a"&gt;
+&lt;div id="outline-container-org458f2f4" class="outline-3"&gt;
+&lt;h3 id="org458f2f4"&gt;pdfjam&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org458f2f4"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org613219f" class="outline-4"&gt;
-&lt;h4 id="org613219f"&gt;Resize to Letter&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org613219f"&gt;
+&lt;div id="outline-container-org87536f9" class="outline-4"&gt;
+&lt;h4 id="org87536f9"&gt;Resize to Letter&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org87536f9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Resize PDF document to letter-paper size
 
 &lt;span class="sb"&gt;`pdfjam {{input-file}} --paper letter --outfile {{output-file-name}}`&lt;/span&gt;
@@ -288,13 +287,13 @@ If the environments are broken by an update, &lt;code&gt;pipx&lt;/code&gt; is li
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1156c47" class="outline-3"&gt;
-&lt;h3 id="org1156c47"&gt;Emacs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1156c47"&gt;
+&lt;div id="outline-container-org098ee36" class="outline-3"&gt;
+&lt;h3 id="org098ee36"&gt;Emacs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org098ee36"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org4e9f16d" class="outline-4"&gt;
-&lt;h4 id="org4e9f16d"&gt;Open File With Sudo&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org4e9f16d"&gt;
+&lt;div id="outline-container-org945a8df" class="outline-4"&gt;
+&lt;h4 id="org945a8df"&gt;Open File With Sudo&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org945a8df"&gt;
 &lt;p&gt;
 Got this from &lt;a href="https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs"&gt;a Stack Overflow Question&lt;/a&gt;. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).
 &lt;/p&gt;
@@ -305,9 +304,9 @@ Got this from &lt;a href="https://stackoverflow.com/questions/95631/open-a-file-
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5a365d6" class="outline-4"&gt;
-&lt;h4 id="org5a365d6"&gt;Use a Different Init.el&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org5a365d6"&gt;
+&lt;div id="outline-container-org06606d2" class="outline-4"&gt;
+&lt;h4 id="org06606d2"&gt;Use a Different Init.el&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org06606d2"&gt;
 &lt;p&gt;
 This is to use a different &lt;code&gt;init.el&lt;/code&gt; file (presumably for debugging).
 &lt;/p&gt;
@@ -319,13 +318,13 @@ This is to use a different &lt;code&gt;init.el&lt;/code&gt; file (presumably for
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8e98754" class="outline-3"&gt;
-&lt;h3 id="org8e98754"&gt;Image Magick&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org8e98754"&gt;
+&lt;div id="outline-container-org93d40a0" class="outline-3"&gt;
+&lt;h3 id="org93d40a0"&gt;Image Magick&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org93d40a0"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgf7ce77c" class="outline-4"&gt;
-&lt;h4 id="orgf7ce77c"&gt;Remove PDF Background&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgf7ce77c"&gt;
+&lt;div id="outline-container-orgc7deb60" class="outline-4"&gt;
+&lt;h4 id="orgc7deb60"&gt;Remove PDF Background&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgc7deb60"&gt;
 &lt;p&gt;
 This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.
 &lt;/p&gt;
@@ -335,7 +334,7 @@ This assumes a image "density" for the background and converts the pages to imag
 &lt;span class="sb"&gt;`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org7b3c84a"&gt;
+&lt;div class="notecard" id="org7556d31"&gt;
 &lt;p&gt;
 I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).
 &lt;/p&gt;
@@ -345,23 +344,23 @@ I also tried removing the background color specifically but doing that eats into
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2574397" class="outline-2"&gt;
-&lt;h2 id="org2574397"&gt;Pages&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2574397"&gt;
+&lt;div id="outline-container-orgc3b2f17" class="outline-2"&gt;
+&lt;h2 id="orgc3b2f17"&gt;Pages&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc3b2f17"&gt;
 &lt;p&gt;
 These are &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages"&gt;pages&lt;/a&gt; - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with &lt;code&gt;page.md&lt;/code&gt; instead of &lt;code&gt;patch.md&lt;/code&gt;. Otherwise the contents look the same.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org967e2f6" class="outline-3"&gt;
-&lt;h3 id="org967e2f6"&gt;MakeMKV Command Line&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org967e2f6"&gt;
+&lt;div id="outline-container-org80f9087" class="outline-3"&gt;
+&lt;h3 id="org80f9087"&gt;MakeMKV Command Line&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org80f9087"&gt;
 &lt;p&gt;
 The &lt;code&gt;makemkvcon&lt;/code&gt; command has a &lt;code&gt;--help&lt;/code&gt; output, which is somewhat vague. I got the information for this from a developers text file &lt;a href="https://www.makemkv.com/developers/usage.txt"&gt;usage.txt&lt;/a&gt; on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due errors specific to the GUI so the command line interface is useful to work around those cases.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org40b16b7" class="outline-4"&gt;
-&lt;h4 id="org40b16b7"&gt;List Drives&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org40b16b7"&gt;
+&lt;div id="outline-container-org18dfb76" class="outline-4"&gt;
+&lt;h4 id="org18dfb76"&gt;List Drives&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org18dfb76"&gt;
 &lt;p&gt;
 This lists the drives as &lt;code&gt;makemkvcon&lt;/code&gt; sees them.
 &lt;/p&gt;
@@ -455,9 +454,9 @@ Looking at the sample output, it would appear that the drive isn't present or ac
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga2e4c0c" class="outline-4"&gt;
-&lt;h4 id="orga2e4c0c"&gt;Copy Disc As MKV Files&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orga2e4c0c"&gt;
+&lt;div id="outline-container-org6b6f6a1" class="outline-4"&gt;
+&lt;h4 id="org6b6f6a1"&gt;Copy Disc As MKV Files&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org6b6f6a1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Save disk to the current directory as MKV files
 
 &lt;span class="sb"&gt;`makemkvcon mkv disc:{{index}} all .`&lt;/span&gt;
