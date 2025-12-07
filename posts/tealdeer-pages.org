@@ -16,7 +16,11 @@
 
 This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a command-line help system.
 
-The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~. The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$ so maybe symlink it there.
+- The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~.
+- The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$ so maybe symlink it there.
+- The pages that come with ~tealdeer~ are at $~/.cache/tealdeer/tldr-pages/pages/$ (look here for examples)
+
+
 
 * Patches
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] instead (they go in the same folder, there's just a different file-name convention).
@@ -24,7 +28,7 @@ These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custo
 ** gs
 This is for ghost script.
 
-#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/gs.patch.md
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/gs.patch.md :exports none
 <<gs-black-and-white-pdf>>
 #+end_src
 
@@ -39,12 +43,12 @@ In the cases I've tried this doesn't convert raster images.
 #+begin_src markdown :noweb-ref gs-black-and-white-pdf
 - Convert PDF text to black and white (not grayscale)
 
-`gs -sDEVICE=pdfwrite -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile=<output-file-name> <pdf-input-file-name>`
+`gs -sDEVICE=pdfwrite -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile={{output-file-name}} {{pdf-input-file-name}}`
 #+end_src
 
 ** Virtual Fish
 
-#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/vf.patch.md
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/vf.patch.md :exports none
 <<vf-list>>
 
 <<vf-rebuild>>
@@ -89,7 +93,7 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
 
 ** pdfjam
 
-#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/pdfjam.patch.md
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/pdfjam.patch.md :exports none
 <<pdfjam-letter-size>>
 #+end_src
 
@@ -104,7 +108,7 @@ If the environments are broken by an update, ~pipx~ is likely broken too, run th
 #+end_src
 
 ** Emacs
-#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/emacs.patch.md
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/emacs.patch.md :exports none
 <<emacs-sudo-file>>
 
 <<emacs-init-directory>>
@@ -129,7 +133,7 @@ This is to use a different ~init.el~ file (presumably for debugging).
 #+end_src
 
 ** Image Magick
-#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/magick-convert.patch.md
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/magick-convert.patch.md :exports none
 <<magick-remove-background>>
 #+end_src
 
@@ -145,3 +149,75 @@ This assumes a image "density" for the background and converts the pages to imag
 #+begin_notecard
 I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).
 #+end_notecard
+
+* Pages
+
+These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with ~page.md~ instead of ~patch.md~. Otherwise the contents look the same.
+
+** MakeMKV Command Line
+
+The ~makemkvcon~ command has a ~--help~ output, which is somewhat vague. I got the information for this from a developers text file [[https://www.makemkv.com/developers/usage.txt][usage.txt]] on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due errors specific to the GUI so the command line interface is useful to work around those cases.
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/makemkvcon.page.md :exports none
+# makemkvcon
+
+> Command-line interface for MakeMKV (https://www.makemkv.com/)
+
+<<list-devices>>
+
+<<save-mkvs>>
+#+end_src
+
+*** List Drives
+
+This lists the drives as ~makemkvcon~ sees them.
+
+ - ~--robot~: meant for automation, tells the program to output the information to the screen
+ - ~--cache=1~: reduce the cache size (optional)
+ - ~info~: the sub-command to print information
+ - ~disc:9999~: show discs (not files, etc.)
+
+#+begin_src markdown :noweb-ref list-devices
+- List drives - DRV:index,visible,enabled,flags,drive name,disc name
+
+`makemkvcon --robot --cache=1 info disc:9999`
+#+end_src
+
+The output looks something like:
+
+#+begin_src sh
+MSG:1005,0,1,"MakeMKV v1.18.2 linux(x64-release) started","%1 started","MakeMKV v1.18.2 linux(x64-release)"
+DRV:0,2,999,1,"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ1028","MAD_MAX_FURY_ROAD","/dev/sr0"
+#+end_src
+
+With more lines below it. The second line is the one I'm interested in. It has the format:
+
+`DRV:index,visible,enabled,flags,drive name,disc name`
+
+This table shows what their text file says the fields mean.
+
+| Field      | Description                                   |
+|------------+-----------------------------------------------|
+| DRV        | This is a drive                               |
+| index      | The number we'll use to refer to the drive    |
+| visible    | 1 if drive is present                         |
+| enabled    | 1 if drive is accessible                      |
+| flags      | media flags (see AP_DskFsFlagXXX in apdefs.h) |
+| drive name | drive name string                             |
+| disc name  | disc name string                              |
+
+Looking at the sample output, it would appear that the drive isn't present or accessible, which doesn't seem right so I just ignore everything but the ~drive name~ to find the right entry in the output and the ~index~ for use in invoking ~makemkvcon~.
+
+*** Copy Disc As MKV Files
+
+#+begin_src markdown :noweb-ref save-mkvs
+- Save disk to the current directory as MKV files
+
+`makemkvcon mkv disc:{{index}} all .`
+
+- Save disk to another directory as MKV files
+
+`makemkvcon mkv disc:{{index}} all {{/absolute-path-to-folder/}}`
+#+end_src
+
+The sample shows the output being copied to `c:\folder` which is a DOS format (I think). It didn't seem to work when I used a relative path (other than the current directory) so I assume you need to use the full path starting from ~/home/~.
