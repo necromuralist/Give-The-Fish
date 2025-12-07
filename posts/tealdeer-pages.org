@@ -32,7 +32,7 @@ This is for ghost script.
 <<gs-black-and-white-pdf>>
 #+end_src
 
-** Black and White PDF
+*** Black and White PDF
 
 This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a [[https://askubuntu.com/a/1474303][Ask Ubunt (Stack Exchange)]] answer.
 
