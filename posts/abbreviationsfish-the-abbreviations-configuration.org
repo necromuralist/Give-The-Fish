@@ -63,6 +63,8 @@
 
 # PDFs
 <<pdf-join>>
+
+<<pdf-shrink>>
 #+end_src
 
 #+begin_notecard
@@ -259,6 +261,15 @@ abbr --add -- pdfjoin "gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/
 Taken from [[https://stackoverflow.com/a/19358402][this answer]] on Stack Overflow.
 
 That answer also has some options to shrink the output PDF, but this is initially being tested on an alread shrunken PDF which either only got a little smaller, or even got a little bigger, when the lowere-resolution settings were used so I won't put it in until there comes a case where it's shown to help.
+
+** PDF Shrink
+Uses Ghostscript to reduce images to "epub" level.
+
+#+begin_src fish :noweb-ref pdf-shrink
+abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile="
+#+end_src
+
+- This is also in my {{% lancelot title="tealdeer" %}}tealdeer-pages{{% /lancelot %}} post.
 
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
