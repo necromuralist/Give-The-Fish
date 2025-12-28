@@ -20,8 +20,6 @@ This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a
 - The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$ so maybe symlink it there.
 - The pages that come with ~tealdeer~ are at $~/.cache/tealdeer/tldr-pages/pages/$ (look here for examples)
 
-
-
 * Patches
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] instead (they go in the same folder, there's just a different file-name convention).
 
@@ -30,6 +28,8 @@ This is for ghost script.
 
 #+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/gs.patch.md :exports none
 <<gs-black-and-white-pdf>>
+
+<<gs-compress-ebook>>
 #+end_src
 
 *** Black and White PDF
@@ -45,6 +45,18 @@ In the cases I've tried this doesn't convert raster images.
 
 `gs -sDEVICE=pdfwrite -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile={{output-file-name}} {{pdf-input-file-name}}`
 #+end_src
+
+*** Compress For Ebook
+
+This adds some extra flags to the compression help that comes with tealdeer. 
+
+#+begin_src markdown :noweb-ref gs-compress-ebook
+- Reduce PDF File Size, possibly more than the version up above
+
+`gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile={{output-file-name}} {{input-file-name}}`
+#+end_src
+
+- See : [[https://ghostscript.com/blog/optimizing-pdfs.html][Optimizing PDFs]] - From the Ghostscript Blog. This notes that DetectDuplicateImages is actually on by default so you only need to use it if you want to turn it off, but I didn't read that until after using it. It might make sense to experiment with it on and off. The same might go for the CompatibilityLevel.
 
 ** Virtual Fish
 
