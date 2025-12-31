@@ -23,6 +23,20 @@ This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a
 * Patches
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] instead (they go in the same folder, there's just a different file-name convention).
 
+** Screen
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/screen.patch.md :exports none
+<<screen-name>>
+#+end_src
+
+*** Name the Screen
+
+#+begin_src md :noweb-ref screen-name
+- Give the screen a name
+
+`<Ctrl-a> A`
+#+end_src
+
 ** Ghostscript (gs)
 This is for ghost script.
 
