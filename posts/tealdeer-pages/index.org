@@ -176,13 +176,60 @@ This assumes a image "density" for the background and converts the pages to imag
 I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).
 #+end_notecard
 
+** PDF TK
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/pdftk.patch.md :exports none
+<<pdftk-export-bookmarks>>
+
+<<pdftk-import-bookmarks>>
+#+end_src
+
+*** Export Bookmarks
+
+Export bookmarks from a PDF. I normally use =cpdf= for bookmarks, but in the case of Wanderhome, when I reduced the resolution to get a smaller PDF it removed the bookmarks so I had to copy them from the original and for some reason =cpdf= couldn't dump them, but pdftk could.
+
+Pdftk uses a human-readable format that isn't compatible with cpdf. For Example:
+
+#+begin_src ini
+BookmarkBegin
+BookmarkTitle: wanderhome.pdf
+BookmarkLevel: 1
+BookmarkPageNumber: 0
+BookmarkBegin
+BookmarkTitle: Copyright
+BookmarkLevel: 2
+BookmarkPageNumber: 0
+BookmarkBegin
+BookmarkTitle: Table of Contents
+BookmarkLevel: 2
+BookmarkPageNumber: 0
+#+end_src
+
+Taken from [[https://www.pdflabs.com/blog/export-and-import-pdf-bookmarks/][PDFLabs Export and Import PDF Bookmarks]]. 
+
+#+begin_src markdown :noweb-ref pdftk-export-bookmarks
+- Export existing bookmarks from a pdf (UTF-8 Version)
+
+`pdftk {{input.pdf}} dump_data_utf8 output {{bookmarks.txt}}`
+#+end_src
+
+*** Import Bookmarks
+
+Import bookmarks dumped from another PDF. The prompt for this was that I reduced the resolution/size of a pdf and lost the bookmarks in the original and restored them by copying them over.
+
+#+begin_src markdown :noweb-ref pdftk-import-bookmarks
+- Import pdftk-formatted bookmarks (from dump_data_utf8)
+
+`pdftk {{to-update.pdf}} update_info_utf8 {{bookmarks.txt}} output {{updated.pdf}}`
+#+end_src
+
 * Pages
 
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with ~page.md~ instead of ~patch.md~. Otherwise the contents look the same.
 
 ** MakeMKV Command Line
 
-The ~makemkvcon~ command has a ~--help~ output, which is somewhat vague. I got the information for this from a developers text file [[https://www.makemkv.com/developers/usage.txt][usage.txt]] on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due errors specific to the GUI so the command line interface is useful to work around those cases.
+The ~makemkvcon~ command has a ~--help~ output, which is somewhat vague. I got the information for this from a developers text file [[https://www.makemkv.com/developers/usage.txt][usage.txt]] on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due to errors specific to the GUI so the command line interface is useful to work around those cases.
 
 #+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/makemkvcon.page.md :exports none
 # makemkvcon
@@ -198,16 +245,18 @@ The ~makemkvcon~ command has a ~--help~ output, which is somewhat vague. I got t
 
 This lists the drives as ~makemkvcon~ sees them.
 
- - ~--robot~: meant for automation, tells the program to output the information to the screen
- - ~--cache=1~: reduce the cache size (optional)
- - ~info~: the sub-command to print information
- - ~disc:9999~: show discs (not files, etc.)
-
 #+begin_src markdown :noweb-ref list-devices
 - List drives - DRV:index,visible,enabled,flags,drive name,disc name
 
 `makemkvcon --robot --cache=1 info disc:9999`
 #+end_src
+
+| Option      | Description                                                                     |
+|-------------+---------------------------------------------------------------------------------|
+| ~--robot~   | Meant for automation, tells the program to output the information to the screen |
+| ~--cache=1~ | Reduce the cache size (optional)                                                |
+| ~info~      | The sub-command to print information                                            |
+| ~disc:9999~ | Show discs (not files, etc.)                                                    |
 
 The output looks something like:
 
@@ -218,7 +267,7 @@ DRV:0,2,999,1,"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ1028","MAD_MAX_FURY
 
 With more lines below it. The second line is the one I'm interested in. It has the format:
 
-`DRV:index,visible,enabled,flags,drive name,disc name`
+=DRV:index,visible,enabled,flags,drive name,disc name=
 
 This table shows what their text file says the fields mean.
 
@@ -232,7 +281,7 @@ This table shows what their text file says the fields mean.
 | drive name | drive name string                             |
 | disc name  | disc name string                              |
 
-Looking at the sample output, it would appear that the drive isn't present or accessible, which doesn't seem right so I just ignore everything but the ~drive name~ to find the right entry in the output and the ~index~ for use in invoking ~makemkvcon~.
+Looking at the sample output, it has =2= for "visible" and =999= for "enabled", which doesn't match the expected values so I just ignore everything but the ~drive name~ to find the right entry in the output and the ~index~ for use in invoking ~makemkvcon~.
 
 *** Copy Disc As MKV Files
 
@@ -246,4 +295,4 @@ Looking at the sample output, it would appear that the drive isn't present or ac
 `makemkvcon mkv disc:{{index}} all {{/absolute-path-to-folder/}}`
 #+end_src
 
-The sample shows the output being copied to `c:\folder` which is a DOS format (I think). It didn't seem to work when I used a relative path (other than the current directory) so I assume you need to use the full path starting from ~/home/~.
+The sample shows the output being copied to =c:\folder= which is a DOS format (I think). It didn't seem to work when I used a relative path (other than the current directory) so I assume you need to use the full path starting from ~/home/~.
