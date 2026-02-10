@@ -1,0 +1,34 @@
+#+BEGIN_COMMENT
+.. title: PDF Functions
+.. slug: pdf-functions
+.. date: 2026-02-10 12:12:33 UTC-08:00
+.. tags: fish, functions,pdf
+.. category: Function
+.. link: 
+.. description: Functions to manipulate PDFs.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+#+begin_src sh :tangle ../functions/pdfbookmarks.fish :exports none
+<<dump-bookmarks>>
+#+end_src
+
+* Dump Bookmarks
+
+This uses =PDFTK= to dump bookmarks (so it's not compatible with =cpdf=).
+
+#+begin_src fish :noweb-ref dump-bookmarks
+function pdfbookmarks -d "Dump bookmarks from a PDF (pdftk format)" --argument-names SOURCEFILE OUTFILE
+    if set --query OUTFILE
+        set OUTFILE "bookmarks.txt"
+    end
+    pdftk $SOURCEFILE dump_data_utf8 output $OUTFILE
+end
+#+end_src
+
+See the /PDF TK/ section of the {{% lancelot title="Tealdeer post" %}}tealdeer-pages{{% /lancelot}} for (a little) more information.

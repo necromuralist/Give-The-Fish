@@ -11,6 +11,8 @@
 .. updated: 
 
 #+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
 
 #+begin_src sh :tangle ../dingehaufen/conf.d/choices.fish :exports none
 <<random-word>>
