@@ -14,6 +14,10 @@
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
 
+#+begin_notecard
+**Note:** As of February 18, 2026, tealdeer via apt is out of date. They changed the URL used for updating the cache (see https://github.com/tealdeer-rs/tealdeer/issues/459) so versions older than 1.8 throw an error (apt currently installs 1.7.2-1). To get 1.8 I used [[https://tealdeer-rs.github.io/tealdeer/installing.html#through-cargo-install][the Cargo Installation Instructions]] (which necessitated [[https://doc.rust-lang.org/cargo/getting-started/installation.html][installing cargo and rust]]...).
+#+end_notecard
+
 This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a command-line help system.
 
 - The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~.
@@ -223,6 +227,22 @@ Import bookmarks dumped from another PDF. The prompt for this was that I reduced
 `pdftk {{to-update.pdf}} update_info_utf8 {{bookmarks.txt}} output {{updated.pdf}}`
 #+end_src
 
+** exiftool
+
+[[https://exiftool.org/][exiftool]] is a metadata editor. It handles many file types but I used it for PDFs.
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/exiftool.patch.md :exports none
+<<exiftool-title>>
+#+end_src
+
+*** Title
+
+#+begin_src markdown :noweb-ref exiftool-title
+- Change the title for the file
+- Note: The option needs the "=" between the name and the argument, spaces make it think you're passing in another input file.
+
+`exiftool -Title="{{new title}}" {{input-file}}`
+#+end_src
 * Pages
 
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with ~page.md~ instead of ~patch.md~. Otherwise the contents look the same.
