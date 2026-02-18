@@ -70,24 +70,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#org7a81e08">Patches</a>
+<li><a href="index.html#orga39830f">Patches</a>
 <ul>
-<li><a href="index.html#org4852195">Screen</a></li>
-<li><a href="index.html#org073df01">Ghostscript (gs)</a></li>
-<li><a href="index.html#org2bcabd9">Virtual Fish</a></li>
-<li><a href="index.html#org57cffff">pdfjam</a></li>
-<li><a href="index.html#orga8043d6">Emacs</a></li>
-<li><a href="index.html#org51367b7">Image Magick</a></li>
-<li><a href="index.html#org75d8d60">PDF TK</a></li>
+<li><a href="index.html#org95a5557">Screen</a></li>
+<li><a href="index.html#org99031a8">Ghostscript (gs)</a></li>
+<li><a href="index.html#org6adda63">Virtual Fish</a></li>
+<li><a href="index.html#orgaca3256">pdfjam</a></li>
+<li><a href="index.html#orge70edff">Emacs</a></li>
+<li><a href="index.html#org4a6c9a1">Image Magick</a></li>
+<li><a href="index.html#org730d91f">PDF TK</a></li>
+<li><a href="index.html#orgec638cf">exiftool</a></li>
 </ul>
 </li>
-<li><a href="index.html#org65e2b58">Pages</a>
+<li><a href="index.html#org9068d62">Pages</a>
 <ul>
-<li><a href="index.html#orgf3594ef">MakeMKV Command Line</a></li>
+<li><a href="index.html#org758d440">MakeMKV Command Line</a></li>
 </ul>
 </li>
 </ul>
 </div>
+</div>
+<div class="notecard" id="org4344e12">
+<p><b>Note:</b> As of February 18, 2026, tealdeer via apt is out of date. They changed the URL used for updating the cache (see <a href="https://github.com/tealdeer-rs/tealdeer/issues/459">https://github.com/tealdeer-rs/tealdeer/issues/459</a>) so versions older than 1.8 throw an error (apt currently installs 1.7.2-1). To get 1.8 I used <a href="https://tealdeer-rs.github.io/tealdeer/installing.html#through-cargo-install">the Cargo Installation Instructions</a> (which necessitated <a href="https://doc.rust-lang.org/cargo/getting-started/installation.html">installing cargo and rust</a>…).</p>
 </div>
 <p>This is for configuring <a href="https://tealdeer-rs.github.io/tealdeer/">tealdeer</a>, a command-line help system.</p>
 <ul class="org-ul">
@@ -95,17 +99,17 @@
 <li>The default location that <code>tealdeer</code> will look for the pages is \(~/.local/share/tealdeer/pages/~\) so maybe symlink it there.</li>
 <li>The pages that come with <code>tealdeer</code> are at \(~/.cache/tealdeer/tldr-pages/pages/\) (look here for examples)</li>
 </ul>
-<div class="outline-2" id="outline-container-org7a81e08">
-<h2 id="org7a81e08">Patches</h2>
-<div class="outline-text-2" id="text-org7a81e08">
+<div class="outline-2" id="outline-container-orga39830f">
+<h2 id="orga39830f">Patches</h2>
+<div class="outline-text-2" id="text-orga39830f">
 <p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches">patches</a> which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> instead (they go in the same folder, there's just a different file-name convention).</p>
 </div>
-<div class="outline-3" id="outline-container-org4852195">
-<h3 id="org4852195">Screen</h3>
-<div class="outline-text-3" id="text-org4852195"></div>
-<div class="outline-4" id="outline-container-org8b6822a">
-<h4 id="org8b6822a">Name the Screen</h4>
-<div class="outline-text-4" id="text-org8b6822a">
+<div class="outline-3" id="outline-container-org95a5557">
+<h3 id="org95a5557">Screen</h3>
+<div class="outline-text-3" id="text-org95a5557"></div>
+<div class="outline-4" id="outline-container-org4565514">
+<h4 id="org4565514">Name the Screen</h4>
+<div class="outline-text-4" id="text-org4565514">
 <div class="highlight">
 <pre><span></span>- Give the screen a name
 
@@ -114,16 +118,16 @@
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org073df01">
-<h3 id="org073df01">Ghostscript (gs)</h3>
-<div class="outline-text-3" id="text-org073df01">
+<div class="outline-3" id="outline-container-org99031a8">
+<h3 id="org99031a8">Ghostscript (gs)</h3>
+<div class="outline-text-3" id="text-org99031a8">
 <p>This is for ghost script.</p>
 </div>
-<div class="outline-4" id="outline-container-orgf869ba1">
-<h4 id="orgf869ba1">Black and White PDF</h4>
-<div class="outline-text-4" id="text-orgf869ba1">
+<div class="outline-4" id="outline-container-org9559da2">
+<h4 id="org9559da2">Black and White PDF</h4>
+<div class="outline-text-4" id="text-org9559da2">
 <p>This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a <a href="https://askubuntu.com/a/1474303">Ask Ubunt (Stack Exchange)</a> answer.</p>
-<div class="notecard" id="org166daa7">
+<div class="notecard" id="org3b3cda5">
 <p>In the cases I've tried this doesn't convert raster images.</p>
 </div>
 <div class="highlight">
@@ -133,9 +137,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org60fcb4f">
-<h4 id="org60fcb4f">Compress For Ebook</h4>
-<div class="outline-text-4" id="text-org60fcb4f">
+<div class="outline-4" id="outline-container-orgd7f9271">
+<h4 id="orgd7f9271">Compress For Ebook</h4>
+<div class="outline-text-4" id="text-orgd7f9271">
 <p>This adds some extra flags to the compression help that comes with tealdeer.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Reduce PDF File Size, possibly more than the version up above
@@ -148,12 +152,12 @@
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org2bcabd9">
-<h3 id="org2bcabd9">Virtual Fish</h3>
-<div class="outline-text-3" id="text-org2bcabd9"></div>
-<div class="outline-4" id="outline-container-orgf991f6f">
-<h4 id="orgf991f6f">Check The Environment</h4>
-<div class="outline-text-4" id="text-orgf991f6f">
+<div class="outline-3" id="outline-container-org6adda63">
+<h3 id="org6adda63">Virtual Fish</h3>
+<div class="outline-text-3" id="text-org6adda63"></div>
+<div class="outline-4" id="outline-container-orgcc19d14">
+<h4 id="orgcc19d14">Check The Environment</h4>
+<div class="outline-text-4" id="text-orgcc19d14">
 <p>This adds the build-state for the virtual-environments managed by virtualfish.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>List Environments and the Current State (do they need to be rebuilt?):
@@ -162,9 +166,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org0735232">
-<h4 id="org0735232">Rebuild the Environment</h4>
-<div class="outline-text-4" id="text-org0735232">
+<div class="outline-4" id="outline-container-org4144589">
+<h4 id="org4144589">Rebuild the Environment</h4>
+<div class="outline-text-4" id="text-org4144589">
 <p>This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Rebuild the current environment (e.g. after Ubuntu changes pip):
@@ -177,7 +181,7 @@
 
 <span class="sb">`vf upgrade --rebuild {{virtualenv-name}}`</span>
 </pre></div>
-<div class="notecard" id="orga5cf7f9">
+<div class="notecard" id="org8fd39bf">
 <p>If the environments are broken by an update, <code>pipx</code> is likely broken too, run this too, maybe:</p>
 <ul class="org-ul">
 <li><code>pipx reinstall-all</code></li>
@@ -187,12 +191,12 @@
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org57cffff">
-<h3 id="org57cffff">pdfjam</h3>
-<div class="outline-text-3" id="text-org57cffff"></div>
-<div class="outline-4" id="outline-container-orgba356cd">
-<h4 id="orgba356cd">Resize to Letter</h4>
-<div class="outline-text-4" id="text-orgba356cd">
+<div class="outline-3" id="outline-container-orgaca3256">
+<h3 id="orgaca3256">pdfjam</h3>
+<div class="outline-text-3" id="text-orgaca3256"></div>
+<div class="outline-4" id="outline-container-org34b615e">
+<h4 id="org34b615e">Resize to Letter</h4>
+<div class="outline-text-4" id="text-org34b615e">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Resize PDF document to letter-paper size
 
@@ -203,12 +207,12 @@
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orga8043d6">
-<h3 id="orga8043d6">Emacs</h3>
-<div class="outline-text-3" id="text-orga8043d6"></div>
-<div class="outline-4" id="outline-container-org77a0324">
-<h4 id="org77a0324">Open File With Sudo</h4>
-<div class="outline-text-4" id="text-org77a0324">
+<div class="outline-3" id="outline-container-orge70edff">
+<h3 id="orge70edff">Emacs</h3>
+<div class="outline-text-3" id="text-orge70edff"></div>
+<div class="outline-4" id="outline-container-org5fe2283">
+<h4 id="org5fe2283">Open File With Sudo</h4>
+<div class="outline-text-4" id="text-org5fe2283">
 <p>Got this from <a href="https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs">a Stack Overflow Question</a>. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Open a (local) file with sudo.
@@ -217,9 +221,9 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org6fc24a7">
-<h4 id="org6fc24a7">Use a Different Init.el</h4>
-<div class="outline-text-4" id="text-org6fc24a7">
+<div class="outline-4" id="outline-container-org701438f">
+<h4 id="org701438f">Use a Different Init.el</h4>
+<div class="outline-text-4" id="text-org701438f">
 <p>This is to use a different <code>init.el</code> file (presumably for debugging).</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Use a different initialization file when starting up:
@@ -229,30 +233,30 @@
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org51367b7">
-<h3 id="org51367b7">Image Magick</h3>
-<div class="outline-text-3" id="text-org51367b7"></div>
-<div class="outline-4" id="outline-container-org1cd0472">
-<h4 id="org1cd0472">Remove PDF Background</h4>
-<div class="outline-text-4" id="text-org1cd0472">
+<div class="outline-3" id="outline-container-org4a6c9a1">
+<h3 id="org4a6c9a1">Image Magick</h3>
+<div class="outline-text-3" id="text-org4a6c9a1"></div>
+<div class="outline-4" id="outline-container-orgb22c40c">
+<h4 id="orgb22c40c">Remove PDF Background</h4>
+<div class="outline-text-4" id="text-orgb22c40c">
 <p>This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Remove background of PDF assuming the image density
 
 <span class="sb">`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`</span>
 </pre></div>
-<div class="notecard" id="org1184393">
+<div class="notecard" id="orgc1c309c">
 <p>I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).</p>
 </div>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org75d8d60">
-<h3 id="org75d8d60">PDF TK</h3>
-<div class="outline-text-3" id="text-org75d8d60"></div>
-<div class="outline-4" id="outline-container-orgf549e1f">
-<h4 id="orgf549e1f">Export Bookmarks</h4>
-<div class="outline-text-4" id="text-orgf549e1f">
+<div class="outline-3" id="outline-container-org730d91f">
+<h3 id="org730d91f">PDF TK</h3>
+<div class="outline-text-3" id="text-org730d91f"></div>
+<div class="outline-4" id="outline-container-org9b212b9">
+<h4 id="org9b212b9">Export Bookmarks</h4>
+<div class="outline-text-4" id="text-org9b212b9">
 <p>Export bookmarks from a PDF. I normally use <code>cpdf</code> for bookmarks, but in the case of Wanderhome, when I reduced the resolution to get a smaller PDF it removed the bookmarks so I had to copy them from the original and for some reason <code>cpdf</code> couldn't dump them, but pdftk could.</p>
 <p>Pdftk uses a human-readable format that isn't compatible with cpdf. For Example:</p>
 <div class="highlight">
@@ -277,9 +281,9 @@ BookmarkPageNumber: 0
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orge907293">
-<h4 id="orge907293">Import Bookmarks</h4>
-<div class="outline-text-4" id="text-orge907293">
+<div class="outline-4" id="outline-container-org547168f">
+<h4 id="org547168f">Import Bookmarks</h4>
+<div class="outline-text-4" id="text-org547168f">
 <p>Import bookmarks dumped from another PDF. The prompt for this was that I reduced the resolution/size of a pdf and lost the bookmarks in the original and restored them by copying them over.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Import pdftk-formatted bookmarks (from dump_data_utf8)
@@ -289,20 +293,37 @@ BookmarkPageNumber: 0
 </div>
 </div>
 </div>
+<div class="outline-3" id="outline-container-orgec638cf">
+<h3 id="orgec638cf">exiftool</h3>
+<div class="outline-text-3" id="text-orgec638cf">
+<p><a href="https://exiftool.org/">exiftool</a> is a metadata editor. It handles many file types but I used it for PDFs.</p>
 </div>
-<div class="outline-2" id="outline-container-org65e2b58">
-<h2 id="org65e2b58">Pages</h2>
-<div class="outline-text-2" id="text-org65e2b58">
+<div class="outline-4" id="outline-container-orge73b0fd">
+<h4 id="orge73b0fd">Title</h4>
+<div class="outline-text-4" id="text-orge73b0fd">
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Change the title for the file
+<span class="k">-</span><span class="w"> </span>Note: The option needs the "=" between the name and the argument, spaces make it think you're passing in another input file.
+
+<span class="sb">`exiftool -Title="{{new title}}" {{input-file}}`</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org9068d62">
+<h2 id="org9068d62">Pages</h2>
+<div class="outline-text-2" id="text-org9068d62">
 <p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with <code>page.md</code> instead of <code>patch.md</code>. Otherwise the contents look the same.</p>
 </div>
-<div class="outline-3" id="outline-container-orgf3594ef">
-<h3 id="orgf3594ef">MakeMKV Command Line</h3>
-<div class="outline-text-3" id="text-orgf3594ef">
+<div class="outline-3" id="outline-container-org758d440">
+<h3 id="org758d440">MakeMKV Command Line</h3>
+<div class="outline-text-3" id="text-org758d440">
 <p>The <code>makemkvcon</code> command has a <code>--help</code> output, which is somewhat vague. I got the information for this from a developers text file <a href="https://www.makemkv.com/developers/usage.txt">usage.txt</a> on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due to errors specific to the GUI so the command line interface is useful to work around those cases.</p>
 </div>
-<div class="outline-4" id="outline-container-org3618a34">
-<h4 id="org3618a34">List Drives</h4>
-<div class="outline-text-4" id="text-org3618a34">
+<div class="outline-4" id="outline-container-orgf908b56">
+<h4 id="orgf908b56">List Drives</h4>
+<div class="outline-text-4" id="text-orgf908b56">
 <p>This lists the drives as <code>makemkvcon</code> sees them.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>List drives - DRV:index,visible,enabled,flags,drive name,disc name
@@ -390,9 +411,9 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <p>Looking at the sample output, it has <code>2</code> for "visible" and <code>999</code> for "enabled", which doesn't match the expected values so I just ignore everything but the <code>drive name</code> to find the right entry in the output and the <code>index</code> for use in invoking <code>makemkvcon</code>.</p>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org8984836">
-<h4 id="org8984836">Copy Disc As MKV Files</h4>
-<div class="outline-text-4" id="text-org8984836">
+<div class="outline-4" id="outline-container-org4067980">
+<h4 id="org4067980">Copy Disc As MKV Files</h4>
+<div class="outline-text-4" id="text-org4067980">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Save disk to the current directory as MKV files
 
