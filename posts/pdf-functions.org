@@ -31,4 +31,4 @@ function pdfbookmarks -d "Dump bookmarks from a PDF (pdftk format)" --argument-n
 end
 #+end_src
 
-See the /PDF TK/ section of the {{% lancelot title="Tealdeer post" %}}tealdeer-pages{{% /lancelot}} for (a little) more information.
+See the /PDF TK/ section of the {{% lancelot title="Tealdeer post" %}}tealdeer-pages{{% /lancelot %}} for (a little) more information.
