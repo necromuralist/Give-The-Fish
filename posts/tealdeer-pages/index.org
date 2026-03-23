@@ -47,7 +47,11 @@ This is for ghost script.
 #+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/gs.patch.md :exports none
 <<gs-black-and-white-pdf>>
 
+<<gs-black-and-white-no-images-pdf>>
+
 <<gs-compress-ebook>>
+
+<<gs-to-grayscale>>
 #+end_src
 
 *** Black and White PDF
@@ -64,6 +68,21 @@ In the cases I've tried this doesn't convert raster images.
 `gs -sDEVICE=pdfwrite -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile={{output-file-name}} {{pdf-input-file-name}}`
 #+end_src
 
+*** Black and White PDF and No Images
+
+This is the previous command (Black and White) but it removes /all/ images, leaving only vectors-based items. This is for the case where someone used a background image and all you're interested in is the text and tables.
+
+#+begin_notecard
+Removes all images.
+#+end_notecard
+
+#+begin_src markdown :noweb-ref gs-black-and-white-no-images-pdf
+- Convert PDF text to black and white (not grayscale) and remove all images
+
+`gs -sDEVICE=pdfwrite -dFILTERIMAGE -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile={{output-file-name}} {{pdf-input-file-name}}`
+#+end_src
+
+
 *** Compress For Ebook
 
 This adds some extra flags to the compression help that comes with tealdeer. 
@@ -75,6 +94,20 @@ This adds some extra flags to the compression help that comes with tealdeer.
 #+end_src
 
 - See : [[https://ghostscript.com/blog/optimizing-pdfs.html][Optimizing PDFs]] - From the Ghostscript Blog. This notes that DetectDuplicateImages is actually on by default so you only need to use it if you want to turn it off, but I didn't read that until after using it. It might make sense to experiment with it on and off. The same might go for the CompatibilityLevel.
+
+*** Convert To Grayscale
+
+Sometimes images are RGB even though they are of black and white or gray images. Adding these flags will convert them to grayscale only. This actually doesn't save a huge amount of space most of the time (although it might if the image really was color and you're converting it tq gray) but I add the flags to the Black and White settings above to squeeze out a little more. It sometimes makes them look nicer as well.
+
+I've only tested this with images, not vector graphics, but I think that it will strip the color from both, not just the images. Should test that out eventually...
+
+#+begin_src markdown :noweb-ref gs-to-grayscale
+- Convert color to grayscale
+
+`gs -sProcessColorModel=DeviceGray -sColorConversionStrategy=Gray -sOutputFile={{output-file-name}} {{input-file-name}}`
+#+end_src
+
+Source: [[https://stackoverflow.com/a/20133915][Stack Overflow]] - /Convert PDF to grayscale without rasterization?/
 
 ** Virtual Fish
 
