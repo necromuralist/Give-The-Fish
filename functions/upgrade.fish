@@ -16,9 +16,13 @@ function upgrade --description "Upgrade packages."
     boldblue Updating snaps
     sudo snap refresh
 
-    boldblue Updating flatpak
-    flatpak update --assumeyes
+    if type --query flatpak
+      boldblue Updating flatpak
+      flatpak update --assumeyes
 
-    boldblue Uninstalling unused flatpaks
-    flatpak uninstall --unused --assumeyes
+      boldblue Uninstalling unused flatpaks
+      flatpak uninstall --unused --assumeyes
+    else
+      boldblue Skipping Flatpak (command not found)
+    end
 end
