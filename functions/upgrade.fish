@@ -23,6 +23,6 @@ function upgrade --description "Upgrade packages."
       boldblue Uninstalling unused flatpaks
       flatpak uninstall --unused --assumeyes
     else
-      boldblue Skipping Flatpak (command not found)
+      boldblue "Skipping Flatpak (command not found)"
     end
 end

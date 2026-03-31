@@ -28,7 +28,7 @@
 
       <<clean-flatpak>>
     else
-      boldblue Skipping Flatpak (command not found)
+      boldblue "Skipping Flatpak (command not found)"
     end
 end
 #+end_src
