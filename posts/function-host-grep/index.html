@@ -67,30 +67,30 @@
 </div>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
-<div class="outline-2" id="outline-container-org0bc6fe2">
-<h2 id="org0bc6fe2">The Function</h2>
-<div class="outline-text-2" id="text-org0bc6fe2">
+<div class="outline-2" id="outline-container-org5e3f1c9">
+<h2 id="org5e3f1c9">The Function</h2>
+<div class="outline-text-2" id="text-org5e3f1c9">
 <p>This is a function to check what we have set-up as a hostname for the times that I forget an IP address for a device on the LAN. It checks the hosts file and the ssh-config. The <code>hosts</code> file has the IP address, but sometimes I can't remember the host-name, just the user-name, in which case checking the SSH config file can sometimes be helpful.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> hostgrep --argument-names HOST --description <span class="s2">"Look for a hostname."</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org4a6b9dc">
-<h2 id="org4a6b9dc">The Parts</h2>
-<div class="outline-text-2" id="text-org4a6b9dc"></div>
-<div class="outline-3" id="outline-container-org4bc89fc">
-<h3 id="org4bc89fc">Check Hosts</h3>
-<div class="outline-text-3" id="text-org4bc89fc">
+<div class="outline-2" id="outline-container-org06cc502">
+<h2 id="org06cc502">The Parts</h2>
+<div class="outline-text-2" id="text-org06cc502"></div>
+<div class="outline-3" id="outline-container-org2158ec2">
+<h3 id="org2158ec2">Check Hosts</h3>
+<div class="outline-text-3" id="text-org2158ec2">
 <p>First check the <code>/etc/hosts</code> file.</p>
 <div class="highlight">
 <pre><span></span>grep <span class="nv">$HOST</span> /etc/hosts
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org5abb39d">
-<h3 id="org5abb39d">Check SSH</h3>
-<div class="outline-text-3" id="text-org5abb39d">
+<div class="outline-3" id="outline-container-orgd538a3b">
+<h3 id="orgd538a3b">Check SSH</h3>
+<div class="outline-text-3" id="text-orgd538a3b">
 <p>Now Check the ssh configuration.</p>
 <div class="highlight">
 <pre><span></span>grep --after-context <span class="m">3</span> <span class="nv">$HOST</span> <span class="nv">$HOME</span>/.ssh/config

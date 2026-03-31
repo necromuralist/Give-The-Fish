@@ -23,9 +23,13 @@
 
     <<upgrade-snaps>>
 
-    <<upgrade-flatpak>>
+    if type --query flatpak
+      <<upgrade-flatpak>>
 
-    <<clean-flatpak>>
+      <<clean-flatpak>>
+    else
+      boldblue "Skipping Flatpak (command not found)"
+    end
 end
 #+end_src
 
@@ -94,6 +98,10 @@ sudo snap refresh
 boldblue Updating flatpak
 flatpak update --assumeyes
 #+end_src
+
+#+begin_notecard
+[[https://fishshell.com/docs/current/cmds/type.html][type]] checks how a name would be interpreted (=function=, =bultin=, or =file= ). It returns 0 if it isn't defined. =query= suppresses the output.
+#+end_notecard
 
 #+begin_notecard
 **Note:** I was running this with ~--noninteractive~ but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.

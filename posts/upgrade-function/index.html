@@ -73,34 +73,34 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#orgeb1a962">The Function</a>
+<li><a href="index.html#org9a5ff77">The Function</a>
 <ul>
-<li><a href="index.html#org102a4c6">Bold Blue</a></li>
-<li><a href="index.html#orge3e710d">Apt Calls</a></li>
-<li><a href="index.html#org32fb363">Snap</a></li>
-<li><a href="index.html#orgfa0829b">Flatpak</a></li>
-<li><a href="index.html#orga408d75">Uninstall</a></li>
+<li><a href="index.html#org1094eb6">Bold Blue</a></li>
+<li><a href="index.html#orgccd35d9">Apt Calls</a></li>
+<li><a href="index.html#org08c2d26">Snap</a></li>
+<li><a href="index.html#orgad6e7f9">Flatpak</a></li>
+<li><a href="index.html#orgac7aada">Uninstall</a></li>
 </ul>
 </li>
-<li><a href="index.html#orga1da25c">Some Messages</a>
+<li><a href="index.html#org8fa4abe">Some Messages</a>
 <ul>
-<li><a href="index.html#org904f869">Phased Updates</a></li>
+<li><a href="index.html#org411652e">Phased Updates</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgeb1a962">
-<h2 id="orgeb1a962">The Function</h2>
-<div class="outline-text-2" id="text-orgeb1a962">
+<div class="outline-2" id="outline-container-org9a5ff77">
+<h2 id="org9a5ff77">The Function</h2>
+<div class="outline-text-2" id="text-org9a5ff77">
 <p>This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation…</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> upgrade --description <span class="s2">"Upgrade packages."</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org102a4c6">
-<h3 id="org102a4c6">Bold Blue</h3>
-<div class="outline-text-3" id="text-org102a4c6">
+<div class="outline-3" id="outline-container-org1094eb6">
+<h3 id="org1094eb6">Bold Blue</h3>
+<div class="outline-text-3" id="text-org1094eb6">
 <p>This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the <code>upgrade</code> function.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> boldblue
@@ -111,28 +111,28 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orge3e710d">
-<h3 id="orge3e710d">Apt Calls</h3>
-<div class="outline-text-3" id="text-orge3e710d">
+<div class="outline-3" id="outline-container-orgccd35d9">
+<h3 id="orgccd35d9">Apt Calls</h3>
+<div class="outline-text-3" id="text-orgccd35d9">
 <p>These are calls to update the debian-based packages.</p>
 </div>
-<div class="outline-4" id="outline-container-org613a01c">
-<h4 id="org613a01c">Update</h4>
-<div class="outline-text-4" id="text-org613a01c">
+<div class="outline-4" id="outline-container-orgfbf4ff9">
+<h4 id="orgfbf4ff9">Update</h4>
+<div class="outline-text-4" id="text-orgfbf4ff9">
 <p>These calls update the database and then show us what is upgradable.</p>
 <div class="highlight">
 <pre><span></span>boldblue Checking apt
 sudo apt-fast update --yes
 sudo apt-get --just-print upgrade
 </pre></div>
-<div class="notecard" id="orgd3bd8e3">
+<div class="notecard" id="org18a8e1d">
 <p>I was initially using <code>apt</code> to list the upgradable packages, but installing <code>more</code> as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that <code>apt</code> is a front-end to other packages to make them easier to use, and that <code>apt-get</code> is better for non-interactive use (and is one of the things that <code>apt</code> is using behind the scenes anyway).</p>
 </div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org127b823">
-<h4 id="org127b823">Upgrade and Autoremove</h4>
-<div class="outline-text-4" id="text-org127b823">
+<div class="outline-4" id="outline-container-org25f5de2">
+<h4 id="org25f5de2">Upgrade and Autoremove</h4>
+<div class="outline-text-4" id="text-org25f5de2">
 <p>Now we run the upgrade. <code>upgrade</code> will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. <code>full-upgrade</code> will do what <code>upgrade</code> does but will remove any installed packages if needed to upgrade an installed package. So, we're going with <code>full-upgrade</code>.</p>
 <p>I'm also auto-removing any packages that get orphaned as dependencies by an upgrade.</p>
 <div class="highlight">
@@ -143,9 +143,9 @@ sudo apt-get autoremove --yes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org32fb363">
-<h3 id="org32fb363">Snap</h3>
-<div class="outline-text-3" id="text-org32fb363">
+<div class="outline-3" id="outline-container-org08c2d26">
+<h3 id="org08c2d26">Snap</h3>
+<div class="outline-text-3" id="text-org08c2d26">
 <p>Snaps should update themselves. But let's see what happens if we do it.</p>
 <div class="highlight">
 <pre><span></span>boldblue Updating snaps
@@ -153,25 +153,28 @@ sudo snap refresh
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgfa0829b">
-<h3 id="orgfa0829b">Flatpak</h3>
-<div class="outline-text-3" id="text-orgfa0829b"></div>
-<div class="outline-4" id="outline-container-org377941a">
-<h4 id="org377941a">Update</h4>
-<div class="outline-text-4" id="text-org377941a">
+<div class="outline-3" id="outline-container-orgad6e7f9">
+<h3 id="orgad6e7f9">Flatpak</h3>
+<div class="outline-text-3" id="text-orgad6e7f9"></div>
+<div class="outline-4" id="outline-container-orgf195c8b">
+<h4 id="orgf195c8b">Update</h4>
+<div class="outline-text-4" id="text-orgf195c8b">
 <div class="highlight">
 <pre><span></span>boldblue Updating flatpak
 flatpak update --assumeyes
 </pre></div>
-<div class="notecard" id="org4d743ac">
+<div class="notecard" id="org20afdaa">
+<p><a href="https://fishshell.com/docs/current/cmds/type.html">type</a> checks how a name would be interpreted (<code>function</code>, <code>bultin</code>, or <code>file</code> ). It returns 0 if it isn't defined. <code>query</code> suppresses the output.</p>
+</div>
+<div class="notecard" id="org68c078d">
 <p><b>Note:</b> I was running this with <code>--noninteractive</code> but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orga408d75">
-<h3 id="orga408d75">Uninstall</h3>
-<div class="outline-text-3" id="text-orga408d75">
+<div class="outline-3" id="outline-container-orgac7aada">
+<h3 id="orgac7aada">Uninstall</h3>
+<div class="outline-text-3" id="text-orgac7aada">
 <div class="highlight">
 <pre><span></span>boldblue Uninstalling unused flatpaks
 flatpak uninstall --unused --assumeyes
@@ -179,12 +182,12 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga1da25c">
-<h2 id="orga1da25c">Some Messages</h2>
-<div class="outline-text-2" id="text-orga1da25c"></div>
-<div class="outline-3" id="outline-container-org904f869">
-<h3 id="org904f869">Phased Updates</h3>
-<div class="outline-text-3" id="text-org904f869">
+<div class="outline-2" id="outline-container-org8fa4abe">
+<h2 id="org8fa4abe">Some Messages</h2>
+<div class="outline-text-2" id="text-org8fa4abe"></div>
+<div class="outline-3" id="outline-container-org411652e">
+<h3 id="org411652e">Phased Updates</h3>
+<div class="outline-text-3" id="text-org411652e">
 <div class="highlight">
 <pre><span></span>The following upgrades have been deferred due to phasing:
   alsa-ucm-conf
