@@ -280,6 +280,26 @@ Import bookmarks dumped from another PDF. The prompt for this was that I reduced
 
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with ~page.md~ instead of ~patch.md~. Otherwise the contents look the same.
 
+** Keychron K12 Keyboard
+
+Although this is hardware, I thought it'd be helpful to put something in here in case I forget things.
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/keychron.page.md :exports none
+# keychron K12
+
+> Keychron K12 Keyboard
+
+<<keychron-bluetooth-pairing>>
+#+end_src
+
+*** Bluetooth Pairing
+
+#+begin_src markdown :noweb-ref keychron-bluetooth-pairing
+- Enable pairing (also needs the side-switch to be moved from USB to bluetooth). Q is QWERTY-based.
+
+`fn1-Q (hold until LED lights up)`
+#+end_src
+
 ** MakeMKV Command Line
 
 The ~makemkvcon~ command has a ~--help~ output, which is somewhat vague. I got the information for this from a developers text file [[https://www.makemkv.com/developers/usage.txt][usage.txt]] on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due to errors specific to the GUI so the command line interface is useful to work around those cases.
