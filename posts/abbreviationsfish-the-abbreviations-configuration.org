@@ -14,7 +14,7 @@
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
 
-#+begin_src noweb :tangle ../dingehaufen/conf.d/abbreviations.fish :exports none
+#+begin_src noweb :tangle ../dingehaufen/conf.d/abbreviations.fish :exports none :noweb yes
 # nikola
 <<nikola>>
 
@@ -65,6 +65,10 @@
 <<pdf-join>>
 
 <<pdf-shrink>>
+
+  # emacs client
+  <<emacs-server-status>>
+  <<emacs-server-restart>>
 #+end_src
 
 #+begin_notecard
@@ -271,6 +275,19 @@ abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 
 - This is also in my {{% lancelot title="tealdeer" %}}tealdeer-pages{{% /lancelot %}} post.
 
+* Emacs
+** Server Status
+
+  #+begin_src fish :noweb-ref emacs-server-status
+  abbr --add -- emacsstatus "systemctl --user status emacs"
+  #+end_src
+
+** Restart Server
+
+  #+begin_src fish :noweb-ref emacs-server-restart
+  abbr --add -- emacsrestart "systemctl --user restart emacs"
+  #+end_src
+  
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
 - faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: https://stackoverflow.com/a/48749763
@@ -280,3 +297,5 @@ abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 ** Rsync
  - [[https://serverfault.com/a/141778][Server Fault]]: Answer explaining the ~--archive~ option (I was using it before but also adding other flags that were redundant to it).
  - [[https://serverfault.com/a/204320][Server Fault answer]]: explaining how to create the folder structure but not copy the files.
+
+   

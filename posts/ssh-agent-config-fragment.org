@@ -21,9 +21,13 @@ Put this in =~/.config/fish/conf.d/=.
 
 #+begin_src fish :tangle ../dingehaufen/conf.d/ssh-agent.fish
 if status --is-interactive
-    keychain --eval --quiet --quick id_rsa | source
+    keychain --eval --quiet --quick id_ed25519 | source
 end
 #+end_src
+
+#+begin_notecard
+**Note:** The default key type has changed so the default file name is no longer =id_rsa= it's =id_ed25519=.
+#+end_notecard
 
 The documentation for the [[https://fishshell.com/docs/current/cmds/status.html][~status~]] comand says that ~is-interactive~ is actually a sub-command (not an option, although I'm calling it like it is one) and that it:
 
