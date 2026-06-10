@@ -52,6 +52,8 @@ This is for ghost script.
 <<gs-compress-ebook>>
 
 <<gs-to-grayscale>>
+
+<<gs-to-letter-size>>
 #+end_src
 
 *** Black and White PDF
@@ -82,7 +84,6 @@ Removes all images.
 `gs -sDEVICE=pdfwrite -dFILTERIMAGE -dBlackText -dBlackVector -dNOPAUSE -dBATCH -sOutputFile={{output-file-name}} {{pdf-input-file-name}}`
 #+end_src
 
-
 *** Compress For Ebook
 
 This adds some extra flags to the compression help that comes with tealdeer. 
@@ -108,6 +109,16 @@ I've only tested this with images, not vector graphics, but I think that it will
 #+end_src
 
 Source: [[https://stackoverflow.com/a/20133915][Stack Overflow]] - /Convert PDF to grayscale without rasterization?/
+
+*** Resize (to Letter)
+
+Evince no longer has the "Scale to Printable Area" option when printing PDFs, so this is something to use to get the PDF to letter-sized before printing. (from [[https://stackoverflow.com/a/7507511][Stack Overflow: Resizing a PDF Using Ghostscript]])
+
+#+begin_src markdown :noweb-ref gs-to-letter-size
+- Convert to Letter sized
+
+`gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dCompatibilityLevel=1.4 -sPAPERSIZE=letter -dFIXEDMEDIA -dPDFFitPage -sOutputFile={{output-file-name}} {{input-file-name}}`
+#+end_src
 
 ** Virtual Fish
 
