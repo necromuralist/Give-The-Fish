@@ -13,3 +13,8 @@
 - Convert color to grayscale
 
 `gs -sProcessColorModel=DeviceGray -sColorConversionStrategy=Gray -sOutputFile={{output-file-name}} {{input-file-name}}`
+
+- Convert to Letter sized
+
+`gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dCompatibilityLevel=1.4 -sPAPERSIZE=letter -dFIXEDMEDIA -dPDFFitPage -sOutputFile={{output-file-name}} {{input-file-name}}`
+
