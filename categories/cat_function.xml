@@ -5,9 +5,9 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 31 Mar 2026 05:22:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Host Grep</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org5e3f1c9" class="outline-2"&gt;
-&lt;h2 id="org5e3f1c9"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5e3f1c9"&gt;
+</copyright><lastBuildDate>Fri, 12 Jun 2026 00:33:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Host Grep</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org9e3655e" class="outline-2"&gt;
+&lt;h2 id="org9e3655e"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9e3655e"&gt;
 &lt;p&gt;
 This is a function to check what we have set-up as a hostname for the times that I forget an IP address for a device on the LAN. It checks the hosts file and the ssh-config. The &lt;code&gt;hosts&lt;/code&gt; file has the IP address, but sometimes I can't remember the host-name, just the user-name, in which case checking the SSH config file can sometimes be helpful.
 &lt;/p&gt;
@@ -16,13 +16,13 @@ This is a function to check what we have set-up as a hostname for the times that
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org06cc502" class="outline-2"&gt;
-&lt;h2 id="org06cc502"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org06cc502"&gt;
+&lt;div id="outline-container-orga255b5a" class="outline-2"&gt;
+&lt;h2 id="orga255b5a"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga255b5a"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2158ec2" class="outline-3"&gt;
-&lt;h3 id="org2158ec2"&gt;Check Hosts&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2158ec2"&gt;
+&lt;div id="outline-container-org23e2a95" class="outline-3"&gt;
+&lt;h3 id="org23e2a95"&gt;Check Hosts&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org23e2a95"&gt;
 &lt;p&gt;
 First check the &lt;code&gt;/etc/hosts&lt;/code&gt; file.
 &lt;/p&gt;
@@ -31,9 +31,9 @@ First check the &lt;code&gt;/etc/hosts&lt;/code&gt; file.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd538a3b" class="outline-3"&gt;
-&lt;h3 id="orgd538a3b"&gt;Check SSH&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd538a3b"&gt;
+&lt;div id="outline-container-orgb1b51be" class="outline-3"&gt;
+&lt;h3 id="orgb1b51be"&gt;Check SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb1b51be"&gt;
 &lt;p&gt;
 Now Check the ssh configuration.
 &lt;/p&gt;
@@ -45,9 +45,9 @@ Now Check the ssh configuration.
 &lt;/div&gt;</description><category>function</category><category>network</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</guid><pubDate>Wed, 19 Mar 2025 18:31:15 GMT</pubDate></item><item><title>Function: Mount Data</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-mount-data/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
 This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.
 &lt;/p&gt;
-&lt;div id="outline-container-orge424112" class="outline-2"&gt;
-&lt;h2 id="orge424112"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge424112"&gt;
+&lt;div id="outline-container-org0941ffe" class="outline-2"&gt;
+&lt;h2 id="org0941ffe"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0941ffe"&gt;
 &lt;p&gt;
 This is the function declaration. There's going to be three optional arguments that it might take.
 &lt;/p&gt;
@@ -103,13 +103,13 @@ The &lt;code&gt;ERROR&lt;/code&gt; is a number to return in the event we bail on
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org47a4ce5" class="outline-2"&gt;
-&lt;h2 id="org47a4ce5"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org47a4ce5"&gt;
+&lt;div id="outline-container-org0d96774" class="outline-2"&gt;
+&lt;h2 id="org0d96774"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0d96774"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc5bb2af" class="outline-3"&gt;
-&lt;h3 id="orgc5bb2af"&gt;The Device&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc5bb2af"&gt;
+&lt;div id="outline-container-org08cf4f8" class="outline-3"&gt;
+&lt;h3 id="org08cf4f8"&gt;The Device&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org08cf4f8"&gt;
 &lt;p&gt;
 This is the name of the device in &lt;code&gt;/dev&lt;/code&gt; that represents the drive to mount. 
 &lt;/p&gt;
@@ -129,7 +129,7 @@ This one is generally useful if you know the model of the drive.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="notecard" id="orgb96bf35"&gt;
+&lt;div class="notecard" id="orga1da210"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note to future self:&lt;/b&gt;&lt;/b&gt; Consider making this an environment variable so you don't have to edit it if you switch USB ports.
 &lt;/p&gt;
@@ -162,9 +162,9 @@ To be nice we'll let the user know what we're using.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7d61cd8" class="outline-3"&gt;
-&lt;h3 id="org7d61cd8"&gt;The Mapping Name&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7d61cd8"&gt;
+&lt;div id="outline-container-orge365b35" class="outline-3"&gt;
+&lt;h3 id="orge365b35"&gt;The Mapping Name&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge365b35"&gt;
 &lt;p&gt;
 This is the name that will be put into &lt;code&gt;/dev/mapper/&lt;/code&gt; which &lt;code&gt;mount&lt;/code&gt; will use to mount the drive.
 &lt;/p&gt;
@@ -178,9 +178,9 @@ This is the name that will be put into &lt;code&gt;/dev/mapper/&lt;/code&gt; whi
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7ce52eb" class="outline-3"&gt;
-&lt;h3 id="org7ce52eb"&gt;Mount Path&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7ce52eb"&gt;
+&lt;div id="outline-container-org09dc039" class="outline-3"&gt;
+&lt;h3 id="org09dc039"&gt;Mount Path&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org09dc039"&gt;
 &lt;p&gt;
 Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".
 &lt;/p&gt;
@@ -221,9 +221,9 @@ If the folder doesn't exist we'll create it.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge81688c" class="outline-3"&gt;
-&lt;h3 id="orge81688c"&gt;Mounting the Drive&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge81688c"&gt;
+&lt;div id="outline-container-org381a636" class="outline-3"&gt;
+&lt;h3 id="org381a636"&gt;Mounting the Drive&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org381a636"&gt;
 &lt;p&gt;
 First we'll use &lt;code&gt;cryptsetup&lt;/code&gt; to decrypt the drive and put the mapping into &lt;code&gt;/dev/mapper/&lt;/code&gt;.
 &lt;/p&gt;
@@ -243,9 +243,9 @@ Now we'll mount the device to a folder.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5edd0f7" class="outline-2"&gt;
-&lt;h2 id="org5edd0f7"&gt;A Help Printer&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5edd0f7"&gt;
+&lt;div id="outline-container-orga8825bc" class="outline-2"&gt;
+&lt;h2 id="orga8825bc"&gt;A Help Printer&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga8825bc"&gt;
 &lt;p&gt;
 This is just a function to print a help string.
 &lt;/p&gt;
@@ -261,9 +261,9 @@ This is just a function to print a help string.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgaca83c3" class="outline-2"&gt;
-&lt;h2 id="orgaca83c3"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgaca83c3"&gt;
+&lt;div id="outline-container-orgf46a376" class="outline-2"&gt;
+&lt;h2 id="orgf46a376"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf46a376"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/not.html"&gt;fish Not&lt;/a&gt;: Negate the exit status of a job (&lt;code&gt;test&lt;/code&gt; in this case).&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;fish test&lt;/a&gt;: The &lt;code&gt;test&lt;/code&gt; command.&lt;/li&gt;

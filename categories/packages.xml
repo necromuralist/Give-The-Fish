@@ -5,30 +5,30 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 31 Mar 2026 05:22:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Upgrade Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Fri, 12 Jun 2026 00:33:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Upgrade Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org9a5ff77"&gt;The Function&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org27446fb"&gt;The Function&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org1094eb6"&gt;Bold Blue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgccd35d9"&gt;Apt Calls&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org08c2d26"&gt;Snap&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgad6e7f9"&gt;Flatpak&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgac7aada"&gt;Uninstall&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgc166096"&gt;Bold Blue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org7352774"&gt;Apt Calls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org794da67"&gt;Snap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org8c43593"&gt;Flatpak&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orga40f3ab"&gt;Uninstall&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org8fa4abe"&gt;Some Messages&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgc34268b"&gt;Some Messages&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org411652e"&gt;Phased Updates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orge5164a3"&gt;Phased Updates&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9a5ff77" class="outline-2"&gt;
-&lt;h2 id="org9a5ff77"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9a5ff77"&gt;
+&lt;div id="outline-container-org27446fb" class="outline-2"&gt;
+&lt;h2 id="org27446fb"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org27446fb"&gt;
 &lt;p&gt;
 This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation…
 &lt;/p&gt;
@@ -36,9 +36,9 @@ This is a function to upgrade the various packages. It might, perhaps be better 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; upgrade --description &lt;span class="s2"&gt;"Upgrade packages."&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1094eb6" class="outline-3"&gt;
-&lt;h3 id="org1094eb6"&gt;Bold Blue&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1094eb6"&gt;
+&lt;div id="outline-container-orgc166096" class="outline-3"&gt;
+&lt;h3 id="orgc166096"&gt;Bold Blue&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc166096"&gt;
 &lt;p&gt;
 This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the &lt;code&gt;upgrade&lt;/code&gt; function.
 &lt;/p&gt;
@@ -51,16 +51,16 @@ This is a helper function to set lines (specifically headlines in this case) to 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgccd35d9" class="outline-3"&gt;
-&lt;h3 id="orgccd35d9"&gt;Apt Calls&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgccd35d9"&gt;
+&lt;div id="outline-container-org7352774" class="outline-3"&gt;
+&lt;h3 id="org7352774"&gt;Apt Calls&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7352774"&gt;
 &lt;p&gt;
 These are calls to update the debian-based packages.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgfbf4ff9" class="outline-4"&gt;
-&lt;h4 id="orgfbf4ff9"&gt;Update&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgfbf4ff9"&gt;
+&lt;div id="outline-container-orgc212bbf" class="outline-4"&gt;
+&lt;h4 id="orgc212bbf"&gt;Update&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgc212bbf"&gt;
 &lt;p&gt;
 These calls update the database and then show us what is upgradable. 
 &lt;/p&gt;
@@ -70,7 +70,7 @@ sudo apt-fast update --yes
 sudo apt-get --just-print upgrade
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org18a8e1d"&gt;
+&lt;div class="notecard" id="org9f6cedb"&gt;
 &lt;p&gt;
 I was initially using &lt;code&gt;apt&lt;/code&gt; to list the upgradable packages, but installing &lt;code&gt;more&lt;/code&gt; as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that &lt;code&gt;apt&lt;/code&gt; is a front-end to other packages to make them easier to use, and that &lt;code&gt;apt-get&lt;/code&gt; is  better for non-interactive use (and is one of the things that &lt;code&gt;apt&lt;/code&gt; is using behind the scenes anyway).
 &lt;/p&gt;
@@ -78,9 +78,9 @@ I was initially using &lt;code&gt;apt&lt;/code&gt; to list the upgradable packag
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org25f5de2" class="outline-4"&gt;
-&lt;h4 id="org25f5de2"&gt;Upgrade and Autoremove&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org25f5de2"&gt;
+&lt;div id="outline-container-orgdbd0c30" class="outline-4"&gt;
+&lt;h4 id="orgdbd0c30"&gt;Upgrade and Autoremove&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgdbd0c30"&gt;
 &lt;p&gt;
 Now we run the upgrade. &lt;code&gt;upgrade&lt;/code&gt; will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. &lt;code&gt;full-upgrade&lt;/code&gt; will do what &lt;code&gt;upgrade&lt;/code&gt; does but will remove any installed packages if needed to upgrade an installed package. So, we're going with &lt;code&gt;full-upgrade&lt;/code&gt;.
 &lt;/p&gt;
@@ -96,9 +96,9 @@ sudo apt-get autoremove --yes
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org08c2d26" class="outline-3"&gt;
-&lt;h3 id="org08c2d26"&gt;Snap&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org08c2d26"&gt;
+&lt;div id="outline-container-org794da67" class="outline-3"&gt;
+&lt;h3 id="org794da67"&gt;Snap&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org794da67"&gt;
 &lt;p&gt;
 Snaps should update themselves. But let's see what happens if we do it.
 &lt;/p&gt;
@@ -108,25 +108,25 @@ sudo snap refresh
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgad6e7f9" class="outline-3"&gt;
-&lt;h3 id="orgad6e7f9"&gt;Flatpak&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgad6e7f9"&gt;
+&lt;div id="outline-container-org8c43593" class="outline-3"&gt;
+&lt;h3 id="org8c43593"&gt;Flatpak&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8c43593"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgf195c8b" class="outline-4"&gt;
-&lt;h4 id="orgf195c8b"&gt;Update&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgf195c8b"&gt;
+&lt;div id="outline-container-org6d134d6" class="outline-4"&gt;
+&lt;h4 id="org6d134d6"&gt;Update&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org6d134d6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Updating flatpak
 flatpak update --assumeyes
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org20afdaa"&gt;
+&lt;div class="notecard" id="orgae8b3c9"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/type.html"&gt;type&lt;/a&gt; checks how a name would be interpreted (&lt;code&gt;function&lt;/code&gt;, &lt;code&gt;bultin&lt;/code&gt;, or &lt;code&gt;file&lt;/code&gt; ). It returns 0 if it isn't defined. &lt;code&gt;query&lt;/code&gt; suppresses the output.
 &lt;/p&gt;
 
 &lt;/div&gt;
 
-&lt;div class="notecard" id="org68c078d"&gt;
+&lt;div class="notecard" id="org0b5774d"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; I was running this with &lt;code&gt;--noninteractive&lt;/code&gt; but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.
 &lt;/p&gt;
@@ -135,22 +135,22 @@ flatpak update --assumeyes
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgac7aada" class="outline-3"&gt;
-&lt;h3 id="orgac7aada"&gt;Uninstall&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgac7aada"&gt;
+&lt;div id="outline-container-orga40f3ab" class="outline-3"&gt;
+&lt;h3 id="orga40f3ab"&gt;Uninstall&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga40f3ab"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Uninstalling unused flatpaks
 flatpak uninstall --unused --assumeyes
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8fa4abe" class="outline-2"&gt;
-&lt;h2 id="org8fa4abe"&gt;Some Messages&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8fa4abe"&gt;
+&lt;div id="outline-container-orgc34268b" class="outline-2"&gt;
+&lt;h2 id="orgc34268b"&gt;Some Messages&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc34268b"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org411652e" class="outline-3"&gt;
-&lt;h3 id="org411652e"&gt;Phased Updates&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org411652e"&gt;
+&lt;div id="outline-container-orge5164a3" class="outline-3"&gt;
+&lt;h3 id="orge5164a3"&gt;Phased Updates&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge5164a3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;The following upgrades have been deferred due to phasing:
   alsa-ucm-conf
 &lt;/pre&gt;&lt;/div&gt;

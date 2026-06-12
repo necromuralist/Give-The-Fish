@@ -5,11 +5,11 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 31 Mar 2026 05:22:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Abbreviations: Mother Ship</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Fri, 12 Jun 2026 00:33:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Abbreviations: Mother Ship</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html#orgc5ae051"&gt;Mount Drives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html#orge43b78a"&gt;Mount Drives&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -21,9 +21,9 @@ This tangle is for extra configurations that are meant for PCs with a GUI that a
 &lt;p&gt;
 I'm putting it in &lt;code&gt;dingehaufen/conf.d/&lt;/code&gt; so it should be linked to in &lt;code&gt;.config/fish/conf.d/&lt;/code&gt; for PCs that need it.
 &lt;/p&gt;
-&lt;div id="outline-container-orgc5ae051" class="outline-2"&gt;
-&lt;h2 id="orgc5ae051"&gt;Mount Drives&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc5ae051"&gt;
+&lt;div id="outline-container-orge43b78a" class="outline-2"&gt;
+&lt;h2 id="orge43b78a"&gt;Mount Drives&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge43b78a"&gt;
 &lt;p&gt;
 This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.
 &lt;/p&gt;

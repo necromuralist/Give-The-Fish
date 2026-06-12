@@ -5,11 +5,76 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 31 Mar 2026 05:22:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Fri, 12 Jun 2026 00:47:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reverting To Emacs alt-backspace</title><link>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html#org667d0a6"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#org7cfafc7"&gt;Alt-Backspace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#org7f38dbd"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the &lt;a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;Common-User-Access (CUA)&lt;/a&gt; behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.
+&lt;/p&gt;
+&lt;div id="outline-container-org7cfafc7" class="outline-2"&gt;
+&lt;h2 id="org7cfafc7"&gt;Alt-Backspace&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7cfafc7"&gt;
+&lt;p&gt;
+Here's what I'm adding to the fish configuration:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;bind &lt;/span&gt;alt-backspace backward-kill-word
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This was taken from &lt;a href="https://github.com/fish-shell/fish-shell/issues/12122#issuecomment-3602424666"&gt;user &lt;code&gt;rski&lt;/code&gt;'s comment&lt;/a&gt;, which also had some other keybindings which I'm not putting in since I don't normally use them anyway, but I'll document them here in case I decide I need them later.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;bind &lt;/span&gt;ctrl-alt-h backward-kill-word
+&lt;span class="nb"&gt;bind &lt;/span&gt;ctrl-backspace backward-kill-token
+&lt;span class="nb"&gt;bind &lt;/span&gt;alt-delete &lt;span class="nb"&gt;kill&lt;/span&gt;-word
+&lt;span class="nb"&gt;bind &lt;/span&gt;ctrl-delete &lt;span class="nb"&gt;kill&lt;/span&gt;-token
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+From Fish's &lt;a href="https://fishshell.com/docs/current/cmds/bind.html"&gt;&lt;code&gt;bind&lt;/code&gt; documentation&lt;/a&gt;:
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;backward-kill-word&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Move the word to the left of the cursor to the killring, until the start of the current word (like vim’s db)
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;backward-kill-token&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Move the argument to the left of the cursor to the killring
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org7f38dbd" class="outline-2"&gt;
+&lt;h2 id="org7f38dbd"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7f38dbd"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;Wikipedia: IBM Common User Access&lt;/a&gt;: General article about where the new behavior comes from.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://github.com/fish-shell/fish-shell/issues/12122"&gt;GitHub: Issue 12122 - Revert alt-backspace behaviour on non-macOS systems&lt;/a&gt; - The place I found the way to re-bind the old behavior.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://github.com/fish-shell/fish-shell/pull/10766"&gt;Github: Pull Request - Default bindings for token movement commands&lt;/a&gt; - It sounds like they were trying to unify the behavior across platforms. A nice idea, unfortunately it bit me. Maybe I'll learn ctrl-backspace one day.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>configuration</category><category>hack</category><category>readline</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</guid><pubDate>Fri, 12 Jun 2026 00:10:38 GMT</pubDate></item><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html#orgcd7b73f"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -25,21 +90,21 @@ The additions will be in &lt;code&gt;dingehaufen/conf.d/extra_paths.fish&lt;/cod
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$fish_user_paths&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--universal&lt;span class="w"&gt; &lt;/span&gt;--append&lt;span class="w"&gt; &lt;/span&gt;fish_user_paths&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/bin
 contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.local/bin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$fish_user_paths&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--universal&lt;span class="w"&gt; &lt;/span&gt;--append&lt;span class="w"&gt; &lt;/span&gt;fish_user_paths&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.local/bin
 &lt;/pre&gt;&lt;/div&gt;
-&lt;div id="outline-container-org667d0a6" class="outline-2"&gt;
-&lt;h2 id="org667d0a6"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org667d0a6"&gt;
+&lt;div id="outline-container-orgcd7b73f" class="outline-2"&gt;
+&lt;h2 id="orgcd7b73f"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcd7b73f"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/a/61882414"&gt;Stack Overflow&lt;/a&gt;: Answer where I got the fish syntax.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><category>fish</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</guid><pubDate>Tue, 02 Apr 2024 22:36:42 GMT</pubDate></item><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org433ecab" class="outline-2"&gt;
-&lt;h2 id="org433ecab"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org433ecab"&gt;
+&lt;/div&gt;</description><category>configuration</category><category>fish</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</guid><pubDate>Tue, 02 Apr 2024 22:36:42 GMT</pubDate></item><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orgb9600ce" class="outline-2"&gt;
+&lt;h2 id="orgb9600ce"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb9600ce"&gt;
 &lt;p&gt;
 This is the fragment to make sure the ssh-agent is running when you open the terminal.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org034d053"&gt;
+&lt;div class="notecard" id="org44dd740"&gt;
 &lt;p&gt;
 Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -51,7 +116,7 @@ Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="orged08c3c"&gt;
+&lt;div class="notecard" id="orgfa6311c"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; The default key type has changed so the default file name is no longer &lt;code&gt;id_rsa&lt;/code&gt; it's &lt;code&gt;id_ed25519&lt;/code&gt;.
 &lt;/p&gt;
@@ -81,9 +146,9 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org4e10012" class="outline-2"&gt;
-&lt;h2 id="org4e10012"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4e10012"&gt;
+&lt;div id="outline-container-org628c4d3" class="outline-2"&gt;
+&lt;h2 id="org628c4d3"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org628c4d3"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;
@@ -94,13 +159,13 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org8b5090f"&gt;Environment Variables&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org281702c"&gt;Environment Variables&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#orgcd6ee70"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org6b414c8"&gt;The Rest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org5c85d50"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#orge2c89c9"&gt;The Rest&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org52c6a75"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/configfish-the-fish-configuration/index.html#org8705b00"&gt;Proton VPN&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -108,16 +173,16 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;p&gt;
 This is the fish configuration file. It goes into &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;.
 &lt;/p&gt;
-&lt;div id="outline-container-org8b5090f" class="outline-2"&gt;
-&lt;h2 id="org8b5090f"&gt;Environment Variables&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8b5090f"&gt;
+&lt;div id="outline-container-org281702c" class="outline-2"&gt;
+&lt;h2 id="org281702c"&gt;Environment Variables&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org281702c"&gt;
 &lt;p&gt;
 The &lt;code&gt;--export&lt;/code&gt; flag exports the shell variable to child processes, making it an "environment variable".
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcd6ee70" class="outline-3"&gt;
-&lt;h3 id="orgcd6ee70"&gt;Emacs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcd6ee70"&gt;
+&lt;div id="outline-container-org5c85d50" class="outline-3"&gt;
+&lt;h3 id="org5c85d50"&gt;Emacs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5c85d50"&gt;
 &lt;p&gt;
 Sets us up to use the emacs client as the default editor.
 &lt;/p&gt;
@@ -133,9 +198,9 @@ Sets us up to use the emacs client as the default editor.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6b414c8" class="outline-3"&gt;
-&lt;h3 id="org6b414c8"&gt;The Rest&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6b414c8"&gt;
+&lt;div id="outline-container-orge2c89c9" class="outline-3"&gt;
+&lt;h3 id="orge2c89c9"&gt;The Rest&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge2c89c9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# for extra docker build features (like smarter pip caching)&lt;/span&gt;
 &lt;span class="k"&gt;set&lt;/span&gt; --export DOCKER_BUILDKIT 1
 
@@ -145,9 +210,9 @@ Sets us up to use the emacs client as the default editor.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org52c6a75" class="outline-2"&gt;
-&lt;h2 id="org52c6a75"&gt;Proton VPN&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org52c6a75"&gt;
+&lt;div id="outline-container-org8705b00" class="outline-2"&gt;
+&lt;h2 id="org8705b00"&gt;Proton VPN&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8705b00"&gt;
 &lt;p&gt;
 The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).
 &lt;/p&gt;
@@ -158,7 +223,7 @@ The current command-line interface is deprecated so it gets uninstalled when you
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org6028013"&gt;
+&lt;div class="notecard" id="orgc647afb"&gt;
 &lt;p&gt;
 I went back to using the GUI to test some things out… hopefully they'll get the CLI working again, but for now (2024-12-29) no CLI.
 &lt;/p&gt;

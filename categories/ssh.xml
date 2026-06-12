@@ -5,14 +5,14 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 31 Mar 2026 05:22:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org433ecab" class="outline-2"&gt;
-&lt;h2 id="org433ecab"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org433ecab"&gt;
+</copyright><lastBuildDate>Fri, 12 Jun 2026 00:33:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orgb9600ce" class="outline-2"&gt;
+&lt;h2 id="orgb9600ce"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb9600ce"&gt;
 &lt;p&gt;
 This is the fragment to make sure the ssh-agent is running when you open the terminal.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org034d053"&gt;
+&lt;div class="notecard" id="org44dd740"&gt;
 &lt;p&gt;
 Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;/p&gt;
@@ -24,7 +24,7 @@ Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="orged08c3c"&gt;
+&lt;div class="notecard" id="orgfa6311c"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; The default key type has changed so the default file name is no longer &lt;code&gt;id_rsa&lt;/code&gt; it's &lt;code&gt;id_ed25519&lt;/code&gt;.
 &lt;/p&gt;
@@ -54,9 +54,9 @@ The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org4e10012" class="outline-2"&gt;
-&lt;h2 id="org4e10012"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4e10012"&gt;
+&lt;div id="outline-container-org628c4d3" class="outline-2"&gt;
+&lt;h2 id="org628c4d3"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org628c4d3"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;

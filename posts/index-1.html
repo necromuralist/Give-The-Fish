@@ -99,16 +99,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="git-checkout-file-function/index.html#org5c5d8ea">Declaring the Function</a></li>
-<li><a href="git-checkout-file-function/index.html#org1ab1205">Checkout the File</a></li>
-<li><a href="git-checkout-file-function/index.html#org05603d6">Check If It Succeeded</a></li>
-<li><a href="git-checkout-file-function/index.html#orga349d7b">References</a></li>
+<li><a href="git-checkout-file-function/index.html#org73adcbf">Declaring the Function</a></li>
+<li><a href="git-checkout-file-function/index.html#orgd277882">Checkout the File</a></li>
+<li><a href="git-checkout-file-function/index.html#orgedb90b6">Check If It Succeeded</a></li>
+<li><a href="git-checkout-file-function/index.html#orgaa05dac">References</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5c5d8ea">
-<h2 id="org5c5d8ea">Declaring the Function</h2>
-<div class="outline-text-2" id="text-org5c5d8ea">
+<div class="outline-2" id="outline-container-org73adcbf">
+<h2 id="org73adcbf">Declaring the Function</h2>
+<div class="outline-text-2" id="text-org73adcbf">
 <p>This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> gitmefile -d <span class="s2">"Checkout folder or file from another branch"</span> <span class="se">\</span>
@@ -117,18 +117,18 @@
 <p>I originally called <code>PATH_TO_FILE</code> but that of course clobbered the <code>PATH</code> variable and all of a sudden it couldn't find git.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org1ab1205">
-<h2 id="org1ab1205">Checkout the File</h2>
-<div class="outline-text-2" id="text-org1ab1205">
+<div class="outline-2" id="outline-container-orgd277882">
+<h2 id="orgd277882">Checkout the File</h2>
+<div class="outline-text-2" id="text-orgd277882">
 <p>This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.</p>
 <div class="highlight">
 <pre><span></span>git checkout <span class="nv">$BRANCH</span> -- <span class="nv">$PATH_TO_FILE</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org05603d6">
-<h2 id="org05603d6">Check If It Succeeded</h2>
-<div class="outline-text-2" id="text-org05603d6">
+<div class="outline-2" id="outline-container-orgedb90b6">
+<h2 id="orgedb90b6">Check If It Succeeded</h2>
+<div class="outline-text-2" id="text-orgedb90b6">
 <p>The git error message when you pass it an unknown branch is <code>fatal: invalid reference: &lt;branch&gt;</code> which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="nv">$status</span> -ne 0
@@ -164,9 +164,9 @@
 </table>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga349d7b">
-<h2 id="orga349d7b">References</h2>
-<div class="outline-text-2" id="text-orga349d7b">
+<div class="outline-2" id="outline-container-orgaa05dac">
+<h2 id="orgaa05dac">References</h2>
+<div class="outline-text-2" id="text-orgaa05dac">
 <ul class="org-ul">
 <li>string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: <a href="https://fishshell.com/docs/current/cmds/string-match.html">https://fishshell.com/docs/current/cmds/string-match.html</a></li>
 <li>test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: <a href="https://fishshell.com/docs/current/cmds/test.html">https://fishshell.com/docs/current/cmds/test.html</a></li>
@@ -193,9 +193,9 @@
     unbuffer apt search <span class="nv">$keyword</span> <span class="o">|</span> less -R
 <span class="k">end</span>
 </pre></div>
-<div class="outline-2" id="outline-container-org4efb87c">
-<h2 id="org4efb87c">Links</h2>
-<div class="outline-text-2" id="text-org4efb87c">
+<div class="outline-2" id="outline-container-orgbca2540">
+<h2 id="orgbca2540">Links</h2>
+<div class="outline-text-2" id="text-orgbca2540">
 <ul class="org-ul">
 <li>expect(1) - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: <a href="https://linux.die.net/man/1/expect">https://linux.die.net/man/1/expect</a></li>
 <li>unbuffer(1): unbuffer output - Linux man page [Internet]. [cited 2023 Jun 28]. Available from: <a href="https://linux.die.net/man/1/unbuffer">https://linux.die.net/man/1/unbuffer</a></li>
@@ -213,11 +213,11 @@
 </div>
 </header>
 <div class="p-summary entry-summary">
-<div class="outline-2" id="outline-container-org433ecab">
-<h2 id="org433ecab">SSH Agent</h2>
-<div class="outline-text-2" id="text-org433ecab">
+<div class="outline-2" id="outline-container-orgb9600ce">
+<h2 id="orgb9600ce">SSH Agent</h2>
+<div class="outline-text-2" id="text-orgb9600ce">
 <p>This is the fragment to make sure the ssh-agent is running when you open the terminal.</p>
-<div class="notecard" id="org034d053">
+<div class="notecard" id="org44dd740">
 <p>Put this in <code>~/.config/fish/conf.d/</code>.</p>
 </div>
 <div class="highlight">
@@ -225,7 +225,7 @@
     keychain --eval --quiet --quick id_ed25519 <span class="o">|</span> <span class="nb">source</span>
 <span class="k">end</span>
 </pre></div>
-<div class="notecard" id="orged08c3c">
+<div class="notecard" id="orgfa6311c">
 <p><b>Note:</b> The default key type has changed so the default file name is no longer <code>id_rsa</code> it's <code>id_ed25519</code>.</p>
 </div>
 <p>The documentation for the <a href="https://fishshell.com/docs/current/cmds/status.html"><code>status</code></a> comand says that <code>is-interactive</code> is actually a sub-command (not an option, although I'm calling it like it is one) and that it:</p>
@@ -237,9 +237,9 @@
 <p>The <code>--eval</code> option sends the SSH-Agent message to stdout, <code>--quiet</code> suppresses other messages, <code>--quick</code> tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to <a href="https://fishshell.com/docs/current/cmds/source.html"><code>source</code></a> to load the environment.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org4e10012">
-<h2 id="org4e10012">Links</h2>
-<div class="outline-text-2" id="text-org4e10012">
+<div class="outline-2" id="outline-container-org628c4d3">
+<h2 id="org628c4d3">Links</h2>
+<div class="outline-text-2" id="text-org628c4d3">
 <ul class="org-ul">
 <li>keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: <a href="https://linux.die.net/man/1/keychain">https://linux.die.net/man/1/keychain</a></li>
 <li>source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: <a href="https://fishshell.com/docs/current/cmds/source.html">https://fishshell.com/docs/current/cmds/source.html</a></li>
@@ -262,63 +262,69 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org9308d5f">Nikola</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb039254">Nikola</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org95297f4">New Posts and Pages</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgcf5f07b">Build, Serve, and Develop</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org90bee16">Deploy to Github</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgdf170e1">New Posts and Pages</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org9b27445">Build, Serve, and Develop</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org305f140">Deploy to Github</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org1f9b8f4">Git</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org70b8f69">Git</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgbf45074">Add, Commit, Push Stuff</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orga68867e">The State of Things</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgc0a14e4">Branch Work</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org5fc7904">Checkout Files</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgd6d71de">My, How Things Have Changed</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org16b867e">Add, Commit, Push Stuff</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orga832a9e">The State of Things</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orge8dc7de">Branch Work</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org5492c57">Checkout Files</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org10a4a2d">My, How Things Have Changed</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org2e9469d">Pass</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org1e34959">Grep</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org9050e22">Proton VPN</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org549ebfc">Rsync</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orge3da763">Pass</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org42e2dbe">Grep</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6b8a270">Proton VPN</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb604dcd">Rsync</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org41f9f67">Rsyncer</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org04ce9a5">Rsyncerd</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org2734021">Rsyncerf</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org165f545">Rsyncery</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org21928cc">Rsyncer</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgaad357e">Rsyncerd</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org4a2d389">Rsyncerf</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgda3c79e">Rsyncery</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org82a7511">PDFs</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org16fe09e">PDFs</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org006e3c8">PDF Join</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgd793f46">PDF Shrink</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb39a75d">PDF Join</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org03a1131">PDF Shrink</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgbf23448">Links</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org77b7752">Emacs</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org639415d">Rsync</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org49ea1e0">Server Status</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org5f6ff89">Restart Server</a></li>
+</ul>
+</li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgc38c127">Links</a>
+<ul>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org2fee64a">Rsync</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="notecard" id="orgd567407">
+<div class="notecard" id="org452fc92">
 <p>The abbreviations the file goes into <code>~/.config/fish/conf.d/</code>.</p>
 </div>
 <p>Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter <code>nb</code> ~ when you hit the space-bar fish will replace <code>nb</code> with <code>nikola bulid</code>. This makes them more transparent than functions, although they're also less powerful.</p>
 <p>According to <a href="https://github.com/fish-shell/fish-shell/issues/3099">this github issue</a> the files you put into <code>conf.d/</code> get read before <code>config.fish</code> so whatever you put in there is usable in <code>config.fish</code> (and using <code>config.fish</code>) at all is optional.</p>
-<div class="outline-2" id="outline-container-org9308d5f">
-<h2 id="org9308d5f">Nikola</h2>
-<div class="outline-text-2" id="text-org9308d5f">
+<div class="outline-2" id="outline-container-orgb039254">
+<h2 id="orgb039254">Nikola</h2>
+<div class="outline-text-2" id="text-orgb039254">
 <p>Abbreviations to hopefully make working with <a href="https://getnikola.com/">Nikola</a> a little quicker.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- n <span class="s2">"nikola"</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org95297f4">
-<h3 id="org95297f4">New Posts and Pages</h3>
-<div class="outline-text-3" id="text-org95297f4">
+<div class="outline-3" id="outline-container-orgdf170e1">
+<h3 id="orgdf170e1">New Posts and Pages</h3>
+<div class="outline-text-3" id="text-orgdf170e1">
 <p>I only use org-mode so these are the commands to make new posts and pages.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- post nikola new_post --format orgmode --title
@@ -329,9 +335,9 @@
 <p>They actually look like the same files are produced, just one gets put into your pages folder and one gets put into your posts folder. Which is nice, I guess, in that we can move things back and forth between the blog and the web-pages as we need to.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgcf5f07b">
-<h3 id="orgcf5f07b">Build, Serve, and Develop</h3>
-<div class="outline-text-3" id="text-orgcf5f07b">
+<div class="outline-3" id="outline-container-org9b27445">
+<h3 id="org9b27445">Build, Serve, and Develop</h3>
+<div class="outline-text-3" id="text-org9b27445">
 <p>These are the ones I use the most when making posts and pages.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- nb <span class="s2">"nikola build"</span>
@@ -341,9 +347,9 @@ abbr --add -- nauto <span class="s2">"nikola auto"</span>
 <p><code>auto</code> will build and reload the page for you anytime it sees any changes. This can be convenient sometimes, but sometimes it detects changes to often (maybe when something is making a temporary backup) and it can end up reloading while you're reading the page so I don't use it as much as I used to.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org90bee16">
-<h3 id="org90bee16">Deploy to Github</h3>
-<div class="outline-text-3" id="text-org90bee16">
+<div class="outline-3" id="outline-container-org305f140">
+<h3 id="org305f140">Deploy to Github</h3>
+<div class="outline-text-3" id="text-org305f140">
 <p>And once it's ready…</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- deploy <span class="s2">"nikola github_deploy"</span>
@@ -351,28 +357,28 @@ abbr --add -- nauto <span class="s2">"nikola auto"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org1f9b8f4">
-<h2 id="org1f9b8f4">Git</h2>
-<div class="outline-text-2" id="text-org1f9b8f4">
+<div class="outline-2" id="outline-container-org70b8f69">
+<h2 id="org70b8f69">Git</h2>
+<div class="outline-text-2" id="text-org70b8f69">
 <div class="highlight">
 <pre><span></span>abbr --add -- g <span class="s2">"git"</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-orgbf45074">
-<h3 id="orgbf45074">Add, Commit, Push Stuff</h3>
-<div class="outline-text-3" id="text-orgbf45074"></div>
-<div class="outline-4" id="outline-container-org6821f99">
-<h4 id="org6821f99">Adding Files</h4>
-<div class="outline-text-4" id="text-org6821f99">
+<div class="outline-3" id="outline-container-org16b867e">
+<h3 id="org16b867e">Add, Commit, Push Stuff</h3>
+<div class="outline-text-3" id="text-org16b867e"></div>
+<div class="outline-4" id="outline-container-org6f6b8fb">
+<h4 id="org6f6b8fb">Adding Files</h4>
+<div class="outline-text-4" id="text-org6f6b8fb">
 <div class="highlight">
 <pre><span></span>abbr --add -- add <span class="s2">"git add"</span>
 abbr --add -- gaa <span class="s2">"git add -A"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org2e2b243">
-<h4 id="org2e2b243">Are you ready for a commitment?</h4>
-<div class="outline-text-4" id="text-org2e2b243">
+<div class="outline-4" id="outline-container-orgedd28ba">
+<h4 id="orgedd28ba">Are you ready for a commitment?</h4>
+<div class="outline-text-4" id="text-orgedd28ba">
 <div class="highlight">
 <pre><span></span>abbr --add -- commit <span class="s2">"git commit"</span>
 abbr --add -- gcm <span class="s2">"git commit --message"</span>
@@ -380,9 +386,9 @@ abbr --add -- amend <span class="s2">"git commit --amend"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org024e74c">
-<h4 id="org024e74c">Speak To The Gods On High</h4>
-<div class="outline-text-4" id="text-org024e74c">
+<div class="outline-4" id="outline-container-org530888c">
+<h4 id="org530888c">Speak To The Gods On High</h4>
+<div class="outline-text-4" id="text-org530888c">
 <p><a href="https://man7.org/linux/man-pages/man2/sync.2.html"><code>sync</code></a> is a builtin command (it writes caches to disk) so I went with <code>gsync</code> for the abbreviation.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- push <span class="s2">"git push"</span>
@@ -393,9 +399,9 @@ abbr --add -- fetch <span class="s2">"git fetch --prune"</span>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orga68867e">
-<h3 id="orga68867e">The State of Things</h3>
-<div class="outline-text-3" id="text-orga68867e">
+<div class="outline-3" id="outline-container-orga832a9e">
+<h3 id="orga832a9e">The State of Things</h3>
+<div class="outline-text-3" id="text-orga832a9e">
 <p><a href="https://fishshell.com/docs/current/cmds/status.html"><code>status</code></a> gives you information about the fish-shell. This is the only thing I ever see, though.</p>
 <div class="highlight">
 <pre><span></span><span class="nb">status</span>
@@ -405,7 +411,7 @@ This is not a login shell
 Job control: Only on interactive jobs
 </pre>
 <p>But, anyway, I went with <code>gstat</code> to not block it in case it's really needed at some point.</p>
-<div class="notecard" id="org61b9b87">
+<div class="notecard" id="org11ad39d">
 <p><b>Note:</b> Look at the <a href="ssh-agent-config-fragment/index.html">SSH Agent Config Fragment</a> post to see <code>status</code> in use. It's probably meant for programming, not as a command-line command.</p>
 </div>
 <div class="highlight">
@@ -414,9 +420,9 @@ abbr --add -- gstat <span class="s2">"git status"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgc0a14e4">
-<h3 id="orgc0a14e4">Branch Work</h3>
-<div class="outline-text-3" id="text-orgc0a14e4">
+<div class="outline-3" id="outline-container-orge8dc7de">
+<h3 id="orge8dc7de">Branch Work</h3>
+<div class="outline-text-3" id="text-orge8dc7de">
 <p><a href="https://fishshell.com/docs/current/cmds/switch.html"><code>switch</code></a> is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- branches <span class="s2">"legit branches"</span>
@@ -433,18 +439,18 @@ abbr --add -- destroythegods <span class="s2">"git push origin -d"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org5fc7904">
-<h3 id="org5fc7904">Checkout Files</h3>
-<div class="outline-text-3" id="text-org5fc7904">
+<div class="outline-3" id="outline-container-org5492c57">
+<h3 id="org5492c57">Checkout Files</h3>
+<div class="outline-text-3" id="text-org5492c57">
 <div class="highlight">
 <pre><span></span>abbr --add -- usetheirs <span class="s2">"git checkout --theirs"</span>
 abbr --add -- useours <span class="s2">"git checkout --ours"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgd6d71de">
-<h3 id="orgd6d71de">My, How Things Have Changed</h3>
-<div class="outline-text-3" id="text-orgd6d71de">
+<div class="outline-3" id="outline-container-org10a4a2d">
+<h3 id="org10a4a2d">My, How Things Have Changed</h3>
+<div class="outline-text-3" id="text-org10a4a2d">
 <div class="highlight">
 <pre><span></span>abbr --add -- codechanges <span class="s2">"git log -p"</span>
 abbr --add -- logdiff <span class="s2">"git log -p"</span>
@@ -454,9 +460,9 @@ abbr --add -- gdiffn <span class="s2">"git diff --name-status"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org2e9469d">
-<h2 id="org2e9469d">Pass</h2>
-<div class="outline-text-2" id="text-org2e9469d">
+<div class="outline-2" id="outline-container-orge3da763">
+<h2 id="orge3da763">Pass</h2>
+<div class="outline-text-2" id="text-orge3da763">
 <p>For <a href="https://www.passwordstore.org/">pass</a> the password-manager. I was doing the pull and push commands but decided to use the git <code>sync</code> alias which is actuall calling <code>legit sync</code>, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- p <span class="s2">"pass"</span>
@@ -464,17 +470,17 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org1e34959">
-<h2 id="org1e34959">Grep</h2>
-<div class="outline-text-2" id="text-org1e34959">
+<div class="outline-2" id="outline-container-org42e2dbe">
+<h2 id="org42e2dbe">Grep</h2>
+<div class="outline-text-2" id="text-org42e2dbe">
 <div class="highlight">
 <pre><span></span>abbr --add -- grepr <span class="s2">"grep --color=always"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org9050e22">
-<h2 id="org9050e22">Proton VPN</h2>
-<div class="outline-text-2" id="text-org9050e22">
+<div class="outline-2" id="outline-container-org6b8a270">
+<h2 id="org6b8a270">Proton VPN</h2>
+<div class="outline-text-2" id="text-org6b8a270">
 <div class="highlight">
 <pre><span></span>abbr --add -- vdc <span class="s2">"protonvpn-cli disconnect; protonvpn-cli connect"</span>
 </pre></div>
@@ -483,37 +489,37 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org549ebfc">
-<h2 id="org549ebfc">Rsync</h2>
-<div class="outline-text-2" id="text-org549ebfc"></div>
-<div class="outline-3" id="outline-container-org41f9f67">
-<h3 id="org41f9f67">Rsyncer</h3>
-<div class="outline-text-3" id="text-org41f9f67">
+<div class="outline-2" id="outline-container-orgb604dcd">
+<h2 id="orgb604dcd">Rsync</h2>
+<div class="outline-text-2" id="text-orgb604dcd"></div>
+<div class="outline-3" id="outline-container-org21928cc">
+<h3 id="org21928cc">Rsyncer</h3>
+<div class="outline-text-3" id="text-org21928cc">
 <div class="highlight">
 <pre><span></span>abbr --add -- rsyncer <span class="s2">"rsync --progress --archive --compress"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org04ce9a5">
-<h3 id="org04ce9a5">Rsyncerd</h3>
-<div class="outline-text-3" id="text-org04ce9a5">
+<div class="outline-3" id="outline-container-orgaad357e">
+<h3 id="orgaad357e">Rsyncerd</h3>
+<div class="outline-text-3" id="text-orgaad357e">
 <div class="highlight">
 <pre><span></span>abbr --add -- rsyncerd <span class="s2">"rsync --progress --archive --compress --delete"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org2734021">
-<h3 id="org2734021">Rsyncerf</h3>
-<div class="outline-text-3" id="text-org2734021">
+<div class="outline-3" id="outline-container-org4a2d389">
+<h3 id="org4a2d389">Rsyncerf</h3>
+<div class="outline-text-3" id="text-org4a2d389">
 <p>Creates the folder structure but doesn't copy the files over.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- rsyncerf <span class="s1">'rsync --progress --archive --delete --include="*/" --exclude="*"'</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org165f545">
-<h3 id="org165f545">Rsyncery</h3>
-<div class="outline-text-3" id="text-org165f545">
+<div class="outline-3" id="outline-container-orgda3c79e">
+<h3 id="orgda3c79e">Rsyncery</h3>
+<div class="outline-text-3" id="text-orgda3c79e">
 <p>Does a dry-run to show what would be done without actually transferring files. I made this because for some reason the Raspeberry Pi with Debian 11 on it has some kind of bug that makes rsync fail if the transfers take too long. I don't really know the cause, but it doesn't happen with newer ubuntu versions so it seem like either it's a bug in the creation of the LUKs drive (since I'm creating it on the Raspberry Pi) or in the running of rsync (when the error actually occurs), but in either case, I sometimes need to do sub-folders one at a time instead of just syncing the top folder in order to keep the transfers shorter and running this lets me see what folders need to be synced.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- drysync <span class="s2">"rsync --verbose --archive --delete --dry-run"</span>
@@ -521,12 +527,12 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org82a7511">
-<h2 id="org82a7511">PDFs</h2>
-<div class="outline-text-2" id="text-org82a7511"></div>
-<div class="outline-3" id="outline-container-org006e3c8">
-<h3 id="org006e3c8">PDF Join</h3>
-<div class="outline-text-3" id="text-org006e3c8">
+<div class="outline-2" id="outline-container-org16fe09e">
+<h2 id="org16fe09e">PDFs</h2>
+<div class="outline-text-2" id="text-org16fe09e"></div>
+<div class="outline-3" id="outline-container-orgb39a75d">
+<h3 id="orgb39a75d">PDF Join</h3>
+<div class="outline-text-3" id="text-orgb39a75d">
 <p>Uses Ghostscript to join separate PDF files. Need to pass in the name for the output file and a list of files to be joined (likely using a glob).</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- pdfjoin <span class="s2">"gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile="</span>
@@ -535,9 +541,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <p>That answer also has some options to shrink the output PDF, but this is initially being tested on an alread shrunken PDF which either only got a little smaller, or even got a little bigger, when the lowere-resolution settings were used so I won't put it in until there comes a case where it's shown to help.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgd793f46">
-<h3 id="orgd793f46">PDF Shrink</h3>
-<div class="outline-text-3" id="text-orgd793f46">
+<div class="outline-3" id="outline-container-org03a1131">
+<h3 id="org03a1131">PDF Shrink</h3>
+<div class="outline-text-3" id="text-org03a1131">
 <p>Uses Ghostscript to reduce images to "epub" level.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- pdfshrink <span class="s2">"gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile="</span>
@@ -548,9 +554,29 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgbf23448">
-<h2 id="orgbf23448">Links</h2>
-<div class="outline-text-2" id="text-orgbf23448">
+<div class="outline-2" id="outline-container-org77b7752">
+<h2 id="org77b7752">Emacs</h2>
+<div class="outline-text-2" id="text-org77b7752"></div>
+<div class="outline-3" id="outline-container-org49ea1e0">
+<h3 id="org49ea1e0">Server Status</h3>
+<div class="outline-text-3" id="text-org49ea1e0">
+<div class="highlight">
+<pre><span></span>  abbr --add -- emacsstatus <span class="s2">"systemctl --user status emacs"</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org5f6ff89">
+<h3 id="org5f6ff89">Restart Server</h3>
+<div class="outline-text-3" id="text-org5f6ff89">
+<div class="highlight">
+<pre><span></span>  abbr --add -- emacsrestart <span class="s2">"systemctl --user restart emacs"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgc38c127">
+<h2 id="orgc38c127">Links</h2>
+<div class="outline-text-2" id="text-orgc38c127">
 <ul class="org-ul">
 <li>abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: <a href="https://fishshell.com/docs/current/cmds/abbr.html">https://fishshell.com/docs/current/cmds/abbr.html</a></li>
 <li>faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: <a href="https://stackoverflow.com/a/48749763">https://stackoverflow.com/a/48749763</a></li>
@@ -558,9 +584,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <li><a href="https://askubuntu.com/questions/609303/how-can-i-view-a-progress-bar-when-running-rsync">Stack Exchange</a>: Rsync progress information</li>
 </ul>
 </div>
-<div class="outline-3" id="outline-container-org639415d">
-<h3 id="org639415d">Rsync</h3>
-<div class="outline-text-3" id="text-org639415d">
+<div class="outline-3" id="outline-container-org2fee64a">
+<h3 id="org2fee64a">Rsync</h3>
+<div class="outline-text-3" id="text-org2fee64a">
 <ul class="org-ul">
 <li><a href="https://serverfault.com/a/141778">Server Fault</a>: Answer explaining the <code>--archive</code> option (I was using it before but also adding other flags that were redundant to it).</li>
 <li><a href="https://serverfault.com/a/204320">Server Fault answer</a>: explaining how to create the folder structure but not copy the files.</li>
@@ -583,25 +609,25 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="configfish-the-fish-configuration/index.html#org8b5090f">Environment Variables</a>
+<li><a href="configfish-the-fish-configuration/index.html#org281702c">Environment Variables</a>
 <ul>
-<li><a href="configfish-the-fish-configuration/index.html#orgcd6ee70">Emacs</a></li>
-<li><a href="configfish-the-fish-configuration/index.html#org6b414c8">The Rest</a></li>
+<li><a href="configfish-the-fish-configuration/index.html#org5c85d50">Emacs</a></li>
+<li><a href="configfish-the-fish-configuration/index.html#orge2c89c9">The Rest</a></li>
 </ul>
 </li>
-<li><a href="configfish-the-fish-configuration/index.html#org52c6a75">Proton VPN</a></li>
+<li><a href="configfish-the-fish-configuration/index.html#org8705b00">Proton VPN</a></li>
 </ul>
 </div>
 </div>
 <p>This is the fish configuration file. It goes into <code>~/.config/fish/config.fish</code>.</p>
-<div class="outline-2" id="outline-container-org8b5090f">
-<h2 id="org8b5090f">Environment Variables</h2>
-<div class="outline-text-2" id="text-org8b5090f">
+<div class="outline-2" id="outline-container-org281702c">
+<h2 id="org281702c">Environment Variables</h2>
+<div class="outline-text-2" id="text-org281702c">
 <p>The <code>--export</code> flag exports the shell variable to child processes, making it an "environment variable".</p>
 </div>
-<div class="outline-3" id="outline-container-orgcd6ee70">
-<h3 id="orgcd6ee70">Emacs</h3>
-<div class="outline-text-3" id="text-orgcd6ee70">
+<div class="outline-3" id="outline-container-org5c85d50">
+<h3 id="org5c85d50">Emacs</h3>
+<div class="outline-text-3" id="text-org5c85d50">
 <p>Sets us up to use the emacs client as the default editor.</p>
 <ul class="org-ul">
 <li><code>--create-frame</code> tells emacs to create a new frame instead of continuing in the current one (if it's already open).</li>
@@ -614,9 +640,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org6b414c8">
-<h3 id="org6b414c8">The Rest</h3>
-<div class="outline-text-3" id="text-org6b414c8">
+<div class="outline-3" id="outline-container-orge2c89c9">
+<h3 id="orge2c89c9">The Rest</h3>
+<div class="outline-text-3" id="text-orge2c89c9">
 <div class="highlight">
 <pre><span></span><span class="c"># for extra docker build features (like smarter pip caching)</span>
 <span class="k">set</span> --export DOCKER_BUILDKIT 1
@@ -627,9 +653,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org52c6a75">
-<h2 id="org52c6a75">Proton VPN</h2>
-<div class="outline-text-2" id="text-org52c6a75">
+<div class="outline-2" id="outline-container-org8705b00">
+<h2 id="org8705b00">Proton VPN</h2>
+<div class="outline-text-2" id="text-org8705b00">
 <p>The current command-line interface is deprecated so it gets uninstalled when you install the GUI, but the GUI was having problems so I uninstalled it and went back to using the CLI, but depending on what is installed this may or may not work (and it is kind of slow so it may not be a good idea anyway). Everytime you open a shell this will run (e.g. a byobu window or SSH session).</p>
 <div class="highlight">
 <pre><span></span><span class="c"># check the vpn (requires the installation of the proton-vpn command-line command)</span>
@@ -637,7 +663,7 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
   protonvpn-cli <span class="nb">status</span>
 <span class="k">end</span>
 </pre></div>
-<div class="notecard" id="org6028013">
+<div class="notecard" id="orgc647afb">
 <p>I went back to using the GUI to test some things out… hopefully they'll get the CLI working again, but for now (2024-12-29) no CLI.</p>
 </div>
 </div>
@@ -660,9 +686,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <span class="k">end</span>
 </pre></div>
 <p>This function will convert a text file to an org file using pandoc. I called it <code>rst2org</code> because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.</p>
-<div class="outline-2" id="outline-container-org316f22d">
-<h2 id="org316f22d">What It's Doing</h2>
-<div class="outline-text-2" id="text-org316f22d">
+<div class="outline-2" id="outline-container-org0caed64">
+<h2 id="org0caed64">What It's Doing</h2>
+<div class="outline-text-2" id="text-org0caed64">
 <p>The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.</p>
 <ul class="org-ul">
 <li><code>--standalone</code>: by default pandoc strips out the header and footer, this option tells it to keep it (useful for nikola and most other thing I would imagine)</li>
@@ -671,9 +697,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb24ebae">
-<h2 id="orgb24ebae">Links</h2>
-<div class="outline-text-2" id="text-orgb24ebae">
+<div class="outline-2" id="outline-container-orgbe5ebaf">
+<h2 id="orgbe5ebaf">Links</h2>
+<div class="outline-text-2" id="text-orgbe5ebaf">
 <ul class="org-ul">
 <li>mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: <a href="https://stackoverflow.com/a/62990248">https://stackoverflow.com/a/62990248</a></li>
 </ul>
@@ -705,12 +731,12 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <span class="k">end</span>
 </pre></div>
 <p>The point of this function is to show all the files in the directory (including hidden files) and pipe them to <code>less</code> so they won't go scrolling off the screen while keeping the color highlighting.</p>
-<div class="outline-2" id="outline-container-org9f565d4">
-<h2 id="org9f565d4">The Parts</h2>
-<div class="outline-text-2" id="text-org9f565d4"></div>
-<div class="outline-3" id="outline-container-org6787a98">
-<h3 id="org6787a98">The <code>ls</code> Arguments</h3>
-<div class="outline-text-3" id="text-org6787a98">
+<div class="outline-2" id="outline-container-orgd6fe9d5">
+<h2 id="orgd6fe9d5">The Parts</h2>
+<div class="outline-text-2" id="text-orgd6fe9d5"></div>
+<div class="outline-3" id="outline-container-org39f53c3">
+<h3 id="org39f53c3">The <code>ls</code> Arguments</h3>
+<div class="outline-text-3" id="text-org39f53c3">
 <ul class="org-ul">
 <li><code>--almost-all</code>: don't list the <code>.</code> and <code>..</code> files</li>
 <li><code>--color</code>: Color the output when (defaults to "always" but you can set to "auto" or "never")</li>
@@ -720,13 +746,13 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </ul>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orga87d71c">
-<h3 id="orga87d71c">The <code>less</code> Argument</h3>
-<div class="outline-text-3" id="text-orga87d71c">
+<div class="outline-3" id="outline-container-orgde9fc17">
+<h3 id="orgde9fc17">The <code>less</code> Argument</h3>
+<div class="outline-text-3" id="text-orgde9fc17">
 <ul class="org-ul">
 <li><code>--RAW-CONTROL-CHARS</code>: Keep colors and hyperlink sequences.</li>
 </ul>
-<div class="notecard" id="orgc6fb72e">
+<div class="notecard" id="orgd39a2c9">
 <p>There is also a <code>--raw-control-chars</code> option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the <code>LESS</code> environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.</p>
 </div>
 </div>
@@ -743,24 +769,24 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </div>
 </header>
 <div class="p-summary entry-summary">
-<div class="outline-2" id="outline-container-orgab95599">
-<h2 id="orgab95599">Choose</h2>
-<div class="outline-text-2" id="text-orgab95599">
+<div class="outline-2" id="outline-container-org47634d2">
+<h2 id="org47634d2">Choose</h2>
+<div class="outline-text-2" id="text-org47634d2">
 <p>An alias function that will pick a random line (or lines) out of a text file.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5886c13">
-<h2 id="org5886c13">The Function Declaration</h2>
-<div class="outline-text-2" id="text-org5886c13">
+<div class="outline-2" id="outline-container-orga4a1931">
+<h2 id="orga4a1931">The Function Declaration</h2>
+<div class="outline-text-2" id="text-orga4a1931">
 <p>Our alias function (<code>choose</code>) takes one required argument that we'll assign to the variable <code>filename</code> and one optional argument <code>lines</code> to indicate the number of lines to pull.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> choose -d <span class="s2">"Random line from a file."</span> --argument-names filename lines
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgd1afb08">
-<h2 id="orgd1afb08">The Error String</h2>
-<div class="outline-text-2" id="text-orgd1afb08">
+<div class="outline-2" id="outline-container-org30299e6">
+<h2 id="org30299e6">The Error String</h2>
+<div class="outline-text-2" id="text-org30299e6">
 <p>I'm setting a string-format variable that I'll use to color error messages in bold red.</p>
 <div class="highlight">
 <pre><span></span><span class="k">set</span> ERROR <span class="s2">"\x1b[31;1m\t%s\n\n\x1b[0m"</span>
@@ -768,9 +794,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <p>See <a href="https://stackoverflow.com/a/33206814">this stack overflow answer</a> for more explanation of the codes. Basically the <code>31;1m</code> part turns on red (31) and bold (1) and <code>0m</code> resets it back to unbolded black text.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgd204c28">
-<h2 id="orgd204c28">The Okay Variable</h2>
-<div class="outline-text-2" id="text-orgd204c28">
+<div class="outline-2" id="outline-container-org11b2a79">
+<h2 id="org11b2a79">The Okay Variable</h2>
+<div class="outline-text-2" id="text-org11b2a79">
 <p>This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.</p>
 <div class="highlight">
 <pre><span></span><span class="k">set</span> OKAY 0
@@ -778,9 +804,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <p>I'm setting it to False so that it has to pass the checks in order to be unset.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb88f75b">
-<h2 id="orgb88f75b">Check the Number of Lines</h2>
-<div class="outline-text-2" id="text-orgb88f75b">
+<div class="outline-2" id="outline-container-org30733d7">
+<h2 id="org30733d7">Check the Number of Lines</h2>
+<div class="outline-text-2" id="text-org30733d7">
 <p>Unlike <code>random</code>, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the <code>shuf</code> command later on.</p>
 <ul class="org-ul">
 <li><code>test -n "$lines"</code> will return True if <code>lines</code> is non-empty so I negated it with <code>!</code> to return True if it's empty.</li>
@@ -798,9 +824,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org45de907">
-<h2 id="org45de907">If It's a Text File, Use It</h2>
-<div class="outline-text-2" id="text-org45de907">
+<div class="outline-2" id="outline-container-org269bb72">
+<h2 id="org269bb72">If It's a Text File, Use It</h2>
+<div class="outline-text-2" id="text-org269bb72">
 <p>We'll be grabbing a line using the <a href="https://man7.org/linux/man-pages/man1/shuf.1.html">shuf</a> command. <code>shuf</code> will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.</p>
 <p>To do the check I'm using the <a href="https://www.man7.org/linux/man-pages/man1/file.1.html"><code>file</code></a> command which will have the word "text" in the output if we give it a text file. Then I feed the output from <code>file</code> to the <code>string match</code> command. This command defaults to only return true if the whole string matches so I added a glob to both ends of the "text" string to match any string that contains it. So, in order to pass the test <code>filename</code> has to have the name of a text file or we won't match the output of the <code>file</code> command.</p>
 <p>First, though, we check if the <code>lines</code> argument was okay and if it was and <code>filename</code> passes its test then we can feed it to <code>shuf</code>.</p>
@@ -814,9 +840,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgb8c8cd0">
-<h2 id="orgb8c8cd0">Handle the Errors</h2>
-<div class="outline-text-2" id="text-orgb8c8cd0">
+<div class="outline-2" id="outline-container-orgd64d54e">
+<h2 id="orgd64d54e">Handle the Errors</h2>
+<div class="outline-text-2" id="text-orgd64d54e">
 <p>If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number</p>
 <div class="highlight">
 <pre><span></span><span class="k">else</span>
@@ -830,9 +856,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org7ac2115">
-<h2 id="org7ac2115">Emit a Help Message</h2>
-<div class="outline-text-2" id="text-org7ac2115">
+<div class="outline-2" id="outline-container-org7b1222b">
+<h2 id="org7b1222b">Emit a Help Message</h2>
+<div class="outline-text-2" id="text-org7b1222b">
 <p>If it had a valid number of lines and a valid filename then <code>OKAY</code> will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="nv">$OKAY</span> -eq <span class="m">0</span>     
@@ -844,15 +870,15 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org4949b31">
-<h2 id="org4949b31">One Last Thing</h2>
-<div class="outline-text-2" id="text-org4949b31">
+<div class="outline-2" id="outline-container-orgde6e1a1">
+<h2 id="orgde6e1a1">One Last Thing</h2>
+<div class="outline-text-2" id="text-orgde6e1a1">
 <p>If the user passes in a flag as a filename this will get passed to the <code>file</code> command and in some cases this will cause it to emit a help message which will get passed to the <code>shuf</code> command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for <code>shuf</code>, so hopefully it'll work okay.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org8a33811">
-<h2 id="org8a33811">Sources</h2>
-<div class="outline-text-2" id="text-org8a33811">
+<div class="outline-2" id="outline-container-orge4d0f69">
+<h2 id="orge4d0f69">Sources</h2>
+<div class="outline-text-2" id="text-orge4d0f69">
 <ul class="org-ul">
 <li>string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: <a href="https://fishshell.com/docs/current/cmds/string-match.html">https://fishshell.com/docs/current/cmds/string-match.html</a></li>
 <li>test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: <a href="https://fishshell.com/docs/current/cmds/test.html">https://fishshell.com/docs/current/cmds/test.html</a></li>
@@ -876,72 +902,72 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="random-hex/index.html#org0f1588b">The randomdhex Function</a></li>
-<li><a href="random-hex/index.html#org44e00a4">The Function Header</a></li>
-<li><a href="random-hex/index.html#orgd87fea4">Argument Check</a>
+<li><a href="random-hex/index.html#org5728e04">The randomdhex Function</a></li>
+<li><a href="random-hex/index.html#org5b8009d">The Function Header</a></li>
+<li><a href="random-hex/index.html#org51f5645">Argument Check</a>
 <ul>
-<li><a href="random-hex/index.html#orgc6b07c8">Check For An Argument</a></li>
-<li><a href="random-hex/index.html#org0c193c7">Check If The Argument Is An Integer</a></li>
-<li><a href="random-hex/index.html#orgba9540c">Set the Argument Value</a></li>
-<li><a href="random-hex/index.html#org3ee717d">Error Message</a></li>
-<li><a href="random-hex/index.html#orgadd0b64">Use The Default</a></li>
+<li><a href="random-hex/index.html#org28b9d21">Check For An Argument</a></li>
+<li><a href="random-hex/index.html#orgf40b72d">Check If The Argument Is An Integer</a></li>
+<li><a href="random-hex/index.html#org3fa374b">Set the Argument Value</a></li>
+<li><a href="random-hex/index.html#org557fefe">Error Message</a></li>
+<li><a href="random-hex/index.html#orgc90be20">Use The Default</a></li>
 </ul>
 </li>
-<li><a href="random-hex/index.html#org160e9a7">Output the Random Hexadecimal</a></li>
-<li><a href="random-hex/index.html#org8b6533b">Sources</a></li>
+<li><a href="random-hex/index.html#orga068af8">Output the Random Hexadecimal</a></li>
+<li><a href="random-hex/index.html#org3416d79">Sources</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org0f1588b">
-<h2 id="org0f1588b">The randomdhex Function</h2>
-<div class="outline-text-2" id="text-org0f1588b">
+<div class="outline-2" id="outline-container-org5728e04">
+<h2 id="org5728e04">The randomdhex Function</h2>
+<div class="outline-text-2" id="text-org5728e04">
 <p>This an alias function to output a random hexadecimal number. There are many ways to do this but I took this from <a href="https://stackoverflow.com/a/53668354">a StackOverFlow answer</a>.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org44e00a4">
-<h2 id="org44e00a4">The Function Header</h2>
-<div class="outline-text-2" id="text-org44e00a4">
+<div class="outline-2" id="outline-container-org5b8009d">
+<h2 id="org5b8009d">The Function Header</h2>
+<div class="outline-text-2" id="text-org5b8009d">
 <p>I'm going to create a function named <code>randomhex</code> that takes one optional argument named <code>digits</code>.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> randomhex -d <span class="s2">"random hex string"</span> --argument-names digits
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgd87fea4">
-<h2 id="orgd87fea4">Argument Check</h2>
-<div class="outline-text-2" id="text-orgd87fea4">
+<div class="outline-2" id="outline-container-org51f5645">
+<h2 id="org51f5645">Argument Check</h2>
+<div class="outline-text-2" id="text-org51f5645">
 <p>The first thing to do is to check if the user passed in an argument and handle it if they did or use a default if they didn't.</p>
 </div>
-<div class="outline-3" id="outline-container-orgc6b07c8">
-<h3 id="orgc6b07c8">Check For An Argument</h3>
-<div class="outline-text-3" id="text-orgc6b07c8">
+<div class="outline-3" id="outline-container-org28b9d21">
+<h3 id="org28b9d21">Check For An Argument</h3>
+<div class="outline-text-3" id="text-org28b9d21">
 <p>The first check uses the <a href="https://fishshell.com/docs/current/cmds/test.html">test</a> command to see if the user passed in an argument. the <code>-n</code> flag tells it to check if there's a string with one or more characters in it in our <code>digits</code> variable.</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> -n <span class="s2">"</span><span class="nv">$digits</span><span class="s2">"</span> <span class="c"># then an argument was passed in</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org0c193c7">
-<h3 id="org0c193c7">Check If The Argument Is An Integer</h3>
-<div class="outline-text-3" id="text-org0c193c7">
+<div class="outline-3" id="outline-container-orgf40b72d">
+<h3 id="orgf40b72d">Check If The Argument Is An Integer</h3>
+<div class="outline-text-3" id="text-orgf40b72d">
 <p>If the user <i>did</i> pass in an argument but it can't be coerced to be an integer then our function won't work right so we need to see if the argument is made up of nothing but digits using the <a href="https://fishshell.com/docs/current/cmds/string-match.html">string match</a> command and a regular expression to make sure it's only made up of one or more digits.</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="o">(</span>string match --regex <span class="s2">"^[0-9]+\$"</span> <span class="nv">$digits</span><span class="o">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgba9540c">
-<h3 id="orgba9540c">Set the Argument Value</h3>
-<div class="outline-text-3" id="text-orgba9540c">
+<div class="outline-3" id="outline-container-org3fa374b">
+<h3 id="org3fa374b">Set the Argument Value</h3>
+<div class="outline-text-3" id="text-org3fa374b">
 <p>If the argument was an integer then we'll set the <code>BYTES</code> variable to half of whatever the user passed in, because each byte is represented by two hexadecimal digits (8 bits gives values from 0 to 255 in decimal, 00 to FF in hexadecimal). The argument is a string so we need to pass our division expression (<code>$digits/2</code>) to the <code>math</code> command in order for it to be evaluated as a number. Additionally, the division operator will return a float if the user's input isn't evenly divisible so I'll use the <code>ceil</code> argument to round up to the nearest integer.</p>
 <div class="highlight">
 <pre><span></span><span class="k">set</span> BYTES <span class="nv">$(</span><span class="nb">math </span>ceil <span class="nv">$digits</span>/2<span class="o">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org3ee717d">
-<h3 id="org3ee717d">Error Message</h3>
-<div class="outline-text-3" id="text-org3ee717d">
+<div class="outline-3" id="outline-container-org557fefe">
+<h3 id="org557fefe">Error Message</h3>
+<div class="outline-text-3" id="text-org557fefe">
 <p>If the user passed in an argument but it doesn't look like an integer then we'll output a help message. I got the idea of using <code>printf</code> this way from <a href="https://stackoverflow.com/a/48249785">this StackOverflow answer</a>.</p>
 <ul class="org-ul">
 <li>Each line after the first gets passend into the first string, substituted where <code>%s</code> is</li>
@@ -963,9 +989,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgadd0b64">
-<h3 id="orgadd0b64">Use The Default</h3>
-<div class="outline-text-3" id="text-orgadd0b64">
+<div class="outline-3" id="outline-container-orgc90be20">
+<h3 id="orgc90be20">Use The Default</h3>
+<div class="outline-text-3" id="text-orgc90be20">
 <p>If the user didn't pass in an argument then use a default of 8 hexadecimal digits.</p>
 <div class="highlight">
 <pre><span></span><span class="k">else</span> <span class="c"># Set our bytes so we have 8 digits (double the bytes)</span>
@@ -975,18 +1001,18 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org160e9a7">
-<h2 id="org160e9a7">Output the Random Hexadecimal</h2>
-<div class="outline-text-2" id="text-org160e9a7">
+<div class="outline-2" id="outline-container-orga068af8">
+<h2 id="orga068af8">Output the Random Hexadecimal</h2>
+<div class="outline-text-2" id="text-orga068af8">
 <p>Finally we output the random hexadecimal number that <a href="https://www.openssl.org/"><code>openssl</code></a> generates.</p>
 <div class="highlight">
 <pre><span></span><span class="k">echo</span> <span class="nv">$(</span>openssl rand -hex <span class="nv">$BYTES</span><span class="o">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org8b6533b">
-<h2 id="org8b6533b">Sources</h2>
-<div class="outline-text-2" id="text-org8b6533b">
+<div class="outline-2" id="outline-container-org3416d79">
+<h2 id="org3416d79">Sources</h2>
+<div class="outline-text-2" id="text-org3416d79">
 <ul class="org-ul">
 <li>OpenSSL rand [Internet]. [cited 2023 Jun 5]. Available from: <a href="https://www.openssl.org/docs/man1.1.1/man1/rand.html">https://www.openssl.org/docs/man1.1.1/man1/rand.html</a></li>
 <li>How to get a random string of 32 hexadecimal digits through command line? [Internet]. Stack Overflow. 2015 [cited 2023 Jun 5]. Available from: <a href="https://stackoverflow.com/q/34328759">https://stackoverflow.com/q/34328759</a></li>

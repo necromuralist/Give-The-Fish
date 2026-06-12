@@ -5,9 +5,9 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 31 Mar 2026 05:22:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Host Grep</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org5e3f1c9" class="outline-2"&gt;
-&lt;h2 id="org5e3f1c9"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5e3f1c9"&gt;
+</copyright><lastBuildDate>Fri, 12 Jun 2026 00:33:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: Host Grep</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-host-grep/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org9e3655e" class="outline-2"&gt;
+&lt;h2 id="org9e3655e"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9e3655e"&gt;
 &lt;p&gt;
 This is a function to check what we have set-up as a hostname for the times that I forget an IP address for a device on the LAN. It checks the hosts file and the ssh-config. The &lt;code&gt;hosts&lt;/code&gt; file has the IP address, but sometimes I can't remember the host-name, just the user-name, in which case checking the SSH config file can sometimes be helpful.
 &lt;/p&gt;
@@ -16,13 +16,13 @@ This is a function to check what we have set-up as a hostname for the times that
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org06cc502" class="outline-2"&gt;
-&lt;h2 id="org06cc502"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org06cc502"&gt;
+&lt;div id="outline-container-orga255b5a" class="outline-2"&gt;
+&lt;h2 id="orga255b5a"&gt;The Parts&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga255b5a"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2158ec2" class="outline-3"&gt;
-&lt;h3 id="org2158ec2"&gt;Check Hosts&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2158ec2"&gt;
+&lt;div id="outline-container-org23e2a95" class="outline-3"&gt;
+&lt;h3 id="org23e2a95"&gt;Check Hosts&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org23e2a95"&gt;
 &lt;p&gt;
 First check the &lt;code&gt;/etc/hosts&lt;/code&gt; file.
 &lt;/p&gt;
@@ -31,9 +31,9 @@ First check the &lt;code&gt;/etc/hosts&lt;/code&gt; file.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd538a3b" class="outline-3"&gt;
-&lt;h3 id="orgd538a3b"&gt;Check SSH&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd538a3b"&gt;
+&lt;div id="outline-container-orgb1b51be" class="outline-3"&gt;
+&lt;h3 id="orgb1b51be"&gt;Check SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb1b51be"&gt;
 &lt;p&gt;
 Now Check the ssh configuration.
 &lt;/p&gt;

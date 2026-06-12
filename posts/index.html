@@ -48,6 +48,58 @@
 <div class="postindex">
 <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
+<h1 class="p-name entry-title"><a class="u-url" href="reverting-to-emacs-alt-backspace/index.html">Reverting To Emacs alt-backspace</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="reverting-to-emacs-alt-backspace/index.html" rel="bookmark"><time class="published dt-published" datetime="2026-06-11T17:10:38-07:00" itemprop="datePublished" title="2026-06-11 17:10">2026-06-11 17:10</time></a></p>
+</div>
+</header>
+<div class="p-summary entry-summary">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="reverting-to-emacs-alt-backspace/index.html#org7cfafc7">Alt-Backspace</a></li>
+<li><a href="reverting-to-emacs-alt-backspace/index.html#org7f38dbd">Links</a></li>
+</ul>
+</div>
+</div>
+<p>Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the <a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access">Common-User-Access (CUA)</a> behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.</p>
+<div class="outline-2" id="outline-container-org7cfafc7">
+<h2 id="org7cfafc7">Alt-Backspace</h2>
+<div class="outline-text-2" id="text-org7cfafc7">
+<p>Here's what I'm adding to the fish configuration:</p>
+<div class="highlight">
+<pre><span></span><span class="nb">bind </span>alt-backspace backward-kill-word
+</pre></div>
+<p>This was taken from <a href="https://github.com/fish-shell/fish-shell/issues/12122#issuecomment-3602424666">user <code>rski</code>'s comment</a>, which also had some other keybindings which I'm not putting in since I don't normally use them anyway, but I'll document them here in case I decide I need them later.</p>
+<div class="highlight">
+<pre><span></span><span class="nb">bind </span>ctrl-alt-h backward-kill-word
+<span class="nb">bind </span>ctrl-backspace backward-kill-token
+<span class="nb">bind </span>alt-delete <span class="nb">kill</span>-word
+<span class="nb">bind </span>ctrl-delete <span class="nb">kill</span>-token
+</pre></div>
+<p>From Fish's <a href="https://fishshell.com/docs/current/cmds/bind.html"><code>bind</code> documentation</a>:</p>
+<p><code>backward-kill-word</code></p>
+<p>Move the word to the left of the cursor to the killring, until the start of the current word (like vim’s db)</p>
+<p><code>backward-kill-token</code></p>
+<p>Move the argument to the left of the cursor to the killring</p>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org7f38dbd">
+<h2 id="org7f38dbd">Links</h2>
+<div class="outline-text-2" id="text-org7f38dbd">
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access">Wikipedia: IBM Common User Access</a>: General article about where the new behavior comes from.</li>
+<li><a href="https://github.com/fish-shell/fish-shell/issues/12122">GitHub: Issue 12122 - Revert alt-backspace behaviour on non-macOS systems</a> - The place I found the way to re-bind the old behavior.</li>
+<li><a href="https://github.com/fish-shell/fish-shell/pull/10766">Github: Pull Request - Default bindings for token movement commands</a> - It sounds like they were trying to unify the behavior across platforms. A nice idea, unfortunately it bit me. Maybe I'll learn ctrl-backspace one day.</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
 <h1 class="p-name entry-title"><a class="u-url" href="upgrade-function/index.html">Upgrade Function</a></h1>
 <div class="metadata">
 <p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
@@ -59,34 +111,34 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="upgrade-function/index.html#org9a5ff77">The Function</a>
+<li><a href="upgrade-function/index.html#org27446fb">The Function</a>
 <ul>
-<li><a href="upgrade-function/index.html#org1094eb6">Bold Blue</a></li>
-<li><a href="upgrade-function/index.html#orgccd35d9">Apt Calls</a></li>
-<li><a href="upgrade-function/index.html#org08c2d26">Snap</a></li>
-<li><a href="upgrade-function/index.html#orgad6e7f9">Flatpak</a></li>
-<li><a href="upgrade-function/index.html#orgac7aada">Uninstall</a></li>
+<li><a href="upgrade-function/index.html#orgc166096">Bold Blue</a></li>
+<li><a href="upgrade-function/index.html#org7352774">Apt Calls</a></li>
+<li><a href="upgrade-function/index.html#org794da67">Snap</a></li>
+<li><a href="upgrade-function/index.html#org8c43593">Flatpak</a></li>
+<li><a href="upgrade-function/index.html#orga40f3ab">Uninstall</a></li>
 </ul>
 </li>
-<li><a href="upgrade-function/index.html#org8fa4abe">Some Messages</a>
+<li><a href="upgrade-function/index.html#orgc34268b">Some Messages</a>
 <ul>
-<li><a href="upgrade-function/index.html#org411652e">Phased Updates</a></li>
+<li><a href="upgrade-function/index.html#orge5164a3">Phased Updates</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org9a5ff77">
-<h2 id="org9a5ff77">The Function</h2>
-<div class="outline-text-2" id="text-org9a5ff77">
+<div class="outline-2" id="outline-container-org27446fb">
+<h2 id="org27446fb">The Function</h2>
+<div class="outline-text-2" id="text-org27446fb">
 <p>This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation…</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> upgrade --description <span class="s2">"Upgrade packages."</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org1094eb6">
-<h3 id="org1094eb6">Bold Blue</h3>
-<div class="outline-text-3" id="text-org1094eb6">
+<div class="outline-3" id="outline-container-orgc166096">
+<h3 id="orgc166096">Bold Blue</h3>
+<div class="outline-text-3" id="text-orgc166096">
 <p>This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the <code>upgrade</code> function.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> boldblue
@@ -97,28 +149,28 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgccd35d9">
-<h3 id="orgccd35d9">Apt Calls</h3>
-<div class="outline-text-3" id="text-orgccd35d9">
+<div class="outline-3" id="outline-container-org7352774">
+<h3 id="org7352774">Apt Calls</h3>
+<div class="outline-text-3" id="text-org7352774">
 <p>These are calls to update the debian-based packages.</p>
 </div>
-<div class="outline-4" id="outline-container-orgfbf4ff9">
-<h4 id="orgfbf4ff9">Update</h4>
-<div class="outline-text-4" id="text-orgfbf4ff9">
+<div class="outline-4" id="outline-container-orgc212bbf">
+<h4 id="orgc212bbf">Update</h4>
+<div class="outline-text-4" id="text-orgc212bbf">
 <p>These calls update the database and then show us what is upgradable.</p>
 <div class="highlight">
 <pre><span></span>boldblue Checking apt
 sudo apt-fast update --yes
 sudo apt-get --just-print upgrade
 </pre></div>
-<div class="notecard" id="org18a8e1d">
+<div class="notecard" id="org9f6cedb">
 <p>I was initially using <code>apt</code> to list the upgradable packages, but installing <code>more</code> as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that <code>apt</code> is a front-end to other packages to make them easier to use, and that <code>apt-get</code> is better for non-interactive use (and is one of the things that <code>apt</code> is using behind the scenes anyway).</p>
 </div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org25f5de2">
-<h4 id="org25f5de2">Upgrade and Autoremove</h4>
-<div class="outline-text-4" id="text-org25f5de2">
+<div class="outline-4" id="outline-container-orgdbd0c30">
+<h4 id="orgdbd0c30">Upgrade and Autoremove</h4>
+<div class="outline-text-4" id="text-orgdbd0c30">
 <p>Now we run the upgrade. <code>upgrade</code> will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. <code>full-upgrade</code> will do what <code>upgrade</code> does but will remove any installed packages if needed to upgrade an installed package. So, we're going with <code>full-upgrade</code>.</p>
 <p>I'm also auto-removing any packages that get orphaned as dependencies by an upgrade.</p>
 <div class="highlight">
@@ -129,9 +181,9 @@ sudo apt-get autoremove --yes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org08c2d26">
-<h3 id="org08c2d26">Snap</h3>
-<div class="outline-text-3" id="text-org08c2d26">
+<div class="outline-3" id="outline-container-org794da67">
+<h3 id="org794da67">Snap</h3>
+<div class="outline-text-3" id="text-org794da67">
 <p>Snaps should update themselves. But let's see what happens if we do it.</p>
 <div class="highlight">
 <pre><span></span>boldblue Updating snaps
@@ -139,28 +191,28 @@ sudo snap refresh
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgad6e7f9">
-<h3 id="orgad6e7f9">Flatpak</h3>
-<div class="outline-text-3" id="text-orgad6e7f9"></div>
-<div class="outline-4" id="outline-container-orgf195c8b">
-<h4 id="orgf195c8b">Update</h4>
-<div class="outline-text-4" id="text-orgf195c8b">
+<div class="outline-3" id="outline-container-org8c43593">
+<h3 id="org8c43593">Flatpak</h3>
+<div class="outline-text-3" id="text-org8c43593"></div>
+<div class="outline-4" id="outline-container-org6d134d6">
+<h4 id="org6d134d6">Update</h4>
+<div class="outline-text-4" id="text-org6d134d6">
 <div class="highlight">
 <pre><span></span>boldblue Updating flatpak
 flatpak update --assumeyes
 </pre></div>
-<div class="notecard" id="org20afdaa">
+<div class="notecard" id="orgae8b3c9">
 <p><a href="https://fishshell.com/docs/current/cmds/type.html">type</a> checks how a name would be interpreted (<code>function</code>, <code>bultin</code>, or <code>file</code> ). It returns 0 if it isn't defined. <code>query</code> suppresses the output.</p>
 </div>
-<div class="notecard" id="org68c078d">
+<div class="notecard" id="org0b5774d">
 <p><b>Note:</b> I was running this with <code>--noninteractive</code> but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgac7aada">
-<h3 id="orgac7aada">Uninstall</h3>
-<div class="outline-text-3" id="text-orgac7aada">
+<div class="outline-3" id="outline-container-orga40f3ab">
+<h3 id="orga40f3ab">Uninstall</h3>
+<div class="outline-text-3" id="text-orga40f3ab">
 <div class="highlight">
 <pre><span></span>boldblue Uninstalling unused flatpaks
 flatpak uninstall --unused --assumeyes
@@ -168,12 +220,12 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org8fa4abe">
-<h2 id="org8fa4abe">Some Messages</h2>
-<div class="outline-text-2" id="text-org8fa4abe"></div>
-<div class="outline-3" id="outline-container-org411652e">
-<h3 id="org411652e">Phased Updates</h3>
-<div class="outline-text-3" id="text-org411652e">
+<div class="outline-2" id="outline-container-orgc34268b">
+<h2 id="orgc34268b">Some Messages</h2>
+<div class="outline-text-2" id="text-orgc34268b"></div>
+<div class="outline-3" id="outline-container-orge5164a3">
+<h3 id="orge5164a3">Phased Updates</h3>
+<div class="outline-text-3" id="text-orge5164a3">
 <div class="highlight">
 <pre><span></span>The following upgrades have been deferred due to phasing:
   alsa-ucm-conf
@@ -197,28 +249,28 @@ flatpak uninstall --unused --assumeyes
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="tealdeer-pages/index.html#orgc315454">Patches</a>
+<li><a href="tealdeer-pages/index.html#org3c7f646">Patches</a>
 <ul>
-<li><a href="tealdeer-pages/index.html#org71a9d6d">Screen</a></li>
-<li><a href="tealdeer-pages/index.html#orgda6e8c9">Ghostscript (gs)</a></li>
-<li><a href="tealdeer-pages/index.html#org5b21e87">Virtual Fish</a></li>
-<li><a href="tealdeer-pages/index.html#org258ace8">pdfjam</a></li>
-<li><a href="tealdeer-pages/index.html#orgadcb518">Emacs</a></li>
-<li><a href="tealdeer-pages/index.html#org62af46d">Image Magick</a></li>
-<li><a href="tealdeer-pages/index.html#org7de5749">PDF TK</a></li>
-<li><a href="tealdeer-pages/index.html#org1311e89">exiftool</a></li>
+<li><a href="tealdeer-pages/index.html#orgb626cf4">Screen</a></li>
+<li><a href="tealdeer-pages/index.html#orgb177c2c">Ghostscript (gs)</a></li>
+<li><a href="tealdeer-pages/index.html#orgcf4cbf9">Virtual Fish</a></li>
+<li><a href="tealdeer-pages/index.html#orgb1780aa">pdfjam</a></li>
+<li><a href="tealdeer-pages/index.html#orga21fc93">Emacs</a></li>
+<li><a href="tealdeer-pages/index.html#orgda632b3">Image Magick</a></li>
+<li><a href="tealdeer-pages/index.html#org12da25e">PDF TK</a></li>
+<li><a href="tealdeer-pages/index.html#org59aa8a8">exiftool</a></li>
 </ul>
 </li>
-<li><a href="tealdeer-pages/index.html#org7b1baf2">Pages</a>
+<li><a href="tealdeer-pages/index.html#orgec56688">Pages</a>
 <ul>
-<li><a href="tealdeer-pages/index.html#orge5036a4">Keychron K12 Keyboard</a></li>
-<li><a href="tealdeer-pages/index.html#orgc87b871">MakeMKV Command Line</a></li>
+<li><a href="tealdeer-pages/index.html#orgbc3252f">Keychron K12 Keyboard</a></li>
+<li><a href="tealdeer-pages/index.html#orgcd494e2">MakeMKV Command Line</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="notecard" id="orgc0f1441">
+<div class="notecard" id="org5e30383">
 <p><b>Note:</b> As of February 18, 2026, tealdeer via apt is out of date. They changed the URL used for updating the cache (see <a href="https://github.com/tealdeer-rs/tealdeer/issues/459">https://github.com/tealdeer-rs/tealdeer/issues/459</a>) so versions older than 1.8 throw an error (apt currently installs 1.7.2-1). To get 1.8 I used <a href="https://tealdeer-rs.github.io/tealdeer/installing.html#through-cargo-install">the Cargo Installation Instructions</a> (which necessitated <a href="https://doc.rust-lang.org/cargo/getting-started/installation.html">installing cargo and rust</a>…).</p>
 </div>
 <p>This is for configuring <a href="https://tealdeer-rs.github.io/tealdeer/">tealdeer</a>, a command-line help system.</p>
@@ -227,17 +279,17 @@ flatpak uninstall --unused --assumeyes
 <li>The default location that <code>tealdeer</code> will look for the pages is \(~/.local/share/tealdeer/pages/~\) so maybe symlink it there.</li>
 <li>The pages that come with <code>tealdeer</code> are at \(~/.cache/tealdeer/tldr-pages/pages/\) (look here for examples)</li>
 </ul>
-<div class="outline-2" id="outline-container-orgc315454">
-<h2 id="orgc315454">Patches</h2>
-<div class="outline-text-2" id="text-orgc315454">
+<div class="outline-2" id="outline-container-org3c7f646">
+<h2 id="org3c7f646">Patches</h2>
+<div class="outline-text-2" id="text-org3c7f646">
 <p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches">patches</a> which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> instead (they go in the same folder, there's just a different file-name convention).</p>
 </div>
-<div class="outline-3" id="outline-container-org71a9d6d">
-<h3 id="org71a9d6d">Screen</h3>
-<div class="outline-text-3" id="text-org71a9d6d"></div>
-<div class="outline-4" id="outline-container-orge91b9a9">
-<h4 id="orge91b9a9">Name the Screen</h4>
-<div class="outline-text-4" id="text-orge91b9a9">
+<div class="outline-3" id="outline-container-orgb626cf4">
+<h3 id="orgb626cf4">Screen</h3>
+<div class="outline-text-3" id="text-orgb626cf4"></div>
+<div class="outline-4" id="outline-container-org3d666df">
+<h4 id="org3d666df">Name the Screen</h4>
+<div class="outline-text-4" id="text-org3d666df">
 <div class="highlight">
 <pre><span></span>- Give the screen a name
 
@@ -246,16 +298,16 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgda6e8c9">
-<h3 id="orgda6e8c9">Ghostscript (gs)</h3>
-<div class="outline-text-3" id="text-orgda6e8c9">
+<div class="outline-3" id="outline-container-orgb177c2c">
+<h3 id="orgb177c2c">Ghostscript (gs)</h3>
+<div class="outline-text-3" id="text-orgb177c2c">
 <p>This is for ghost script.</p>
 </div>
-<div class="outline-4" id="outline-container-org3eb2f7d">
-<h4 id="org3eb2f7d">Black and White PDF</h4>
-<div class="outline-text-4" id="text-org3eb2f7d">
+<div class="outline-4" id="outline-container-org22a380d">
+<h4 id="org22a380d">Black and White PDF</h4>
+<div class="outline-text-4" id="text-org22a380d">
 <p>This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a <a href="https://askubuntu.com/a/1474303">Ask Ubunt (Stack Exchange)</a> answer.</p>
-<div class="notecard" id="org7be0394">
+<div class="notecard" id="org3634454">
 <p>In the cases I've tried this doesn't convert raster images.</p>
 </div>
 <div class="highlight">
@@ -265,11 +317,11 @@ flatpak uninstall --unused --assumeyes
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org959c85f">
-<h4 id="org959c85f">Black and White PDF and No Images</h4>
-<div class="outline-text-4" id="text-org959c85f">
+<div class="outline-4" id="outline-container-orga850621">
+<h4 id="orga850621">Black and White PDF and No Images</h4>
+<div class="outline-text-4" id="text-orga850621">
 <p>This is the previous command (Black and White) but it removes <i>all</i> images, leaving only vectors-based items. This is for the case where someone used a background image and all you're interested in is the text and tables.</p>
-<div class="notecard" id="orgcc4584b">
+<div class="notecard" id="orgccdd708">
 <p>Removes all images.</p>
 </div>
 <div class="highlight">
@@ -279,9 +331,9 @@ flatpak uninstall --unused --assumeyes
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org461f33e">
-<h4 id="org461f33e">Compress For Ebook</h4>
-<div class="outline-text-4" id="text-org461f33e">
+<div class="outline-4" id="outline-container-org8a82ca8">
+<h4 id="org8a82ca8">Compress For Ebook</h4>
+<div class="outline-text-4" id="text-org8a82ca8">
 <p>This adds some extra flags to the compression help that comes with tealdeer.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Reduce PDF File Size, possibly more than the version up above
@@ -293,9 +345,9 @@ flatpak uninstall --unused --assumeyes
 </ul>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org9d1394b">
-<h4 id="org9d1394b">Convert To Grayscale</h4>
-<div class="outline-text-4" id="text-org9d1394b">
+<div class="outline-4" id="outline-container-org3a47aab">
+<h4 id="org3a47aab">Convert To Grayscale</h4>
+<div class="outline-text-4" id="text-org3a47aab">
 <p>Sometimes images are RGB even though they are of black and white or gray images. Adding these flags will convert them to grayscale only. This actually doesn't save a huge amount of space most of the time (although it might if the image really was color and you're converting it tq gray) but I add the flags to the Black and White settings above to squeeze out a little more. It sometimes makes them look nicer as well.</p>
 <p>I've only tested this with images, not vector graphics, but I think that it will strip the color from both, not just the images. Should test that out eventually…</p>
 <div class="highlight">
@@ -306,13 +358,24 @@ flatpak uninstall --unused --assumeyes
 <p>Source: <a href="https://stackoverflow.com/a/20133915">Stack Overflow</a> - <i>Convert PDF to grayscale without rasterization?</i></p>
 </div>
 </div>
+<div class="outline-4" id="outline-container-orgda8df54">
+<h4 id="orgda8df54">Resize (to Letter)</h4>
+<div class="outline-text-4" id="text-orgda8df54">
+<p>Evince no longer has the "Scale to Printable Area" option when printing PDFs, so this is something to use to get the PDF to letter-sized before printing. (from <a href="https://stackoverflow.com/a/7507511">Stack Overflow: Resizing a PDF Using Ghostscript</a>)</p>
+<div class="highlight">
+<pre><span></span><span class="k">-</span><span class="w"> </span>Convert to Letter sized
+
+<span class="sb">`gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dCompatibilityLevel=1.4 -sPAPERSIZE=letter -dFIXEDMEDIA -dPDFFitPage -sOutputFile={{output-file-name}} {{input-file-name}}`</span>
+</pre></div>
 </div>
-<div class="outline-3" id="outline-container-org5b21e87">
-<h3 id="org5b21e87">Virtual Fish</h3>
-<div class="outline-text-3" id="text-org5b21e87"></div>
-<div class="outline-4" id="outline-container-org67ac1c3">
-<h4 id="org67ac1c3">Check The Environment</h4>
-<div class="outline-text-4" id="text-org67ac1c3">
+</div>
+</div>
+<div class="outline-3" id="outline-container-orgcf4cbf9">
+<h3 id="orgcf4cbf9">Virtual Fish</h3>
+<div class="outline-text-3" id="text-orgcf4cbf9"></div>
+<div class="outline-4" id="outline-container-org24b54ef">
+<h4 id="org24b54ef">Check The Environment</h4>
+<div class="outline-text-4" id="text-org24b54ef">
 <p>This adds the build-state for the virtual-environments managed by virtualfish.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>List Environments and the Current State (do they need to be rebuilt?):
@@ -321,9 +384,9 @@ flatpak uninstall --unused --assumeyes
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orgf739da0">
-<h4 id="orgf739da0">Rebuild the Environment</h4>
-<div class="outline-text-4" id="text-orgf739da0">
+<div class="outline-4" id="outline-container-org1bbf573">
+<h4 id="org1bbf573">Rebuild the Environment</h4>
+<div class="outline-text-4" id="text-org1bbf573">
 <p>This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Rebuild the current environment (e.g. after Ubuntu changes pip):
@@ -336,7 +399,7 @@ flatpak uninstall --unused --assumeyes
 
 <span class="sb">`vf upgrade --rebuild {{virtualenv-name}}`</span>
 </pre></div>
-<div class="notecard" id="orge1d2b77">
+<div class="notecard" id="org410717a">
 <p>If the environments are broken by an update, <code>pipx</code> is likely broken too, run this too, maybe:</p>
 <ul class="org-ul">
 <li><code>pipx reinstall-all</code></li>
@@ -346,12 +409,12 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org258ace8">
-<h3 id="org258ace8">pdfjam</h3>
-<div class="outline-text-3" id="text-org258ace8"></div>
-<div class="outline-4" id="outline-container-org75a8c0f">
-<h4 id="org75a8c0f">Resize to Letter</h4>
-<div class="outline-text-4" id="text-org75a8c0f">
+<div class="outline-3" id="outline-container-orgb1780aa">
+<h3 id="orgb1780aa">pdfjam</h3>
+<div class="outline-text-3" id="text-orgb1780aa"></div>
+<div class="outline-4" id="outline-container-org962a315">
+<h4 id="org962a315">Resize to Letter</h4>
+<div class="outline-text-4" id="text-org962a315">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Resize PDF document to letter-paper size
 
@@ -362,12 +425,12 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgadcb518">
-<h3 id="orgadcb518">Emacs</h3>
-<div class="outline-text-3" id="text-orgadcb518"></div>
-<div class="outline-4" id="outline-container-org075fc5e">
-<h4 id="org075fc5e">Open File With Sudo</h4>
-<div class="outline-text-4" id="text-org075fc5e">
+<div class="outline-3" id="outline-container-orga21fc93">
+<h3 id="orga21fc93">Emacs</h3>
+<div class="outline-text-3" id="text-orga21fc93"></div>
+<div class="outline-4" id="outline-container-orgeda681c">
+<h4 id="orgeda681c">Open File With Sudo</h4>
+<div class="outline-text-4" id="text-orgeda681c">
 <p>Got this from <a href="https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs">a Stack Overflow Question</a>. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Open a (local) file with sudo.
@@ -376,9 +439,9 @@ flatpak uninstall --unused --assumeyes
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orgee7c6e7">
-<h4 id="orgee7c6e7">Use a Different Init.el</h4>
-<div class="outline-text-4" id="text-orgee7c6e7">
+<div class="outline-4" id="outline-container-orga8bd25e">
+<h4 id="orga8bd25e">Use a Different Init.el</h4>
+<div class="outline-text-4" id="text-orga8bd25e">
 <p>This is to use a different <code>init.el</code> file (presumably for debugging).</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Use a different initialization file when starting up:
@@ -388,30 +451,30 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org62af46d">
-<h3 id="org62af46d">Image Magick</h3>
-<div class="outline-text-3" id="text-org62af46d"></div>
-<div class="outline-4" id="outline-container-org3e8ae63">
-<h4 id="org3e8ae63">Remove PDF Background</h4>
-<div class="outline-text-4" id="text-org3e8ae63">
+<div class="outline-3" id="outline-container-orgda632b3">
+<h3 id="orgda632b3">Image Magick</h3>
+<div class="outline-text-3" id="text-orgda632b3"></div>
+<div class="outline-4" id="outline-container-org776e460">
+<h4 id="org776e460">Remove PDF Background</h4>
+<div class="outline-text-4" id="text-org776e460">
 <p>This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Remove background of PDF assuming the image density
 
 <span class="sb">`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`</span>
 </pre></div>
-<div class="notecard" id="orgca66502">
+<div class="notecard" id="orgd8d8d8d">
 <p>I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).</p>
 </div>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org7de5749">
-<h3 id="org7de5749">PDF TK</h3>
-<div class="outline-text-3" id="text-org7de5749"></div>
-<div class="outline-4" id="outline-container-org236c6fe">
-<h4 id="org236c6fe">Export Bookmarks</h4>
-<div class="outline-text-4" id="text-org236c6fe">
+<div class="outline-3" id="outline-container-org12da25e">
+<h3 id="org12da25e">PDF TK</h3>
+<div class="outline-text-3" id="text-org12da25e"></div>
+<div class="outline-4" id="outline-container-orgfea941c">
+<h4 id="orgfea941c">Export Bookmarks</h4>
+<div class="outline-text-4" id="text-orgfea941c">
 <p>Export bookmarks from a PDF. I normally use <code>cpdf</code> for bookmarks, but in the case of Wanderhome, when I reduced the resolution to get a smaller PDF it removed the bookmarks so I had to copy them from the original and for some reason <code>cpdf</code> couldn't dump them, but pdftk could.</p>
 <p>Pdftk uses a human-readable format that isn't compatible with cpdf. For Example:</p>
 <div class="highlight">
@@ -436,9 +499,9 @@ BookmarkPageNumber: 0
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org526e55b">
-<h4 id="org526e55b">Import Bookmarks</h4>
-<div class="outline-text-4" id="text-org526e55b">
+<div class="outline-4" id="outline-container-orgec23a36">
+<h4 id="orgec23a36">Import Bookmarks</h4>
+<div class="outline-text-4" id="text-orgec23a36">
 <p>Import bookmarks dumped from another PDF. The prompt for this was that I reduced the resolution/size of a pdf and lost the bookmarks in the original and restored them by copying them over.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Import pdftk-formatted bookmarks (from dump_data_utf8)
@@ -448,14 +511,14 @@ BookmarkPageNumber: 0
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org1311e89">
-<h3 id="org1311e89">exiftool</h3>
-<div class="outline-text-3" id="text-org1311e89">
+<div class="outline-3" id="outline-container-org59aa8a8">
+<h3 id="org59aa8a8">exiftool</h3>
+<div class="outline-text-3" id="text-org59aa8a8">
 <p><a href="https://exiftool.org/">exiftool</a> is a metadata editor. It handles many file types but I used it for PDFs.</p>
 </div>
-<div class="outline-4" id="outline-container-org7224ecc">
-<h4 id="org7224ecc">Title</h4>
-<div class="outline-text-4" id="text-org7224ecc">
+<div class="outline-4" id="outline-container-org277811c">
+<h4 id="org277811c">Title</h4>
+<div class="outline-text-4" id="text-org277811c">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Change the title for the file
 <span class="k">-</span><span class="w"> </span>Note: The option needs the "=" between the name and the argument, spaces make it think you're passing in another input file.
@@ -466,19 +529,19 @@ BookmarkPageNumber: 0
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org7b1baf2">
-<h2 id="org7b1baf2">Pages</h2>
-<div class="outline-text-2" id="text-org7b1baf2">
+<div class="outline-2" id="outline-container-orgec56688">
+<h2 id="orgec56688">Pages</h2>
+<div class="outline-text-2" id="text-orgec56688">
 <p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with <code>page.md</code> instead of <code>patch.md</code>. Otherwise the contents look the same.</p>
 </div>
-<div class="outline-3" id="outline-container-orge5036a4">
-<h3 id="orge5036a4">Keychron K12 Keyboard</h3>
-<div class="outline-text-3" id="text-orge5036a4">
+<div class="outline-3" id="outline-container-orgbc3252f">
+<h3 id="orgbc3252f">Keychron K12 Keyboard</h3>
+<div class="outline-text-3" id="text-orgbc3252f">
 <p>Although this is hardware, I thought it'd be helpful to put something in here in case I forget things.</p>
 </div>
-<div class="outline-4" id="outline-container-org5488bcd">
-<h4 id="org5488bcd">Bluetooth Pairing</h4>
-<div class="outline-text-4" id="text-org5488bcd">
+<div class="outline-4" id="outline-container-org7f7c073">
+<h4 id="org7f7c073">Bluetooth Pairing</h4>
+<div class="outline-text-4" id="text-org7f7c073">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Enable pairing (also needs the side-switch to be moved from USB to bluetooth). Q is QWERTY-based.
 
@@ -487,14 +550,14 @@ BookmarkPageNumber: 0
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgc87b871">
-<h3 id="orgc87b871">MakeMKV Command Line</h3>
-<div class="outline-text-3" id="text-orgc87b871">
+<div class="outline-3" id="outline-container-orgcd494e2">
+<h3 id="orgcd494e2">MakeMKV Command Line</h3>
+<div class="outline-text-3" id="text-orgcd494e2">
 <p>The <code>makemkvcon</code> command has a <code>--help</code> output, which is somewhat vague. I got the information for this from a developers text file <a href="https://www.makemkv.com/developers/usage.txt">usage.txt</a> on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due to errors specific to the GUI so the command line interface is useful to work around those cases.</p>
 </div>
-<div class="outline-4" id="outline-container-org1ea26cc">
-<h4 id="org1ea26cc">List Drives</h4>
-<div class="outline-text-4" id="text-org1ea26cc">
+<div class="outline-4" id="outline-container-orgdf81417">
+<h4 id="orgdf81417">List Drives</h4>
+<div class="outline-text-4" id="text-orgdf81417">
 <p>This lists the drives as <code>makemkvcon</code> sees them.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>List drives - DRV:index,visible,enabled,flags,drive name,disc name
@@ -582,9 +645,9 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <p>Looking at the sample output, it has <code>2</code> for "visible" and <code>999</code> for "enabled", which doesn't match the expected values so I just ignore everything but the <code>drive name</code> to find the right entry in the output and the <code>index</code> for use in invoking <code>makemkvcon</code>.</p>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org63dbd61">
-<h4 id="org63dbd61">Copy Disc As MKV Files</h4>
-<div class="outline-text-4" id="text-org63dbd61">
+<div class="outline-4" id="outline-container-org5d2c060">
+<h4 id="org5d2c060">Copy Disc As MKV Files</h4>
+<div class="outline-text-4" id="text-org5d2c060">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Save disk to the current directory as MKV files
 
@@ -610,30 +673,30 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 </div>
 </header>
 <div class="p-summary entry-summary">
-<div class="outline-2" id="outline-container-org5e3f1c9">
-<h2 id="org5e3f1c9">The Function</h2>
-<div class="outline-text-2" id="text-org5e3f1c9">
+<div class="outline-2" id="outline-container-org9e3655e">
+<h2 id="org9e3655e">The Function</h2>
+<div class="outline-text-2" id="text-org9e3655e">
 <p>This is a function to check what we have set-up as a hostname for the times that I forget an IP address for a device on the LAN. It checks the hosts file and the ssh-config. The <code>hosts</code> file has the IP address, but sometimes I can't remember the host-name, just the user-name, in which case checking the SSH config file can sometimes be helpful.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> hostgrep --argument-names HOST --description <span class="s2">"Look for a hostname."</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org06cc502">
-<h2 id="org06cc502">The Parts</h2>
-<div class="outline-text-2" id="text-org06cc502"></div>
-<div class="outline-3" id="outline-container-org2158ec2">
-<h3 id="org2158ec2">Check Hosts</h3>
-<div class="outline-text-3" id="text-org2158ec2">
+<div class="outline-2" id="outline-container-orga255b5a">
+<h2 id="orga255b5a">The Parts</h2>
+<div class="outline-text-2" id="text-orga255b5a"></div>
+<div class="outline-3" id="outline-container-org23e2a95">
+<h3 id="org23e2a95">Check Hosts</h3>
+<div class="outline-text-3" id="text-org23e2a95">
 <p>First check the <code>/etc/hosts</code> file.</p>
 <div class="highlight">
 <pre><span></span>grep <span class="nv">$HOST</span> /etc/hosts
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgd538a3b">
-<h3 id="orgd538a3b">Check SSH</h3>
-<div class="outline-text-3" id="text-orgd538a3b">
+<div class="outline-3" id="outline-container-orgb1b51be">
+<h3 id="orgb1b51be">Check SSH</h3>
+<div class="outline-text-3" id="text-orgb1b51be">
 <p>Now Check the ssh configuration.</p>
 <div class="highlight">
 <pre><span></span>grep --after-context <span class="m">3</span> <span class="nv">$HOST</span> <span class="nv">$HOME</span>/.ssh/config
@@ -673,14 +736,14 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="to-webp-function/index.html#orged06b3d">To Webp</a></li>
-<li><a href="to-webp-function/index.html#org55f39b6">Lossless Webp</a></li>
+<li><a href="to-webp-function/index.html#org558801c">To Webp</a></li>
+<li><a href="to-webp-function/index.html#orge5db1b7">Lossless Webp</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orged06b3d">
-<h2 id="orged06b3d">To Webp</h2>
-<div class="outline-text-2" id="text-orged06b3d">
+<div class="outline-2" id="outline-container-org558801c">
+<h2 id="org558801c">To Webp</h2>
+<div class="outline-text-2" id="text-org558801c">
 <p>A simple for loop to make using globs easier with cwebp.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> towebp -d <span class="s2">"Convert image files to web with cweb"</span>
@@ -694,11 +757,11 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <p>I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org55f39b6">
-<h2 id="org55f39b6">Lossless Webp</h2>
-<div class="outline-text-2" id="text-org55f39b6">
+<div class="outline-2" id="outline-container-orge5db1b7">
+<h2 id="orge5db1b7">Lossless Webp</h2>
+<div class="outline-text-2" id="text-orge5db1b7">
 <p>The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.</p>
-<div class="notecard" id="orgdcccc8e">
+<div class="notecard" id="orgc3e7499">
 <p>I looked in the source code (from Google's <a href="https://chromium.googlesource.com/webm/libwebp/"><code>libwebp</code></a> git repository) and the <code>-z</code> flag is equivalent to using <code>-lossless -m 6 -q 10</code> (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…</p>
 </div>
 <div class="highlight">
@@ -727,15 +790,15 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="abbreviations-mother-ship/index.html#orgc5ae051">Mount Drives</a></li>
+<li><a href="abbreviations-mother-ship/index.html#orge43b78a">Mount Drives</a></li>
 </ul>
 </div>
 </div>
 <p>This tangle is for extra configurations that are meant for PCs with a GUI that a user interacts with directly (as opposed to a server) and it has stuff that aren't going to be used on servers.</p>
 <p>I'm putting it in <code>dingehaufen/conf.d/</code> so it should be linked to in <code>.config/fish/conf.d/</code> for PCs that need it.</p>
-<div class="outline-2" id="outline-container-orgc5ae051">
-<h2 id="orgc5ae051">Mount Drives</h2>
-<div class="outline-text-2" id="text-orgc5ae051">
+<div class="outline-2" id="outline-container-orge43b78a">
+<h2 id="orge43b78a">Mount Drives</h2>
+<div class="outline-text-2" id="text-orge43b78a">
 <p>This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- md <span class="s2">"mountcryfs; mount-data"</span>
@@ -754,9 +817,9 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 </header>
 <div class="p-summary entry-summary">
 <p>This is a function to mount one of the external encrypted USB drives that I use. It makes a lot of assumptions about names so it's pretty much an alias or shortcut, but sometimes things change so I added a little bit of flexibility to it and will try to document it enough that I can figure out what it's doing if I need to change (or fix) it.</p>
-<div class="outline-2" id="outline-container-orge424112">
-<h2 id="orge424112">The Function</h2>
-<div class="outline-text-2" id="text-orge424112">
+<div class="outline-2" id="outline-container-org0941ffe">
+<h2 id="org0941ffe">The Function</h2>
+<div class="outline-text-2" id="text-org0941ffe">
 <p>This is the function declaration. There's going to be three optional arguments that it might take.</p>
 <table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
 <colgroup>
@@ -796,12 +859,12 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <p>The <code>ERROR</code> is a number to return in the event we bail on mounting the drive for some reason.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org47a4ce5">
-<h2 id="org47a4ce5">The Parts</h2>
-<div class="outline-text-2" id="text-org47a4ce5"></div>
-<div class="outline-3" id="outline-container-orgc5bb2af">
-<h3 id="orgc5bb2af">The Device</h3>
-<div class="outline-text-3" id="text-orgc5bb2af">
+<div class="outline-2" id="outline-container-org0d96774">
+<h2 id="org0d96774">The Parts</h2>
+<div class="outline-text-2" id="text-org0d96774"></div>
+<div class="outline-3" id="outline-container-org08cf4f8">
+<h3 id="org08cf4f8">The Device</h3>
+<div class="outline-text-3" id="text-org08cf4f8">
 <p>This is the name of the device in <code>/dev</code> that represents the drive to mount.</p>
 <p>This command is useful sometimes. More so after it's been mounted.</p>
 <div class="highlight">
@@ -811,7 +874,7 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <div class="highlight">
 <pre><span></span>sudo fdisk -l <span class="o">|</span> grep sd -A 1
 </pre></div>
-<div class="notecard" id="orgb96bf35">
+<div class="notecard" id="orga1da210">
 <p><b>Note to future self:</b> Consider making this an environment variable so you don't have to edit it if you switch USB ports.</p>
 </div>
 <div class="highlight">
@@ -835,9 +898,9 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org7d61cd8">
-<h3 id="org7d61cd8">The Mapping Name</h3>
-<div class="outline-text-3" id="text-org7d61cd8">
+<div class="outline-3" id="outline-container-orge365b35">
+<h3 id="orge365b35">The Mapping Name</h3>
+<div class="outline-text-3" id="text-orge365b35">
 <p>This is the name that will be put into <code>/dev/mapper/</code> which <code>mount</code> will use to mount the drive.</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$name</span>
@@ -849,9 +912,9 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org7ce52eb">
-<h3 id="org7ce52eb">Mount Path</h3>
-<div class="outline-text-3" id="text-org7ce52eb">
+<div class="outline-3" id="outline-container-org09dc039">
+<h3 id="org09dc039">Mount Path</h3>
+<div class="outline-text-3" id="text-org09dc039">
 <p>Now we'll handle the folder where the drive will be mounted. If the user doesn't give one the default is "irvin".</p>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> -z <span class="nv">$folder</span>
@@ -881,9 +944,9 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orge81688c">
-<h3 id="orge81688c">Mounting the Drive</h3>
-<div class="outline-text-3" id="text-orge81688c">
+<div class="outline-3" id="outline-container-org381a636">
+<h3 id="org381a636">Mounting the Drive</h3>
+<div class="outline-text-3" id="text-org381a636">
 <p>First we'll use <code>cryptsetup</code> to decrypt the drive and put the mapping into <code>/dev/mapper/</code>.</p>
 <div class="highlight">
 <pre><span></span><span class="k">echo</span>
@@ -898,9 +961,9 @@ sudo cryptsetup <span class="nb">open</span> <span class="nv">$DEVICE_PATH</span
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5edd0f7">
-<h2 id="org5edd0f7">A Help Printer</h2>
-<div class="outline-text-2" id="text-org5edd0f7">
+<div class="outline-2" id="outline-container-orga8825bc">
+<h2 id="orga8825bc">A Help Printer</h2>
+<div class="outline-text-2" id="text-orga8825bc">
 <p>This is just a function to print a help string.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> mount-data-help
@@ -914,9 +977,9 @@ sudo cryptsetup <span class="nb">open</span> <span class="nv">$DEVICE_PATH</span
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgaca83c3">
-<h2 id="orgaca83c3">Links</h2>
-<div class="outline-text-2" id="text-orgaca83c3">
+<div class="outline-2" id="outline-container-orgf46a376">
+<h2 id="orgf46a376">Links</h2>
+<div class="outline-text-2" id="text-orgf46a376">
 <ul class="org-ul">
 <li><a href="https://fishshell.com/docs/current/cmds/not.html">fish Not</a>: Negate the exit status of a job (<code>test</code> in this case).</li>
 <li><a href="https://fishshell.com/docs/current/cmds/test.html">fish test</a>: The <code>test</code> command.</li>
@@ -939,7 +1002,7 @@ sudo cryptsetup <span class="nb">open</span> <span class="nv">$DEVICE_PATH</span
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="cerberus-user-paths/index.html#org667d0a6">Links</a></li>
+<li><a href="cerberus-user-paths/index.html#orgcd7b73f">Links</a></li>
 </ul>
 </div>
 </div>
@@ -949,9 +1012,9 @@ sudo cryptsetup <span class="nb">open</span> <span class="nv">$DEVICE_PATH</span
 <pre><span></span>contains<span class="w"> </span><span class="nv">$HOME</span>/bin<span class="w"> </span><span class="nv">$fish_user_paths</span><span class="p">;</span><span class="w"> </span>or<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--universal<span class="w"> </span>--append<span class="w"> </span>fish_user_paths<span class="w"> </span><span class="nv">$HOME</span>/bin
 contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span class="w"> </span><span class="nv">$fish_user_paths</span><span class="p">;</span><span class="w"> </span>or<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--universal<span class="w"> </span>--append<span class="w"> </span>fish_user_paths<span class="w"> </span><span class="nv">$HOME</span>/.local/bin
 </pre></div>
-<div class="outline-2" id="outline-container-org667d0a6">
-<h2 id="org667d0a6">Links</h2>
-<div class="outline-text-2" id="text-org667d0a6">
+<div class="outline-2" id="outline-container-orgcd7b73f">
+<h2 id="orgcd7b73f">Links</h2>
+<div class="outline-text-2" id="text-orgcd7b73f">
 <ul class="org-ul">
 <li><a href="https://stackoverflow.com/a/61882414">Stack Overflow</a>: Answer where I got the fish syntax.</li>
 </ul>
@@ -972,53 +1035,53 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="emacs-initel/index.html#org2c73f88">Tangle Source</a></li>
-<li><a href="emacs-initel/index.html#org694c749">Package Management</a></li>
-<li><a href="emacs-initel/index.html#org968bf18">Pyvenv</a></li>
-<li><a href="emacs-initel/index.html#org4b00829">Emacs Settings</a>
+<li><a href="emacs-initel/index.html#orgf5b8414">Tangle Source</a></li>
+<li><a href="emacs-initel/index.html#org11da25a">Package Management</a></li>
+<li><a href="emacs-initel/index.html#org258e509">Pyvenv</a></li>
+<li><a href="emacs-initel/index.html#org8274ac6">Emacs Settings</a>
 <ul>
-<li><a href="emacs-initel/index.html#org9e07246">File Locks</a></li>
-<li><a href="emacs-initel/index.html#org736412b">Toggle Input Mode</a></li>
+<li><a href="emacs-initel/index.html#orgc88573d">File Locks</a></li>
+<li><a href="emacs-initel/index.html#org45542ac">Toggle Input Mode</a></li>
 </ul>
 </li>
-<li><a href="emacs-initel/index.html#orgd435bb9">Tramp Mode</a>
+<li><a href="emacs-initel/index.html#orgbc794e7">Tramp Mode</a>
 <ul>
-<li><a href="emacs-initel/index.html#orga1cf96d">Use SSH</a></li>
-<li><a href="emacs-initel/index.html#orgf2c7c9d">No Backups</a></li>
+<li><a href="emacs-initel/index.html#orge1fea8b">Use SSH</a></li>
+<li><a href="emacs-initel/index.html#orgb86e760">No Backups</a></li>
 </ul>
 </li>
-<li><a href="emacs-initel/index.html#org65e9406">God Mode</a></li>
-<li><a href="emacs-initel/index.html#org61913c1">Python and elpy</a></li>
-<li><a href="emacs-initel/index.html#org151df8e">Emacs Jupyter</a></li>
-<li><a href="emacs-initel/index.html#orga17cd34">Fish</a></li>
-<li><a href="emacs-initel/index.html#orgeeb908e">Org-mode</a></li>
-<li><a href="emacs-initel/index.html#orgdf7cee5">org-export python mode</a></li>
-<li><a href="emacs-initel/index.html#org4797cac">web-mode</a></li>
-<li><a href="emacs-initel/index.html#orgfafc70e">auto-complete</a></li>
-<li><a href="emacs-initel/index.html#orgabbfd10">general text</a></li>
-<li><a href="emacs-initel/index.html#org22e6e58">javascript</a></li>
-<li><a href="emacs-initel/index.html#orgaf16ee1">org-babel</a></li>
-<li><a href="emacs-initel/index.html#org1659f39">Feature Mode</a></li>
-<li><a href="emacs-initel/index.html#org2bf9c73">yaml</a></li>
-<li><a href="emacs-initel/index.html#org212a06d">Vue.js</a></li>
-<li><a href="emacs-initel/index.html#org026fda9">Bats</a></li>
-<li><a href="emacs-initel/index.html#org4a035bd">Backups</a></li>
-<li><a href="emacs-initel/index.html#org58c9e18">Markdown Mode</a></li>
-<li><a href="emacs-initel/index.html#org7a82510">Dockerfile Mode</a></li>
-<li><a href="emacs-initel/index.html#orgf4fa762">Flycheck</a></li>
-<li><a href="emacs-initel/index.html#org5c3c3b1">Keychain</a></li>
-<li><a href="emacs-initel/index.html#org5669bdb">Hideshow-Org</a></li>
+<li><a href="emacs-initel/index.html#orgfaa3908">God Mode</a></li>
+<li><a href="emacs-initel/index.html#org878a3ec">Python and elpy</a></li>
+<li><a href="emacs-initel/index.html#org2eb576d">Emacs Jupyter</a></li>
+<li><a href="emacs-initel/index.html#org97dd059">Fish</a></li>
+<li><a href="emacs-initel/index.html#orgcfc570f">Org-mode</a></li>
+<li><a href="emacs-initel/index.html#orgb2a11ae">org-export python mode</a></li>
+<li><a href="emacs-initel/index.html#orgb28bf08">web-mode</a></li>
+<li><a href="emacs-initel/index.html#org67da92f">auto-complete</a></li>
+<li><a href="emacs-initel/index.html#org09157b0">general text</a></li>
+<li><a href="emacs-initel/index.html#orgafa9c70">javascript</a></li>
+<li><a href="emacs-initel/index.html#orga01bd10">org-babel</a></li>
+<li><a href="emacs-initel/index.html#orge1bf6c9">Feature Mode</a></li>
+<li><a href="emacs-initel/index.html#orgb4112b0">yaml</a></li>
+<li><a href="emacs-initel/index.html#org6315a96">Vue.js</a></li>
+<li><a href="emacs-initel/index.html#org38541c5">Bats</a></li>
+<li><a href="emacs-initel/index.html#orge03b91e">Backups</a></li>
+<li><a href="emacs-initel/index.html#org3ab35e2">Markdown Mode</a></li>
+<li><a href="emacs-initel/index.html#org0e3d1fa">Dockerfile Mode</a></li>
+<li><a href="emacs-initel/index.html#org9e214fe">Flycheck</a></li>
+<li><a href="emacs-initel/index.html#org0fc6e48">Keychain</a></li>
+<li><a href="emacs-initel/index.html#orgd7fbb06">Hideshow-Org</a></li>
 </ul>
 </div>
 </div>
 <p>This is an emacs configuration file. I had this in another repository and have been adding to it over the decades, occasionally removing things when troubleshooting but otherwise it's just a jumble right now, so I'm putting it in the fish-based repository to work on it.</p>
 <p>The tangle creates a file <code>give-the-fish/dingehaufen/init.el</code> that you should copy or link into the right place <code>~/.emacs.d</code> right now.</p>
-<div class="notecard" id="orgdcb55ee">
+<div class="notecard" id="org20e01f0">
 <p>At some post I should look into breaking up the configuration (see <a href="https://emacs.stackexchange.com/a/18441">https://emacs.stackexchange.com/a/18441</a> for an example).</p>
 </div>
-<div class="outline-2" id="outline-container-org2c73f88">
-<h2 id="org2c73f88">Tangle Source</h2>
-<div class="outline-text-2" id="text-org2c73f88">
+<div class="outline-2" id="outline-container-orgf5b8414">
+<h2 id="orgf5b8414">Tangle Source</h2>
+<div class="outline-text-2" id="text-orgf5b8414">
 <div class="highlight">
 <pre><span></span><span class="nv">&lt;&lt;package-management&gt;&gt;</span>
 
@@ -1135,9 +1198,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org694c749">
-<h2 id="org694c749">Package Management</h2>
-<div class="outline-text-2" id="text-org694c749">
+<div class="outline-2" id="outline-container-org11da25a">
+<h2 id="org11da25a">Package Management</h2>
+<div class="outline-text-2" id="text-org11da25a">
 <div class="highlight">
 <pre><span></span><span class="c1">;; emacs package management</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'package</span><span class="p">)</span>
@@ -1154,9 +1217,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org968bf18">
-<h2 id="org968bf18">Pyvenv</h2>
-<div class="outline-text-2" id="text-org968bf18">
+<div class="outline-2" id="outline-container-org258e509">
+<h2 id="org258e509">Pyvenv</h2>
+<div class="outline-text-2" id="text-org258e509">
 <p>To prevent errors when emacs starts up and tries to load jupyter (for emacs-jupyter) we need <code>jupyter</code> to be on the path. Now that debian and ubuntu don't want you to install python packages globally we need another way. I had installed it with <a href="https://github.com/pypa/pipx">pipx</a>, which does work, but pipx doesn't doesn't install standalone libraries and sometimes breaks when trying to install dependencies so I think for this case it's better to avoid it and instead use a virtual-environment. Since it has to be activated before anything else that uses python packages, activating the environment should be put fairly early on in the <code>init.el</code> file.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'pyvenv</span><span class="p">)</span>
@@ -1165,9 +1228,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 <p>This assumes that there's a virtual-environment named <code>emacs-environment</code> setup (with jupyter at least). Note that you could load <code>elpy</code> instead of just <code>pyvenv</code> by itself, but <code>elpy</code> is giving me errors (or at least lots of warnings) when it loads and I don't feel like troubleshooting it right now, since it doesn't play well with org-mode anyway.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org4b00829">
-<h2 id="org4b00829">Emacs Settings</h2>
-<div class="outline-text-2" id="text-org4b00829">
+<div class="outline-2" id="outline-container-org8274ac6">
+<h2 id="org8274ac6">Emacs Settings</h2>
+<div class="outline-text-2" id="text-org8274ac6">
 <div class="highlight">
 <pre><span></span><span class="c1">;; show column-numbers</span>
 <span class="p">(</span><span class="nf">column-number-mode</span><span class="p">)</span>
@@ -1203,18 +1266,18 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 <span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">ring-bell-function</span><span class="w"> </span><span class="ss">'ignore</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org9e07246">
-<h3 id="org9e07246">File Locks</h3>
-<div class="outline-text-3" id="text-org9e07246">
+<div class="outline-3" id="outline-container-orgc88573d">
+<h3 id="orgc88573d">File Locks</h3>
+<div class="outline-text-3" id="text-orgc88573d">
 <p>A lock got corrupted once in the cryfs directory, making the editing file unreadable. You can fix it by copying everything but the corrupted file out, destroying and re-creating the cryfs mount and copying the files back in, but hopefully this will fix it. It does mean that two people could edit the same file and cause problems, but oh, well.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">create-lockfiles</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org736412b">
-<h3 id="org736412b">Toggle Input Mode</h3>
-<div class="outline-text-3" id="text-org736412b">
+<div class="outline-3" id="outline-container-org45542ac">
+<h3 id="org45542ac">Toggle Input Mode</h3>
+<div class="outline-text-3" id="text-org45542ac">
 <p>This allows you to switch to latex input and then back using <code>C-\</code>. This is useful to embed special characters. Although you could probably just do the same thing with math mode if you want to wait until exporting.</p>
 <div class="highlight">
 <pre><span></span><span class="c1">;; (setq default-input-method "TeX")</span>
@@ -1223,40 +1286,40 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgd435bb9">
-<h2 id="orgd435bb9">Tramp Mode</h2>
-<div class="outline-text-2" id="text-orgd435bb9"></div>
-<div class="outline-3" id="outline-container-orga1cf96d">
-<h3 id="orga1cf96d">Use SSH</h3>
-<div class="outline-text-3" id="text-orga1cf96d">
+<div class="outline-2" id="outline-container-orgbc794e7">
+<h2 id="orgbc794e7">Tramp Mode</h2>
+<div class="outline-text-2" id="text-orgbc794e7"></div>
+<div class="outline-3" id="outline-container-orge1fea8b">
+<h3 id="orge1fea8b">Use SSH</h3>
+<div class="outline-text-3" id="text-orge1fea8b">
 <div class="highlight">
 <pre><span></span><span class="c1">;; tramp mode</span>
 <span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">tramp-default-method</span><span class="w"> </span><span class="s">"ssh"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgf2c7c9d">
-<h3 id="orgf2c7c9d">No Backups</h3>
-<div class="outline-text-3" id="text-orgf2c7c9d">
+<div class="outline-3" id="outline-container-orgb86e760">
+<h3 id="orgb86e760">No Backups</h3>
+<div class="outline-text-3" id="text-orgb86e760">
 <p>This is from the <a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html">emacs manual</a>.</p>
 </div>
-<div class="outline-4" id="outline-container-orga8831c8">
-<h4 id="orga8831c8">Turn Off For Tramp Only</h4>
-<div class="outline-text-4" id="text-orga8831c8">
+<div class="outline-4" id="outline-container-org264e734">
+<h4 id="org264e734">Turn Off For Tramp Only</h4>
+<div class="outline-text-4" id="text-org264e734">
 <p>The configuration is currently saving backups to a local directory, so when I use tramp I get warnings about it. It doesn't tell you why but according to the <a href="https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html">emacs wiki</a> this is a potential security leak (although probably not in the way I'm using it). Anyway, I've never used the backups so I'll just disable them for tramp.</p>
 <div class="highlight">
 <pre><span></span><span class="c1">;; disable tramp-backups</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'backup-directory-alist</span>
 <span class="w">             </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="nv">tramp-file-name-regexp</span><span class="w"> </span><span class="nv">nil</span><span class="p">))</span>
 </pre></div>
-<div class="notecard" id="org724329e">
+<div class="notecard" id="org9cf7081">
 <p><b>Note:</b> This turns out to solve the wrong problem so I added another rule in the next section.</p>
 </div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org8d4c343">
-<h4 id="org8d4c343">Turn Off For Sudo</h4>
-<div class="outline-text-4" id="text-org8d4c343">
+<div class="outline-4" id="outline-container-org4a8f344">
+<h4 id="org4a8f344">Turn Off For Sudo</h4>
+<div class="outline-text-4" id="text-org4a8f344">
 <p>Turning off the backups for tramp only fixed one case, but it turned out that the thing that made me look into this was using <code>sudo</code> on my local machine to opne the <code>/etc/hosts</code> file so I was actually solving the wrong (or only part of the) problem. This next bit is supposed to turn off all backups where you use <code>sudo</code>. So it probably doesn't belong under tramp any more. Maybe I'll move it later</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">backup-enable-predicate</span>
@@ -1271,9 +1334,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org65e9406">
-<h2 id="org65e9406">God Mode</h2>
-<div class="outline-text-2" id="text-org65e9406">
+<div class="outline-2" id="outline-container-orgfaa3908">
+<h2 id="orgfaa3908">God Mode</h2>
+<div class="outline-text-2" id="text-orgfaa3908">
 <div class="highlight">
 <pre><span></span><span class="c1">;; god-mode</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'god-mode</span><span class="p">)</span>
@@ -1352,9 +1415,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org61913c1">
-<h2 id="org61913c1">Python and elpy</h2>
-<div class="outline-text-2" id="text-org61913c1">
+<div class="outline-2" id="outline-container-org878a3ec">
+<h2 id="org878a3ec">Python and elpy</h2>
+<div class="outline-text-2" id="text-org878a3ec">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; elpy</span>
 <span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">elpy</span>
@@ -1366,9 +1429,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org151df8e">
-<h2 id="org151df8e">Emacs Jupyter</h2>
-<div class="outline-text-2" id="text-org151df8e">
+<div class="outline-2" id="outline-container-org2eb576d">
+<h2 id="org2eb576d">Emacs Jupyter</h2>
+<div class="outline-text-2" id="text-org2eb576d">
 <p>The <code>org-babel-jupyter-override-src-block</code> function is loaded by the <code>ob-jupyter</code> package and sometimes fails if it isn't loaded yet. This only seems to happen while troubleshooting and the init file is being altered, but since it's confusing when it does happen (and a distraction from whatever I'm actually fixing) I'm adding the solution from <a href="https://github.com/emacs-jupyter/jupyter/issues/461#issuecomment-1678501097">this github bug report</a> (the <code>with-eval-after-load</code> function will wait until the init file is loaded).</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">with-eval-after-load</span><span class="w"> </span><span class="ss">'ob-jupyter</span>
@@ -1376,9 +1439,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga17cd34">
-<h2 id="orga17cd34">Fish</h2>
-<div class="outline-text-2" id="text-orga17cd34">
+<div class="outline-2" id="outline-container-org97dd059">
+<h2 id="org97dd059">Fish</h2>
+<div class="outline-text-2" id="text-org97dd059">
 <div class="highlight">
 <pre><span></span><span class="c1">;; fish functions</span>
 <span class="o">'</span><span class="p">(</span><span class="nv">sh-basic-offset</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
@@ -1387,9 +1450,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgeeb908e">
-<h2 id="orgeeb908e">Org-mode</h2>
-<div class="outline-text-2" id="text-orgeeb908e">
+<div class="outline-2" id="outline-container-orgcfc570f">
+<h2 id="orgcfc570f">Org-mode</h2>
+<div class="outline-text-2" id="text-orgcfc570f">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; org-mode</span>
 <span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'org</span><span class="p">)</span>
@@ -1429,9 +1492,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgdf7cee5">
-<h2 id="orgdf7cee5">org-export python mode</h2>
-<div class="outline-text-2" id="text-orgdf7cee5">
+<div class="outline-2" id="outline-container-orgb2a11ae">
+<h2 id="orgb2a11ae">org-export python mode</h2>
+<div class="outline-text-2" id="text-orgb2a11ae">
 <p>This just stops emitting the message that emacs is using a default 4 spaces when exporting python.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">python-indent-guess-indent-offset</span><span class="w"> </span><span class="nv">t</span><span class="p">)</span><span class="w">  </span>
@@ -1439,9 +1502,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org4797cac">
-<h2 id="org4797cac">web-mode</h2>
-<div class="outline-text-2" id="text-org4797cac">
+<div class="outline-2" id="outline-container-orgb28bf08">
+<h2 id="orgb28bf08">web-mode</h2>
+<div class="outline-text-2" id="text-orgb28bf08">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; web-mode</span>
 <span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'web-mode</span><span class="p">)</span>
@@ -1470,9 +1533,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgfafc70e">
-<h2 id="orgfafc70e">auto-complete</h2>
-<div class="outline-text-2" id="text-orgfafc70e">
+<div class="outline-2" id="outline-container-org67da92f">
+<h2 id="org67da92f">auto-complete</h2>
+<div class="outline-text-2" id="text-org67da92f">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; auto-complete</span>
 <span class="w">  </span><span class="c1">;; (defun turn-on-autocomplete () (auto-complete-mode 1))</span>
@@ -1485,9 +1548,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgabbfd10">
-<h2 id="orgabbfd10">general text</h2>
-<div class="outline-text-2" id="text-orgabbfd10">
+<div class="outline-2" id="outline-container-org09157b0">
+<h2 id="org09157b0">general text</h2>
+<div class="outline-text-2" id="text-org09157b0">
 <div class="highlight">
 <pre><span></span><span class="c1">;; increase/decrease text size</span>
 <span class="p">(</span><span class="nf">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nf">kbd</span><span class="w"> </span><span class="s">"C-c C-+"</span><span class="p">)</span><span class="w"> </span><span class="ss">'text-scale-increase</span><span class="p">)</span>
@@ -1495,18 +1558,18 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org22e6e58">
-<h2 id="org22e6e58">javascript</h2>
-<div class="outline-text-2" id="text-org22e6e58">
+<div class="outline-2" id="outline-container-orgafa9c70">
+<h2 id="orgafa9c70">javascript</h2>
+<div class="outline-text-2" id="text-orgafa9c70">
 <div class="highlight">
 <pre><span></span><span class="c1">;; js2</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">.js</span><span class="se">\\</span><span class="s">'"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">js2-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgaf16ee1">
-<h2 id="orgaf16ee1">org-babel</h2>
-<div class="outline-text-2" id="text-orgaf16ee1">
+<div class="outline-2" id="outline-container-orga01bd10">
+<h2 id="orga01bd10">org-babel</h2>
+<div class="outline-text-2" id="text-orga01bd10">
 <div class="highlight">
 <pre><span></span><span class="w">  </span><span class="c1">;; org-babel</span>
 <span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'ob-js</span><span class="p">)</span>
@@ -1575,17 +1638,17 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org1659f39">
-<h2 id="org1659f39">Feature Mode</h2>
-<div class="outline-text-2" id="text-org1659f39">
+<div class="outline-2" id="outline-container-orge1bf6c9">
+<h2 id="orge1bf6c9">Feature Mode</h2>
+<div class="outline-text-2" id="text-orge1bf6c9">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">.feature"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">feature-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org2bf9c73">
-<h2 id="org2bf9c73">yaml</h2>
-<div class="outline-text-2" id="text-org2bf9c73">
+<div class="outline-2" id="outline-container-orgb4112b0">
+<h2 id="orgb4112b0">yaml</h2>
+<div class="outline-text-2" id="text-orgb4112b0">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">add-hook</span><span class="w"> </span><span class="ss">'yaml-mode-hook</span>
 <span class="w">          </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span>
@@ -1593,18 +1656,18 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org212a06d">
-<h2 id="org212a06d">Vue.js</h2>
-<div class="outline-text-2" id="text-org212a06d">
+<div class="outline-2" id="outline-container-org6315a96">
+<h2 id="org6315a96">Vue.js</h2>
+<div class="outline-text-2" id="text-org6315a96">
 <div class="highlight">
 <pre><span></span><span class="c1">;; setup files ending in “.vue” to open in vue-mode</span>
 <span class="c1">;; (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org026fda9">
-<h2 id="org026fda9">Bats</h2>
-<div class="outline-text-2" id="text-org026fda9">
+<div class="outline-2" id="outline-container-org38541c5">
+<h2 id="org38541c5">Bats</h2>
+<div class="outline-text-2" id="text-org38541c5">
 <p>The Bash Automated Test System mode.</p>
 <table border="2" cellpadding="6" cellspacing="0" frame="hsides" rules="groups">
 <colgroup>
@@ -1642,9 +1705,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org4a035bd">
-<h2 id="org4a035bd">Backups</h2>
-<div class="outline-text-2" id="text-org4a035bd">
+<div class="outline-2" id="outline-container-orge03b91e">
+<h2 id="orge03b91e">Backups</h2>
+<div class="outline-text-2" id="text-orge03b91e">
 <p>From the <a href="https://www.emacswiki.org/emacs/BackupDirectory">Emacs Wiki</a>.</p>
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">backup-directory-alist</span><span class="w"> </span>
@@ -1654,9 +1717,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org58c9e18">
-<h2 id="org58c9e18">Markdown Mode</h2>
-<div class="outline-text-2" id="text-org58c9e18">
+<div class="outline-2" id="outline-container-org3ab35e2">
+<h2 id="org3ab35e2">Markdown Mode</h2>
+<div class="outline-text-2" id="text-org3ab35e2">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">markdown-mode</span>
 <span class="w"> </span><span class="nv">:ensure</span><span class="w"> </span><span class="nv">t</span>
@@ -1668,18 +1731,18 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org7a82510">
-<h2 id="org7a82510">Dockerfile Mode</h2>
-<div class="outline-text-2" id="text-org7a82510">
+<div class="outline-2" id="outline-container-org0e3d1fa">
+<h2 id="org0e3d1fa">Dockerfile Mode</h2>
+<div class="outline-text-2" id="text-org0e3d1fa">
 <div class="highlight">
 <pre><span></span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'dockerfile-mode</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'auto-mode-alist</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"Dockerfile</span><span class="se">\\</span><span class="s">'"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nv">dockerfile-mode</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgf4fa762">
-<h2 id="orgf4fa762">Flycheck</h2>
-<div class="outline-text-2" id="text-orgf4fa762">
+<div class="outline-2" id="outline-container-org9e214fe">
+<h2 id="org9e214fe">Flycheck</h2>
+<div class="outline-text-2" id="text-org9e214fe">
 <div class="highlight">
 <pre><span></span><span class="c1">;; flycheck</span>
 <span class="p">(</span><span class="nf">use-package</span><span class="w"> </span><span class="nv">flycheck</span>
@@ -1736,9 +1799,9 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5c3c3b1">
-<h2 id="org5c3c3b1">Keychain</h2>
-<div class="outline-text-2" id="text-org5c3c3b1">
+<div class="outline-2" id="outline-container-org0fc6e48">
+<h2 id="org0fc6e48">Keychain</h2>
+<div class="outline-text-2" id="text-org0fc6e48">
 <p>This is to be able to use ssh-agent (via keychain).</p>
 <ul class="org-ul">
 <li>`keychain` needs to be installed (e.g. via apt)</li>
@@ -1755,116 +1818,13 @@ contains<span class="w"> </span><span class="nv">$HOME</span>/.local/bin<span cl
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5669bdb">
-<h2 id="org5669bdb">Hideshow-Org</h2>
-<div class="outline-text-2" id="text-org5669bdb">
+<div class="outline-2" id="outline-container-orgd7fbb06">
+<h2 id="orgd7fbb06">Hideshow-Org</h2>
+<div class="outline-text-2" id="text-orgd7fbb06">
 <div class="highlight">
 <pre><span></span>(add-to-list 'load-path "~/projects/third-party/hideshow-org/")
 (require 'hideshow-org)
 </pre></div>
-</div>
-</div>
-</div>
-</article>
-<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
-<header>
-<h1 class="p-name entry-title"><a class="u-url" href="convert-a-document-to-pdf-with-pandoc/index.html">Convert a Document To PDF With Pandoc</a></h1>
-<div class="metadata">
-<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
-<p class="dateline"><a href="convert-a-document-to-pdf-with-pandoc/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-11-28T13:45:17-08:00" itemprop="datePublished" title="2023-11-28 13:45">2023-11-28 13:45</time></a></p>
-</div>
-</header>
-<div class="p-summary entry-summary">
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#org221c721">What's This About?</a></li>
-<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#org1cc9397">Headers</a>
-<ul>
-<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#org62f0527">Libertinus</a></li>
-<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#orga5e1b1a">Pagella</a></li>
-</ul>
-</li>
-<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#orgbb15be4">The Function</a></li>
-<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#orgb2eb64d">Links</a></li>
-</ul>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org221c721">
-<h2 id="org221c721">What's This About?</h2>
-<div class="outline-text-2" id="text-org221c721">
-<p>This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.</p>
-<p>Pandoc will convert an ePub or other formatted file to PDF (using <i>pdflatex</i>) without much configuration</p>
-<div class="highlight">
-<pre><span></span>pandoc inputfile.epub -o output.pdf
-</pre></div>
-<p>but it defaults to using <a href="https://en.wikipedia.org/wiki/Computer_Modern">Computer Modern</a>, making it look like those old Springer books in the library, so I thought I'd create this function to document how to change the font in case I forget later on.</p>
-</div>
-</div>
-<div class="outline-2" id="outline-container-org1cc9397">
-<h2 id="org1cc9397">Headers</h2>
-<div class="outline-text-2" id="text-org1cc9397">
-<p>You can set the font as a command line argument to pandoc (e.g. <code>-V fontfamily:libertine</code> ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.</p>
-<p>The function is going to assume that the pagella snippet is in a folder in <code>~/.config/fish/extras/</code> which I created using a symlink to the <code>extras</code> folder in this repository, but it'll also take a path to the header if it's given.</p>
-</div>
-<div class="outline-3" id="outline-container-org62f0527">
-<h3 id="org62f0527">Libertinus</h3>
-<div class="outline-text-3" id="text-org62f0527">
-<p>This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.</p>
-<div class="highlight">
-<pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>libertinus<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>sectsty<span class="nb">}</span>
-<span class="k">\sectionfont</span><span class="nb">{</span><span class="k">\clearpage</span><span class="nb">}</span>
-</pre></div>
-</div>
-</div>
-<div class="outline-3" id="outline-container-orga5e1b1a">
-<h3 id="orga5e1b1a">Pagella</h3>
-<div class="outline-text-3" id="text-orga5e1b1a">
-<p>The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.</p>
-<div class="highlight">
-<pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>tgpagella<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>sectsty<span class="nb">}</span>
-<span class="k">\sectionfont</span><span class="nb">{</span><span class="k">\clearpage</span><span class="nb">}</span>
-</pre></div>
-<div class="notecard" id="orgd73b269">
-<p><b>Note:</b> I originally accidentally put <i>pagella</i> and not <i>tgpagella</i> which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's <i>sectsty</i> not <i>secsty</i>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="outline-2" id="outline-container-orgbb15be4">
-<h2 id="orgbb15be4">The Function</h2>
-<div class="outline-text-2" id="text-orgbb15be4">
-<p>Nothing fancy here, it just adds the extra header file. I originally added the <code>--table-of-contents</code> flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.</p>
-<div class="highlight">
-<pre><span></span><span class="k">function</span> doc2pdf -d <span class="s2">"Convert document to pdf with pandoc"</span> --argument-names SOURCE HEADER
-    <span class="k">set</span> TARGET <span class="nv">$(</span>path change-extension pdf <span class="nv">$SOURCE</span><span class="o">)</span>
-
-    <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$HEADER</span>
-        <span class="k">set</span> HEADER ~/.config/fish/extras/pagella.tex
-    <span class="k">end</span>
-
-    pandoc --standalone <span class="nv">$SOURCE</span> --output <span class="nv">$TARGET</span> --include-in-header <span class="nv">$HEADER</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-</div>
-<div class="outline-2" id="outline-container-orgb2eb64d">
-<h2 id="orgb2eb64d">Links</h2>
-<div class="outline-text-2" id="text-orgb2eb64d">
-<ul class="org-ul">
-<li><a href="https://learnbyexample.github.io/customizing-pandoc/">learnbyexample</a> : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output</li>
-<li><a href="https://tug.org/FontCatalogue/texgyrepagella/">Latex Font Catalogue</a> : Tex Gyre Pagella page</li>
-<li><a href="https://tug.org/FontCatalogue/linuxlibertine/">Latex Font Catalogue</a> : Linux Libertine Page</li>
-<li><a href="https://tug.org/FontCatalogue/libertinusserif/">Latex Font Catalogue</a> : Libertinus Serif Page</li>
-<li><a href="https://github.com/alerque/libertinus">GitHub</a>: The Libertinus repository page</li>
-<li><a href="https://en.wikipedia.org/wiki/Linux_Libertine">Wikipedia</a> : Libertine and Libertinus information</li>
-<li><a href="rst2org-function/index.html">rst2org Function</a>: Another function using pandoc.</li>
-</ul>
 </div>
 </div>
 </div>

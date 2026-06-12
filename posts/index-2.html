@@ -49,6 +49,109 @@
 <div class="postindex">
 <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
+<h1 class="p-name entry-title"><a class="u-url" href="convert-a-document-to-pdf-with-pandoc/index.html">Convert a Document To PDF With Pandoc</a></h1>
+<div class="metadata">
+<p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
+<p class="dateline"><a href="convert-a-document-to-pdf-with-pandoc/index.html" rel="bookmark"><time class="published dt-published" datetime="2023-11-28T13:45:17-08:00" itemprop="datePublished" title="2023-11-28 13:45">2023-11-28 13:45</time></a></p>
+</div>
+</header>
+<div class="p-summary entry-summary">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#orgfd0858c">What's This About?</a></li>
+<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#org878eb0e">Headers</a>
+<ul>
+<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#orgdc3c8a1">Libertinus</a></li>
+<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#org65f3491">Pagella</a></li>
+</ul>
+</li>
+<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#orgdab4709">The Function</a></li>
+<li><a href="convert-a-document-to-pdf-with-pandoc/index.html#org81dcff6">Links</a></li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgfd0858c">
+<h2 id="orgfd0858c">What's This About?</h2>
+<div class="outline-text-2" id="text-orgfd0858c">
+<p>This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.</p>
+<p>Pandoc will convert an ePub or other formatted file to PDF (using <i>pdflatex</i>) without much configuration</p>
+<div class="highlight">
+<pre><span></span>pandoc inputfile.epub -o output.pdf
+</pre></div>
+<p>but it defaults to using <a href="https://en.wikipedia.org/wiki/Computer_Modern">Computer Modern</a>, making it look like those old Springer books in the library, so I thought I'd create this function to document how to change the font in case I forget later on.</p>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org878eb0e">
+<h2 id="org878eb0e">Headers</h2>
+<div class="outline-text-2" id="text-org878eb0e">
+<p>You can set the font as a command line argument to pandoc (e.g. <code>-V fontfamily:libertine</code> ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.</p>
+<p>The function is going to assume that the pagella snippet is in a folder in <code>~/.config/fish/extras/</code> which I created using a symlink to the <code>extras</code> folder in this repository, but it'll also take a path to the header if it's given.</p>
+</div>
+<div class="outline-3" id="outline-container-orgdc3c8a1">
+<h3 id="orgdc3c8a1">Libertinus</h3>
+<div class="outline-text-3" id="text-orgdc3c8a1">
+<p>This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.</p>
+<div class="highlight">
+<pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>libertinus<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>sectsty<span class="nb">}</span>
+<span class="k">\sectionfont</span><span class="nb">{</span><span class="k">\clearpage</span><span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-3" id="outline-container-org65f3491">
+<h3 id="org65f3491">Pagella</h3>
+<div class="outline-text-3" id="text-org65f3491">
+<p>The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.</p>
+<div class="highlight">
+<pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>tgpagella<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>sectsty<span class="nb">}</span>
+<span class="k">\sectionfont</span><span class="nb">{</span><span class="k">\clearpage</span><span class="nb">}</span>
+</pre></div>
+<div class="notecard" id="org47b1017">
+<p><b>Note:</b> I originally accidentally put <i>pagella</i> and not <i>tgpagella</i> which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's <i>sectsty</i> not <i>secsty</i>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgdab4709">
+<h2 id="orgdab4709">The Function</h2>
+<div class="outline-text-2" id="text-orgdab4709">
+<p>Nothing fancy here, it just adds the extra header file. I originally added the <code>--table-of-contents</code> flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.</p>
+<div class="highlight">
+<pre><span></span><span class="k">function</span> doc2pdf -d <span class="s2">"Convert document to pdf with pandoc"</span> --argument-names SOURCE HEADER
+    <span class="k">set</span> TARGET <span class="nv">$(</span>path change-extension pdf <span class="nv">$SOURCE</span><span class="o">)</span>
+
+    <span class="k">if</span> <span class="k">test</span> -z <span class="nv">$HEADER</span>
+        <span class="k">set</span> HEADER ~/.config/fish/extras/pagella.tex
+    <span class="k">end</span>
+
+    pandoc --standalone <span class="nv">$SOURCE</span> --output <span class="nv">$TARGET</span> --include-in-header <span class="nv">$HEADER</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-org81dcff6">
+<h2 id="org81dcff6">Links</h2>
+<div class="outline-text-2" id="text-org81dcff6">
+<ul class="org-ul">
+<li><a href="https://learnbyexample.github.io/customizing-pandoc/">learnbyexample</a> : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output</li>
+<li><a href="https://tug.org/FontCatalogue/texgyrepagella/">Latex Font Catalogue</a> : Tex Gyre Pagella page</li>
+<li><a href="https://tug.org/FontCatalogue/linuxlibertine/">Latex Font Catalogue</a> : Linux Libertine Page</li>
+<li><a href="https://tug.org/FontCatalogue/libertinusserif/">Latex Font Catalogue</a> : Libertinus Serif Page</li>
+<li><a href="https://github.com/alerque/libertinus">GitHub</a>: The Libertinus repository page</li>
+<li><a href="https://en.wikipedia.org/wiki/Linux_Libertine">Wikipedia</a> : Libertine and Libertinus information</li>
+<li><a href="rst2org-function/index.html">rst2org Function</a>: Another function using pandoc.</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
 <h1 class="p-name entry-title"><a class="u-url" href="dim-monitor/index.html">Dim Monitor</a></h1>
 <div class="metadata">
 <p class="byline author vcard"><span class="byline-name fn" itemprop="author">Cloistered Monkey</span></p>
