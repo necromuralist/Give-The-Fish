@@ -1,0 +1,58 @@
+#+BEGIN_COMMENT
+.. title: Reverting To Emacs alt-backspace
+.. slug: reverting-to-emacs-alt-backspace
+.. date: 2026-06-11 17:10:38 UTC-07:00
+.. tags: readline,hack,configuration
+.. category: Configuration
+.. link: 
+.. description: Reverting the alt-backspace behavior to Unix instead of Windows.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+#+begin_src sh :tangle ../dingehaufen/conf.d/keybindings.fish :exports none
+<<alt-backspace>>
+#+end_src
+
+Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the [[https://en.wikipedia.org/wiki/IBM_Common_User_Access][Common-User-Access (CUA)]] behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.
+
+* Alt-Backspace
+
+Here's what I'm adding to the fish configuration:
+
+#+begin_src fish :noweb-ref alt-backspace
+bind alt-backspace backward-kill-word
+#+end_src
+
+This was taken from [[https://github.com/fish-shell/fish-shell/issues/12122#issuecomment-3602424666][user =rski='s comment]], which also had some other keybindings which I'm not putting in since I don't normally use them anyway, but I'll document them here in case I decide I need them later.
+
+#+begin_src fish
+bind ctrl-alt-h backward-kill-word
+bind ctrl-backspace backward-kill-token
+bind alt-delete kill-word
+bind ctrl-delete kill-token
+#+end_src
+
+From Fish's [[https://fishshell.com/docs/current/cmds/bind.html][=bind= documentation]]:
+
+=backward-kill-word=
+
+Move the word to the left of the cursor to the killring, until the start of the current word (like vim’s db)
+
+=backward-kill-token=
+
+    Move the argument to the left of the cursor to the killring
+
+
+
+* Links
+
+- [[https://en.wikipedia.org/wiki/IBM_Common_User_Access][Wikipedia: IBM Common User Access]]: General article about where the new behavior comes from.
+
+- [[https://github.com/fish-shell/fish-shell/issues/12122][GitHub: Issue 12122 - Revert alt-backspace behaviour on non-macOS systems]] - The place I found the way to re-bind the old behavior.
+
+- [[https://github.com/fish-shell/fish-shell/pull/10766][Github: Pull Request - Default bindings for token movement commands]] - It sounds like they were trying to unify the behavior across platforms. A nice idea, unfortunately it bit me. Maybe I'll learn ctrl-backspace one day.
