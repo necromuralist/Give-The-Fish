@@ -177,10 +177,10 @@
  '(js2-bounce-indent-p t)
  '(org-export-backends '(ascii html icalendar latex org))
  '(package-selected-packages
-   '(ac-js2 autopair csv-mode feature-mode fish-mode fuzzy god-mode
-            htmlize idle-highlight-mode ido-ubiquitous jedi magit
-            ox-nikola ox-rst paredit plantuml-mode python-mode smex
-            swiper web-mode)))
+   '(ac-js2 autopair csv-mode feature-mode fish-mode ftable fuzzy
+            god-mode htmlize idle-highlight-mode ido-ubiquitous jedi
+            magit ox-nikola ox-rst paredit plantuml-mode python-mode
+            smex swiper web-mode)))
 
       
 (custom-set-faces
