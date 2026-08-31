@@ -1,6 +1,6 @@
 #! /usr/bin/env fish
 
-function pdfpages -d "Extract pages from a pdf" --argument-names source_pdf target_pdf pages
+function pdfpages --argument-names source_pdf target_pdf pages -d "Extract pages from a pdf"
 
     qpdf --empty --pages $source_pdf $pages -- $target_pdf
 

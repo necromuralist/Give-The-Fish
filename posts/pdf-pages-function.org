@@ -28,8 +28,10 @@ end
 * The Function Declaration
 
 #+begin_src fish :noweb-ref pdfpages-declaration
-function pdfpages -d "Extract pages from a pdf" --argument-names source_pdf target_pdf pages
+function pdfpages --argument-names source_pdf target_pdf pages -d "Extract pages from a pdf"
 #+end_src
+
+#+RESULTS:
 
 * The Command Call
 
