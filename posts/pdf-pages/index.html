@@ -2,16 +2,16 @@
 <html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
 <head>
 <meta charset="utf-8">
-<meta content="Reverting the alt-backspace behavior to Unix instead of Windows." name="description">
+<meta content="Function to extract pages from a PDF." name="description">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Reverting To Emacs alt-backspace | Give the Fish</title>
+<title>Function: PDF Pages | Give the Fish</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <meta content="Nikola (getnikola.com)" name="generator">
 <link href="../../rss.xml" hreflang="en" rel="alternate" title="RSS" type="application/rss+xml">
-<link href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
+<link href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html" rel="canonical"><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- favicons -->
 <link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="../../android-chrome-192x192.png" rel="android-chrome-icon" sizes="192x192">
 <link href="../../android-chrome-512x512.png" rel="android-chrome-icon" sizes="512x512">
@@ -19,17 +19,15 @@
 <link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
 <link href="../../site.webmanifest" rel="manifest">
 <meta content="Cloistered Monkey" name="author">
-<link href="../pdf-functions/index.html" rel="prev" title="PDF Functions" type="text/html">
-<link href="../pdf-pages/index.html" rel="next" title="Function: PDF Pages" type="text/html">
+<link href="../reverting-to-emacs-alt-backspace/index.html" rel="prev" title="Reverting To Emacs alt-backspace" type="text/html">
 <meta content="Give the Fish" property="og:site_name">
-<meta content="Reverting To Emacs alt-backspace" property="og:title">
-<meta content="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html" property="og:url">
-<meta content="Reverting the alt-backspace behavior to Unix instead of Windows." property="og:description">
+<meta content="Function: PDF Pages" property="og:title">
+<meta content="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html" property="og:url">
+<meta content="Function to extract pages from a PDF." property="og:description">
 <meta content="article" property="og:type">
-<meta content="2026-06-11T17:10:38-07:00" property="article:published_time">
-<meta content="configuration" property="article:tag">
-<meta content="hack" property="article:tag">
-<meta content="readline" property="article:tag">
+<meta content="2026-08-30T16:44:56-07:00" property="article:published_time">
+<meta content="functions" property="article:tag">
+<meta content="pdf" property="article:tag">
 </head>
 <body>
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
@@ -60,10 +58,10 @@
 <div class="body-content"><!--Body content-->
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
-<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Reverting To Emacs alt-backspace</a></h1>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Function: PDF Pages</a></h1>
 <div class="metadata">
 <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
-<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2026-06-11T17:10:38-07:00" itemprop="datePublished" title="2026-06-11 17:10">2026-06-11 17:10</time></a></p>
+<p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2026-08-30T16:44:56-07:00" itemprop="datePublished" title="2026-08-30 16:44">2026-08-30 16:44</time></a></p>
 <p class="sourceline"><a class="sourcelink" href="index.org">Source</a></p>
 </div>
 </header>
@@ -72,54 +70,51 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#org7cfafc7">Alt-Backspace</a></li>
-<li><a href="index.html#org7f38dbd">Links</a></li>
+<li><a href="index.html#orga058cb3">The Function Declaration</a></li>
+<li><a href="index.html#orgb444606">The Command Call</a></li>
+<li><a href="index.html#orge976464">Error Handling</a></li>
 </ul>
 </div>
 </div>
-<p>Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the <a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access">Common-User-Access (CUA)</a> behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.</p>
-<div class="outline-2" id="outline-container-org7cfafc7">
-<h2 id="org7cfafc7">Alt-Backspace</h2>
-<div class="outline-text-2" id="text-org7cfafc7">
-<p>Here's what I'm adding to the fish configuration:</p>
+<p>This is a function to make it easier to extract pages from a PDF using qpdf.</p>
+<div class="outline-2" id="outline-container-orga058cb3">
+<h2 id="orga058cb3">The Function Declaration</h2>
+<div class="outline-text-2" id="text-orga058cb3">
 <div class="highlight">
-<pre><span></span><span class="nb">bind </span>alt-backspace backward-kill-word
+<pre><span></span><span class="k">function</span> pdfpages --argument-names source_pdf target_pdf pages -d <span class="s2">"Extract pages from a pdf"</span>
 </pre></div>
-<p>This was taken from <a href="https://github.com/fish-shell/fish-shell/issues/12122#issuecomment-3602424666">user <code>rski</code>'s comment</a>, which also had some other keybindings which I'm not putting in since I don't normally use them anyway, but I'll document them here in case I decide I need them later.</p>
-<div class="highlight">
-<pre><span></span><span class="nb">bind </span>ctrl-alt-h backward-kill-word
-<span class="nb">bind </span>ctrl-backspace backward-kill-token
-<span class="nb">bind </span>alt-delete <span class="nb">kill</span>-word
-<span class="nb">bind </span>ctrl-delete <span class="nb">kill</span>-token
-</pre></div>
-<p>From Fish's <a href="https://fishshell.com/docs/current/cmds/bind.html"><code>bind</code> documentation</a>:</p>
-<p><code>backward-kill-word</code></p>
-<p>Move the word to the left of the cursor to the killring, until the start of the current word (like vim’s db)</p>
-<p><code>backward-kill-token</code></p>
-<p>Move the argument to the left of the cursor to the killring</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org7f38dbd">
-<h2 id="org7f38dbd">Links</h2>
-<div class="outline-text-2" id="text-org7f38dbd">
-<ul class="org-ul">
-<li><a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access">Wikipedia: IBM Common User Access</a>: General article about where the new behavior comes from.</li>
-<li><a href="https://github.com/fish-shell/fish-shell/issues/12122">GitHub: Issue 12122 - Revert alt-backspace behaviour on non-macOS systems</a> - The place I found the way to re-bind the old behavior.</li>
-<li><a href="https://github.com/fish-shell/fish-shell/pull/10766">Github: Pull Request - Default bindings for token movement commands</a> - It sounds like they were trying to unify the behavior across platforms. A nice idea, unfortunately it bit me. Maybe I'll learn ctrl-backspace one day.</li>
-</ul>
+<div class="outline-2" id="outline-container-orgb444606">
+<h2 id="orgb444606">The Command Call</h2>
+<div class="outline-text-2" id="text-orgb444606">
+<p>This uses qpdf (<a href="https://github.com/qpdf/qpdf">GitHub Repsitory</a>) to extract pages from a PDF. It's a function not an abbreviation because you intersperse your arguments within their syntax, rather than just pasting it all after the call.</p>
+<div class="highlight">
+<pre><span></span>qpdf --empty --pages <span class="nv">$source_pdf</span> <span class="nv">$pages</span> -- <span class="nv">$target_pdf</span>
+</pre></div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orge976464">
+<h2 id="orge976464">Error Handling</h2>
+<div class="outline-text-2" id="text-orge976464">
+<div class="highlight">
+<pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="nv">$status</span> -ne 0
+    <span class="k">echo</span> <span class="s2">"source_pdf = </span><span class="nv">$source_pdf</span><span class="s2">"</span>
+    <span class="k">echo</span> <span class="s2">"target_pdf = </span><span class="nv">$target_pdf</span><span class="s2">"</span>
+    <span class="k">echo</span> <span class="s2">"pages = </span><span class="nv">$pages</span><span class="s2">"</span>
+<span class="k">end</span>
+</pre></div>
 </div>
 </div>
 </div>
 <aside class="postpromonav">
 <nav>
 <ul class="tags" itemprop="keywords">
-<li><a class="tag p-category" href="../../categories/configuration/index.html" rel="tag">configuration</a></li>
-<li><a class="tag p-category" href="../../categories/hack/index.html" rel="tag">hack</a></li>
-<li><a class="tag p-category" href="../../categories/readline/index.html" rel="tag">readline</a></li>
+<li><a class="tag p-category" href="../../categories/functions/index.html" rel="tag">functions</a></li>
+<li><a class="tag p-category" href="../../categories/pdf/index.html" rel="tag">pdf</a></li>
 </ul>
 <ul class="pager hidden-print">
-<li class="previous"><a href="../pdf-functions/index.html" rel="prev" title="PDF Functions">Previous post</a></li>
-<li class="next"><a href="../pdf-pages/index.html" rel="next" title="Function: PDF Pages">Next post</a></li>
+<li class="previous"><a href="../reverting-to-emacs-alt-backspace/index.html" rel="prev" title="Reverting To Emacs alt-backspace">Previous post</a></li>
 </ul>
 </nav>
 </aside>

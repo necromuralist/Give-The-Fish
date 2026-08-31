@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about PDF)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/cat_pdf.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+&lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
+&lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
+&lt;/div&gt;
+</copyright><lastBuildDate>Mon, 31 Aug 2026 00:37:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: PDF Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orga058cb3"&gt;The Function Declaration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orgb444606"&gt;The Command Call&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orge976464"&gt;Error Handling&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+This is a function to make it easier to extract pages from a PDF using qpdf.
+&lt;/p&gt;
+&lt;div id="outline-container-orga058cb3" class="outline-2"&gt;
+&lt;h2 id="orga058cb3"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga058cb3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; pdfpages --argument-names source_pdf target_pdf pages -d &lt;span class="s2"&gt;"Extract pages from a pdf"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgb444606" class="outline-2"&gt;
+&lt;h2 id="orgb444606"&gt;The Command Call&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb444606"&gt;
+&lt;p&gt;
+This uses qpdf (&lt;a href="https://github.com/qpdf/qpdf"&gt;GitHub Repsitory&lt;/a&gt;) to extract pages from a PDF. It's a function not an abbreviation because you intersperse your arguments within their syntax, rather than just pasting it all after the call.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;qpdf --empty --pages &lt;span class="nv"&gt;$source_pdf&lt;/span&gt; &lt;span class="nv"&gt;$pages&lt;/span&gt; -- &lt;span class="nv"&gt;$target_pdf&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge976464" class="outline-2"&gt;
+&lt;h2 id="orge976464"&gt;Error Handling&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge976464"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$status&lt;/span&gt; -ne 0
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"source_pdf = &lt;/span&gt;&lt;span class="nv"&gt;$source_pdf&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"target_pdf = &lt;/span&gt;&lt;span class="nv"&gt;$target_pdf&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"pages = &lt;/span&gt;&lt;span class="nv"&gt;$pages&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>functions</category><category>pdf</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</guid><pubDate>Sun, 30 Aug 2026 23:44:56 GMT</pubDate></item></channel></rss>

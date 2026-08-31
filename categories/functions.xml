@@ -5,7 +5,76 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 12 Jun 2026 00:33:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Upgrade Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Mon, 31 Aug 2026 00:37:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: PDF Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orga058cb3"&gt;The Function Declaration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orgb444606"&gt;The Command Call&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orge976464"&gt;Error Handling&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+This is a function to make it easier to extract pages from a PDF using qpdf.
+&lt;/p&gt;
+&lt;div id="outline-container-orga058cb3" class="outline-2"&gt;
+&lt;h2 id="orga058cb3"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga058cb3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; pdfpages --argument-names source_pdf target_pdf pages -d &lt;span class="s2"&gt;"Extract pages from a pdf"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgb444606" class="outline-2"&gt;
+&lt;h2 id="orgb444606"&gt;The Command Call&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb444606"&gt;
+&lt;p&gt;
+This uses qpdf (&lt;a href="https://github.com/qpdf/qpdf"&gt;GitHub Repsitory&lt;/a&gt;) to extract pages from a PDF. It's a function not an abbreviation because you intersperse your arguments within their syntax, rather than just pasting it all after the call.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;qpdf --empty --pages &lt;span class="nv"&gt;$source_pdf&lt;/span&gt; &lt;span class="nv"&gt;$pages&lt;/span&gt; -- &lt;span class="nv"&gt;$target_pdf&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge976464" class="outline-2"&gt;
+&lt;h2 id="orge976464"&gt;Error Handling&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge976464"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$status&lt;/span&gt; -ne 0
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"source_pdf = &lt;/span&gt;&lt;span class="nv"&gt;$source_pdf&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"target_pdf = &lt;/span&gt;&lt;span class="nv"&gt;$target_pdf&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"pages = &lt;/span&gt;&lt;span class="nv"&gt;$pages&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>functions</category><category>pdf</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</guid><pubDate>Sun, 30 Aug 2026 23:44:56 GMT</pubDate></item><item><title>PDF Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-functions/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-functions/index.html#org310780a"&gt;Dump Bookmarks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org310780a" class="outline-2"&gt;
+&lt;h2 id="org310780a"&gt;Dump Bookmarks&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org310780a"&gt;
+&lt;p&gt;
+This uses &lt;code&gt;PDFTK&lt;/code&gt; to dump bookmarks (so it's not compatible with &lt;code&gt;cpdf&lt;/code&gt;).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; pdfbookmarks -d &lt;span class="s2"&gt;"Dump bookmarks from a PDF (pdftk format)"&lt;/span&gt; --argument-names SOURCEFILE OUTFILE
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query OUTFILE
+        &lt;span class="k"&gt;set&lt;/span&gt; OUTFILE &lt;span class="s2"&gt;"bookmarks.txt"&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+    pdftk &lt;span class="nv"&gt;$SOURCEFILE&lt;/span&gt; dump_data_utf8 output &lt;span class="nv"&gt;$OUTFILE&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+See the &lt;i&gt;PDF TK&lt;/i&gt; section of the &lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html"&gt;Tealdeer post&lt;/a&gt; for (a little) more information.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>fish</category><category>functions</category><category>pdf</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/pdf-functions/index.html</guid><pubDate>Tue, 10 Feb 2026 20:12:33 GMT</pubDate></item><item><title>Upgrade Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
@@ -160,7 +229,25 @@ This message is referring to &lt;a href="https://documentation.ubuntu.com/server
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>apt</category><category>cli</category><category>functions</category><category>packages</category><category>snap</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</guid><pubDate>Tue, 24 Jun 2025 19:04:29 GMT</pubDate></item><item><title>Tar XZ Compression Abbreviation</title><link>https://necromuralist.github.io/Give-The-Fish/posts/tar-xz-compression-abbreviation/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; xtard
+&lt;/div&gt;</description><category>apt</category><category>cli</category><category>functions</category><category>packages</category><category>snap</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html</guid><pubDate>Tue, 24 Jun 2025 19:04:29 GMT</pubDate></item><item><title>Function: To Avif</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-to-avif/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+This converts files passed in as arguments to the &lt;a href="https://en.wikipedia.org/wiki/AVIF"&gt;avif&lt;/a&gt; format. It requires &lt;i&gt;avifenc&lt;/i&gt; to be installed. In Ubuntu you can install it with
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install libavif-bin
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div id="outline-container-org01b412a" class="outline-2"&gt;
+&lt;h2 id="org01b412a"&gt;To AVIF&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org01b412a"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; toavif --description &lt;span class="s1"&gt;'Convert image files to avif with avifenc'&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; SOURCE_IMAGE &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;
+        &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="o"&gt;(&lt;/span&gt;path change-extension avif &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+        avifenc &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt; -o &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>functions</category><category>images</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-to-avif/index.html</guid><pubDate>Wed, 26 Mar 2025 05:09:38 GMT</pubDate></item><item><title>Tar XZ Compression Abbreviation</title><link>https://necromuralist.github.io/Give-The-Fish/posts/tar-xz-compression-abbreviation/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; xtard
     &lt;span class="k"&gt;set&lt;/span&gt; BASE &lt;span class="o"&gt;(&lt;/span&gt;string replace --regex &lt;span class="s2"&gt;"/\$"&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
     tar --create --xz --file &lt;span class="nv"&gt;$BASE&lt;/span&gt;.tar.xz &lt;span class="nv"&gt;$argv&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -479,200 +566,4 @@ The first option documented in the options section of the pandoc documentation i
 &lt;li&gt;pandoc general options [Internet]. Available from &lt;a href="https://pandoc.org/MANUAL.html#general-options"&gt;https://pandoc.org/MANUAL.html#general-options&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>functions</category><category>org-mode</category><category>pandoc</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</guid><pubDate>Thu, 22 Jun 2023 19:51:54 GMT</pubDate></item><item><title>las: Colored List All</title><link>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; las
-    ls --almost-all &lt;span class="se"&gt;\&lt;/span&gt;
-       --color &lt;span class="se"&gt;\&lt;/span&gt;
-       --dereference-command-line &lt;span class="se"&gt;\&lt;/span&gt;
-       --human-readable &lt;span class="se"&gt;\&lt;/span&gt;
-       -l &lt;span class="nv"&gt;$argv&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-        less --RAW-CONTROL-CHARS
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The point of this function is to show all the files in the directory (including hidden files) and pipe them to &lt;code&gt;less&lt;/code&gt; so they won't go scrolling off the screen while keeping the color highlighting.
-&lt;/p&gt;
-&lt;div id="outline-container-orgd6fe9d5" class="outline-2"&gt;
-&lt;h2 id="orgd6fe9d5"&gt;The Parts&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd6fe9d5"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org39f53c3" class="outline-3"&gt;
-&lt;h3 id="org39f53c3"&gt;The &lt;code&gt;ls&lt;/code&gt; Arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org39f53c3"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;--almost-all&lt;/code&gt;: don't list the &lt;code&gt;.&lt;/code&gt; and &lt;code&gt;..&lt;/code&gt; files&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--color&lt;/code&gt;: Color the output when (defaults to "always" but you can set to "auto" or "never")&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--dereference-command-line&lt;/code&gt;: follow symbolic links listed on the command line&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--human-readable&lt;/code&gt;: Put file sizes into units that make sense (when using &lt;code&gt;-l&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-l&lt;/code&gt;: Long listing format.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orgde9fc17" class="outline-3"&gt;
-&lt;h3 id="orgde9fc17"&gt;The &lt;code&gt;less&lt;/code&gt; Argument&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgde9fc17"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;--RAW-CONTROL-CHARS&lt;/code&gt;: Keep colors and hyperlink sequences.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="notecard" id="orgd39a2c9"&gt;
-&lt;p&gt;
-There is also a &lt;code&gt;--raw-control-chars&lt;/code&gt; option which will include all escape sequences, but they say this might cause less to not be able to control the appearance of the screen so they don't recommend using it. Also, you can set the &lt;code&gt;LESS&lt;/code&gt; environment variable to pass in options, so if this is useful enough it might make sense to put it in there instead.
-&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>alias</category><category>color</category><category>functions</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/las-colored-list-all/index.html</guid><pubDate>Thu, 22 Jun 2023 19:10:57 GMT</pubDate></item><item><title>Choose Function</title><link>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-org47634d2" class="outline-2"&gt;
-&lt;h2 id="org47634d2"&gt;Choose&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org47634d2"&gt;
-&lt;p&gt;
-An alias function that will pick a random line (or lines) out of a text file.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orga4a1931" class="outline-2"&gt;
-&lt;h2 id="orga4a1931"&gt;The Function Declaration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga4a1931"&gt;
-&lt;p&gt;
-Our alias function (&lt;code&gt;choose&lt;/code&gt;) takes one required argument that we'll assign to the variable &lt;code&gt;filename&lt;/code&gt; and one optional argument &lt;code&gt;lines&lt;/code&gt; to indicate the number of lines to pull.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; choose -d &lt;span class="s2"&gt;"Random line from a file."&lt;/span&gt; --argument-names filename lines
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org30299e6" class="outline-2"&gt;
-&lt;h2 id="org30299e6"&gt;The Error String&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org30299e6"&gt;
-&lt;p&gt;
-I'm setting a string-format variable that I'll use to color error messages in bold red.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; ERROR &lt;span class="s2"&gt;"\x1b[31;1m\t%s\n\n\x1b[0m"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-See &lt;a href="https://stackoverflow.com/a/33206814"&gt;this stack overflow answer&lt;/a&gt; for more explanation of the codes. Basically the &lt;code&gt;31;1m&lt;/code&gt; part turns on red (31) and bold (1) and &lt;code&gt;0m&lt;/code&gt; resets it back to unbolded black text.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org11b2a79" class="outline-2"&gt;
-&lt;h2 id="org11b2a79"&gt;The Okay Variable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org11b2a79"&gt;
-&lt;p&gt;
-This is getting a little convoluted but I added another check for the second argument to make sure it's a number so this flag is just there to indicate that it did or didn't look like right.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; OKAY 0
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-I'm setting it to False so that it has to pass the checks in order to be unset.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org30733d7" class="outline-2"&gt;
-&lt;h2 id="org30733d7"&gt;Check the Number of Lines&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org30733d7"&gt;
-&lt;p&gt;
-Unlike &lt;code&gt;random&lt;/code&gt;, shuf will let you pick multiple lines so I added a second (optional) argument to indicate the number of lines to output. If none is passed in then it's set to one, if something other than an integer is passed in then we'll set a flag so we know to skip calling the &lt;code&gt;shuf&lt;/code&gt; command later on.
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;test -n "$lines"&lt;/code&gt; will return True if &lt;code&gt;lines&lt;/code&gt; is non-empty so I negated it with &lt;code&gt;!&lt;/code&gt; to return True if it's empty.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; ! &lt;span class="k"&gt;test&lt;/span&gt; -n &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-  &lt;span class="k"&gt;set&lt;/span&gt; lines 1
-  &lt;span class="k"&gt;set&lt;/span&gt; OKAY 1
-&lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; ! &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;string match --regex &lt;span class="s2"&gt;"^[0-9]+\$"&lt;/span&gt; &lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="k"&gt;set&lt;/span&gt; OKAY 0
-  &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="nv"&gt;$ERROR&lt;/span&gt; &lt;span class="s2"&gt;"Not a valid number of lines: '&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="s2"&gt;'"&lt;/span&gt;
-&lt;span class="k"&gt;else&lt;/span&gt;
-  &lt;span class="k"&gt;set&lt;/span&gt; OKAY 1
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org269bb72" class="outline-2"&gt;
-&lt;h2 id="org269bb72"&gt;If It's a Text File, Use It&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org269bb72"&gt;
-&lt;p&gt;
-We'll be grabbing a line using the &lt;a href="https://man7.org/linux/man-pages/man1/shuf.1.html"&gt;shuf&lt;/a&gt; command. &lt;code&gt;shuf&lt;/code&gt; will hang if no filename is given and it will try and read binary files so first we have to test the filename to make sure it's a text file.
-&lt;/p&gt;
-
-&lt;p&gt;
-To do the check I'm using the &lt;a href="https://www.man7.org/linux/man-pages/man1/file.1.html"&gt;&lt;code&gt;file&lt;/code&gt;&lt;/a&gt; command which will have the word "text" in the output if we give it a text file. Then I feed the output from &lt;code&gt;file&lt;/code&gt; to the &lt;code&gt;string match&lt;/code&gt; command. This command defaults to only return true if the whole string matches so I added a glob to both ends of the "text" string to match any string that contains it. So, in order to pass the test &lt;code&gt;filename&lt;/code&gt; has to have the name of a text file or we won't match the output of the &lt;code&gt;file&lt;/code&gt; command.
-&lt;/p&gt;
-
-&lt;p&gt;
-First, though, we check if the &lt;code&gt;lines&lt;/code&gt; argument was okay and if it was and &lt;code&gt;filename&lt;/code&gt; passes its test then we can feed it to &lt;code&gt;shuf&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$OKAY&lt;/span&gt; -ne 0&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;string match &lt;span class="s2"&gt;"*text*"&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;file &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
-   shuf -n &lt;span class="nv"&gt;$lines&lt;/span&gt; &lt;span class="nv"&gt;$filename&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;test $OKAY -ne 0&lt;/code&gt; will return True if OKAY != 0. It will return an error if OKAY holds something other than a number.&lt;/li&gt;
-&lt;li&gt;the &lt;code&gt;; and&lt;/code&gt; syntax is a short-circuit syntax that won't run the second test if the first one fails.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orgd64d54e" class="outline-2"&gt;
-&lt;h2 id="orgd64d54e"&gt;Handle the Errors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd64d54e"&gt;
-&lt;p&gt;
-If the number of lines wasn't okay or the filename wasn't valid then we'll emit a help message. Since we emitted any error message about the number 
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; ! &lt;span class="k"&gt;test&lt;/span&gt; -n &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="nv"&gt;$ERROR&lt;/span&gt;  &lt;span class="s2"&gt;"**Missing Filename**"&lt;/span&gt;
-  &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$OKAY&lt;/span&gt; -ne 0
-    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="nv"&gt;$ERROR&lt;/span&gt; &lt;span class="s2"&gt;"Invalid File: '&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;'"&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-  &lt;span class="k"&gt;set&lt;/span&gt; OKAY 0
-&lt;span class="k"&gt;end&lt;/span&gt; &lt;span class="c"&gt;# check filename&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org7b1222b" class="outline-2"&gt;
-&lt;h2 id="org7b1222b"&gt;Emit a Help Message&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7b1222b"&gt;
-&lt;p&gt;
-If it had a valid number of lines and a valid filename then &lt;code&gt;OKAY&lt;/code&gt; will have a value of 1, otherwise it will have a value of 0 and we'll emit the help message.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$OKAY&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt;     
-  &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;"\t%s\n"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-         &lt;span class="s2"&gt;"Output a random line or lines from a text file."&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
-         &lt;span class="s2"&gt;"Usage:"&lt;/span&gt; &lt;span class="se"&gt;\ \&lt;/span&gt;
-         &lt;span class="s2"&gt;"    choose &amp;lt;filename&amp;gt; [&amp;lt;number of lines&amp;gt;]"&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt; &lt;span class="c"&gt;# help message&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orgde6e1a1" class="outline-2"&gt;
-&lt;h2 id="orgde6e1a1"&gt;One Last Thing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgde6e1a1"&gt;
-&lt;p&gt;
-If the user passes in a flag as a filename this will get passed to the &lt;code&gt;file&lt;/code&gt; command and in some cases this will cause it to emit a help message which will get passed to the &lt;code&gt;shuf&lt;/code&gt; command. It's probably not a good idea to let that happen, but this was only supposed to be an alias so I wouldn't have to remember the syntax for &lt;code&gt;shuf&lt;/code&gt;, so hopefully it'll work okay.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orge4d0f69" class="outline-2"&gt;
-&lt;h2 id="orge4d0f69"&gt;Sources&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge4d0f69"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;https://fishshell.com/docs/current/cmds/test.html&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;shuf(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://man7.org/linux/man-pages/man1/shuf.1.html"&gt;https://man7.org/linux/man-pages/man1/shuf.1.html&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;file(1) - Linux manual page [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://www.man7.org/linux/man-pages/man1/file.1.html"&gt;https://www.man7.org/linux/man-pages/man1/file.1.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>choice</category><category>functions</category><category>randomness</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/choose-function/index.html</guid><pubDate>Wed, 07 Jun 2023 18:30:31 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>functions</category><category>org-mode</category><category>pandoc</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/rst2org-function/index.html</guid><pubDate>Thu, 22 Jun 2023 19:51:54 GMT</pubDate></item></channel></rss>

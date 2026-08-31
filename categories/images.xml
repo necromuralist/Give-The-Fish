@@ -5,7 +5,25 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 12 Jun 2026 00:33:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>To Webp Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Mon, 31 Aug 2026 00:32:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: To Avif</title><link>https://necromuralist.github.io/Give-The-Fish/posts/function-to-avif/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;p&gt;
+This converts files passed in as arguments to the &lt;a href="https://en.wikipedia.org/wiki/AVIF"&gt;avif&lt;/a&gt; format. It requires &lt;i&gt;avifenc&lt;/i&gt; to be installed. In Ubuntu you can install it with
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install libavif-bin
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div id="outline-container-org01b412a" class="outline-2"&gt;
+&lt;h2 id="org01b412a"&gt;To AVIF&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org01b412a"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; toavif --description &lt;span class="s1"&gt;'Convert image files to avif with avifenc'&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; SOURCE_IMAGE &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;
+        &lt;span class="k"&gt;set&lt;/span&gt; OUTPUT &lt;span class="o"&gt;(&lt;/span&gt;path change-extension avif &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+        avifenc &lt;span class="nv"&gt;$SOURCE_IMAGE&lt;/span&gt; -o &lt;span class="nv"&gt;$OUTPUT&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>functions</category><category>images</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/function-to-avif/index.html</guid><pubDate>Wed, 26 Mar 2025 05:09:38 GMT</pubDate></item><item><title>To Webp Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
