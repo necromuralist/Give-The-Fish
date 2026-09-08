@@ -11,17 +11,26 @@
 .. updated: 
 
 #+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
 * SSH Agent
 
 This is the fragment to make sure the ssh-agent is running when you open the terminal.
 
 #+begin_notecard
-Put this in =~/.config/fish/conf.d/=.
+Put this in =~/.config/fish/conf.d/ssh-agent.fish=.
 #+end_notecard
 
 #+begin_src fish :tangle ../dingehaufen/conf.d/ssh-agent.fish
-if status --is-interactive
-    keychain --eval --quiet --quick id_ed25519 | source
+if status is-login
+    and status is-interactive
+    if -n $SSH_KEYS_TO_AUTOLOAD
+	keychain --eval $SSH_KEYS_TO_AUTOLOAD | source
+    else
+	echo "SSH_KEYS_TO_AUTOLOAD environmentvariable not set"
+	echo "add key-file-name(s) to this variable"
+    end
 end
 #+end_src
 
@@ -41,8 +50,28 @@ Although the name [[https://linux.die.net/man/1/keychain][keychain]] makes it so
 
 The ~--eval~ option sends the SSH-Agent message to stdout, ~--quiet~ suppresses other messages, ~--quick~ tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to [[https://fishshell.com/docs/current/cmds/source.html][~source~]] to load the environment.
 
+** The SSH_KEYS_TO_AUTOLOAD Variable
+
+#+begin_notecard
+**Note:** This expects you to put the names of keys into the =SSH_KEYS_TO_AUTOLOAD= variable at the command line. It isn't set in the code-snippet so that you can change it/them by updating the environment variable instead of updating the file, but this means you have to remember to set it.
+#+end_notecard
+
+*** Add A Key
+
+#+begin_src fish
+set --universal --append SSH_KEYS_TO_AUTOLOAD ~/.ssh/<key-file>
+#+end_src
+
+*** Remove A Key
+
+#+begin_src fish
+set --universal --erase SSH_KEYS_TO_AUTOLOAD[<index of key>]
+#+end_src
+
+
 * Links
 
+- [[https://superuser.com/a/1727657][Super User Answer]] that had this more robust way of adding and removing keys rather than hard-coding the file-name as I had it before.
 - keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: https://linux.die.net/man/1/keychain
 - source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: https://fishshell.com/docs/current/cmds/source.html
 - status - query fish runtime information — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: https://fishshell.com/docs/current/cmds/status.html
