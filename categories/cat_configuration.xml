@@ -5,22 +5,24 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Fri, 12 Jun 2026 00:47:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reverting To Emacs alt-backspace</title><link>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Wed, 09 Sep 2026 00:26:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Alternate Key-Bindings</title><link>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#org7cfafc7"&gt;Alt-Backspace&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#org7f38dbd"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orgc38e4f0"&gt;Alt-Backspace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orgc181e40"&gt;Lowercase Word&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orga4b486a"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;div id="outline-container-orgc38e4f0" class="outline-2"&gt;
+&lt;h2 id="orgc38e4f0"&gt;Alt-Backspace&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc38e4f0"&gt;
 &lt;p&gt;
 Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the &lt;a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;Common-User-Access (CUA)&lt;/a&gt; behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.
 &lt;/p&gt;
-&lt;div id="outline-container-org7cfafc7" class="outline-2"&gt;
-&lt;h2 id="org7cfafc7"&gt;Alt-Backspace&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7cfafc7"&gt;
+
+
 &lt;p&gt;
 Here's what I'm adding to the fish configuration:
 &lt;/p&gt;
@@ -45,32 +47,60 @@ From Fish's &lt;a href="https://fishshell.com/docs/current/cmds/bind.html"&gt;&l
 &lt;p&gt;
 &lt;code&gt;backward-kill-word&lt;/code&gt;
 &lt;/p&gt;
-
+&lt;blockquote&gt;
 &lt;p&gt;
 Move the word to the left of the cursor to the killring, until the start of the current word (like vim’s db)
 &lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;
 &lt;code&gt;backward-kill-token&lt;/code&gt;
 &lt;/p&gt;
-
+&lt;blockquote&gt;
 &lt;p&gt;
 Move the argument to the left of the cursor to the killring
 &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+I don't know why you'd want to set &lt;code&gt;ctrl-backspace&lt;/code&gt; to delete one token when backspace all by itself alread does this… peculiar.
+&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7f38dbd" class="outline-2"&gt;
-&lt;h2 id="org7f38dbd"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7f38dbd"&gt;
+&lt;div id="outline-container-orgc181e40" class="outline-2"&gt;
+&lt;h2 id="orgc181e40"&gt;Lowercase Word&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc181e40"&gt;
+&lt;p&gt;
+While I'm at it - the default behavior for &lt;code&gt;alt-l&lt;/code&gt; is to do a directory listing. Besides being redundant with &lt;code&gt;ls&lt;/code&gt; it is a little counter-intuitive if you're used to emacs with uses this keybinding to change a word to lowercase. Oddly, the default for &lt;code&gt;alt-u&lt;/code&gt; is to change a word to uppercase like you might expect. I'm not sure why &lt;code&gt;alt-l&lt;/code&gt; was made the way it is, but I guess I'll change it to make words lowercase.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;bind &lt;/span&gt;alt-l &lt;span class="s2"&gt;"downcase-word"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+&lt;code&gt;downcase-word&lt;/code&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+Make the current word lowercase.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga4b486a" class="outline-2"&gt;
+&lt;h2 id="orga4b486a"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga4b486a"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;Wikipedia: IBM Common User Access&lt;/a&gt;: General article about where the new behavior comes from.&lt;/li&gt;
 
 &lt;li&gt;&lt;a href="https://github.com/fish-shell/fish-shell/issues/12122"&gt;GitHub: Issue 12122 - Revert alt-backspace behaviour on non-macOS systems&lt;/a&gt; - The place I found the way to re-bind the old behavior.&lt;/li&gt;
 
 &lt;li&gt;&lt;a href="https://github.com/fish-shell/fish-shell/pull/10766"&gt;Github: Pull Request - Default bindings for token movement commands&lt;/a&gt; - It sounds like they were trying to unify the behavior across platforms. A nice idea, unfortunately it bit me. Maybe I'll learn ctrl-backspace one day.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/bind.html"&gt;Fish's &lt;code&gt;bind&lt;/code&gt; Documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><category>hack</category><category>readline</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</guid><pubDate>Fri, 12 Jun 2026 00:10:38 GMT</pubDate></item><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>bind</category><category>configuration</category><category>hack</category><category>readline</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</guid><pubDate>Fri, 12 Jun 2026 00:10:38 GMT</pubDate></item><item><title>Cerberus User Paths</title><link>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
@@ -97,26 +127,45 @@ contains&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/spa
 &lt;li&gt;&lt;a href="https://stackoverflow.com/a/61882414"&gt;Stack Overflow&lt;/a&gt;: Answer where I got the fish syntax.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><category>fish</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</guid><pubDate>Tue, 02 Apr 2024 22:36:42 GMT</pubDate></item><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="outline-container-orgb9600ce" class="outline-2"&gt;
-&lt;h2 id="orgb9600ce"&gt;SSH Agent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb9600ce"&gt;
+&lt;/div&gt;</description><category>configuration</category><category>fish</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/cerberus-user-paths/index.html</guid><pubDate>Tue, 02 Apr 2024 22:36:42 GMT</pubDate></item><item><title>SSH Agent Config Fragment</title><link>https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html#org5d48745"&gt;SSH Agent&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html#org257fba5"&gt;The SSH_KEYS_TO_AUTOLOAD Variable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/ssh-agent-config-fragment/index.html#org5b608c2"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org5d48745" class="outline-2"&gt;
+&lt;h2 id="org5d48745"&gt;SSH Agent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5d48745"&gt;
 &lt;p&gt;
 This is the fragment to make sure the ssh-agent is running when you open the terminal.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org44dd740"&gt;
+&lt;div class="notecard" id="org8cf52cd"&gt;
 &lt;p&gt;
-Put this in &lt;code&gt;~/.config/fish/conf.d/&lt;/code&gt;.
+Put this in &lt;code&gt;~/.config/fish/conf.d/ssh-agent.fish&lt;/code&gt;.
 &lt;/p&gt;
 
 &lt;/div&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;status&lt;/span&gt; --is-interactive
-    keychain --eval --quiet --quick id_ed25519 &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;source&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;status &lt;/span&gt;is-login
+    &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;status &lt;/span&gt;is-interactive
+    &lt;span class="k"&gt;if&lt;/span&gt; -n &lt;span class="nv"&gt;$SSH_KEYS_TO_AUTOLOAD&lt;/span&gt;
+        keychain --eval &lt;span class="nv"&gt;$SSH_KEYS_TO_AUTOLOAD&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;source&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"SSH_KEYS_TO_AUTOLOAD environmentvariable not set"&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"add key-file-name(s) to this variable"&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="orgfa6311c"&gt;
+&lt;div class="notecard" id="org748bf0f"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; The default key type has changed so the default file name is no longer &lt;code&gt;id_rsa&lt;/code&gt; it's &lt;code&gt;id_ed25519&lt;/code&gt;.
 &lt;/p&gt;
@@ -145,11 +194,37 @@ Although the name &lt;a href="https://linux.die.net/man/1/keychain"&gt;keychain&
 The &lt;code&gt;--eval&lt;/code&gt; option sends the SSH-Agent message to stdout, &lt;code&gt;--quiet&lt;/code&gt; suppresses other messages, &lt;code&gt;--quick&lt;/code&gt; tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;&lt;code&gt;source&lt;/code&gt;&lt;/a&gt; to load the environment.
 &lt;/p&gt;
 &lt;/div&gt;
+&lt;div id="outline-container-org257fba5" class="outline-3"&gt;
+&lt;h3 id="org257fba5"&gt;The SSH_KEYS_TO_AUTOLOAD Variable&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org257fba5"&gt;
+&lt;div class="notecard" id="org9a9b0bf"&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; This expects you to put the names of keys into the &lt;code&gt;SSH_KEYS_TO_AUTOLOAD&lt;/code&gt; variable at the command line. It isn't set in the code-snippet so that you can change it/them by updating the environment variable instead of updating the file, but this means you have to remember to set it.
+&lt;/p&gt;
+
 &lt;/div&gt;
-&lt;div id="outline-container-org628c4d3" class="outline-2"&gt;
-&lt;h2 id="org628c4d3"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org628c4d3"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org022131d" class="outline-4"&gt;
+&lt;h4 id="org022131d"&gt;Add A Key&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org022131d"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; --universal --append SSH_KEYS_TO_AUTOLOAD ~/.ssh/&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;key-file&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org00ad411" class="outline-4"&gt;
+&lt;h4 id="org00ad411"&gt;Remove A Key&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org00ad411"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; --universal --erase SSH_KEYS_TO_AUTOLOAD&lt;span class="o"&gt;[&amp;lt;&lt;/span&gt;index of key&amp;gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org5b608c2" class="outline-2"&gt;
+&lt;h2 id="org5b608c2"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5b608c2"&gt;
 &lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://superuser.com/a/1727657"&gt;Super User Answer&lt;/a&gt; that had this more robust way of adding and removing keys rather than hard-coding the file-name as I had it before.&lt;/li&gt;
 &lt;li&gt;keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://linux.die.net/man/1/keychain"&gt;https://linux.die.net/man/1/keychain&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;source - evaluate contents of file — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/source.html"&gt;https://fishshell.com/docs/current/cmds/source.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;status - query fish runtime information — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 24]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/status.html"&gt;https://fishshell.com/docs/current/cmds/status.html&lt;/a&gt;&lt;/li&gt;

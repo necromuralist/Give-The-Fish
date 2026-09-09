@@ -5,7 +5,7 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Mon, 31 Aug 2026 00:37:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: PDF Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Wed, 09 Sep 2026 00:26:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: PDF Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
@@ -47,22 +47,24 @@ This uses qpdf (&lt;a href="https://github.com/qpdf/qpdf"&gt;GitHub Repsitory&lt
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>functions</category><category>pdf</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</guid><pubDate>Sun, 30 Aug 2026 23:44:56 GMT</pubDate></item><item><title>Reverting To Emacs alt-backspace</title><link>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>functions</category><category>pdf</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</guid><pubDate>Sun, 30 Aug 2026 23:44:56 GMT</pubDate></item><item><title>Alternate Key-Bindings</title><link>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#org7cfafc7"&gt;Alt-Backspace&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#org7f38dbd"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orgc38e4f0"&gt;Alt-Backspace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orgc181e40"&gt;Lowercase Word&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orga4b486a"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;div id="outline-container-orgc38e4f0" class="outline-2"&gt;
+&lt;h2 id="orgc38e4f0"&gt;Alt-Backspace&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc38e4f0"&gt;
 &lt;p&gt;
 Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the &lt;a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;Common-User-Access (CUA)&lt;/a&gt; behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.
 &lt;/p&gt;
-&lt;div id="outline-container-org7cfafc7" class="outline-2"&gt;
-&lt;h2 id="org7cfafc7"&gt;Alt-Backspace&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7cfafc7"&gt;
+
+
 &lt;p&gt;
 Here's what I'm adding to the fish configuration:
 &lt;/p&gt;
@@ -87,32 +89,60 @@ From Fish's &lt;a href="https://fishshell.com/docs/current/cmds/bind.html"&gt;&l
 &lt;p&gt;
 &lt;code&gt;backward-kill-word&lt;/code&gt;
 &lt;/p&gt;
-
+&lt;blockquote&gt;
 &lt;p&gt;
 Move the word to the left of the cursor to the killring, until the start of the current word (like vim’s db)
 &lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;
 &lt;code&gt;backward-kill-token&lt;/code&gt;
 &lt;/p&gt;
-
+&lt;blockquote&gt;
 &lt;p&gt;
 Move the argument to the left of the cursor to the killring
 &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+I don't know why you'd want to set &lt;code&gt;ctrl-backspace&lt;/code&gt; to delete one token when backspace all by itself alread does this… peculiar.
+&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7f38dbd" class="outline-2"&gt;
-&lt;h2 id="org7f38dbd"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7f38dbd"&gt;
+&lt;div id="outline-container-orgc181e40" class="outline-2"&gt;
+&lt;h2 id="orgc181e40"&gt;Lowercase Word&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc181e40"&gt;
+&lt;p&gt;
+While I'm at it - the default behavior for &lt;code&gt;alt-l&lt;/code&gt; is to do a directory listing. Besides being redundant with &lt;code&gt;ls&lt;/code&gt; it is a little counter-intuitive if you're used to emacs with uses this keybinding to change a word to lowercase. Oddly, the default for &lt;code&gt;alt-u&lt;/code&gt; is to change a word to uppercase like you might expect. I'm not sure why &lt;code&gt;alt-l&lt;/code&gt; was made the way it is, but I guess I'll change it to make words lowercase.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;bind &lt;/span&gt;alt-l &lt;span class="s2"&gt;"downcase-word"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+&lt;code&gt;downcase-word&lt;/code&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+Make the current word lowercase.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga4b486a" class="outline-2"&gt;
+&lt;h2 id="orga4b486a"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga4b486a"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;Wikipedia: IBM Common User Access&lt;/a&gt;: General article about where the new behavior comes from.&lt;/li&gt;
 
 &lt;li&gt;&lt;a href="https://github.com/fish-shell/fish-shell/issues/12122"&gt;GitHub: Issue 12122 - Revert alt-backspace behaviour on non-macOS systems&lt;/a&gt; - The place I found the way to re-bind the old behavior.&lt;/li&gt;
 
 &lt;li&gt;&lt;a href="https://github.com/fish-shell/fish-shell/pull/10766"&gt;Github: Pull Request - Default bindings for token movement commands&lt;/a&gt; - It sounds like they were trying to unify the behavior across platforms. A nice idea, unfortunately it bit me. Maybe I'll learn ctrl-backspace one day.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/bind.html"&gt;Fish's &lt;code&gt;bind&lt;/code&gt; Documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>configuration</category><category>hack</category><category>readline</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</guid><pubDate>Fri, 12 Jun 2026 00:10:38 GMT</pubDate></item><item><title>PDF Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-functions/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;/div&gt;</description><category>bind</category><category>configuration</category><category>hack</category><category>readline</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</guid><pubDate>Fri, 12 Jun 2026 00:10:38 GMT</pubDate></item><item><title>PDF Functions</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-functions/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;

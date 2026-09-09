@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Reverting the alt-backspace behavior to Unix instead of Windows." name="description">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Reverting To Emacs alt-backspace | Give the Fish</title>
+<title>Alternate Key-Bindings | Give the Fish</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -22,11 +22,12 @@
 <link href="../pdf-functions/index.html" rel="prev" title="PDF Functions" type="text/html">
 <link href="../pdf-pages/index.html" rel="next" title="Function: PDF Pages" type="text/html">
 <meta content="Give the Fish" property="og:site_name">
-<meta content="Reverting To Emacs alt-backspace" property="og:title">
+<meta content="Alternate Key-Bindings" property="og:title">
 <meta content="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html" property="og:url">
 <meta content="Reverting the alt-backspace behavior to Unix instead of Windows." property="og:description">
 <meta content="article" property="og:type">
 <meta content="2026-06-11T17:10:38-07:00" property="article:published_time">
+<meta content="bind" property="article:tag">
 <meta content="configuration" property="article:tag">
 <meta content="hack" property="article:tag">
 <meta content="readline" property="article:tag">
@@ -60,7 +61,7 @@
 <div class="body-content"><!--Body content-->
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
-<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Reverting To Emacs alt-backspace</a></h1>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href="#">Alternate Key-Bindings</a></h1>
 <div class="metadata">
 <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">Cloistered Monkey</span></p>
 <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2026-06-11T17:10:38-07:00" itemprop="datePublished" title="2026-06-11 17:10">2026-06-11 17:10</time></a></p>
@@ -72,15 +73,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#org7cfafc7">Alt-Backspace</a></li>
-<li><a href="index.html#org7f38dbd">Links</a></li>
+<li><a href="index.html#orgc38e4f0">Alt-Backspace</a></li>
+<li><a href="index.html#orgc181e40">Lowercase Word</a></li>
+<li><a href="index.html#orga4b486a">Links</a></li>
 </ul>
 </div>
 </div>
+<div class="outline-2" id="outline-container-orgc38e4f0">
+<h2 id="orgc38e4f0">Alt-Backspace</h2>
+<div class="outline-text-2" id="text-orgc38e4f0">
 <p>Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the <a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access">Common-User-Access (CUA)</a> behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.</p>
-<div class="outline-2" id="outline-container-org7cfafc7">
-<h2 id="org7cfafc7">Alt-Backspace</h2>
-<div class="outline-text-2" id="text-org7cfafc7">
 <p>Here's what I'm adding to the fish configuration:</p>
 <div class="highlight">
 <pre><span></span><span class="nb">bind </span>alt-backspace backward-kill-word
@@ -94,18 +96,37 @@
 </pre></div>
 <p>From Fish's <a href="https://fishshell.com/docs/current/cmds/bind.html"><code>bind</code> documentation</a>:</p>
 <p><code>backward-kill-word</code></p>
+<blockquote>
 <p>Move the word to the left of the cursor to the killring, until the start of the current word (like vim’s db)</p>
+</blockquote>
 <p><code>backward-kill-token</code></p>
+<blockquote>
 <p>Move the argument to the left of the cursor to the killring</p>
+</blockquote>
+<p>I don't know why you'd want to set <code>ctrl-backspace</code> to delete one token when backspace all by itself alread does this… peculiar.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org7f38dbd">
-<h2 id="org7f38dbd">Links</h2>
-<div class="outline-text-2" id="text-org7f38dbd">
+<div class="outline-2" id="outline-container-orgc181e40">
+<h2 id="orgc181e40">Lowercase Word</h2>
+<div class="outline-text-2" id="text-orgc181e40">
+<p>While I'm at it - the default behavior for <code>alt-l</code> is to do a directory listing. Besides being redundant with <code>ls</code> it is a little counter-intuitive if you're used to emacs with uses this keybinding to change a word to lowercase. Oddly, the default for <code>alt-u</code> is to change a word to uppercase like you might expect. I'm not sure why <code>alt-l</code> was made the way it is, but I guess I'll change it to make words lowercase.</p>
+<div class="highlight">
+<pre><span></span><span class="nb">bind </span>alt-l <span class="s2">"downcase-word"</span>
+</pre></div>
+<p><code>downcase-word</code></p>
+<blockquote>
+<p>Make the current word lowercase.</p>
+</blockquote>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orga4b486a">
+<h2 id="orga4b486a">Links</h2>
+<div class="outline-text-2" id="text-orga4b486a">
 <ul class="org-ul">
 <li><a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access">Wikipedia: IBM Common User Access</a>: General article about where the new behavior comes from.</li>
 <li><a href="https://github.com/fish-shell/fish-shell/issues/12122">GitHub: Issue 12122 - Revert alt-backspace behaviour on non-macOS systems</a> - The place I found the way to re-bind the old behavior.</li>
 <li><a href="https://github.com/fish-shell/fish-shell/pull/10766">Github: Pull Request - Default bindings for token movement commands</a> - It sounds like they were trying to unify the behavior across platforms. A nice idea, unfortunately it bit me. Maybe I'll learn ctrl-backspace one day.</li>
+<li><a href="https://fishshell.com/docs/current/cmds/bind.html">Fish's <code>bind</code> Documentation</a></li>
 </ul>
 </div>
 </div>
@@ -113,6 +134,7 @@
 <aside class="postpromonav">
 <nav>
 <ul class="tags" itemprop="keywords">
+<li><a class="tag p-category" href="../../categories/bind/index.html" rel="tag">bind</a></li>
 <li><a class="tag p-category" href="../../categories/configuration/index.html" rel="tag">configuration</a></li>
 <li><a class="tag p-category" href="../../categories/hack/index.html" rel="tag">hack</a></li>
 <li><a class="tag p-category" href="../../categories/readline/index.html" rel="tag">readline</a></li>
