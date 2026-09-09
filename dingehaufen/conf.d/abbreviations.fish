@@ -75,5 +75,11 @@ abbr --add -- pdfjoin "gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/
 abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile="
 
   # emacs client
-  abbr --add -- emacsstatus "systemctl --user status emacs"
-  abbr --add -- emacsrestart "systemctl --user restart emacs"
+    abbr --add -- emacsstatus "systemctl --user status emacs"
+    abbr --add -- emacsrestart "systemctl --user restart emacs"
+
+# leftovers
+
+abbr --add -- lsn "ls --color | cat -n"
+
+abbr --add -- lS "ls -sSh1"
