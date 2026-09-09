@@ -217,26 +217,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="ssh-agent-config-fragment/index.html#org5d48745">SSH Agent</a>
+<li><a href="ssh-agent-config-fragment/index.html#orgc360210">SSH Agent</a>
 <ul>
-<li><a href="ssh-agent-config-fragment/index.html#org257fba5">The SSH_KEYS_TO_AUTOLOAD Variable</a></li>
+<li><a href="ssh-agent-config-fragment/index.html#org4b030db">The SSH_KEYS_TO_AUTOLOAD Variable</a></li>
 </ul>
 </li>
-<li><a href="ssh-agent-config-fragment/index.html#org5b608c2">Links</a></li>
+<li><a href="ssh-agent-config-fragment/index.html#orge512b88">Links</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5d48745">
-<h2 id="org5d48745">SSH Agent</h2>
-<div class="outline-text-2" id="text-org5d48745">
+<div class="outline-2" id="outline-container-orgc360210">
+<h2 id="orgc360210">SSH Agent</h2>
+<div class="outline-text-2" id="text-orgc360210">
 <p>This is the fragment to make sure the ssh-agent is running when you open the terminal.</p>
-<div class="notecard" id="org8cf52cd">
+<div class="notecard" id="org8fcab1c">
 <p>Put this in <code>~/.config/fish/conf.d/ssh-agent.fish</code>.</p>
 </div>
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="nb">status </span>is-login
     <span class="k">and</span> <span class="nb">status </span>is-interactive
-    <span class="k">if</span> -n <span class="nv">$SSH_KEYS_TO_AUTOLOAD</span>
+    <span class="k">if</span> <span class="k">test</span> -n <span class="nv">$SSH_KEYS_TO_AUTOLOAD</span>
         keychain --eval <span class="nv">$SSH_KEYS_TO_AUTOLOAD</span> <span class="o">|</span> <span class="nb">source</span>
 <span class="nb">    </span><span class="k">else</span>
         <span class="k">echo</span> <span class="s2">"SSH_KEYS_TO_AUTOLOAD environmentvariable not set"</span>
@@ -244,7 +244,7 @@
     <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-<div class="notecard" id="org748bf0f">
+<div class="notecard" id="orgf1c89dc">
 <p><b>Note:</b> The default key type has changed so the default file name is no longer <code>id_rsa</code> it's <code>id_ed25519</code>.</p>
 </div>
 <p>The documentation for the <a href="https://fishshell.com/docs/current/cmds/status.html"><code>status</code></a> comand says that <code>is-interactive</code> is actually a sub-command (not an option, although I'm calling it like it is one) and that it:</p>
@@ -255,24 +255,24 @@
 <p>Although the name <a href="https://linux.die.net/man/1/keychain">keychain</a> makes it sound like it's a general password manager, according to the man-page it's meant specifically to manage the ssh-agent. It will check if you already have an ssh-agent running and only start one if you don't. This way you don't end up starting one for every <code>screen</code> you open up.</p>
 <p>The <code>--eval</code> option sends the SSH-Agent message to stdout, <code>--quiet</code> suppresses other messages, <code>--quick</code> tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to <a href="https://fishshell.com/docs/current/cmds/source.html"><code>source</code></a> to load the environment.</p>
 </div>
-<div class="outline-3" id="outline-container-org257fba5">
-<h3 id="org257fba5">The SSH_KEYS_TO_AUTOLOAD Variable</h3>
-<div class="outline-text-3" id="text-org257fba5">
-<div class="notecard" id="org9a9b0bf">
+<div class="outline-3" id="outline-container-org4b030db">
+<h3 id="org4b030db">The SSH_KEYS_TO_AUTOLOAD Variable</h3>
+<div class="outline-text-3" id="text-org4b030db">
+<div class="notecard" id="org6c13dc7">
 <p><b>Note:</b> This expects you to put the names of keys into the <code>SSH_KEYS_TO_AUTOLOAD</code> variable at the command line. It isn't set in the code-snippet so that you can change it/them by updating the environment variable instead of updating the file, but this means you have to remember to set it.</p>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org022131d">
-<h4 id="org022131d">Add A Key</h4>
-<div class="outline-text-4" id="text-org022131d">
+<div class="outline-4" id="outline-container-org19ebc01">
+<h4 id="org19ebc01">Add A Key</h4>
+<div class="outline-text-4" id="text-org19ebc01">
 <div class="highlight">
 <pre><span></span><span class="k">set</span> --universal --append SSH_KEYS_TO_AUTOLOAD ~/.ssh/<span class="o">&lt;</span>key-file&gt;
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org00ad411">
-<h4 id="org00ad411">Remove A Key</h4>
-<div class="outline-text-4" id="text-org00ad411">
+<div class="outline-4" id="outline-container-orgbf8b375">
+<h4 id="orgbf8b375">Remove A Key</h4>
+<div class="outline-text-4" id="text-orgbf8b375">
 <div class="highlight">
 <pre><span></span><span class="k">set</span> --universal --erase SSH_KEYS_TO_AUTOLOAD<span class="o">[&lt;</span>index of key&gt;<span class="o">]</span>
 </pre></div>
@@ -280,9 +280,9 @@
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org5b608c2">
-<h2 id="org5b608c2">Links</h2>
-<div class="outline-text-2" id="text-org5b608c2">
+<div class="outline-2" id="outline-container-orge512b88">
+<h2 id="orge512b88">Links</h2>
+<div class="outline-text-2" id="text-orge512b88">
 <ul class="org-ul">
 <li><a href="https://superuser.com/a/1727657">Super User Answer</a> that had this more robust way of adding and removing keys rather than hard-coding the file-name as I had it before.</li>
 <li>keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: <a href="https://linux.die.net/man/1/keychain">https://linux.die.net/man/1/keychain</a></li>
