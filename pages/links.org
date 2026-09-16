@@ -1,0 +1,26 @@
+#+BEGIN_COMMENT
+.. title: Links
+.. slug: links
+.. date: 2026-09-16 12:03:34 UTC-07:00
+.. tags: links,documentation
+.. category: Links
+.. link: 
+.. description: Links to useful pages.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+
+* Official Fish
+- [[https://fishshell.com/][The Fish Documentation]]
+- [[https://github.com/fish-shell/fish-shell][The Github Repository]]
+
+* Other Useful Packages
+
+- [[https://virtualfish.readthedocs.io/en/latest/][VirtualFish]] - Manage python virtual environments.
+- [[https://github.com/jorgebucaran/fishtape][fishtape]] - Fish Testing (not updated in six years, might be dead).
+
+* Other Stuff
+
+- [[https://open-awesome.com/awesome/fish][OpenAwesome - Awesome Fish]] - OpenAwesome page presenting [[https://github.com/jorgebucaran/awsm.fish][awsm.fish (github)]] which gathers interesting fish links.
