@@ -69,6 +69,12 @@
   # emacs client
   <<emacs-server-status>>
   <<emacs-server-restart>>
+
+# leftovers
+
+<<enumerate-files>>
+
+<<files-by-size>>
 #+end_src
 
 #+begin_notecard
@@ -288,6 +294,22 @@ abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
   abbr --add -- emacsrestart "systemctl --user restart emacs"
   #+end_src
   
+* File Listings
+
+** Enumerate Files
+
+#+begin_src fish :noweb-ref enumerate-files
+abbr --add -- lsn "ls --color | cat -n"
+#+end_src
+
+** Files By Size
+
+List one file per line (=-1=) sorted by size (=-S) showing human-readable sizes (=-sh=).
+
+#+begin_src fish :noweb-ref files-by-size
+abbr --add -- lS "ls -sSh1"
+#+end_src
+
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
 - faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: https://stackoverflow.com/a/48749763
