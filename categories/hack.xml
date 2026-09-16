@@ -5,19 +5,19 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Tue, 08 Sep 2026 23:59:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Alternate Key-Bindings</title><link>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Wed, 16 Sep 2026 19:39:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Alternate Key-Bindings</title><link>https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orgc38e4f0"&gt;Alt-Backspace&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orgc181e40"&gt;Lowercase Word&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orga4b486a"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#org97a9745"&gt;Alt-Backspace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#org0401a10"&gt;Lowercase Word&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/reverting-to-emacs-alt-backspace/index.html#orgade2368"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc38e4f0" class="outline-2"&gt;
-&lt;h2 id="orgc38e4f0"&gt;Alt-Backspace&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc38e4f0"&gt;
+&lt;div id="outline-container-org97a9745" class="outline-2"&gt;
+&lt;h2 id="org97a9745"&gt;Alt-Backspace&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org97a9745"&gt;
 &lt;p&gt;
 Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the &lt;a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;Common-User-Access (CUA)&lt;/a&gt; behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.
 &lt;/p&gt;
@@ -67,9 +67,9 @@ I don't know why you'd want to set &lt;code&gt;ctrl-backspace&lt;/code&gt; to de
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc181e40" class="outline-2"&gt;
-&lt;h2 id="orgc181e40"&gt;Lowercase Word&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc181e40"&gt;
+&lt;div id="outline-container-org0401a10" class="outline-2"&gt;
+&lt;h2 id="org0401a10"&gt;Lowercase Word&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0401a10"&gt;
 &lt;p&gt;
 While I'm at it - the default behavior for &lt;code&gt;alt-l&lt;/code&gt; is to do a directory listing. Besides being redundant with &lt;code&gt;ls&lt;/code&gt; it is a little counter-intuitive if you're used to emacs with uses this keybinding to change a word to lowercase. Oddly, the default for &lt;code&gt;alt-u&lt;/code&gt; is to change a word to uppercase like you might expect. I'm not sure why &lt;code&gt;alt-l&lt;/code&gt; was made the way it is, but I guess I'll change it to make words lowercase.
 &lt;/p&gt;
@@ -87,9 +87,9 @@ Make the current word lowercase.
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga4b486a" class="outline-2"&gt;
-&lt;h2 id="orga4b486a"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga4b486a"&gt;
+&lt;div id="outline-container-orgade2368" class="outline-2"&gt;
+&lt;h2 id="orgade2368"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgade2368"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;Wikipedia: IBM Common User Access&lt;/a&gt;: General article about where the new behavior comes from.&lt;/li&gt;
 

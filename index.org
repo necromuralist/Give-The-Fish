@@ -29,6 +29,5 @@ A place for [[https://fishshell.com/][fish-shell]] things.
 :END:
 
 ** {{% doc %}}functions-index{{% /doc %}}
-
 ** {{% doc %}}dingehaufen-index{{% /doc %}}
-
+** {{% doc %}}links{{% /doc %}}
