@@ -14,22 +14,46 @@
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
 
+#+begin_src noweb :tangle ../functions/rsyncer.fish
+<<rsyncer-function>>
+#+end_src
 
-
+#+begin_src nowe :tangle ../functions/rsyncerd.fish
+<<rsyncerd-function..
+#+end_src
 
 * Rsync
 
 ** Rsyncer
 
-#+begin_src fish :noweb-ref rsyncer
-abbr --add -- rsyncer "rsync --progress --archive --compress"
+Copy files and folders from source to target
+
+#+begin_src fish :noweb-ref rsyncer-function
+function rsyncer --argument-names SOURCE TARGET
+    echo $SOURCE
+    echo $TARGET
+    rsync --info=progress2 --archive --human-readable
+end
 #+end_src
 
 ** Rsyncerd
 
+Convert this to [[https://fishshell.com/docs/current/cmds/argparse.html][argparse]]
 
-#+begin_src fish :noweb-ref rsyncerd
-abbr --add -- rsyncerd "rsync --progress --archive --compress --delete"
+#+begin_src fish :noweb-ref rsyncerd-function
+function rsyncerd --argument-names SOURCE TARGET BACKUP MAX_DELETE
+    # check if source is a directory
+    # if a directory does it have a trailing slash
+    # if it doesn't have a trailing slash, add one
+
+    # if BACKUP was set
+    # check if it's a directory
+    # if not raise an error
+
+    # check if max delete set
+    # if so add the option
+    rsync  --verbose   --info=progress2 --archive --delete  --human-readable --backup --backup-dir=/tmp/backup/--max-delete=50 --dry-run SOURCE TARGET
+end
 #+end_src
 
 ** Rsyncerf

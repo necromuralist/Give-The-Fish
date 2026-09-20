@@ -60,15 +60,6 @@ abbr --add -- vdc "protonvpn-cli disconnect; protonvpn-cli connect"
 abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --fastest; protonvpn-cli status"
 
 
-# rsync
-abbr --add -- rsyncer "rsync --progress --archive --compress"
-
-abbr --add -- rsyncerd "rsync --progress --archive --compress --delete"
-
-abbr --add -- rsyncerf 'rsync --progress --archive --delete --include="*/" --exclude="*"'
-
-abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
-
 # PDFs
 abbr --add -- pdfjoin "gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile="
 
