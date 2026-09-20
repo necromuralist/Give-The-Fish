@@ -83,3 +83,5 @@ abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 abbr --add -- lsn "ls --color | cat -n"
 
 abbr --add -- lS "ls -sSh1"
+
+abbr --add -- bs "byobu -dR"
