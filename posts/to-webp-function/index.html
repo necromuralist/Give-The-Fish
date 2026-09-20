@@ -73,14 +73,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#orga136005">To Webp</a></li>
-<li><a href="index.html#org89d7d2c">Lossless Webp</a></li>
+<li><a href="index.html#org558801c">To Webp</a></li>
+<li><a href="index.html#orge5db1b7">Lossless Webp</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga136005">
-<h2 id="orga136005">To Webp</h2>
-<div class="outline-text-2" id="text-orga136005">
+<div class="outline-2" id="outline-container-org558801c">
+<h2 id="org558801c">To Webp</h2>
+<div class="outline-text-2" id="text-org558801c">
 <p>A simple for loop to make using globs easier with cwebp.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> towebp -d <span class="s2">"Convert image files to web with cweb"</span>
@@ -94,11 +94,11 @@
 <p>I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org89d7d2c">
-<h2 id="org89d7d2c">Lossless Webp</h2>
-<div class="outline-text-2" id="text-org89d7d2c">
+<div class="outline-2" id="outline-container-orge5db1b7">
+<h2 id="orge5db1b7">Lossless Webp</h2>
+<div class="outline-text-2" id="text-orge5db1b7">
 <p>The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.</p>
-<div class="notecard" id="org69052b5">
+<div class="notecard" id="orgc3e7499">
 <p>I looked in the source code (from Google's <a href="https://chromium.googlesource.com/webm/libwebp/"><code>libwebp</code></a> git repository) and the <code>-z</code> flag is equivalent to using <code>-lossless -m 6 -q 10</code> (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…</p>
 </div>
 <div class="highlight">

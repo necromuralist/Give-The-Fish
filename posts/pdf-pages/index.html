@@ -70,33 +70,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="index.html#org4439381">The Function Declaration</a></li>
-<li><a href="index.html#org583fae9">The Command Call</a></li>
-<li><a href="index.html#org0d713ae">Error Handling</a></li>
+<li><a href="index.html#orga058cb3">The Function Declaration</a></li>
+<li><a href="index.html#orgb444606">The Command Call</a></li>
+<li><a href="index.html#orge976464">Error Handling</a></li>
 </ul>
 </div>
 </div>
 <p>This is a function to make it easier to extract pages from a PDF using qpdf.</p>
-<div class="outline-2" id="outline-container-org4439381">
-<h2 id="org4439381">The Function Declaration</h2>
-<div class="outline-text-2" id="text-org4439381">
+<div class="outline-2" id="outline-container-orga058cb3">
+<h2 id="orga058cb3">The Function Declaration</h2>
+<div class="outline-text-2" id="text-orga058cb3">
 <div class="highlight">
 <pre><span></span><span class="k">function</span> pdfpages --argument-names source_pdf target_pdf pages -d <span class="s2">"Extract pages from a pdf"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org583fae9">
-<h2 id="org583fae9">The Command Call</h2>
-<div class="outline-text-2" id="text-org583fae9">
+<div class="outline-2" id="outline-container-orgb444606">
+<h2 id="orgb444606">The Command Call</h2>
+<div class="outline-text-2" id="text-orgb444606">
 <p>This uses qpdf (<a href="https://github.com/qpdf/qpdf">GitHub Repsitory</a>) to extract pages from a PDF. It's a function not an abbreviation because you intersperse your arguments within their syntax, rather than just pasting it all after the call.</p>
 <div class="highlight">
 <pre><span></span>qpdf --empty --pages <span class="nv">$source_pdf</span> <span class="nv">$pages</span> -- <span class="nv">$target_pdf</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org0d713ae">
-<h2 id="org0d713ae">Error Handling</h2>
-<div class="outline-text-2" id="text-org0d713ae">
+<div class="outline-2" id="outline-container-orge976464">
+<h2 id="orge976464">Error Handling</h2>
+<div class="outline-text-2" id="text-orge976464">
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="nv">$status</span> -ne 0
     <span class="k">echo</span> <span class="s2">"source_pdf = </span><span class="nv">$source_pdf</span><span class="s2">"</span>

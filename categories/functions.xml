@@ -5,13 +5,13 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Wed, 16 Sep 2026 19:37:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: PDF Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Mon, 31 Aug 2026 00:37:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: PDF Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#org4439381"&gt;The Function Declaration&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#org583fae9"&gt;The Command Call&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#org0d713ae"&gt;Error Handling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orga058cb3"&gt;The Function Declaration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orgb444606"&gt;The Command Call&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html#orge976464"&gt;Error Handling&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -19,16 +19,16 @@
 &lt;p&gt;
 This is a function to make it easier to extract pages from a PDF using qpdf.
 &lt;/p&gt;
-&lt;div id="outline-container-org4439381" class="outline-2"&gt;
-&lt;h2 id="org4439381"&gt;The Function Declaration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4439381"&gt;
+&lt;div id="outline-container-orga058cb3" class="outline-2"&gt;
+&lt;h2 id="orga058cb3"&gt;The Function Declaration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga058cb3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; pdfpages --argument-names source_pdf target_pdf pages -d &lt;span class="s2"&gt;"Extract pages from a pdf"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org583fae9" class="outline-2"&gt;
-&lt;h2 id="org583fae9"&gt;The Command Call&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org583fae9"&gt;
+&lt;div id="outline-container-orgb444606" class="outline-2"&gt;
+&lt;h2 id="orgb444606"&gt;The Command Call&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb444606"&gt;
 &lt;p&gt;
 This uses qpdf (&lt;a href="https://github.com/qpdf/qpdf"&gt;GitHub Repsitory&lt;/a&gt;) to extract pages from a PDF. It's a function not an abbreviation because you intersperse your arguments within their syntax, rather than just pasting it all after the call.
 &lt;/p&gt;
@@ -37,9 +37,9 @@ This uses qpdf (&lt;a href="https://github.com/qpdf/qpdf"&gt;GitHub Repsitory&lt
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0d713ae" class="outline-2"&gt;
-&lt;h2 id="org0d713ae"&gt;Error Handling&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0d713ae"&gt;
+&lt;div id="outline-container-orge976464" class="outline-2"&gt;
+&lt;h2 id="orge976464"&gt;Error Handling&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge976464"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;$status&lt;/span&gt; -ne 0
     &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"source_pdf = &lt;/span&gt;&lt;span class="nv"&gt;$source_pdf&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
     &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"target_pdf = &lt;/span&gt;&lt;span class="nv"&gt;$target_pdf&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
@@ -51,13 +51,13 @@ This uses qpdf (&lt;a href="https://github.com/qpdf/qpdf"&gt;GitHub Repsitory&lt
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-functions/index.html#orga0894d1"&gt;Dump Bookmarks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/pdf-functions/index.html#org310780a"&gt;Dump Bookmarks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga0894d1" class="outline-2"&gt;
-&lt;h2 id="orga0894d1"&gt;Dump Bookmarks&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga0894d1"&gt;
+&lt;div id="outline-container-org310780a" class="outline-2"&gt;
+&lt;h2 id="org310780a"&gt;Dump Bookmarks&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org310780a"&gt;
 &lt;p&gt;
 This uses &lt;code&gt;PDFTK&lt;/code&gt; to dump bookmarks (so it's not compatible with &lt;code&gt;cpdf&lt;/code&gt;).
 &lt;/p&gt;
@@ -78,26 +78,26 @@ See the &lt;i&gt;PDF TK&lt;/i&gt; section of the &lt;a href="https://necromurali
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgf9dc8bc"&gt;The Function&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org27446fb"&gt;The Function&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org1841b2c"&gt;Bold Blue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orged04f35"&gt;Apt Calls&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org5995118"&gt;Snap&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org5ae79c1"&gt;Flatpak&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orga3ca4ad"&gt;Uninstall&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgc166096"&gt;Bold Blue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org7352774"&gt;Apt Calls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org794da67"&gt;Snap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org8c43593"&gt;Flatpak&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orga40f3ab"&gt;Uninstall&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org6f99c41"&gt;Some Messages&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orgc34268b"&gt;Some Messages&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#org003c6a0"&gt;Phased Updates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/upgrade-function/index.html#orge5164a3"&gt;Phased Updates&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgf9dc8bc" class="outline-2"&gt;
-&lt;h2 id="orgf9dc8bc"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf9dc8bc"&gt;
+&lt;div id="outline-container-org27446fb" class="outline-2"&gt;
+&lt;h2 id="org27446fb"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org27446fb"&gt;
 &lt;p&gt;
 This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation…
 &lt;/p&gt;
@@ -105,9 +105,9 @@ This is a function to upgrade the various packages. It might, perhaps be better 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; upgrade --description &lt;span class="s2"&gt;"Upgrade packages."&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1841b2c" class="outline-3"&gt;
-&lt;h3 id="org1841b2c"&gt;Bold Blue&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1841b2c"&gt;
+&lt;div id="outline-container-orgc166096" class="outline-3"&gt;
+&lt;h3 id="orgc166096"&gt;Bold Blue&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc166096"&gt;
 &lt;p&gt;
 This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the &lt;code&gt;upgrade&lt;/code&gt; function.
 &lt;/p&gt;
@@ -120,16 +120,16 @@ This is a helper function to set lines (specifically headlines in this case) to 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orged04f35" class="outline-3"&gt;
-&lt;h3 id="orged04f35"&gt;Apt Calls&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orged04f35"&gt;
+&lt;div id="outline-container-org7352774" class="outline-3"&gt;
+&lt;h3 id="org7352774"&gt;Apt Calls&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7352774"&gt;
 &lt;p&gt;
 These are calls to update the debian-based packages.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org958e9fc" class="outline-4"&gt;
-&lt;h4 id="org958e9fc"&gt;Update&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org958e9fc"&gt;
+&lt;div id="outline-container-orgc212bbf" class="outline-4"&gt;
+&lt;h4 id="orgc212bbf"&gt;Update&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgc212bbf"&gt;
 &lt;p&gt;
 These calls update the database and then show us what is upgradable. 
 &lt;/p&gt;
@@ -139,7 +139,7 @@ sudo apt-fast update --yes
 sudo apt-get --just-print upgrade
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org9ce3fd5"&gt;
+&lt;div class="notecard" id="org9f6cedb"&gt;
 &lt;p&gt;
 I was initially using &lt;code&gt;apt&lt;/code&gt; to list the upgradable packages, but installing &lt;code&gt;more&lt;/code&gt; as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that &lt;code&gt;apt&lt;/code&gt; is a front-end to other packages to make them easier to use, and that &lt;code&gt;apt-get&lt;/code&gt; is  better for non-interactive use (and is one of the things that &lt;code&gt;apt&lt;/code&gt; is using behind the scenes anyway).
 &lt;/p&gt;
@@ -147,9 +147,9 @@ I was initially using &lt;code&gt;apt&lt;/code&gt; to list the upgradable packag
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1e3a317" class="outline-4"&gt;
-&lt;h4 id="org1e3a317"&gt;Upgrade and Autoremove&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org1e3a317"&gt;
+&lt;div id="outline-container-orgdbd0c30" class="outline-4"&gt;
+&lt;h4 id="orgdbd0c30"&gt;Upgrade and Autoremove&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgdbd0c30"&gt;
 &lt;p&gt;
 Now we run the upgrade. &lt;code&gt;upgrade&lt;/code&gt; will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. &lt;code&gt;full-upgrade&lt;/code&gt; will do what &lt;code&gt;upgrade&lt;/code&gt; does but will remove any installed packages if needed to upgrade an installed package. So, we're going with &lt;code&gt;full-upgrade&lt;/code&gt;.
 &lt;/p&gt;
@@ -165,9 +165,9 @@ sudo apt-get autoremove --yes
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5995118" class="outline-3"&gt;
-&lt;h3 id="org5995118"&gt;Snap&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5995118"&gt;
+&lt;div id="outline-container-org794da67" class="outline-3"&gt;
+&lt;h3 id="org794da67"&gt;Snap&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org794da67"&gt;
 &lt;p&gt;
 Snaps should update themselves. But let's see what happens if we do it.
 &lt;/p&gt;
@@ -177,25 +177,25 @@ sudo snap refresh
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5ae79c1" class="outline-3"&gt;
-&lt;h3 id="org5ae79c1"&gt;Flatpak&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5ae79c1"&gt;
+&lt;div id="outline-container-org8c43593" class="outline-3"&gt;
+&lt;h3 id="org8c43593"&gt;Flatpak&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8c43593"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org022ce54" class="outline-4"&gt;
-&lt;h4 id="org022ce54"&gt;Update&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org022ce54"&gt;
+&lt;div id="outline-container-org6d134d6" class="outline-4"&gt;
+&lt;h4 id="org6d134d6"&gt;Update&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org6d134d6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Updating flatpak
 flatpak update --assumeyes
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org69cbdc1"&gt;
+&lt;div class="notecard" id="orgae8b3c9"&gt;
 &lt;p&gt;
 &lt;a href="https://fishshell.com/docs/current/cmds/type.html"&gt;type&lt;/a&gt; checks how a name would be interpreted (&lt;code&gt;function&lt;/code&gt;, &lt;code&gt;bultin&lt;/code&gt;, or &lt;code&gt;file&lt;/code&gt; ). It returns 0 if it isn't defined. &lt;code&gt;query&lt;/code&gt; suppresses the output.
 &lt;/p&gt;
 
 &lt;/div&gt;
 
-&lt;div class="notecard" id="orgef680f3"&gt;
+&lt;div class="notecard" id="org0b5774d"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; I was running this with &lt;code&gt;--noninteractive&lt;/code&gt; but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.
 &lt;/p&gt;
@@ -204,22 +204,22 @@ flatpak update --assumeyes
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga3ca4ad" class="outline-3"&gt;
-&lt;h3 id="orga3ca4ad"&gt;Uninstall&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga3ca4ad"&gt;
+&lt;div id="outline-container-orga40f3ab" class="outline-3"&gt;
+&lt;h3 id="orga40f3ab"&gt;Uninstall&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga40f3ab"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;boldblue Uninstalling unused flatpaks
 flatpak uninstall --unused --assumeyes
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6f99c41" class="outline-2"&gt;
-&lt;h2 id="org6f99c41"&gt;Some Messages&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6f99c41"&gt;
+&lt;div id="outline-container-orgc34268b" class="outline-2"&gt;
+&lt;h2 id="orgc34268b"&gt;Some Messages&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc34268b"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org003c6a0" class="outline-3"&gt;
-&lt;h3 id="org003c6a0"&gt;Phased Updates&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org003c6a0"&gt;
+&lt;div id="outline-container-orge5164a3" class="outline-3"&gt;
+&lt;h3 id="orge5164a3"&gt;Phased Updates&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge5164a3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;The following upgrades have been deferred due to phasing:
   alsa-ucm-conf
 &lt;/pre&gt;&lt;/div&gt;
@@ -235,9 +235,9 @@ This converts files passed in as arguments to the &lt;a href="https://en.wikiped
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install libavif-bin
 &lt;/pre&gt;&lt;/div&gt;
-&lt;div id="outline-container-org5623de2" class="outline-2"&gt;
-&lt;h2 id="org5623de2"&gt;To AVIF&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5623de2"&gt;
+&lt;div id="outline-container-org01b412a" class="outline-2"&gt;
+&lt;h2 id="org01b412a"&gt;To AVIF&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org01b412a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; toavif --description &lt;span class="s1"&gt;'Convert image files to avif with avifenc'&lt;/span&gt;
 
     &lt;span class="k"&gt;for&lt;/span&gt; SOURCE_IMAGE &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$argv&lt;/span&gt;
@@ -255,14 +255,14 @@ This converts files passed in as arguments to the &lt;a href="https://en.wikiped
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html#orga136005"&gt;To Webp&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html#org89d7d2c"&gt;Lossless Webp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html#org558801c"&gt;To Webp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html#orge5db1b7"&gt;Lossless Webp&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga136005" class="outline-2"&gt;
-&lt;h2 id="orga136005"&gt;To Webp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga136005"&gt;
+&lt;div id="outline-container-org558801c" class="outline-2"&gt;
+&lt;h2 id="org558801c"&gt;To Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org558801c"&gt;
 &lt;p&gt;
 A simple for loop to make using globs easier with cwebp.
 &lt;/p&gt;
@@ -281,14 +281,14 @@ I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to un
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org89d7d2c" class="outline-2"&gt;
-&lt;h2 id="org89d7d2c"&gt;Lossless Webp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org89d7d2c"&gt;
+&lt;div id="outline-container-orge5db1b7" class="outline-2"&gt;
+&lt;h2 id="orge5db1b7"&gt;Lossless Webp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge5db1b7"&gt;
 &lt;p&gt;
 The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org69052b5"&gt;
+&lt;div class="notecard" id="orgc3e7499"&gt;
 &lt;p&gt;
 I looked in the source code (from Google's &lt;a href="https://chromium.googlesource.com/webm/libwebp/"&gt;&lt;code&gt;libwebp&lt;/code&gt;&lt;/a&gt; git repository) and the &lt;code&gt;-z&lt;/code&gt; flag is equivalent to using &lt;code&gt;-lossless -m 6 -q 10&lt;/code&gt; (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…
 &lt;/p&gt;
@@ -308,21 +308,21 @@ I looked in the source code (from Google's &lt;a href="https://chromium.googleso
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org8707de4"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgb6769d9"&gt;Headers&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgfd0858c"&gt;What's This About?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org878eb0e"&gt;Headers&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgb5c475f"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgfd08a40"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgdc3c8a1"&gt;Libertinus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org65f3491"&gt;Pagella&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgdeb292d"&gt;The Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orga4e7abe"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#orgdab4709"&gt;The Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/convert-a-document-to-pdf-with-pandoc/index.html#org81dcff6"&gt;Links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8707de4" class="outline-2"&gt;
-&lt;h2 id="org8707de4"&gt;What's This About?&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8707de4"&gt;
+&lt;div id="outline-container-orgfd0858c" class="outline-2"&gt;
+&lt;h2 id="orgfd0858c"&gt;What's This About?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfd0858c"&gt;
 &lt;p&gt;
 This is a function to help convert documents to PDF using pandoc. I was motivated to do this because the EPUB readers I tried (on Ubuntu) don't seem to do a good job of styling the text or providing the options to really let you do it (at least not easily through the GUI). Foliate seems to be the best for styling, but I occasionally run into EPUB files that it won't open so I thought it'd be useful to convert them to PDF sometimes.
 &lt;/p&gt;
@@ -339,9 +339,9 @@ but it defaults to using &lt;a href="https://en.wikipedia.org/wiki/Computer_Mode
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb6769d9" class="outline-2"&gt;
-&lt;h2 id="orgb6769d9"&gt;Headers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb6769d9"&gt;
+&lt;div id="outline-container-org878eb0e" class="outline-2"&gt;
+&lt;h2 id="org878eb0e"&gt;Headers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org878eb0e"&gt;
 &lt;p&gt;
 You can set the font as a command line argument to pandoc (e.g. &lt;code&gt;-V fontfamily:libertine&lt;/code&gt; ) but I thought it'd be better to create a tex header snippet so that I could add more configurations if I needed to.
 &lt;/p&gt;
@@ -350,9 +350,9 @@ You can set the font as a command line argument to pandoc (e.g. &lt;code&gt;-V f
 The function is going to assume that the pagella snippet is in a folder in &lt;code&gt;~/.config/fish/extras/&lt;/code&gt; which I created using a symlink to the &lt;code&gt;extras&lt;/code&gt; folder in this repository, but it'll also take a path to the header if it's given.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb5c475f" class="outline-3"&gt;
-&lt;h3 id="orgb5c475f"&gt;Libertinus&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb5c475f"&gt;
+&lt;div id="outline-container-orgdc3c8a1" class="outline-3"&gt;
+&lt;h3 id="orgdc3c8a1"&gt;Libertinus&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgdc3c8a1"&gt;
 &lt;p&gt;
 This is a font I ran into while searching around for instructions on changing the pandoc font. I'm not convinced it's better than Palatino, but it's better than Computer Modern, anyway.
 &lt;/p&gt;
@@ -364,9 +364,9 @@ This is a font I ran into while searching around for instructions on changing th
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgfd08a40" class="outline-3"&gt;
-&lt;h3 id="orgfd08a40"&gt;Pagella&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgfd08a40"&gt;
+&lt;div id="outline-container-org65f3491" class="outline-3"&gt;
+&lt;h3 id="org65f3491"&gt;Pagella&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org65f3491"&gt;
 &lt;p&gt;
 The Libertine/Libertinus font wasn't really what I was looking for so I made Tex Gyre Pagella version as well.
 &lt;/p&gt;
@@ -377,7 +377,7 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;span class="k"&gt;\sectionfont&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\clearpage&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="orga0cca5d"&gt;
+&lt;div class="notecard" id="org47b1017"&gt;
 &lt;p&gt;
 &lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; I originally accidentally put &lt;i&gt;pagella&lt;/i&gt; and not &lt;i&gt;tgpagella&lt;/i&gt; which took me a while to trouble-shoot, so for the future remember - it's "Tex Gyre Pagella" not just "Pagella". Also it's &lt;i&gt;sectsty&lt;/i&gt; not &lt;i&gt;secsty&lt;/i&gt;.
 &lt;/p&gt;
@@ -386,9 +386,9 @@ The Libertine/Libertinus font wasn't really what I was looking for so I made Tex
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgdeb292d" class="outline-2"&gt;
-&lt;h2 id="orgdeb292d"&gt;The Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdeb292d"&gt;
+&lt;div id="outline-container-orgdab4709" class="outline-2"&gt;
+&lt;h2 id="orgdab4709"&gt;The Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgdab4709"&gt;
 &lt;p&gt;
 Nothing fancy here, it just adds the extra header file. I originally added the &lt;code&gt;--table-of-contents&lt;/code&gt; flag but it creates one from the EPUB anyway so that caused it to have two tables of contents.
 &lt;/p&gt;
@@ -405,9 +405,9 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga4e7abe" class="outline-2"&gt;
-&lt;h2 id="orga4e7abe"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga4e7abe"&gt;
+&lt;div id="outline-container-org81dcff6" class="outline-2"&gt;
+&lt;h2 id="org81dcff6"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org81dcff6"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://learnbyexample.github.io/customizing-pandoc/"&gt;learnbyexample&lt;/a&gt; : "Customizing pandoc to generate beautiful pdf and epub from markdown" - shows how to include extra tex header information and other pandoc options to customize PDF output&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://tug.org/FontCatalogue/texgyrepagella/"&gt;Latex Font Catalogue&lt;/a&gt; : Tex Gyre Pagella page&lt;/li&gt;
@@ -437,16 +437,16 @@ Nothing fancy here, it just adds the extra header file. I originally added the &
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org361828a"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org52d2774"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org9b65a59"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org6f40596"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#org73adcbf"&gt;Declaring the Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgd277882"&gt;Checkout the File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgedb90b6"&gt;Check If It Succeeded&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/git-checkout-file-function/index.html#orgaa05dac"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org361828a" class="outline-2"&gt;
-&lt;h2 id="org361828a"&gt;Declaring the Function&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org361828a"&gt;
+&lt;div id="outline-container-org73adcbf" class="outline-2"&gt;
+&lt;h2 id="org73adcbf"&gt;Declaring the Function&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org73adcbf"&gt;
 &lt;p&gt;
 This is an alias function to checkout a file or folder from another branch, mostly as a place to document it since I keep forgetting the syntax.
 &lt;/p&gt;
@@ -460,9 +460,9 @@ I originally called &lt;code&gt;PATH_TO_FILE&lt;/code&gt; but that of course clo
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org52d2774" class="outline-2"&gt;
-&lt;h2 id="org52d2774"&gt;Checkout the File&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org52d2774"&gt;
+&lt;div id="outline-container-orgd277882" class="outline-2"&gt;
+&lt;h2 id="orgd277882"&gt;Checkout the File&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd277882"&gt;
 &lt;p&gt;
 This is the git command, nothing fancy, although trying to read the documentation didn't make it obvious to me that this is what you should do.
 &lt;/p&gt;
@@ -471,9 +471,9 @@ This is the git command, nothing fancy, although trying to read the documentatio
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9b65a59" class="outline-2"&gt;
-&lt;h2 id="org9b65a59"&gt;Check If It Succeeded&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9b65a59"&gt;
+&lt;div id="outline-container-orgedb90b6" class="outline-2"&gt;
+&lt;h2 id="orgedb90b6"&gt;Check If It Succeeded&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgedb90b6"&gt;
 &lt;p&gt;
 The git error message when you pass it an unknown branch is &lt;code&gt;fatal: invalid reference: &amp;lt;branch&amp;gt;&lt;/code&gt; which, in context is relatively easy to figure out, but is a little obscure at first glance, so I'll add an extra message in case there is an error.
 &lt;/p&gt;
@@ -520,9 +520,9 @@ The option given to &lt;code&gt;string match&lt;/code&gt; tell fish to use regul
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6f40596" class="outline-2"&gt;
-&lt;h2 id="org6f40596"&gt;References&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6f40596"&gt;
+&lt;div id="outline-container-orgaa05dac" class="outline-2"&gt;
+&lt;h2 id="orgaa05dac"&gt;References&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgaa05dac"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;string-match - match substrings — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 5]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/string-match.html"&gt;https://fishshell.com/docs/current/cmds/string-match.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;test - perform tests on files and text — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 7]. Available from: &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;https://fishshell.com/docs/current/cmds/test.html&lt;/a&gt;&lt;/li&gt;
@@ -537,9 +537,9 @@ The option given to &lt;code&gt;string match&lt;/code&gt; tell fish to use regul
 &lt;p&gt;
 This function will convert a text file to an org file using pandoc. I called it &lt;code&gt;rst2org&lt;/code&gt; because I created it specifically to convert restructured text, but since pandoc can infer it from the file extension it can be any input type that pandoc recognizes, I suppose.
 &lt;/p&gt;
-&lt;div id="outline-container-org3ccfd42" class="outline-2"&gt;
-&lt;h2 id="org3ccfd42"&gt;What It's Doing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3ccfd42"&gt;
+&lt;div id="outline-container-org0caed64" class="outline-2"&gt;
+&lt;h2 id="org0caed64"&gt;What It's Doing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0caed64"&gt;
 &lt;p&gt;
 The first thing the function does is change the file extension from whatever it is to "org". So whatever gets passed in as the argument should have an extension like ".rst". Then it runs pandoc.
 &lt;/p&gt;
@@ -551,9 +551,9 @@ The first thing the function does is change the file extension from whatever it 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6759669" class="outline-2"&gt;
-&lt;h2 id="org6759669"&gt;Links&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6759669"&gt;
+&lt;div id="outline-container-orgbe5ebaf" class="outline-2"&gt;
+&lt;h2 id="orgbe5ebaf"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbe5ebaf"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;mb21. Answer to “Word to Markdown via pandoc: prevent line breaks in paragraphs” [Internet]. Stack Overflow. 2020 [cited 2023 Jun 22]. Available from: &lt;a href="https://stackoverflow.com/a/62990248"&gt;https://stackoverflow.com/a/62990248&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

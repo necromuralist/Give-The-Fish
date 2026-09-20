@@ -59,33 +59,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="pdf-pages/index.html#org4439381">The Function Declaration</a></li>
-<li><a href="pdf-pages/index.html#org583fae9">The Command Call</a></li>
-<li><a href="pdf-pages/index.html#org0d713ae">Error Handling</a></li>
+<li><a href="pdf-pages/index.html#orga058cb3">The Function Declaration</a></li>
+<li><a href="pdf-pages/index.html#orgb444606">The Command Call</a></li>
+<li><a href="pdf-pages/index.html#orge976464">Error Handling</a></li>
 </ul>
 </div>
 </div>
 <p>This is a function to make it easier to extract pages from a PDF using qpdf.</p>
-<div class="outline-2" id="outline-container-org4439381">
-<h2 id="org4439381">The Function Declaration</h2>
-<div class="outline-text-2" id="text-org4439381">
+<div class="outline-2" id="outline-container-orga058cb3">
+<h2 id="orga058cb3">The Function Declaration</h2>
+<div class="outline-text-2" id="text-orga058cb3">
 <div class="highlight">
 <pre><span></span><span class="k">function</span> pdfpages --argument-names source_pdf target_pdf pages -d <span class="s2">"Extract pages from a pdf"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org583fae9">
-<h2 id="org583fae9">The Command Call</h2>
-<div class="outline-text-2" id="text-org583fae9">
+<div class="outline-2" id="outline-container-orgb444606">
+<h2 id="orgb444606">The Command Call</h2>
+<div class="outline-text-2" id="text-orgb444606">
 <p>This uses qpdf (<a href="https://github.com/qpdf/qpdf">GitHub Repsitory</a>) to extract pages from a PDF. It's a function not an abbreviation because you intersperse your arguments within their syntax, rather than just pasting it all after the call.</p>
 <div class="highlight">
 <pre><span></span>qpdf --empty --pages <span class="nv">$source_pdf</span> <span class="nv">$pages</span> -- <span class="nv">$target_pdf</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org0d713ae">
-<h2 id="org0d713ae">Error Handling</h2>
-<div class="outline-text-2" id="text-org0d713ae">
+<div class="outline-2" id="outline-container-orge976464">
+<h2 id="orge976464">Error Handling</h2>
+<div class="outline-text-2" id="text-orge976464">
 <div class="highlight">
 <pre><span></span><span class="k">if</span> <span class="k">test</span> <span class="nv">$status</span> -ne 0
     <span class="k">echo</span> <span class="s2">"source_pdf = </span><span class="nv">$source_pdf</span><span class="s2">"</span>
@@ -110,15 +110,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="reverting-to-emacs-alt-backspace/index.html#org97a9745">Alt-Backspace</a></li>
-<li><a href="reverting-to-emacs-alt-backspace/index.html#org0401a10">Lowercase Word</a></li>
-<li><a href="reverting-to-emacs-alt-backspace/index.html#orgade2368">Links</a></li>
+<li><a href="reverting-to-emacs-alt-backspace/index.html#orgc38e4f0">Alt-Backspace</a></li>
+<li><a href="reverting-to-emacs-alt-backspace/index.html#orgc181e40">Lowercase Word</a></li>
+<li><a href="reverting-to-emacs-alt-backspace/index.html#orga4b486a">Links</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org97a9745">
-<h2 id="org97a9745">Alt-Backspace</h2>
-<div class="outline-text-2" id="text-org97a9745">
+<div class="outline-2" id="outline-container-orgc38e4f0">
+<h2 id="orgc38e4f0">Alt-Backspace</h2>
+<div class="outline-text-2" id="text-orgc38e4f0">
 <p>Fish decided to override the Unix/emacs behavior for alt-backspace in favor of (I think) the <a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access">Common-User-Access (CUA)</a> behavior which deletes all arguments to a command instead of the previous emacs-like behavior of deleting word by word. There's an alternate keybinding but I keep forgetting about it and end up wiping out entire paths or strings when trying to correct errors so I'm putting the prior behavior back.</p>
 <p>Here's what I'm adding to the fish configuration:</p>
 <div class="highlight">
@@ -143,9 +143,9 @@
 <p>I don't know why you'd want to set <code>ctrl-backspace</code> to delete one token when backspace all by itself alread does this… peculiar.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org0401a10">
-<h2 id="org0401a10">Lowercase Word</h2>
-<div class="outline-text-2" id="text-org0401a10">
+<div class="outline-2" id="outline-container-orgc181e40">
+<h2 id="orgc181e40">Lowercase Word</h2>
+<div class="outline-text-2" id="text-orgc181e40">
 <p>While I'm at it - the default behavior for <code>alt-l</code> is to do a directory listing. Besides being redundant with <code>ls</code> it is a little counter-intuitive if you're used to emacs with uses this keybinding to change a word to lowercase. Oddly, the default for <code>alt-u</code> is to change a word to uppercase like you might expect. I'm not sure why <code>alt-l</code> was made the way it is, but I guess I'll change it to make words lowercase.</p>
 <div class="highlight">
 <pre><span></span><span class="nb">bind </span>alt-l <span class="s2">"downcase-word"</span>
@@ -156,9 +156,9 @@
 </blockquote>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgade2368">
-<h2 id="orgade2368">Links</h2>
-<div class="outline-text-2" id="text-orgade2368">
+<div class="outline-2" id="outline-container-orga4b486a">
+<h2 id="orga4b486a">Links</h2>
+<div class="outline-text-2" id="text-orga4b486a">
 <ul class="org-ul">
 <li><a href="https://en.wikipedia.org/wiki/IBM_Common_User_Access">Wikipedia: IBM Common User Access</a>: General article about where the new behavior comes from.</li>
 <li><a href="https://github.com/fish-shell/fish-shell/issues/12122">GitHub: Issue 12122 - Revert alt-backspace behaviour on non-macOS systems</a> - The place I found the way to re-bind the old behavior.</li>
@@ -182,13 +182,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="pdf-functions/index.html#orga0894d1">Dump Bookmarks</a></li>
+<li><a href="pdf-functions/index.html#org310780a">Dump Bookmarks</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga0894d1">
-<h2 id="orga0894d1">Dump Bookmarks</h2>
-<div class="outline-text-2" id="text-orga0894d1">
+<div class="outline-2" id="outline-container-org310780a">
+<h2 id="org310780a">Dump Bookmarks</h2>
+<div class="outline-text-2" id="text-org310780a">
 <p>This uses <code>PDFTK</code> to dump bookmarks (so it's not compatible with <code>cpdf</code>).</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> pdfbookmarks -d <span class="s2">"Dump bookmarks from a PDF (pdftk format)"</span> --argument-names SOURCEFILE OUTFILE
@@ -216,34 +216,34 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="upgrade-function/index.html#orgf9dc8bc">The Function</a>
+<li><a href="upgrade-function/index.html#org27446fb">The Function</a>
 <ul>
-<li><a href="upgrade-function/index.html#org1841b2c">Bold Blue</a></li>
-<li><a href="upgrade-function/index.html#orged04f35">Apt Calls</a></li>
-<li><a href="upgrade-function/index.html#org5995118">Snap</a></li>
-<li><a href="upgrade-function/index.html#org5ae79c1">Flatpak</a></li>
-<li><a href="upgrade-function/index.html#orga3ca4ad">Uninstall</a></li>
+<li><a href="upgrade-function/index.html#orgc166096">Bold Blue</a></li>
+<li><a href="upgrade-function/index.html#org7352774">Apt Calls</a></li>
+<li><a href="upgrade-function/index.html#org794da67">Snap</a></li>
+<li><a href="upgrade-function/index.html#org8c43593">Flatpak</a></li>
+<li><a href="upgrade-function/index.html#orga40f3ab">Uninstall</a></li>
 </ul>
 </li>
-<li><a href="upgrade-function/index.html#org6f99c41">Some Messages</a>
+<li><a href="upgrade-function/index.html#orgc34268b">Some Messages</a>
 <ul>
-<li><a href="upgrade-function/index.html#org003c6a0">Phased Updates</a></li>
+<li><a href="upgrade-function/index.html#orge5164a3">Phased Updates</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgf9dc8bc">
-<h2 id="orgf9dc8bc">The Function</h2>
-<div class="outline-text-2" id="text-orgf9dc8bc">
+<div class="outline-2" id="outline-container-org27446fb">
+<h2 id="org27446fb">The Function</h2>
+<div class="outline-text-2" id="text-org27446fb">
 <p>This is a function to upgrade the various packages. It might, perhaps be better as an abbreviation…</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> upgrade --description <span class="s2">"Upgrade packages."</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org1841b2c">
-<h3 id="org1841b2c">Bold Blue</h3>
-<div class="outline-text-3" id="text-org1841b2c">
+<div class="outline-3" id="outline-container-orgc166096">
+<h3 id="orgc166096">Bold Blue</h3>
+<div class="outline-text-3" id="text-orgc166096">
 <p>This is a helper function to set lines (specifically headlines in this case) to be bold and blue. If this gets done enough maybe it should be a standalone function, but for now it's embedded in the <code>upgrade</code> function.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> boldblue
@@ -254,28 +254,28 @@
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orged04f35">
-<h3 id="orged04f35">Apt Calls</h3>
-<div class="outline-text-3" id="text-orged04f35">
+<div class="outline-3" id="outline-container-org7352774">
+<h3 id="org7352774">Apt Calls</h3>
+<div class="outline-text-3" id="text-org7352774">
 <p>These are calls to update the debian-based packages.</p>
 </div>
-<div class="outline-4" id="outline-container-org958e9fc">
-<h4 id="org958e9fc">Update</h4>
-<div class="outline-text-4" id="text-org958e9fc">
+<div class="outline-4" id="outline-container-orgc212bbf">
+<h4 id="orgc212bbf">Update</h4>
+<div class="outline-text-4" id="text-orgc212bbf">
 <p>These calls update the database and then show us what is upgradable.</p>
 <div class="highlight">
 <pre><span></span>boldblue Checking apt
 sudo apt-fast update --yes
 sudo apt-get --just-print upgrade
 </pre></div>
-<div class="notecard" id="org9ce3fd5">
+<div class="notecard" id="org9f6cedb">
 <p>I was initially using <code>apt</code> to list the upgradable packages, but installing <code>more</code> as a pager causes its output to get piped to it, stopping progress until I quit it. Looking into how to get around it I read that <code>apt</code> is a front-end to other packages to make them easier to use, and that <code>apt-get</code> is better for non-interactive use (and is one of the things that <code>apt</code> is using behind the scenes anyway).</p>
 </div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org1e3a317">
-<h4 id="org1e3a317">Upgrade and Autoremove</h4>
-<div class="outline-text-4" id="text-org1e3a317">
+<div class="outline-4" id="outline-container-orgdbd0c30">
+<h4 id="orgdbd0c30">Upgrade and Autoremove</h4>
+<div class="outline-text-4" id="text-orgdbd0c30">
 <p>Now we run the upgrade. <code>upgrade</code> will upgrade installed packages and install any dependencies that are needed, but not uninstall any already installed packages. If upgrading needs to a removal it won't do the upgrade. <code>full-upgrade</code> will do what <code>upgrade</code> does but will remove any installed packages if needed to upgrade an installed package. So, we're going with <code>full-upgrade</code>.</p>
 <p>I'm also auto-removing any packages that get orphaned as dependencies by an upgrade.</p>
 <div class="highlight">
@@ -286,9 +286,9 @@ sudo apt-get autoremove --yes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org5995118">
-<h3 id="org5995118">Snap</h3>
-<div class="outline-text-3" id="text-org5995118">
+<div class="outline-3" id="outline-container-org794da67">
+<h3 id="org794da67">Snap</h3>
+<div class="outline-text-3" id="text-org794da67">
 <p>Snaps should update themselves. But let's see what happens if we do it.</p>
 <div class="highlight">
 <pre><span></span>boldblue Updating snaps
@@ -296,28 +296,28 @@ sudo snap refresh
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org5ae79c1">
-<h3 id="org5ae79c1">Flatpak</h3>
-<div class="outline-text-3" id="text-org5ae79c1"></div>
-<div class="outline-4" id="outline-container-org022ce54">
-<h4 id="org022ce54">Update</h4>
-<div class="outline-text-4" id="text-org022ce54">
+<div class="outline-3" id="outline-container-org8c43593">
+<h3 id="org8c43593">Flatpak</h3>
+<div class="outline-text-3" id="text-org8c43593"></div>
+<div class="outline-4" id="outline-container-org6d134d6">
+<h4 id="org6d134d6">Update</h4>
+<div class="outline-text-4" id="text-org6d134d6">
 <div class="highlight">
 <pre><span></span>boldblue Updating flatpak
 flatpak update --assumeyes
 </pre></div>
-<div class="notecard" id="org69cbdc1">
+<div class="notecard" id="orgae8b3c9">
 <p><a href="https://fishshell.com/docs/current/cmds/type.html">type</a> checks how a name would be interpreted (<code>function</code>, <code>bultin</code>, or <code>file</code> ). It returns 0 if it isn't defined. <code>query</code> suppresses the output.</p>
 </div>
-<div class="notecard" id="orgef680f3">
+<div class="notecard" id="org0b5774d">
 <p><b>Note:</b> I was running this with <code>--noninteractive</code> but for some reason this still emitted messages that something needed to be fixed but suppressed the message telling me which package needed to be fixed, so it seems better not to use that option.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orga3ca4ad">
-<h3 id="orga3ca4ad">Uninstall</h3>
-<div class="outline-text-3" id="text-orga3ca4ad">
+<div class="outline-3" id="outline-container-orga40f3ab">
+<h3 id="orga40f3ab">Uninstall</h3>
+<div class="outline-text-3" id="text-orga40f3ab">
 <div class="highlight">
 <pre><span></span>boldblue Uninstalling unused flatpaks
 flatpak uninstall --unused --assumeyes
@@ -325,12 +325,12 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org6f99c41">
-<h2 id="org6f99c41">Some Messages</h2>
-<div class="outline-text-2" id="text-org6f99c41"></div>
-<div class="outline-3" id="outline-container-org003c6a0">
-<h3 id="org003c6a0">Phased Updates</h3>
-<div class="outline-text-3" id="text-org003c6a0">
+<div class="outline-2" id="outline-container-orgc34268b">
+<h2 id="orgc34268b">Some Messages</h2>
+<div class="outline-text-2" id="text-orgc34268b"></div>
+<div class="outline-3" id="outline-container-orge5164a3">
+<h3 id="orge5164a3">Phased Updates</h3>
+<div class="outline-text-3" id="text-orge5164a3">
 <div class="highlight">
 <pre><span></span>The following upgrades have been deferred due to phasing:
   alsa-ucm-conf
@@ -354,28 +354,28 @@ flatpak uninstall --unused --assumeyes
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="tealdeer-pages/index.html#org26b65ee">Patches</a>
+<li><a href="tealdeer-pages/index.html#org3c7f646">Patches</a>
 <ul>
-<li><a href="tealdeer-pages/index.html#org290ed5c">Screen</a></li>
-<li><a href="tealdeer-pages/index.html#org7edc49c">Ghostscript (gs)</a></li>
-<li><a href="tealdeer-pages/index.html#org18d9518">Virtual Fish</a></li>
-<li><a href="tealdeer-pages/index.html#org325788d">pdfjam</a></li>
-<li><a href="tealdeer-pages/index.html#orge5e5bbc">Emacs</a></li>
-<li><a href="tealdeer-pages/index.html#org8a68cbd">Image Magick</a></li>
-<li><a href="tealdeer-pages/index.html#org7eea8b6">PDF TK</a></li>
-<li><a href="tealdeer-pages/index.html#org8fab6f6">exiftool</a></li>
+<li><a href="tealdeer-pages/index.html#orgb626cf4">Screen</a></li>
+<li><a href="tealdeer-pages/index.html#orgb177c2c">Ghostscript (gs)</a></li>
+<li><a href="tealdeer-pages/index.html#orgcf4cbf9">Virtual Fish</a></li>
+<li><a href="tealdeer-pages/index.html#orgb1780aa">pdfjam</a></li>
+<li><a href="tealdeer-pages/index.html#orga21fc93">Emacs</a></li>
+<li><a href="tealdeer-pages/index.html#orgda632b3">Image Magick</a></li>
+<li><a href="tealdeer-pages/index.html#org12da25e">PDF TK</a></li>
+<li><a href="tealdeer-pages/index.html#org59aa8a8">exiftool</a></li>
 </ul>
 </li>
-<li><a href="tealdeer-pages/index.html#org6ef0057">Pages</a>
+<li><a href="tealdeer-pages/index.html#orgec56688">Pages</a>
 <ul>
-<li><a href="tealdeer-pages/index.html#org755c495">Keychron K12 Keyboard</a></li>
-<li><a href="tealdeer-pages/index.html#org6ad1a4c">MakeMKV Command Line</a></li>
+<li><a href="tealdeer-pages/index.html#orgbc3252f">Keychron K12 Keyboard</a></li>
+<li><a href="tealdeer-pages/index.html#orgcd494e2">MakeMKV Command Line</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="notecard" id="org6f3108e">
+<div class="notecard" id="org5e30383">
 <p><b>Note:</b> As of February 18, 2026, tealdeer via apt is out of date. They changed the URL used for updating the cache (see <a href="https://github.com/tealdeer-rs/tealdeer/issues/459">https://github.com/tealdeer-rs/tealdeer/issues/459</a>) so versions older than 1.8 throw an error (apt currently installs 1.7.2-1). To get 1.8 I used <a href="https://tealdeer-rs.github.io/tealdeer/installing.html#through-cargo-install">the Cargo Installation Instructions</a> (which necessitated <a href="https://doc.rust-lang.org/cargo/getting-started/installation.html">installing cargo and rust</a>…).</p>
 </div>
 <p>This is for configuring <a href="https://tealdeer-rs.github.io/tealdeer/">tealdeer</a>, a command-line help system.</p>
@@ -384,17 +384,17 @@ flatpak uninstall --unused --assumeyes
 <li>The default location that <code>tealdeer</code> will look for the pages is \(~/.local/share/tealdeer/pages/~\) so maybe symlink it there.</li>
 <li>The pages that come with <code>tealdeer</code> are at \(~/.cache/tealdeer/tldr-pages/pages/\) (look here for examples)</li>
 </ul>
-<div class="outline-2" id="outline-container-org26b65ee">
-<h2 id="org26b65ee">Patches</h2>
-<div class="outline-text-2" id="text-org26b65ee">
+<div class="outline-2" id="outline-container-org3c7f646">
+<h2 id="org3c7f646">Patches</h2>
+<div class="outline-text-2" id="text-org3c7f646">
 <p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches">patches</a> which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> instead (they go in the same folder, there's just a different file-name convention).</p>
 </div>
-<div class="outline-3" id="outline-container-org290ed5c">
-<h3 id="org290ed5c">Screen</h3>
-<div class="outline-text-3" id="text-org290ed5c"></div>
-<div class="outline-4" id="outline-container-org328e500">
-<h4 id="org328e500">Name the Screen</h4>
-<div class="outline-text-4" id="text-org328e500">
+<div class="outline-3" id="outline-container-orgb626cf4">
+<h3 id="orgb626cf4">Screen</h3>
+<div class="outline-text-3" id="text-orgb626cf4"></div>
+<div class="outline-4" id="outline-container-org3d666df">
+<h4 id="org3d666df">Name the Screen</h4>
+<div class="outline-text-4" id="text-org3d666df">
 <div class="highlight">
 <pre><span></span>- Give the screen a name
 
@@ -403,16 +403,16 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org7edc49c">
-<h3 id="org7edc49c">Ghostscript (gs)</h3>
-<div class="outline-text-3" id="text-org7edc49c">
+<div class="outline-3" id="outline-container-orgb177c2c">
+<h3 id="orgb177c2c">Ghostscript (gs)</h3>
+<div class="outline-text-3" id="text-orgb177c2c">
 <p>This is for ghost script.</p>
 </div>
-<div class="outline-4" id="outline-container-org6346e2f">
-<h4 id="org6346e2f">Black and White PDF</h4>
-<div class="outline-text-4" id="text-org6346e2f">
+<div class="outline-4" id="outline-container-org22a380d">
+<h4 id="org22a380d">Black and White PDF</h4>
+<div class="outline-text-4" id="text-org22a380d">
 <p>This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a <a href="https://askubuntu.com/a/1474303">Ask Ubunt (Stack Exchange)</a> answer.</p>
-<div class="notecard" id="orgf25af56">
+<div class="notecard" id="org3634454">
 <p>In the cases I've tried this doesn't convert raster images.</p>
 </div>
 <div class="highlight">
@@ -422,11 +422,11 @@ flatpak uninstall --unused --assumeyes
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org3540c62">
-<h4 id="org3540c62">Black and White PDF and No Images</h4>
-<div class="outline-text-4" id="text-org3540c62">
+<div class="outline-4" id="outline-container-orga850621">
+<h4 id="orga850621">Black and White PDF and No Images</h4>
+<div class="outline-text-4" id="text-orga850621">
 <p>This is the previous command (Black and White) but it removes <i>all</i> images, leaving only vectors-based items. This is for the case where someone used a background image and all you're interested in is the text and tables.</p>
-<div class="notecard" id="orga2c78ce">
+<div class="notecard" id="orgccdd708">
 <p>Removes all images.</p>
 </div>
 <div class="highlight">
@@ -436,9 +436,9 @@ flatpak uninstall --unused --assumeyes
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orgbab8413">
-<h4 id="orgbab8413">Compress For Ebook</h4>
-<div class="outline-text-4" id="text-orgbab8413">
+<div class="outline-4" id="outline-container-org8a82ca8">
+<h4 id="org8a82ca8">Compress For Ebook</h4>
+<div class="outline-text-4" id="text-org8a82ca8">
 <p>This adds some extra flags to the compression help that comes with tealdeer.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Reduce PDF File Size, possibly more than the version up above
@@ -450,9 +450,9 @@ flatpak uninstall --unused --assumeyes
 </ul>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orga547819">
-<h4 id="orga547819">Convert To Grayscale</h4>
-<div class="outline-text-4" id="text-orga547819">
+<div class="outline-4" id="outline-container-org3a47aab">
+<h4 id="org3a47aab">Convert To Grayscale</h4>
+<div class="outline-text-4" id="text-org3a47aab">
 <p>Sometimes images are RGB even though they are of black and white or gray images. Adding these flags will convert them to grayscale only. This actually doesn't save a huge amount of space most of the time (although it might if the image really was color and you're converting it tq gray) but I add the flags to the Black and White settings above to squeeze out a little more. It sometimes makes them look nicer as well.</p>
 <p>I've only tested this with images, not vector graphics, but I think that it will strip the color from both, not just the images. Should test that out eventually…</p>
 <div class="highlight">
@@ -463,9 +463,9 @@ flatpak uninstall --unused --assumeyes
 <p>Source: <a href="https://stackoverflow.com/a/20133915">Stack Overflow</a> - <i>Convert PDF to grayscale without rasterization?</i></p>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orgc5842a5">
-<h4 id="orgc5842a5">Resize (to Letter)</h4>
-<div class="outline-text-4" id="text-orgc5842a5">
+<div class="outline-4" id="outline-container-orgda8df54">
+<h4 id="orgda8df54">Resize (to Letter)</h4>
+<div class="outline-text-4" id="text-orgda8df54">
 <p>Evince no longer has the "Scale to Printable Area" option when printing PDFs, so this is something to use to get the PDF to letter-sized before printing. (from <a href="https://stackoverflow.com/a/7507511">Stack Overflow: Resizing a PDF Using Ghostscript</a>)</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Convert to Letter sized
@@ -475,12 +475,12 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org18d9518">
-<h3 id="org18d9518">Virtual Fish</h3>
-<div class="outline-text-3" id="text-org18d9518"></div>
-<div class="outline-4" id="outline-container-org6ae3e0b">
-<h4 id="org6ae3e0b">Check The Environment</h4>
-<div class="outline-text-4" id="text-org6ae3e0b">
+<div class="outline-3" id="outline-container-orgcf4cbf9">
+<h3 id="orgcf4cbf9">Virtual Fish</h3>
+<div class="outline-text-3" id="text-orgcf4cbf9"></div>
+<div class="outline-4" id="outline-container-org24b54ef">
+<h4 id="org24b54ef">Check The Environment</h4>
+<div class="outline-text-4" id="text-org24b54ef">
 <p>This adds the build-state for the virtual-environments managed by virtualfish.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>List Environments and the Current State (do they need to be rebuilt?):
@@ -489,9 +489,9 @@ flatpak uninstall --unused --assumeyes
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orgc2b71f7">
-<h4 id="orgc2b71f7">Rebuild the Environment</h4>
-<div class="outline-text-4" id="text-orgc2b71f7">
+<div class="outline-4" id="outline-container-org1bbf573">
+<h4 id="org1bbf573">Rebuild the Environment</h4>
+<div class="outline-text-4" id="text-org1bbf573">
 <p>This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Rebuild the current environment (e.g. after Ubuntu changes pip):
@@ -504,7 +504,7 @@ flatpak uninstall --unused --assumeyes
 
 <span class="sb">`vf upgrade --rebuild {{virtualenv-name}}`</span>
 </pre></div>
-<div class="notecard" id="org629e8d8">
+<div class="notecard" id="org410717a">
 <p>If the environments are broken by an update, <code>pipx</code> is likely broken too, run this too, maybe:</p>
 <ul class="org-ul">
 <li><code>pipx reinstall-all</code></li>
@@ -514,12 +514,12 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org325788d">
-<h3 id="org325788d">pdfjam</h3>
-<div class="outline-text-3" id="text-org325788d"></div>
-<div class="outline-4" id="outline-container-orgcb192a0">
-<h4 id="orgcb192a0">Resize to Letter</h4>
-<div class="outline-text-4" id="text-orgcb192a0">
+<div class="outline-3" id="outline-container-orgb1780aa">
+<h3 id="orgb1780aa">pdfjam</h3>
+<div class="outline-text-3" id="text-orgb1780aa"></div>
+<div class="outline-4" id="outline-container-org962a315">
+<h4 id="org962a315">Resize to Letter</h4>
+<div class="outline-text-4" id="text-org962a315">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Resize PDF document to letter-paper size
 
@@ -530,12 +530,12 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orge5e5bbc">
-<h3 id="orge5e5bbc">Emacs</h3>
-<div class="outline-text-3" id="text-orge5e5bbc"></div>
-<div class="outline-4" id="outline-container-orgb1f2965">
-<h4 id="orgb1f2965">Open File With Sudo</h4>
-<div class="outline-text-4" id="text-orgb1f2965">
+<div class="outline-3" id="outline-container-orga21fc93">
+<h3 id="orga21fc93">Emacs</h3>
+<div class="outline-text-3" id="text-orga21fc93"></div>
+<div class="outline-4" id="outline-container-orgeda681c">
+<h4 id="orgeda681c">Open File With Sudo</h4>
+<div class="outline-text-4" id="text-orgeda681c">
 <p>Got this from <a href="https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs">a Stack Overflow Question</a>. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Open a (local) file with sudo.
@@ -544,9 +544,9 @@ flatpak uninstall --unused --assumeyes
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org188c7bd">
-<h4 id="org188c7bd">Use a Different Init.el</h4>
-<div class="outline-text-4" id="text-org188c7bd">
+<div class="outline-4" id="outline-container-orga8bd25e">
+<h4 id="orga8bd25e">Use a Different Init.el</h4>
+<div class="outline-text-4" id="text-orga8bd25e">
 <p>This is to use a different <code>init.el</code> file (presumably for debugging).</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Use a different initialization file when starting up:
@@ -556,30 +556,30 @@ flatpak uninstall --unused --assumeyes
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org8a68cbd">
-<h3 id="org8a68cbd">Image Magick</h3>
-<div class="outline-text-3" id="text-org8a68cbd"></div>
-<div class="outline-4" id="outline-container-orgcac2534">
-<h4 id="orgcac2534">Remove PDF Background</h4>
-<div class="outline-text-4" id="text-orgcac2534">
+<div class="outline-3" id="outline-container-orgda632b3">
+<h3 id="orgda632b3">Image Magick</h3>
+<div class="outline-text-3" id="text-orgda632b3"></div>
+<div class="outline-4" id="outline-container-org776e460">
+<h4 id="org776e460">Remove PDF Background</h4>
+<div class="outline-text-4" id="text-org776e460">
 <p>This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Remove background of PDF assuming the image density
 
 <span class="sb">`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`</span>
 </pre></div>
-<div class="notecard" id="orga0c989b">
+<div class="notecard" id="orgd8d8d8d">
 <p>I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).</p>
 </div>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org7eea8b6">
-<h3 id="org7eea8b6">PDF TK</h3>
-<div class="outline-text-3" id="text-org7eea8b6"></div>
-<div class="outline-4" id="outline-container-orga594835">
-<h4 id="orga594835">Export Bookmarks</h4>
-<div class="outline-text-4" id="text-orga594835">
+<div class="outline-3" id="outline-container-org12da25e">
+<h3 id="org12da25e">PDF TK</h3>
+<div class="outline-text-3" id="text-org12da25e"></div>
+<div class="outline-4" id="outline-container-orgfea941c">
+<h4 id="orgfea941c">Export Bookmarks</h4>
+<div class="outline-text-4" id="text-orgfea941c">
 <p>Export bookmarks from a PDF. I normally use <code>cpdf</code> for bookmarks, but in the case of Wanderhome, when I reduced the resolution to get a smaller PDF it removed the bookmarks so I had to copy them from the original and for some reason <code>cpdf</code> couldn't dump them, but pdftk could.</p>
 <p>Pdftk uses a human-readable format that isn't compatible with cpdf. For Example:</p>
 <div class="highlight">
@@ -604,9 +604,9 @@ BookmarkPageNumber: 0
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org291f8c1">
-<h4 id="org291f8c1">Import Bookmarks</h4>
-<div class="outline-text-4" id="text-org291f8c1">
+<div class="outline-4" id="outline-container-orgec23a36">
+<h4 id="orgec23a36">Import Bookmarks</h4>
+<div class="outline-text-4" id="text-orgec23a36">
 <p>Import bookmarks dumped from another PDF. The prompt for this was that I reduced the resolution/size of a pdf and lost the bookmarks in the original and restored them by copying them over.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Import pdftk-formatted bookmarks (from dump_data_utf8)
@@ -616,14 +616,14 @@ BookmarkPageNumber: 0
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org8fab6f6">
-<h3 id="org8fab6f6">exiftool</h3>
-<div class="outline-text-3" id="text-org8fab6f6">
+<div class="outline-3" id="outline-container-org59aa8a8">
+<h3 id="org59aa8a8">exiftool</h3>
+<div class="outline-text-3" id="text-org59aa8a8">
 <p><a href="https://exiftool.org/">exiftool</a> is a metadata editor. It handles many file types but I used it for PDFs.</p>
 </div>
-<div class="outline-4" id="outline-container-org44c1de6">
-<h4 id="org44c1de6">Title</h4>
-<div class="outline-text-4" id="text-org44c1de6">
+<div class="outline-4" id="outline-container-org277811c">
+<h4 id="org277811c">Title</h4>
+<div class="outline-text-4" id="text-org277811c">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Change the title for the file
 <span class="k">-</span><span class="w"> </span>Note: The option needs the "=" between the name and the argument, spaces make it think you're passing in another input file.
@@ -634,19 +634,19 @@ BookmarkPageNumber: 0
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org6ef0057">
-<h2 id="org6ef0057">Pages</h2>
-<div class="outline-text-2" id="text-org6ef0057">
+<div class="outline-2" id="outline-container-orgec56688">
+<h2 id="orgec56688">Pages</h2>
+<div class="outline-text-2" id="text-orgec56688">
 <p>These are <a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages">pages</a> - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with <code>page.md</code> instead of <code>patch.md</code>. Otherwise the contents look the same.</p>
 </div>
-<div class="outline-3" id="outline-container-org755c495">
-<h3 id="org755c495">Keychron K12 Keyboard</h3>
-<div class="outline-text-3" id="text-org755c495">
+<div class="outline-3" id="outline-container-orgbc3252f">
+<h3 id="orgbc3252f">Keychron K12 Keyboard</h3>
+<div class="outline-text-3" id="text-orgbc3252f">
 <p>Although this is hardware, I thought it'd be helpful to put something in here in case I forget things.</p>
 </div>
-<div class="outline-4" id="outline-container-org3a143cc">
-<h4 id="org3a143cc">Bluetooth Pairing</h4>
-<div class="outline-text-4" id="text-org3a143cc">
+<div class="outline-4" id="outline-container-org7f7c073">
+<h4 id="org7f7c073">Bluetooth Pairing</h4>
+<div class="outline-text-4" id="text-org7f7c073">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Enable pairing (also needs the side-switch to be moved from USB to bluetooth). Q is QWERTY-based.
 
@@ -655,14 +655,14 @@ BookmarkPageNumber: 0
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org6ad1a4c">
-<h3 id="org6ad1a4c">MakeMKV Command Line</h3>
-<div class="outline-text-3" id="text-org6ad1a4c">
+<div class="outline-3" id="outline-container-orgcd494e2">
+<h3 id="orgcd494e2">MakeMKV Command Line</h3>
+<div class="outline-text-3" id="text-orgcd494e2">
 <p>The <code>makemkvcon</code> command has a <code>--help</code> output, which is somewhat vague. I got the information for this from a developers text file <a href="https://www.makemkv.com/developers/usage.txt">usage.txt</a> on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due to errors specific to the GUI so the command line interface is useful to work around those cases.</p>
 </div>
-<div class="outline-4" id="outline-container-org9b5f366">
-<h4 id="org9b5f366">List Drives</h4>
-<div class="outline-text-4" id="text-org9b5f366">
+<div class="outline-4" id="outline-container-orgdf81417">
+<h4 id="orgdf81417">List Drives</h4>
+<div class="outline-text-4" id="text-orgdf81417">
 <p>This lists the drives as <code>makemkvcon</code> sees them.</p>
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>List drives - DRV:index,visible,enabled,flags,drive name,disc name
@@ -750,9 +750,9 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <p>Looking at the sample output, it has <code>2</code> for "visible" and <code>999</code> for "enabled", which doesn't match the expected values so I just ignore everything but the <code>drive name</code> to find the right entry in the output and the <code>index</code> for use in invoking <code>makemkvcon</code>.</p>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org0971a8a">
-<h4 id="org0971a8a">Copy Disc As MKV Files</h4>
-<div class="outline-text-4" id="text-org0971a8a">
+<div class="outline-4" id="outline-container-org5d2c060">
+<h4 id="org5d2c060">Copy Disc As MKV Files</h4>
+<div class="outline-text-4" id="text-org5d2c060">
 <div class="highlight">
 <pre><span></span><span class="k">-</span><span class="w"> </span>Save disk to the current directory as MKV files
 
@@ -782,9 +782,9 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <div class="highlight">
 <pre><span></span>sudo apt install libavif-bin
 </pre></div>
-<div class="outline-2" id="outline-container-org5623de2">
-<h2 id="org5623de2">To AVIF</h2>
-<div class="outline-text-2" id="text-org5623de2">
+<div class="outline-2" id="outline-container-org01b412a">
+<h2 id="org01b412a">To AVIF</h2>
+<div class="outline-text-2" id="text-org01b412a">
 <div class="highlight">
 <pre><span></span><span class="k">function</span> toavif --description <span class="s1">'Convert image files to avif with avifenc'</span>
 
@@ -807,30 +807,30 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 </div>
 </header>
 <div class="p-summary entry-summary">
-<div class="outline-2" id="outline-container-orgbc9030f">
-<h2 id="orgbc9030f">The Function</h2>
-<div class="outline-text-2" id="text-orgbc9030f">
+<div class="outline-2" id="outline-container-org9e3655e">
+<h2 id="org9e3655e">The Function</h2>
+<div class="outline-text-2" id="text-org9e3655e">
 <p>This is a function to check what we have set-up as a hostname for the times that I forget an IP address for a device on the LAN. It checks the hosts file and the ssh-config. The <code>hosts</code> file has the IP address, but sometimes I can't remember the host-name, just the user-name, in which case checking the SSH config file can sometimes be helpful.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> hostgrep --argument-names HOST --description <span class="s2">"Look for a hostname."</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgdc95eb6">
-<h2 id="orgdc95eb6">The Parts</h2>
-<div class="outline-text-2" id="text-orgdc95eb6"></div>
-<div class="outline-3" id="outline-container-org5b9710c">
-<h3 id="org5b9710c">Check Hosts</h3>
-<div class="outline-text-3" id="text-org5b9710c">
+<div class="outline-2" id="outline-container-orga255b5a">
+<h2 id="orga255b5a">The Parts</h2>
+<div class="outline-text-2" id="text-orga255b5a"></div>
+<div class="outline-3" id="outline-container-org23e2a95">
+<h3 id="org23e2a95">Check Hosts</h3>
+<div class="outline-text-3" id="text-org23e2a95">
 <p>First check the <code>/etc/hosts</code> file.</p>
 <div class="highlight">
 <pre><span></span>grep <span class="nv">$HOST</span> /etc/hosts
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org0d2b1d3">
-<h3 id="org0d2b1d3">Check SSH</h3>
-<div class="outline-text-3" id="text-org0d2b1d3">
+<div class="outline-3" id="outline-container-orgb1b51be">
+<h3 id="orgb1b51be">Check SSH</h3>
+<div class="outline-text-3" id="text-orgb1b51be">
 <p>Now Check the ssh configuration.</p>
 <div class="highlight">
 <pre><span></span>grep --after-context <span class="m">3</span> <span class="nv">$HOST</span> <span class="nv">$HOME</span>/.ssh/config
@@ -870,14 +870,14 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="to-webp-function/index.html#orga136005">To Webp</a></li>
-<li><a href="to-webp-function/index.html#org89d7d2c">Lossless Webp</a></li>
+<li><a href="to-webp-function/index.html#org558801c">To Webp</a></li>
+<li><a href="to-webp-function/index.html#orge5db1b7">Lossless Webp</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orga136005">
-<h2 id="orga136005">To Webp</h2>
-<div class="outline-text-2" id="text-orga136005">
+<div class="outline-2" id="outline-container-org558801c">
+<h2 id="org558801c">To Webp</h2>
+<div class="outline-text-2" id="text-org558801c">
 <p>A simple for loop to make using globs easier with cwebp.</p>
 <div class="highlight">
 <pre><span></span><span class="k">function</span> towebp -d <span class="s2">"Convert image files to web with cweb"</span>
@@ -891,11 +891,11 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <p>I'm pretty sure I saw a one-liner to do this (using pipes) but it was hard to understand so I thought this would make it clearer to myself what is going on, rather than just copying a command I can't figure out.</p>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org89d7d2c">
-<h2 id="org89d7d2c">Lossless Webp</h2>
-<div class="outline-text-2" id="text-org89d7d2c">
+<div class="outline-2" id="outline-container-orge5db1b7">
+<h2 id="orge5db1b7">Lossless Webp</h2>
+<div class="outline-text-2" id="text-orge5db1b7">
 <p>The previous function used the default compression (lossy). This uses the lossless conversion with maximum compression and quality.</p>
-<div class="notecard" id="org69052b5">
+<div class="notecard" id="orgc3e7499">
 <p>I looked in the source code (from Google's <a href="https://chromium.googlesource.com/webm/libwebp/"><code>libwebp</code></a> git repository) and the <code>-z</code> flag is equivalent to using <code>-lossless -m 6 -q 10</code> (or whatever the max is for both of them), although for some reason it seemed to do better when I was testing it earlier…</p>
 </div>
 <div class="highlight">
@@ -924,15 +924,15 @@ DRV:0,2,999,1,<span class="s2">"DVD+R-DL HL-DT-ST DVDRAM GSA-T50N RQ01 KWF9AEJ10
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="abbreviations-mother-ship/index.html#org7d2bade">Mount Drives</a></li>
+<li><a href="abbreviations-mother-ship/index.html#orge43b78a">Mount Drives</a></li>
 </ul>
 </div>
 </div>
 <p>This tangle is for extra configurations that are meant for PCs with a GUI that a user interacts with directly (as opposed to a server) and it has stuff that aren't going to be used on servers.</p>
 <p>I'm putting it in <code>dingehaufen/conf.d/</code> so it should be linked to in <code>.config/fish/conf.d/</code> for PCs that need it.</p>
-<div class="outline-2" id="outline-container-org7d2bade">
-<h2 id="org7d2bade">Mount Drives</h2>
-<div class="outline-text-2" id="text-org7d2bade">
+<div class="outline-2" id="outline-container-orge43b78a">
+<h2 id="orge43b78a">Mount Drives</h2>
+<div class="outline-text-2" id="text-orge43b78a">
 <p>This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- md <span class="s2">"mountcryfs; mount-data"</span>
