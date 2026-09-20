@@ -75,6 +75,8 @@
 <<enumerate-files>>
 
 <<files-by-size>>
+
+<<byobu-screen>>
 #+end_src
 
 #+begin_notecard
@@ -309,6 +311,23 @@ List one file per line (=-1=) sorted by size (=-S) showing human-readable sizes 
 #+begin_src fish :noweb-ref files-by-size
 abbr --add -- lS "ls -sSh1"
 #+end_src
+
+* Byobu (screen)
+
+I've been using =byobu -S <name>= to create and =byobu -rd <name>= to create named screen sessions, but I sometimes forget if I've already created a session with the same name or not and either create another with the same name, get an error message telling me there's no session with that name, or use =byobu -ls= to check on existing screen sessions first. This seems like extra work, and it turns out that you can have =screen= do the checking for you by capitalizing the =-R= option.
+
+From the man-page for screen:
+
+#+begin_quote
+-d -R   Reattach a session and if necessary detach or even create it first.
+#+end_quote
+
+But, I sometimes forget the short-codes, especially when you have to use lowercase for one option and uppercase for another (why is re-attach capitalized and not detach?), so I'm making an abbreviation. We'll see if I can remember to use it.
+
+#+begin_src fish :noweb-ref byobu-screen
+abbr --add -- bs "byobu -dR"
+#+end_src
+
 
 * Links
 - abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: https://fishshell.com/docs/current/cmds/abbr.html
