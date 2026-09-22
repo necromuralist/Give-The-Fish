@@ -1,0 +1,132 @@
+#+BEGIN_COMMENT
+.. title: Argparse Experiments
+.. slug: argparse-experiments
+.. date: 2026-09-20 17:09:21 UTC-07:00
+.. tags: argparse,experiments
+.. category: Argparse
+.. link: 
+.. description: Experimenting with fish shell's argparse.
+.. type: text
+.. status: 
+.. updated: 
+
+#+END_COMMENT
+#+OPTIONS: ^:{}
+#+TOC: headlines 2
+
+#+begin_src fish :exports both
+set arguments "--test"
+
+argparse "t/test" -- $arguments
+
+if set --query _flag_test
+    echo "test set"
+end
+
+if set --query _flag_untest
+    echo "untested set"
+end
+#+end_src
+
+#+RESULTS:
+: test set
+
+#+begin_src fish :exports both
+set arguments "--test" "-v 5"
+argparse "test" "v=" -- $arguments
+
+if set --query _flag_test
+    echo "tested"
+end
+
+if set --query _flag_v
+    echo "v=$_flag_v"
+end  
+#+end_src
+
+#+RESULTS:
+| tested |   |
+| v=     | 5 |
+
+#+begin_src fish :exports both
+set arguments "--v 6"
+
+argparse "t/test" "v=?" -- $arguments
+
+if set --query _flag_test
+    echo "tested"
+end
+
+if set --query _flag_v
+    echo "v=$_flag_v"
+end
+#+end_src
+
+#+RESULTS:
+argparse: --v 6: unknown option
+
+#+begin_notecard
+The arguments to =argparse= need to be separate strings, not one string with spaces separating option-definitions.
+#+end_notecard
+
+This fails because ~v=?~ means the value passed in with the option (=-v=) is optional so there can't be any spaces between the option and the value. To make it work the value has to be smashed up against a short-option or passed in using an equal sighn with a long option.
+
+#+begin_src fish :expors both
+# short option values need to be smashed together with no spaces
+set arguments "-v5"
+
+# long arguments need values passed with an equal sign
+set --append arguments "--cats=8"
+
+# optional values are optional - passing nothing will make the flag
+# act like a boolean
+set --append arguments "--dogs"
+
+argparse "v=?" "cats=*" "dogs=*" -- $arguments
+
+if set --query _flag_v
+    echo "v $_flag_v"
+end
+
+if set --query _flag_cats
+    echo "cats $_flag_cats"
+end
+
+# since we defined it as taking an (optional) value
+# but didn't pass in a value, the variable is created
+# but there's no value in it
+if set --query _flag_dogs
+    echo "dogs $_flag_dogs"
+end
+#+end_src
+
+#+RESULTS:
+| v    | 5 |
+| cats | 8 |
+| dogs |   |
+
+#+begin_src fish :exports both
+
+set arguments "--path=/tmp" "-p/home" "--p=/"
+
+argparse 'p/path=+!test -d "$_flag_value"' -- $arguments
+
+if set --query _flag_path
+    for p in $_flag_path
+	echo "path: $p"
+    end
+end
+#+end_src
+
+#+RESULTS:
+| path: | /tmp  |
+| path: | /home |
+| path: | /     |
+
+Note that using two dashes for the short 'p' option changes it to use an equal sign instead of smashing the value up against the option.
+
+Also, the test checks that all the values in =_flag_path= are directories, if even one fails then the option isn't set. So if you want it more forgiving you need to not test it with argparse and check it afterwards.
+
+
+* Links
+- [[https://fishshell.com/docs/current/cmds/argparse.html][Fish's Argparse Documentation]]
