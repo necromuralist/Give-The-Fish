@@ -1,4 +1,4 @@
-if status is-login
+if status is-login and status is-interactive
     if test -n $SSH_KEYS_TO_AUTOLOAD
 	keychain --eval $SSH_KEYS_TO_AUTOLOAD | source
     else

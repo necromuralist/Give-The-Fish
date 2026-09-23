@@ -23,7 +23,7 @@ Put this in =~/.config/fish/conf.d/ssh-agent.fish=.
 #+end_notecard
 
 #+begin_src fish :tangle ../dingehaufen/conf.d/ssh-agent.fish
-if status is-login
+if status is-login and status is-interactive
     if test -n $SSH_KEYS_TO_AUTOLOAD
 	keychain --eval $SSH_KEYS_TO_AUTOLOAD | source
     else
