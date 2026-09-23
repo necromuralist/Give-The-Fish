@@ -8,14 +8,14 @@
 .. description: Pages for tealdeer.
 .. type: text
 .. status: 
-.. updated: 
+.. updated: 2026-09-23 16:31:01 UTC-07:00
 
 #+END_COMMENT
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
 
 #+begin_notecard
-**Note:** As of February 18, 2026, tealdeer via apt is out of date. They changed the URL used for updating the cache (see https://github.com/tealdeer-rs/tealdeer/issues/459) so versions older than 1.8 throw an error (apt currently installs 1.7.2-1). To get 1.8 I used [[https://tealdeer-rs.github.io/tealdeer/installing.html#through-cargo-install][the Cargo Installation Instructions]] (which necessitated [[https://doc.rust-lang.org/cargo/getting-started/installation.html][installing cargo and rust]]...).
+**Note:** February 18, 2026 - tealdeer via apt is/was out of date. They changed the URL used for updating the cache (see https://github.com/tealdeer-rs/tealdeer/issues/459) so versions older than 1.8 throw an error (apt currently installs 1.7.2-1). To get 1.8 I used [[https://tealdeer-rs.github.io/tealdeer/installing.html#through-cargo-install][the Cargo Installation Instructions]] (which necessitated [[https://doc.rust-lang.org/cargo/getting-started/installation.html][installing cargo and rust]]...).
 #+end_notecard
 
 This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a command-line help system.
@@ -287,6 +287,23 @@ Import bookmarks dumped from another PDF. The prompt for this was that I reduced
 
 `exiftool -Title="{{new title}}" {{input-file}}`
 #+end_src
+
+** Git
+
+I use [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][git aliases]] (and also [[https://kennethreitz.org/software/legit][legit]]) to remember git things for me as much as possible, but this is for things that are sort of as simple as they should be but I keep forgetting about them anyway.
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/git.patch.md :exports none
+<<git-checkout-file>>
+#+end_src
+
+*** Checkout a File From Another Branch
+
+#+begin_src fish markdown :noweb-ref git-checkout-file
+- Checkout a file from another branch
+
+`git checkout {{branch name}} {{path to file}}`
+#+end_src
+
 * Pages
 
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with ~page.md~ instead of ~patch.md~. Otherwise the contents look the same.
