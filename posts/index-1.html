@@ -217,20 +217,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="ssh-agent-config-fragment/index.html#orgc360210">SSH Agent</a>
+<li><a href="ssh-agent-config-fragment/index.html#org2879e7c">SSH Agent</a>
 <ul>
-<li><a href="ssh-agent-config-fragment/index.html#org4b030db">The SSH_KEYS_TO_AUTOLOAD Variable</a></li>
+<li><a href="ssh-agent-config-fragment/index.html#org90b6bd2">The SSH_KEYS_TO_AUTOLOAD Variable</a></li>
 </ul>
 </li>
-<li><a href="ssh-agent-config-fragment/index.html#orge512b88">Links</a></li>
+<li><a href="ssh-agent-config-fragment/index.html#org4844636">Links</a></li>
 </ul>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgc360210">
-<h2 id="orgc360210">SSH Agent</h2>
-<div class="outline-text-2" id="text-orgc360210">
+<div class="outline-2" id="outline-container-org2879e7c">
+<h2 id="org2879e7c">SSH Agent</h2>
+<div class="outline-text-2" id="text-org2879e7c">
 <p>This is the fragment to make sure the ssh-agent is running when you open the terminal.</p>
-<div class="notecard" id="org8fcab1c">
+<div class="notecard" id="org69f1237">
 <p>Put this in <code>~/.config/fish/conf.d/ssh-agent.fish</code>.</p>
 </div>
 <div class="highlight">
@@ -239,40 +239,45 @@
     <span class="k">if</span> <span class="k">test</span> -n <span class="nv">$SSH_KEYS_TO_AUTOLOAD</span>
         keychain --eval <span class="nv">$SSH_KEYS_TO_AUTOLOAD</span> <span class="o">|</span> <span class="nb">source</span>
 <span class="nb">    </span><span class="k">else</span>
-        <span class="k">echo</span> <span class="s2">"SSH_KEYS_TO_AUTOLOAD environmentvariable not set"</span>
+        <span class="k">echo</span> <span class="s2">"SSH_KEYS_TO_AUTOLOAD environment variable not set"</span>
         <span class="k">echo</span> <span class="s2">"add key-file-name(s) to this variable"</span>
+        <span class="k">echo</span> <span class="s2">"set --universal --append SSH_KEYS_TO_AUTOLOAD ~/.ssh/id_&lt;keyid&gt;"</span>
     <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-<div class="notecard" id="orgf1c89dc">
+<p>From the <a href="https://fishshell.com/docs/current/cmds/test.html">fish documentation for <code>test</code></a>.</p>
+<blockquote>
+<p>-n STRING</p>
+<p>Returns true if the length of STRING is non-zero.</p>
+</blockquote>
+<p>I don't know why you'd use <code>test -n</code> instead of <code>set -q</code>. I suppose this allows for empty strings being set, although that seems odd…</p>
+<div class="notecard" id="orgc17e0bf">
 <p><b>Note:</b> The default key type has changed so the default file name is no longer <code>id_rsa</code> it's <code>id_ed25519</code>.</p>
 </div>
-<p>The documentation for the <a href="https://fishshell.com/docs/current/cmds/status.html"><code>status</code></a> comand says that <code>is-interactive</code> is actually a sub-command (not an option, although I'm calling it like it is one) and that it:</p>
-<blockquote>
-<p>Returns 0 if fish is interactive - that is, connected to a keyboard.</p>
-</blockquote>
-<p>Which is an oddly unintuitive description. I think it means that it won't pass the conditional if I try to run the fragment as a function… I can't remember why I used it, exactly ,but I think it's something you need if you want it to be loaded when you login.</p>
+<div class="notecard" id="orgc0f6293">
+<p><b>Note:</b> The Super User answer that I got this updated version from used a sentinel (<code>status is-login</code> and <code>status is-interactive</code>) to check whether to run the code block or not, but this was preventing it from ever being run when I SSH'd in so I got rid of it.</p>
+</div>
 <p>Although the name <a href="https://linux.die.net/man/1/keychain">keychain</a> makes it sound like it's a general password manager, according to the man-page it's meant specifically to manage the ssh-agent. It will check if you already have an ssh-agent running and only start one if you don't. This way you don't end up starting one for every <code>screen</code> you open up.</p>
 <p>The <code>--eval</code> option sends the SSH-Agent message to stdout, <code>--quiet</code> suppresses other messages, <code>--quick</code> tells it to use a running ssh-agent if it finds one without verifying the keys and then we pipe it to <a href="https://fishshell.com/docs/current/cmds/source.html"><code>source</code></a> to load the environment.</p>
 </div>
-<div class="outline-3" id="outline-container-org4b030db">
-<h3 id="org4b030db">The SSH_KEYS_TO_AUTOLOAD Variable</h3>
-<div class="outline-text-3" id="text-org4b030db">
-<div class="notecard" id="org6c13dc7">
+<div class="outline-3" id="outline-container-org90b6bd2">
+<h3 id="org90b6bd2">The SSH_KEYS_TO_AUTOLOAD Variable</h3>
+<div class="outline-text-3" id="text-org90b6bd2">
+<div class="notecard" id="org8c1ef68">
 <p><b>Note:</b> This expects you to put the names of keys into the <code>SSH_KEYS_TO_AUTOLOAD</code> variable at the command line. It isn't set in the code-snippet so that you can change it/them by updating the environment variable instead of updating the file, but this means you have to remember to set it.</p>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org19ebc01">
-<h4 id="org19ebc01">Add A Key</h4>
-<div class="outline-text-4" id="text-org19ebc01">
+<div class="outline-4" id="outline-container-org4b512d4">
+<h4 id="org4b512d4">Add A Key</h4>
+<div class="outline-text-4" id="text-org4b512d4">
 <div class="highlight">
 <pre><span></span><span class="k">set</span> --universal --append SSH_KEYS_TO_AUTOLOAD ~/.ssh/<span class="o">&lt;</span>key-file&gt;
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orgbf8b375">
-<h4 id="orgbf8b375">Remove A Key</h4>
-<div class="outline-text-4" id="text-orgbf8b375">
+<div class="outline-4" id="outline-container-org906aeb8">
+<h4 id="org906aeb8">Remove A Key</h4>
+<div class="outline-text-4" id="text-org906aeb8">
 <div class="highlight">
 <pre><span></span><span class="k">set</span> --universal --erase SSH_KEYS_TO_AUTOLOAD<span class="o">[&lt;</span>index of key&gt;<span class="o">]</span>
 </pre></div>
@@ -280,9 +285,9 @@
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orge512b88">
-<h2 id="orge512b88">Links</h2>
-<div class="outline-text-2" id="text-orge512b88">
+<div class="outline-2" id="outline-container-org4844636">
+<h2 id="org4844636">Links</h2>
+<div class="outline-text-2" id="text-org4844636">
 <ul class="org-ul">
 <li><a href="https://superuser.com/a/1727657">Super User Answer</a> that had this more robust way of adding and removing keys rather than hard-coding the file-name as I had it before.</li>
 <li>keychain(1) - Linux man page [Internet]. [cited 2023 Jun 24]. Available from: <a href="https://linux.die.net/man/1/keychain">https://linux.die.net/man/1/keychain</a></li>
@@ -306,76 +311,81 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgf35c2c3">Nikola</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org4883191">Nikola</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orge30d54d">New Posts and Pages</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org66e8d99">Build, Serve, and Develop</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6126b93">Deploy to Github</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgf9007ba">New Posts and Pages</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6454154">Build, Serve, and Develop</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgec5348f">Deploy to Github</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org972f8e5">Git</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org031fb85">Git</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org4f08793">Add, Commit, Push Stuff</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgef7b134">The State of Things</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb00e40c">Branch Work</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgf9ac473">Checkout Files</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org81d622d">My, How Things Have Changed</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org7bc3ed2">Add, Commit, Push Stuff</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgff14039">The State of Things</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgc2389bb">Branch Work</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org9bda3f1">Checkout Files</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org1e54d7a">My, How Things Have Changed</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org7fa37da">Pass</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6e102b7">Grep</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org783e89c">Proton VPN</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgae60118">Rsync</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6682c2b">Pass</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org7197f0c">Grep</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgf8e1c9a">Proton VPN</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org43671e6">Rsync</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org537e6c0">Rsyncer</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgc855aee">Rsyncerd</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org49de022">Rsyncerf</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgc223805">Rsyncery</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgb5c61ba">Rsyncer</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org2ee1f76">Rsyncerd</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orga187cdb">Rsyncerf</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orge89a7e9">Rsyncery</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org017b7b6">PDFs</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6704ab7">PDFs</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org473a8c9">PDF Join</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6666445">PDF Shrink</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org6a7141b">PDF Join</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org30cee40">PDF Shrink</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org418ca2b">Emacs</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgda904a4">Emacs</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org7675def">Server Status</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org166ad6d">Restart Server</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org152c93d">Server Status</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org121b91c">Restart Server</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgc1de580">File Listings</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org239e8d9">File Listings</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org8423959">Enumerate Files</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org26ee524">Files By Size</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org85dbffd">Enumerate Files</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org7a451a7">Files By Size</a></li>
 </ul>
 </li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org99ecd71">Byobu (screen)</a></li>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org20f57b5">Links</a>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org98770ae">Byobu (screen)</a>
 <ul>
-<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org2cd824b">Rsync</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgf3ebe5c">Re-attach</a></li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#org85900d5">List</a></li>
+</ul>
+</li>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgeba210d">Links</a>
+<ul>
+<li><a href="abbreviationsfish-the-abbreviations-configuration/index.html#orgfeabc32">Rsync</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="notecard" id="orgffc5f3d">
+<div class="notecard" id="org91f6998">
 <p>The abbreviations the file goes into <code>~/.config/fish/conf.d/</code>.</p>
 </div>
 <p>Abbreviations are sort of like aliases except fish will expand them once you hit space or enter. If, for example, you enter <code>nb</code> ~ when you hit the space-bar fish will replace <code>nb</code> with <code>nikola bulid</code>. This makes them more transparent than functions, although they're also less powerful.</p>
 <p>According to <a href="https://github.com/fish-shell/fish-shell/issues/3099">this github issue</a> the files you put into <code>conf.d/</code> get read before <code>config.fish</code> so whatever you put in there is usable in <code>config.fish</code> (and using <code>config.fish</code>) at all is optional.</p>
-<div class="outline-2" id="outline-container-orgf35c2c3">
-<h2 id="orgf35c2c3">Nikola</h2>
-<div class="outline-text-2" id="text-orgf35c2c3">
+<div class="outline-2" id="outline-container-org4883191">
+<h2 id="org4883191">Nikola</h2>
+<div class="outline-text-2" id="text-org4883191">
 <p>Abbreviations to hopefully make working with <a href="https://getnikola.com/">Nikola</a> a little quicker.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- n <span class="s2">"nikola"</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-orge30d54d">
-<h3 id="orge30d54d">New Posts and Pages</h3>
-<div class="outline-text-3" id="text-orge30d54d">
+<div class="outline-3" id="outline-container-orgf9007ba">
+<h3 id="orgf9007ba">New Posts and Pages</h3>
+<div class="outline-text-3" id="text-orgf9007ba">
 <p>I only use org-mode so these are the commands to make new posts and pages.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- post nikola new_post --format orgmode --title
@@ -386,9 +396,9 @@
 <p>They actually look like the same files are produced, just one gets put into your pages folder and one gets put into your posts folder. Which is nice, I guess, in that we can move things back and forth between the blog and the web-pages as we need to.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org66e8d99">
-<h3 id="org66e8d99">Build, Serve, and Develop</h3>
-<div class="outline-text-3" id="text-org66e8d99">
+<div class="outline-3" id="outline-container-org6454154">
+<h3 id="org6454154">Build, Serve, and Develop</h3>
+<div class="outline-text-3" id="text-org6454154">
 <p>These are the ones I use the most when making posts and pages.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- nb <span class="s2">"nikola build"</span>
@@ -398,9 +408,9 @@ abbr --add -- nauto <span class="s2">"nikola auto"</span>
 <p><code>auto</code> will build and reload the page for you anytime it sees any changes. This can be convenient sometimes, but sometimes it detects changes to often (maybe when something is making a temporary backup) and it can end up reloading while you're reading the page so I don't use it as much as I used to.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org6126b93">
-<h3 id="org6126b93">Deploy to Github</h3>
-<div class="outline-text-3" id="text-org6126b93">
+<div class="outline-3" id="outline-container-orgec5348f">
+<h3 id="orgec5348f">Deploy to Github</h3>
+<div class="outline-text-3" id="text-orgec5348f">
 <p>And once it's ready…</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- deploy <span class="s2">"nikola github_deploy"</span>
@@ -408,28 +418,28 @@ abbr --add -- nauto <span class="s2">"nikola auto"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org972f8e5">
-<h2 id="org972f8e5">Git</h2>
-<div class="outline-text-2" id="text-org972f8e5">
+<div class="outline-2" id="outline-container-org031fb85">
+<h2 id="org031fb85">Git</h2>
+<div class="outline-text-2" id="text-org031fb85">
 <div class="highlight">
 <pre><span></span>abbr --add -- g <span class="s2">"git"</span>
 </pre></div>
 </div>
-<div class="outline-3" id="outline-container-org4f08793">
-<h3 id="org4f08793">Add, Commit, Push Stuff</h3>
-<div class="outline-text-3" id="text-org4f08793"></div>
-<div class="outline-4" id="outline-container-org10052b5">
-<h4 id="org10052b5">Adding Files</h4>
-<div class="outline-text-4" id="text-org10052b5">
+<div class="outline-3" id="outline-container-org7bc3ed2">
+<h3 id="org7bc3ed2">Add, Commit, Push Stuff</h3>
+<div class="outline-text-3" id="text-org7bc3ed2"></div>
+<div class="outline-4" id="outline-container-orgfa5b72d">
+<h4 id="orgfa5b72d">Adding Files</h4>
+<div class="outline-text-4" id="text-orgfa5b72d">
 <div class="highlight">
 <pre><span></span>abbr --add -- add <span class="s2">"git add"</span>
 abbr --add -- gaa <span class="s2">"git add -A"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-org9adee54">
-<h4 id="org9adee54">Are you ready for a commitment?</h4>
-<div class="outline-text-4" id="text-org9adee54">
+<div class="outline-4" id="outline-container-org88f65c3">
+<h4 id="org88f65c3">Are you ready for a commitment?</h4>
+<div class="outline-text-4" id="text-org88f65c3">
 <div class="highlight">
 <pre><span></span>abbr --add -- commit <span class="s2">"git commit"</span>
 abbr --add -- gcm <span class="s2">"git commit --message"</span>
@@ -437,9 +447,9 @@ abbr --add -- amend <span class="s2">"git commit --amend"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-4" id="outline-container-orgeb10d7b">
-<h4 id="orgeb10d7b">Speak To The Gods On High</h4>
-<div class="outline-text-4" id="text-orgeb10d7b">
+<div class="outline-4" id="outline-container-org7667c5c">
+<h4 id="org7667c5c">Speak To The Gods On High</h4>
+<div class="outline-text-4" id="text-org7667c5c">
 <p><a href="https://man7.org/linux/man-pages/man2/sync.2.html"><code>sync</code></a> is a builtin command (it writes caches to disk) so I went with <code>gsync</code> for the abbreviation.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- push <span class="s2">"git push"</span>
@@ -450,9 +460,9 @@ abbr --add -- fetch <span class="s2">"git fetch --prune"</span>
 </div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgef7b134">
-<h3 id="orgef7b134">The State of Things</h3>
-<div class="outline-text-3" id="text-orgef7b134">
+<div class="outline-3" id="outline-container-orgff14039">
+<h3 id="orgff14039">The State of Things</h3>
+<div class="outline-text-3" id="text-orgff14039">
 <p><a href="https://fishshell.com/docs/current/cmds/status.html"><code>status</code></a> gives you information about the fish-shell. This is the only thing I ever see, though.</p>
 <div class="highlight">
 <pre><span></span><span class="nb">status</span>
@@ -462,7 +472,7 @@ This is not a login shell
 Job control: Only on interactive jobs
 </pre>
 <p>But, anyway, I went with <code>gstat</code> to not block it in case it's really needed at some point.</p>
-<div class="notecard" id="org57eb908">
+<div class="notecard" id="org584cbd4">
 <p><b>Note:</b> Look at the <a href="ssh-agent-config-fragment/index.html">SSH Agent Config Fragment</a> post to see <code>status</code> in use. It's probably meant for programming, not as a command-line command.</p>
 </div>
 <div class="highlight">
@@ -471,9 +481,9 @@ abbr --add -- gstat <span class="s2">"git status"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgb00e40c">
-<h3 id="orgb00e40c">Branch Work</h3>
-<div class="outline-text-3" id="text-orgb00e40c">
+<div class="outline-3" id="outline-container-orgc2389bb">
+<h3 id="orgc2389bb">Branch Work</h3>
+<div class="outline-text-3" id="text-orgc2389bb">
 <p><a href="https://fishshell.com/docs/current/cmds/switch.html"><code>switch</code></a> is a built-in fish command to conditionally decide what to execute (like a chain of if-else statements).</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- branches <span class="s2">"legit branches"</span>
@@ -490,18 +500,18 @@ abbr --add -- destroythegods <span class="s2">"git push origin -d"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgf9ac473">
-<h3 id="orgf9ac473">Checkout Files</h3>
-<div class="outline-text-3" id="text-orgf9ac473">
+<div class="outline-3" id="outline-container-org9bda3f1">
+<h3 id="org9bda3f1">Checkout Files</h3>
+<div class="outline-text-3" id="text-org9bda3f1">
 <div class="highlight">
 <pre><span></span>abbr --add -- usetheirs <span class="s2">"git checkout --theirs"</span>
 abbr --add -- useours <span class="s2">"git checkout --ours"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org81d622d">
-<h3 id="org81d622d">My, How Things Have Changed</h3>
-<div class="outline-text-3" id="text-org81d622d">
+<div class="outline-3" id="outline-container-org1e54d7a">
+<h3 id="org1e54d7a">My, How Things Have Changed</h3>
+<div class="outline-text-3" id="text-org1e54d7a">
 <div class="highlight">
 <pre><span></span>abbr --add -- codechanges <span class="s2">"git log -p"</span>
 abbr --add -- logdiff <span class="s2">"git log -p"</span>
@@ -511,9 +521,9 @@ abbr --add -- gdiffn <span class="s2">"git diff --name-status"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org7fa37da">
-<h2 id="org7fa37da">Pass</h2>
-<div class="outline-text-2" id="text-org7fa37da">
+<div class="outline-2" id="outline-container-org6682c2b">
+<h2 id="org6682c2b">Pass</h2>
+<div class="outline-text-2" id="text-org6682c2b">
 <p>For <a href="https://www.passwordstore.org/">pass</a> the password-manager. I was doing the pull and push commands but decided to use the git <code>sync</code> alias which is actuall calling <code>legit sync</code>, which I think does pretty much the same as what I was doing. It does other stuff like stashing uncommitted changes, but that should never happen when using pass. Anyway. Sync.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- p <span class="s2">"pass"</span>
@@ -521,17 +531,17 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org6e102b7">
-<h2 id="org6e102b7">Grep</h2>
-<div class="outline-text-2" id="text-org6e102b7">
+<div class="outline-2" id="outline-container-org7197f0c">
+<h2 id="org7197f0c">Grep</h2>
+<div class="outline-text-2" id="text-org7197f0c">
 <div class="highlight">
 <pre><span></span>abbr --add -- grepr <span class="s2">"grep --color=always"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org783e89c">
-<h2 id="org783e89c">Proton VPN</h2>
-<div class="outline-text-2" id="text-org783e89c">
+<div class="outline-2" id="outline-container-orgf8e1c9a">
+<h2 id="orgf8e1c9a">Proton VPN</h2>
+<div class="outline-text-2" id="text-orgf8e1c9a">
 <div class="highlight">
 <pre><span></span>abbr --add -- vdc <span class="s2">"protonvpn-cli disconnect; protonvpn-cli connect"</span>
 </pre></div>
@@ -540,37 +550,37 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgae60118">
-<h2 id="orgae60118">Rsync</h2>
-<div class="outline-text-2" id="text-orgae60118"></div>
-<div class="outline-3" id="outline-container-org537e6c0">
-<h3 id="org537e6c0">Rsyncer</h3>
-<div class="outline-text-3" id="text-org537e6c0">
+<div class="outline-2" id="outline-container-org43671e6">
+<h2 id="org43671e6">Rsync</h2>
+<div class="outline-text-2" id="text-org43671e6"></div>
+<div class="outline-3" id="outline-container-orgb5c61ba">
+<h3 id="orgb5c61ba">Rsyncer</h3>
+<div class="outline-text-3" id="text-orgb5c61ba">
 <div class="highlight">
 <pre><span></span>abbr --add -- rsyncer <span class="s2">"rsync --progress --archive --compress"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgc855aee">
-<h3 id="orgc855aee">Rsyncerd</h3>
-<div class="outline-text-3" id="text-orgc855aee">
+<div class="outline-3" id="outline-container-org2ee1f76">
+<h3 id="org2ee1f76">Rsyncerd</h3>
+<div class="outline-text-3" id="text-org2ee1f76">
 <div class="highlight">
 <pre><span></span>abbr --add -- rsyncerd <span class="s2">"rsync --progress --archive --compress --delete"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org49de022">
-<h3 id="org49de022">Rsyncerf</h3>
-<div class="outline-text-3" id="text-org49de022">
+<div class="outline-3" id="outline-container-orga187cdb">
+<h3 id="orga187cdb">Rsyncerf</h3>
+<div class="outline-text-3" id="text-orga187cdb">
 <p>Creates the folder structure but doesn't copy the files over.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- rsyncerf <span class="s1">'rsync --progress --archive --delete --include="*/" --exclude="*"'</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-orgc223805">
-<h3 id="orgc223805">Rsyncery</h3>
-<div class="outline-text-3" id="text-orgc223805">
+<div class="outline-3" id="outline-container-orge89a7e9">
+<h3 id="orge89a7e9">Rsyncery</h3>
+<div class="outline-text-3" id="text-orge89a7e9">
 <p>Does a dry-run to show what would be done without actually transferring files. I made this because for some reason the Raspeberry Pi with Debian 11 on it has some kind of bug that makes rsync fail if the transfers take too long. I don't really know the cause, but it doesn't happen with newer ubuntu versions so it seem like either it's a bug in the creation of the LUKs drive (since I'm creating it on the Raspberry Pi) or in the running of rsync (when the error actually occurs), but in either case, I sometimes need to do sub-folders one at a time instead of just syncing the top folder in order to keep the transfers shorter and running this lets me see what folders need to be synced.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- drysync <span class="s2">"rsync --verbose --archive --delete --dry-run"</span>
@@ -578,12 +588,12 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org017b7b6">
-<h2 id="org017b7b6">PDFs</h2>
-<div class="outline-text-2" id="text-org017b7b6"></div>
-<div class="outline-3" id="outline-container-org473a8c9">
-<h3 id="org473a8c9">PDF Join</h3>
-<div class="outline-text-3" id="text-org473a8c9">
+<div class="outline-2" id="outline-container-org6704ab7">
+<h2 id="org6704ab7">PDFs</h2>
+<div class="outline-text-2" id="text-org6704ab7"></div>
+<div class="outline-3" id="outline-container-org6a7141b">
+<h3 id="org6a7141b">PDF Join</h3>
+<div class="outline-text-3" id="text-org6a7141b">
 <p>Uses Ghostscript to join separate PDF files. Need to pass in the name for the output file and a list of files to be joined (likely using a glob).</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- pdfjoin <span class="s2">"gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile="</span>
@@ -592,9 +602,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <p>That answer also has some options to shrink the output PDF, but this is initially being tested on an alread shrunken PDF which either only got a little smaller, or even got a little bigger, when the lowere-resolution settings were used so I won't put it in until there comes a case where it's shown to help.</p>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org6666445">
-<h3 id="org6666445">PDF Shrink</h3>
-<div class="outline-text-3" id="text-org6666445">
+<div class="outline-3" id="outline-container-org30cee40">
+<h3 id="org30cee40">PDF Shrink</h3>
+<div class="outline-text-3" id="text-org30cee40">
 <p>Uses Ghostscript to reduce images to "epub" level.</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- pdfshrink <span class="s2">"gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile="</span>
@@ -605,40 +615,40 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org418ca2b">
-<h2 id="org418ca2b">Emacs</h2>
-<div class="outline-text-2" id="text-org418ca2b"></div>
-<div class="outline-3" id="outline-container-org7675def">
-<h3 id="org7675def">Server Status</h3>
-<div class="outline-text-3" id="text-org7675def">
+<div class="outline-2" id="outline-container-orgda904a4">
+<h2 id="orgda904a4">Emacs</h2>
+<div class="outline-text-2" id="text-orgda904a4"></div>
+<div class="outline-3" id="outline-container-org152c93d">
+<h3 id="org152c93d">Server Status</h3>
+<div class="outline-text-3" id="text-org152c93d">
 <div class="highlight">
 <pre><span></span>  abbr --add -- emacsstatus <span class="s2">"systemctl --user status emacs"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org166ad6d">
-<h3 id="org166ad6d">Restart Server</h3>
-<div class="outline-text-3" id="text-org166ad6d">
+<div class="outline-3" id="outline-container-org121b91c">
+<h3 id="org121b91c">Restart Server</h3>
+<div class="outline-text-3" id="text-org121b91c">
 <div class="highlight">
 <pre><span></span>  abbr --add -- emacsrestart <span class="s2">"systemctl --user restart emacs"</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-orgc1de580">
-<h2 id="orgc1de580">File Listings</h2>
-<div class="outline-text-2" id="text-orgc1de580"></div>
-<div class="outline-3" id="outline-container-org8423959">
-<h3 id="org8423959">Enumerate Files</h3>
-<div class="outline-text-3" id="text-org8423959">
+<div class="outline-2" id="outline-container-org239e8d9">
+<h2 id="org239e8d9">File Listings</h2>
+<div class="outline-text-2" id="text-org239e8d9"></div>
+<div class="outline-3" id="outline-container-org85dbffd">
+<h3 id="org85dbffd">Enumerate Files</h3>
+<div class="outline-text-3" id="text-org85dbffd">
 <div class="highlight">
 <pre><span></span>abbr --add -- lsn <span class="s2">"ls --color | cat -n"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-3" id="outline-container-org26ee524">
-<h3 id="org26ee524">Files By Size</h3>
-<div class="outline-text-3" id="text-org26ee524">
+<div class="outline-3" id="outline-container-org7a451a7">
+<h3 id="org7a451a7">Files By Size</h3>
+<div class="outline-text-3" id="text-org7a451a7">
 <p>List one file per line (<code>-1</code>) sorted by size (<code>-S) showing human-readable sizes (</code>-sh=).</p>
 <div class="highlight">
 <pre><span></span>abbr --add -- lS <span class="s2">"ls -sSh1"</span>
@@ -646,9 +656,12 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org99ecd71">
-<h2 id="org99ecd71">Byobu (screen)</h2>
-<div class="outline-text-2" id="text-org99ecd71">
+<div class="outline-2" id="outline-container-org98770ae">
+<h2 id="org98770ae">Byobu (screen)</h2>
+<div class="outline-text-2" id="text-org98770ae"></div>
+<div class="outline-3" id="outline-container-orgf3ebe5c">
+<h3 id="orgf3ebe5c">Re-attach</h3>
+<div class="outline-text-3" id="text-orgf3ebe5c">
 <p>I've been using <code>byobu -S &lt;name&gt;</code> to create and <code>byobu -rd &lt;name&gt;</code> to create named screen sessions, but I sometimes forget if I've already created a session with the same name or not and either create another with the same name, get an error message telling me there's no session with that name, or use <code>byobu -ls</code> to check on existing screen sessions first. This seems like extra work, and it turns out that you can have <code>screen</code> do the checking for you by capitalizing the <code>-R</code> option.</p>
 <p>From the man-page for screen:</p>
 <blockquote>
@@ -660,9 +673,18 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 </pre></div>
 </div>
 </div>
-<div class="outline-2" id="outline-container-org20f57b5">
-<h2 id="org20f57b5">Links</h2>
-<div class="outline-text-2" id="text-org20f57b5">
+<div class="outline-3" id="outline-container-org85900d5">
+<h3 id="org85900d5">List</h3>
+<div class="outline-text-3" id="text-org85900d5">
+<div class="highlight">
+<pre><span></span>abbr --add -- bls <span class="s2">"byobu -ls"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="outline-2" id="outline-container-orgeba210d">
+<h2 id="orgeba210d">Links</h2>
+<div class="outline-text-2" id="text-orgeba210d">
 <ul class="org-ul">
 <li>abbr - manage fish abbreviations — fish-shell 3.6.1 documentation [Internet]. [cited 2023 Jun 22]. Available from: <a href="https://fishshell.com/docs/current/cmds/abbr.html">https://fishshell.com/docs/current/cmds/abbr.html</a></li>
 <li>faho. Answer to “Fish shell; import config into main config” [Internet]. Stack Overflow. 2018 [cited 2023 Jun 23]. Available from: <a href="https://stackoverflow.com/a/48749763">https://stackoverflow.com/a/48749763</a></li>
@@ -670,9 +692,9 @@ abbr --add -- pgs <span class="s2">"pass git sync"</span>
 <li><a href="https://askubuntu.com/questions/609303/how-can-i-view-a-progress-bar-when-running-rsync">Stack Exchange</a>: Rsync progress information</li>
 </ul>
 </div>
-<div class="outline-3" id="outline-container-org2cd824b">
-<h3 id="org2cd824b">Rsync</h3>
-<div class="outline-text-3" id="text-org2cd824b">
+<div class="outline-3" id="outline-container-orgfeabc32">
+<h3 id="orgfeabc32">Rsync</h3>
+<div class="outline-text-3" id="text-orgfeabc32">
 <ul class="org-ul">
 <li><a href="https://serverfault.com/a/141778">Server Fault</a>: Answer explaining the <code>--archive</code> option (I was using it before but also adding other flags that were redundant to it).</li>
 <li><a href="https://serverfault.com/a/204320">Server Fault answer</a>: explaining how to create the folder structure but not copy the files.</li>

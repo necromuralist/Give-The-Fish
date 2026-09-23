@@ -5,7 +5,316 @@
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
 &lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
 &lt;/div&gt;
-</copyright><lastBuildDate>Sun, 20 Sep 2026 19:45:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Function: PDF Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+</copyright><lastBuildDate>Wed, 23 Sep 2026 22:40:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Argparse Experiments</title><link>https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#orgeba0399"&gt;Boolean Options&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org548d554"&gt;Passing In Values To Options&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org20bfc32"&gt;Optional Values&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org6d39a6a"&gt;Missing Required Value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org2decc52"&gt;Optional Value Without Equal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org522d293"&gt;Optional Values (the right way this time)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org9d10cb4"&gt;Testing If A Path Argument Exists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#orgab1f1b8"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+This is a test of some of the fish-shell's &lt;a href="https://fishshell.com/docs/current/cmds/argparse.html"&gt;argparse&lt;/a&gt; options to see if I get how it works.
+&lt;/p&gt;
+&lt;div id="outline-container-orgeba0399" class="outline-2"&gt;
+&lt;h2 id="orgeba0399"&gt;Boolean Options&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgeba0399"&gt;
+&lt;p&gt;
+The basic option definition creates a boolean option - a variable for the flag will be created if the user passes in the option and it won't be created if the user doesn't.
+&lt;/p&gt;
+
+&lt;p&gt;
+This example creates a short-version (&lt;code&gt;-t&lt;/code&gt;) and a long-version (&lt;code&gt;--test&lt;/code&gt;) for the option.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;## Create the Option&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s2"&gt;"t/test"&lt;/span&gt;
+
+&lt;span class="c"&gt;## Create the Arguments&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"--test"&lt;/span&gt;
+
+&lt;span class="c"&gt;# Parse It&lt;/span&gt;
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt;  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="c"&gt;# Check if the variable was created&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_test
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"test set"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="c"&gt;# If we don't define an option but check it's variable it won't exist&lt;/span&gt;
+&lt;span class="c"&gt;# this will emit the statement only if =_flag_untest= exists&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_untest
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"untested set"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+test set
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Coming from a python background this feels to me like it should raise an exception, but that's not how it works.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org548d554" class="outline-2"&gt;
+&lt;h2 id="org548d554"&gt;Passing In Values To Options&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org548d554"&gt;
+&lt;p&gt;
+Putting an equals sign (&lt;code&gt;=&lt;/code&gt;) tells &lt;code&gt;argparse&lt;/code&gt; that we're (possibly) expecting a value to be passed in with the flag.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;## The Options&lt;/span&gt;
+&lt;span class="c"&gt;# first a long option that's either set or not set (no values expected)&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s2"&gt;"test"&lt;/span&gt;
+
+&lt;span class="c"&gt;# now a short option that expects a value&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append options &lt;span class="s2"&gt;"v="&lt;/span&gt;
+
+&lt;span class="c"&gt;## The Arguments&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"--test"&lt;/span&gt; &lt;span class="s2"&gt;"-v 5"&lt;/span&gt;
+
+&lt;span class="c"&gt;## parse the arguments&lt;/span&gt;
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt;  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_test
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"tested"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_v
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"v=&lt;/span&gt;&lt;span class="nv"&gt;$_flag_v&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;  
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-right"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;tested&lt;/td&gt;
+&lt;td class="org-right"&gt; &lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;v=&lt;/td&gt;
+&lt;td class="org-right"&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org20bfc32" class="outline-2"&gt;
+&lt;h2 id="org20bfc32"&gt;Optional Values&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org20bfc32"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org6d39a6a" class="outline-3"&gt;
+&lt;h3 id="org6d39a6a"&gt;Missing Required Value&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6d39a6a"&gt;
+&lt;p&gt;
+The prior case of creating an option with an equals sign after it creates a required value - if you use the option you have to pass in a value or it will be an error.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;argparse &lt;span class="s2"&gt;"--value="&lt;/span&gt; --  &lt;span class="s2"&gt;"--value"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;
+The Result:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;argparse: --value=: unknown option
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org2decc52" class="outline-3"&gt;
+&lt;h3 id="org2decc52"&gt;Optional Value Without Equal&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2decc52"&gt;
+&lt;p&gt;
+If you use a question mark after the option definition (&lt;code&gt;-v=?&lt;/code&gt;) then the option expects one or no value to be passed in.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;if you pass in more than one value it takes the first one&lt;/li&gt;
+&lt;li&gt;if you pass in no value it behaves like a boolean option&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+But, there's now a catch to passing in a value when compared to passing in a required value. Here's a case where I try to pass in an optional value.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s2"&gt;"t/test"&lt;/span&gt; &lt;span class="s2"&gt;"v/value=?"&lt;/span&gt;
+
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"-v 6"&lt;/span&gt;
+
+argparse  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_test
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"tested"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_v
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"v=&lt;/span&gt;&lt;span class="nv"&gt;$_flag_v&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The Result:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;argparse: -v 6: unknown option
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This fails because the option definition &lt;code&gt;v=?&lt;/code&gt; means the value passed in with the option (&lt;code&gt;-v&lt;/code&gt;) is optional - &lt;b&gt;so there can't be any spaces between the option and the value&lt;/b&gt;. To make it work the value has to be smashed up against a short-option (&lt;code&gt;-v6&lt;/code&gt;) or passed in using an equal sign with a long option (&lt;code&gt;--value=6&lt;/code&gt;).
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org522d293" class="outline-3"&gt;
+&lt;h3 id="org522d293"&gt;Optional Values (the right way this time)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org522d293"&gt;
+&lt;p&gt;
+This time we'll use two versions of the optional-values syntax - &lt;code&gt;?&lt;/code&gt; means zero or one, &lt;code&gt;*&lt;/code&gt; means 0 or more (it creates a list so you can pass in multiple valuse by repeating the flag).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;## Defining The Options&lt;/span&gt;
+&lt;span class="c"&gt;# The number of option-values an option takes mirrors the cardinality&lt;/span&gt;
+&lt;span class="c"&gt;# symbols used with regular expressions&lt;/span&gt;
+
+&lt;span class="c"&gt;# A '?' means 0 or 1 value&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s2"&gt;"v=?"&lt;/span&gt;
+
+&lt;span class="c"&gt;# '*' means 0 or more&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append options &lt;span class="s2"&gt;"cats=*"&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append options &lt;span class="s2"&gt;"dogs=*"&lt;/span&gt;
+
+&lt;span class="c"&gt;## The Arguments Being Passed In&lt;/span&gt;
+&lt;span class="c"&gt;# short option values need to be smashed together with no spaces&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"-v5"&lt;/span&gt;
+
+&lt;span class="c"&gt;# long arguments need values passed with an equal sign&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append arguments &lt;span class="s2"&gt;"--cats=8"&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append arguments &lt;span class="s2"&gt;"--cats=Too-Many"&lt;/span&gt;
+
+&lt;span class="c"&gt;# optional values are optional - passing nothing will make the flag&lt;/span&gt;
+&lt;span class="c"&gt;# act like a boolean&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append arguments &lt;span class="s2"&gt;"--dogs"&lt;/span&gt;
+
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt; -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_v
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"v &lt;/span&gt;&lt;span class="nv"&gt;$_flag_v&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_cats
+    &lt;span class="k"&gt;for&lt;/span&gt; amount &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$_flag_cats&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"cats &lt;/span&gt;&lt;span class="nv"&gt;$amount&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="c"&gt;# since we defined it as taking an (optional) value&lt;/span&gt;
+&lt;span class="c"&gt;# but didn't pass in a value, the variable is created&lt;/span&gt;
+&lt;span class="c"&gt;# but there's no value in it&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_dogs
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"dogs &lt;/span&gt;&lt;span class="nv"&gt;$_flag_dogs&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;v 5
+cats 8
+cats Too-Many
+dogs 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org9d10cb4" class="outline-2"&gt;
+&lt;h2 id="org9d10cb4"&gt;Testing If A Path Argument Exists&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9d10cb4"&gt;
+&lt;p&gt;
+If you put an exclamation mark (&lt;code&gt;!&lt;/code&gt;) after the option definition it turns whatever you put after the &lt;code&gt;!&lt;/code&gt; into a validator to check the value passed in by the user. In this case it'll use the &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;test&lt;/a&gt; command to check if the path passed in is a directory.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# here's out definition (using '+' as the cardinality (one or more)&lt;/span&gt;
+&lt;span class="c"&gt;# and a validator to check if the value passed in is a directory&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s1"&gt;'p/path=+!test -d "$_flag_value"'&lt;/span&gt;
+
+&lt;span class="c"&gt;# a trio of paths to pass in as arguments&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"--path=/tmp"&lt;/span&gt; &lt;span class="s2"&gt;"-p/home"&lt;/span&gt; &lt;span class="s2"&gt;"--p=/"&lt;/span&gt;
+
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt;  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_path
+    &lt;span class="k"&gt;for&lt;/span&gt; p &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$_flag_path&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"path: &lt;/span&gt;&lt;span class="nv"&gt;$p&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;path: /tmp
+path: /home
+path: /
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Note that using the option multiple times creates multiple entries for the &lt;code&gt;path&lt;/code&gt; option and that using two dashes for the short 'p' option works (weirdly) but changes it to use an equal sign instead of smashing the value up against the option (sort of a hybrid long and short option).
+&lt;/p&gt;
+
+&lt;p&gt;
+Also, the test checks that &lt;i&gt;all&lt;/i&gt; the values in &lt;code&gt;_flag_path&lt;/code&gt; are directories - if even one fails then the option isn't set.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s1"&gt;'p/path=+!test -d "$_flag_value"'&lt;/span&gt;
+
+&lt;span class="c"&gt;# a pair of valid paths as arguments&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"--path=/tmp"&lt;/span&gt; &lt;span class="s2"&gt;"-p/home"&lt;/span&gt;
+
+&lt;span class="c"&gt;# and an invalid path as well&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append arguments &lt;span class="s2"&gt;"--path=/oogabooga"&lt;/span&gt;
+
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt;  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_path
+    &lt;span class="k"&gt;for&lt;/span&gt; p &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$_flag_path&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"path: &lt;/span&gt;&lt;span class="nv"&gt;$p&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"No paths available."&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;No paths available.
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+So if you want it to be more forgiving and let some values fail you need to not test it with argparse and check the values afterwards.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgab1f1b8" class="outline-2"&gt;
+&lt;h2 id="orgab1f1b8"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgab1f1b8"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/argparse.html"&gt;Fish's Argparse Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>argparse</category><category>experiments</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html</guid><pubDate>Mon, 21 Sep 2026 00:09:21 GMT</pubDate></item><item><title>Function: PDF Pages</title><link>https://necromuralist.github.io/Give-The-Fish/posts/pdf-pages/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
@@ -328,31 +637,32 @@ This message is referring to &lt;a href="https://documentation.ubuntu.com/server
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org3c7f646"&gt;Patches&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgce578b7"&gt;Patches&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgb626cf4"&gt;Screen&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgb177c2c"&gt;Ghostscript (gs)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgcf4cbf9"&gt;Virtual Fish&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgb1780aa"&gt;pdfjam&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orga21fc93"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgda632b3"&gt;Image Magick&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org12da25e"&gt;PDF TK&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org59aa8a8"&gt;exiftool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org5835905"&gt;Screen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org7b0b430"&gt;Ghostscript (gs)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org1a8d88c"&gt;Virtual Fish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org5d7bbb6"&gt;pdfjam&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org5b43694"&gt;Emacs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org4896181"&gt;Image Magick&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org569a272"&gt;PDF TK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org29fb451"&gt;exiftool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org3824356"&gt;Git&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgec56688"&gt;Pages&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org4c9627b"&gt;Pages&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgbc3252f"&gt;Keychron K12 Keyboard&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgcd494e2"&gt;MakeMKV Command Line&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#org021e31c"&gt;Keychron K12 Keyboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/tealdeer-pages/index.html#orgcbed900"&gt;MakeMKV Command Line&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="notecard" id="org5e30383"&gt;
+&lt;div class="notecard" id="org024f190"&gt;
 &lt;p&gt;
-&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; As of February 18, 2026, tealdeer via apt is out of date. They changed the URL used for updating the cache (see &lt;a href="https://github.com/tealdeer-rs/tealdeer/issues/459"&gt;https://github.com/tealdeer-rs/tealdeer/issues/459&lt;/a&gt;) so versions older than 1.8 throw an error (apt currently installs 1.7.2-1). To get 1.8 I used &lt;a href="https://tealdeer-rs.github.io/tealdeer/installing.html#through-cargo-install"&gt;the Cargo Installation Instructions&lt;/a&gt; (which necessitated &lt;a href="https://doc.rust-lang.org/cargo/getting-started/installation.html"&gt;installing cargo and rust&lt;/a&gt;…).
+&lt;b&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;/b&gt; February 18, 2026 - tealdeer via apt is/was out of date. They changed the URL used for updating the cache (see &lt;a href="https://github.com/tealdeer-rs/tealdeer/issues/459"&gt;https://github.com/tealdeer-rs/tealdeer/issues/459&lt;/a&gt;) so versions older than 1.8 throw an error (apt currently installs 1.7.2-1). To get 1.8 I used &lt;a href="https://tealdeer-rs.github.io/tealdeer/installing.html#through-cargo-install"&gt;the Cargo Installation Instructions&lt;/a&gt; (which necessitated &lt;a href="https://doc.rust-lang.org/cargo/getting-started/installation.html"&gt;installing cargo and rust&lt;/a&gt;…).
 &lt;/p&gt;
 
 &lt;/div&gt;
@@ -366,20 +676,20 @@ This is for configuring &lt;a href="https://tealdeer-rs.github.io/tealdeer/"&gt;
 &lt;li&gt;The default location that &lt;code&gt;tealdeer&lt;/code&gt; will look for the pages is \(~/.local/share/tealdeer/pages/~\) so maybe symlink it there.&lt;/li&gt;
 &lt;li&gt;The pages that come with &lt;code&gt;tealdeer&lt;/code&gt; are at \(~/.cache/tealdeer/tldr-pages/pages/\) (look here for examples)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div id="outline-container-org3c7f646" class="outline-2"&gt;
-&lt;h2 id="org3c7f646"&gt;Patches&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3c7f646"&gt;
+&lt;div id="outline-container-orgce578b7" class="outline-2"&gt;
+&lt;h2 id="orgce578b7"&gt;Patches&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgce578b7"&gt;
 &lt;p&gt;
 These are &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches"&gt;patches&lt;/a&gt; which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages"&gt;pages&lt;/a&gt; instead (they go in the same folder, there's just a different file-name convention).
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb626cf4" class="outline-3"&gt;
-&lt;h3 id="orgb626cf4"&gt;Screen&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb626cf4"&gt;
+&lt;div id="outline-container-org5835905" class="outline-3"&gt;
+&lt;h3 id="org5835905"&gt;Screen&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5835905"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org3d666df" class="outline-4"&gt;
-&lt;h4 id="org3d666df"&gt;Name the Screen&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org3d666df"&gt;
+&lt;div id="outline-container-orgc93c59b" class="outline-4"&gt;
+&lt;h4 id="orgc93c59b"&gt;Name the Screen&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgc93c59b"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- Give the screen a name
 
 `&amp;lt;Ctrl-a&amp;gt; A`
@@ -387,21 +697,21 @@ These are &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb177c2c" class="outline-3"&gt;
-&lt;h3 id="orgb177c2c"&gt;Ghostscript (gs)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb177c2c"&gt;
+&lt;div id="outline-container-org7b0b430" class="outline-3"&gt;
+&lt;h3 id="org7b0b430"&gt;Ghostscript (gs)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7b0b430"&gt;
 &lt;p&gt;
 This is for ghost script.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org22a380d" class="outline-4"&gt;
-&lt;h4 id="org22a380d"&gt;Black and White PDF&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org22a380d"&gt;
+&lt;div id="outline-container-orgc23b359" class="outline-4"&gt;
+&lt;h4 id="orgc23b359"&gt;Black and White PDF&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgc23b359"&gt;
 &lt;p&gt;
 This is to convert a PDF's text and vector images to Black and White to make it easier to read when printed. From a &lt;a href="https://askubuntu.com/a/1474303"&gt;Ask Ubunt (Stack Exchange)&lt;/a&gt; answer.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="org3634454"&gt;
+&lt;div class="notecard" id="org65bfad4"&gt;
 &lt;p&gt;
 In the cases I've tried this doesn't convert raster images.
 &lt;/p&gt;
@@ -414,14 +724,14 @@ In the cases I've tried this doesn't convert raster images.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga850621" class="outline-4"&gt;
-&lt;h4 id="orga850621"&gt;Black and White PDF and No Images&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orga850621"&gt;
+&lt;div id="outline-container-org7cfb58d" class="outline-4"&gt;
+&lt;h4 id="org7cfb58d"&gt;Black and White PDF and No Images&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org7cfb58d"&gt;
 &lt;p&gt;
 This is the previous command (Black and White) but it removes &lt;i&gt;all&lt;/i&gt; images, leaving only vectors-based items. This is for the case where someone used a background image and all you're interested in is the text and tables.
 &lt;/p&gt;
 
-&lt;div class="notecard" id="orgccdd708"&gt;
+&lt;div class="notecard" id="orgdf54a30"&gt;
 &lt;p&gt;
 Removes all images.
 &lt;/p&gt;
@@ -434,9 +744,9 @@ Removes all images.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8a82ca8" class="outline-4"&gt;
-&lt;h4 id="org8a82ca8"&gt;Compress For Ebook&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org8a82ca8"&gt;
+&lt;div id="outline-container-orgb2379b6" class="outline-4"&gt;
+&lt;h4 id="orgb2379b6"&gt;Compress For Ebook&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgb2379b6"&gt;
 &lt;p&gt;
 This adds some extra flags to the compression help that comes with tealdeer. 
 &lt;/p&gt;
@@ -451,9 +761,9 @@ This adds some extra flags to the compression help that comes with tealdeer.
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org3a47aab" class="outline-4"&gt;
-&lt;h4 id="org3a47aab"&gt;Convert To Grayscale&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org3a47aab"&gt;
+&lt;div id="outline-container-org38804bf" class="outline-4"&gt;
+&lt;h4 id="org38804bf"&gt;Convert To Grayscale&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org38804bf"&gt;
 &lt;p&gt;
 Sometimes images are RGB even though they are of black and white or gray images. Adding these flags will convert them to grayscale only. This actually doesn't save a huge amount of space most of the time (although it might if the image really was color and you're converting it tq gray) but I add the flags to the Black and White settings above to squeeze out a little more. It sometimes makes them look nicer as well.
 &lt;/p&gt;
@@ -472,9 +782,9 @@ Source: &lt;a href="https://stackoverflow.com/a/20133915"&gt;Stack Overflow&lt;/
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgda8df54" class="outline-4"&gt;
-&lt;h4 id="orgda8df54"&gt;Resize (to Letter)&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgda8df54"&gt;
+&lt;div id="outline-container-orgab7ae90" class="outline-4"&gt;
+&lt;h4 id="orgab7ae90"&gt;Resize (to Letter)&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgab7ae90"&gt;
 &lt;p&gt;
 Evince no longer has the "Scale to Printable Area" option when printing PDFs, so this is something to use to get the PDF to letter-sized before printing. (from &lt;a href="https://stackoverflow.com/a/7507511"&gt;Stack Overflow: Resizing a PDF Using Ghostscript&lt;/a&gt;)
 &lt;/p&gt;
@@ -486,13 +796,13 @@ Evince no longer has the "Scale to Printable Area" option when printing PDFs, so
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcf4cbf9" class="outline-3"&gt;
-&lt;h3 id="orgcf4cbf9"&gt;Virtual Fish&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcf4cbf9"&gt;
+&lt;div id="outline-container-org1a8d88c" class="outline-3"&gt;
+&lt;h3 id="org1a8d88c"&gt;Virtual Fish&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1a8d88c"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org24b54ef" class="outline-4"&gt;
-&lt;h4 id="org24b54ef"&gt;Check The Environment&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org24b54ef"&gt;
+&lt;div id="outline-container-orgc20947e" class="outline-4"&gt;
+&lt;h4 id="orgc20947e"&gt;Check The Environment&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgc20947e"&gt;
 &lt;p&gt;
 This adds the build-state for the virtual-environments managed by virtualfish.
 &lt;/p&gt;
@@ -503,9 +813,9 @@ This adds the build-state for the virtual-environments managed by virtualfish.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1bbf573" class="outline-4"&gt;
-&lt;h4 id="org1bbf573"&gt;Rebuild the Environment&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org1bbf573"&gt;
+&lt;div id="outline-container-orgd1757d4" class="outline-4"&gt;
+&lt;h4 id="orgd1757d4"&gt;Rebuild the Environment&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgd1757d4"&gt;
 &lt;p&gt;
 This is the command to use after an Ubuntu upgrade where they change the python version and all the virtual environments are broken.
 &lt;/p&gt;
@@ -524,7 +834,7 @@ You can also rebuild a specific environment (not necessarily the one you're in).
 &lt;span class="sb"&gt;`vf upgrade --rebuild {{virtualenv-name}}`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="org410717a"&gt;
+&lt;div class="notecard" id="orgc25b894"&gt;
 &lt;p&gt;
 If the environments are broken by an update, &lt;code&gt;pipx&lt;/code&gt; is likely broken too, run this too, maybe:
 &lt;/p&gt;
@@ -538,13 +848,13 @@ If the environments are broken by an update, &lt;code&gt;pipx&lt;/code&gt; is li
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb1780aa" class="outline-3"&gt;
-&lt;h3 id="orgb1780aa"&gt;pdfjam&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb1780aa"&gt;
+&lt;div id="outline-container-org5d7bbb6" class="outline-3"&gt;
+&lt;h3 id="org5d7bbb6"&gt;pdfjam&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5d7bbb6"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org962a315" class="outline-4"&gt;
-&lt;h4 id="org962a315"&gt;Resize to Letter&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org962a315"&gt;
+&lt;div id="outline-container-org9183c86" class="outline-4"&gt;
+&lt;h4 id="org9183c86"&gt;Resize to Letter&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org9183c86"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Resize PDF document to letter-paper size
 
 &lt;span class="sb"&gt;`pdfjam {{input-file}} --paper letter --outfile {{output-file-name}}`&lt;/span&gt;
@@ -554,13 +864,13 @@ If the environments are broken by an update, &lt;code&gt;pipx&lt;/code&gt; is li
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga21fc93" class="outline-3"&gt;
-&lt;h3 id="orga21fc93"&gt;Emacs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga21fc93"&gt;
+&lt;div id="outline-container-org5b43694" class="outline-3"&gt;
+&lt;h3 id="org5b43694"&gt;Emacs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5b43694"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgeda681c" class="outline-4"&gt;
-&lt;h4 id="orgeda681c"&gt;Open File With Sudo&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgeda681c"&gt;
+&lt;div id="outline-container-orgf985265" class="outline-4"&gt;
+&lt;h4 id="orgf985265"&gt;Open File With Sudo&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgf985265"&gt;
 &lt;p&gt;
 Got this from &lt;a href="https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs"&gt;a Stack Overflow Question&lt;/a&gt;. The user's question is asking for an alternative way to do this, but the answers tell him that it's the best way to do it after all (he thought it was using SSH but it uses a sub-shell).
 &lt;/p&gt;
@@ -571,9 +881,9 @@ Got this from &lt;a href="https://stackoverflow.com/questions/95631/open-a-file-
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga8bd25e" class="outline-4"&gt;
-&lt;h4 id="orga8bd25e"&gt;Use a Different Init.el&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orga8bd25e"&gt;
+&lt;div id="outline-container-orgea7e158" class="outline-4"&gt;
+&lt;h4 id="orgea7e158"&gt;Use a Different Init.el&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgea7e158"&gt;
 &lt;p&gt;
 This is to use a different &lt;code&gt;init.el&lt;/code&gt; file (presumably for debugging).
 &lt;/p&gt;
@@ -585,13 +895,13 @@ This is to use a different &lt;code&gt;init.el&lt;/code&gt; file (presumably for
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgda632b3" class="outline-3"&gt;
-&lt;h3 id="orgda632b3"&gt;Image Magick&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgda632b3"&gt;
+&lt;div id="outline-container-org4896181" class="outline-3"&gt;
+&lt;h3 id="org4896181"&gt;Image Magick&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4896181"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org776e460" class="outline-4"&gt;
-&lt;h4 id="org776e460"&gt;Remove PDF Background&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org776e460"&gt;
+&lt;div id="outline-container-org16ef35b" class="outline-4"&gt;
+&lt;h4 id="org16ef35b"&gt;Remove PDF Background&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org16ef35b"&gt;
 &lt;p&gt;
 This assumes a image "density" for the background and converts the pages to images so the output file will likely be much larger. It might be best to use this for printing and then deleting the converted PDF.
 &lt;/p&gt;
@@ -601,7 +911,7 @@ This assumes a image "density" for the background and converts the pages to imag
 &lt;span class="sb"&gt;`magick convert -density 300 {{path/to/input.pdf}} -white-threshold 80% {{path/to/output.pdf}}`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="notecard" id="orgd8d8d8d"&gt;
+&lt;div class="notecard" id="orge8789e6"&gt;
 &lt;p&gt;
 I also tried removing the background color specifically but doing that eats into everything that sits above the background as well (removes the anti-aliasing overlap, I assume).
 &lt;/p&gt;
@@ -610,13 +920,13 @@ I also tried removing the background color specifically but doing that eats into
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org12da25e" class="outline-3"&gt;
-&lt;h3 id="org12da25e"&gt;PDF TK&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org12da25e"&gt;
+&lt;div id="outline-container-org569a272" class="outline-3"&gt;
+&lt;h3 id="org569a272"&gt;PDF TK&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org569a272"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgfea941c" class="outline-4"&gt;
-&lt;h4 id="orgfea941c"&gt;Export Bookmarks&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgfea941c"&gt;
+&lt;div id="outline-container-org2050c1b" class="outline-4"&gt;
+&lt;h4 id="org2050c1b"&gt;Export Bookmarks&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org2050c1b"&gt;
 &lt;p&gt;
 Export bookmarks from a PDF. I normally use &lt;code&gt;cpdf&lt;/code&gt; for bookmarks, but in the case of Wanderhome, when I reduced the resolution to get a smaller PDF it removed the bookmarks so I had to copy them from the original and for some reason &lt;code&gt;cpdf&lt;/code&gt; couldn't dump them, but pdftk could.
 &lt;/p&gt;
@@ -649,9 +959,9 @@ Taken from &lt;a href="https://www.pdflabs.com/blog/export-and-import-pdf-bookma
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgec23a36" class="outline-4"&gt;
-&lt;h4 id="orgec23a36"&gt;Import Bookmarks&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgec23a36"&gt;
+&lt;div id="outline-container-org5c5d8f8" class="outline-4"&gt;
+&lt;h4 id="org5c5d8f8"&gt;Import Bookmarks&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org5c5d8f8"&gt;
 &lt;p&gt;
 Import bookmarks dumped from another PDF. The prompt for this was that I reduced the resolution/size of a pdf and lost the bookmarks in the original and restored them by copying them over.
 &lt;/p&gt;
@@ -663,16 +973,16 @@ Import bookmarks dumped from another PDF. The prompt for this was that I reduced
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org59aa8a8" class="outline-3"&gt;
-&lt;h3 id="org59aa8a8"&gt;exiftool&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org59aa8a8"&gt;
+&lt;div id="outline-container-org29fb451" class="outline-3"&gt;
+&lt;h3 id="org29fb451"&gt;exiftool&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org29fb451"&gt;
 &lt;p&gt;
 &lt;a href="https://exiftool.org/"&gt;exiftool&lt;/a&gt; is a metadata editor. It handles many file types but I used it for PDFs.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org277811c" class="outline-4"&gt;
-&lt;h4 id="org277811c"&gt;Title&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org277811c"&gt;
+&lt;div id="outline-container-org2c18ca9" class="outline-4"&gt;
+&lt;h4 id="org2c18ca9"&gt;Title&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org2c18ca9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Change the title for the file
 &lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Note: The option needs the "=" between the name and the argument, spaces make it think you're passing in another input file.
 
@@ -681,24 +991,41 @@ Import bookmarks dumped from another PDF. The prompt for this was that I reduced
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div id="outline-container-org3824356" class="outline-3"&gt;
+&lt;h3 id="org3824356"&gt;Git&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3824356"&gt;
+&lt;p&gt;
+I use &lt;a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases"&gt;git aliases&lt;/a&gt; (and also &lt;a href="https://kennethreitz.org/software/legit"&gt;legit&lt;/a&gt;) to remember git things for me as much as possible, but this is for things that are sort of as simple as they should be but I keep forgetting about them anyway.
+&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgec56688" class="outline-2"&gt;
-&lt;h2 id="orgec56688"&gt;Pages&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgec56688"&gt;
+&lt;div id="outline-container-org957de9f" class="outline-4"&gt;
+&lt;h4 id="org957de9f"&gt;Checkout a File From Another Branch&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org957de9f"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- Checkout a file from another branch
+
+&lt;span class="err"&gt;`&lt;/span&gt;git checkout &lt;span class="err"&gt;{{&lt;/span&gt;branch name&lt;span class="err"&gt;}}&lt;/span&gt; &lt;span class="err"&gt;{{&lt;/span&gt;path to file&lt;span class="err"&gt;}}`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org4c9627b" class="outline-2"&gt;
+&lt;h2 id="org4c9627b"&gt;Pages&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4c9627b"&gt;
 &lt;p&gt;
 These are &lt;a href="https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages"&gt;pages&lt;/a&gt; - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with &lt;code&gt;page.md&lt;/code&gt; instead of &lt;code&gt;patch.md&lt;/code&gt;. Otherwise the contents look the same.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgbc3252f" class="outline-3"&gt;
-&lt;h3 id="orgbc3252f"&gt;Keychron K12 Keyboard&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgbc3252f"&gt;
+&lt;div id="outline-container-org021e31c" class="outline-3"&gt;
+&lt;h3 id="org021e31c"&gt;Keychron K12 Keyboard&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org021e31c"&gt;
 &lt;p&gt;
 Although this is hardware, I thought it'd be helpful to put something in here in case I forget things.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7f7c073" class="outline-4"&gt;
-&lt;h4 id="org7f7c073"&gt;Bluetooth Pairing&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org7f7c073"&gt;
+&lt;div id="outline-container-org3d3230c" class="outline-4"&gt;
+&lt;h4 id="org3d3230c"&gt;Bluetooth Pairing&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org3d3230c"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Enable pairing (also needs the side-switch to be moved from USB to bluetooth). Q is QWERTY-based.
 
 &lt;span class="sb"&gt;`fn1-Q (hold until LED lights up)`&lt;/span&gt;
@@ -706,16 +1033,16 @@ Although this is hardware, I thought it'd be helpful to put something in here in
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcd494e2" class="outline-3"&gt;
-&lt;h3 id="orgcd494e2"&gt;MakeMKV Command Line&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcd494e2"&gt;
+&lt;div id="outline-container-orgcbed900" class="outline-3"&gt;
+&lt;h3 id="orgcbed900"&gt;MakeMKV Command Line&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgcbed900"&gt;
 &lt;p&gt;
 The &lt;code&gt;makemkvcon&lt;/code&gt; command has a &lt;code&gt;--help&lt;/code&gt; output, which is somewhat vague. I got the information for this from a developers text file &lt;a href="https://www.makemkv.com/developers/usage.txt"&gt;usage.txt&lt;/a&gt; on makemkv.com/developers. Normally I use the GUI but sometimes it crashes due to errors specific to the GUI so the command line interface is useful to work around those cases.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgdf81417" class="outline-4"&gt;
-&lt;h4 id="orgdf81417"&gt;List Drives&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgdf81417"&gt;
+&lt;div id="outline-container-org2d9cee8" class="outline-4"&gt;
+&lt;h4 id="org2d9cee8"&gt;List Drives&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org2d9cee8"&gt;
 &lt;p&gt;
 This lists the drives as &lt;code&gt;makemkvcon&lt;/code&gt; sees them.
 &lt;/p&gt;
@@ -839,9 +1166,9 @@ Looking at the sample output, it has &lt;code&gt;2&lt;/code&gt; for "visible" an
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5d2c060" class="outline-4"&gt;
-&lt;h4 id="org5d2c060"&gt;Copy Disc As MKV Files&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org5d2c060"&gt;
+&lt;div id="outline-container-org6912713" class="outline-4"&gt;
+&lt;h4 id="org6912713"&gt;Copy Disc As MKV Files&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org6912713"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Save disk to the current directory as MKV files
 
 &lt;span class="sb"&gt;`makemkvcon mkv disc:{{index}} all .`&lt;/span&gt;
@@ -969,30 +1296,4 @@ I looked in the source code (from Google's &lt;a href="https://chromium.googleso
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>cli</category><category>functions</category><category>images</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item><item><title>Abbreviations: Mother Ship</title><link>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
-&lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents" role="doc-toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html#orge43b78a"&gt;Mount Drives&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;
-This tangle is for extra configurations that are meant for PCs with a GUI that a user interacts with directly (as opposed to a server) and it has stuff that aren't going to be used on servers.
-&lt;/p&gt;
-
-&lt;p&gt;
-I'm putting it in &lt;code&gt;dingehaufen/conf.d/&lt;/code&gt; so it should be linked to in &lt;code&gt;.config/fish/conf.d/&lt;/code&gt; for PCs that need it.
-&lt;/p&gt;
-&lt;div id="outline-container-orge43b78a" class="outline-2"&gt;
-&lt;h2 id="orge43b78a"&gt;Mount Drives&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge43b78a"&gt;
-&lt;p&gt;
-This is an abbreviation that mounts both the cryfs folders and the external (LUKs) drive.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;abbr --add -- md &lt;span class="s2"&gt;"mountcryfs; mount-data"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>abbreviations</category><category>configuration</category><category>version-0</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/abbreviations-mother-ship/index.html</guid><pubDate>Thu, 25 Apr 2024 21:22:03 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>cli</category><category>functions</category><category>images</category><category>webp</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/to-webp-function/index.html</guid><pubDate>Thu, 21 Nov 2024 01:28:44 GMT</pubDate></item></channel></rss>

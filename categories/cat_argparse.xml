@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Give the Fish (Posts about Argparse)</title><link>https://necromuralist.github.io/Give-The-Fish/</link><description></description><atom:link href="https://necromuralist.github.io/Give-The-Fish/categories/cat_argparse.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:cloisteredmonkey.jmark@slmail.me"&gt;Cloistered Monkey&lt;/a&gt; 
+&lt;div id="license"xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under
+&lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"&gt;
+&lt;img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"&gt;&lt;/a&gt;
+&lt;/div&gt;
+</copyright><lastBuildDate>Wed, 23 Sep 2026 22:40:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Argparse Experiments</title><link>https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html</link><dc:creator>Cloistered Monkey</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#orgeba0399"&gt;Boolean Options&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org548d554"&gt;Passing In Values To Options&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org20bfc32"&gt;Optional Values&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org6d39a6a"&gt;Missing Required Value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org2decc52"&gt;Optional Value Without Equal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org522d293"&gt;Optional Values (the right way this time)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#org9d10cb4"&gt;Testing If A Path Argument Exists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html#orgab1f1b8"&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+This is a test of some of the fish-shell's &lt;a href="https://fishshell.com/docs/current/cmds/argparse.html"&gt;argparse&lt;/a&gt; options to see if I get how it works.
+&lt;/p&gt;
+&lt;div id="outline-container-orgeba0399" class="outline-2"&gt;
+&lt;h2 id="orgeba0399"&gt;Boolean Options&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgeba0399"&gt;
+&lt;p&gt;
+The basic option definition creates a boolean option - a variable for the flag will be created if the user passes in the option and it won't be created if the user doesn't.
+&lt;/p&gt;
+
+&lt;p&gt;
+This example creates a short-version (&lt;code&gt;-t&lt;/code&gt;) and a long-version (&lt;code&gt;--test&lt;/code&gt;) for the option.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;## Create the Option&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s2"&gt;"t/test"&lt;/span&gt;
+
+&lt;span class="c"&gt;## Create the Arguments&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"--test"&lt;/span&gt;
+
+&lt;span class="c"&gt;# Parse It&lt;/span&gt;
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt;  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="c"&gt;# Check if the variable was created&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_test
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"test set"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="c"&gt;# If we don't define an option but check it's variable it won't exist&lt;/span&gt;
+&lt;span class="c"&gt;# this will emit the statement only if =_flag_untest= exists&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_untest
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"untested set"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+test set
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Coming from a python background this feels to me like it should raise an exception, but that's not how it works.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org548d554" class="outline-2"&gt;
+&lt;h2 id="org548d554"&gt;Passing In Values To Options&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org548d554"&gt;
+&lt;p&gt;
+Putting an equals sign (&lt;code&gt;=&lt;/code&gt;) tells &lt;code&gt;argparse&lt;/code&gt; that we're (possibly) expecting a value to be passed in with the flag.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;## The Options&lt;/span&gt;
+&lt;span class="c"&gt;# first a long option that's either set or not set (no values expected)&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s2"&gt;"test"&lt;/span&gt;
+
+&lt;span class="c"&gt;# now a short option that expects a value&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append options &lt;span class="s2"&gt;"v="&lt;/span&gt;
+
+&lt;span class="c"&gt;## The Arguments&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"--test"&lt;/span&gt; &lt;span class="s2"&gt;"-v 5"&lt;/span&gt;
+
+&lt;span class="c"&gt;## parse the arguments&lt;/span&gt;
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt;  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_test
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"tested"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_v
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"v=&lt;/span&gt;&lt;span class="nv"&gt;$_flag_v&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;  
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-right"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;tested&lt;/td&gt;
+&lt;td class="org-right"&gt; &lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;v=&lt;/td&gt;
+&lt;td class="org-right"&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org20bfc32" class="outline-2"&gt;
+&lt;h2 id="org20bfc32"&gt;Optional Values&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org20bfc32"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org6d39a6a" class="outline-3"&gt;
+&lt;h3 id="org6d39a6a"&gt;Missing Required Value&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6d39a6a"&gt;
+&lt;p&gt;
+The prior case of creating an option with an equals sign after it creates a required value - if you use the option you have to pass in a value or it will be an error.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;argparse &lt;span class="s2"&gt;"--value="&lt;/span&gt; --  &lt;span class="s2"&gt;"--value"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;
+The Result:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;argparse: --value=: unknown option
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org2decc52" class="outline-3"&gt;
+&lt;h3 id="org2decc52"&gt;Optional Value Without Equal&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2decc52"&gt;
+&lt;p&gt;
+If you use a question mark after the option definition (&lt;code&gt;-v=?&lt;/code&gt;) then the option expects one or no value to be passed in.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;if you pass in more than one value it takes the first one&lt;/li&gt;
+&lt;li&gt;if you pass in no value it behaves like a boolean option&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+But, there's now a catch to passing in a value when compared to passing in a required value. Here's a case where I try to pass in an optional value.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s2"&gt;"t/test"&lt;/span&gt; &lt;span class="s2"&gt;"v/value=?"&lt;/span&gt;
+
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"-v 6"&lt;/span&gt;
+
+argparse  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_test
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"tested"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_v
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"v=&lt;/span&gt;&lt;span class="nv"&gt;$_flag_v&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The Result:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;argparse: -v 6: unknown option
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This fails because the option definition &lt;code&gt;v=?&lt;/code&gt; means the value passed in with the option (&lt;code&gt;-v&lt;/code&gt;) is optional - &lt;b&gt;so there can't be any spaces between the option and the value&lt;/b&gt;. To make it work the value has to be smashed up against a short-option (&lt;code&gt;-v6&lt;/code&gt;) or passed in using an equal sign with a long option (&lt;code&gt;--value=6&lt;/code&gt;).
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org522d293" class="outline-3"&gt;
+&lt;h3 id="org522d293"&gt;Optional Values (the right way this time)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org522d293"&gt;
+&lt;p&gt;
+This time we'll use two versions of the optional-values syntax - &lt;code&gt;?&lt;/code&gt; means zero or one, &lt;code&gt;*&lt;/code&gt; means 0 or more (it creates a list so you can pass in multiple valuse by repeating the flag).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;## Defining The Options&lt;/span&gt;
+&lt;span class="c"&gt;# The number of option-values an option takes mirrors the cardinality&lt;/span&gt;
+&lt;span class="c"&gt;# symbols used with regular expressions&lt;/span&gt;
+
+&lt;span class="c"&gt;# A '?' means 0 or 1 value&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s2"&gt;"v=?"&lt;/span&gt;
+
+&lt;span class="c"&gt;# '*' means 0 or more&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append options &lt;span class="s2"&gt;"cats=*"&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append options &lt;span class="s2"&gt;"dogs=*"&lt;/span&gt;
+
+&lt;span class="c"&gt;## The Arguments Being Passed In&lt;/span&gt;
+&lt;span class="c"&gt;# short option values need to be smashed together with no spaces&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"-v5"&lt;/span&gt;
+
+&lt;span class="c"&gt;# long arguments need values passed with an equal sign&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append arguments &lt;span class="s2"&gt;"--cats=8"&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append arguments &lt;span class="s2"&gt;"--cats=Too-Many"&lt;/span&gt;
+
+&lt;span class="c"&gt;# optional values are optional - passing nothing will make the flag&lt;/span&gt;
+&lt;span class="c"&gt;# act like a boolean&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append arguments &lt;span class="s2"&gt;"--dogs"&lt;/span&gt;
+
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt; -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_v
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"v &lt;/span&gt;&lt;span class="nv"&gt;$_flag_v&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_cats
+    &lt;span class="k"&gt;for&lt;/span&gt; amount &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$_flag_cats&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"cats &lt;/span&gt;&lt;span class="nv"&gt;$amount&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="c"&gt;# since we defined it as taking an (optional) value&lt;/span&gt;
+&lt;span class="c"&gt;# but didn't pass in a value, the variable is created&lt;/span&gt;
+&lt;span class="c"&gt;# but there's no value in it&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_dogs
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"dogs &lt;/span&gt;&lt;span class="nv"&gt;$_flag_dogs&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;v 5
+cats 8
+cats Too-Many
+dogs 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org9d10cb4" class="outline-2"&gt;
+&lt;h2 id="org9d10cb4"&gt;Testing If A Path Argument Exists&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9d10cb4"&gt;
+&lt;p&gt;
+If you put an exclamation mark (&lt;code&gt;!&lt;/code&gt;) after the option definition it turns whatever you put after the &lt;code&gt;!&lt;/code&gt; into a validator to check the value passed in by the user. In this case it'll use the &lt;a href="https://fishshell.com/docs/current/cmds/test.html"&gt;test&lt;/a&gt; command to check if the path passed in is a directory.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# here's out definition (using '+' as the cardinality (one or more)&lt;/span&gt;
+&lt;span class="c"&gt;# and a validator to check if the value passed in is a directory&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s1"&gt;'p/path=+!test -d "$_flag_value"'&lt;/span&gt;
+
+&lt;span class="c"&gt;# a trio of paths to pass in as arguments&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"--path=/tmp"&lt;/span&gt; &lt;span class="s2"&gt;"-p/home"&lt;/span&gt; &lt;span class="s2"&gt;"--p=/"&lt;/span&gt;
+
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt;  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_path
+    &lt;span class="k"&gt;for&lt;/span&gt; p &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$_flag_path&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"path: &lt;/span&gt;&lt;span class="nv"&gt;$p&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;path: /tmp
+path: /home
+path: /
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Note that using the option multiple times creates multiple entries for the &lt;code&gt;path&lt;/code&gt; option and that using two dashes for the short 'p' option works (weirdly) but changes it to use an equal sign instead of smashing the value up against the option (sort of a hybrid long and short option).
+&lt;/p&gt;
+
+&lt;p&gt;
+Also, the test checks that &lt;i&gt;all&lt;/i&gt; the values in &lt;code&gt;_flag_path&lt;/code&gt; are directories - if even one fails then the option isn't set.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; options &lt;span class="s1"&gt;'p/path=+!test -d "$_flag_value"'&lt;/span&gt;
+
+&lt;span class="c"&gt;# a pair of valid paths as arguments&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; arguments &lt;span class="s2"&gt;"--path=/tmp"&lt;/span&gt; &lt;span class="s2"&gt;"-p/home"&lt;/span&gt;
+
+&lt;span class="c"&gt;# and an invalid path as well&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; --append arguments &lt;span class="s2"&gt;"--path=/oogabooga"&lt;/span&gt;
+
+argparse &lt;span class="nv"&gt;$options&lt;/span&gt;  -- &lt;span class="nv"&gt;$arguments&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; --query _flag_path
+    &lt;span class="k"&gt;for&lt;/span&gt; p &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$_flag_path&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"path: &lt;/span&gt;&lt;span class="nv"&gt;$p&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"No paths available."&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;No paths available.
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+So if you want it to be more forgiving and let some values fail you need to not test it with argparse and check the values afterwards.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgab1f1b8" class="outline-2"&gt;
+&lt;h2 id="orgab1f1b8"&gt;Links&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgab1f1b8"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://fishshell.com/docs/current/cmds/argparse.html"&gt;Fish's Argparse Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>argparse</category><category>experiments</category><guid>https://necromuralist.github.io/Give-The-Fish/posts/argparse-experiments/index.html</guid><pubDate>Mon, 21 Sep 2026 00:09:21 GMT</pubDate></item></channel></rss>

@@ -28,23 +28,29 @@ if status is-login
     if test -n $SSH_KEYS_TO_AUTOLOAD
 	keychain --eval $SSH_KEYS_TO_AUTOLOAD | source
     else
-	echo "SSH_KEYS_TO_AUTOLOAD environmentvariable not set"
+	echo "SSH_KEYS_TO_AUTOLOAD environment variable not set"
 	echo "add key-file-name(s) to this variable"
+	echo "set --universal --append SSH_KEYS_TO_AUTOLOAD ~/.ssh/id_<keyid>"
     end
 end
 #+end_src
+
+From the [[https://fishshell.com/docs/current/cmds/test.html][fish documentation for =test=]].
+#+begin_quote
+-n STRING
+
+    Returns true if the length of STRING is non-zero.
+#+end_quote
+
+I don't know why you'd use =test -n= instead of =set -q=. I suppose this allows for empty strings being set, although that seems odd...
 
 #+begin_notecard
 **Note:** The default key type has changed so the default file name is no longer =id_rsa= it's =id_ed25519=.
 #+end_notecard
 
-The documentation for the [[https://fishshell.com/docs/current/cmds/status.html][~status~]] comand says that ~is-interactive~ is actually a sub-command (not an option, although I'm calling it like it is one) and that it:
-
-#+begin_quote
-Returns 0 if fish is interactive - that is, connected to a keyboard.
-#+end_quote
-
-Which is an oddly unintuitive description. I think it means that it won't pass the conditional if I try to run the fragment as a function... I can't remember why I used it, exactly ,but I think it's something you need if you want it to be loaded when you login.
+#+begin_notecard
+**Note:** The Super User answer that I got this updated version from used a sentinel (=status is-login= and =status is-interactive=) to check whether to run the code block or not, but this was preventing it from ever being run when I SSH'd in so I got rid of it.
+#+end_notecard
 
 Although the name [[https://linux.die.net/man/1/keychain][keychain]] makes it sound like it's a general password manager, according to the man-page it's meant specifically to manage the ssh-agent. It will check if you already have an ssh-agent running and only start one if you don't. This way you don't end up starting one for every ~screen~ you open up.
 
