@@ -14,15 +14,31 @@
 #+OPTIONS: ^:{}
 #+TOC: headlines 2
 
+This is a test of some of the fish-shell's [[https://fishshell.com/docs/current/cmds/argparse.html][argparse]] options to see if I get how it works.
+
+* Boolean Options
+
+The basic option definition creates a boolean option - a variable for the flag will be created if the user passes in the option and it won't be created if the user doesn't.
+
+This example creates a short-version (=-t=) and a long-version (=--test=) for the option.
+
 #+begin_src fish :exports both
+## Create the Option
+set options "t/test"
+
+## Create the Arguments
 set arguments "--test"
 
-argparse "t/test" -- $arguments
+# Parse It
+argparse $options  -- $arguments
 
+# Check if the variable was created
 if set --query _flag_test
     echo "test set"
 end
 
+# If we don't define an option but check it's variable it won't exist
+# this will emit the statement only if =_flag_untest= exists
 if set --query _flag_untest
     echo "untested set"
 end
@@ -31,9 +47,25 @@ end
 #+RESULTS:
 : test set
 
+Coming from a python background this feels to me like it should raise an exception, but that's not how it works.
+
+* Passing In Values To Options
+
+Putting an equals sign (~=~) tells =argparse= that we're (possibly) expecting a value to be passed in with the flag.
+
 #+begin_src fish :exports both
+## The Options
+# first a long option that's either set or not set (no values expected)
+set options "test"
+
+# now a short option that expects a value
+set --append options "v="
+
+## The Arguments
 set arguments "--test" "-v 5"
-argparse "test" "v=" -- $arguments
+
+## parse the arguments
+argparse $options  -- $arguments
 
 if set --query _flag_test
     echo "tested"
@@ -48,10 +80,38 @@ end
 | tested |   |
 | v=     | 5 |
 
-#+begin_src fish :exports both
-set arguments "--v 6"
+* Optional Values
 
-argparse "t/test" "v=?" -- $arguments
+** Missing Required Value
+The prior case of creating an option with an equals sign after it creates a required value - if you use the option you have to pass in a value or it will be an error.
+
+#+begin_src fish :exports both
+argparse "--value=" --  "--value"
+#+end_src
+
+
+The Result:
+
+#+begin_src
+argparse: --value=: unknown option
+#+end_src
+
+
+** Optional Value Without Equal
+
+If you use a question mark after the option definition (~-v=?~) then the option expects one or no value to be passed in.
+
+ - if you pass in more than one value it takes the first one
+ - if you pass in no value it behaves like a boolean option
+
+But, there's now a catch to passing in a value when compared to passing in a required value. Here's a case where I try to pass in an optional value.
+
+#+begin_src fish :exports both :results code
+set options "t/test" "v/value=?"
+
+set arguments "-v 6"
+
+argparse  -- $arguments
 
 if set --query _flag_test
     echo "tested"
@@ -62,34 +122,52 @@ if set --query _flag_v
 end
 #+end_src
 
-#+RESULTS:
-argparse: --v 6: unknown option
+The Result:
 
-#+begin_notecard
-The arguments to =argparse= need to be separate strings, not one string with spaces separating option-definitions.
-#+end_notecard
+#+begin_src fish
+argparse: -v 6: unknown option
+#+end_src
 
-This fails because ~v=?~ means the value passed in with the option (=-v=) is optional so there can't be any spaces between the option and the value. To make it work the value has to be smashed up against a short-option or passed in using an equal sighn with a long option.
+This fails because the option definition ~v=?~ means the value passed in with the option (=-v=) is optional - *so there can't be any spaces between the option and the value*. To make it work the value has to be smashed up against a short-option (=-v6=) or passed in using an equal sign with a long option (~--value=6~).
 
-#+begin_src fish :expors both
+** Optional Values (the right way this time)
+
+This time we'll use two versions of the optional-values syntax - =?= means zero or one, =*= means 0 or more (it creates a list so you can pass in multiple valuse by repeating the flag).
+
+#+begin_src fish :exports both :results code
+## Defining The Options
+# The number of option-values an option takes mirrors the cardinality
+# symbols used with regular expressions
+
+# A '?' means 0 or 1 value
+set options "v=?"
+
+# '*' means 0 or more
+set --append options "cats=*"
+set --append options "dogs=*"
+
+## The Arguments Being Passed In
 # short option values need to be smashed together with no spaces
 set arguments "-v5"
 
 # long arguments need values passed with an equal sign
 set --append arguments "--cats=8"
+set --append arguments "--cats=Too-Many"
 
 # optional values are optional - passing nothing will make the flag
 # act like a boolean
 set --append arguments "--dogs"
 
-argparse "v=?" "cats=*" "dogs=*" -- $arguments
+argparse $options -- $arguments
 
 if set --query _flag_v
     echo "v $_flag_v"
 end
 
 if set --query _flag_cats
-    echo "cats $_flag_cats"
+    for amount in $_flag_cats
+	echo "cats $amount"
+    end
 end
 
 # since we defined it as taking an (optional) value
@@ -101,15 +179,27 @@ end
 #+end_src
 
 #+RESULTS:
-| v    | 5 |
-| cats | 8 |
-| dogs |   |
+#+begin_src fish
+v 5
+cats 8
+cats Too-Many
+dogs 
+#+end_src
 
-#+begin_src fish :exports both
 
+* Testing If A Path Argument Exists
+
+If you put an exclamation mark (=!=) after the option definition it turns whatever you put after the =!= into a validator to check the value passed in by the user. In this case it'll use the [[https://fishshell.com/docs/current/cmds/test.html][test]] command to check if the path passed in is a directory.
+
+#+begin_src fish :exports both :results code
+# here's out definition (using '+' as the cardinality (one or more)
+# and a validator to check if the value passed in is a directory
+set options 'p/path=+!test -d "$_flag_value"'
+
+# a trio of paths to pass in as arguments
 set arguments "--path=/tmp" "-p/home" "--p=/"
 
-argparse 'p/path=+!test -d "$_flag_value"' -- $arguments
+argparse $options  -- $arguments
 
 if set --query _flag_path
     for p in $_flag_path
@@ -119,13 +209,43 @@ end
 #+end_src
 
 #+RESULTS:
-| path: | /tmp  |
-| path: | /home |
-| path: | /     |
+#+begin_src fish
+path: /tmp
+path: /home
+path: /
+#+end_src
 
-Note that using two dashes for the short 'p' option changes it to use an equal sign instead of smashing the value up against the option.
+Note that using the option multiple times creates multiple entries for the =path= option and that using two dashes for the short 'p' option works (weirdly) but changes it to use an equal sign instead of smashing the value up against the option (sort of a hybrid long and short option).
 
-Also, the test checks that all the values in =_flag_path= are directories, if even one fails then the option isn't set. So if you want it more forgiving you need to not test it with argparse and check it afterwards.
+Also, the test checks that /all/ the values in =_flag_path= are directories - if even one fails then the option isn't set.
+
+#+begin_src fish :exports both :results code
+set options 'p/path=+!test -d "$_flag_value"'
+
+# a pair of valid paths as arguments
+set arguments "--path=/tmp" "-p/home"
+
+# and an invalid path as well
+set --append arguments "--path=/oogabooga"
+
+argparse $options  -- $arguments
+
+if set --query _flag_path
+    for p in $_flag_path
+	echo "path: $p"
+    end
+else
+    echo "No paths available."
+end
+
+#+end_src
+
+#+RESULTS:
+#+begin_src fish
+No paths available.
+#+end_src
+
+So if you want it to be more forgiving and let some values fail you need to not test it with argparse and check the values afterwards.
 
 
 * Links
