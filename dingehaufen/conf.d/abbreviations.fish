@@ -58,3 +58,32 @@ abbr --add -- grepr "grep --color=always"
 abbr --add -- vdc "protonvpn-cli disconnect; protonvpn-cli connect"
 
 abbr --add -- fastestvpn "protonvpn-cli disconnect;protonvpn-cli connect --fastest; protonvpn-cli status"
+
+
+# rsync
+abbr --add -- rsyncer "rsync --progress --archive --compress"
+
+abbr --add -- rsyncerd "rsync --progress --archive --compress --delete"
+
+abbr --add -- rsyncerf 'rsync --progress --archive --delete --include="*/" --exclude="*"'
+
+abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
+
+# PDFs
+abbr --add -- pdfjoin "gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile="
+
+abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile="
+
+  # emacs client
+    abbr --add -- emacsstatus "systemctl --user status emacs"
+    abbr --add -- emacsrestart "systemctl --user restart emacs"
+
+# leftovers
+
+abbr --add -- lsn "ls --color | cat -n"
+
+abbr --add -- lS "ls -sSh1"
+
+abbr --add -- bs "byobu -dR"
+
+abbr --add -- bls "byobu -ls"
