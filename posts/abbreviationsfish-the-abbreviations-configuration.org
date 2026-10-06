@@ -66,6 +66,8 @@
 
 <<pdf-shrink>>
 
+<<pdf-slice>>
+
   # emacs client
   <<emacs-server-status>>
   <<emacs-server-restart>>
@@ -284,6 +286,14 @@ abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 #+end_src
 
 - This is also in my {{% lancelot title="tealdeer" %}}tealdeer-pages{{% /lancelot %}} post.
+
+** PDF Slice
+
+Use mutool to slice page spreads in half verticall.
+
+#+begin_src fish :noweb-ref pdf-slice
+abbr --add -- pdfsplit "mutool poster -x 2"
+#+end_src
 
 * Emacs
 ** Server Status

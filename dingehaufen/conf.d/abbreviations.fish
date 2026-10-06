@@ -74,6 +74,8 @@ abbr --add -- pdfjoin "gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/
 
 abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile="
 
+abbr --add -- pdfsplit "mutool poster -x 2"
+
   # emacs client
     abbr --add -- emacsstatus "systemctl --user status emacs"
     abbr --add -- emacsrestart "systemctl --user restart emacs"

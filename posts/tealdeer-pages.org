@@ -22,7 +22,7 @@ This is for configuring [[https://tealdeer-rs.github.io/tealdeer/][tealdeer]], a
 
 - The expected folder in this repository to put these pages is ~dingehaufen/tealdeer/pages/~.
 - The default location that ~tealdeer~ will look for the pages is $~/.local/share/tealdeer/pages/~$ so maybe symlink it there.
-- The pages that come with ~tealdeer~ are at $~/.cache/tealdeer/tldr-pages/pages/$ (look here for examples)
+- The pages that come with ~tealdeer~ are at $~/.cache/tealdeer/tldr-pages/pages.en/$ (look here for examples)
 
 * Patches
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-patches][patches]] which extend existing help pages rather than replacing them. If you want to add a new command or replace the existing tealdeer help you would use [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] instead (they go in the same folder, there's just a different file-name convention).
@@ -298,6 +298,13 @@ I use [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][git aliases]] (an
 
 *** Checkout a File From Another Branch
 
+#+begin_notecard
+I made this before I realized that there is a =git checkout= tldr subcommand, but I'm keeping it because:
+
+ - Using the subcommand requires you to remember that the =checkout= subcommand is what you need to use, but usually that's the thing I'm trying to remember
+ - There's a slight difference in the syntax between the default listing and mine.
+#+end_notecard
+
 #+begin_src fish markdown :noweb-ref git-checkout-file
 - Checkout a file from another branch
 
@@ -307,6 +314,32 @@ I use [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][git aliases]] (an
 * Pages
 
 These are [[https://tealdeer-rs.github.io/tealdeer/usage_custom_pages.html#custom-pages][pages]] - whatever you put in a page file will be the starting point for the tealdeer entry - these will either start a new tealdeer entry or will clobber any exsting one that came with tealdeer. The thing that tells tealdeer that it's a page and not a patch is that the filename ends with ~page.md~ instead of ~patch.md~. Otherwise the contents look the same.
+
+** mutool Poster
+
+*** Split A Page Along a Vertical Spine
+
+The =poster= subcommand is meant to break up a PDF into "tiles" that you can then print out and re-assemble into a bigger poster, although I mostly use it to split up PDFs that were created as two-page spreads.
+
+Making a =tldr= subcommand like this means that I have to remember that "poster" is the sub-command, which creates kind of a chicken and the egg problem (remembering to us this (sub) command is what I need help with, but I don't know of a good way to make a "this is what I want to do what's the command?" help system.
+
+#+begin_src noweb :tangle ../dingehaufen/tealdeer/pages/mutool-poster.page.md :exports none
+# mutool poster
+
+> mutool poster
+
+<<mutool-poster-split-pages>>
+#+end_src
+
+*** Split Pages
+
+Slice all the pages up the middle.
+
+#+begin_src markdown :noweb-ref mutool-poster-split-pages
+- Split/slice all pages in a PDF vertically
+
+`mutool poster -x {{number-of-pieces-to-break-pages-into}} {{input-file}} {{output-file}}`
+#+end_src
 
 ** Keychron K12 Keyboard
 
