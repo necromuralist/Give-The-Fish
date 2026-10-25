@@ -86,6 +86,10 @@ abbr --add -- lsn "ls --color | cat -n"
 
 abbr --add -- lS "ls -sSh1"
 
+abbr --add -- orf "xdg-open (ls | shuf -n1)"
+
+abbr --add -- morf "mupdf (ls | shuf -n1)"
+
 abbr --add -- bs "byobu -dR"
 
 abbr --add -- bls "byobu -ls"
