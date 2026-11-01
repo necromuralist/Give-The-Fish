@@ -8,7 +8,8 @@
 .. description: The fish abbreviations file.
 .. type: text
 .. status: 
-.. updated: 
+.. updated: 2026-11-01 19:51:15 UTC-04:00
+
 
 #+END_COMMENT
 #+OPTIONS: ^:{}
@@ -62,6 +63,8 @@
 <<rsyncery>>
 
 # PDFs
+<<mupdf-open>>
+
 <<pdf-join>>
 
 <<pdf-shrink>>
@@ -77,6 +80,10 @@
 <<enumerate-files>>
 
 <<files-by-size>>
+
+<<open-random-file>>
+
+<<open-random-file-with-mupdf>>
 
 <<byobu-screen>>
 
@@ -267,6 +274,17 @@ abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
 
 * PDFs
 
+** Mupdf Open
+This is an abbreviation to open =mupdf-gl= with the UI scaled up (the default is too small for me to read).
+
+**Note:** I'm putting this under "PDF" but like =evince=, =mupdf= opens other formats too.
+
+#+begin_src fish :noweb-ref mupdf-open
+abbr --add -- mopen "mupdf-gl -Y 3"
+#+end_src
+
+At some point I might just make =mupdf-gl= the default instead of =evince=, but this still will have some value since it remembers that "-Y" sets the UI Scaling Factor (what kind of mnemonic is this?).
+
 ** PDF Join
 Uses Ghostscript to join separate PDF files. Need to pass in the name for the output file and a list of files to be joined (likely using a glob).
 
@@ -322,6 +340,30 @@ List one file per line (=-1=) sorted by size (=-S) showing human-readable sizes 
 
 #+begin_src fish :noweb-ref files-by-size
 abbr --add -- lS "ls -sSh1"
+#+end_src
+
+** Open Random File
+
+This lists all the files in the current directory, picks one at random, and then opens it. The (original) intended use is to open a random PDF or image file to draw, read, etc.
+
+*** Using xdg-open
+
+#+begin_notecard
+**Warning:**
+
+This uses =xdg-open= and assumes that all the files, directories, etc. that =ls= outputs are going to be valid to open.
+#+end_notecard
+
+#+begin_src fish :noweb-ref open-random-file
+abbr --add -- orf "xdg-open (ls | shuf -n1)"
+#+end_src
+
+*** Using MuPDF
+
+This specifically says to use =mupdf-gl=, so it's more limited in what types of files you can open.
+
+#+begin_src fish :noweb-ref open-random-file-with-mupdf
+abbr --add -- morf "mupdf-gl (ls | shuf -n1)"
 #+end_src
 
 * Byobu (screen)
