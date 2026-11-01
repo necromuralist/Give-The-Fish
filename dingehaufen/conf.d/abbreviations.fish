@@ -70,6 +70,8 @@ abbr --add -- rsyncerf 'rsync --progress --archive --delete --include="*/" --exc
 abbr --add -- drysync "rsync --verbose --archive --delete --dry-run"
 
 # PDFs
+abbr --add -- mopen "mupdf-gl -Y 3"
+
 abbr --add -- pdfjoin "gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile="
 
 abbr --add -- pdfshrink "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile="
@@ -88,7 +90,7 @@ abbr --add -- lS "ls -sSh1"
 
 abbr --add -- orf "xdg-open (ls | shuf -n1)"
 
-abbr --add -- morf "mupdf (ls | shuf -n1)"
+abbr --add -- morf "mupdf-gl (ls | shuf -n1)"
 
 abbr --add -- bs "byobu -dR"
 
